@@ -27,18 +27,16 @@ const baseUrlString = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000
 
 export default async function RootLayout({
   children,
-  params,
+  params: { locale },
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }) {
-  // Ensure that the incoming `locale` is valid
-  const { locale } = await params;
+  // Remove manual await and check for locale
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
-  // Enable static rendering
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: "Metadata" });
@@ -85,13 +83,14 @@ type Props = {
   params: { locale: string };
 };
 
-export function generateMetadata({
-  params,
+// Correct async signature and direct destructuring
+export async function generateMetadata({
+  params: { locale },
 }: Props): Promise<Metadata> {
-  const { locale } = params;
+  // No need to extract locale again
 
-  // Call getTranslations asynchronously within the function
-  const tPromise = getTranslations({ locale, namespace: "Metadata" });
+  // Call getTranslations asynchronously
+  const t = await getTranslations({ locale, namespace: "Metadata" });
 
   const languages: Record<string, string> = {};
   routing.locales.forEach(loc => {
@@ -99,11 +98,10 @@ export function generateMetadata({
   });
   languages['x-default'] = '/';
 
-  // Define relative paths for images/URLs
   const ogImageUrl = '/og-image.png';
 
-  // Resolve the translation promise before returning
-  return tPromise.then(t => ({
+  // Return the Metadata object directly
+  return {
     title: t("title"),
     description: t("description"),
     keywords: t("keywords"),
@@ -113,12 +111,11 @@ export function generateMetadata({
     openGraph: {
       title: t("title"),
       description: t("description"),
-      // Use relative path for URL, Next.js combines with metadataBase
-      url: `/${locale}`, // Default OG url for the layout (can be overridden by page)
-      siteName: "Next.js i18n Boilerplate", // Keep or make dynamic
+      url: `/${locale}`,
+      siteName: "Oddle App",
       images: [
         {
-          url: ogImageUrl, // Relative path
+          url: ogImageUrl,
           width: 1200,
           height: 630,
         },
@@ -130,7 +127,7 @@ export function generateMetadata({
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: [ogImageUrl], // Relative path
+      images: [ogImageUrl],
     },
     alternates: {
       canonical: `/${locale}`,
@@ -147,5 +144,5 @@ export function generateMetadata({
         "max-snippet": -1,
       },
     },
-  }));
+  };
 }

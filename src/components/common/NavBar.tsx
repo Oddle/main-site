@@ -30,14 +30,14 @@ const logoUrl = process.env.NEXT_PUBLIC_LOGO_URL || "/oddle-logo.svg";
 
 // Define Product keys and categories
 const productItems: { key: string; category: 'Acquire' | 'Build' | 'Convert' }[] = [
-  { key: 'reservation', category: 'Acquire', }, //t('reservation')
-  { key: 'online-ordering', category: 'Acquire' }, //t('online-ordering')
-  { key: 'loyalty', category: 'Acquire' },//t('loyalty')
-  { key: 'payment-terminal', category: 'Acquire' }, //t('payment-terminal')
-  { key: 'virtual-lounge', category: 'Build' }, //t('virtual-lounge')
-  { key: 'survey', category: 'Build' }, //t('survey')
-  { key: 'marketing-engine', category: 'Convert' }, //t('marketing-engine')
-  { key: 'customer-intelligence', category: 'Convert' }, //t('customer-intelligence')
+  { key: 'restaurant-reservation-system', category: 'Acquire', }, //t('reservation')
+  { key: 'restaurant-online-ordering-system', category: 'Acquire' }, //t('online-ordering')
+  { key: 'restaurant-loyalty-program', category: 'Acquire' },//t('loyalty')
+  { key: 'restaurant-payment-terminal', category: 'Acquire' }, //t('payment-terminal')
+  { key: 'restaurant-website-builder', category: 'Build' }, //t('virtual-lounge')
+  { key: 'restaurant-survey-tool', category: 'Build' }, //t('survey')
+  { key: 'restaurant-email-marketing-system', category: 'Convert' }, //t('marketing-engine')
+  { key: 'restaurant-crm-customer-intelligence', category: 'Convert' }, //t('customer-intelligence')
   { key: 'oddle-eats-network', category: 'Convert' }, //t('oddle-eats-network') 
 ];
 
@@ -55,24 +55,24 @@ export default function NavBar() {
   const t = useTranslations("NavBar");
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 // i18next-parser Hint: Add full keys here so the parser can find them
-// t('NavBar.product.reservation.title');
-// t('NavBar.product.reservation.desc');
-// t('NavBar.product.online-ordering.title');
-// t('NavBar.product.online-ordering.desc');
-// t('NavBar.product.loyalty.title');
-// t('NavBar.product.loyalty.desc');
-// t('NavBar.product.payment-terminal.title');
-// t('NavBar.product.payment-terminal.desc');
-// t('NavBar.product.virtual-lounge.title');
-// t('NavBar.product.virtual-lounge.desc');
-// t('NavBar.product.survey.title');
-// t('NavBar.product.survey.desc');
-// t('NavBar.product.marketing-engine.title');
-// t('NavBar.product.marketing-engine.desc');
-// t('NavBar.product.customer-intelligence.title');
-// t('NavBar.product.customer-intelligence.desc');
-// t('NavBar.product.oddle-eats-network.title');
-// t('NavBar.product.oddle-eats-network.desc');
+// t('NavBar.products.restaurant-reservation-system.title');
+// t('NavBar.products.restaurant-reservation-system.desc');
+// t('NavBar.products.restaurant-online-ordering-system.title');
+// t('NavBar.products.restaurant-online-ordering-system.desc');
+// t('NavBar.products.restaurant-loyalty-crm-system.title');
+// t('NavBar.products.restaurant-loyalty-crm-system.desc');
+// t('NavBar.products.restaurant-payment-terminal.title');
+// t('NavBar.products.restaurant-payment-terminal.desc');
+// t('NavBar.products.restaurant-virtual-lounge.title');
+// t('NavBar.products.virtual-lounge.desc');
+// t('NavBar.products.restaurant-survey.title');
+// t('NavBar.products.restaurant-survey.desc');
+// t('NavBar.products.restaurant-email-marketing-system.title');
+// t('NavBar.products.restaurant-email-marketing-system.desc');
+// t('NavBar.products.restaurant-crm-customer-intelligence.title');
+// t('NavBar.products.restaurant-crm-customer-intelligence.desc');
+// t('NavBar.products.oddle-eats.title');
+// t('NavBar.products.oddle-eats.desc');
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 max-w-[1440px] items-center px-4 md:px-6">
@@ -94,7 +94,7 @@ export default function NavBar() {
           <NavigationMenuList>
             {/* Products Dropdown */}
             <NavigationMenuItem>
-              <NavigationMenuTrigger>{t("products")}</NavigationMenuTrigger>
+              <NavigationMenuTrigger>{t("product")}</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="grid w-[600px] p-4 md:w-[700px] md:grid-cols-3 lg:w-[800px]">
                   {/* Acquire Column */}
@@ -106,10 +106,10 @@ export default function NavBar() {
                         .map((product) => (
                           <ListItem
                             key={product.key}
-                            title={t(`product.${product.key}.title`)}
+                            title={t(`products.${product.key}.title`)}
                             href={`/products/${product.key}`}
                           >
-                            {t(`product.${product.key}.desc`)}
+                            {t(`products.${product.key}.desc`)}
                           </ListItem>
                         ))}
                     </ul>
@@ -123,10 +123,10 @@ export default function NavBar() {
                         .map((product) => (
                           <ListItem
                             key={product.key}
-                            title={t(`product.${product.key}.title`)}
+                            title={t(`products.${product.key}.title`)}
                             href={`/products/${product.key}`}
                           >
-                            {t(`product.${product.key}.desc`)}
+                            {t(`products.${product.key}.desc`)}
                           </ListItem>
                         ))}
                     </ul>
@@ -140,10 +140,10 @@ export default function NavBar() {
                         .map((product) => (
                           <ListItem
                             key={product.key}
-                            title={t(`product.${product.key}.title`)}
+                            title={t(`products.${product.key}.title`)}
                             href={`/products/${product.key}`}
                           >
-                            {t(`product.${product.key}.desc`)}
+                            {t(`products.${product.key}.desc`)}
                           </ListItem>
                         ))}
                     </ul>

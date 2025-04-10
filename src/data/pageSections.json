@@ -1,0 +1,89 @@
+{
+  "home": [
+    {
+      "component": "ProductCarouselHero",
+      "props": {
+        "reverseMobileLayout": true,
+        "title": "Making revenue growth easy for restaurants",
+        "description": "Oddle empowers restaurants across the world to capture customer data, build their brand, and grow their business",
+        "primaryButton": { "text": "Get started", "action": "/get-started" },
+        "secondaryButton": { "text": "Contact sales team", "action": "/contact-sales" },
+        "slides": [
+          { "imageSrc": "https://placehold.co/700x540/E2E8F0/AAAAAA?text=Slide1", "imageAlt": "Placeholder Alt 1" },
+          { "imageSrc": "https://placehold.co/700x540/CCDDAA/AAAAAA?text=Slide2", "imageAlt": "Placeholder Alt 2" }
+        ]
+      }
+    },
+    {
+      "component": "ABCSection",
+      "props": {
+        "title": "Growing is as easy as ABC",
+        "subtitle": "Acquire, Build, and Convert Your Way to Success",
+        "items": [
+          { "title": "Acquire Customer Data", "description": "Capture insights..." },
+          { "title": "Build Your Brand", "description": "Create a seamless..." },
+          { "title": "Convert for Growth", "description": "Turn first-time..." }
+        ]
+      }
+    },
+    {
+      "component": "BentoGridSection",
+      "props": {
+        "badgeText": "Features Showcase",
+        "title": "All Your Restaurant Tools in One Place",
+        "description": "Simplify operations...",
+        "getStartedButtonText": "Get Started Now",
+        "livePreviewButtonText": "See Live Preview",
+        "cards": [
+          { "id": 1, "type": "large", "title": "Unified Dashboard", "description": "Monitor sales...", "imageUrl": "https://placehold.co/600x400/E2E8F0/AAAAAA?text=Dashboard", "imageAlt": "Unified Dashboard Alt" },
+          { "id": 2, "type": "small", "title": "Order Management", "description": "Streamline orders...", "imageAlt": "Order Management Alt" }
+        ]
+      }
+    }
+  ],
+  "products/restaurant-online-ordering-system": [
+    {
+      "component": "ProductCarouselHero", 
+      "props": {
+        "title": "Restaurant Online Ordering System",
+        "description": "Streamline your orders and delight your customers."
+      }
+    },
+    {
+      "component": "ABCSection",
+      "props": {
+          "title": "Key Features",
+          "items": [
+              { "title": "Easy Menu Management", "description": "Update your menu in real-time." },
+              { "title": "Seamless Order Processing", "description": "Manage orders efficiently." },
+              { "title": "Integrated Delivery Options", "description": "Connect with delivery partners." }
+          ]
+      }
+    }
+  ],
+  "products/restaurant-reservation-system": [
+    {
+      "component": "ProductCarouselHero",
+      "props": {
+        "title": "Effortless Restaurant Reservations",
+        "description": "Manage your tables, reduce no-shows, and provide a seamless booking experience.",
+        "primaryButton": { "text": "Request Demo", "action": "/request-demo" },
+        "slides": [
+          { "imageSrc": "https://placehold.co/700x540/F0E2E8/AAAAAA?text=Reservation1", "imageAlt": "Reservation System UI" },
+          { "imageSrc": "https://placehold.co/700x540/AADDAA/AAAAAA?text=Reservation2", "imageAlt": "Table Management View" }
+        ]
+      }
+    },
+    {
+      "component": "FeatureShowcase",
+      "props": {
+        "title": "Streamline Your Bookings",
+        "items": [
+          { "title": "Smart Table Management", "description": "Optimize seating and minimize wait times." },
+          { "title": "Online Booking Widget", "description": "Accept reservations directly from your website." },
+          { "title": "Automated Reminders", "description": "Reduce no-shows with automatic guest confirmations and reminders." }
+        ]
+      }
+    }
+  ]
+} 
