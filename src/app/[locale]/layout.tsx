@@ -85,11 +85,13 @@ type Props = {
   params: { locale: string };
 };
 
-export async function generateMetadata({
+export function generateMetadata({
   params,
-}: Props): Promise<Metadata> { // Use the defined Props type
-  const { locale } = params; // Remove await
-  const t = await getTranslations({ locale, namespace: "Metadata" });
+}: Props): Promise<Metadata> {
+  const { locale } = params;
+
+  // Call getTranslations asynchronously within the function
+  const tPromise = getTranslations({ locale, namespace: "Metadata" });
 
   const languages: Record<string, string> = {};
   routing.locales.forEach(loc => {
@@ -100,7 +102,8 @@ export async function generateMetadata({
   // Define relative paths for images/URLs
   const ogImageUrl = '/og-image.png';
 
-  return {
+  // Resolve the translation promise before returning
+  return tPromise.then(t => ({
     title: t("title"),
     description: t("description"),
     keywords: t("keywords"),
@@ -144,5 +147,5 @@ export async function generateMetadata({
         "max-snippet": -1,
       },
     },
-  };
+  }));
 }
