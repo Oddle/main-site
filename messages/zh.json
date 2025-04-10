@@ -1,0 +1,195 @@
+{
+  "BentoGridSection": {
+    "card1Description": "在一处管理预订、订单和客户数据。",
+    "card1Title": "统一仪表盘",
+    "card2Description": "直接从您的网站无缝集成自提和配送订单。",
+    "card2Title": "在线订购",
+    "card3Description": "通过自动化营销活动和忠诚度计划吸引客户。",
+    "card3Title": "营销工具",
+    "card4Description": "获取宝贵数据以了解并扩大您的客户群。",
+    "card4Title": "客户洞察",
+    "defaultBadge": "探索我们的平台",
+    "defaultDescription": "探索无缝集成到一个直观平台中的强大功能，专为增长而设计。",
+    "defaultTitle": "餐厅所需的一切",
+    "getStartedButton": "开始使用",
+    "livePreviewButton": "实时预览"
+  },
+  "Footer": {
+    "copyright": "© 2024 Next.js 多语言模板。基于MIT协议开源。",
+    "githubLink": "GitHub仓库"
+  },
+  "Index": {
+    "boilerplateName": "Next.js 多语言模板",
+    "cloneRepository": "克隆仓库",
+    "contribute": "贡献指南",
+    "contributeSteps": {
+      "commit": "提交变更：",
+      "createBranch": "创建新分支：",
+      "fork": "Fork代码仓库",
+      "pullRequest": "创建Pull Request",
+      "push": "推送至分支："
+    },
+    "description": "一个强大的起点，助您开发多语言、无障碍的Web应用程序。",
+    "error": {
+      "returnHome": "返回首页",
+      "server": "服务器错误",
+      "sorry": "抱歉，服务器遇到意外错误。",
+      "tryAgain": "请稍后重试。"
+    },
+    "gettingStarted": "快速开始",
+    "howToContribute": "参与贡献",
+    "howToUse": "使用指南",
+    "installation": "安装步骤",
+    "installationSteps": {
+      "cloneRepository": "克隆仓库：",
+      "installDependencies": "安装依赖：",
+      "startDevServer": "启动开发服务器："
+    },
+    "leaveStar": "点亮星标",
+    "OmitRTLInstruction": "如需禁用RTL支持，只需用OmitRTL组件包裹目标组件即可。",
+    "omitrtlUsage": "OmitRTL 使用方法",
+    "title": "Next 15 模板 (集成i18n与Shadcn UI)"
+  },
+  "Metadata": {
+    "description": "支持中文、英文、阿拉伯语的Next.js国际化(i18n)入门套件，包含shadcn UI、主题切换和RTL支持",
+    "keywords": "Next.js, i18n, 国际化, 中文, 阿拉伯语, 多语言, 模板, shadcn UI, RTL支持",
+    "title": "Next.js 国际化模板 - 多语言启动套件"
+  },
+  "NavBar": {
+    "products": "產品",
+    "resources": "資源",
+    "pricing": "定價",
+    "acquire": "獲客",
+    "build": "建置",
+    "convert": "轉換",
+    "login": "登錄",
+    "getFreeDemo": "獲取免費演示",
+    "oddleEats": "Oddle Eats",
+    "srOddleHome": "Oddle 主頁",
+    "srOpenMenu": "打開菜單",
+    "srMobileMenuTitle": "移動導航菜單",
+    "resourcesPromoTitle": "Oddle 資源",
+    "resourcesPromoDesc": "了解 Oddle 如何幫助餐飲企業成長。",
+    "product": {
+      "reservation": {
+        "title": "訂位系統",
+        "desc": "接受線上訂位以掌握先機"
+      },
+      "onlineOrdering": {
+        "title": "線上外帶外送系統",
+        "desc": "打造品牌的線上門市，接觸更多客戶"
+      },
+      "oddleEatsNetwork": {
+        "title": "Oddle Eats",
+        "desc": "挖掘百萬美食愛好者"
+      },
+      "virtualLounge": {
+        "title": "亮點看板",
+        "desc": "一頁式展現您品牌的重要資訊"
+      },
+      "survey": {
+        "title": "問卷系統",
+        "desc": "自動化問卷調查以提升品牌的線上能見度"
+      },
+      "loyalty": {
+        "title": "顧客忠誠計畫",
+        "desc": "掌握每一位顧客，讓他們成為忠實支持者"
+      },
+      "paymentTerminal": {
+        "title": "線下刷卡機 - 僅支援新馬",
+        "desc": "無年費也不綁約的實體刷卡機"
+      },
+      "marketingEngine": {
+        "title": "行銷引擎",
+        "desc": "透過顧客再行銷來留存顧客以提升收入"
+      },
+      "customerIntelligence": {
+        "title": "顧客智能",
+        "desc": "超強的CRM，為您提供可行的數據洞見"
+      },
+      "customer-intelligence": {
+        "desc": "",
+        "title": ""
+      },
+      "marketing-engine": {
+        "desc": "",
+        "title": ""
+      },
+      "oddle-eats-network": {
+        "desc": "",
+        "title": ""
+      },
+      "online-ordering": {
+        "desc": "",
+        "title": ""
+      },
+      "payment-terminal": {
+        "desc": "",
+        "title": ""
+      },
+      "virtual-lounge": {
+        "desc": "",
+        "title": ""
+      }
+    },
+    "resource": {
+      "blog": {
+        "title": "部落格"
+      },
+      "customerStories": {
+        "title": "客戶案例"
+      },
+      "comparison": {
+        "title": "比較"
+      },
+      "aboutUs": {
+        "title": "關於我們"
+      },
+      "helpCenter": {
+        "title": "幫助中心"
+      }
+    }
+  },
+  "OmitRTLInstruction": "",
+  "acquire": "",
+  "boilerplateName": "???",
+  "build": "",
+  "cloneRepository": "",
+  "contribute": "",
+  "contributeSteps": {
+    "commit": "",
+    "createBranch": "",
+    "fork": "",
+    "pullRequest": "",
+    "push": ""
+  },
+  "convert": "",
+  "description": "",
+  "getFreeDemo": "",
+  "gettingStarted": "",
+  "howToContribute": "",
+  "howToUse": "",
+  "installation": "",
+  "installationSteps": {
+    "cloneRepository": "",
+    "installDependencies": "",
+    "startDevServer": ""
+  },
+  "keywords": "",
+  "leaveStar": "",
+  "login": "",
+  "oddleEats": "",
+  "omitrtlUsage": "",
+  "pricing": "",
+  "products": "",
+  "resources": "",
+  "resourcesPromoDesc": "",
+  "resourcesPromoTitle": "",
+  "returnHome": "",
+  "sorry": "",
+  "srMobileMenuTitle": "",
+  "srOddleHome": "",
+  "srOpenMenu": "",
+  "title": "",
+  "tryAgain": ""
+}
