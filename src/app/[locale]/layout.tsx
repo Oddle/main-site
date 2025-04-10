@@ -80,12 +80,15 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+// Define Props type for generateMetadata
+type Props = {
+  params: { locale: string };
+};
+
 export async function generateMetadata({
   params,
-}: {
-  params: { locale: string };
-}): Promise<Metadata> {
-  const { locale } = await params;
+}: Props): Promise<Metadata> { // Use the defined Props type
+  const { locale } = params; // Remove await
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
   const languages: Record<string, string> = {};
