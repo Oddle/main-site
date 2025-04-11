@@ -43,7 +43,45 @@
   ],
   "products/restaurant-online-ordering-system": [
     {
-      "component": "ProductCarouselHero", 
+      "component": "HeroSectionWithAppShowcase",
+      "props": {
+        "badgeText": "Online Ordering",
+        "title": "Boost Your Orders with a Seamless Online System",
+        "description": "Enable customers to order directly from you, anytime, anywhere, with a beautiful and responsive interface.",
+        "desktopImage": {
+          "src": "https://placehold.co/1920x1080/E8F0E2/AAAAAA?text=Ordering+Desktop",
+          "alt": "Online Ordering Desktop View",
+          "width": 1920,
+          "height": 1080
+        },
+        "mobileImage": {
+          "src": "https://placehold.co/1080x1920/E8F0E2/AAAAAA?text=Ordering+Mobile",
+          "alt": "Online Ordering Mobile View",
+          "width": 1080,
+          "height": 1920
+        },
+        "tabletImage": {
+          "src": "https://placehold.co/1024x768/E8F0E2/AAAAAA?text=Ordering+Tablet",
+          "alt": "Online Ordering Tablet View",
+          "width": 1024,
+          "height": 768
+        },
+        "feature1": {
+          "icon": "",
+          "title": "Fully Integrated",
+          "description": "Connects smoothly with your POS and kitchen.",
+          "animationClass": "animate-float-slow"
+        },
+        "feature2": {
+          "icon": "",
+          "title": "Customizable",
+          "description": "Match your brand's look and feel.",
+          "animationClass": "animate-float"
+        }
+      }
+    },
+    {
+      "component": "ProductCarouselHero",
       "props": {
         "title": "Restaurant Online Ordering System",
         "description": "Streamline your orders and delight your customers."
@@ -58,6 +96,46 @@
               { "title": "Seamless Order Processing", "description": "Manage orders efficiently." },
               { "title": "Integrated Delivery Options", "description": "Connect with delivery partners." }
           ]
+      }
+    },
+    {
+      "component": "FeatureSectionWithImages",
+      "props": {
+        "sectionTitle": "Why Choose Our Online Ordering System?",
+        "sectionDescription": "Empower your restaurant with features designed for growth and efficiency.",
+        "features": [
+          {
+            "title": "Activate and Grow Sales",
+            "description": "Grow your customer database and build stronger relationships with tools that drive loyalty and repeat orders.",
+            "items": [
+              "Collect and analyze detailed insights into customer behavior, preferences, and order frequency.",
+              "Reward repeat customers, run targeted promotions, and re-engage lapsed diners with personalized campaigns.",
+              "Convert delivery customers into dine-in guests and keep them coming back with exclusive offers and tailored experiences."
+            ],
+            "imageSrc": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1024&auto=format&fit=crop",
+            "imageAlt": "Customer relationship management interface showing profile and communication."
+          },
+          {
+            "title": "Seamless Logistics Management",
+            "description": "Streamline your restaurant operations with tools designed to simplify day-to-day tasks, so you can focus on delivering exceptional dining experiences.",
+            "items": [
+              "Streamline delivery zones, manage logistics efficiently, and achieve best-in-class fulfillment rates.",
+              "Flexible delivery options to serve customers far and wide."
+            ],
+            "imageSrc": "https://images.unsplash.com/photo-1591848999006-16399911425a?q=80&w=1024&auto=format&fit=crop",
+            "imageAlt": "Delivery tracking interface showing map and vehicle."
+          },
+          {
+            "title": "Tap into a network of over a million food lovers with Oddle Eats",
+            "description": "Get your restaurant seen by millions of consumers seeking new dining experiences for every occasion with our premier food directory network, Oddle Eats.",
+            "items": [
+              "Participate in sponsored marketing campaigns at no extra charge.",
+              "Extend your reach to our affluent user base with high purchasing power."
+            ],
+            "imageSrc": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1024&auto=format&fit=crop",
+            "imageAlt": "Oddle Eats mobile app interface showing restaurant listings."
+          }
+        ]
       }
     }
   ],

@@ -5,6 +5,8 @@ import NavBar from "../common/NavBar";
 import ProductCarouselHero from "@/components/sections/ProductCarouselHero";
 import BentoGridSection from "@/components/sections/BentoGridSection";
 import ABCSection from "@/components/sections/ABCSection";
+import HeroSectionWithAppShowcase from "@/components/sections/HeroSectionWithAppShowcase";
+import FeatureSectionWithImages from "@/components/sections/FeatureSectionWithImages";
 import React from 'react'; // Import React for ComponentType typing
 
 // --- Define type for section data --- (Good practice)
@@ -23,6 +25,8 @@ const componentMap = {
   ProductCarouselHero,
   ABCSection,
   BentoGridSection,
+  HeroSectionWithAppShowcase,
+  FeatureSectionWithImages,
 };
 
 // Update component signature to accept props
