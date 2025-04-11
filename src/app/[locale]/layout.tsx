@@ -27,16 +27,18 @@ const baseUrlString = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000
 
 export default async function RootLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  // Remove manual await and check for locale
+  // Ensure that the incoming `locale` is valid
+  const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
+  // Enable static rendering
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: "Metadata" });
@@ -83,13 +85,10 @@ type Props = {
   params: { locale: string };
 };
 
-// Correct async signature and direct destructuring
 export async function generateMetadata({
-  params: { locale },
-}: Props): Promise<Metadata> {
-  // No need to extract locale again
-
-  // Call getTranslations asynchronously
+  params,
+}: Props): Promise<Metadata> { // Use the defined Props type
+  const { locale } = params; // Remove await
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
   const languages: Record<string, string> = {};
@@ -98,9 +97,9 @@ export async function generateMetadata({
   });
   languages['x-default'] = '/';
 
+  // Define relative paths for images/URLs
   const ogImageUrl = '/og-image.png';
 
-  // Return the Metadata object directly
   return {
     title: t("title"),
     description: t("description"),
@@ -111,11 +110,12 @@ export async function generateMetadata({
     openGraph: {
       title: t("title"),
       description: t("description"),
-      url: `/${locale}`,
-      siteName: "Oddle App",
+      // Use relative path for URL, Next.js combines with metadataBase
+      url: `/${locale}`, // Default OG url for the layout (can be overridden by page)
+      siteName: "Next.js i18n Boilerplate", // Keep or make dynamic
       images: [
         {
-          url: ogImageUrl,
+          url: ogImageUrl, // Relative path
           width: 1200,
           height: 630,
         },
@@ -127,7 +127,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: [ogImageUrl],
+      images: [ogImageUrl], // Relative path
     },
     alternates: {
       canonical: `/${locale}`,
