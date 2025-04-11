@@ -1,0 +1,50 @@
+{
+  "navbar": {
+    "links": [
+      {
+        "label": "products",
+        "isMegaMenu": true
+      },
+      {
+        "label": "resources",
+        "isMegaMenu": true
+      },
+      {
+        "label": "pricing"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© {currentYear} Oddle. All rights reserved.", 
+    "linkSections": [
+      {
+        "title": "Company",
+        "links": [
+          { "label": "About Us", "href": "/about" },
+          { "label": "Careers", "href": "/careers" },
+          { "label": "Contact Us", "href": "/contact-sales" }
+        ]
+      },
+      {
+        "title": "Products",
+        "links": [
+           { "label": "Online Ordering", "href": "/products/restaurant-online-ordering-system" },
+           { "label": "Reservations", "href": "/products/restaurant-reservation-system" },
+           { "label": "Loyalty & CRM", "href": "/products/restaurant-loyalty-crm-system" },
+           { "label": "Virtual Lounge", "href": "/products/restaurant-virtual-lounge" }
+        ]
+      },
+      {
+        "title": "Legal",
+        "links": [
+           { "label": "Privacy Policy", "href": "/privacy" },
+           { "label": "Terms of Service", "href": "/terms" }
+        ]
+      }
+    ],
+    "socialLinks": [
+        { "name": "Facebook", "href": "https://facebook.com/oddleapp", "icon": "facebook" }, 
+        { "name": "LinkedIn", "href": "https://linkedin.com/company/oddle", "icon": "linkedin" }
+    ]
+  }
+} 

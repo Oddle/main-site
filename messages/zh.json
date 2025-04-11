@@ -1,4 +1,9 @@
 {
+  "Metadata": {
+    "title": "[zh translation] Oddle App - Restaurant Growth Platform",
+    "description": "[zh translation] Empowering restaurants worldwide to grow their business with online ordering, reservations, CRM, and marketing tools.",
+    "keywords": "[zh translation] restaurant software, online ordering, reservation system, restaurant CRM, F&B technology, Oddle"
+  },
   "BentoGridSection": {
     "card1Description": "在一处管理预订、订单和客户数据。",
     "card1Title": "统一仪表盘",
@@ -18,213 +23,81 @@
     "copyright": "© 2024 Next.js 多语言模板。基于MIT协议开源。",
     "githubLink": "GitHub仓库"
   },
-  "Index": {
-    "boilerplateName": "Next.js 多语言模板",
-    "cloneRepository": "克隆仓库",
-    "contribute": "贡献指南",
-    "contributeSteps": {
-      "commit": "提交变更：",
-      "createBranch": "创建新分支：",
-      "fork": "Fork代码仓库",
-      "pullRequest": "创建Pull Request",
-      "push": "推送至分支："
-    },
-    "description": "一个强大的起点，助您开发多语言、无障碍的Web应用程序。",
-    "error": {
-      "returnHome": "返回首页",
-      "server": "服务器错误",
-      "sorry": "抱歉，服务器遇到意外错误。",
-      "tryAgain": "请稍后重试。"
-    },
-    "gettingStarted": "快速开始",
-    "howToContribute": "参与贡献",
-    "howToUse": "使用指南",
-    "installation": "安装步骤",
-    "installationSteps": {
-      "cloneRepository": "克隆仓库：",
-      "installDependencies": "安装依赖：",
-      "startDevServer": "启动开发服务器："
-    },
-    "leaveStar": "点亮星标",
-    "OmitRTLInstruction": "如需禁用RTL支持，只需用OmitRTL组件包裹目标组件即可。",
-    "omitrtlUsage": "OmitRTL 使用方法",
-    "title": "Next 15 模板 (集成i18n与Shadcn UI)"
-  },
-  "Metadata": {
-    "description": "支持中文、英文、阿拉伯语的Next.js国际化(i18n)入门套件，包含shadcn UI、主题切换和RTL支持",
-    "keywords": "Next.js, i18n, 国际化, 中文, 阿拉伯语, 多语言, 模板, shadcn UI, RTL支持",
-    "title": "Next.js 国际化模板 - 多语言启动套件"
-  },
-  "NavBar": {
-    "products": "產品",
-    "resources": "資源",
-    "pricing": "定價",
-    "acquire": "獲客",
-    "build": "建置",
-    "convert": "轉換",
-    "login": "登錄",
-    "getFreeDemo": "獲取免費演示",
-    "oddleEats": "Oddle Eats",
-    "srOddleHome": "Oddle 主頁",
-    "srOpenMenu": "打開菜單",
-    "srMobileMenuTitle": "移動導航菜單",
-    "resourcesPromoTitle": "Oddle 資源",
-    "resourcesPromoDesc": "了解 Oddle 如何幫助餐飲企業成長。",
-    "product": {
-      "reservation": {
-        "title": "訂位系統",
-        "desc": "接受線上訂位以掌握先機"
+  "navbar": {
+    "product": "产品",
+    "resources": "资源",
+    "pricing": "定价",
+    "acquire": "获客",
+    "build": "构建",
+    "convert": "转化",
+    "login": "登录",
+    "get-started": "开始使用",
+    "menu-title": "菜单",
+    "app-name": "Oddle",
+    "products": {
+      "reservation-system": {
+        "title": "餐厅预订系统",
+        "desc": "管理您的餐桌，减少未到场情况，并提供无缝的预订体验。"
       },
-      "onlineOrdering": {
-        "title": "線上外帶外送系統",
-        "desc": "打造品牌的線上門市，接觸更多客戶"
+      "online-ordering-system": {
+        "title": "餐厅在线订餐系统",
+        "desc": "通过无缝的在线系统提升您的订单量。"
       },
-      "oddleEatsNetwork": {
-        "title": "Oddle Eats",
-        "desc": "挖掘百萬美食愛好者"
-      },
-      "virtualLounge": {
-        "title": "亮點看板",
-        "desc": "一頁式展現您品牌的重要資訊"
-      },
-      "survey": {
-        "title": "問卷系統",
-        "desc": "自動化問卷調查以提升品牌的線上能見度"
-      },
-      "loyalty": {
-        "title": "顧客忠誠計畫",
-        "desc": "掌握每一位顧客，讓他們成為忠實支持者"
-      },
-      "paymentTerminal": {
-        "title": "線下刷卡機 - 僅支援新馬",
-        "desc": "無年費也不綁約的實體刷卡機"
-      },
-      "marketingEngine": {
-        "title": "行銷引擎",
-        "desc": "透過顧客再行銷來留存顧客以提升收入"
-      },
-      "customerIntelligence": {
-        "title": "顧客智能",
-        "desc": "超強的CRM，為您提供可行的數據洞見"
-      },
-      "customer-intelligence": {
-        "desc": "",
-        "title": ""
-      },
-      "marketing-engine": {
-        "desc": "",
-        "title": ""
-      },
-      "oddle-eats-network": {
-        "desc": "",
-        "title": ""
-      },
-      "online-ordering": {
-        "desc": "",
-        "title": ""
+      "loyalty-program": {
+        "title": "餐厅忠诚度计划",
+        "desc": "将每一次光临都转化为忠实顾客。"
       },
       "payment-terminal": {
-        "desc": "",
-        "title": ""
+        "title": "餐厅支付终端",
+        "desc": "通过集成终端简化支付流程。"
       },
       "virtual-lounge": {
-        "desc": "",
-        "title": ""
+        "title": "餐厅虚拟休息室",
+        "desc": "通过 Oddle 的虚拟休息室在线展示您的品牌。"
       },
-      "oddle-eats": {
-        "desc": "",
-        "title": ""
+      "survey-tool": {
+        "title": "餐厅调查工具",
+        "desc": "收集反馈以改善您的服务。"
       },
-      "restaurant-crm-customer-intelligence": {
-        "desc": "",
-        "title": ""
+      "email-marketing-system": {
+        "title": "餐厅邮件营销系统",
+        "desc": "通过有针对性的邮件活动吸引顾客。"
       },
-      "restaurant-email-marketing-system": {
-        "desc": "",
-        "title": ""
+      "crm-customer-intelligence": {
+        "title": "餐厅CRM与客户智能",
+        "desc": "通过数据洞察更好地了解您的客户。"
       },
-      "restaurant-loyalty-crm-system": {
-        "desc": "",
-        "title": ""
-      },
-      "restaurant-online-ordering-system": {
-        "desc": "",
-        "title": ""
-      },
-      "restaurant-payment-terminal": {
-        "desc": "",
-        "title": ""
-      },
-      "restaurant-reservation-system": {
-        "desc": "",
-        "title": ""
-      },
-      "restaurant-survey": {
-        "desc": "",
-        "title": ""
-      },
-      "restaurant-virtual-lounge": {
-        "title": ""
+      "oddle-eats-network": {
+        "title": "Oddle Eats 网络",
+        "desc": "接入超过一百万美食爱好者的网络。"
       }
     },
-    "resource": {
+    "resources": {
       "blog": {
-        "title": "部落格"
+        "title": "博客"
       },
-      "customerStories": {
-        "title": "客戶案例"
+      "customer-stories": {
+        "title": "客户案例"
       },
       "comparison": {
-        "title": "比較"
+        "title": "对比"
       },
-      "aboutUs": {
-        "title": "關於我們"
+      "about-us": {
+        "title": "关于我们"
       },
-      "helpCenter": {
-        "title": "幫助中心"
+      "help-center": {
+        "title": "帮助中心"
       }
+    },
+    "promo": {
+      "title": "探索 Oddle",
+      "description": "了解 Oddle 如何帮助餐厅成长。"
     }
   },
-  "OmitRTLInstruction": "",
-  "acquire": "",
-  "boilerplateName": "???",
-  "build": "",
-  "cloneRepository": "",
-  "contribute": "",
-  "contributeSteps": {
-    "commit": "",
-    "createBranch": "",
-    "fork": "",
-    "pullRequest": "",
-    "push": ""
-  },
-  "convert": "",
-  "description": "",
-  "getFreeDemo": "",
-  "gettingStarted": "",
-  "howToContribute": "",
-  "howToUse": "",
-  "installation": "",
-  "installationSteps": {
-    "cloneRepository": "",
-    "installDependencies": "",
-    "startDevServer": ""
-  },
-  "keywords": "",
-  "leaveStar": "",
-  "login": "",
-  "oddleEats": "",
-  "omitrtlUsage": "",
-  "pricing": "",
-  "products": "",
-  "resources": "",
-  "resourcesPromoDesc": "",
-  "resourcesPromoTitle": "",
-  "returnHome": "",
-  "sorry": "",
-  "srMobileMenuTitle": "",
-  "srOddleHome": "",
-  "srOpenMenu": "",
-  "title": "",
-  "tryAgain": ""
+  "common": {
+    "Privacy Policy": "隐私政策",
+    "Terms of Service": "服务条款",
+    "Contact Us": "联系我们",
+    "About Us": "关于我们"
+  }
 }

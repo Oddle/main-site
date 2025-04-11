@@ -1,6 +1,6 @@
 {
   "Metadata": {
-    "title": "Oddle App - Restaurant Growth Platform",
+    "title": "Oddle Restaurant Growth Platform",
     "description": "Empowering restaurants worldwide to grow their business with online ordering, reservations, CRM, and marketing tools.",
     "keywords": "restaurant software, online ordering, reservation system, restaurant CRM, F&B technology, Oddle"
   },
@@ -19,56 +19,101 @@
     "getStartedButton": "",
     "livePreviewButton": ""
   },
-  "NavBar": {
-    "product": "Products",
+  "navbar": {
     "acquire": "Acquire",
     "build": "Build",
     "convert": "Convert",
-    "oddleEats":"Oddle Eats",
-    "login": "Login",
-    "getFreeDemo": "Get Free Demo",
+    "links":{
+      "products": "Products",
+      "resources": "Resources",
+      "pricing": "Pricing",
+      "get-started": "/get-started",
+      "menu-title": "Menu",
+      "oddle-eats": "Oddle Eats",
+      "login": "Login",
+      "get-free-demo": "Get Free Demo"
+    },
+    "promo": {
+      "title": "Explore Oddle",
+      "description": "Learn how Oddle helps restaurants grow."
+    },
     "products": {
-      "oddle-eats-network": {
-        "desc": "Seamless integration for pickup and delivery orders directly from your site.",
-        "title": "Oddle Eats Network"
+      "reservation_system": {
+        "title": "Reservation System",
+        "desc": "Drive direct reservations and optimise capacity."
       },
-      "restaurant-crm-customer-intelligence": {
-        "desc": "Gain valuable data to understand and grow your customer base.",
-        "title": "Customer Insights"
+      "online_ordering_system": {
+        "title": "Online Ordering System",
+        "desc": "Take commission-free orders on your own website."
       },
-      "restaurant-email-marketing-system": {
-        "desc": "Engage customers with automated campaigns and loyalty programs.",
-        "title": "Marketing Tools"
+      "loyalty_program": {
+        "title": "Loyalty Program",
+        "desc": "Retain customers and grow repeat sales."
       },
-      "restaurant-loyalty-program": {
-        "desc": "Capture every customer and turn them into repeat",
-        "title": "Loyalty"
+      "payment_terminal": {
+        "title": "Payment Terminal",
+        "desc": "Integrated payments for dine-in and online orders."
       },
-      "restaurant-online-ordering-system": {
-        "desc": "Seamless integration for pickup and delivery orders directly from your site.",
-        "title": "Online Ordering"
+      "virtual_lounge": {
+        "title": "Virtual Lounge",
+        "desc": "Engage guests and upsell while they wait."
       },
-      "restaurant-payment-terminal": {
-        "desc": "Accept in-person payments with no annual fees or lock-ins",
-        "title": "Payment Terminal"
+      "survey_tool": {
+        "title": "Survey Tool",
+        "desc": "Gather feedback and improve guest satisfaction."
       },
-      "restaurant-reservation-system": {
-        "desc": "Accept reservations to capture future demand",
-        "title": "Reservation"
+      "email_marketing_system": {
+        "title": "Email Marketing System",
+        "desc": "Automate campaigns to drive repeat visits."
       },
-      "restaurant-survey-tool": {
-        "desc": "Automated surveys that boosts your brand's visibility",
-        "title": "Survey"
+      "crm_customer_intelligence": {
+        "title": "CRM & Customer Intelligence",
+        "desc": "Understand your guests and personalize experiences."
       },
-      "restaurant-website-builder": {
-        "desc": "Communicate your brand across all digital channels",
-        "title": "Virtual Lounge"
+      "oddle_eats_network": {
+        "title": "Oddle Eats Network",
+        "desc": "Reach more diners on our food discovery platform."
       }
     },
-    "resource": {
-      "blog": {
-        "title": "Blog"
-      }
+    "resources": {
+       "blog": {
+         "title": "Blog"
+       },
+       "customer_stories": {
+         "title": "Customer Stories"
+       },
+       "comparison": {
+         "title": "Comparison"
+       },
+       "about_us": {
+         "title": "About Us"
+       },
+       "help_center": {
+         "title": "Help Center"
+       }
     }
+  },
+  "footer": {
+    "copyright": "© {{currentYear}} Oddle. All rights reserved.",
+    "company": "Company",
+    "about_us": "About Us",
+    "careers": "Careers",
+    "contact_us": "Contact Us",
+    "products": "Products",
+    "online_ordering": "Online Ordering",
+    "reservations": "Reservations",
+    "loyalty_crm": "Loyalty & CRM",
+    "virtual_lounge": "Virtual Lounge",
+    "legal": "Legal",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_service": "Terms of Service",
+    "facebook": "Facebook",
+    "linked_in": "LinkedIn"
+  },
+  "common": {
+    "Privacy Policy": "Privacy Policy",
+    "Terms of Service": "Terms of Service",
+    "Contact Us": "Contact Us",
+    "About Us": "About Us"
   }
 }

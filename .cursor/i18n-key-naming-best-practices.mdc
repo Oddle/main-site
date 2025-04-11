@@ -1,0 +1,102 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+name: "i18n-key-naming-best-practices.mdc"
+description: "General best practices for naming internationalization (i18n) translation keys using a hierarchical structure."
+patterns: ["*.json", "*.ts", "*.js", "*.tsx", "*.jsx", "*.yaml", "*.po"]
+priority: 1 
+---
+
+# Translation Key Naming Best Practices (General)
+
+This document outlines general best practices for naming and organizing translation keys, promoting clarity, consistency, and maintainability in internationalization (i18n) workflows. This approach favors a hierarchical, dot-separated structure.
+
+## Key Structure: `scope.component.purpose`
+
+Keys should generally follow a hierarchical structure, moving from broad context to specific meaning.
+
+1.  **`scope` (Top-Level Namespace):**
+    *   Represents a major feature area, page, screen, or general domain.
+    *   Use `common` or `global` for terms reused widely across the application (e.g., "Save", "Cancel", "OK").
+    *   Examples: `common`, `global`, `authentication`, `userProfile`, `productDetails`, `settings`.
+
+2.  **`component` (Mid-Level Namespace - Optional but Recommended):**
+    *   Narrows the scope to a specific component, UI section, or logical group within the top-level scope.
+    *   Helps prevent naming collisions and improves organization. Keep nesting depth reasonable (2-3 levels recommended).
+    *   Examples: `buttons`, `labels`, `errors`, `titles`, `form`, `sidebar`, `header`, `confirmationDialog`.
+
+3.  **`purpose` (String Identifier):**
+    *   The final part describes the *purpose* or *semantic meaning* of the string, not its literal text.
+    *   Should be meaningful to both developers and translators.
+    *   Use a consistent casing convention (e.g., `camelCase` or `snake_case`). `camelCase` is common in JS/TS projects.
+    *   Examples: `pageTitle`, `submitButtonLabel`, `userNameInputPlaceholder`, `invalidEmailErrorMessage`, `itemCount`.
+
+## Key Principles:
+
+*   **Hierarchy:** Organize keys from broad to specific using dot (`.`) separators.
+*   **Meaningful Names:** Key names (especially the `purpose` part) should describe *what* the text is for, not *what* it says. Avoid using the default language translation text as the key name (unless using specific systems like Gettext).
+*   **Consistency:** Apply the chosen structure and casing (`camelCase` or `snake_case`) consistently across the project.
+*   **Context:** Use namespaces (`scope`, `component`) to provide context and prevent naming conflicts between different parts of the application.
+*   **Reusability:** Leverage a `common` or `global` namespace for frequently used, context-independent terms. Avoid overusing it for terms that might need context-specific translations.
+*   **Avoid Concatenation:** Do not build translated strings by concatenating multiple keys in code. Create a specific key for the complete phrase to allow for correct grammatical structure in all languages.
+*   **Cleanliness:** Regularly review and remove unused ("orphan") keys.
+*   **Documentation:** Add comments or descriptions to keys, especially if their purpose isn't obvious from the name, to aid translators. Use Translation Management Systems (TMS) features if available.
+
+## Examples:
+
+```json
+{
+  "common": {
+    "actions": {
+      "save": "Save",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "next": "Next"
+    },
+    "status": {
+      "loading": "Loading...",
+      "error": "An error occurred"
+    }
+  },
+  "authentication": {
+    "loginPage": {
+      "title": "Log In",
+      "forgotPasswordLink": "Forgot Password?"
+    },
+    "loginForm": {
+      "emailLabel": "Email Address",
+      "passwordLabel": "Password",
+      "submitButton": "Log In"
+    },
+    "errors": {
+      "invalidCredentials": "Invalid email or password.",
+      "networkError": "Could not connect. Please try again."
+    }
+  },
+  "userProfile": {
+    "header": {
+      "title": "Your Profile"
+    },
+    "buttons": {
+      "editProfile": "Edit Profile",
+      "changePassword": "Change Password"
+    },
+    "notifications": {
+      // Example using ICU Plural format in the *value*
+      "unreadCount": "{count, plural, =0 {No unread notifications} one {You have # unread notification} other {You have # unread notifications}}"
+    }
+  }
+}
+```
+
+## ICU Message Format
+
+Complex logic like plurals (`plural`) or selections based on variables (`select`) should be handled within the translation *value* using the ICU Message Format, not by creating different key structures.
+
+*   **Key:** `settings.themeSelector.label`
+*   **Value:** `"{theme, select, light {Light Mode} dark {Dark Mode} system {System Default} other {Unknown Theme}}"`
+
+By following these guidelines, you can create a robust and maintainable i18n system.
