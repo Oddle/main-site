@@ -1,0 +1,85 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+description: "Guide the creation of new UI components as reusable, data-driven sections using React and Tailwind CSS."
+patterns: ["src/components/**/*.tsx", "src/app/**/*.tsx"] # Apply to components and potentially page sections
+---
+
+# Reusable Data-Driven UI Sections
+
+When tasked with creating new UI components, especially those representing distinct sections of a webpage (like heroes, feature lists, grids, CTAs, etc.), please adhere to the following principles:
+
+1.  **Build as React Functional Components:** Use standard React functional component syntax (`export default function MySectionComponent(...)`).
+
+2.  **Data-Driven via Props:**
+    *   **Crucially, design components to accept props for *all* dynamic content.** This includes text (titles, descriptions, labels), lists of items, image sources and alt text, button text, button links or actions, configuration options (like layout variations), etc.
+    *   Define clear TypeScript interfaces for the component's props (e.g., `interface MySectionProps { ... }`).
+    *   **Avoid hardcoding content directly in the JSX.** The component should render data passed to it, not contain the data itself.
+
+3.  **Represent Self-Contained Sections:** Ensure the component encapsulates the necessary structure, styling, and potentially minimal client-side logic for its specific UI block.
+
+4.  **Use Tailwind CSS:** Apply styling using Tailwind utility classes for consistency with the project's styling approach.
+
+5.  **Leverage Existing UI Primitives:** Utilize shared components, particularly those from `shadcn/ui` found in `@/components/ui` (e.g., `Button`, `Card`, `Carousel`) where appropriate, following the `shadcn-ui.mdc` rule.
+
+6.  **Aim for Reusability:** Structure the component so it could potentially be reused on different pages or in different contexts with different data conforming to its prop interface.
+
+## Conceptual Example (Illustrative Props)
+
+```typescript
+// Define the shape of the data the component expects
+interface CallToActionProps {
+  title: string;
+  description: string;
+  imageUrl?: string; // Optional image
+  imageAlt?: string;
+  primaryButton: {
+    text: string;
+    action: string; // Could be a URL or an identifier for an onClick handler
+  };
+  secondaryButton?: { // Optional secondary action
+    text: string;
+    action: string;
+  };
+}
+
+// The component receives data via props
+export default function CallToActionSection({
+  title,
+  description,
+  imageUrl,
+  imageAlt,
+  primaryButton,
+  secondaryButton
+}: CallToActionProps) {
+  // ... component implementation using props ...
+  // Use Button from @/components/ui for buttons
+  return (
+    <section className="bg-muted p-8 rounded-lg">
+      {/* ... render title, description, image conditionally ... */}
+      <div className="flex gap-4 mt-4">
+        <Button onClick={() => handleAction(primaryButton.action)}>
+          {primaryButton.text}
+        </Button>
+        {secondaryButton && (
+          <Button variant="outline" onClick={() => handleAction(secondaryButton.action)}>
+            {secondaryButton.text}
+          </Button>
+        )}
+      </div>
+    </section>
+  );
+
+  function handleAction(action: string) {
+    // Logic to handle button click based on action (e.g., navigate, trigger event)
+    console.log("Action triggered:", action);
+    if (action.startsWith('/')) {
+       window.location.href = action;
+    }
+  }
+}
+```
+
+By enforcing this data-driven approach, components remain flexible, easier to connect to content sources (like a CMS or API), and simpler to maintain.

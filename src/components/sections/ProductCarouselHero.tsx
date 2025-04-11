@@ -8,14 +8,44 @@ import Autoplay from "embla-carousel-autoplay"
 import React from "react";
 import clsx from "clsx";
 
-interface ProductCarouselHeroProps {
-  reverseMobileLayout?: boolean;
+interface SlideData {
+  imageSrc: string;
+  imageAlt: string;
 }
 
-export default function ProductCarouselHero({ reverseMobileLayout = false }: ProductCarouselHeroProps) {
+interface ButtonData {
+  text: string;
+  action: string;
+}
+
+interface ProductCarouselHeroProps {
+  reverseMobileLayout?: boolean;
+  title: string;
+  description: string;
+  primaryButton: ButtonData;
+  secondaryButton: ButtonData;
+  slides: SlideData[];
+}
+
+export default function ProductCarouselHero({
+  reverseMobileLayout = false,
+  title,
+  description,
+  primaryButton,
+  secondaryButton,
+  slides = [],
+}: ProductCarouselHeroProps) {
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   )
+
+  const handleButtonClick = (action: string) => {
+    if (action.startsWith('/')) {
+      window.location.href = action;
+    } else {
+      console.log('Button action:', action);
+    }
+  };
 
   return (
     <>
@@ -27,19 +57,29 @@ export default function ProductCarouselHero({ reverseMobileLayout = false }: Pro
             "lg:col-span-3",
             reverseMobileLayout ? "order-2 lg:order-1 mt-10 lg:mt-0" : "order-1"
           )}>
-            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-              Making revenue growth easy for restaurants
-            </h1>
-            <p className="mt-3 text-xl text-muted-foreground">
-              Oddle empowers restaurants across the world to capture customer data, build their brand, and grow their business
-            </p>
+            {title && (
+              <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+                {title}
+              </h1>
+            )}
+            {description && (
+              <p className="mt-3 text-xl text-muted-foreground">
+                {description}
+              </p>
+            )}
             <div className="mt-5 lg:mt-8 flex flex-col sm:items-center gap-2 sm:flex-row sm:gap-3">
-            <div className="mt-7 grid gap-3 w-full sm:inline-flex">
-              <Button size={"lg"} className="cursor-pointer">Get started</Button>
-              <Button variant={"outline"} size={"lg"} className="cursor-pointer">
-                Contact sales team
-              </Button>
-            </div>
+              <div className="mt-7 grid gap-3 w-full sm:inline-flex">
+                {primaryButton?.text && (
+                  <Button size={"lg"} className="cursor-pointer" onClick={() => handleButtonClick(primaryButton.action)}>
+                    {primaryButton.text}
+                  </Button>
+                )}
+                {secondaryButton?.text && (
+                  <Button variant={"outline"} size={"lg"} className="cursor-pointer" onClick={() => handleButtonClick(secondaryButton.action)}>
+                    {secondaryButton.text}
+                  </Button>
+                )}
+              </div>
             </div>
             {/* Brands */}
             <div className="mt-6 lg:mt-12">
@@ -152,12 +192,12 @@ export default function ProductCarouselHero({ reverseMobileLayout = false }: Pro
               onMouseLeave={plugin.current.reset}
             >
               <CarouselContent>
-                {Array.from({ length: 5 }).map((_, index) => (
+                {slides.map((slide, index) => (
                   <CarouselItem key={index}>
                     <img
                       className="w-full rounded-xl"
-                      src="https://placehold.co/700x540"
-                      alt={`Image ${index + 1}`}
+                      src={slide.imageSrc}
+                      alt={slide.imageAlt}
                     />
                   </CarouselItem>
                 ))}

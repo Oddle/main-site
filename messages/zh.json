@@ -130,6 +130,41 @@
       "virtual-lounge": {
         "desc": "",
         "title": ""
+      },
+      "oddle-eats": {
+        "desc": "",
+        "title": ""
+      },
+      "restaurant-crm-customer-intelligence": {
+        "desc": "",
+        "title": ""
+      },
+      "restaurant-email-marketing-system": {
+        "desc": "",
+        "title": ""
+      },
+      "restaurant-loyalty-crm-system": {
+        "desc": "",
+        "title": ""
+      },
+      "restaurant-online-ordering-system": {
+        "desc": "",
+        "title": ""
+      },
+      "restaurant-payment-terminal": {
+        "desc": "",
+        "title": ""
+      },
+      "restaurant-reservation-system": {
+        "desc": "",
+        "title": ""
+      },
+      "restaurant-survey": {
+        "desc": "",
+        "title": ""
+      },
+      "restaurant-virtual-lounge": {
+        "title": ""
       }
     },
     "resource": {
