@@ -163,5 +163,98 @@
         ]
       }
     }
+  ],
+  "products/restaurant-loyalty-crm-system": [
+    {
+      "component": "ProductCarouselHero",
+      "props": {
+        "title": "Turn every visit into a loyal customer",
+        "description": "Capture, engage, and retain your customers with a loyalty program designed for Restaurants",
+        "primaryButton": { "text": "Get Started", "action": "/get-started" },
+        "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales" },
+        "slides": [
+          { 
+            "imageSrc": "https://placehold.co/700x540/E8E2F0/AAAAAA?text=Loyalty+UI", 
+            "imageAlt": "Restaurant Loyalty Program UI Showcase"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FeatureSectionWithImages",
+      "props": {
+        "sectionTitle": "How restaurants grow using Oddle",
+        "sectionDescription": "",
+        "features": [
+          {
+            "title": "Capture Every Customer",
+            "description": "Grow your customer database",
+            "items": [
+              "Sign up diners in a flash, whether at the table or counter, with QR Scans or NFC Taps.",
+              "The sleek, frictionless process that ensures you capture data from every guest, empowering you to deliver smarter, more personalized loyalty experiences."
+            ],
+            "imageSrc": "https://placehold.co/600x400/F0E8E2/AAAAAA?text=Capture+Customer",
+            "imageAlt": "Phone showing successful check-in for loyalty program"
+          },
+          {
+            "title": "Automate Engagement",
+            "description": "Keep your Restaurant Top of Mind",
+            "items": [
+              "Automate personalized rewards, birthday offers, reminders for unused redeemables, and even customer feedback after visits.",
+              "Stay top of mind while saving time and driving repeat visits with ease."
+            ],
+            "imageSrc": "https://placehold.co/600x400/E2F0E8/AAAAAA?text=Automate+Engagement",
+            "imageAlt": "Phone showing loyalty reward notification"
+          }
+        ]
+      }
+    }
+  ],
+  "products/restaurant-virtual-lounge": [
+    {
+      "component": "ProductCarouselHero",
+      "props": {
+        "title": "Showcase Your Brand Online with Oddle's Virtual Lounge",
+        "description": "Create a branded digital space to engage customers, showcase your menu, and drive both online and in-person visits.",
+        "primaryButton": { "text": "Get Started", "action": "/get-started" },
+        "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales" },
+        "slides": [
+          { 
+            "imageSrc": "https://placehold.co/700x540/E2E8F0/AAAAAA?text=Virtual+Lounge+UI", 
+            "imageAlt": "Phone showing Oddle Virtual Lounge UI"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FeatureSectionWithImages",
+      "props": {
+        "sectionTitle": "",
+        "sectionDescription": "",
+        "features": [
+          {
+            "title": "Showcase Your Restaurant's Personality",
+            "description": "Create a branded digital space that tells your story, showcases your menu, and highlights promotions",
+            "items": [],
+            "imageSrc": "https://placehold.co/600x400/E8E2F0/AAAAAA?text=Personality",
+            "imageAlt": "Phone showing social media interactions"
+          },
+          {
+            "title": "Connect with Customers Anywhere",
+            "description": "Engage diners whether they are looking to book a table, order delivery, or browse your offerings online.",
+            "items": [],
+            "imageSrc": "https://placehold.co/600x400/F0E8E2/AAAAAA?text=Connect",
+            "imageAlt": "Phone showing email signup form in virtual lounge"
+          },
+          {
+            "title": "Create a Seamless Customer Experience",
+            "description": "Integrate your delivery, reservations, and loyalty systems for a unified experience that delights your customers",
+            "items": [],
+            "imageSrc": "https://placehold.co/600x400/E2F0E8/AAAAAA?text=Seamless+Experience",
+            "imageAlt": "Phone showing integrated loyalty and ordering UI"
+          }
+        ]
+      }
+    }
   ]
 } 

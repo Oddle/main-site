@@ -1,0 +1,70 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+--
+description: "Ensures the correct type signature is used for `params` in Next.js `generateMetadata` functions."
+patterns: ["*layout.tsx", "*page.tsx", "*layout.js", "*page.js"]
+---
+
+# Handling `params` in Next.js `generateMetadata`
+
+When defining a `generateMetadata` function in Next.js `app` directory layouts (`layout.tsx`) or pages (`page.tsx`), the `params` object received by the function is a **Promise**, not a plain object. You must `await` this promise to access the route parameters.
+
+## Problem Example
+
+Type error: Type '{ ... }' does not satisfy the constraint '...Props'.
+Types of property 'params' are incompatible.
+Type '{ ... }' is missing the following properties from type 'Promise<any>': then, catch, finally, [Symbol.toStringTag]
+
+
+This often happens if `params` is typed as a plain object or destructured directly in the function signature without awaiting.
+
+## Correct Usage
+
+Define a `Props` type (or use inline types) where `params` is explicitly typed as a `Promise`, and then `await` it within the function body.
+
+**Example (`src/app/products/[id]/page.tsx`):**
+
+```typescript
+import type { Metadata, ResolvingMetadata } from 'next'
+
+// Define Props type with params as a Promise
+type Props = {
+  params: Promise<{ id: string }> // Correct: params is a Promise
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export async function generateMetadata(
+  { params, searchParams }: Props, // Pass params directly
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // Await params to access route parameters
+  const { id } = await params // Correct: await the promise
+
+  // Fetch data using the resolved id
+  const product = await fetch(`https://.../${id}`).then((res) => res.json())
+
+  // Optionally access parent metadata
+  const previousImages = (await parent).openGraph?.images || []
+
+  return {
+    title: product.title,
+    openGraph: {
+      images: ['/some-specific-page-image.jpg', ...previousImages],
+    },
+  }
+}
+
+// The Page component itself still receives params as a plain object
+// if you define the Props type separately for it.
+// Or you might define a different Props type for the Page component.
+export default function Page({ params, searchParams }: { params: { id: string }, /* ... */ }) {
+  // Use params directly here, e.g., params.id
+  return <div>Product ID: {params.id}</div>
+}
+
+```
+
+**Key Takeaway:** Always type `params` as a `Promise` within the `Props` for `generateMetadata` and use `await params` inside the function to get the actual parameter values.

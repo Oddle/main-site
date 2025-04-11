@@ -34,7 +34,7 @@ const productItems: { key: string; category: 'Acquire' | 'Build' | 'Convert' }[]
   { key: 'restaurant-online-ordering-system', category: 'Acquire' }, //t('online-ordering')
   { key: 'restaurant-loyalty-program', category: 'Acquire' },//t('loyalty')
   { key: 'restaurant-payment-terminal', category: 'Acquire' }, //t('payment-terminal')
-  { key: 'restaurant-website-builder', category: 'Build' }, //t('virtual-lounge')
+  { key: 'restaurant-virtual-lounge', category: 'Build' }, //t('virtual-lounge')
   { key: 'restaurant-survey-tool', category: 'Build' }, //t('survey')
   { key: 'restaurant-email-marketing-system', category: 'Convert' }, //t('marketing-engine')
   { key: 'restaurant-crm-customer-intelligence', category: 'Convert' }, //t('customer-intelligence')
