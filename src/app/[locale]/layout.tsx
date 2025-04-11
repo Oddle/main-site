@@ -82,13 +82,13 @@ export function generateStaticParams() {
 
 // Define Props type for generateMetadata
 type Props = {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
 export async function generateMetadata({
   params,
-}: Props): Promise<Metadata> { // Use the defined Props type
-  const { locale } = params; // Remove await
+}: Props): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
   const languages: Record<string, string> = {};
