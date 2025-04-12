@@ -1,0 +1,60 @@
+{
+  "navbar": {
+    "links": [
+      {
+        "label": "products",
+        "isMegaMenu": true
+      },
+      {
+        "label": "resources",
+        "isMegaMenu": true
+      },
+      {
+        "label": "pricing"
+      }
+    ]
+  },
+  "footer": {
+    "linkSections": [
+      {
+        "title": "products",
+        "links": [
+          { "label": "reservation-system" },
+          { "label": "online-ordering-system" },
+          { "label": "loyalty-program" },
+          { "label": "payment-terminal" },
+          { "label": "virtual-lounge" },
+          { "label": "survey-tool" },
+          { "label": "email-marketing-system" },
+          { "label": "crm-customer-intelligence" },
+          { "label": "oddle-eats-network" }
+      ]
+      },
+      {
+        "title": "resources",
+        "links": [
+           { "label": "blog" },
+           { "label": "customer-stories" },
+           { "label": "comparison" },
+           { "label": "help-center" },
+           { "label": "guides" },
+           { "label": "restaurant-online-ordering-guide" },
+           { "label": "restaurant-reservation-guide" },
+           { "label": "restaurant-loyalty-guide" },
+           { "label": "restaurant-marketing-guide" }        ]
+      },
+      {
+        "title": "company",
+        "links": [
+          { "label": "about-us" },
+          { "label": "contact-us" },
+          { "label": "careers" }
+        ]
+      }
+    ],
+    "socialLinks": [
+      { "label": "facebook" },
+      { "label": "linkedin" }
+    ]
+  }
+} 

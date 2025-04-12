@@ -1,0 +1,150 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: "Use src/data/globalContent.json to populate Navbar and Footer content dynamically. String values in the JSON are treated as translation keys."
+patterns: ["src/components/common/NavBar.tsx", "src/components/common/Footer.tsx", "src/data/globalContent.json"] # Adjust component paths if necessary
+---
+
+# Navbar and Footer Content from JSON
+
+To ensure consistency and ease of updates, navigation links in the Navbar and content/links in the Footer should be generated dynamically by reading data from a central JSON file: `src/data/globalContent.json`.
+
+String values within this JSON (e.g., for labels, titles, descriptions) will be automatically treated as translation keys by the `next-intl` setup, similar to how sections are handled in `DynamicSectionPage`.
+
+## JSON File Structure (`src/data/globalContent.json`)
+
+The JSON file should contain top-level keys for `navbar` and `footer`. Use descriptive properties like `label` for link text, `title` for section headings, and `copyright` for the copyright text.
+
+**Example:**
+
+```json
+{
+  "navbar": {
+    "links": [
+      { "label": "Home", "href": "/" }, // "Home" will be looked up in messages files
+      { "label": "Products", "href": "/products" },
+      {
+        "label": "Solutions",
+        "href": "/solutions",
+        "subItems": [ // Optional: for dropdowns/megamenus
+           { "label": "Online Ordering", "href": "/products/restaurant-online-ordering-system" },
+           { "label": "Reservations", "href": "/products/restaurant-reservation-system" }
+           // Ensure "Online Ordering" and "Reservations" exist as keys in messages files
+        ]
+      },
+      { "label": "Contact Sales", "href": "/contact-sales" }
+    ]
+  },
+  "footer": {
+    "copyright": "© {currentYear} Your Company Name. All rights reserved.", // Can include placeholders
+    "linkSections": [
+      {
+        "title": "Company", // Optional title for the section
+        "links": [
+          { "label": "About Us", "href": "/about" },
+          { "label": "Careers", "href": "/careers" }
+        ]
+      },
+      {
+        "title": "Legal",
+        "links": [
+           { "label": "Privacy Policy", "href": "/privacy" },
+           { "label": "Terms of Service", "href": "/terms" }
+        ]
+      }
+    ],
+    "socialLinks": [
+        { "name": "Facebook", "href": "https://facebook.com/...", "icon": "facebook" },
+        { "name": "LinkedIn", "href": "https://linkedin.com/...", "icon": "linkedin" }
+    ]
+  }
+}
+```
+
+## Component Usage
+
+Import the JSON data. Use `useTranslations` and pass the string values from the JSON (like `link.label`) to the `t` function. For more complex data structures (like nested objects/arrays within props, though less likely for nav/footer), a recursive translation function similar to the one in `DynamicSectionPage` might be necessary.
+
+### Navbar (`src/components/common/NavBar.tsx`)
+
+```typescript
+import React from 'react';
+import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import globalContent from '@/data/globalContent.json';
+// Other necessary imports
+
+export default function NavBar() {
+  const t = useTranslations(); // Use a relevant namespace if needed, e.g., useTranslations('Navbar')
+
+  return (
+    <nav>
+      {globalContent.navbar.links.map((link) => {
+        // Basic link rendering - add logic for subItems if needed
+        return (
+          <Link key={link.href} href={link.href}>
+            {t(link.label)} {/* Pass the label directly to t() */}
+          </Link>
+        );
+        // Handle rendering dropdowns based on link.subItems, translating labels similarly
+      })}
+    </nav>
+  );
+}
+```
+
+### Footer (`src/components/common/Footer.tsx` - Example Structure)
+
+```typescript
+import React from 'react';
+import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import globalContent from '@/data/globalContent.json';
+// Import icons if rendering socialLinks
+
+export default function Footer() {
+  const t = useTranslations(); // Use a relevant namespace if needed, e.g., useTranslations('Footer')
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer>
+      {/* Render link sections */}
+      {globalContent.footer.linkSections.map((section) => (
+        <div key={section.title}> {/* Use title or generate a key */}
+          {section.title && <h4>{t(section.title)}</h4>}
+          <ul>
+            {section.links.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href}>
+                  {t(link.label)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+
+      {/* Render social links if needed */}
+      <div>
+        {globalContent.footer.socialLinks.map((social) => (
+          <a key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
+            {/* Render Icon based on social.icon */}
+             {/* Maybe translate social.name if needed: {t(social.name)} */}
+             {social.name} {/* Or display name directly if not translated */}
+          </a>
+        ))}
+      </div>
+
+      {/* Render copyright, passing placeholders */}
+      <p>{t(globalContent.footer.copyright, { currentYear })}</p>
+    </footer>
+  );
+}
+```
+
+## Rationale
+
+Using JSON for this data centralizes configuration, making it easier to update links and content without digging into component code. Treating string values as translation keys integrates smoothly with `next-intl` and keeps the JSON readable.

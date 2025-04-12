@@ -36,7 +36,9 @@
         "livePreviewButtonText": "See Live Preview",
         "cards": [
           { "id": 1, "type": "large", "title": "Unified Dashboard", "description": "Monitor sales...", "imageUrl": "https://placehold.co/600x400/E2E8F0/AAAAAA?text=Dashboard", "imageAlt": "Unified Dashboard Alt" },
-          { "id": 2, "type": "small", "title": "Order Management", "description": "Streamline orders...", "imageAlt": "Order Management Alt" }
+          { "id": 2, "type": "small", "title": "Order Management", "description": "Streamline orders...", "imageAlt": "Order Management Alt" },
+          { "id": 2, "type": "wide", "title": "Order Management", "description": "Streamline orders...", "imageAlt": "Order Management Alt" },
+          { "id": 2, "type": "large", "title": "Order Management", "description": "Streamline orders...", "imageAlt": "Order Management Alt" }
         ]
       }
     }
@@ -149,17 +151,6 @@
         "slides": [
           { "imageSrc": "https://placehold.co/700x540/F0E2E8/AAAAAA?text=Reservation1", "imageAlt": "Reservation System UI" },
           { "imageSrc": "https://placehold.co/700x540/AADDAA/AAAAAA?text=Reservation2", "imageAlt": "Table Management View" }
-        ]
-      }
-    },
-    {
-      "component": "FeatureShowcase",
-      "props": {
-        "title": "Streamline Your Bookings",
-        "items": [
-          { "title": "Smart Table Management", "description": "Optimize seating and minimize wait times." },
-          { "title": "Online Booking Widget", "description": "Accept reservations directly from your website." },
-          { "title": "Automated Reminders", "description": "Reduce no-shows with automatic guest confirmations and reminders." }
         ]
       }
     }

@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 import NavBar from "../common/NavBar";
 import ProductCarouselHero from "@/components/sections/ProductCarouselHero";
@@ -8,6 +7,7 @@ import ABCSection from "@/components/sections/ABCSection";
 import HeroSectionWithAppShowcase from "@/components/sections/HeroSectionWithAppShowcase";
 import FeatureSectionWithImages from "@/components/sections/FeatureSectionWithImages";
 import React from 'react'; // Import React for ComponentType typing
+import Footer from "../common/Footer";
 
 // --- Define type for section data --- (Good practice)
 interface SectionDefinition {
@@ -31,7 +31,6 @@ const componentMap = {
 
 // Update component signature to accept props
 export default function DynamicSectionPage({ sectionsData }: DynamicSectionPageProps) {
-  const f = useTranslations("Footer");
   const t = useTranslations(); // Use default namespace for section content
 
   // Recursive function to translate all string values
@@ -72,22 +71,7 @@ export default function DynamicSectionPage({ sectionsData }: DynamicSectionPageP
           return <DynamicComponent key={index} {...translatedProps} />;
         })}
       </main>
-
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t justify-between">
-        <p className="text-xs text-gray-500 dark:text-gray-400">
-          {f("copyright")}
-        </p>
-        <nav className=" flex gap-4 sm:gap-6">
-          <Link
-            className="text-xs hover:underline underline-offset-4 hover:text-primary transition-colors duration-200"
-            href="https://github.com/S0vers/i18n-Nextjs-BoilerPlate"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {f("githubLink")}
-          </Link>
-        </nav>
-      </footer>
+      <Footer />
     </div>
   );
 }

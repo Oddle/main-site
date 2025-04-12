@@ -1,0 +1,182 @@
+{
+  "products": {
+    "reservation-system": {
+      "name": "Reservation System",
+      "description": "Accept reservations to capture future demand",
+      "href": "/products/restaurant-reservation-system",
+      "category": "acquire"
+    },
+    "online-ordering-system": {
+      "name": "Online Ordering System",
+      "description": "Sell online and reach more customers",
+      "href": "/products/restaurant-online-ordering-system",
+      "category": "acquire"
+    },
+    "loyalty-program": {
+      "name": "Loyalty Program",
+      "description": "Capture every customer and turn them into repeat",
+      "href": "/products/restaurant-loyalty-program",
+      "category": "acquire"
+    },
+    "payment-terminal": {
+      "name": "Payment Terminal",
+      "description": "Accept in-person payments with no annual fees or lock-ins",
+      "href": "/products/restaurant-payment-terminal",
+      "category": "acquire"
+    },
+    "virtual-lounge": {
+      "name": "Virtual Lounge",
+      "description": "Communicate your brand across all digital channels",
+      "href": "/products/restaurant-virtual-lounge",
+      "category": "build"
+    },
+    "survey-tool": {
+      "name": "Survey Tool",
+      "description": "Automated surveys that boosts your brand's visibility",
+      "href": "/products/restaurant-survey-tool",
+      "category": "build"
+    },
+    "email-marketing-system": {
+      "name": "Email Marketing System",
+      "description": "Boost revenue through customer engagement and retention",
+      "href": "/products/restaurant-email-marketing-system",
+      "category": "convert"
+    },
+    "crm-customer-intelligence": {
+      "name": "Crm Customer Intelligence",
+      "description": "Supercharged CRM that gives you actionable insights",
+      "href": "/products/restaurant-crm-customer-intelligence",
+      "category": "convert"
+    },
+    "oddle-eats-network": {
+      "name": "Oddle Eats Network",
+      "description": "Tap into a million food lovers",
+      "href": "/products/oddle-eats-network",
+      "category": "convert"
+    }
+  },
+  "addresses": {
+    "singapore": {
+      "entityName": "The Oddle Company Pte Ltd",
+      "country": "Singapore",
+      "address": "67 Ayer Rajah Crescent, #06-18, Singapore 139950"
+    },
+    "malaysia": {
+      "entityName": "Oddle Malaysia",
+      "country": "Malaysia",
+      "address": "G.016, Ground Floor, The Square, Jaya One, 72A, Jalan Prof Diraja Ungku Aziz, Seksyen 13, 46200 Petaling Jaya, Selangor"
+    },
+    "hongkong": {
+      "entityName": "Oddle (Hong Kong) Limited",
+      "country": "Hong Kong",
+      "address": "Room 1210, 12/F, CEO Tower, 77 Wing Hong Street, Cheung Sha Wan, Kowloon, Hong Kong"
+    },
+    "australia": {
+      "entityName": "Oddle Australia",
+      "country": "Australia",
+      "address": "Level 23-25, Palace Tower Perth, 108 St Georges Terrace, Perth, WA 6000, Australia"
+    },
+    "taiwan": {
+      "entityName": "The Oddle Company Pte Ltd (Taiwan branch)",
+      "country": "Taiwan",
+      "address": "Rm 607, 6F, No 155, Sec 1, Heping E. Rd, Daan Dist, Taipei City 106, Taiwan"
+    }
+  },
+  "links": {
+    "explore-oddle": {
+      "name": "Explore Oddle",
+      "description": "Learn how Oddle helps restaurants grow.",
+      "href": "/"
+    },
+    "blog": {
+      "name": "Blog",
+      "description": "Insights and articles for restaurant growth",
+      "href": "/resources/blog"
+    },
+    "customer-stories": {
+      "name": "Customer Stories",
+      "description": "See how restaurants succeed with Oddle",
+      "href": "/resources/customer-stories"
+    },
+    "guides": {
+      "name": "Guides",
+      "description": "Comprehensive guides for restaurant operations",
+      "href": "/resources/guides"
+    },
+    "restaurant-online-ordering-guide": {
+      "name": "Restaurant Online Ordering Guide",
+      "description": "Master online ordering strategies",
+      "href": "/resources/guides/online-ordering"
+    },
+    "restaurant-reservation-guide": {
+      "name": "Restaurant Reservation Guide",
+      "description": "Optimize your reservation management",
+      "href": "/resources/guides/reservation"
+    },
+    "restaurant-loyalty-guide": {
+      "name": "Restaurant Loyalty Guide",
+      "description": "Build effective loyalty programs",
+      "href": "/resources/guides/loyalty"
+    },
+    "restaurant-marketing-guide": {
+      "name": "Restaurant Marketing Guide",
+      "description": "Boost your restaurant's marketing efforts",
+      "href": "/resources/guides/marketing"
+    },
+    "merchant-support": {
+      "name": "Merchant Support",
+      "description": "Get help and support for your Oddle account",
+      "href": "/resources/merchant-support"
+    },
+    "comparison": {
+      "name": "Comparison",
+      "description": "See how Oddle compares",
+      "href": "/resources/comparison"
+    },
+    "about-us": {
+      "name": "About Us",
+      "description": "Link Description",
+      "href": "/resources/aboutUs"
+    },
+    "help-center": {
+      "name": "Help Center",
+      "description": "Find answers to your questions",
+      "href": "https://support.oddle.me"
+    },
+    "pricing": {
+      "name": "Pricing",
+      "description": "Link Description",
+      "href": "/pricing"
+    },  
+    "careers": {
+      "name": "Careers",
+      "description": "Link Description",
+      "href": "/careers"
+    },
+    "contact-us": {
+      "name": "Contact Us",
+      "description": "Link Description",
+      "href": "/contact-sales"
+    },
+    "privacy-policy": {
+      "name": "Privacy Policy",
+      "description": "Link Description",
+      "href": "/privacy"
+    },
+    "terms-of-service": {
+      "name": "Terms of Service",
+      "description": "Link Description",
+      "href": "/terms"
+    },
+    "facebook": {
+      "name": "Facebook",
+      "description": "Link Description",
+      "href": "https://facebook.com/oddleapp"
+    },
+    "linked-in": {
+      "name": "LinkedIn",
+      "description": "Link Description",
+      "href": "https://linkedin.com/company/oddle"
+    }
+  }
+} 
