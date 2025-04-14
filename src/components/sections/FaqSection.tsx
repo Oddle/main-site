@@ -56,31 +56,31 @@ export default function FaqSection({ pageUrl, locale }: FaqSectionProps) {
     <>
       <div className="py-24 lg:py-32">
         <Container>
-          {/* Title */}
-          <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-            <h2 className="text-2xl font-bold md:text-4xl md:leading-tight">
-              Your questions, answered
-            </h2>
-            <p className="mt-1 text-muted-foreground">
-              Answers to the most frequently asked questions.
-            </p>
-          </div>
-          {/* End Title */}
+        {/* Title */}
+        <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+          <h2 className="text-2xl font-bold md:text-4xl md:leading-tight">
+            Your questions, answered
+          </h2>
+          <p className="mt-1 text-muted-foreground">
+            Answers to the most frequently asked questions.
+          </p>
+        </div>
+        {/* End Title */}
 
-          <div className="max-w-2xl mx-auto">
-            <Accordion type="single" collapsible className="w-full">
-              {pageFaqs.map((faq, index) => (
-                <AccordionItem value={`item-${index}`} key={faq.question}> 
-                  <AccordionTrigger className="text-lg font-semibold text-left">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground text-base">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
+        <div className="max-w-2xl mx-auto">
+          <Accordion type="single" collapsible className="w-full">
+            {pageFaqs.map((faq, index) => (
+              <AccordionItem value={`item-${index}`} key={faq.question}> 
+                <AccordionTrigger className="text-lg font-semibold text-left">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-base">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
         </Container>
       </div>
     </>
