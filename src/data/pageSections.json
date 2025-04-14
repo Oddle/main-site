@@ -18,13 +18,24 @@
     {
       "component": "IconSectionHorizontal",
       "props": {
-        "i18nBaseKey": "home.methodology",
-        "title": "Growing is as easy as ABC",
-        "subtitle": "Acquire, Build, and Convert Your Way to Success",
+        "sectionTag": null,
+        "sectionTitle": "Growing is as easy as ABC",
         "items": [
-          { "title": "Acquire Customer Data", "description": "Capture insights from every reservation, delivery, and dine-in visit to build a powerful customer database" },
-          { "title": "Build Your Brand", "description": "Create a seamless online presence that reflects your restaurant's identity and keeps customers engaged" },
-          { "title": "Convert for Growth", "description": "Turn first-time diners into regulars with automated rewards, campaigns, and personalized reminders" }
+          { 
+            "icon": "Database",
+            "title": "Acquire Customer Data", 
+            "description": "Capture insights from every reservation, delivery, and dine-in visit to build a powerful customer database" 
+          },
+          { 
+            "icon": "Megaphone",
+            "title": "Build Your Brand", 
+            "description": "Create a seamless online presence that reflects your restaurant's identity and keeps customers engaged" 
+          },
+          { 
+            "icon": "TrendingUp",
+            "title": "Convert for Growth", 
+            "description": "Turn first-time diners into regulars with automated rewards, campaigns, and personalized reminders" 
+          }
         ]
       }
     },
@@ -251,12 +262,24 @@
     {
       "component": "IconSectionHorizontal",
       "props": {
-        "i18nBaseKey": "onlineOrdering.keyFeatures",
-        "title": "Key Features",
+        "sectionTag": null,
+        "sectionTitle": "Key Features",
         "items": [
-          { "title": "Easy Menu Management", "description": "Update your menu in real-time." },
-          { "title": "Seamless Order Processing", "description": "Manage orders efficiently." },
-          { "title": "Integrated Delivery Options", "description": "Connect with delivery partners." }
+          { 
+            "icon": "Settings",
+            "title": "Easy Menu Management", 
+            "description": "Update your menu in real-time." 
+          },
+          { 
+            "icon": "Package",
+            "title": "Seamless Order Processing", 
+            "description": "Manage orders efficiently." 
+          },
+          { 
+            "icon": "Truck",
+            "title": "Integrated Delivery Options", 
+            "description": "Connect with delivery partners." 
+          }
         ]
       }
     },
@@ -551,6 +574,93 @@
           }
         ]
       }
+    }
+  ],
+  "products/restaurant-payment-terminal": [
+    {
+      "component": "HeroWithCarousel",
+      "props": {
+        "i18nBaseKey": "paymentTerminal.hero",
+        "title": "Transform every Payment Into a Growth Opportunity",
+        "description": "More than just card processing at competitive rates, we empower you with insightful customer data and ways to grow revenue, all in one mobile device.",
+        "primaryButton": { "text": "Get Started", "action": "/get-started" },
+        "secondaryButton": null,
+        "slides": [
+          { "imageSrc": "https://ucarecdn.com/2bbc4977-dfa2-424b-bae3-bee90a6cea1a/terminal_hero", "imageAlt": "Oddle Payment Terminal" }
+        ]
+      }
+    },
+    {
+      "component": "FeatureSectionAlternating",
+      "props": {
+        "sectionTitle": "Next-gen solutions designed to help you grow revenue",
+        "sectionDescription": null,
+        "items": [
+          {
+            "title": "Capture 100% of customers, no marketing opt-in needed",
+            "description": "Advanced analytics drives data-driven decisions, offering predictive insights, personalized recommendations, real-time analysis, cost savings, and risk mitigation. Choose advanced analytics for strategic decision-making and business growth.", 
+            "imageSrc": "https://ucarecdn.com/608c3b9f-aed6-482a-a2b7-d196a54380c4/terminal_grid_make_payment",
+            "imageAlt": "Analytics dashboard showing customer data",
+            "imagePosition": "left", 
+            "linkText": null,
+            "linkAction": null
+          },
+          {
+            "title": "Get a true health score on customer retention",
+            "description": "Move beyond revenue tracking to understand your restaurant's customer health. By capturing a unique profile for each visitor, you'll see an accurate score of your customer retention rates, providing a clear snapshot of how often guests return and the strength of their loyalty.",
+            "imageSrc": "https://ucarecdn.com/6eaef2eb-53b4-4dd6-ae5e-9e8bb7e7c0b9/terminal_grid_staff_report",
+            "imageAlt": "Graph showing customer retention score",
+            "imagePosition": "right", 
+            "linkText": null,
+            "linkAction": null
+          },
+          {
+            "title": "Collect contacts, boost database marketing",
+            "description": "Effortlessly grow your contact list when customers claim redeemables by scanning a QR code on their receipt. Once added, you can send targeted updates, exclusive offers, or online store promotions to keep your restaurant top of mind.",
+            "imageSrc": "https://ucarecdn.com/84fb65b4-76f2-4c16-b46a-d9907f6c9b79/terminal_grid_marketing",
+            "imageAlt": "Phone scanning QR code on receipt",
+            "imagePosition": "left", 
+            "linkText": null,
+            "linkAction": null
+          },
+          {
+            "title": "Drive return visits with targeted redeemables",
+            "description": "Encourage repeat business with tailored redeemables. Set thresholds, like spending minimums, to trigger exclusive return offers that bring customers back, keeping them engaged and driving loyalty.",
+            "imageSrc": "https://ucarecdn.com/9ff7200b-b940-406e-bdde-6bcb702c62cc/terminal_grid_qr_code_receipt",
+            "imageAlt": "Phone showing loyalty redeemable offer",
+            "imagePosition": "right", 
+            "linkText": null,
+            "linkAction": null
+          }
+        ]
+      }
+    },
+    {
+      "component": "IconSectionHorizontal",
+      "props": {
+        "sectionTag": null,
+        "sectionTitle": "Built for seamless operations",
+        "items": [
+          {
+            "icon": "Headset",
+            "title": "Dedicated Customer Support",
+            "description": "Our team is always ready to help, ensuring your business stays up and running."
+          },
+          {
+            "icon": "Clock",
+            "title": "48-hour Onboarding",
+            "description": "Get started with Oddle Terminal within 2 business days—quick, easy, and hassle-free."
+          },
+          {
+            "icon": "Wifi",
+            "title": "Reliable Connectivity Anywhere",
+            "description": "With an sim in every device, enjoy stable internet for transactions, even in remote locations."
+          }
+        ]
+      }
+    },
+    {
+      "component": "FaqSection"
     }
   ]
 } 

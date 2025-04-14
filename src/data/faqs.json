@@ -150,5 +150,29 @@
         "answer": "Yes, Oddle Reserve is a scalable solution suitable for restaurants of all sizes, from small independent diners, cafes to large chains. Its flexible features and cost-effective pricing make it ideal for any setup."
       }
     ]
+  },
+  "products/restaurant-payment-terminal":  {
+    "en": [
+    {
+      "question": "What types of payments does Oddle’s card payment terminals accept?",
+      "answer": "Oddle’s credit card terminal supports a wide range of payment methods, including: Credit and Debit Cards (Visa, Mastercard, AMEX) and Contactless Payments (Apple Pay, Google Pay, Samsung Pay)."
+    },
+    {
+      "question": "What currencies are supported?",
+      "answer": "Oddle’s credit card terminal processes payments in the home currency of your region. For example: In Singapore, transactions are processed in Singapore Dollars (SGD). In Malaysia, transactions are processed in Malaysian Ringgit (MYR)."
+    },
+    {
+      "question": "Is a SIM card included with Oddle’s credit card terminal device?",
+      "answer": "Yes, every Oddle credit card terminal device comes with a pre-installed SIM card, ensuring seamless mobile connectivity. This allows the terminal to operate reliably without the need for WiFi, making it perfect for both countertop setups and handheld use. Whether your restaurant requires a stationary solution or a wireless terminal for on-the-go payments, Oddle terminals are ready to use right out of the box with no additional setup required."
+    },
+    {
+      "question": "Are there any rental fees or hardware costs?",
+      "answer": "No, Oddle’s credit card terminal has no rental fees or long-term contracts. We only require a refundable deposit for the hardware, ensuring flexibility for your business. Unlike banks or other providers, we do not lock merchants into annual agreements or charge SaaS fees. With Oddle, you only pay per use, making it a cost-effective and hassle-free solution for your restaurant's payment needs."
+    },
+    {
+      "question": "How long does onboarding take?",
+      "answer": "Onboarding with Oddle is quick and hassle-free. You can get a quote and set up your credit card terminal in just 2 days, allowing you to start accepting payments almost immediately. Unlike banks, which often require lengthy processes involving weeks or even months to complete paperwork and open accounts, Oddle ensures a streamlined experience, saving you time and effort."
+    }
+    ] 
   }
 } 
