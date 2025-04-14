@@ -1,70 +1,101 @@
-// src/components/sections/ABCSection.tsx
+// src/components/sections/IconSectionHorizontal.tsx
 
-import { useTranslations } from 'next-intl'; // Import hook
-import { getTranslation } from '@/lib/i18nUtils'; // Import shared helper
-import Container from "@/components/common/Container"; // Import Container
+import { 
+  Timer, 
+  Zap, 
+  ZoomIn, 
+  Database, 
+  Megaphone, 
+  TrendingUp, 
+  Settings, 
+  Package, 
+  Truck,
+  Headset,
+  Clock,
+  Wifi
+} from "lucide-react"; // Import necessary icons
+import { FC } from 'react';
+import Container from "@/components/common/Container";
+import { cn } from "@/lib/utils";
 
-interface ABCItem {
-  // Change props to expect direct strings
-  title: string;       // Changed from titleKey
-  description: string; // Changed from descriptionKey
+// Map icon names to actual components
+const iconMap: { [key: string]: FC<React.SVGProps<SVGSVGElement>> } = {
+  Timer,
+  Zap,
+  ZoomIn,
+  Database,
+  Megaphone,
+  TrendingUp,
+  Settings,
+  Package,
+  Truck,
+  Headset,
+  Clock,
+  Wifi,
+  // Add other icons from lucide-react as needed
+};
+
+// Updated interface for individual items
+interface ValueItem {
+  icon?: keyof typeof iconMap; // Icon name is now optional
+  title: string;
+  description: string;
 }
 
-interface ABCSectionProps {
-  i18nBaseKey: string; // Added base key
-  title: string;       // Changed from titleKey
-  subtitle: string;    // Changed from subtitleKey
-  items: ABCItem[];
+// Updated interface for section props
+interface IconSectionHorizontalProps {
+  sectionTag?: string | null; // Optional tag above title
+  sectionTitle: string; // Main title
+  items: ValueItem[];
 }
 
 export default function IconSectionHorizontal({ 
-  i18nBaseKey, // Destructure base key
-  title: defaultTitle, 
-  subtitle: defaultSubtitle, 
-  items 
-}: ABCSectionProps) {
-  const t = useTranslations(); // Initialize hook
+  sectionTag,
+  sectionTitle,
+  items = [] // Provide default empty array
+}: IconSectionHorizontalProps) {
 
-  // Translate top-level props using imported helper
-  const title = getTranslation(t, `${i18nBaseKey}.title`, defaultTitle);
-  const subtitle = getTranslation(t, `${i18nBaseKey}.subtitle`, defaultSubtitle);
+  if (!items || items.length === 0) {
+    return null; // Don't render if no items
+  }
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+    // Updated section padding and removed background
+    <section className="w-full py-16 md:py-24 lg:py-32">
       <Container>
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="lg:w-3/4">
-            <h2 className="scroll-m-20 text-3xl font-bold tracking-tight sm:text-4xl">
-              {/* Use translated title */} 
-              {title}
-            </h2>
-            <p className="mt-3 text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              {/* Use translated subtitle */} 
-              {subtitle}
+        {/* Header Section - Centered */} 
+        <div className="mb-12 text-center md:mb-16 lg:mb-20">
+          {sectionTag && (
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary md:mb-3 lg:text-base">
+              {sectionTag}
             </p>
-          </div>
-          <div className="space-y-6 lg:space-y-10">
-            {items.map((item: ABCItem, index: number) => { // Added types here
-              // Translate item properties using the index directly
-              const itemTitle = getTranslation(t, `${i18nBaseKey}.${index}.title`, item.title);
-              const itemDescription = getTranslation(t, `${i18nBaseKey}.${index}.description`, item.description);
-              
-              return (
-                <div className="flex" key={index}> {/* Use index for React key */}
-                  <div className="ms-5 sm:ms-8">
-                    <h3 className="text-base sm:text-lg font-semibold">
-                      {/* Use translated item title */} 
-                      {itemTitle}
-                    </h3>
-                    <p className="mt-1 text-muted-foreground">
-                      {/* Use translated item description */} 
-                      {itemDescription}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          )}
+          <h2 className="text-3xl font-semibold tracking-tight lg:text-4xl">
+            {sectionTitle}
+          </h2>
+        </div>
+
+        {/* Items Grid Section */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          {items.map((item, index) => {
+            const IconComponent = item.icon ? iconMap[item.icon] : null;
+            return (
+              // Card-like div for each item
+              <div key={index} className="rounded-lg bg-muted p-6 dark:bg-slate-800/50">
+                {IconComponent && (
+                  <span className="mb-6 flex size-12 items-center justify-center rounded-full bg-background dark:bg-slate-900"> 
+                    <IconComponent className="size-6 text-primary" />
+                  </span>
+                )}
+                <h3 className="mb-2 text-xl font-medium">
+                  {item.title}
+                </h3>
+                <p className="text-base leading-relaxed text-muted-foreground">
+                  {item.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </Container>
     </section>

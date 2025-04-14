@@ -14,6 +14,8 @@ import FeatureSectionWithSplitImages from "@/components/sections/FeatureSectionW
 import FeatureSectionWithColumns from "@/components/sections/FeatureSectionWithColumns";
 import FeatureSectionWithTabs from "../sections/FeatureSectionWithTabs";
 import FeatureSectionWithAccordion from "../sections/FeatureSectionWithAccordion";
+import FeatureSectionGridCards from "../sections/FeatureSectionGridCards";
+import FeatureSectionAlternating from "../sections/FeatureSectionAlternating";
 // --- Define type for section data --- (Good practice)
 interface SectionDefinition {
   component: string; // Ideally keyof typeof componentMap, but string is simpler for now
@@ -40,7 +42,9 @@ const componentMap = {
   FeatureSectionWithSplitImages,
   FeatureSectionWithColumns,
   FeatureSectionWithTabs,
-  FeatureSectionWithAccordion
+  FeatureSectionWithAccordion,
+  FeatureSectionGridCards,
+  FeatureSectionAlternating
 };
 
 // Removed the processProps function
