@@ -25,9 +25,15 @@ When tasked with creating new UI components, especially those representing disti
 
 5.  **Leverage Existing UI Primitives:** Utilize shared components, particularly those from `shadcn/ui` found in `@/components/ui` (e.g., `Button`, `Card`, `Carousel`) where appropriate, following the `shadcn-ui.mdc` rule.
 
-6.  **Implement Standard i18n:** Follow the internationalization pattern detailed below.
+6.  **Standardize Common Styles:**
+    *   **Container:** Sections should **not** define their own top-level container width or padding (`container`, `mx-auto`, `max-w-*`, `px-*`). Instead, they should be designed to render within a parent container that sets these properties (e.g., the `<Container>` component in `src/components/common/Container.tsx` which uses `container mx-auto px-4 md:px-6 2xl:max-w-[1400px]`).
+    *   **Headings:**
+        *   For primary page/hero titles (typically `<h1>`): Use `text-4xl lg:text-5xl font-extrabold tracking-tight`.
+        *   For standard section titles (typically `<h2>`): Use `text-3xl sm:text-4xl font-bold tracking-tight`.
 
-7.  **Aim for Reusability:** Structure the component so it could potentially be reused on different pages or in different contexts with different data conforming to its prop interface.
+7.  **Implement Standard i18n:** Follow the internationalization pattern detailed below.
+
+8.  **Aim for Reusability:** Structure the component so it could potentially be reused on different pages or in different contexts with different data conforming to its prop interface.
 
 # Internationalization (i18n) Standard Pattern
 
