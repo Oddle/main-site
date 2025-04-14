@@ -11,7 +11,7 @@ import Footer from "../common/Footer";
 import TimelineSection from "@/components/sections/TimelineSection";
 import FeatureSectionWithSubpoints from "@/components/sections/FeatureSectionWithSubpoints";
 import FeatureSectionWithSplitImages from "@/components/sections/FeatureSectionWithSplitImages";
-
+import FeatureSectionWithColumns from "@/components/sections/FeatureSectionWithColumns";
 // --- Define type for section data --- (Good practice)
 interface SectionDefinition {
   component: string; // Ideally keyof typeof componentMap, but string is simpler for now
@@ -35,7 +35,8 @@ const componentMap = {
   FaqSection, // Add FaqSection to the map
   TimelineSection,    
   FeatureSectionWithSubpoints,
-  FeatureSectionWithSplitImages
+  FeatureSectionWithSplitImages,
+  FeatureSectionWithColumns
 };
 
 // Removed the processProps function

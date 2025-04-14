@@ -350,6 +350,37 @@
           }
         ]
       }
+    },
+    {
+      "component": "FeatureSectionWithColumns",
+      "props": {
+        "i18nBaseKey": "reservationSystem.useCases",
+        "sectionTitle": "Built for Restaurants of Every Kind",
+        "sectionSubtitle": "Whether you're transitioning from pen and paper or escaping costly subscriptions, Oddle Reserve is made to fit your needs.",
+        "features": [
+          {
+            "imageSrc": "https://ucarecdn.com/d9049a25-8061-455f-bedf-1b62cd15d6ef/-/preview/512x317/",
+            "imageAlt": "Dim sum dishes on a table representing traditional restaurants",
+            "title": "Traditional Restaurants Going Digital",
+            "description": "Facing digitalization challenges with the next generation stepping in, but hesitant about costly subscriptions? Oddle Reserve's pay-as-you-go model makes the transition seamless, eliminating steep monthly fees."
+          },
+          {
+            "imageSrc": "https://ucarecdn.com/6ceb736a-e674-4680-8540-e9cf8d013bf7/-/preview/259x194/",
+            "imageAlt": "Exterior of a soup restaurant representing high walk-in restaurants",
+            "title": "Restaurants With High Walk-Ins",
+            "description": "With many walk-ins and limited online reservations, managing big group bookings can be challenging. Oddle Reserve's usage-based pricing lets you pay only when you need it, making it an ideal solution for occasional but essential online reservations."
+          },
+          {
+            "imageSrc": "https://ucarecdn.com/44f9ff6c-1b17-4056-b376-96bae9fa6d26/-/preview/275x183/",
+            "imageAlt": "Interior of a PizzaExpress restaurant representing restaurants on marketplaces",
+            "title": "Restaurants On High-Commission Marketplaces",
+            "description": "Paying expensive per cover to marketplaces that intercept direct bookings with ads can be frustrating. Oddle Reserve removes commissions and charges only per booking—not per cover—giving you back control of your reservations."
+          }
+        ]
+      }
+    },
+    {
+      "component": "FaqSection"
     }
   ],
   "products/restaurant-loyalty-crm-system": [
