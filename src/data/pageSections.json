@@ -310,8 +310,8 @@
       "component": "HeroWithCarousel",
       "props": {
         "i18nBaseKey": "reservationSystem.hero",
-        "title": "Effortless Restaurant Reservations",
-        "description": "Manage your tables, reduce no-shows, and provide a seamless booking experience.",
+        "title": "Stop Overpaying for Reservations—Break Free from Monthly Fees and High Commissions Costs",
+        "description": "Helping Restaurants Save More on Reservations While Driving More Sales, Every Day with Pricing that Makes Sense.",
         "primaryButton": { "text": "Request Demo", "action": "/request-demo" },
         "slides": [
           { "imageSrc": "https://placehold.co/700x540/F0E2E8/AAAAAA?text=Reservation1", "imageAlt": "Reservation System UI" },
@@ -375,6 +375,76 @@
             "imageAlt": "Interior of a PizzaExpress restaurant representing restaurants on marketplaces",
             "title": "Restaurants On High-Commission Marketplaces",
             "description": "Paying expensive per cover to marketplaces that intercept direct bookings with ads can be frustrating. Oddle Reserve removes commissions and charges only per booking—not per cover—giving you back control of your reservations."
+          }
+        ]
+      }
+    },
+    {
+      "component": "FeatureSectionWithTabs",
+      "props": {
+        "sectionTitle": "Simplify your day-to-day Operations with Powerful Views and Real-time Control.",
+        "subtitle": "User-friendly and seamless, Oddle Reserve simplifies the reservation process with advanced table management and management tools. It helps you efficiently manage reservations in real time, enhancing the dining experience and streamlining operations.",
+        "tabsData": [
+          {
+            "id": 1,
+            "tabName": "List View",
+            "tabDescription": "Get a clear overview of all your reservations at a glance.",
+            "link": "#",
+            "image": "https://ucarecdn.com/160c698f-1051-43d6-a9cb-133d915b19bb/-/preview/912x500/"
+          },
+          {
+            "id": 2,
+            "tabName": "Timeline View",
+            "tabDescription": "Visualize your bookings chronologically for better planning.",
+            "link": "#",
+            "image": "https://ucarecdn.com/a2ba9c8b-acf3-462a-bffd-0481cd5cdb27/-/preview/1000x548/"
+          },
+          {
+            "id": 3,
+            "tabName": "Table View",
+            "tabDescription": "Manage table assignments and statuses efficiently.",
+            "link": "#",
+            "image": "https://ucarecdn.com/160c698f-1051-43d6-a9cb-133d915b19bb/-/preview/912x500/"
+          },
+          {
+            "id": 4,
+            "tabName": "Mobile View",
+            "tabDescription": "Access and manage reservations on the go from any device.",
+            "link": "#",
+            "image": "https://ucarecdn.com/551fa74b-f384-42d9-a95a-ccd3ab7f62ae/reserve_mobile_view"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FeatureSectionWithAccordion",
+      "props": {
+        "sectionTitle": "Simplify your day-to-day Operations with Powerful Views and Real-time Control.",
+        "sectionDescription": "User-friendly and seamless, Oddle Reserve simplifies the reservation process with advanced table management and management tools. It helps you efficiently manage reservations in real time, enhancing the dining experience and streamlining operations.",
+        "itemsData": [
+          {
+            "id": 1,
+            "title": "List View",
+            "description": "Get a clear overview of all your reservations at a glance.",
+            "imageSrc": "https://ucarecdn.com/160c698f-1051-43d6-a9cb-133d915b19bb/-/preview/912x500/"
+          },
+          {
+            "id": 2,
+            "title": "Timeline View",
+            "description": "Visualize your bookings chronologically for better planning.",
+            "imageSrc": "https://ucarecdn.com/a2ba9c8b-acf3-462a-bffd-0481cd5cdb27/-/preview/1000x548/"
+          },
+          {
+            "id": 3,
+            "title": "Table View",
+            "description": "Manage table assignments and statuses efficiently.",
+            "imageSrc": "https://ucarecdn.com/160c698f-1051-43d6-a9cb-133d915b19bb/-/preview/912x500/"
+          },
+          {
+            "id": 4,
+            "title": "Mobile View",
+            "description": "Access and manage reservations on the go from any device.",
+            "imageSrc": "https://ucarecdn.com/551fa74b-f384-42d9-a95a-ccd3ab7f62ae/reserve_mobile_view"
           }
         ]
       }
