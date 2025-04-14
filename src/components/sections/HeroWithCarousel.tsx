@@ -214,32 +214,50 @@ export default function HeroWithCarousel({
               "lg:col-span-4",
               reverseMobileLayout ? "order-1" : "order-2 lg:order-2 mt-10 lg:mt-0"
             )}>
-              <Carousel
-                plugins={[plugin.current]}
-                className="w-full"
-                onMouseEnter={plugin.current.stop}
-                onMouseLeave={plugin.current.reset}
-              >
-                <CarouselContent>
-                  {slides.map((slide, index) => {
-                    const slideImageAlt = getTranslation(t, `${i18nBaseKey}.slides.${index}.imageAlt`, slide.imageAlt);
-                    return (
-                      <CarouselItem key={index}>
-                        <div className="relative aspect-video w-full overflow-hidden rounded-xl">
-                          <Image
-                            className="object-cover"
-                            src={slide.imageSrc}
-                            alt={slideImageAlt}
-                            fill
-                            priority={index === 0}
-                            sizes="(max-width: 1024px) 100vw, 50vw"
-                          />
-                        </div>
-                      </CarouselItem>
-                    );
-                  })}
-                </CarouselContent>
-              </Carousel>
+              {slides.length === 1 ? (
+                (() => {
+                  const slide = slides[0];
+                  const slideImageAlt = getTranslation(t, `${i18nBaseKey}.slides.0.imageAlt`, slide.imageAlt);
+                  return (
+                    <Image
+                      className="object-cover rounded-xl mx-auto block"
+                      src={slide.imageSrc}
+                      alt={slideImageAlt}
+                      width={636}
+                      height={636}
+                      priority={true}
+                      sizes="(max-width: 768px) 90vw, 636px"
+                    />
+                  );
+                })()
+              ) : (
+                <Carousel
+                  plugins={[plugin.current]}
+                  className="w-full"
+                  onMouseEnter={plugin.current.stop}
+                  onMouseLeave={plugin.current.reset}
+                >
+                  <CarouselContent>
+                    {slides.map((slide, index) => {
+                      const slideImageAlt = getTranslation(t, `${i18nBaseKey}.slides.${index}.imageAlt`, slide.imageAlt);
+                      return (
+                        <CarouselItem key={index}>
+                          <div className="relative aspect-video w-full overflow-hidden rounded-xl">
+                            <Image
+                              className="object-cover"
+                              src={slide.imageSrc}
+                              alt={slideImageAlt}
+                              fill
+                              priority={index === 0}
+                              sizes="(max-width: 1024px) 100vw, 50vw"
+                            />
+                          </div>
+                        </CarouselItem>
+                      );
+                    })}
+                  </CarouselContent>
+                </Carousel>
+              )}
             </div>
             {/* End Col */}
           </div>
