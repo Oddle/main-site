@@ -363,40 +363,35 @@
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales" },
         "slides": [
           {
-            "imageSrc": "https://placehold.co/700x540/E8E2F0/AAAAAA?text=Loyalty+UI",
+            "imageSrc": "https://ucarecdn.com/446f987e-d25b-40e5-a67d-e61337d845ef/-/preview/861x1000/",
             "imageAlt": "Restaurant Loyalty Program UI Showcase"
           }
         ]
       }
     },
     {
-      "component": "FeatureSectionWithImages",
+      "component": "FeatureSectionWithSplitImages",
       "props": {
         "i18nBaseKey": "loyaltyCrm.details",
+        "sectionTag": "Key Features",
         "sectionTitle": "How restaurants grow using Oddle",
-        "sectionDescription": "",
+        "sectionDescription": "Capture customer data and automate engagement to drive repeat visits.",
         "features": [
           {
-            "translationSubKey": "capture",
+            "tag": "Grow your customer database",
+            "imageSrc": "https://ucarecdn.com/04e08a32-d9cc-4f6e-96fe-a040fffcc894/-/preview/999x666/",
+            "imageAlt": "Phone showing successful check-in for loyalty program",
             "title": "Capture Every Customer",
-            "description": "Grow your customer database",
-            "items": [
-              "Sign up diners in a flash, whether at the table or counter, with QR Scans or NFC Taps.",
-              "The sleek, frictionless process that ensures you capture data from every guest, empowering you to deliver smarter, more personalized loyalty experiences."
-            ],
-            "imageSrc": "https://placehold.co/600x400/F0E8E2/AAAAAA?text=Capture+Customer",
-            "imageAlt": "Phone showing successful check-in for loyalty program"
+            "description": "Sign up diners in a flash, whether at the table or counter. with QR Scans or NFC Taps. The sleek, frictionless process that ensures you capture data from every guest, empowering you to deliver smarter, more personalized loyalty experiences.",
+            "action": null
           },
           {
-            "translationSubKey": "automate",
+            "tag": "Keep your Restuarant Top of Mind",
+            "imageSrc": "https://ucarecdn.com/c92243a8-0c70-4d33-ba08-b632f2d3125e/-/preview/1000x666/",
+            "imageAlt": "Phone showing loyalty reward notification",
             "title": "Automate Engagement",
-            "description": "Keep your Restaurant Top of Mind",
-            "items": [
-              "Automate personalized rewards, birthday offers, reminders for unused redeemables, and even customer feedback after visits.",
-              "Stay top of mind while saving time and driving repeat visits with ease."
-            ],
-            "imageSrc": "https://placehold.co/600x400/E2F0E8/AAAAAA?text=Automate+Engagement",
-            "imageAlt": "Phone showing loyalty reward notification"
+            "description": "Automate personalized rewards, birthday offers, reminders for unused redeemables, and even customer feedback after visits. Stay top of mind while saving time and driving repeat visits with ease.",
+            "action": null
           }
         ]
       }

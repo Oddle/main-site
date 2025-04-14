@@ -10,6 +10,7 @@ import React from 'react';
 import Footer from "../common/Footer";
 import TimelineSection from "@/components/sections/TimelineSection";
 import FeatureSectionWithSubpoints from "@/components/sections/FeatureSectionWithSubpoints";
+import FeatureSectionWithSplitImages from "@/components/sections/FeatureSectionWithSplitImages";
 
 // --- Define type for section data --- (Good practice)
 interface SectionDefinition {
@@ -32,8 +33,9 @@ const componentMap = {
   HeroSectionWithAppShowcase,
   FeatureSectionWithImages,
   FaqSection, // Add FaqSection to the map
-  TimelineSection,
-  FeatureSectionWithSubpoints
+  TimelineSection,    
+  FeatureSectionWithSubpoints,
+  FeatureSectionWithSplitImages
 };
 
 // Removed the processProps function
