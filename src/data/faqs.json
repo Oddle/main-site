@@ -106,5 +106,49 @@
         "answer": "Oddle Loyalty stands out because it focuses on simplicity and customer experience. The check-in rewards system incentivizes diners to return with minimal setup required. Customers check in through an easy tap or scan process, while return vouchers encourage subsequent visits — making Oddle one of the most effective and best loyalty programmes for restaurants."
       }
     ]
+  },
+  "products/restaurant-reservation-system": {
+    "en": [
+      {
+        "question": "What is Oddle Reserve, and how does it enhance my restaurant's reservation process?",
+        "answer": "Oddle Reserve is a restaurant reservation system designed to streamline your reservation process with advanced management tools. It offers features like table management, real-time reservation tracking, and customizable booking options to improve operational efficiency and enhance the dining experience for your guests."
+      },
+      {
+        "question": "Can I use Oddle Reserve if I already have my own website?",
+        "answer": "Yes, Oddle Reserve integrates seamlessly with your existing website through a customizable reservation widget. This allows diners to book directly on your site, providing a smooth and professional booking experience without the need for additional tools."
+      },
+      {
+        "question": "What if I don't have a website?",
+        "answer": "If you don't have your own website, Oddle Reserve provides a dedicated reservation landing page for your restaurant. Plus, your restaurant will be listed on Oddle Eats, our dining discovery platform, giving you additional exposure to a broader audience. You'll also benefit from Reserve with Google, allowing diners to book directly from Google Search and Maps, ensuring maximum visibility and seamless reservation management."
+      },
+      {
+        "question": "Does Oddle Reserve integrate with Reserve with Google?",
+        "answer": "Yes, Oddle Reserve integrates seamlessly with Reserve with Google, allowing diners to book directly from Google Search and Maps. This integration helps you expand your online presence and capture more reservations effortlessly."
+      },
+      {
+        "question": "Can I charge no-show fees, hold credit cards, or collect deposits?",
+        "answer": "Absolutely! Oddle Reserve allows you to set up no-show fees, credit card holds, or deposit requirements to secure reservations and reduce lost revenue from no-shows. These features provide added security and peace of mind for your restaurant."
+      },
+      {
+        "question": "Can Oddle Reserve handle event reservations or ticketed dining experiences?",
+        "answer": "Yes, with Oddle Reserve's ticketing feature, you can manage reservations for special events, private dining, or ticketed experiences. This feature enables you to charge guests upfront for events or unique dining experiences, making it easy to manage bookings and revenue."
+      },
+      {
+        "question": "Does Oddle Reserve charge SaaS fees?",
+        "answer": "No, Oddle Reserve operates without any SaaS fees, making it a cost-effective solution for restaurants of all sizes. You only pay for what you use, ensuring transparent pricing and no hidden costs."
+      },
+      {
+        "question": "Can I customize reservation settings with Oddle Reserve?",
+        "answer": "Yes, Oddle Reserve allows you to customize settings such as reservation time slots, table assignments, and guest preferences. This flexibility ensures the system adapts perfectly to your restaurant's needs."
+      },
+      {
+        "question": "How does Oddle Reserve help reduce no-shows?",
+        "answer": "Oddle Reserve helps minimize no-shows with credit card holds, deposit requirements, and automated reminder notifications sent to guests. These features encourage commitment and reduce the likelihood of last-minute cancellations."
+      },
+      {
+        "question": "Does Oddle Reserve work for restaurants of all sizes?",
+        "answer": "Yes, Oddle Reserve is a scalable solution suitable for restaurants of all sizes, from small independent diners, cafes to large chains. Its flexible features and cost-effective pricing make it ideal for any setup."
+      }
+    ]
   }
 } 
