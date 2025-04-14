@@ -1,11 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Container from '@/components/common/Container';
 import { cn } from "@/lib/utils";
 
@@ -61,33 +60,33 @@ const FeatureSectionWithTabs = ({
   const [[activeTab, direction], setActiveTabState] = useState([defaultTabValue, 0]);
   const intervalDelay = 5000;
 
-  if (!tabsData || tabsData.length === 0) {
-    return null; 
-  }
-
   const activeIndex = tabsData.findIndex(tab => tab.id.toString() === activeTab);
 
-  const changeTab = (newTabId: string) => {
-    const newIndex = tabsData.findIndex(tab => tab.id.toString() === newTabId);
-    const currentDirection = newIndex > activeIndex ? 1 : -1;
-    setActiveTabState([newTabId, currentDirection]);
-  };
+  const changeTab = useCallback((newTabId: string) => {
+    setActiveTabState(prevState => {
+      const prevActiveTabId = prevState[0];
+      const currentActiveIndex = tabsData.findIndex(tab => tab.id.toString() === prevActiveTabId);
+      const newIndex = tabsData.findIndex(tab => tab.id.toString() === newTabId);
+      const currentDirection = newIndex > currentActiveIndex ? 1 : -1;
+      return [newTabId, currentDirection];
+    });
+  }, [tabsData]);
 
-  // useEffect for automatic tab switching
   useEffect(() => {
     if (!autoRotate || tabsData.length <= 1) {
       return;
     }
-
     const intervalId = setInterval(() => {
       const nextIndex = (activeIndex + 1) % tabsData.length;
       changeTab(tabsData[nextIndex].id.toString());
     }, intervalDelay);
-
     return () => clearInterval(intervalId);
-  }, [tabsData, intervalDelay, activeIndex, autoRotate]);
+  }, [tabsData, intervalDelay, activeIndex, autoRotate, changeTab]);
 
-  // Find the content for the active tab
+  if (!tabsData || tabsData.length === 0) {
+    return null; 
+  }
+
   const activeTabData = tabsData.find(tab => tab.id.toString() === activeTab);
 
   return (

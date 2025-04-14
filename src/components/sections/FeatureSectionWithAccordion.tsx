@@ -33,16 +33,20 @@ const FeatureSectionWithAccordion = ({
   itemsData = []
 }: FeatureSectionWithAccordionProps) => {
   
+  // --- Moved Hooks to the top --- 
+  const defaultItemId = itemsData.length > 0 ? itemsData[0].id : 0; // Handle empty array for default ID
+  const defaultItemValue = `item-${defaultItemId}`;
+  const defaultImageSrc = itemsData.length > 0 ? itemsData[0].imageSrc : ''; // Handle empty array
+
+  const [activeItemId, setActiveItemId] = useState<number>(defaultItemId);
+  const [activeImage, setActiveImage] = useState<string>(defaultImageSrc);
+  // --- End moved Hooks --- 
+
   // Ensure component doesn't break if itemsData is empty
   if (!itemsData || itemsData.length === 0) {
     // Optionally render nothing or a placeholder if no data
     return null; 
   }
-
-  const defaultItemId = itemsData[0].id;
-  const defaultItemValue = `item-${defaultItemId}`;
-  const [activeItemId, setActiveItemId] = useState<number>(defaultItemId);
-  const [activeImage, setActiveImage] = useState<string>(itemsData[0].imageSrc);
 
   const handleValueChange = (value: string) => {
     if (!value) return; // Accordion can be fully collapsed, value might be empty
