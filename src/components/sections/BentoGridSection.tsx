@@ -3,6 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
+import Container from "@/components/common/Container";
 
 // --- Updated Interfaces (Using Direct Strings) ---
 interface BentoCardData {
@@ -64,81 +65,83 @@ export default function BentoGridSection({
   return (
     <>
       {/* Bento Section */}
-      <div className="container mx-auto px-4 md:px-6 2xl:max-w-[1400px] py-24 lg:py-32">
-        <div className="relative">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            {badgeText && (
-              <Badge variant="outline" className="mb-4">
-                {badgeText} {/* Render badge text directly */}
-              </Badge>
-            )}
-            {title && (
-              <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-4">
-                {title} {/* Render title directly */}
-              </h1>
-            )}
-            {description && (
-              <p className="text-xl text-muted-foreground mb-8">
-                {description} {/* Render description directly */}
-              </p>
-            )}
-             {/* Optional: Add buttons here using getStartedButtonText and livePreviewButtonText */}
-            {/* Example:
-            {(getStartedButtonText || livePreviewButtonText) && (
-              <div className="flex justify-center gap-4">
-                {getStartedButtonText && getStartedLink && <Link href={getStartedLink}><Button>{getStartedButtonText}</Button></Link>}
-                {livePreviewButtonText && previewLink && <Link href={previewLink}><Button variant="outline">{livePreviewButtonText}</Button></Link>}
-              </div>
-            )}
-             */}
-          </div>
+      <div className="py-24 lg:py-32">
+        <Container>
+          <div className="relative">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              {badgeText && (
+                <Badge variant="outline" className="mb-4">
+                  {badgeText} {/* Render badge text directly */}
+                </Badge>
+              )}
+              {title && (
+                <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-4">
+                  {title} {/* Render title directly */}
+                </h1>
+              )}
+              {description && (
+                <p className="text-xl text-muted-foreground mb-8">
+                  {description} {/* Render description directly */}
+                </p>
+              )}
+               {/* Optional: Add buttons here using getStartedButtonText and livePreviewButtonText */}
+              {/* Example:
+              {(getStartedButtonText || livePreviewButtonText) && (
+                <div className="flex justify-center gap-4">
+                  {getStartedButtonText && getStartedLink && <Link href={getStartedLink}><Button>{getStartedButtonText}</Button></Link>}
+                  {livePreviewButtonText && previewLink && <Link href={previewLink}><Button variant="outline">{livePreviewButtonText}</Button></Link>}
+                </div>
+              )}
+               */}
+            </div>
 
-          {/* Bento Grid - Dynamic Rendering */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            {cards.map((card) => (
-              <Card
-                key={card.id}
-                className={`p-6 hover:shadow-lg transition-shadow ${getCardClasses(card)} ${card.className || ''}`}
-              >
-                {card.type === 'large' ? (
-                  <div className="h-full flex flex-col">
-                    <h3 className="text-xl font-semibold mb-2">
-                      {card.title} {/* Render card title directly */}
-                    </h3>
-                    <p className="text-muted-foreground mb-4">
-                      {card.description} {/* Render card description directly */}
-                    </p>
-                    {card.imageUrl && (
-                      <Image
-                        src={card.imageUrl}
-                        alt={card.imageAlt || card.title} // Use direct alt or title
-                        width={600}
-                        height={400}
-                        className="rounded-lg mt-auto object-cover"
-                      />
-                    )}
-                  </div>
-                ) : card.type === 'wide' ? (
-                   <div className="flex items-center gap-4 h-full">
+            {/* Bento Grid - Dynamic Rendering */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+              {cards.map((card) => (
+                <Card
+                  key={card.id}
+                  className={`p-6 hover:shadow-lg transition-shadow ${getCardClasses(card)} ${card.className || ''}`}
+                >
+                  {card.type === 'large' ? (
+                    <div className="h-full flex flex-col">
+                      <h3 className="text-xl font-semibold mb-2">
+                        {card.title} {/* Render card title directly */}
+                      </h3>
+                      <p className="text-muted-foreground mb-4">
+                        {card.description} {/* Render card description directly */}
+                      </p>
+                      {card.imageUrl && (
+                        <Image
+                          src={card.imageUrl}
+                          alt={card.imageAlt || card.title} // Use direct alt or title
+                          width={600}
+                          height={400}
+                          className="rounded-lg mt-auto object-cover"
+                        />
+                      )}
+                    </div>
+                  ) : card.type === 'wide' ? (
+                     <div className="flex items-center gap-4 h-full">
+                      <div>
+                        <h3 className="text-lg font-semibold">{card.title}</h3> {/* Render directly */}
+                        <p className="text-muted-foreground">
+                          {card.description} {/* Render directly */}
+                        </p>
+                      </div>
+                    </div>
+                  ) : ( // Small card
                     <div>
-                      <h3 className="text-lg font-semibold">{card.title}</h3> {/* Render directly */}
+                      <h3 className="text-lg font-semibold mb-2">{card.title}</h3> {/* Render directly */}
                       <p className="text-muted-foreground">
                         {card.description} {/* Render directly */}
                       </p>
                     </div>
-                  </div>
-                ) : ( // Small card
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">{card.title}</h3> {/* Render directly */}
-                    <p className="text-muted-foreground">
-                      {card.description} {/* Render directly */}
-                    </p>
-                  </div>
-                )}
-              </Card>
-            ))}
+                  )}
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
+        </Container>
       </div>
       {/* End Bento Section */}
     </>

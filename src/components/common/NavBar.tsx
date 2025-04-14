@@ -366,19 +366,19 @@ export default function NavBar() {
             </DrawerTrigger>
             <DrawerContent className="h-[80%] flex flex-col">
               <DrawerHeader>
-                <DrawerTitle>{tNav("mobileTitle")}</DrawerTitle>
+                <DrawerTitle></DrawerTitle>
               </DrawerHeader>
               <DrawerLinks />
               {/* Mobile Action Buttons inside Drawer Footer */}
               <div className="mt-auto p-4 border-t grid grid-cols-3 gap-2">
                   <Link href="#" passHref legacyBehavior>
-                     <Button variant="outline" className="w-full" asChild onClick={() => setIsDrawerOpen(false)}><a>{tNav('links.oddleEats')}</a></Button>
+                     <Button variant="outline" className="w-full" asChild onClick={() => setIsDrawerOpen(false)}><a>{tNav('links.oddle-eats')}</a></Button>
                   </Link>
                   <Link href="#" passHref legacyBehavior>
                      <Button variant="outline" className="w-full" asChild onClick={() => setIsDrawerOpen(false)}><a>{tNav('links.login')}</a></Button>
                   </Link>
                   <Link href="#" passHref legacyBehavior>
-                     <Button className="w-full" onClick={() => setIsDrawerOpen(false)}>{tNav('links.getFreeDemo')}</Button>
+                     <Button className="w-full" onClick={() => setIsDrawerOpen(false)}>{tNav('links.get-free-demo')}</Button>
                   </Link>
               </div>
             </DrawerContent>

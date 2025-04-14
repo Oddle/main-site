@@ -91,8 +91,12 @@ export default async function ProductPage({ params: paramsPromise }: Props) { //
     notFound(); // Show 404 if no sections found
   }
 
+  // Construct the pageUrl for the FaqSection
+  const pageUrl = `products/${params.slug}`;
+
   // Use the central DynamicSectionPage component to render the sections
-  return <DynamicSectionPage sectionsData={sections} />;
+  // Pass pageUrl and locale down
+  return <DynamicSectionPage sectionsData={sections} pageUrl={pageUrl} locale={params.locale} />;
 }
 
 // Optional: Add metadata generation based on page data (Consider locale)

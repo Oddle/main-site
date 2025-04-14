@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
+import { useTranslations } from 'next-intl';
+import { getTranslation } from '@/lib/i18nUtils'; // Import shared helper
+import Container from "@/components/common/Container"; // Import Container
 
 // --- Define interfaces for the data structure ---
 interface FeatureItem {
@@ -13,15 +16,17 @@ interface FeatureItem {
   imageHeight?: number; // Optional
   buttonText?: string; // Optional button
   buttonAction?: string; // Action for the button (URL or identifier)
+  translationSubKey: string;
 }
 
 interface FeatureSectionWithImagesProps {
+  i18nBaseKey: string;
   sectionTitle: string;
   sectionDescription: string;
   features: FeatureItem[];
 }
 
-// --- Helper function for button clicks (similar to ProductCarouselHero) ---
+// --- Helper function for button clicks (similar to HeroWithCarousel) ---
 const handleButtonClick = (action: string | undefined) => {
   if (!action) return;
   if (action.startsWith('/')) {
@@ -33,73 +38,99 @@ const handleButtonClick = (action: string | undefined) => {
 
 // --- The Component ---
 export default function FeatureSectionWithImages({
-  sectionTitle,
-  sectionDescription,
+  i18nBaseKey,
+  sectionTitle: defaultSectionTitle,
+  sectionDescription: defaultSectionDescription,
   features = [], // Default to empty array
 }: FeatureSectionWithImagesProps) {
+  const t = useTranslations();
+
+  // Translate section header using imported helper
+  const sectionTitle = getTranslation(t, `${i18nBaseKey}.title`, defaultSectionTitle);
+  const sectionDescription = getTranslation(t, `${i18nBaseKey}.description`, defaultSectionDescription);
+
   return (
-    <section className="container mx-auto px-4 md:px-6 2xl:max-w-[1400px] py-24 space-y-24">
-      {/* Section Header */}
-      {(sectionTitle || sectionDescription) && (
-          <div className="text-center space-y-4">
-            {sectionTitle && (
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                {sectionTitle}
-                </h2>
-            )}
-            {sectionDescription && (
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                {sectionDescription}
-                </p>
-            )}
-          </div>
-      )}
+    <section className="py-24 space-y-24">
+      <Container>
+        {/* Section Header */}
+        {(sectionTitle || sectionDescription) && (
+            <div className="text-center space-y-4">
+              {sectionTitle && (
+                  <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                    {sectionTitle}
+                  </h2>
+              )}
+              {sectionDescription && (
+                  <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                    {sectionDescription}
+                  </p>
+              )}
+            </div>
+        )}
 
-      {/* Features List */}
-      <div className="space-y-24">
-        {features.map((feature, index) => (
-          <div
-            key={feature.title}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-          >
-            {/* Text Content (Always on the left on large screens) */}
-            <div>
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
-                {/* Added: Render list items if they exist */}
-                {feature.items && feature.items.length > 0 && (
-                  <ul className="list-disc list-inside mt-4 space-y-2 text-muted-foreground">
-                    {feature.items.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                )}
-                {feature.buttonText && (
-                  <Button onClick={() => handleButtonClick(feature.buttonAction)}>
-                    {feature.buttonText}
-                  </Button>
-                )}
+        {/* Features List */}
+        <div className="space-y-24">
+          {features.map((feature: FeatureItem, index: number) => {
+            // Use index directly to construct the base key for this feature
+            const featureBaseKey = `${i18nBaseKey}.${index}`; 
+
+            // Translate feature properties using the index-based key
+            const featureTitle = getTranslation(t, `${featureBaseKey}.title`, feature.title);
+            const featureDescription = getTranslation(t, `${featureBaseKey}.description`, feature.description);
+            const featureImageAlt = getTranslation(t, `${featureBaseKey}.imageAlt`, feature.imageAlt);
+            const featureButtonText = feature.buttonText 
+              ? getTranslation(t, `${featureBaseKey}.buttonText`, feature.buttonText) 
+              : undefined;
+              
+            // Translate items array - KEEPING EXISTING LOGIC (item1, item2...)
+            // This assumes the JSON structure for items remains like "item1", "item2"
+            const translatedItems = feature.items?.map((item: string, itemIndex: number) => 
+              getTranslation(t, `${featureBaseKey}.item${itemIndex + 1}`, item)
+            ) || [];
+
+            return (
+              <div
+                key={index} // Use index as the React key
+                className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+              >
+                {/* Text Content (Always on the left on large screens) */}
+                <div>
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold">{featureTitle}</h3>
+                    <p className="text-muted-foreground">{featureDescription}</p>
+                    {/* Added: Render list items if they exist */}
+                    {translatedItems.length > 0 && (
+                      <ul className="list-disc list-inside mt-4 space-y-2 text-muted-foreground">
+                        {translatedItems.map((item: string, idx: number) => (
+                          <li key={idx}>{item}</li>
+                        ))}
+                      </ul>
+                    )}
+                    {featureButtonText && (
+                      <Button onClick={() => handleButtonClick(feature.buttonAction)}>
+                        {featureButtonText}
+                      </Button>
+                    )}
+                  </div>
+                </div>
+
+                {/* Image */}
+                <div className="relative aspect-video overflow-hidden"> {/* Re-added aspect-video */}
+                  <Image
+                    src={feature.imageSrc}
+                    alt={featureImageAlt}
+                    fill
+                    className="object-contain object-center" // Changed object-cover to object-contain
+                    width={feature.imageWidth}
+                    height={feature.imageHeight}
+                    priority={index === 0}
+                  />
+                </div>
               </div>
-            </div>
-
-            {/* Image */}
-            <div className="relative aspect-video overflow-hidden rounded-xl shadow-lg"> {/* Added shadow */}
-              <Image
-                src={feature.imageSrc}
-                alt={feature.imageAlt}
-                fill // Keep fill as per reference, ensure parent has relative positioning and dimensions
-                className="object-cover object-center"
-                // Add optional width/height if provided for potential optimization, but fill handles sizing
-                width={feature.imageWidth}
-                height={feature.imageHeight}
-                // Consider adding priority based on which image is likely LCP
-                priority={index === 0} // Example: Prioritize the first image
-              />
-            </div>
-          </div>
-        ))}
-      </div>
+            );
+          })}
+        </div>
+      </Container>
     </section>
   );
 } 

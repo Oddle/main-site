@@ -23,7 +23,7 @@ interface FooterLinkSection {
 }
 
 interface SocialLink {
-  name: string; // Actual name (e.g., "Facebook") looked up for icon/aria
+  key: string; // Changed from name to key (e.g., "facebook")
   href: string; // Looked up from common.json
 }
 
@@ -77,13 +77,14 @@ interface CommonData {
 // Type the imported common data
 const commonData: CommonData = commonJson;
 
+// Update socialIconMap to use lowercase keys
+const socialIconMap: { [key: string]: React.ElementType } = {
+  facebook: FacebookIcon,
+  linkedin: LinkedinIcon, // Changed key to lowercase
+};
+
 // Remove hardcoded socialLinks
 // const socialLinks: SocialLink[] = [ ... ];
-
-const socialIconMap: { [key: string]: React.ElementType } = {
-  Facebook: FacebookIcon,
-  LinkedIn: LinkedinIcon,
-};
 
 // --- Component Implementation ---
 export default function Footer() {
@@ -124,13 +125,14 @@ export default function Footer() {
   // Combine product and general link lookups
   const allLinkHrefMap = { ...generalLinkHrefMap, ...productHrefMap }; 
 
-  // 3. Social Links Lookup (label -> { name: string, href: string })
+  // 3. Social Links Lookup (label -> { key: string, href: string })
   const socialLinkDetailsMap = Object.values(commonData.links || {}).reduce(
-      (map: { [key: string]: { name: string, href: string } }, link: CommonLinkData) => {
+      (map: { [key: string]: { key: string, href: string } }, link: CommonLinkData) => {
           const lowerCaseKey = link.name.toLowerCase().replace(/\s+/g, '-');
           // Use the generated key (expected to match labels like "facebook")
           if (lowerCaseKey === 'facebook' || lowerCaseKey === 'linkedin') {
-             map[lowerCaseKey] = { name: link.name, href: link.href }; // Store Original Name and href
+             // Store the lowerCaseKey itself instead of link.name
+             map[lowerCaseKey] = { key: lowerCaseKey, href: link.href }; 
           }
           return map;
       },
@@ -151,7 +153,7 @@ export default function Footer() {
   // --- Process RAW Social Links into FINAL Social Links ---
   const finalSocialLinks: SocialLink[] = rawSocialLinks
     .map((link) => socialLinkDetailsMap[link.label]) // Lookup by label (e.g., "facebook")
-    .filter((details): details is { name: string; href: string } => !!details);
+    .filter((details): details is { key: string; href: string } => !!details); // Filter based on the new structure
 
 
   // --- Define Company Info ---
@@ -267,23 +269,25 @@ export default function Footer() {
         </div>
 
         {/* Added Bottom Row: Separator + Social/Copyright/Policy */}        
-        <div className="border-t pt-8 pb-8">          
+      <div className="border-t pt-8 pb-8">          
           <div className="flex flex-col items-center justify-between gap-6 md:flex-row">            
             {/* Social Links (using final processed data) */}            
             <div className="flex gap-4 order-1 md:order-1">              
               {finalSocialLinks.map((link: SocialLink) => {
-                const IconComponent = socialIconMap[link.name]; // Use looked-up name for icon
-                const translatedAriaLabel = tFooter(link.name); // Translate the looked-up Name (e.g., "Facebook") using tFooter
+                // Use link.key directly for icon lookup
+                const IconComponent = socialIconMap[link.key]; 
+                // Use link.key directly for translation (already lowercase)
+                const translatedAriaLabel = tFooter(link.key);
                 return IconComponent ? (
                   <a
-                    key={link.name}
+                    key={link.key} // Use key for React key prop
                     href={link.href} // Use looked-up href
                     className="text-muted-foreground transition-colors hover:text-foreground"
                     aria-label={translatedAriaLabel}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <IconComponent className="h-5 w-5" />
+                    <IconComponent className=  "h-5 w-5" />
                   </a>
                 ) : null;
               })}

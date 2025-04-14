@@ -1,23 +1,96 @@
 {
   "Metadata": {
-    "title": "[zh translation] Oddle App - Restaurant Growth Platform",
-    "description": "[zh translation] Empowering restaurants worldwide to grow their business with online ordering, reservations, CRM, and marketing tools.",
-    "keywords": "[zh translation] restaurant software, online ordering, reservation system, restaurant CRM, F&B technology, Oddle"
+    "title": "Oddle 餐廳增長平台",
+    "description": "協助全球餐廳透過線上點餐、預訂、顧客關係管理和行銷工具實現業務增長。",
+    "keywords": "餐廳軟體, 線上點餐, 預訂系統, 餐廳 CRM, 餐飲科技, Oddle"
+  },
+  "home": {
+    "hero": {
+      "title": "讓餐廳營收增長變得輕鬆",
+      "description": "Oddle 協助全球餐廳獲取顧客數據、建立品牌形象並拓展業務。",
+      "slide1": {
+        "imageAlt": "佔位圖片替代文字 1"
+      },
+      "slide2": {
+        "imageAlt": "佔位圖片替代文字 2"
+      }
+    },
+    "abc": {
+      "title": "增長就像 ABC 一樣簡單",
+      "subtitle": "獲取、建立、轉換，邁向成功之路",
+      "acquire": {
+        "title": "獲取顧客數據",
+        "description": "從每次預訂、外送和內用中獲取洞察，建立強大的顧客資料庫。"
+      },
+      "build": {
+        "title": "建立您的品牌",
+        "description": "打造一個反映您餐廳特色並保持顧客互動的無縫線上形象。"
+      },
+      "convert": {
+        "title": "轉換以實現增長",
+        "description": "透過自動化獎勵、行銷活動和個人化提醒，將首次光顧的客人轉變為常客。"
+      }
+    },
+    "bentoGrid": {
+      "badge": "我們的解決方案",
+      "title": "您拓展營收所需的一切",
+      "description": "一套完整的工具，旨在吸引顧客、簡化營運並提升您餐廳的利潤。",
+      "cardReservation": {
+        "title": "預訂",
+        "description": "簡化餐桌預訂，提升各客群的內用銷售額。",
+        "imageAlt": "顯示餐桌預訂的預訂系統介面。"
+      },
+      "cardOnlineOrdering": {
+        "title": "線上點餐",
+        "description": "透過品牌化的線上點餐系統提升外送收入。",
+        "imageAlt": "顯示菜單和外送細節的線上點餐介面。"
+      },
+      "cardPaymentTerminals": {
+        "title": "新一代支付終端",
+        "description": "具競爭力的支付處理，將每筆交易轉化為增長機會。",
+        "imageAlt": "顯示交易細節的支付終端螢幕。"
+      },
+      "cardLoyalty": {
+        "title": "忠誠度計畫",
+        "description": "透過獎勵和自動提醒鼓勵顧客再次光臨。",
+        "imageAlt": "手機上的忠誠度計畫介面。"
+      },
+      "cardSurveys": {
+        "title": "問卷調查",
+        "description": "自動收集顧客回饋，提升您的線上聲譽。",
+        "imageAlt": "顧客在手機上填寫問卷，星級評分可見。"
+      },
+      "cardVirtualLounge": {
+        "title": "亮點看板 (Virtual Lounge)",
+        "description": "創建一個反映您菜單、促銷活動和個性的數位空間。",
+        "imageAlt": "手機上顯示餐廳詳情的亮點看板介面。"
+      },
+      "cardMarketingEngine": {
+        "title": "行銷引擎",
+        "description": "自動化行銷活動，輕鬆提升您的線上聲譽。",
+        "imageAlt": "行銷郵件活動建立工具介面。"
+      },
+      "cardCustomerIntelligence": {
+        "title": "顧客智能",
+        "description": "從您的顧客數據中獲取可行的洞察。",
+        "imageAlt": "顯示分析數據的顧客智能儀表板。"
+      }
+    }
   },
   "BentoGridSection": {
-    "card1Description": "在一处管理预订、订单和客户数据。",
-    "card1Title": "统一仪表盘",
-    "card2Description": "直接从您的网站无缝集成自提和配送订单。",
-    "card2Title": "在线订购",
-    "card3Description": "通过自动化营销活动和忠诚度计划吸引客户。",
-    "card3Title": "营销工具",
-    "card4Description": "获取宝贵数据以了解并扩大您的客户群。",
-    "card4Title": "客户洞察",
-    "defaultBadge": "探索我们的平台",
-    "defaultDescription": "探索无缝集成到一个直观平台中的强大功能，专为增长而设计。",
-    "defaultTitle": "餐厅所需的一切",
-    "getStartedButton": "开始使用",
-    "livePreviewButton": "实时预览"
+    "card1Description": "",
+    "card1Title": "",
+    "card2Description": "",
+    "card2Title": "",
+    "card3Description": "",
+    "card3Title": "",
+    "card4Description": "",
+    "card4Title": "",
+    "defaultBadge": "",
+    "defaultDescription": "",
+    "defaultTitle": "",
+    "getStartedButton": "",
+    "livePreviewButton": ""
   },
   "footer": {
     "copyright": "{currentYear} © Oddle. 版权所有。",
@@ -34,39 +107,33 @@
     "restaurant-reservation-guide": "訂位系統指南",
     "restaurant-loyalty-guide": "顧客忠誠計劃指南",
     "restaurant-marketing-guide": "行銷引擎指南",
-    "merchant-support": "Merchant Support",
+    "merchant-support": "商家支援",
     "comparison": "收費模式",
     "help-center": "收費模式",
     "online-ordering-system": "外帶外送系統",
     "reservations": "訂位系統",
     "loyalty-crm": "顧客忠誠計畫",
     "virtual-lounge": "亮點看板",
-    "legal": "Legal",
-    "privacy-policy": "Privacy Policy",
-    "terms-of-service": "Terms of Service",
+    "legal": "法律條款",
+    "privacy-policy": "隱私權政策",
+    "terms-of-service": "服務條款",
     "facebook": "Facebook",
-    "linked-in": "LinkedIn"
+    "linkedin": "LinkedIn"
   },
   "navbar": {
-    "product": "产品",
-    "resources": "资源",
-    "pricing": "定价",
     "acquire": "获客",
     "build": "构建",
     "convert": "转化",
-    "login": "登录",
-    "get-started": "开始使用",
-    "menu-title": "菜单",
     "app-name": "Oddle",
     "links": {
       "products": "产品",
       "resources": "资源",
       "pricing": "定价",
-      "get-started": "开始使用",
+      "get-started": "/get-started",
       "menu-title": "菜单",
       "oddle-eats": "Oddle Eats",
       "login": "登录",
-      "get-free-demo": "Get Free Demo"
+      "get-free-demo": "取得免費演示"
     },
     "promo": {
       "title": "探索 Oddle",
@@ -91,10 +158,158 @@
     }
   },
   "common": {
-    "Privacy Policy": "Privacy Policy",
-    "Terms of Service": "Terms of Service",
+    "Privacy Policy": "隱私權政策",
+    "Terms of Service": "服務條款",
     "Contact Us": "联系我们",
-    "About Us": "關於我們"
+    "About Us": "關於我們",
+    "actions": {
+       "getStarted": "開始使用",
+       "contactSales": "聯繫銷售團隊",
+       "getStartedNow": "立即開始",
+       "seeLivePreview": "查看即時預覽",
+       "learnMore": "了解更多"
+    }
+  },
+  "onlineOrdering": {
+    "hero": {
+      "badge": "線上點餐",
+      "title": "擁有您自己的線上門市、顧客和更高的利潤",
+      "description": "直接將商品外送給您的客戶，透過符合您品牌形象的線上訂餐系統，提升您的營業額、顧客忠誠度和外送範圍",
+      "primaryButton": {
+        "text": "預約諮詢"
+      },
+      "secondaryButton": {
+        "text": "聯繫銷售"
+      },
+      "slides": {
+        "0": {
+          "imageAlt": "線上點餐桌面視圖"
+        },
+        "1": {
+          "imageAlt": "線上點餐移動視圖"
+        }
+      }
+    },
+    "multiPlatform": {
+      "badge": "線上點餐",
+      "title": "餐廳最佳的品牌外帶外送系統",
+      "description": "受到上千個品牌信任，Oddle 餐廳外帶外送系統專門幫餐廳建立品牌化的外帶外送服務，掌握顧客資料的同時還享有更好的獲利空間。",
+      "desktopImageAlt": "線上點餐桌面視圖",
+      "mobileImageAlt": "線上點餐移動視圖",
+      "tabletImageAlt": "線上點餐平板視圖",
+      "platformDesktop": "桌面",
+      "platformMobile": "移動",
+      "platformWeb": "網頁",
+      "featureIntegrated": {
+        "title": "完全整合",
+        "description": "與您的 POS 系統和廚房順暢連接。"
+      },
+      "featureCustomizable": {
+        "title": "你愛的品牌 你要的樣子",
+        "description": "品牌化的線上訂餐系統，為了您的品牌設計，更好地展示您的Logo、菜單、新菜色和各種促銷活動。"
+      }
+    },
+    "keyFeatures": {
+      "title": "主要功能",
+      "subtitle": "簡化您的訂單，讓顧客滿意",
+      "0": {
+          "title": "輕鬆管理菜單",
+          "description": "實時更新您的菜單"
+      },
+      "1": {
+          "title": "無縫訂單處理",
+          "description": "高效管理訂單"
+      },
+      "2": {
+          "title": "整合外送選項",
+          "description": "連接外送合作夥伴"
+      }
+    },
+    "details": {
+      "title": "為何選擇我們的線上點餐系統？",
+      "description": "用專為增長和效率設計的功能賦能您的餐廳。",
+      "0": {
+        "title": "踏上營收成長之路",
+        "description": "擴大您的顧客資料庫，並利用能增加顧客忠誠度和回購率的工具來和顧客建立更緊密的關係。",
+        "item1": "收集和分析顧客資料，了解顧客的瀏覽行為、餐點偏好和購買頻率等數據洞見。",
+        "item2": "獎勵回購的顧客，進行分眾行銷，並通過客製化的活動重新吸引流失的顧客。",
+        "item3": "將線上的外送顧客轉換為內用的顧客，並通過獨家優惠和客製化的獎勵計畫讓他們不斷地回購。",
+        "imageAlt": "顧客關係管理介面"
+      },
+      "1": {
+        "title": "完整、順暢的物流管理",
+        "description": "Oddle外帶外送系統專為簡化您的餐廳運作而設計，跟Oddle合作，以便您可以專注於提供顧客優質的餐點和用餐體驗。",
+        "item1": "擴大外送範圍、簡化外送規則，讓Oddle有效地幫您管理物流，實現最佳的訂單完成率",
+        "item2": "彈性的外送選項以服務不同需求的客戶",
+        "imageAlt": "物流追踪介面"
+      },
+      "2": {
+        "title": "加入擁有百萬美食愛好者的Oddle Eats",
+        "description": "讓您的餐廳被上百萬的美食愛好者看見，當他們想要聚餐、辦派對時，可以找到您的品牌，然後直接跟您下單。",
+        "item1": "免費參與贊助的行銷活動",
+        "item2": "擴大觸及我們具有高購買力的富裕用戶群",
+        "imageAlt": "Oddle Eats 移動應用介面"
+      }
+    }
+  },
+  "loyaltyCrm": {
+    "hero": {
+      "title": "",
+      "description": "",
+      "slides": {
+        "0": {
+          "imageAlt": ""
+        }
+      }
+    },
+    "details": {
+      "title": "",
+      "description": "",
+      "capture": {
+        "title": "",
+        "description": "",
+        "item0": "",
+        "item1": "",
+        "imageAlt": ""
+      },
+      "automate": {
+        "title": "",
+        "description": "",
+        "item0": "",
+        "item1": "",
+        "imageAlt": ""
+      }
+    },
+    "faq": {
+      "0": {
+        "question": "",
+        "answer": ""
+      },
+      "1": {
+        "question": "",
+        "answer": ""
+      },
+      "2": {
+        "question": "",
+        "answer": ""
+      },
+      "3": {
+        "question": "",
+        "answer": ""
+      },
+      "4": {
+        "question": "",
+        "answer": ""
+      },
+      "5": {
+        "question": "",
+        "answer": ""
+      },
+      "6": {
+        "question": "",
+        "answer": ""
+      }
+    }
   },
   "products": {
     "reservation-system": {

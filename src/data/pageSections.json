@@ -1,13 +1,14 @@
 {
   "home": [
     {
-      "component": "ProductCarouselHero",
+      "component": "HeroWithCarousel",
       "props": {
+        "i18nBaseKey": "home.hero",
         "reverseMobileLayout": true,
         "title": "Making revenue growth easy for restaurants",
         "description": "Oddle empowers restaurants across the world to capture customer data, build their brand, and grow their business",
-        "primaryButton": { "text": "Get started", "action": "/get-started" },
-        "secondaryButton": { "text": "Contact sales team", "action": "/contact-sales" },
+        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           { "imageSrc": "https://placehold.co/700x540/E2E8F0/AAAAAA?text=Slide1", "imageAlt": "Placeholder Alt 1" },
           { "imageSrc": "https://placehold.co/700x540/CCDDAA/AAAAAA?text=Slide2", "imageAlt": "Placeholder Alt 2" }
@@ -15,38 +16,203 @@
       }
     },
     {
-      "component": "ABCSection",
+      "component": "IconSectionHorizontal",
       "props": {
+        "i18nBaseKey": "home.methodology",
         "title": "Growing is as easy as ABC",
         "subtitle": "Acquire, Build, and Convert Your Way to Success",
         "items": [
-          { "title": "Acquire Customer Data", "description": "Capture insights..." },
-          { "title": "Build Your Brand", "description": "Create a seamless..." },
-          { "title": "Convert for Growth", "description": "Turn first-time..." }
+          { "title": "Acquire Customer Data", "description": "Capture insights from every reservation, delivery, and dine-in visit to build a powerful customer database" },
+          { "title": "Build Your Brand", "description": "Create a seamless online presence that reflects your restaurant's identity and keeps customers engaged" },
+          { "title": "Convert for Growth", "description": "Turn first-time diners into regulars with automated rewards, campaigns, and personalized reminders" }
         ]
       }
     },
     {
       "component": "BentoGridSection",
       "props": {
-        "badgeText": "Features Showcase",
-        "title": "All Your Restaurant Tools in One Place",
-        "description": "Simplify operations...",
-        "getStartedButtonText": "Get Started Now",
-        "livePreviewButtonText": "See Live Preview",
+        "i18nBaseKey": "home.bentoGrid",
+        "badgeText": "Our solutions",
+        "title": "Everything you need to grow your revenue",
+        "description": "A complete suite of tools designed to attract customers, streamline operations, and boost your restaurant's bottom line.",
         "cards": [
-          { "id": 1, "type": "large", "title": "Unified Dashboard", "description": "Monitor sales...", "imageUrl": "https://placehold.co/600x400/E2E8F0/AAAAAA?text=Dashboard", "imageAlt": "Unified Dashboard Alt" },
-          { "id": 2, "type": "small", "title": "Order Management", "description": "Streamline orders...", "imageAlt": "Order Management Alt" },
-          { "id": 2, "type": "wide", "title": "Order Management", "description": "Streamline orders...", "imageAlt": "Order Management Alt" },
-          { "id": 2, "type": "large", "title": "Order Management", "description": "Streamline orders...", "imageAlt": "Order Management Alt" }
+          { 
+            "id": 1, 
+            "type": "default", 
+            "title": "Reservation", 
+            "description": "Simplify table bookings and grow dine-in sales across all segments", 
+            "imageUrl": "https://placehold.co/600x400/E2E8F0/AAAAAA?text=Reservation+Img", 
+            "imageAlt": "Reservation system interface showing table booking.",
+            "linkText": "Learn more",
+            "linkAction": "/products/restaurant-reservation-system" 
+          },
+          { 
+            "id": 2, 
+            "type": "default", 
+            "title": "Online Ordering", 
+            "description": "Boost delivery revenue with a branded online ordering system", 
+            "imageUrl": "https://placehold.co/600x400/E8F0E2/AAAAAA?text=Ordering+Img", 
+            "imageAlt": "Online ordering interface showing menu and delivery details.",
+            "linkText": "Learn more",
+            "linkAction": "/products/restaurant-online-ordering-system"
+          },
+          { 
+            "id": 3, 
+            "type": "default", 
+            "title": "Next-Gen Payment Terminals", 
+            "description": "Competitive payment processing that turns every transaction into a growth opportunity", 
+            "imageUrl": "https://placehold.co/600x400/F0E8E2/AAAAAA?text=Payments+Img", 
+            "imageAlt": "Payment terminal screen showing transaction details.",
+            "linkText": "Learn more",
+            "linkAction": "/products/payment-terminal"
+          },
+          { 
+            "id": 4, 
+            "type": "default", 
+            "title": "Loyalty", 
+            "description": "Encourage repeat visits with rewards and automated reminders", 
+            "imageUrl": "https://placehold.co/600x400/E8E2F0/AAAAAA?text=Loyalty+Img", 
+            "imageAlt": "Loyalty program interface on a phone.",
+            "linkText": "Learn more",
+            "linkAction": "/products/restaurant-loyalty-crm-system"
+          },
+          { 
+            "id": 5, 
+            "type": "default", 
+            "title": "Surveys", 
+            "description": "Automatically collect feedback and boost your online reputation", 
+            "imageUrl": "https://placehold.co/600x400/E2F0F0/AAAAAA?text=Surveys+Img", 
+            "imageAlt": "Customer filling out a survey on a phone with star ratings visible.",
+            "linkText": "Learn more",
+            "linkAction": "/products/survey-tool"
+          },
+          { 
+            "id": 6, 
+            "type": "default", 
+            "title": "Virtual Lounge", 
+            "description": "Create a digital space that reflects your menu, promotions, and personality", 
+            "imageUrl": "https://placehold.co/600x400/F0E2F0/AAAAAA?text=Lounge+Img", 
+            "imageAlt": "Virtual lounge interface on a phone showing restaurant details.",
+            "linkText": "Learn more",
+            "linkAction": "/products/restaurant-virtual-lounge"
+          },
+          { 
+            "id": 7, 
+            "type": "default", 
+            "title": "Marketing Engine", 
+            "description": "Automate campaigns and grow your online reputation effortlessly", 
+            "imageUrl": "https://placehold.co/600x400/E2E8E8/AAAAAA?text=Marketing+Img", 
+            "imageAlt": "Marketing email campaign builder interface.",
+            "linkText": "Learn more",
+            "linkAction": "/products/email-marketing-system"
+          },
+          { 
+            "id": 8, 
+            "type": "default", 
+            "title": "Customer Intelligence", 
+            "description": "Get actionable insights from your customer data", 
+            "imageUrl": "https://placehold.co/600x400/F0F0E2/AAAAAA?text=CRM+Img", 
+            "imageAlt": "Customer intelligence dashboard showing analytics.",
+            "linkText": "Learn more",
+            "linkAction": "/products/crm-customer-intelligence"
+          }
+        ]
+      }
+    },
+    {
+      "component": "TimelineSection",
+      "props": {
+        "i18nBaseKey": "home.timeline",
+        "heading": "Our Journey So Far",
+        "description": "Follow our progress as we continue to innovate and grow, helping restaurants like yours succeed.",
+        "primaryButton": {
+          "text": "Learn About Our Vision",
+          "action": "/about-us"
+        },
+        "secondaryButton": {
+          "text": "See Product Updates",
+          "action": "/blog"
+        },
+        "features": [
+          {
+            "imageSrc": "https://placehold.co/600x400/E2E8F0/AAAAAA?text=Journey+1",
+            "imageAlt": "Placeholder Journey 1",
+            "title": "Early Days",
+            "description": "Building the foundation and defining our mission to empower restaurants."
+          },
+          {
+            "imageSrc": "https://placehold.co/600x400/CCDDAA/AAAAAA?text=Journey+2",
+            "imageAlt": "Placeholder Journey 2",
+            "title": "Growth Phase",
+            "description": "Expanding our reach and enhancing our platform based on valuable user feedback."
+          },
+          {
+            "imageSrc": "https://placehold.co/600x400/E8F0E2/AAAAAA?text=Journey+3",
+            "imageAlt": "Placeholder Journey 3",
+            "title": "Major Milestones",
+            "description": "Celebrating key achievements and the positive impact on our restaurant partners."
+          },
+          {
+            "imageSrc": "https://placehold.co/600x400/F0E8E2/AAAAAA?text=Journey+4",
+            "imageAlt": "Placeholder Journey 4",
+            "title": "Future Focus",
+            "description": "Continuing to innovate and develop cutting-edge solutions for the F&B industry."
+          }
+        ]
+      }
+    },
+    {
+      "component": "FeatureSectionWithSubpoints",
+      "props": {
+        "i18nBaseKey": "home.platformFeatures",
+        "heading": "Built for Restaurant Growth",
+        "description": "Our platform integrates seamlessly to provide the tools you need for success, all in one place.",
+        "imageSrc": "https://ucarecdn.com/030b9c8c-ecd6-42cb-8c55-6b2d8035fe14/-/preview/1000x778/",
+        "imageAlt": "Oddle Platform Features Overview",
+        "features": [
+          {
+            "icon": "Zap",
+            "title": "Fast & Reliable",
+            "description": "Dependable performance to keep your operations running smoothly."
+          },
+          {
+            "icon": "Cpu",
+            "title": "Powerful Integrations",
+            "description": "Connect effortlessly with POS, delivery partners, and marketing tools."
+          },
+          {
+            "icon": "Lock",
+            "title": "Secure Data",
+            "description": "Your customer and business data is protected with top-tier security."
+          },
+          {
+            "icon": "Sparkles",
+            "title": "AI-Driven Insights",
+            "description": "Leverage intelligent analytics to understand trends and optimize strategy."
+          }
         ]
       }
     }
   ],
   "products/restaurant-online-ordering-system": [
     {
+      "component": "HeroWithCarousel",
+      "props": {
+        "i18nBaseKey": "onlineOrdering.hero",
+        "reverseMobileLayout": true,
+        "title": "Restaurant Online Ordering System",
+        "description": "Streamline your orders and delight your customers.",
+        "primaryButton": { "text": "Get started", "action": "/get-started" },
+        "secondaryButton": { "text": "Contact sales team", "action": "/contact-sales" },
+        "slides": [
+          { "imageSrc": "https://ucarecdn.com/7f9cb7a3-a7d6-42d5-b225-5a4e2647d384/-/preview/400x400/", "imageAlt": "Restaurant Online Ordering System Carousel Image" }
+        ]
+      }
+    },
+    {
       "component": "HeroSectionWithAppShowcase",
       "props": {
+        "i18nBaseKey": "onlineOrdering.multiPlatform",
         "badgeText": "Online Ordering",
         "title": "Boost Your Orders with a Seamless Online System",
         "description": "Enable customers to order directly from you, anytime, anywhere, with a beautiful and responsive interface.",
@@ -83,26 +249,21 @@
       }
     },
     {
-      "component": "ProductCarouselHero",
+      "component": "IconSectionHorizontal",
       "props": {
-        "title": "Restaurant Online Ordering System",
-        "description": "Streamline your orders and delight your customers."
-      }
-    },
-    {
-      "component": "ABCSection",
-      "props": {
-          "title": "Key Features",
-          "items": [
-              { "title": "Easy Menu Management", "description": "Update your menu in real-time." },
-              { "title": "Seamless Order Processing", "description": "Manage orders efficiently." },
-              { "title": "Integrated Delivery Options", "description": "Connect with delivery partners." }
-          ]
+        "i18nBaseKey": "onlineOrdering.keyFeatures",
+        "title": "Key Features",
+        "items": [
+          { "title": "Easy Menu Management", "description": "Update your menu in real-time." },
+          { "title": "Seamless Order Processing", "description": "Manage orders efficiently." },
+          { "title": "Integrated Delivery Options", "description": "Connect with delivery partners." }
+        ]
       }
     },
     {
       "component": "FeatureSectionWithImages",
       "props": {
+        "i18nBaseKey": "onlineOrdering.details",
         "sectionTitle": "Why Choose Our Online Ordering System?",
         "sectionDescription": "Empower your restaurant with features designed for growth and efficiency.",
         "features": [
@@ -114,7 +275,7 @@
               "Reward repeat customers, run targeted promotions, and re-engage lapsed diners with personalized campaigns.",
               "Convert delivery customers into dine-in guests and keep them coming back with exclusive offers and tailored experiences."
             ],
-            "imageSrc": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1024&auto=format&fit=crop",
+            "imageSrc": "https://ucarecdn.com/260a36bf-d714-440a-abd5-aefa169979cc/-/preview/807x1000/",
             "imageAlt": "Customer relationship management interface showing profile and communication."
           },
           {
@@ -124,7 +285,7 @@
               "Streamline delivery zones, manage logistics efficiently, and achieve best-in-class fulfillment rates.",
               "Flexible delivery options to serve customers far and wide."
             ],
-            "imageSrc": "https://images.unsplash.com/photo-1591848999006-16399911425a?q=80&w=1024&auto=format&fit=crop",
+            "imageSrc": "https://ucarecdn.com/992a1660-1ca3-4d75-91de-5318366408d6/-/preview/924x1000/",
             "imageAlt": "Delivery tracking interface showing map and vehicle."
           },
           {
@@ -134,17 +295,21 @@
               "Participate in sponsored marketing campaigns at no extra charge.",
               "Extend your reach to our affluent user base with high purchasing power."
             ],
-            "imageSrc": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1024&auto=format&fit=crop",
+            "imageSrc": "https://ucarecdn.com/45d8a7bd-134e-456d-900a-1d3579b2c249/-/preview/621x1000/",
             "imageAlt": "Oddle Eats mobile app interface showing restaurant listings."
           }
         ]
       }
+    },
+    {
+      "component": "FaqSection"
     }
   ],
   "products/restaurant-reservation-system": [
     {
-      "component": "ProductCarouselHero",
+      "component": "HeroWithCarousel",
       "props": {
+        "i18nBaseKey": "reservationSystem.hero",
         "title": "Effortless Restaurant Reservations",
         "description": "Manage your tables, reduce no-shows, and provide a seamless booking experience.",
         "primaryButton": { "text": "Request Demo", "action": "/request-demo" },
@@ -153,19 +318,52 @@
           { "imageSrc": "https://placehold.co/700x540/AADDAA/AAAAAA?text=Reservation2", "imageAlt": "Table Management View" }
         ]
       }
+    },
+    {
+      "component": "FeatureSectionWithSubpoints",
+      "props": {
+        "i18nBaseKey": "reservationSystem.features",
+        "heading": "Streamline Your Reservations",
+        "description": "Powerful features designed to optimize your table management and enhance the guest experience.",
+        "imageSrc": "https://placehold.co/1200x600/F0E2E8/AAAAAA?text=Reservation+Features",
+        "imageAlt": "Reservation System Features Showcase",
+        "features": [
+          {
+            "icon": "Zap",
+            "title": "Instant Booking",
+            "description": "Allow guests to book tables instantly, anytime, anywhere."
+          },
+          {
+            "icon": "Cpu",
+            "title": "Smart Table Management",
+            "description": "Optimize seating arrangements and minimize wait times automatically."
+          },
+          {
+            "icon": "Lock",
+            "title": "Reduce No-Shows",
+            "description": "Automated reminders and secure booking deposits to minimize cancellations."
+          },
+          {
+            "icon": "Sparkles",
+            "title": "Guest Insights",
+            "description": "Collect valuable guest preferences and visit history for personalized service."
+          }
+        ]
+      }
     }
   ],
   "products/restaurant-loyalty-crm-system": [
     {
-      "component": "ProductCarouselHero",
+      "component": "HeroWithCarousel",
       "props": {
+        "i18nBaseKey": "loyaltyCrm.hero",
         "title": "Turn every visit into a loyal customer",
         "description": "Capture, engage, and retain your customers with a loyalty program designed for Restaurants",
         "primaryButton": { "text": "Get Started", "action": "/get-started" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales" },
         "slides": [
-          { 
-            "imageSrc": "https://placehold.co/700x540/E8E2F0/AAAAAA?text=Loyalty+UI", 
+          {
+            "imageSrc": "https://placehold.co/700x540/E8E2F0/AAAAAA?text=Loyalty+UI",
             "imageAlt": "Restaurant Loyalty Program UI Showcase"
           }
         ]
@@ -174,10 +372,12 @@
     {
       "component": "FeatureSectionWithImages",
       "props": {
+        "i18nBaseKey": "loyaltyCrm.details",
         "sectionTitle": "How restaurants grow using Oddle",
         "sectionDescription": "",
         "features": [
           {
+            "translationSubKey": "capture",
             "title": "Capture Every Customer",
             "description": "Grow your customer database",
             "items": [
@@ -188,6 +388,7 @@
             "imageAlt": "Phone showing successful check-in for loyalty program"
           },
           {
+            "translationSubKey": "automate",
             "title": "Automate Engagement",
             "description": "Keep your Restaurant Top of Mind",
             "items": [
@@ -199,12 +400,16 @@
           }
         ]
       }
+    },
+    {
+      "component": "FaqSection"
     }
   ],
   "products/restaurant-virtual-lounge": [
     {
-      "component": "ProductCarouselHero",
+      "component": "HeroWithCarousel",
       "props": {
+        "i18nBaseKey": "virtualLounge.hero",
         "title": "Showcase Your Brand Online with Oddle's Virtual Lounge",
         "description": "Create a branded digital space to engage customers, showcase your menu, and drive both online and in-person visits.",
         "primaryButton": { "text": "Get Started", "action": "/get-started" },
@@ -220,10 +425,12 @@
     {
       "component": "FeatureSectionWithImages",
       "props": {
+        "i18nBaseKey": "virtualLounge.details",
         "sectionTitle": "",
         "sectionDescription": "",
         "features": [
           {
+            "translationSubKey": "personality",
             "title": "Showcase Your Restaurant's Personality",
             "description": "Create a branded digital space that tells your story, showcases your menu, and highlights promotions",
             "items": [],
@@ -231,6 +438,7 @@
             "imageAlt": "Phone showing social media interactions"
           },
           {
+            "translationSubKey": "connect",
             "title": "Connect with Customers Anywhere",
             "description": "Engage diners whether they are looking to book a table, order delivery, or browse your offerings online.",
             "items": [],
@@ -238,6 +446,7 @@
             "imageAlt": "Phone showing email signup form in virtual lounge"
           },
           {
+            "translationSubKey": "seamless",
             "title": "Create a Seamless Customer Experience",
             "description": "Integrate your delivery, reservations, and loyalty systems for a unified experience that delights your customers",
             "items": [],

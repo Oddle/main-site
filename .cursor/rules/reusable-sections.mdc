@@ -1,0 +1,171 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: "Guide the creation of new UI components as reusable, data-driven sections using React and Tailwind CSS, including standard internationalization."
+patterns: ["src/components/**/*.tsx", "src/app/**/*.tsx"] # Apply to components and potentially page sections
+---
+
+# Reusable Data-Driven UI Sections
+
+When tasked with creating new UI components, especially those representing distinct sections of a webpage (like heroes, feature lists, grids, CTAs, etc.), please adhere to the following principles:
+
+1.  **Build as React Functional Components:** Use standard React functional component syntax (`export default function MySectionComponent(...)`).
+
+2.  **Data-Driven via Props:**
+    *   **Crucially, design components to accept props for *all* dynamic content.** This includes text (titles, descriptions, labels), lists of items, image sources and alt text, button text, button links or actions, configuration options (like layout variations), etc.
+    *   Define clear TypeScript interfaces for the component's props (e.g., `interface MySectionProps { ... }`).
+    *   **Avoid hardcoding content directly in the JSX.** The component should render data passed to it, not contain the data itself. See the i18n section below for how text props serve as defaults/fallbacks.
+
+3.  **Represent Self-Contained Sections:** Ensure the component encapsulates the necessary structure, styling, and potentially minimal client-side logic for its specific UI block.
+
+4.  **Use Tailwind CSS:** Apply styling using Tailwind utility classes for consistency with the project's styling approach.
+
+5.  **Leverage Existing UI Primitives:** Utilize shared components, particularly those from `shadcn/ui` found in `@/components/ui` (e.g., `Button`, `Card`, `Carousel`) where appropriate, following the `shadcn-ui.mdc` rule.
+
+6.  **Implement Standard i18n:** Follow the internationalization pattern detailed below.
+
+7.  **Aim for Reusability:** Structure the component so it could potentially be reused on different pages or in different contexts with different data conforming to its prop interface.
+
+# Internationalization (i18n) Standard Pattern
+
+Reusable section components must follow a standard pattern for internationalization to ensure consistency and leverage default/fallback content defined in `src/data/pageSections.json`.
+
+## Core Concepts
+
+1.  **`i18nBaseKey` Prop:** Each reusable section component **must** accept an `i18nBaseKey` prop (string). This key points to the root object for that section's translations in `messages/[locale].json`.
+2.  **`getTranslation` Helper:** Use the `getTranslation` helper function (from `@/lib/i18nUtils`) along with the `useTranslations` hook from `next-intl`.
+3.  **Default Values:** The component should accept props for display text (e.g., `title`, `description`, item titles/descriptions) directly from `pageSections.json`. These values serve as the **default/fallback** text if a translation is missing.
+4.  **Key Generation:**
+    *   For top-level section properties (like the main title or subtitle), generate the translation key by appending the property name to the base key (e.g., `${i18nBaseKey}.title`).
+    *   For properties within iterated items (like features in a list, icons, etc.), generate the translation key using the **item's index** within the loop (e.g., `${i18nBaseKey}.${index}.title`).
+
+## Conceptual Example (Integrating i18n)
+
+This example modifies the previous `CallToActionSection` to include the standard i18n pattern.
+
+### Component (`src/components/sections/CallToActionSection.tsx`)
+
+```typescript
+import { Button } from "@/components/ui/button";
+import { useTranslations } from 'next-intl'; // Import i18n hook
+import { getTranslation } from '@/lib/i18nUtils'; // Import i18n helper
+
+// Define the shape of the data the component expects
+interface ButtonData {
+  text: string;   // Default text
+  action: string;
+}
+interface CallToActionProps {
+  i18nBaseKey: string; // Added: Base key for translations
+  title: string;       // Added: Default title from pageSections.json
+  description: string; // Added: Default description
+  imageUrl?: string;
+  imageAlt?: string;   // Added: Default alt text
+  primaryButton: ButtonData;
+  secondaryButton?: ButtonData;
+}
+
+// The component receives data via props and uses i18n
+export default function CallToActionSection({
+  i18nBaseKey,
+  title: defaultTitle,        // Renamed to indicate default/fallback
+  description: defaultDescription,
+  imageUrl,
+  imageAlt: defaultImageAlt,
+  primaryButton,
+  secondaryButton
+}: CallToActionProps) {
+  const t = useTranslations(); // Initialize i18n hook
+
+  // Translate text props using the base key and defaults
+  const title = getTranslation(t, `${i18nBaseKey}.title`, defaultTitle);
+  const description = getTranslation(t, `${i18nBaseKey}.description`, defaultDescription);
+  const imageAlt = getTranslation(t, `${i18nBaseKey}.imageAlt`, defaultImageAlt || ''); // Provide empty default if needed
+  const primaryButtonText = getTranslation(t, `${i18nBaseKey}.primaryButton.text`, primaryButton.text);
+  const secondaryButtonText = secondaryButton
+    ? getTranslation(t, `${i18nBaseKey}.secondaryButton.text`, secondaryButton.text)
+    : undefined;
+
+  // ... component implementation using translated props ...
+  return (
+    <section className="bg-muted p-8 rounded-lg">
+      <h2>{title}</h2>
+      <p>{description}</p>
+      {imageUrl && <img src={imageUrl} alt={imageAlt} />}
+      <div className="flex gap-4 mt-4">
+        <Button onClick={() => handleAction(primaryButton.action)}>
+          {primaryButtonText}
+        </Button>
+        {secondaryButton && secondaryButtonText && (
+          <Button variant="outline" onClick={() => handleAction(secondaryButton.action)}>
+            {secondaryButtonText}
+          </Button>
+        )}
+      </div>
+    </section>
+  );
+
+  function handleAction(action: string) {
+    // Logic to handle button click based on action (e.g., navigate, trigger event)
+    console.log("Action triggered:", action);
+    if (action.startsWith('/')) {
+       window.location.href = action;
+    }
+  }
+}
+```
+
+### Translations (`messages/en.json` - Example Structure)
+
+```json
+{
+  "somePage": {
+    "ctaSection": {
+      "title": "Call to Action (Translated)",
+      "description": "This is the translated description.",
+      "imageAlt": "Translated alt text for the image.",
+      "primaryButton": {
+        "text": "Get Started Now"
+      },
+      "secondaryButton": {
+        "text": "Learn More Here"
+      }
+    }
+  }
+}
+```
+
+### Data (`src/data/pageSections.json` - Example Structure)
+
+```json
+{
+  "component": "CallToActionSection",
+  "props": {
+    "i18nBaseKey": "somePage.ctaSection",
+    "title": "Default CTA Title",
+    "description": "Default description for the CTA.",
+    "imageUrl": "/images/cta-image.jpg",
+    "imageAlt": "Default alt text",
+    "primaryButton": {
+      "text": "Default Get Started",
+      "action": "/signup"
+    },
+    "secondaryButton": {
+      "text": "Default Learn More",
+      "action": "/features"
+    }
+  }
+}
+```
+
+## Summary of i18n Pattern
+
+By following this pattern:
+
+*   Components fetch translations using a base key and item index (where applicable).
+*   `pageSections.json` provides default text content, making it readable and serving as a fallback.
+*   `messages/[locale].json` contains the actual translations, keyed appropriately.
+*   Avoid using properties like `titleKey`, `descriptionKey`, or `translationSubKey` in `pageSections.json` for text that should be translated using this pattern. Pass the default text directly instead.

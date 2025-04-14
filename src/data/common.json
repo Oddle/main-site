@@ -15,7 +15,7 @@
     "loyalty-program": {
       "name": "Loyalty Program",
       "description": "Capture every customer and turn them into repeat",
-      "href": "/products/restaurant-loyalty-program",
+      "href": "/products/restaurant-loyalty-crm-system",
       "category": "acquire"
     },
     "payment-terminal": {
@@ -173,7 +173,7 @@
       "description": "Link Description",
       "href": "https://facebook.com/oddleapp"
     },
-    "linked-in": {
+    "linkedin": {
       "name": "LinkedIn",
       "description": "Link Description",
       "href": "https://linkedin.com/company/oddle"

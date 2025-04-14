@@ -13,5 +13,5 @@ export default function HomePage() {
   setRequestLocale(locale);
 
   // Pass sectionsData specific to this page
-  return <DynamicSectionPage sectionsData={sectionsData} />;
+  return <DynamicSectionPage sectionsData={sectionsData} locale={locale} pageUrl="/" />;
 }

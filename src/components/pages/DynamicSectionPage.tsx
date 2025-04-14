@@ -1,75 +1,77 @@
 "use client";
-import { useTranslations } from "next-intl";
 import NavBar from "../common/NavBar";
-import ProductCarouselHero from "@/components/sections/ProductCarouselHero";
+import HeroWithCarousel from "@/components/sections/HeroWithCarousel";
 import BentoGridSection from "@/components/sections/BentoGridSection";
-import ABCSection from "@/components/sections/ABCSection";
+import IconSectionHorizontal from "@/components/sections/IconSectionHorizontal";
 import HeroSectionWithAppShowcase from "@/components/sections/HeroSectionWithAppShowcase";
 import FeatureSectionWithImages from "@/components/sections/FeatureSectionWithImages";
-import React from 'react'; // Import React for ComponentType typing
+import FaqSection from "@/components/sections/FaqSection";
+import React from 'react';
 import Footer from "../common/Footer";
+import TimelineSection from "@/components/sections/TimelineSection";
+import FeatureSectionWithSubpoints from "@/components/sections/FeatureSectionWithSubpoints";
 
 // --- Define type for section data --- (Good practice)
 interface SectionDefinition {
   component: string; // Ideally keyof typeof componentMap, but string is simpler for now
-  props: Record<string, unknown>; // Keep props flexible
+  props?: Record<string, unknown>; // Props are optional, especially for components like FaqSection that get dynamic ones
 }
 
 // --- Props for the component ---
 interface DynamicSectionPageProps {
   sectionsData: SectionDefinition[];
+  pageUrl: string; // Add pageUrl prop
+  locale: string; // Add locale prop
 }
 
 // --- Component Map --- (Ensure keys match component names in JSON)
 const componentMap = {
-  ProductCarouselHero,
-  ABCSection,
+  HeroWithCarousel,
+  IconSectionHorizontal,
   BentoGridSection,
   HeroSectionWithAppShowcase,
   FeatureSectionWithImages,
+  FaqSection, // Add FaqSection to the map
+  TimelineSection,
+  FeatureSectionWithSubpoints
 };
 
-// Update component signature to accept props
-export default function DynamicSectionPage({ sectionsData }: DynamicSectionPageProps) {
-  const t = useTranslations(); // Use default namespace for section content
+// Removed the processProps function
 
-  // Recursive function to translate all string values
-  const translateAllStrings = (value: unknown): unknown => {
-    if (typeof value === 'string') {
-      return t(value);
-    } else if (Array.isArray(value)) {
-      return value.map(item => translateAllStrings(item));
-    } else if (typeof value === 'object' && value !== null) {
-      const translatedObject: Record<string, unknown> = {};
-      for (const key in value) {
-        if (Object.prototype.hasOwnProperty.call(value, key)) {
-          translatedObject[key] = translateAllStrings((value as Record<string, unknown>)[key]);
-        }
-      }
-      return translatedObject;
-    }
-    return value;
-  };
+// Update component signature to accept props
+export default function DynamicSectionPage({ sectionsData, pageUrl, locale }: DynamicSectionPageProps) {
+  // Add console log here
+  console.log("[DynamicSectionPage] Received props:", { pageUrl, locale, sectionsData });
 
   return (
     <div className="flex flex-col min-h-screen w-full">
       <NavBar />
       <main className="flex-1">
         {sectionsData.map((section, index) => {
-          const Component = componentMap[section.component as keyof typeof componentMap];
-          if (!Component) {
-            console.warn(`Component ${section.component} not found in componentMap`);
-            return null;
-          }
+            const Component = componentMap[section.component as keyof typeof componentMap];
+            if (!Component) {
+              console.warn(`Component ${section.component} not found in componentMap`);
+              return null;
+            }
 
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const translatedProps = translateAllStrings(section.props) as Record<string, any>;
+            // Prepare props, starting with those from JSON (if any)
+            let combinedProps = { ...section.props };
 
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const DynamicComponent = Component as React.ComponentType<any>;
+            // If it's the FaqSection, add the dynamic pageUrl and locale props
+            if (section.component === 'FaqSection') {
+              combinedProps = {
+                ...combinedProps, // Keep any static props defined in JSON (though unlikely for FaqSection)
+                pageUrl: pageUrl,
+                locale: locale,
+              };
+            }
 
-          return <DynamicComponent key={index} {...translatedProps} />;
-        })}
+            // Pass props directly
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const DynamicComponent = Component as React.ComponentType<any>;
+
+            return <DynamicComponent key={index} {...combinedProps} />;
+          })}
       </main>
       <Footer />
     </div>

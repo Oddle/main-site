@@ -1,0 +1,110 @@
+{
+  "home": {
+    "en": [
+      {
+        "question": "Can I cancel at anytime?",
+        "answer": "Yes, you can cancel anytime no questions are asked while you cancel but we would highly appreciate if you will give us some feedback."
+      },
+      {
+        "question": "My team has credits. How do we use them?",
+        "answer": "Once your team signs up for a subscription plan. This is where we sit down, grab a cup of coffee and dial in the details."
+      },
+      {
+        "question": "How does Acme's pricing work?",
+        "answer": "Our subscriptions are tiered. Understanding the task at hand and ironing out the wrinkles is key."
+      },
+      {
+        "question": "How secure is Acme?",
+        "answer": "Protecting the data you trust to Acme is our first priority. This part is really crucial in keeping the project in line to completion."
+      },
+      {
+        "question": "How do I get access to a theme I purchased?",
+        "answer": "If you lose the link for a theme you purchased, don't panic! We've got you covered. You can login to your account, tap your avatar in the upper right corner, and tap Purchases. If you didn't create a login or can't remember the information, you can use our handy Redownload page, just remember to use the same email you originally made your purchases with."
+      },
+      {
+        "question": "Upgrade License Type",
+        "answer": "There may be times when you need to upgrade your license from the original type you purchased and we have a solution that ensures you can apply your original purchase cost to the new license purchase."
+      }
+    ]
+  },
+  "products/restaurant-online-ordering-system": {
+    "en": [
+      {
+        "question": "What is an online ordering system for restaurants?",
+        "answer": "An online ordering system for restaurants allows diners to place orders directly through a restaurant's website or app. It streamlines the ordering process, eliminating the need for third-party platforms and helping restaurants build a stronger connection with their customers."
+      },
+      {
+        "question": "How does Oddle's online ordering system help my restaurant?",
+        "answer": "Oddle's online ordering system enables restaurants to create their own branded e-shop. It helps you manage orders efficiently, grow your customer base, and retain loyal diners—all while reducing reliance on commission-based platforms."
+      },
+      {
+        "question": "Why should I use an online ordering system instead of a marketplace?",
+        "answer": "Unlike marketplaces that charge high commissions, an online ordering system gives you complete control over your brand and customer data. It's a cost-effective way to drive repeat sales and increase your profit margins."
+      },
+      {
+        "question": "What features should I look for in an online ordering system for restaurants?",
+        "answer": "When selecting an online ordering system, it's important to consider features that enhance both functionality and customer experience. A customizable storefront allows businesses to reflect their brand identity, while seamless integration with payment gateways ensures smooth transactions. Tools for collecting customer data provide valuable insights, and marketing automation capabilities help drive engagement and increase sales."
+      },
+      {
+        "question": "Does Oddle's online ordering system integrate with delivery services?",
+        "answer": "Yes, Oddle integrates with third-party logistics partners to streamline deliveries. This ensures that you can offer a seamless ordering and delivery experience to your customers."
+      },
+      {
+        "question": "How can an online ordering system help grow my restaurant's sales?",
+        "answer": "By implementing an online ordering system, businesses can reach a wider customer base and extend their presence beyond physical locations. This system allows them to offer promotions that encourage repeat purchases while also collecting valuable customer data. With this data, businesses can run targeted marketing campaigns, boosting customer engagement and driving sales growth."
+      },
+      {
+        "question": "Is Oddle's online ordering system easy to set up?",
+        "answer": "Absolutely! Oddle's system is designed with simplicity in mind. Our team will guide you through the onboarding process, ensuring your e-shop is ready to go in no time."
+      },
+      {
+        "question": "How does Oddle ensure a good customer experience with its online ordering system?",
+        "answer": "Oddle provides a user-friendly interface for both restaurant owners and customers. Our system supports features like real-time order tracking, personalized promotions, and smooth payment processing to enhance customer satisfaction."
+      },
+      {
+        "question": "Can I collect customer data with Oddle's online ordering system?",
+        "answer": "Yes! Oddle empowers restaurants by collecting customer data, such as order history and contact information. This allows you to run loyalty programs and personalized marketing campaigns, helping to boost retention."
+      },
+      {
+        "question": "How much does Oddle's online ordering system for restaurants cost?",
+        "answer": "Oddle offers transparent, usage-based pricing, with no upfront costs or hidden fees. This ensures that you only pay for what you use, making it affordable for restaurants of all sizes."
+      },
+      {
+        "question": "How can I promote my online ordering system to customers?",
+        "answer": "Oddle supports your marketing efforts with tools to create email campaigns, social media promotions, and discounts that encourage customers to order online."
+      }
+    ]
+  },
+  "products/restaurant-loyalty-crm-system": {
+    "en": [
+      {
+        "question": "What is Oddle Loyalty?",
+        "answer": "Oddle's Restaurant Loyalty CRM System is a seamless, easy-to-use digital loyalty software that rewards returning customers and simplifies diner engagement. By combining simple check-in rewards with customer insights, it helps restaurants build stronger relationships and boost repeat visits."
+      },
+      {
+        "question": "How does Oddle's loyalty rewards programme work?",
+        "answer": "Unlike traditional points-based programmes, Oddle uses a simple check-in system where customers earn rewards just by visiting again. All diners at the table can check in—not just the payer—resulting in up to 4x more data captured. This data is invaluable for your remarketing efforts, enabling you to better understand diner behavior and craft personalized campaigns that drive engagement. With return vouchers and flexible incentives, the programme focuses on making loyalty easy for both customers and merchants. Diners can simply tap or scan to check in, making the process fast and frictionless."
+      },
+      {
+        "question": "What are some examples of Oddle merchants using this loyalty programme?",
+        "answer": "In Singapore, well-known establishments like Swee Choon, Barrio, Cenzo, and HJH Maimunah use Oddle's restaurant loyalty system to attract loyal customers and increase engagement through personalized return incentives. In Malaysia, popular spots like Flaaah The Bakery and Naj & Belle leverage Oddle's check-in rewards to encourage repeat visits and reward their diners without the hassle of traditional points systems."
+      },
+      {
+        "question": "Why is Oddle Loyalty the best rewards programme for restaurants?",
+        "answer": "Oddle's innovative loyalty solution eliminates the complexity of traditional points-based rewards. Instead, it focuses on encouraging repeat visits through easy-to-implement check-in rewards. With Oddle's check-in solution, everyone at the table can check in—not just the payer—capturing the dining experience for all guests. This addresses one of the biggest flaws in traditional loyalty programmes that only reward the bill payer. Paired with Oddle Pass, the loyalty experience is even more seamless, offering customers and merchants a highly integrated solution."
+      },
+      {
+        "question": "How does Oddle's Loyalty & CRM system help restaurants better understand their customers?",
+        "answer": "With Oddle's built-in CRM capabilities, you can access valuable customer insights like visit frequency and redemption behavior. Once data is collected, Oddle's marketing engine enables you to reach your customers with targeted campaigns, helping to drive repeat visits and boost engagement."
+      },
+      {
+        "question": "Is Oddle suitable for independent restaurants as well as large chains?",
+        "answer": "Yes! Oddle's loyalty rewards programme for restaurants is fully scalable and works for businesses of all sizes. Whether you run a single café or a multi-location chain, Oddle provides the flexibility to design loyalty campaigns that resonate with your audience."
+      },
+      {
+        "question": "What makes Oddle's Loyalty Rewards Programme different?",
+        "answer": "Oddle Loyalty stands out because it focuses on simplicity and customer experience. The check-in rewards system incentivizes diners to return with minimal setup required. Customers check in through an easy tap or scan process, while return vouchers encourage subsequent visits — making Oddle one of the most effective and best loyalty programmes for restaurants."
+      }
+    ]
+  }
+} 
