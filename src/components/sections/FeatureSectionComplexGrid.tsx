@@ -8,7 +8,6 @@ import {
   MessageSquare,
   Star,
   Zap,
-  Icon as LucideIcon, // Generic Icon type
   LayoutTemplate,
   Target
 } from "lucide-react";

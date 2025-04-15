@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 import Container from '@/components/common/Container';
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
