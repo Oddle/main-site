@@ -1,8 +1,168 @@
 {
+  "BentoGridSection": {
+    "card1Description": "",
+    "card1Title": "",
+    "card2Description": "",
+    "card2Title": "",
+    "card3Description": "",
+    "card3Title": "",
+    "card4Description": "",
+    "card4Title": "",
+    "defaultBadge": "",
+    "defaultDescription": "",
+    "defaultTitle": "",
+    "getStartedButton": "",
+    "livePreviewButton": ""
+  },
   "Metadata": {
     "title": "Oddle 餐廳增長平台",
     "description": "協助全球餐廳透過線上點餐、預訂、顧客關係管理和行銷工具實現業務增長。",
     "keywords": "餐廳軟體, 線上點餐, 預訂系統, 餐廳 CRM, 餐飲科技, Oddle"
+  },
+  "common": {
+    "Privacy Policy": "隱私權政策",
+    "Terms of Service": "服務條款",
+    "Contact Us": "联系我们",
+    "About Us": "關於我們",
+    "actions": {
+      "getStarted": "開始使用",
+      "contactSales": "聯繫銷售團隊",
+      "getStartedNow": "立即開始",
+      "seeLivePreview": "查看即時預覽",
+      "learnMore": "了解更多"
+    }
+  },
+  "crm": {
+    "customerIntelligence": {
+      "sectionTitle": "",
+      "sectionDescription": ""
+    },
+    "hero": {
+      "title": "",
+      "description": "",
+      "primaryButton": {
+        "text": ""
+      },
+      "secondaryButton": {
+        "text": ""
+      },
+      "slides": {
+        "0": {
+          "imageAlt": ""
+        }
+      }
+    },
+    "marketingHeader": {
+      "title": "",
+      "subtitle": ""
+    },
+    "discover": {
+      "sectionTitle": "",
+      "sectionDescription": "",
+      "imageAlt": ""
+    },
+    "completeData": {
+      "sectionTitle": "",
+      "sectionDescription": "",
+      "imageAlt": ""
+    },
+    "personalizedMarketing": {
+      "description": "",
+      "heading": "",
+      "imageAlt": "",
+      "features": {
+        "0": {
+          "title": "",
+          "description": ""
+        },
+        "1": {
+          "title": "",
+          "description": ""
+        },
+        "2": {
+          "title": "",
+          "description": ""
+        }
+      }
+    },
+    "opsHeader": {
+      "title": "",
+      "subtitle": ""
+    },
+    "guestFeatures": {
+      "items": {
+        "0": {
+          "title": "",
+          "description": ""
+        },
+        "1": {
+          "title": "",
+          "description": ""
+        }
+      }
+    }
+  },
+  "emailMarketing": {
+    "hero": {
+      "title": "",
+      "description": "",
+      "primaryButton": {
+        "text": ""
+      },
+      "secondaryButton": {
+        "text": ""
+      },
+      "slides": {
+        "0": {
+          "imageAlt": ""
+        }
+      }
+    },
+    "howItWorks": {
+      "sectionTitle": "",
+      "items": {
+        "0": {
+          "title": "",
+          "description": ""
+        },
+        "1": {
+          "title": "",
+          "description": ""
+        },
+        "2": {
+          "title": "",
+          "description": ""
+        }
+      }
+    }
+  },
+  "footer": {
+    "copyright": "{currentYear} © Oddle. 版权所有。",
+    "company": "公司",
+    "about-us": "關於我們",
+    "careers": "Oddle職涯資訊",
+    "contact-us": "联系我们",
+    "products": "產品",
+    "resources": "其它資源",
+    "blog": "行銷引擎指南",
+    "customer-stories": "餐廳案例",
+    "guides": "指南",
+    "restaurant-online-ordering-guide": "線上外帶外送系統指南",
+    "restaurant-reservation-guide": "訂位系統指南",
+    "restaurant-loyalty-guide": "顧客忠誠計劃指南",
+    "restaurant-marketing-guide": "行銷引擎指南",
+    "merchant-support": "商家支援",
+    "comparison": "收費模式",
+    "help-center": "收費模式",
+    "online-ordering-system": "外帶外送系統",
+    "reservations": "訂位系統",
+    "loyalty-crm": "顧客忠誠計畫",
+    "virtual-lounge": "亮點看板",
+    "legal": "法律條款",
+    "privacy-policy": "隱私權政策",
+    "terms-of-service": "服務條款",
+    "facebook": "Facebook",
+    "linkedin": "LinkedIn"
   },
   "home": {
     "hero": {
@@ -13,6 +173,20 @@
       },
       "slide2": {
         "imageAlt": "佔位圖片替代文字 2"
+      },
+      "primaryButton": {
+        "text": ""
+      },
+      "secondaryButton": {
+        "text": ""
+      },
+      "slides": {
+        "0": {
+          "imageAlt": ""
+        },
+        "1": {
+          "imageAlt": ""
+        }
       }
     },
     "abc": {
@@ -74,51 +248,204 @@
         "title": "顧客智能",
         "description": "從您的顧客數據中獲取可行的洞察。",
         "imageAlt": "顯示分析數據的顧客智能儀表板。"
+      },
+      "badgeText": "",
+      "cards": {
+        "0": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        },
+        "1": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        },
+        "2": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        },
+        "3": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        },
+        "4": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        },
+        "5": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        },
+        "6": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        },
+        "7": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        }
+      }
+    },
+    "growingEasy": {
+      "sectionTitle": "",
+      "items": {
+        "0": {
+          "title": "",
+          "description": ""
+        },
+        "1": {
+          "title": "",
+          "description": ""
+        },
+        "2": {
+          "title": "",
+          "description": ""
+        }
+      }
+    },
+    "timeline": {
+      "description": "",
+      "heading": "",
+      "primaryButton": {
+        "text": ""
+      },
+      "secondaryButton": {
+        "text": ""
+      },
+      "features": {
+        "0": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        },
+        "1": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        },
+        "2": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        },
+        "3": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        }
+      }
+    },
+    "platformFeatures": {
+      "description": "",
+      "heading": "",
+      "imageAlt": "",
+      "features": {
+        "0": {
+          "title": "",
+          "description": ""
+        },
+        "1": {
+          "title": "",
+          "description": ""
+        },
+        "2": {
+          "title": "",
+          "description": ""
+        },
+        "3": {
+          "title": "",
+          "description": ""
+        }
       }
     }
   },
-  "BentoGridSection": {
-    "card1Description": "",
-    "card1Title": "",
-    "card2Description": "",
-    "card2Title": "",
-    "card3Description": "",
-    "card3Title": "",
-    "card4Description": "",
-    "card4Title": "",
-    "defaultBadge": "",
-    "defaultDescription": "",
-    "defaultTitle": "",
-    "getStartedButton": "",
-    "livePreviewButton": ""
-  },
-  "footer": {
-    "copyright": "{currentYear} © Oddle. 版权所有。",
-    "company": "公司",
-    "about-us": "關於我們",
-    "careers": "Oddle職涯資訊",
-    "contact-us": "联系我们",
-    "products": "產品",
-    "resources": "其它資源",
-    "blog": "行銷引擎指南",
-    "customer-stories": "餐廳案例",
-    "guides": "指南",
-    "restaurant-online-ordering-guide": "線上外帶外送系統指南",
-    "restaurant-reservation-guide": "訂位系統指南",
-    "restaurant-loyalty-guide": "顧客忠誠計劃指南",
-    "restaurant-marketing-guide": "行銷引擎指南",
-    "merchant-support": "商家支援",
-    "comparison": "收費模式",
-    "help-center": "收費模式",
-    "online-ordering-system": "外帶外送系統",
-    "reservations": "訂位系統",
-    "loyalty-crm": "顧客忠誠計畫",
-    "virtual-lounge": "亮點看板",
-    "legal": "法律條款",
-    "privacy-policy": "隱私權政策",
-    "terms-of-service": "服務條款",
-    "facebook": "Facebook",
-    "linkedin": "LinkedIn"
+  "loyaltyCrm": {
+    "hero": {
+      "title": "",
+      "description": "",
+      "slides": {
+        "0": {
+          "imageAlt": ""
+        }
+      },
+      "primaryButton": {
+        "text": ""
+      },
+      "secondaryButton": {
+        "text": ""
+      }
+    },
+    "details": {
+      "title": "",
+      "description": "",
+      "capture": {
+        "title": "",
+        "description": "",
+        "item0": "",
+        "item1": "",
+        "imageAlt": ""
+      },
+      "automate": {
+        "title": "",
+        "description": "",
+        "item0": "",
+        "item1": "",
+        "imageAlt": ""
+      },
+      "sectionTitle": "",
+      "sectionDescription": "",
+      "features": {
+        "0": {
+          "title": "",
+          "description": "",
+          "tag": "",
+          "imageAlt": ""
+        },
+        "1": {
+          "title": "",
+          "description": "",
+          "tag": "",
+          "imageAlt": ""
+        }
+      }
+    },
+    "faq": {
+      "0": {
+        "question": "",
+        "answer": ""
+      },
+      "1": {
+        "question": "",
+        "answer": ""
+      },
+      "2": {
+        "question": "",
+        "answer": ""
+      },
+      "3": {
+        "question": "",
+        "answer": ""
+      },
+      "4": {
+        "question": "",
+        "answer": ""
+      },
+      "5": {
+        "question": "",
+        "answer": ""
+      },
+      "6": {
+        "question": "",
+        "answer": ""
+      }
+    }
   },
   "navbar": {
     "acquire": "获客",
@@ -157,17 +484,40 @@
       }
     }
   },
-  "common": {
-    "Privacy Policy": "隱私權政策",
-    "Terms of Service": "服務條款",
-    "Contact Us": "联系我们",
-    "About Us": "關於我們",
-    "actions": {
-       "getStarted": "開始使用",
-       "contactSales": "聯繫銷售團隊",
-       "getStartedNow": "立即開始",
-       "seeLivePreview": "查看即時預覽",
-       "learnMore": "了解更多"
+  "oddleEats": {
+    "hero": {
+      "title": "",
+      "description": "",
+      "primaryButton": {
+        "text": ""
+      },
+      "secondaryButton": {
+        "text": ""
+      },
+      "slides": {
+        "0": {
+          "imageAlt": ""
+        }
+      }
+    },
+    "features": {
+      "description": "",
+      "heading": "",
+      "features": {
+        "0": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        },
+        "1": {
+          "title": "",
+          "imageAlt": ""
+        },
+        "2": {
+          "title": "",
+          "imageAlt": ""
+        }
+      }
     }
   },
   "onlineOrdering": {
@@ -207,27 +557,41 @@
       "featureCustomizable": {
         "title": "你愛的品牌 你要的樣子",
         "description": "品牌化的線上訂餐系統，為了您的品牌設計，更好地展示您的Logo、菜單、新菜色和各種促銷活動。"
-      }
+      },
+      "badgeText": ""
     },
     "keyFeatures": {
-      "title": "主要功能",
-      "subtitle": "簡化您的訂單，讓顧客滿意",
       "0": {
-          "title": "輕鬆管理菜單",
-          "description": "實時更新您的菜單"
+        "title": "輕鬆管理菜單",
+        "description": "實時更新您的菜單"
       },
       "1": {
-          "title": "無縫訂單處理",
-          "description": "高效管理訂單"
+        "title": "無縫訂單處理",
+        "description": "高效管理訂單"
       },
       "2": {
-          "title": "整合外送選項",
-          "description": "連接外送合作夥伴"
+        "title": "整合外送選項",
+        "description": "連接外送合作夥伴"
+      },
+      "title": "主要功能",
+      "subtitle": "簡化您的訂單，讓顧客滿意",
+      "sectionTitle": "",
+      "items": {
+        "0": {
+          "title": "",
+          "description": ""
+        },
+        "1": {
+          "title": "",
+          "description": ""
+        },
+        "2": {
+          "title": "",
+          "description": ""
+        }
       }
     },
     "details": {
-      "title": "為何選擇我們的線上點餐系統？",
-      "description": "用專為增長和效率設計的功能賦能您的餐廳。",
       "0": {
         "title": "踏上營收成長之路",
         "description": "擴大您的顧客資料庫，並利用能增加顧客忠誠度和回購率的工具來和顧客建立更緊密的關係。",
@@ -249,65 +613,82 @@
         "item1": "免費參與贊助的行銷活動",
         "item2": "擴大觸及我們具有高購買力的富裕用戶群",
         "imageAlt": "Oddle Eats 移動應用介面"
+      },
+      "title": "為何選擇我們的線上點餐系統？",
+      "description": "用專為增長和效率設計的功能賦能您的餐廳。",
+      "sectionTitle": "",
+      "sectionDescription": "",
+      "features": {
+        "0": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        },
+        "1": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        },
+        "2": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        }
       }
     }
   },
-  "loyaltyCrm": {
+  "paymentTerminal": {
     "hero": {
       "title": "",
       "description": "",
+      "primaryButton": {
+        "text": ""
+      },
+      "secondaryButton": {
+        "text": ""
+      },
       "slides": {
         "0": {
           "imageAlt": ""
         }
       }
     },
-    "details": {
-      "title": "",
-      "description": "",
-      "capture": {
-        "title": "",
-        "description": "",
-        "item0": "",
-        "item1": "",
-        "imageAlt": ""
-      },
-      "automate": {
-        "title": "",
-        "description": "",
-        "item0": "",
-        "item1": "",
-        "imageAlt": ""
+    "features": {
+      "sectionTitle": "",
+      "items": {
+        "0": {
+          "title": "",
+          "description": ""
+        },
+        "1": {
+          "title": "",
+          "description": ""
+        },
+        "2": {
+          "title": "",
+          "description": ""
+        },
+        "3": {
+          "title": "",
+          "description": ""
+        }
       }
     },
-    "faq": {
-      "0": {
-        "question": "",
-        "answer": ""
-      },
-      "1": {
-        "question": "",
-        "answer": ""
-      },
-      "2": {
-        "question": "",
-        "answer": ""
-      },
-      "3": {
-        "question": "",
-        "answer": ""
-      },
-      "4": {
-        "question": "",
-        "answer": ""
-      },
-      "5": {
-        "question": "",
-        "answer": ""
-      },
-      "6": {
-        "question": "",
-        "answer": ""
+    "operations": {
+      "sectionTitle": "",
+      "items": {
+        "0": {
+          "title": "",
+          "description": ""
+        },
+        "1": {
+          "title": "",
+          "description": ""
+        },
+        "2": {
+          "title": "",
+          "description": ""
+        }
       }
     }
   },
@@ -347,6 +728,166 @@
     "oddle-eats-network": {
       "title": "Oddle Eats",
       "desc": "接入超过一百万美食爱好者的网络。"
+    }
+  },
+  "reservationSystem": {
+    "hero": {
+      "secondaryButton": {
+        "text": ""
+      }
+    },
+    "features": {
+      "description": "",
+      "heading": "",
+      "imageAlt": "",
+      "features": {
+        "0": {
+          "title": "",
+          "description": ""
+        },
+        "1": {
+          "title": "",
+          "description": ""
+        },
+        "2": {
+          "title": "",
+          "description": ""
+        },
+        "3": {
+          "title": "",
+          "description": ""
+        }
+      }
+    },
+    "useCases": {
+      "sectionTitle": "",
+      "features": {
+        "0": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        },
+        "1": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        },
+        "2": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        }
+      }
+    },
+    "views": {
+      "subtitle": "",
+      "sectionTitle": "",
+      "tabsData": {
+        "0": {
+          "tabName": "",
+          "tabDescription": ""
+        },
+        "1": {
+          "tabName": "",
+          "tabDescription": ""
+        },
+        "2": {
+          "tabName": "",
+          "tabDescription": ""
+        },
+        "3": {
+          "tabName": "",
+          "tabDescription": ""
+        }
+      }
+    },
+    "operations": {
+      "sectionTitle": "",
+      "sectionDescription": "",
+      "itemsData": {
+        "0": {
+          "title": "",
+          "description": ""
+        },
+        "1": {
+          "title": "",
+          "description": ""
+        },
+        "2": {
+          "title": "",
+          "description": ""
+        },
+        "3": {
+          "title": "",
+          "description": ""
+        }
+      }
+    }
+  },
+  "survey": {
+    "hero": {
+      "title": "",
+      "description": "",
+      "primaryButton": {
+        "text": ""
+      },
+      "secondaryButton": {
+        "text": ""
+      },
+      "slides": {
+        "0": {
+          "imageAlt": ""
+        }
+      }
+    },
+    "features": {
+      "items": {
+        "0": {
+          "title": ""
+        },
+        "1": {
+          "title": ""
+        },
+        "2": {
+          "title": ""
+        }
+      }
+    }
+  },
+  "virtualLounge": {
+    "hero": {
+      "title": "",
+      "description": "",
+      "primaryButton": {
+        "text": ""
+      },
+      "secondaryButton": {
+        "text": ""
+      },
+      "slides": {
+        "0": {
+          "imageAlt": ""
+        }
+      }
+    },
+    "details": {
+      "features": {
+        "0": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        },
+        "1": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        },
+        "2": {
+          "title": "",
+          "description": "",
+          "imageAlt": ""
+        }
+      }
     }
   }
 }

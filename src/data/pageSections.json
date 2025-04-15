@@ -18,6 +18,7 @@
     {
       "component": "IconSectionHorizontal",
       "props": {
+        "i18nBaseKey": "home.growingEasy",
         "sectionTag": null,
         "sectionTitle": "Growing is as easy as ABC",
         "items": [
@@ -203,6 +204,9 @@
           }
         ]
       }
+    },
+    {
+      "component": "FaqSection"
     }
   ],
   "products/restaurant-online-ordering-system": [
@@ -213,8 +217,8 @@
         "reverseMobileLayout": true,
         "title": "Restaurant Online Ordering System",
         "description": "Streamline your orders and delight your customers.",
-        "primaryButton": { "text": "Get started", "action": "/get-started" },
-        "secondaryButton": { "text": "Contact sales team", "action": "/contact-sales" },
+        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           { "imageSrc": "https://ucarecdn.com/7f9cb7a3-a7d6-42d5-b225-5a4e2647d384/-/preview/400x400/", "imageAlt": "Restaurant Online Ordering System Carousel Image" }
         ]
@@ -262,6 +266,7 @@
     {
       "component": "IconSectionHorizontal",
       "props": {
+        "i18nBaseKey": "onlineOrdering.keyFeatures",
         "sectionTag": null,
         "sectionTitle": "Key Features",
         "items": [
@@ -335,7 +340,8 @@
         "i18nBaseKey": "reservationSystem.hero",
         "title": "Stop Overpaying for Reservations—Break Free from Monthly Fees and High Commissions Costs",
         "description": "Helping Restaurants Save More on Reservations While Driving More Sales, Every Day with Pricing that Makes Sense.",
-        "primaryButton": { "text": "Request Demo", "action": "/request-demo" },
+        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           { "imageSrc": "https://placehold.co/700x540/F0E2E8/AAAAAA?text=Reservation1", "imageAlt": "Reservation System UI" },
           { "imageSrc": "https://placehold.co/700x540/AADDAA/AAAAAA?text=Reservation2", "imageAlt": "Table Management View" }
@@ -405,6 +411,7 @@
     {
       "component": "FeatureSectionWithTabs",
       "props": {
+        "i18nBaseKey": "reservationSystem.views",
         "sectionTitle": "Simplify your day-to-day Operations with Powerful Views and Real-time Control.",
         "subtitle": "User-friendly and seamless, Oddle Reserve simplifies the reservation process with advanced table management and management tools. It helps you efficiently manage reservations in real time, enhancing the dining experience and streamlining operations.",
         "tabsData": [
@@ -442,6 +449,7 @@
     {
       "component": "FeatureSectionWithAccordion",
       "props": {
+        "i18nBaseKey": "reservationSystem.operations",
         "sectionTitle": "Simplify your day-to-day Operations with Powerful Views and Real-time Control.",
         "sectionDescription": "User-friendly and seamless, Oddle Reserve simplifies the reservation process with advanced table management and management tools. It helps you efficiently manage reservations in real time, enhancing the dining experience and streamlining operations.",
         "itemsData": [
@@ -483,8 +491,8 @@
         "i18nBaseKey": "loyaltyCrm.hero",
         "title": "Turn every visit into a loyal customer",
         "description": "Capture, engage, and retain your customers with a loyalty program designed for Restaurants",
-        "primaryButton": { "text": "Get Started", "action": "/get-started" },
-        "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales" },
+        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           {
             "imageSrc": "https://ucarecdn.com/446f987e-d25b-40e5-a67d-e61337d845ef/-/preview/861x1000/",
@@ -531,8 +539,8 @@
         "i18nBaseKey": "virtualLounge.hero",
         "title": "Showcase Your Brand Online with Oddle's Virtual Lounge",
         "description": "Create a branded digital space to engage customers, showcase your menu, and drive both online and in-person visits.",
-        "primaryButton": { "text": "Get Started", "action": "/get-started" },
-        "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales" },
+        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           { 
             "imageSrc": "https://placehold.co/700x540/E2E8F0/AAAAAA?text=Virtual+Lounge+UI", 
@@ -574,6 +582,9 @@
           }
         ]
       }
+    },
+    {
+      "component": "FaqSection"
     }
   ],
   "products/restaurant-payment-terminal": [
@@ -583,8 +594,8 @@
         "i18nBaseKey": "paymentTerminal.hero",
         "title": "Transform every Payment Into a Growth Opportunity",
         "description": "More than just card processing at competitive rates, we empower you with insightful customer data and ways to grow revenue, all in one mobile device.",
-        "primaryButton": { "text": "Get Started", "action": "/get-started" },
-        "secondaryButton": null,
+        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           { "imageSrc": "https://ucarecdn.com/2bbc4977-dfa2-424b-bae3-bee90a6cea1a/terminal_hero", "imageAlt": "Oddle Payment Terminal" }
         ]
@@ -593,6 +604,7 @@
     {
       "component": "FeatureSectionAlternating",
       "props": {
+        "i18nBaseKey": "paymentTerminal.features",
         "sectionTitle": "Next-gen solutions designed to help you grow revenue",
         "sectionDescription": null,
         "items": [
@@ -638,6 +650,7 @@
     {
       "component": "IconSectionHorizontal",
       "props": {
+        "i18nBaseKey": "paymentTerminal.operations",
         "sectionTag": null,
         "sectionTitle": "Built for seamless operations",
         "items": [
@@ -670,8 +683,8 @@
         "i18nBaseKey": "emailMarketing.hero",
         "title": "Data to Dollars: The Oddle Marketing Engine Advantage",
         "description": "Turn Insights Into Action and Customers Into Cash",
-        "primaryButton": { "text": "Get Started", "action": "/get-started" },
-        "secondaryButton": null,
+        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           { "imageSrc": "https://ucarecdn.com/38ac2cb3-98f8-45d2-a41b-6e76e99f64c4/-/preview/570x1000/", "imageAlt": "Oddle Marketing Engine Dashboard" }
         ]
@@ -680,6 +693,7 @@
     {
       "component": "IconSectionHorizontal",
       "props": {
+        "i18nBaseKey": "emailMarketing.howItWorks",
         "sectionTag": null,
         "sectionTitle": "How Oddle Marketing Engine Turns Data Into Dollars",
         "items": [
@@ -704,6 +718,7 @@
     {
       "component": "FeatureSectionComplexGrid",
       "props": {
+        "i18nBaseKey": "crm.customerIntelligence",
         "sectionTitle": "A Restaurant Email Marketing Toolkit to Make Marketing Effortless",
         "sectionDescription": "Launch campaigns with pre-built workflows that require no technical expertise—just results.",
         "block1": {
@@ -743,7 +758,6 @@
     {
       "component": "FaqSection",
       "props": {
-        "i18nBaseKey": "emailMarketing.faq",
         "faqCategory": "marketing"
       }
     }
@@ -755,8 +769,8 @@
         "i18nBaseKey": "crm.hero",
         "title": "CRM? That's just the beginning. Unlock real actionable insights with Customer Intelligence.",
         "description": "Oddle's customer intelligence layer empowers your restaurant with comprehensive marketing and operational insights, enabling effortless personalised marketing and operational excellence.",
-        "primaryButton": { "text": "Get Started", "action": "/get-started" },
-        "secondaryButton": null,
+        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           { "imageSrc": "https://placehold.co/700x540/F0F0E2/AAAAAA?text=CRM+Hero+Img", "imageAlt": "Customer Intelligence Dashboard Snippet" }
         ]
@@ -834,6 +848,7 @@
     {
       "component": "FeatureSectionAlternating",
       "props": {
+        "i18nBaseKey": "crm.guestFeatures",
         "sectionTitle": "", 
         "sectionDescription": null,
         "items": [
@@ -866,8 +881,8 @@
         "i18nBaseKey": "survey.hero",
         "title": "Turn Feedback Into Fuel for Your Brand's Growth",
         "description": "Automated surveys that power customer insights, enhance service, and boost your brand's visibility.",
-        "primaryButton": { "text": "Get Started", "action": "/get-started" },
-        "secondaryButton": null,
+        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           { "imageSrc": "https://placehold.co/700x540/E2F0F0/AAAAAA?text=Survey+Hero+Img", "imageAlt": "Oddle Survey Tool Interface" }
         ]
@@ -876,6 +891,7 @@
     {
       "component": "FeatureSectionGridCards",
       "props": {
+        "i18nBaseKey": "survey.features",
         "sectionTag": null,
         "sectionTitle": "",
         "sectionDescription": null,
@@ -923,11 +939,7 @@
       }
     },
     {
-      "component": "FaqSection",
-      "props": {
-        "i18nBaseKey": "survey.faq",
-        "faqCategory": "survey"
-      }
+      "component": "FaqSection"
     }
   ],
   "products/oddle-eats": [
@@ -937,8 +949,8 @@
         "i18nBaseKey": "oddleEats.hero",
         "title": "Your restaurant in the pockets of a million food lovers",
         "description": "Get your restaurant seen by millions of consumers seeking new dining experiences for every occasion with our premier food directory network, Oddle Eats.",
-        "primaryButton": { "text": "Get Started", "action": "/get-started" },
-        "secondaryButton": null,
+        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           { "imageSrc": "https://placehold.co/700x540/E8E2F0/AAAAAA?text=Oddle+Eats+Hero", "imageAlt": "Oddle Eats App Interface" }
         ]
@@ -978,11 +990,7 @@
       }
     },
     {
-      "component": "FaqSection",
-      "props": {
-        "i18nBaseKey": "oddleEats.faq",
-        "faqCategory": "oddle-eats"
-      }
+      "component": "FaqSection"
     }
   ]
 }
