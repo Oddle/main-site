@@ -17,6 +17,7 @@ import FeatureSectionWithAccordion from "../sections/FeatureSectionWithAccordion
 import FeatureSectionGridCards from "../sections/FeatureSectionGridCards";
 import FeatureSectionAlternating from "../sections/FeatureSectionAlternating";
 import FeatureSectionComplexGrid from "../sections/FeatureSectionComplexGrid";
+import FeatureSectionHeroGrid from "../sections/FeatureSectionHeroGrid";
 // --- Define type for section data --- (Good practice)
 interface SectionDefinition {
   component: string; // Ideally keyof typeof componentMap, but string is simpler for now
@@ -46,7 +47,8 @@ const componentMap = {
   FeatureSectionWithAccordion,
   FeatureSectionGridCards,
   FeatureSectionAlternating,
-  FeatureSectionComplexGrid
+  FeatureSectionComplexGrid,
+  FeatureSectionHeroGrid
 };
 
 // Removed the processProps function

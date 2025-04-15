@@ -75,7 +75,7 @@
             "imageUrl": "https://placehold.co/600x400/F0E8E2/AAAAAA?text=Payments+Img", 
             "imageAlt": "Payment terminal screen showing transaction details.",
             "linkText": "Learn more",
-            "linkAction": "/products/payment-terminal"
+            "linkAction": "/products/restaurant-payment-terminal"
           },
           { 
             "id": 4, 
@@ -95,7 +95,7 @@
             "imageUrl": "https://placehold.co/600x400/E2F0F0/AAAAAA?text=Surveys+Img", 
             "imageAlt": "Customer filling out a survey on a phone with star ratings visible.",
             "linkText": "Learn more",
-            "linkAction": "/products/survey-tool"
+            "linkAction": "/products/restaurant-survey"
           },
           { 
             "id": 6, 
@@ -747,5 +747,242 @@
         "faqCategory": "marketing"
       }
     }
+  ],
+  "products/restaurant-crm-customer-intelligence": [
+    {
+      "component": "HeroWithCarousel",
+      "props": {
+        "i18nBaseKey": "crm.hero",
+        "title": "CRM? That's just the beginning. Unlock real actionable insights with Customer Intelligence.",
+        "description": "Oddle's customer intelligence layer empowers your restaurant with comprehensive marketing and operational insights, enabling effortless personalised marketing and operational excellence.",
+        "primaryButton": { "text": "Get Started", "action": "/get-started" },
+        "secondaryButton": null,
+        "slides": [
+          { "imageSrc": "https://placehold.co/700x540/F0F0E2/AAAAAA?text=CRM+Hero+Img", "imageAlt": "Customer Intelligence Dashboard Snippet" }
+        ]
+      }
+    },
+    {
+      "component": "SectionHeader",
+      "props": {
+        "i18nBaseKey": "crm.marketingHeader",
+        "title": "Marketing Intelligence",
+        "subtitle": "The answers you've been missing from your CRM. Say goodbye to guesswork and hello to actionable answers - Uncover valuable insights from your own customer data and make informed decisions with confidence."
+      }
+    },
+    {
+      "component": "FeatureSectionWithImage",
+      "props": {
+        "i18nBaseKey": "crm.discover",
+        "sectionTitle": "Discover, Segment, Target",
+        "sectionDescription": "Unlock the insights you need to power your marketing strategy. Discover your customer breakdown and target the right segment with the right message.",
+        "imageSrc": "https://placehold.co/600x400/E2E8F0/AAAAAA?text=Discover+Segment+Target",
+        "imageAlt": "Graph showing customer segmentation",
+        "imagePosition": "right",
+        "primaryButton": null,
+        "secondaryButton": null
+      }
+    },
+    {
+      "component": "FeatureSectionWithImage",
+      "props": {
+        "i18nBaseKey": "crm.completeData",
+        "sectionTitle": "Complete customer data at your fingertips",
+        "sectionDescription": "Dive into comprehensive customer data, spanning from transaction history across deliveries, reservations, survey results and even their interactions with your digital touchpoints.",
+        "imageSrc": "https://placehold.co/600x400/E8F0E2/AAAAAA?text=Complete+Data+View",
+        "imageAlt": "UI showing comprehensive customer profile",
+        "imagePosition": "left",
+        "primaryButton": null,
+        "secondaryButton": null
+      }
+    },
+    {
+      "component": "FeatureSectionWithSubpoints",
+      "props": {
+        "i18nBaseKey": "crm.personalizedMarketing",
+        "heading": "Personalised Marketing at Scale",
+        "description": "Transition from analysis to action right away. Launch personalised marketing with ease. Launch personalised marketing campaigns effortlessly to your target audiences directly from the platform. No need for cumbersome data exports—simply leverage your customer data to select the right audience and launch your campaigns seamlessly.",
+        "imageSrc": "https://placehold.co/1200x600/F0E8E2/AAAAAA?text=Marketing+Automation",
+        "imageAlt": "Marketing automation workflow diagram",
+        "features": [
+          {
+            "icon": "Mail",
+            "title": "Targeted email broadcasts",
+            "description": "Launch email campaigns to data-driven customer segments with our integrated email marketing tool."
+          },
+          {
+            "icon": "Repeat",
+            "title": "Real-time Automation",
+            "description": "Engage customers effortlessly whenever they take an action."
+          },
+          {
+            "icon": "Star",
+            "title": "Post dine-in surveys",
+            "description": "Build a foundation of 5-star Google reviews to attract new customers and strengthen your online reputation."
+          }
+        ]
+      }
+    },
+    {
+      "component": "SectionHeader",
+      "props": {
+        "i18nBaseKey": "crm.opsHeader",
+        "title": "Operational Intelligence",
+        "subtitle": "Be the smartest host, turn every reservation into a connection. Oddle collects all your data in one convenient location, making it easy to access information on dietary requirements, guest visits, and interactions across different outlets. With just one click, you can view a comprehensive guest history that helps you better understand and serve your customers."
+      }
+    },
+    {
+      "component": "FeatureSectionAlternating",
+      "props": {
+        "sectionTitle": "", 
+        "sectionDescription": null,
+        "items": [
+          {
+            "title": "Know your guests",
+            "description": "Visits, takeaway orders, allergens, and dining preferences—Oddle helps you know each guest personally.",
+            "imageSrc": "https://placehold.co/600x400/E2F0F0/AAAAAA?text=Know+Your+Guests",
+            "imageAlt": "Close up of guest profile showing preferences",
+            "imagePosition": "left",
+            "linkText": null,
+            "linkAction": null
+          },
+          {
+            "title": "Spot loyal customers",
+            "description": "Have all your guest insights at the tip of your fingers to turn your ground team into a super host.",
+            "imageSrc": "https://placehold.co/600x400/F0E2F0/AAAAAA?text=Spot+Loyal+Customers",
+            "imageAlt": "UI highlighting a loyal customer tag",
+            "imagePosition": "right",
+            "linkText": null,
+            "linkAction": null
+          }
+        ]
+      }
+    }
+  ],
+  "products/restaurant-survey": [
+    {
+      "component": "HeroWithCarousel",
+      "props": {
+        "i18nBaseKey": "survey.hero",
+        "title": "Turn Feedback Into Fuel for Your Brand's Growth",
+        "description": "Automated surveys that power customer insights, enhance service, and boost your brand's visibility.",
+        "primaryButton": { "text": "Get Started", "action": "/get-started" },
+        "secondaryButton": null,
+        "slides": [
+          { "imageSrc": "https://placehold.co/700x540/E2F0F0/AAAAAA?text=Survey+Hero+Img", "imageAlt": "Oddle Survey Tool Interface" }
+        ]
+      }
+    },
+    {
+      "component": "FeatureSectionGridCards",
+      "props": {
+        "sectionTag": null,
+        "sectionTitle": "",
+        "sectionDescription": null,
+        "items": [
+          {
+            "title": "Automated and proactive surveys built into every touchpoint",
+            "description": [
+              "Whether customers reserve a table, place an order, or check in for loyalty rewards, they're automatically sent a survey after their visit."
+            ],
+            "image": {
+              "src": "https://placehold.co/600x400/E2F0F0/AAAAAA?text=Automated+Surveys",
+              "alt": "Diagram showing survey triggers",
+              "className": "aspect-video"
+            },
+            "imagePosition": "top",
+            "className": "md:col-span-2"
+          },
+          {
+            "title": "Your Fans Hold the Key to a Stronger Brand",
+            "description": [
+              "Turn happy diners into brand advocates by prompting them to leave reviews on Google. Improve your online reputation, rank higher in search results and attract new customers organically."
+            ],
+            "image": {
+              "src": "https://placehold.co/600x400/F0E2F0/AAAAAA?text=Google+Reviews",
+              "alt": "Illustration of positive Google reviews",
+              "className": "aspect-video"
+            },
+            "imagePosition": "top",
+            "className": "md:col-span-2"
+          },
+          {
+            "title": "Data you can act on",
+            "description": [
+              "Access all survey data in one place to uncover trends, resolve issues and optimise customer retention strategies."
+            ],
+            "image": {
+              "src": "https://placehold.co/600x400/F0F0E2/AAAAAA?text=Survey+Data+Dashboard",
+              "alt": "Dashboard showing survey results and trends",
+              "className": "aspect-video"
+            },
+            "imagePosition": "top",
+            "className": "md:col-span-1"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FaqSection",
+      "props": {
+        "i18nBaseKey": "survey.faq",
+        "faqCategory": "survey"
+      }
+    }
+  ],
+  "products/oddle-eats": [
+    {
+      "component": "HeroWithCarousel",
+      "props": {
+        "i18nBaseKey": "oddleEats.hero",
+        "title": "Your restaurant in the pockets of a million food lovers",
+        "description": "Get your restaurant seen by millions of consumers seeking new dining experiences for every occasion with our premier food directory network, Oddle Eats.",
+        "primaryButton": { "text": "Get Started", "action": "/get-started" },
+        "secondaryButton": null,
+        "slides": [
+          { "imageSrc": "https://placehold.co/700x540/E8E2F0/AAAAAA?text=Oddle+Eats+Hero", "imageAlt": "Oddle Eats App Interface" }
+        ]
+      }
+    },
+    {
+      "component": "FeatureSectionHeroGrid",
+      "props": {
+        "i18nBaseKey": "oddleEats.features",
+        "heading": "Why Feature on Oddle Eats?",
+        "description": "Leverage Oddle Eats to boost your restaurant's visibility and reach.",
+        "linkUrl": null,
+        "linkText": null,
+        "features": [
+          {
+            "id": "feature-campaigns",
+            "title": "Participate in sponsored marketing campaigns at no extra charge.",
+            "description": "Benefit from exclusive partnerships and festive campaigns held throughout the year. Be featured on Oddle Eats' various media channels and increase your discoverability.",
+            "imageSrc": "https://placehold.co/600x400/E8E2F0/AAAAAA?text=Marketing+Campaigns",
+            "imageAlt": "Oddle Eats Marketing Campaign Example"
+          },
+          {
+            "id": "feature-reach",
+            "title": "Extend your reach to our affluent user base with high purchasing power",
+            "description": "",
+            "imageSrc": "https://placehold.co/600x400/F0E8E2/AAAAAA?text=Affluent+Users",
+            "imageAlt": "Graph showing user demographics"
+          },
+          {
+            "id": "feature-privacy",
+            "title": "Recognize repeat customers without compromising privacy",
+            "description": "",
+            "imageSrc": "https://placehold.co/600x400/E2F0E8/AAAAAA?text=Privacy+Focus",
+            "imageAlt": "Illustration showing data privacy"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FaqSection",
+      "props": {
+        "i18nBaseKey": "oddleEats.faq",
+        "faqCategory": "oddle-eats"
+      }
+    }
   ]
-} 
+}

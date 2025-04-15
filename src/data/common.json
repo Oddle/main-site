@@ -33,7 +33,7 @@
     "survey-tool": {
       "name": "Survey Tool",
       "description": "Automated surveys that boosts your brand's visibility",
-      "href": "/products/restaurant-survey-tool",
+      "href": "/products/restaurant-survey",
       "category": "build"
     },
     "email-marketing-system": {
@@ -51,7 +51,7 @@
     "oddle-eats-network": {
       "name": "Oddle Eats Network",
       "description": "Tap into a million food lovers",
-      "href": "/products/oddle-eats-network",
+      "href": "/products/oddle-eats",
       "category": "convert"
     }
   },

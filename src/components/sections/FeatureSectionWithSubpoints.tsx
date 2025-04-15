@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Cpu, Lock, Sparkles, Zap } from 'lucide-react';
+import { Cpu, Lock, Sparkles, Zap, Headset, Clock, Wifi, Mail, Repeat, Star, Database, BarChart, Shuffle } from 'lucide-react';
 import { FC } from 'react';
 import Container from "@/components/common/Container";
 
@@ -9,6 +9,15 @@ const iconMap: { [key: string]: FC<React.SVGProps<SVGSVGElement>> } = {
   Lock,
   Sparkles,
   Zap,
+  Headset,
+  Clock,
+  Wifi,
+  Mail,
+  Repeat,
+  Star,
+  Database,
+  BarChart,
+  Shuffle,
   // Add other icons from lucide-react as needed
 };
 
