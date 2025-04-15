@@ -178,7 +178,7 @@
         "i18nBaseKey": "home.platformFeatures",
         "heading": "Built for Restaurant Growth",
         "description": "Our platform integrates seamlessly to provide the tools you need for success, all in one place.",
-        "imageSrc": "https://ucarecdn.com/030b9c8c-ecd6-42cb-8c55-6b2d8035fe14/-/preview/1000x778/",
+        "imageSrc": "https://ucarecdn.com/9e5724b3-c6ff-4422-9226-7dc03d319d9c/home_dashboard",
         "imageAlt": "Oddle Platform Features Overview",
         "features": [
           {
@@ -661,6 +661,91 @@
     },
     {
       "component": "FaqSection"
+    }
+  ],
+  "products/restaurant-email-marketing-system": [
+    {
+      "component": "HeroWithCarousel",
+      "props": {
+        "i18nBaseKey": "emailMarketing.hero",
+        "title": "Data to Dollars: The Oddle Marketing Engine Advantage",
+        "description": "Turn Insights Into Action and Customers Into Cash",
+        "primaryButton": { "text": "Get Started", "action": "/get-started" },
+        "secondaryButton": null,
+        "slides": [
+          { "imageSrc": "https://ucarecdn.com/38ac2cb3-98f8-45d2-a41b-6e76e99f64c4/-/preview/570x1000/", "imageAlt": "Oddle Marketing Engine Dashboard" }
+        ]
+      }
+    },
+    {
+      "component": "IconSectionHorizontal",
+      "props": {
+        "sectionTag": null,
+        "sectionTitle": "How Oddle Marketing Engine Turns Data Into Dollars",
+        "items": [
+          {
+            "icon": "Database",
+            "title": "All Your Data, All in One Place",
+            "description": "Consolidate reservations, delivery, and loyalty data into a single platform for a 360° view of your customers"
+          },
+          {
+            "icon": "BarChart",
+            "title": "See What You've Been Missing",
+            "description": "Automatically visualize customer behavior and sales trends to uncover untapped revenue opportunities."
+          },
+          {
+            "icon": "Shuffle",
+            "title": "Maximize Cross-Channel Growth",
+            "description": "Turn dine-in customers into delivery users (and vice versa) with tailored promotions that expand revenue streams."
+          }
+        ]
+      }
+    },
+    {
+      "component": "FeatureSectionComplexGrid",
+      "props": {
+        "sectionTitle": "A Restaurant Email Marketing Toolkit to Make Marketing Effortless",
+        "sectionDescription": "Launch campaigns with pre-built workflows that require no technical expertise—just results.",
+        "block1": {
+          "icon": "LayoutTemplate",
+          "title": "Pre-Built Templates, Ready To Go",
+          "description": "Choose from pre-built templates tailored to your goals.",
+          "imageSrc": "https://ucarecdn.com/10483a24-988e-4f04-8c15-822473592b65/email_templates",
+          "imageAlt": "Examples of email marketing templates"
+        },
+        "block2": {
+          "icon": "Target",
+          "title": "Let Oddle Do The Data Work",
+          "listItems": [
+            { "text": "Unified Customer View: Combine reservations, orders, and loyalty data onto one platform." },
+            { "text": "Smart Segmentation: Leverage pre-built customer segments for targeted campaigns." },
+            { "text": "Automated Engagement: Effortlessly personalize campaigns, from re-engagement to birthday rewards." }
+          ]
+        },
+        "block3": {
+          "title": "Automatically Track Conversions",
+          "stats": [
+            {
+              "value": "+XX%",
+              "label": "Increase in campaign conversion rates"
+            },
+            {
+              "value": "YY",
+              "label": "Reduction in marketing effort (hours/week)"
+            }
+          ]
+        },
+        "ctaText": null,
+        "ctaLink": null,
+        "ctaLinkText": null
+      }
+    },
+    {
+      "component": "FaqSection",
+      "props": {
+        "i18nBaseKey": "emailMarketing.faq",
+        "faqCategory": "marketing"
+      }
     }
   ]
 } 
