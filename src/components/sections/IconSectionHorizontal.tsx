@@ -12,7 +12,9 @@ import {
   Truck,
   Headset,
   Clock,
-  Wifi
+  Wifi,
+  BarChart,
+  Shuffle
 } from "lucide-react"; // Import necessary icons
 import { FC } from 'react';
 import Container from "@/components/common/Container";
@@ -32,6 +34,8 @@ const iconMap: { [key: string]: FC<React.SVGProps<SVGSVGElement>> } = {
   Headset,
   Clock,
   Wifi,
+  BarChart,
+  Shuffle,
   // Add other icons from lucide-react as needed
 };
 
