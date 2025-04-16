@@ -54,9 +54,8 @@ const componentMap = {
 // Removed the processProps function
 
 // Update component signature to accept props
-export default function DynamicSectionPage({ sectionsData, pageUrl, locale }: DynamicSectionPageProps) {
-  // Add console log here
-  console.log("[DynamicSectionPage] Received props:", { pageUrl, locale, sectionsData });
+const DynamicSectionPage = ({ sectionsData, pageUrl, locale }: DynamicSectionPageProps) => {
+  // console.log("[DynamicSectionPage] Received props:", { pageUrl, locale, sectionsData });
 
   return (
     <div className="flex flex-col min-h-screen w-full">
@@ -92,3 +91,5 @@ export default function DynamicSectionPage({ sectionsData, pageUrl, locale }: Dy
     </div>
   );
 }
+
+export default DynamicSectionPage;
