@@ -73,6 +73,7 @@ interface CommonLinkData {
     name: string;
     description?: string;
     href: string;
+    category?: string;
 }
 
 interface CommonData {
@@ -94,11 +95,13 @@ const logoUrl = process.env.NEXT_PUBLIC_LOGO_URL || "/oddle-logo.svg";
 export default function NavBar() {
   const tNav = useTranslations("navbar"); // Use navbar namespace for structure
   const tProducts = useTranslations("products"); // Get product translations
+  const tResources = useTranslations("resources"); // Use resources namespace for structure
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
   // --- Transform data from common.json ---
   const transformData = (): NavLink[] => {
     const productsByCategory: { [key: string]: NavItem[] } = {};
+    const resourcesByCategory: { [key: string]: NavItem[] } = {}; // Group resources by category
 
     // Group products by category
     for (const [key, product] of Object.entries(commonData.products || {})) {
@@ -109,31 +112,48 @@ export default function NavBar() {
       productsByCategory[category].push({
         key: key,
         href: product.href,
-        name: tProducts(`${key}.title`),
+        name: tProducts(`${key}.title`), // Use specific product translations
         description: tProducts(`${key}.desc`),
       });
     }
 
+    // Group resource links by category
+    for (const [key, link] of Object.entries(commonData.links || {})) {
+        // Ensure the link belongs in the resources section and has a category
+        if (link.href.startsWith('/resources/') && link.category && (link.category === 'learn' || link.category === 'general')) {
+            if (!resourcesByCategory[link.category]) {
+                resourcesByCategory[link.category] = [];
+            }
+            // Use the category from the JSON data
+            resourcesByCategory[link.category].push({
+                key: key, // Use the original key from common.json
+                href: link.href,
+                // Translate resource names, letting next-intl handle defaults
+                name: tResources(`${key}.title`) ?? link.name,
+                description: tResources(`${key}.desc`) ?? link.description ?? '',
+            });
+        }
+    }
+
     const productCategories: NavCategory[] = Object.entries(productsByCategory).map(
       ([categoryLabel, items]) => ({
-        label: categoryLabel,
+        label: categoryLabel, // This might need translation prefix later if needed
         items: items,
       })
     );
 
-    // Use Object.values() to iterate over links object
-    const resourceItems: NavItem[] = Object.values(commonData.links || {}) // Get array of link values
-      .filter(link => link.href.startsWith('/resources/')) // Filter the array
-      .map((link, index) => ({
-          key: link.href || `resource-${index}`,
-          href: link.href,
-          name: link.name,
-          description: link.description
-      }));
+    // Create resource categories array
+    const resourceCategories: NavCategory[] = Object.entries(resourcesByCategory).map(
+      ([categoryLabel, items]) => ({
+        label: categoryLabel, // e.g., "learn", "general" - these will be translated via tNav later
+        items: items,
+      })
+    );
 
-    // Use Object.values() to find links
+    // Find specific links for promo and top-level items
     const pricingLink = Object.values(commonData.links || {}).find(link => link.href === '/pricing');
-    const exploreOddleLink = Object.values(commonData.links || {}).find(link => link.href === '/');
+    // Find the influencer list promo link
+    const influencerPromoLink = commonData.links ? commonData.links['singapore-influencer-list'] : undefined;
 
     const constructedNavLinks: NavLink[] = [
       // Product Menu
@@ -142,16 +162,18 @@ export default function NavBar() {
         isMegaMenu: true,
         categories: productCategories,
       },
-      // Resources Menu
+      // Resources Menu - Now uses categories and specific promo
       {
         label: 'resources',
         isMegaMenu: true,
-        promo: exploreOddleLink ? {
-            title: exploreOddleLink.name,
-            description: exploreOddleLink.description || '',
-            href: exploreOddleLink.href,
+        // Use the specific promo link if found
+        promo: influencerPromoLink ? {
+            // Translate promo title and description, letting next-intl handle defaults
+            title: tResources('singapore-influencer-list.title') ?? influencerPromoLink.name,
+            description: tResources('singapore-influencer-list.desc') ?? influencerPromoLink.description ?? '',
+            href: influencerPromoLink.href,
         } : undefined,
-        items: resourceItems,
+        categories: resourceCategories,
       },
     ];
 
@@ -179,10 +201,10 @@ export default function NavBar() {
           if (link.isMegaMenu && link.categories) { // Product Menu
             return (
               <div key={link.label} className="grid gap-1">
-                <p className="font-medium text-muted-foreground px-2">{tNav(`links.${link.label}`)}</p>
+                <p className="font-medium text-muted-foreground px-2 py-1">{tNav(`links.${link.label}`)}</p>
                 {link.categories.map(category => (
                   <div key={category.label} className="ml-2 grid gap-1">
-                    <p className="text-sm font-medium text-muted-foreground/80 px-2">{tNav(category.label)}</p>
+                    <p className="text-sm font-medium text-muted-foreground/80 px-2 py-1">{tNav(category.label)}</p>
                     {category.items.map(item => {
                       // Use item.name directly, key is for React
                       return (
@@ -203,7 +225,7 @@ export default function NavBar() {
           } else if (link.isMegaMenu && link.items) { // Resources Menu
             return (
               <div key={link.label} className="grid gap-1">
-                 <p className="font-medium text-muted-foreground px-2">{tNav(`links.${link.label}`)}</p>
+                 <p className="font-medium text-muted-foreground px-2 py-1">{tNav(`links.${link.label}`)}</p>
                  {link.items.map(item => {
                     // Use item.name directly
                     return (
@@ -287,40 +309,38 @@ export default function NavBar() {
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                 );
-              } else if (link.isMegaMenu && link.promo && link.items) { // Resources Menu
+              } else if (link.isMegaMenu && link.promo && link.categories) { // Resources Menu
                 return (
                   <NavigationMenuItem key={link.label}>
                     <NavigationMenuTrigger>{tNav(`links.${link.label}`)}</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                        <li className="row-span-3">
-                          <NavigationMenuLink asChild>
-                            <a
-                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                              href={link.promo.href}
-                            >
-                              <div className="mb-2 mt-4 text-lg font-medium">
-                                {link.promo.title}
-                              </div>
-                              <p className="text-sm leading-tight text-muted-foreground">
-                                {link.promo.description}
-                              </p>
-                            </a>
-                          </NavigationMenuLink>
-                        </li>
-                        {link.items.map((item) => {
-                          // Use item.name directly
-                          return (
-                            <ListItem
-                              key={item.key}
-                              href={item.href}
-                              title={item.name}
-                            >
-                              {item.description}
-                            </ListItem>
-                          );
-                        })}
-                      </ul>
+                      <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                        {link.categories.map((category) => (
+                          <div key={category.label} className="flex flex-col">
+                            <p className="text-sm font-medium leading-none text-muted-foreground px-2 py-1.5">{tNav(category.label)}</p>
+                            <div className="flex flex-col">
+                              {category.items.map((item) => (
+                                <ListItem key={item.key} href={item.href} title={item.name}>
+                                  {item.description}
+                                </ListItem>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                        {link.promo && (
+                          <div className="col-span-full row-start-1 flex flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md md:col-span-1 md:row-start-auto">
+                            <div className="mb-2 mt-4 text-lg font-medium">
+                              {link.promo.title}
+                            </div>
+                            <p className="text-sm leading-tight text-muted-foreground">
+                              {link.promo.description}
+                            </p>
+                            <Link href={link.promo.href} className="mt-4 text-sm font-medium text-primary underline underline-offset-4">
+                              Get Access →
+                            </Link>
+                          </div>
+                        )}
+                      </div>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                 );
@@ -406,7 +426,7 @@ const ListItem = React.forwardRef<
         {/* Pass standard anchor props (excluding title/children), use custom props for display */}
         <a
           ref={ref}
-          href={href}
+          href={href || '#'} // Ensure href is always defined or provide a fallback
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className

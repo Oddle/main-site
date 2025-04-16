@@ -91,12 +91,14 @@
     "blog": {
       "name": "Blog",
       "description": "Insights and articles for restaurant growth",
-      "href": "/resources/blog"
+      "href": "/resources/blog",
+      "category": "learn"
     },
     "customer-stories": {
       "name": "Customer Stories",
       "description": "See how restaurants succeed with Oddle",
-      "href": "/resources/customer-stories"
+      "href": "/resources/customer-stories",
+      "category": "learn"
     },
     "guides": {
       "name": "Guides",
@@ -131,17 +133,20 @@
     "comparison": {
       "name": "Comparison",
       "description": "See how Oddle compares",
-      "href": "/resources/comparison"
+      "href": "/resources/comparison",
+      "category": "learn"
     },
     "about-us": {
       "name": "About Us",
       "description": "Link Description",
-      "href": "/resources/aboutUs"
+      "href": "/resources/aboutUs",
+      "category": "general"
     },
     "help-center": {
       "name": "Help Center",
       "description": "Find answers to your questions",
-      "href": "https://support.oddle.me"
+      "href": "https://support.oddle.me",
+      "category": "general"
     },
     "pricing": {
       "name": "Pricing",
@@ -177,6 +182,11 @@
       "name": "LinkedIn",
       "description": "Link Description",
       "href": "https://linkedin.com/company/oddle"
+    },
+    "singapore-influencer-list": {
+        "name": "Build your business with Singapore Influencer List",
+        "description": "Get Access",
+        "href": "/resources/singapore-influencer-list"
     }
   }
 } 

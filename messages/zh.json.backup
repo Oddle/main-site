@@ -364,45 +364,6 @@
           "description": ""
         }
       }
-    },
-    "productsBento": {
-      "badgeText": "",
-      "sectionTitle": "",
-      "sectionDescription": "",
-      "items": {
-        "0": {
-          "title": "",
-          "description": ""
-        },
-        "1": {
-          "title": "",
-          "description": ""
-        },
-        "2": {
-          "title": "",
-          "description": ""
-        },
-        "3": {
-          "title": "",
-          "description": ""
-        },
-        "4": {
-          "title": "",
-          "description": ""
-        },
-        "5": {
-          "title": "",
-          "description": ""
-        },
-        "6": {
-          "title": "",
-          "description": ""
-        },
-        "7": {
-          "title": "",
-          "description": ""
-        }
-      }
     }
   },
   "loyaltyCrm": {
@@ -505,8 +466,23 @@
       "title": "探索 Oddle",
       "description": "了解 Oddle 如何帮助餐厅成长。"
     },
-    "learn": "学习",
-    "general": "一般"
+    "resources": {
+      "blog": {
+        "title": "博客"
+      },
+      "customer-stories": {
+        "title": "客户案例"
+      },
+      "comparison": {
+        "title": "对比"
+      },
+      "about-us": {
+        "title": "关于我们"
+      },
+      "help-center": {
+        "title": "帮助中心"
+      }
+    }
   },
   "oddleEats": {
     "hero": {
@@ -913,22 +889,5 @@
         }
       }
     }
-  },
-    "resources": {
-      "blog": {
-        "title": "博客"
-      },
-      "customer-stories": {
-        "title": "客户案例"
-      },
-      "comparison": {
-        "title": "对比"
-      },
-      "about-us": {
-        "title": "关于我们"
-      },
-      "help-center": {
-        "title": "帮助中心"
-      }
-    }
+  }
 }
