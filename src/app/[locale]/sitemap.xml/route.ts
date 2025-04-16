@@ -5,8 +5,19 @@ import { NextResponse } from 'next/server'; // Import NextResponse
 // Read the base URL from environment variables
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'; // Fallback if not set
 
+// Define the type for changeFrequency explicitly
+type ChangeFrequency = 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
+
+// Define the type for a sitemap entry
+interface SitemapEntry {
+  url: string;
+  lastModified?: Date;
+  changeFrequency?: ChangeFrequency;
+  priority?: number;
+}
+
 // Helper function to generate XML sitemap string
-function generateSitemapXml(entries: { url: string; lastModified?: Date; changeFrequency?: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never'; priority?: number }[]): string {
+function generateSitemapXml(entries: SitemapEntry[]): string { // Use SitemapEntry type
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
@@ -43,13 +54,14 @@ export async function GET(
     return new NextResponse('Not found', { status: 404 });
   }
 
-  const sitemapEntries: { url: string; lastModified?: Date; changeFrequency?: any; priority?: number }[] = [];
+  // Use the defined SitemapEntry type
+  const sitemapEntries: SitemapEntry[] = [];
 
   // Add the locale's root page
   sitemapEntries.push({
     url: `${baseUrl}/${locale}`,
     lastModified: new Date(),
-    changeFrequency: "monthly",
+    changeFrequency: "monthly", // Value conforms to ChangeFrequency type
     priority: 0.8,
   });
 
@@ -60,7 +72,7 @@ export async function GET(
     sitemapEntries.push({
       url: `${baseUrl}/${locale}/${pagePath}`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "monthly", // Value conforms to ChangeFrequency type
       priority: 0.7,
     });
   });
