@@ -1,7 +1,6 @@
 "use client";
 import NavBar from "../common/NavBar";
 import HeroWithCarousel from "@/components/sections/HeroWithCarousel";
-import BentoGridSection from "@/components/sections/BentoGridSection";
 import IconSectionHorizontal from "@/components/sections/IconSectionHorizontal";
 import HeroSectionWithAppShowcase from "@/components/sections/HeroSectionWithAppShowcase";
 import FeatureSectionWithImages from "@/components/sections/FeatureSectionWithImages";
@@ -36,7 +35,6 @@ interface DynamicSectionPageProps {
 const componentMap = {
   HeroWithCarousel,
   IconSectionHorizontal,
-  BentoGridSection,
   HeroSectionWithAppShowcase,
   FeatureSectionWithImages,
   FaqSection, // Add FaqSection to the map
