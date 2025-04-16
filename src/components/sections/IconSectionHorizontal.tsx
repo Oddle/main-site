@@ -20,7 +20,6 @@ import {
 } from "lucide-react"; // Import necessary icons
 import { FC } from 'react';
 import Container from "@/components/common/Container";
-import { cn } from "@/lib/utils";
 
 // Map icon names to actual components
 const iconMap: { [key: string]: FC<React.SVGProps<SVGSVGElement>> } = {
