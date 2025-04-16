@@ -1,0 +1,78 @@
+import { routing } from "@/i18n/routing";
+import pageSectionsData from '@/data/pageSections.json';
+import { NextResponse } from 'next/server'; // Import NextResponse
+
+// Read the base URL from environment variables
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'; // Fallback if not set
+
+// Helper function to generate XML sitemap string
+function generateSitemapXml(entries: { url: string; lastModified?: Date; changeFrequency?: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never'; priority?: number }[]): string {
+  let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+
+  entries.forEach(entry => {
+    xml += '  <url>\n';
+    xml += `    <loc>${entry.url}</loc>\n`;
+    if (entry.lastModified) {
+      xml += `    <lastmod>${entry.lastModified.toISOString().split('T')[0]}</lastmod>\n`;
+    }
+    if (entry.changeFrequency) {
+      xml += `    <changefreq>${entry.changeFrequency}</changefreq>\n`;
+    }
+    if (entry.priority !== undefined) { // Check for undefined as 0 is a valid priority
+      xml += `    <priority>${entry.priority.toFixed(1)}</priority>\n`;
+    }
+    xml += '  </url>\n';
+  });
+
+  xml += '</urlset>';
+  return xml;
+}
+
+export async function GET(
+  request: Request,
+  context: { params: Promise<{ locale: string }> } // Type params as Promise
+) {
+  // Explicitly await the params object
+  const params = await context.params;
+  const locale = params.locale;
+
+  // Validate locale
+  if (!routing.locales.includes(locale as typeof routing.locales[number])) {
+    // Use NextResponse for error response
+    return new NextResponse('Not found', { status: 404 });
+  }
+
+  const sitemapEntries: { url: string; lastModified?: Date; changeFrequency?: any; priority?: number }[] = [];
+
+  // Add the locale's root page
+  sitemapEntries.push({
+    url: `${baseUrl}/${locale}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  });
+
+  // Generate entries for dynamic pages for this locale
+  const dynamicPagePaths = Object.keys(pageSectionsData).filter(path => path !== 'home'); // Exclude 'home'
+
+  dynamicPagePaths.forEach((pagePath) => {
+    sitemapEntries.push({
+      url: `${baseUrl}/${locale}/${pagePath}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    });
+  });
+
+  // Generate the XML string
+  const sitemapXml = generateSitemapXml(sitemapEntries);
+
+  // Return the XML response using NextResponse
+  return new NextResponse(sitemapXml, {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/xml',
+    },
+  });
+} 
