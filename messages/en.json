@@ -190,143 +190,6 @@
       "title": "Growing is as easy as ABC",
       "subtitle": "Acquire, Build, and Convert Your Way to Success"
     },
-    "bentoGrid": {
-      "badge": "Our solutions",
-      "title": "Everything you need to grow your revenue",
-      "description": "A complete suite of tools designed to attract customers, streamline operations, and boost your restaurant's bottom line.",
-      "cardReservation": {
-        "title": "Reservation",
-        "description": "Simplify table bookings and grow dine-in sales across all segments",
-        "imageAlt": "Reservation system interface showing table booking."
-      },
-      "cardOnlineOrdering": {
-        "title": "Online Ordering",
-        "description": "Boost delivery revenue with a branded online ordering system",
-        "imageAlt": "Online ordering interface showing menu and delivery details."
-      },
-      "cardPaymentTerminals": {
-        "title": "Next-Gen Payment Terminals",
-        "description": "Competitive payment processing that turns every transaction into a growth opportunity",
-        "imageAlt": "Payment terminal screen showing transaction details."
-      },
-      "cardLoyalty": {
-        "title": "Loyalty",
-        "description": "Encourage repeat visits with rewards and automated reminders",
-        "imageAlt": "Loyalty program interface on a phone."
-      },
-      "cardSurveys": {
-        "title": "Surveys",
-        "description": "Automatically collect feedback and boost your online reputation",
-        "imageAlt": "Customer filling out a survey on a phone with star ratings visible."
-      },
-      "cardVirtualLounge": {
-        "title": "Virtual Lounge",
-        "description": "Create a digital space that reflects your menu, promotions, and personality",
-        "imageAlt": "Virtual lounge interface on a phone showing restaurant details."
-      },
-      "cardMarketingEngine": {
-        "title": "Marketing Engine",
-        "description": "Automate campaigns and grow your online reputation effortlessly",
-        "imageAlt": "Marketing email campaign builder interface."
-      },
-      "cardCustomerIntelligence": {
-        "title": "Customer Intelligence",
-        "description": "Get actionable insights from your customer data",
-        "imageAlt": "Customer intelligence dashboard showing analytics."
-      },
-      "badgeText": "Our solutions",
-      "cards": {
-        "0": {
-          "title": "Reservation",
-          "description": "Simplify table bookings and grow dine-in sales across all segments",
-          "imageAlt": "Reservation system interface showing table booking."
-        },
-        "1": {
-          "title": "Online Ordering",
-          "description": "Boost delivery revenue with a branded online ordering system",
-          "imageAlt": "Online ordering interface showing menu and delivery details."
-        },
-        "2": {
-          "title": "Next-Gen Payment Terminals",
-          "description": "Competitive payment processing that turns every transaction into a growth opportunity",
-          "imageAlt": "Payment terminal screen showing transaction details."
-        },
-        "3": {
-          "title": "Loyalty",
-          "description": "Encourage repeat visits with rewards and automated reminders",
-          "imageAlt": "Loyalty program interface on a phone."
-        },
-        "4": {
-          "title": "Surveys",
-          "description": "Automatically collect feedback and boost your online reputation",
-          "imageAlt": "Customer filling out a survey on a phone with star ratings visible."
-        },
-        "5": {
-          "title": "Virtual Lounge",
-          "description": "Create a digital space that reflects your menu, promotions, and personality",
-          "imageAlt": "Virtual lounge interface on a phone showing restaurant details."
-        },
-        "6": {
-          "title": "Marketing Engine",
-          "description": "Automate campaigns and grow your online reputation effortlessly",
-          "imageAlt": "Marketing email campaign builder interface."
-        },
-        "7": {
-          "title": "Customer Intelligence",
-          "description": "Get actionable insights from your customer data",
-          "imageAlt": "Customer intelligence dashboard showing analytics."
-        }
-      }
-    },
-    "growingEasy": {
-      "sectionTitle": "Growing is as easy as ABC",
-      "items": {
-        "0": {
-          "title": "Acquire Customer Data",
-          "description": "Capture insights from every reservation, delivery, and dine-in visit to build a powerful customer database"
-        },
-        "1": {
-          "title": "Build Your Brand",
-          "description": "Create a seamless online presence that reflects your restaurant's identity and keeps customers engaged"
-        },
-        "2": {
-          "title": "Convert for Growth",
-          "description": "Turn first-time diners into regulars with automated rewards, campaigns, and personalized reminders"
-        }
-      }
-    },
-    "timeline": {
-      "description": "Follow our progress as we continue to innovate and grow, helping restaurants like yours succeed.",
-      "heading": "Our Journey So Far",
-      "primaryButton": {
-        "text": "Learn About Our Vision"
-      },
-      "secondaryButton": {
-        "text": "See Product Updates"
-      },
-      "features": {
-        "0": {
-          "title": "Early Days",
-          "description": "Building the foundation and defining our mission to empower restaurants.",
-          "imageAlt": "Placeholder Journey 1"
-        },
-        "1": {
-          "title": "Growth Phase",
-          "description": "Expanding our reach and enhancing our platform based on valuable user feedback.",
-          "imageAlt": "Placeholder Journey 2"
-        },
-        "2": {
-          "title": "Major Milestones",
-          "description": "Celebrating key achievements and the positive impact on our restaurant partners.",
-          "imageAlt": "Placeholder Journey 3"
-        },
-        "3": {
-          "title": "Future Focus",
-          "description": "Continuing to innovate and develop cutting-edge solutions for the F&B industry.",
-          "imageAlt": "Placeholder Journey 4"
-        }
-      }
-    },
     "platformFeatures": {
       "description": "Our platform integrates seamlessly to provide the tools you need for success, all in one place.",
       "heading": "Built for Restaurant Growth",
@@ -347,6 +210,53 @@
         "3": {
           "title": "AI-Driven Insights",
           "description": "Leverage intelligent analytics to understand trends and optimize strategy."
+        }
+      }
+    },
+    "productsBento": {
+      "badgeText": "Our Solutions",
+      "sectionTitle": "Everything you need to grow your revenue",
+      "sectionDescription": "A complete suite of tools designed to attract customers, streamline operations, and boost your restaurant's bottom line.",
+      "items": {
+        "0": {
+          "title": "Reservation",
+          "description": "Simplify table bookings and grow dine-in sales across all segments",
+          "imageAlt": "Reservation"
+        },
+        "1": {
+          "title": "Online Ordering",
+          "description": "Boost delivery revenue with a branded online ordering system",
+          "imageAlt": "Online Ordering"
+        },
+        "2": {
+          "title": "Next-Gen Payment Terminals",
+          "description": "Competitive payment processing that turns every transaction into a growth opportunity",
+          "imageAlt": "Payment Terminal"
+        },
+        "3": {
+          "title": "Loyalty",
+          "description": "Encourage repeat visits with rewards and automated reminders",
+          "imageAlt": "Loyalty"
+        },
+        "4": {
+          "title": "Surveys",
+          "description": "Automatically collect feedback and boost your online reputation",
+          "imageAlt": "Surveys"
+        },
+        "5": {
+          "title": "Virtual Lounge",
+          "description": "Create a digital space that reflects your menu, promotions, and personality",
+          "imageAlt": "Virtual Lounge"
+        },
+        "6": {
+          "title": "Marketing Engine",
+          "description": "Automate campaigns and grow your online reputation effortlessly",
+          "imageAlt": "Marketing Engine"
+        },
+        "7": {
+          "title": "Customer Intelligence",
+          "description": "Get actionable insights from your customer data",
+          "imageAlt": "Customer Intelligence"
         }
       }
     }

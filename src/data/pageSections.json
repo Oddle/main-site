@@ -41,134 +41,78 @@
       }
     },
     {
-      "component": "BentoGridSection",
+      "component": "FeatureSectionBentoGrid",
       "props": {
-        "i18nBaseKey": "home.bentoGrid",
-        "badgeText": "Our solutions",
-        "title": "Everything you need to grow your revenue",
-        "description": "A complete suite of tools designed to attract customers, streamline operations, and boost your restaurant's bottom line.",
-        "cards": [
+        "i18nBaseKey": "home.productsBento", 
+        "badgeText": "Our Solutions",
+        "badgeIcon": "LayoutGrid", 
+        "sectionTitle": "Everything you need to grow your revenue",
+        "sectionDescription": "A complete suite of tools designed to attract customers, streamline operations, and boost your restaurant's bottom line.",
+        "items": [
           { 
             "id": 1, 
-            "type": "default", 
             "title": "Reservation", 
             "description": "Simplify table bookings and grow dine-in sales across all segments", 
-            "imageUrl": "https://placehold.co/600x400/E2E8F0/AAAAAA?text=Reservation+Img", 
+            "imageSrc": "https://ucarecdn.com/47d65c01-2223-48b4-ab0e-bc56a9eef03f/-/scale_crop/800x800/", 
             "imageAlt": "Reservation system interface showing table booking.",
-            "linkText": "Learn more",
-            "linkAction": "/products/restaurant-reservation-system" 
+            "linkAction": "/products/restaurant-reservation-system"
           },
           { 
             "id": 2, 
-            "type": "default", 
             "title": "Online Ordering", 
             "description": "Boost delivery revenue with a branded online ordering system", 
-            "imageUrl": "https://placehold.co/600x400/E8F0E2/AAAAAA?text=Ordering+Img", 
+            "imageSrc": "https://ucarecdn.com/eef1cb53-a709-483c-9881-ffa746f44e09/-/scale_crop/800x800/", 
             "imageAlt": "Online ordering interface showing menu and delivery details.",
-            "linkText": "Learn more",
             "linkAction": "/products/restaurant-online-ordering-system"
           },
           { 
             "id": 3, 
-            "type": "default", 
             "title": "Next-Gen Payment Terminals", 
             "description": "Competitive payment processing that turns every transaction into a growth opportunity", 
-            "imageUrl": "https://placehold.co/600x400/F0E8E2/AAAAAA?text=Payments+Img", 
+            "imageSrc": "https://ucarecdn.com/f3dc1cdb-e329-4b06-9f10-d55f46d4f629/-/scale_crop/800x800/", 
             "imageAlt": "Payment terminal screen showing transaction details.",
-            "linkText": "Learn more",
             "linkAction": "/products/restaurant-payment-terminal"
           },
           { 
             "id": 4, 
-            "type": "default", 
             "title": "Loyalty", 
             "description": "Encourage repeat visits with rewards and automated reminders", 
-            "imageUrl": "https://placehold.co/600x400/E8E2F0/AAAAAA?text=Loyalty+Img", 
+            "imageSrc": "https://ucarecdn.com/14757ea0-661c-4be2-9966-0e54489d394a/-/scale_crop/800x800/", 
             "imageAlt": "Loyalty program interface on a phone.",
-            "linkText": "Learn more",
             "linkAction": "/products/restaurant-loyalty-crm-system"
           },
           { 
             "id": 5, 
-            "type": "default", 
             "title": "Surveys", 
             "description": "Automatically collect feedback and boost your online reputation", 
-            "imageUrl": "https://placehold.co/600x400/E2F0F0/AAAAAA?text=Surveys+Img", 
+            "imageSrc": "https://ucarecdn.com/40fbb324-eb80-4f92-92b7-1aec4c9ac5cf/-/scale_crop/800x800/", 
             "imageAlt": "Customer filling out a survey on a phone with star ratings visible.",
-            "linkText": "Learn more",
             "linkAction": "/products/restaurant-survey"
           },
           { 
             "id": 6, 
-            "type": "default", 
             "title": "Virtual Lounge", 
             "description": "Create a digital space that reflects your menu, promotions, and personality", 
-            "imageUrl": "https://placehold.co/600x400/F0E2F0/AAAAAA?text=Lounge+Img", 
+            "imageSrc": "https://ucarecdn.com/fb27e6e8-5b29-4a1d-8ae9-3def53e5a4da/-/scale_crop/600x600/", 
             "imageAlt": "Virtual lounge interface on a phone showing restaurant details.",
-            "linkText": "Learn more",
             "linkAction": "/products/restaurant-virtual-lounge"
           },
           { 
             "id": 7, 
-            "type": "default", 
             "title": "Marketing Engine", 
             "description": "Automate campaigns and grow your online reputation effortlessly", 
-            "imageUrl": "https://placehold.co/600x400/E2E8E8/AAAAAA?text=Marketing+Img", 
+            "imageSrc": "https://ucarecdn.com/cd497ab0-3b5d-49c2-b81b-4fdb9994f4b9/-/scale_crop/1000x1000/", 
             "imageAlt": "Marketing email campaign builder interface.",
-            "linkText": "Learn more",
-            "linkAction": "/products/email-marketing-system"
+            "linkAction": "/products/restaurant-email-marketing-system",
+            "span": 2
           },
           { 
             "id": 8, 
-            "type": "default", 
             "title": "Customer Intelligence", 
             "description": "Get actionable insights from your customer data", 
-            "imageUrl": "https://placehold.co/600x400/F0F0E2/AAAAAA?text=CRM+Img", 
+            "imageSrc": "https://ucarecdn.com/ee56a537-0c1d-4db5-92bd-24abbf0a1bc6/-/scale_crop/970x970/", 
             "imageAlt": "Customer intelligence dashboard showing analytics.",
-            "linkText": "Learn more",
-            "linkAction": "/products/crm-customer-intelligence"
-          }
-        ]
-      }
-    },
-    {
-      "component": "TimelineSection",
-      "props": {
-        "i18nBaseKey": "home.timeline",
-        "heading": "Our Journey So Far",
-        "description": "Follow our progress as we continue to innovate and grow, helping restaurants like yours succeed.",
-        "primaryButton": {
-          "text": "Learn About Our Vision",
-          "action": "/about-us"
-        },
-        "secondaryButton": {
-          "text": "See Product Updates",
-          "action": "/blog"
-        },
-        "features": [
-          {
-            "imageSrc": "https://placehold.co/600x400/E2E8F0/AAAAAA?text=Journey+1",
-            "imageAlt": "Placeholder Journey 1",
-            "title": "Early Days",
-            "description": "Building the foundation and defining our mission to empower restaurants."
-          },
-          {
-            "imageSrc": "https://placehold.co/600x400/CCDDAA/AAAAAA?text=Journey+2",
-            "imageAlt": "Placeholder Journey 2",
-            "title": "Growth Phase",
-            "description": "Expanding our reach and enhancing our platform based on valuable user feedback."
-          },
-          {
-            "imageSrc": "https://placehold.co/600x400/E8F0E2/AAAAAA?text=Journey+3",
-            "imageAlt": "Placeholder Journey 3",
-            "title": "Major Milestones",
-            "description": "Celebrating key achievements and the positive impact on our restaurant partners."
-          },
-          {
-            "imageSrc": "https://placehold.co/600x400/F0E8E2/AAAAAA?text=Journey+4",
-            "imageAlt": "Placeholder Journey 4",
-            "title": "Future Focus",
-            "description": "Continuing to innovate and develop cutting-edge solutions for the F&B industry."
+            "linkAction": "/products/restaurant-crm-customer-intelligence"
           }
         ]
       }
