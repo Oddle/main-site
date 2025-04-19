@@ -7,6 +7,8 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useTranslations } from 'next-intl';
+import { getTranslation } from '@/lib/i18nUtils';
 
 // Interface for individual feature items
 interface FeatureCardItem {
@@ -29,16 +31,17 @@ interface FeatureSectionWithColumnsProps {
 
 // Renamed component function
 const FeatureSectionWithColumns = ({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   i18nBaseKey,
-  sectionTag,
-  sectionTitle,
-  sectionSubtitle,
+  sectionTag: defaultSectionTag,
+  sectionTitle: defaultSectionTitle,
+  sectionSubtitle: defaultSectionSubtitle,
   features = [],
-}: FeatureSectionWithColumnsProps) => { // Use renamed Props interface
-  // TODO: Add useTranslations hook if i18nBaseKey is provided
+}: FeatureSectionWithColumnsProps) => {
+  const t = useTranslations();
 
-  // Removed the console warning specific to 3 features
+  const sectionTag = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.tag`, defaultSectionTag ?? '') : defaultSectionTag;
+  const sectionTitle = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.sectionTitle`, defaultSectionTitle) : defaultSectionTitle;
+  const sectionSubtitle = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.sectionDescription`, defaultSectionSubtitle ?? '') : defaultSectionSubtitle;
 
   return (
     <section className="py-24 md:py-32">
@@ -64,13 +67,18 @@ const FeatureSectionWithColumns = ({
 
         {/* Feature Cards Section - Dynamic Columns */}
         <div className={cn(
-          "grid grid-cols-1 gap-x-8 gap-y-12", // Always 1 column on smallest screens
-          "sm:grid-cols-2", // Default to 2 columns on small screens and up
-          features.length === 3 ? "lg:grid-cols-3" : "", // Use 3 columns ONLY if there are exactly 3 features on large screens
-          // If you had 4 features and wanted 4 columns, you could add:
-          // features.length === 4 ? "lg:grid-cols-4" : ""
+          "grid grid-cols-1 gap-x-8 gap-y-12",
+          "sm:grid-cols-2",
+          features.length === 3 ? "lg:grid-cols-3" : "",
         )}>
           {features.map((feature: FeatureCardItem, index: number) => {
+            const featureBaseKey = `${i18nBaseKey}.features.${index}`;
+
+            const featureTitle = i18nBaseKey ? getTranslation(t, `${featureBaseKey}.title`, feature.title) : feature.title;
+            const featureDescription = i18nBaseKey ? getTranslation(t, `${featureBaseKey}.description`, feature.description) : feature.description;
+            const featureTag = feature.tag && i18nBaseKey ? getTranslation(t, `${featureBaseKey}.tag`, feature.tag) : feature.tag;
+            const featureImageAlt = i18nBaseKey ? getTranslation(t, `${featureBaseKey}.imageAlt`, feature.imageAlt) : feature.imageAlt;
+            
             const isInternalLink = feature.action?.startsWith('/');
             const baseClassName = "group block h-full";
             const hoverClassName = feature.action ? "transition-opacity duration-300 hover:opacity-80" : "";
@@ -80,19 +88,19 @@ const FeatureSectionWithColumns = ({
                   <div className="relative aspect-[1.5] w-full">
                       <Image
                         src={feature.imageSrc}
-                        alt={feature.imageAlt || feature.title}
+                        alt={featureImageAlt || featureTitle}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                   </div>
                   <CardContent className="flex flex-grow flex-col px-4 pb-4 md:px-6 md:pb-6">
-                    {feature.tag && (
-                       <Badge variant="outline" className="mb-2 w-fit">{feature.tag}</Badge>
+                    {featureTag && (
+                       <Badge variant="outline" className="mb-2 w-fit">{featureTag}</Badge>
                      )}
-                    <h3 className="mb-2 text-xl font-semibold dark:text-white">{feature.title}</h3>
+                    <h3 className="mb-2 text-xl font-semibold dark:text-white">{featureTitle}</h3>
                     <p className="text-base text-muted-foreground">
-                      {feature.description}
+                      {featureDescription}
                     </p>
                   </CardContent>
                </Card>
@@ -105,7 +113,7 @@ const FeatureSectionWithColumns = ({
                     key={index}
                     href={feature.action}
                     className={cn(baseClassName, hoverClassName)}
-                    aria-label={feature.title}
+                    aria-label={featureTitle}
                   >
                     {cardContent}
                   </Link>
@@ -118,7 +126,7 @@ const FeatureSectionWithColumns = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     className={cn(baseClassName, hoverClassName)}
-                    aria-label={feature.title}
+                    aria-label={featureTitle}
                   >
                     {cardContent}
                   </a>

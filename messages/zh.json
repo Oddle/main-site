@@ -673,10 +673,13 @@
   },
   "reservationSystem": {
     "hero": {
-      "title": "Stop Overpaying for Reservations - Break Free from Monthly Fees and High Commissions Costs",
-      "description": "Helping Restaurants Save More on Reservations While Driving More Sales, Every Day with Pricing that Makes Sense.",
+      "title": "別再為訂位系統支付過高的費用——擺脫年費和年約的束縛",
+      "description": "幫助餐廳在訂位系統上大幅節省成本，同時自動幫您推動營收成長。",
       "primaryButton": {
-        "text": "Request Demo"
+        "text": "預約諮詢"
+      },
+      "secondaryButton": {
+        "text": "LINE@聯繫"
       },
       "slides": {
         "0": {
@@ -685,129 +688,110 @@
         "1": {
           "imageAlt": "Table Management View"
         }
-      },
-      "secondaryButton": {
-        "text": "Talk to Sales"
       }
     },
     "affordableSection": {
-      "title": "An Affordable Reservation System Without the Catch",
-      "description": "Most reservation systems cost you more than they give back. Oddle Reserve is different—no subscriptions, no hidden fees, just simple, usage-based pricing.",
-      "features": [
-        {
-          "title": "Low-Cost, Usage-Based Pricing",
-          "description": "Only pay for the reservations you take."
+      "tag": "一個沒有門檻、還能為您增加營收的訂位系統",
+      "title": "一個沒有門檻、還能為您增加營收的訂位系統",
+      "description": "大多數的訂位系統收取年費卻無法為餐廳提升營收。Oddle 餐廳訂位系統不同，沒有年費、沒有建置費、不綁約，只會基於使用量來收費。",
+      "items": {
+        "0": {
+          "title": "低進入門檻、基於使用量的收費模式",
+          "description": "只需要為線上訂位付款。"
         },
-        {
-          "title": "Grow Revenue With Every Booking",
-          "description": "Turn reservations into repeat visits with built-in customer engagement tools."
+        "1": {
+          "title": "每組訂位都是營收成長的基石",
+          "description": "透過Oddle的顧客再行銷工具，將初次造訪的新客人變成穩定回訪的忠實顧客。"
         },
-        {
-          "title": "Designed for Restaurants Like Yours:",
-          "description": "Tailored solutions for every stage of your business."
+        "2": {
+          "title": "為您這樣餐廳設計",
+          "description": "為餐廳發展的各個階段量身打造的解决方案。"
         }
-      ]
+      }
     },
     "useCases": {
-      "sectionTitle": "Built for Restaurants of Every Kind",
+      "tag": "為各類餐廳設計",
+      "sectionTitle": "為各類餐廳設計",
+      "sectionDescription": "無論您是從未使用過訂位系統，還是想擺脫昂貴的年費，Oddle餐廳訂位系統都是為滿足您的需求而設計的。",
       "features": {
         "0": {
-          "title": "Traditional Restaurants Going Digital",
-          "description": "Facing digitalization challenges with the next generation stepping in, but hesitant about costly subscriptions? Oddle Reserve's pay-as-you-go model makes the transition seamless, eliminating steep monthly fees.",
+          "title": "傳統餐廳走向數位化",
+          "description": "面對數位化挑戰與不斷冒出的新餐廳，你還因為昂貴的年費而躊躇不前嗎？Oddle 餐廳訂位系統 案使用量收費的模式使數位化變得毫無門檻。",
           "imageAlt": "Dim sum dishes on a table representing traditional restaurants"
         },
         "1": {
-          "title": "Restaurants With High Walk-Ins",
-          "description": "With many walk-ins and limited online reservations, managing big group bookings can be challenging. Oddle Reserve's usage-based pricing lets you pay only when you need it, making it an ideal solution for occasional but essential online reservations.",
+          "title": "大量過路客的餐廳",
+          "description": "當餐廳有很多過路客和不同管道的訂位時，管理各種不同的訂位會變得很具挑戰性。Oddle 訂位系統的使用量計費模式讓您使用得更無負擔，這使它成為各種餐廳管理訂位的理想解決方案。",
           "imageAlt": "Exterior of a soup restaurant representing high walk-in restaurants"
         },
         "2": {
-          "title": "Restaurants On High-Commission Marketplaces",
-          "description": "Paying expensive per cover to marketplaces that intercept direct bookings with ads can be frustrating. Oddle Reserve removes commissions and charges only per booking—not per cover—giving you back control of your reservations.",
+          "title": "依賴高抽成的訂位平台餐廳",
+          "description": "支付高昂人頭費、抽成給訂位平台的同時，還會被它的廣告攔截本該該訂位的客人，這有時會令人感到沮喪。Oddle 訂位系統系統不收傭金，我們僅按照訂位組數收費，而不是按照人頭數收費，讓您重新掌握您的顧客。",
           "imageAlt": "Interior of a PizzaExpress restaurant representing restaurants on marketplaces"
         }
       }
     },
-    "views": {
-      "subtitle": "User-friendly and seamless, Oddle Reserve simplifies the reservation process with advanced table management and management tools. It helps you efficiently manage reservations in real time, enhancing the dining experience and streamlining operations.",
-      "sectionTitle": "Simplify your day-to-day Operations with Powerful Views and Real-time Control.",
-      "tabsData": {
-        "0": {
-          "tabName": "List View",
-          "tabDescription": "Get a clear overview of all your reservations at a glance."
-        },
-        "1": {
-          "tabName": "Timeline View",
-          "tabDescription": "Visualize your bookings chronologically for better planning."
-        },
-        "2": {
-          "tabName": "Table View",
-          "tabDescription": "Manage table assignments and statuses efficiently."
-        },
-        "3": {
-          "tabName": "Mobile View",
-          "tabDescription": "Access and manage reservations on the go from any device."
-        }
-      }
-    },
     "operations": {
-      "sectionTitle": "Simplify your day-to-day Operations with Powerful Views and Real-time Control.",
-      "sectionDescription": "User-friendly and seamless, Oddle Reserve simplifies the reservation process with advanced table management and management tools. It helps you efficiently manage reservations in real time, enhancing the dining experience and streamlining operations.",
-      "itemsData": {
+      "sectionTitle": "簡化您的日常操作",
+      "sectionDescription": "使用強大的視圖和即時控制，Oddle Reserve 簡化了預訂流程，並透過先進的桌位管理和管理工具，讓您能夠即時有效地管理訂位，提升用餐體驗並簡化營運。",
+      "items": {
         "0": {
-          "title": "List View",
-          "description": "Get a clear overview of all your reservations at a glance."
+          "title": "清單顯示",
+          "description": " Get a clear overview of all your reservations at a glance.",
+          "imageAlt": "List View"
         },
         "1": {
-          "title": "Timeline View",
-          "description": "Visualize your bookings chronologically for better planning."
+          "title": "時間軸模式",
+          "description": "Visualize your bookings chronologically for better planning.",
+          "imageAlt": "Timeline View"
         },
         "2": {
-          "title": "Table View",
-          "description": "Manage table assignments and statuses efficiently."
+          "title": "桌位圖",
+          "description": "Manage table assignments and statuses efficiently.",
+          "imageAlt": "Table View"
         },
         "3": {
-          "title": "Mobile View",
-          "description": "Access and manage reservations on the go from any device."
+          "title": "手機模式",
+          "description": "Access and manage reservations on the go from any device.",
+          "imageAlt": "Mobile View"
         }
       }
     },
     "system": {
-      "title": "Secure and Reliable Reservation Booking System",
-      "description": "Ensure serious bookings and minimize no-shows with built-in safeguards.",
+      "title": "安全可靠的訂位系統",
+      "description": "確保訂位並透過內建的防範措施來最小化缺席率。",
       "features": {
         "0": {
-          "title": "Secure and Reliable Reservation Booking System",
-          "description": "Ensure serious bookings and minimize no-shows with built-in safeguards.",
+          "title": "安全可靠的訂位系統",
+          "description": "確保訂位並通過內建的防範措施來最小化缺席率。",
           "imageAlt": "Credit card guarantee",
-          "item1": "Card Guarantee: Secure reservations with credit card guarantees to reduce cancellations.",
-          "item2": "Payment Request: Collect deposits or full payments upfront for high-value or busy periods.",
-          "item3": "Automated Customer Confirmation: Confirm reservations automatically to save time and reduce manual work."
+          "item1": "預刷信用卡：不是真正刷卡，而是預卡信用卡額度來完成訂位，以減少缺席的情況。",
+          "item2": "付款請求：在高價值的時段或繁忙時期收取押金或全額付款。",
+          "item3": "顧客確認自動化：自動確認訂位以節省時間並減少手動操作。"
         },
         "1": {
-          "title": "Customer-Friendly Features",
-          "description": "Enhance the guest experience with convenient and flexible options.",
+          "title": "使用者友善的功能",
+          "description": "透過方便和靈活的選項來提升顧客體驗。",
           "imageAlt": "Payment request",
-          "item1": "Guest Self-Edit Reservations: Allow guests to change or cancel bookings without the need to call, creating a smoother experience.",
-          "item2": "Automated Status Management: Easily update and track reservation statuses with minimal effort, keeping your team aligned and operations seamless."
+          "item1": "顧客編輯訂位：允許顧客更改或取消訂位，而無需電話聯繫，讓使用體驗更順暢。",
+          "item2": "自動化狀態管理：輕鬆更新和追蹤訂位狀態，事半功倍，輕鬆設定好後，能讓團隊保持一致。"
         }
       }
     },
     "growthEngine": {
-      "title": "...Plus a Powerful Revenue Growth Engine",
-      "description": "Turn insights into action with tools that reward loyalty, re-engage lapsed diners, and convert delivery customers into repeat dine-in guests.",
+      "title": "...加上一個強大的成長引擎",
+      "description": "將數據洞察轉化為實際策略，使用能自動獎勵顧客再行銷、吸引流失的內用顧客重新回訪的工具，並將外送顧客吸引到現場用餐。",
       "features": {
         "0": {
-          "title": "Activate and Grow Sales",
-          "description": "Grow your customer database and build stronger relationships with tools that drive loyalty and repeat orders.",
+          "title": "啟動並增加銷售",
+          "description": "使用能推動顧客忠誠度和回購率的工具來擴大您的顧客資料庫並建立更強的顧客關係。",
           "imageAlt": "Grow sales through engagement",
-          "item1": "Collect and analyze detailed insights into customer behavior, preferences, and order frequency.",
-          "item2": "Reward repeat customers, run targeted promotions, and re-engage lapsed diners with personalized campaigns.",
-          "item3": "Convert delivery customers into dine-in guests and keep them coming back with exclusive offers and tailored experiences."
+          "item1": "收集並分析顧客行為、偏好和來訪頻率，取得詳細的顧客洞見。",
+          "item2": "獎勵重複來訪的顧客、進行分眾行銷，並透過個人化的活動重新吸引流失的顧客。",
+          "item3": "將外送顧客轉換為內用顧客，並透過獨家優惠和客製化的體驗讓他們持續回訪。"
         }
       }
     }
-  }
   },
   "survey": {
     "hero": {

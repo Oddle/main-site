@@ -6,7 +6,7 @@ import {
   ZoomIn, 
   Database, 
   Megaphone, 
-  TrendingUp, 
+  TrendingUp,
   Settings, 
   Package, 
   Truck,
@@ -22,6 +22,8 @@ import {
 } from "lucide-react"; // Import necessary icons
 import { FC } from 'react';
 import Container from "@/components/common/Container";
+import { useTranslations } from 'next-intl'; // Import useTranslations
+import { getTranslation } from '@/lib/i18nUtils'; // Import shared helper
 
 // Map icon names to actual components
 const iconMap: { [key: string]: FC<React.SVGProps<SVGSVGElement>> } = {
@@ -55,16 +57,23 @@ interface ValueItem {
 
 // Updated interface for section props
 interface IconSectionHorizontalProps {
+  i18nBaseKey?: string; // Add base key prop
   sectionTag?: string | null; // Optional tag above title
   sectionTitle: string; // Main title
   items: ValueItem[];
 }
 
 export default function IconSectionHorizontal({ 
-  sectionTag,
-  sectionTitle,
+  i18nBaseKey, // Destructure base key
+  sectionTag: defaultSectionTag, // Rename default props
+  sectionTitle: defaultSectionTitle,
   items = [] // Provide default empty array
 }: IconSectionHorizontalProps) {
+  const t = useTranslations(); // Initialize hook
+
+  // Translate section header if i18nBaseKey is provided
+  const sectionTag = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.tag`, defaultSectionTag ?? '') : defaultSectionTag;
+  const sectionTitle = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.title`, defaultSectionTitle) : defaultSectionTitle;
 
   if (!items || items.length === 0) {
     return null; // Don't render if no items
@@ -78,11 +87,11 @@ export default function IconSectionHorizontal({
         <div className="mb-12 text-center md:mb-16 lg:mb-20">
           {sectionTag && (
             <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary md:mb-3 lg:text-base">
-              {sectionTag}
+              {sectionTag} {/* Use translated tag */}
             </p>
           )}
           <h2 className="text-3xl font-semibold tracking-tight lg:text-4xl">
-            {sectionTitle}
+            {sectionTitle} {/* Use translated title */}
           </h2>
         </div>
 
@@ -90,6 +99,12 @@ export default function IconSectionHorizontal({
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {items.map((item, index) => {
             const IconComponent = item.icon ? iconMap[item.icon] : null;
+            const itemBaseKey = `${i18nBaseKey}.items.${index}`;
+
+            // Translate item properties if i18nBaseKey is provided
+            const itemTitle = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.title`, item.title) : item.title;
+            const itemDescription = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.description`, item.description) : item.description;
+
             return (
               // Card-like div for each item
               <div key={index} className="rounded-lg bg-muted p-6 dark:bg-slate-800/50">
@@ -99,10 +114,10 @@ export default function IconSectionHorizontal({
                   </span>
                 )}
                 <h3 className="mb-2 text-xl font-medium">
-                  {item.title}
+                  {itemTitle} {/* Use translated title */}
                 </h3>
                 <p className="text-base leading-relaxed text-muted-foreground">
-                  {item.description}
+                  {itemDescription} {/* Use translated description */}
                 </p>
               </div>
             );

@@ -620,24 +620,26 @@
       }
     },
     "affordableSection": {
+      "tag": "An Affordable Reservation System Without the Catch",
       "title": "An Affordable Reservation System Without the Catch",
       "description": "Most reservation systems cost you more than they give back. Oddle Reserve is different—no subscriptions, no hidden fees, just simple, usage-based pricing.",
-      "features": [
-        {
+      "features": {
+        "0": {
           "title": "Low-Cost, Usage-Based Pricing",
           "description": "Only pay for the reservations you take."
         },
-        {
+        "1": {
           "title": "Grow Revenue With Every Booking",
           "description": "Turn reservations into repeat visits with built-in customer engagement tools."
         },
-        {
+        "2": {
           "title": "Designed for Restaurants Like Yours:",
           "description": "Tailored solutions for every stage of your business."
         }
-      ]
+      }
     },
     "useCases": {
+      "tag": "Built for Restaurants of Every Kind",
       "sectionTitle": "Built for Restaurants of Every Kind",
       "features": {
         "0": {
@@ -657,47 +659,29 @@
         }
       }
     },
-    "views": {
-      "subtitle": "User-friendly and seamless, Oddle Reserve simplifies the reservation process with advanced table management and management tools. It helps you efficiently manage reservations in real time, enhancing the dining experience and streamlining operations.",
-      "sectionTitle": "Simplify your day-to-day Operations with Powerful Views and Real-time Control.",
-      "tabsData": {
-        "0": {
-          "tabName": "List View",
-          "tabDescription": "Get a clear overview of all your reservations at a glance."
-        },
-        "1": {
-          "tabName": "Timeline View",
-          "tabDescription": "Visualize your bookings chronologically for better planning."
-        },
-        "2": {
-          "tabName": "Table View",
-          "tabDescription": "Manage table assignments and statuses efficiently."
-        },
-        "3": {
-          "tabName": "Mobile View",
-          "tabDescription": "Access and manage reservations on the go from any device."
-        }
-      }
-    },
     "operations": {
       "sectionTitle": "Simplify your day-to-day Operations with Powerful Views and Real-time Control.",
       "sectionDescription": "User-friendly and seamless, Oddle Reserve simplifies the reservation process with advanced table management and management tools. It helps you efficiently manage reservations in real time, enhancing the dining experience and streamlining operations.",
-      "itemsData": {
+      "items": {
         "0": {
           "title": "List View",
-          "description": "Get a clear overview of all your reservations at a glance."
+          "description": "Get a clear overview of all your reservations at a glance.",
+          "imageAlt": "List View"
         },
         "1": {
           "title": "Timeline View",
-          "description": "Visualize your bookings chronologically for better planning."
+          "description": "Visualize your bookings chronologically for better planning.",
+          "imageAlt": "Timeline View"
         },
         "2": {
           "title": "Table View",
-          "description": "Manage table assignments and statuses efficiently."
+          "description": "Manage table assignments and statuses efficiently.",
+          "imageAlt": "Table View"
         },
         "3": {
           "title": "Mobile View",
-          "description": "Access and manage reservations on the go from any device."
+          "description": "Access and manage reservations on the go from any device.",
+          "imageAlt": "Mobile View"
         }
       }
     },
