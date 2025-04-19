@@ -48,65 +48,66 @@ const iconMap: { [key: string]: FC<React.SVGProps<SVGSVGElement>> } = {
   // Add other icons from lucide-react as needed
 };
 
-// Updated interface for individual items
-interface ValueItem {
-  icon?: keyof typeof iconMap; // Icon name is now optional
+// Interface for individual items
+interface StandardItemData { // Rename
+  icon?: keyof typeof iconMap; 
   title: string;
   description: string;
 }
 
-// Updated interface for section props
+// Standardized props interface
 interface IconSectionHorizontalProps {
-  i18nBaseKey?: string; // Add base key prop
-  sectionTag?: string | null; // Optional tag above title
-  sectionTitle: string; // Main title
-  items: ValueItem[];
+  i18nBaseKey?: string; 
+  tag?: string | null; // Rename sectionTag
+  title: string; // Rename sectionTitle
+  // Removed description as it wasn't used
+  items: StandardItemData[]; // Keep items
 }
 
 export default function IconSectionHorizontal({ 
-  i18nBaseKey, // Destructure base key
-  sectionTag: defaultSectionTag, // Rename default props
-  sectionTitle: defaultSectionTitle,
-  items = [] // Provide default empty array
+  i18nBaseKey, 
+  tag: defaultTag, // Rename
+  title: defaultTitle, // Rename
+  items = [] 
 }: IconSectionHorizontalProps) {
-  const t = useTranslations(); // Initialize hook
+  const t = useTranslations(); 
 
-  // Translate section header if i18nBaseKey is provided
-  const sectionTag = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.tag`, defaultSectionTag ?? '') : defaultSectionTag;
-  const sectionTitle = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.title`, defaultSectionTitle) : defaultSectionTitle;
+  // Translate section header 
+  const tag = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.tag`, defaultTag ?? '') : defaultTag;
+  const title = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.title`, defaultTitle) : defaultTitle;
 
   if (!items || items.length === 0) {
-    return null; // Don't render if no items
+    return null;
   }
 
   return (
-    // Updated section padding and removed background
     <section className="w-full py-16 md:py-24 lg:py-32">
       <Container>
-        {/* Header Section - Centered */} 
+        {/* Header Section - Centered */}
         <div className="mb-12 text-center md:mb-16 lg:mb-20">
-          {sectionTag && (
+          {/* Render tag */}
+          {tag && (
             <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary md:mb-3 lg:text-base">
-              {sectionTag} {/* Use translated tag */}
+              {tag} 
             </p>
           )}
+          {/* Use title */}
           <h2 className="text-3xl font-semibold tracking-tight lg:text-4xl">
-            {sectionTitle} {/* Use translated title */}
+            {title} 
           </h2>
         </div>
 
-        {/* Items Grid Section */}
+        {/* Items Grid Section - Use items */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {items.map((item, index) => {
             const IconComponent = item.icon ? iconMap[item.icon] : null;
-            const itemBaseKey = `${i18nBaseKey}.items.${index}`;
+            const itemBaseKey = `${i18nBaseKey}.items.${index}`; // Use items in key
 
-            // Translate item properties if i18nBaseKey is provided
+            // Translate item properties
             const itemTitle = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.title`, item.title) : item.title;
             const itemDescription = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.description`, item.description) : item.description;
 
             return (
-              // Card-like div for each item
               <div key={index} className="rounded-lg bg-muted p-6 dark:bg-slate-800/50">
                 {IconComponent && (
                   <span className="mb-6 flex size-12 items-center justify-center rounded-full bg-background dark:bg-slate-900"> 
@@ -114,10 +115,10 @@ export default function IconSectionHorizontal({
                   </span>
                 )}
                 <h3 className="mb-2 text-xl font-medium">
-                  {itemTitle} {/* Use translated title */}
+                  {itemTitle} {/* Use translated */}
                 </h3>
                 <p className="text-base leading-relaxed text-muted-foreground">
-                  {itemDescription} {/* Use translated description */}
+                  {itemDescription} {/* Use translated */}
                 </p>
               </div>
             );

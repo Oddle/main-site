@@ -68,7 +68,7 @@
     },
     "personalizedMarketing": {
       "description": "Transition from analysis to action right away. Launch personalised marketing with ease. Launch personalised marketing campaigns effortlessly to your target audiences directly from the platform. No need for cumbersome data exports—simply leverage your customer data to select the right audience and launch your campaigns seamlessly.",
-      "heading": "Personalised Marketing at Scale",
+      "title": "Personalised Marketing at Scale",
       "imageAlt": "Marketing automation workflow diagram",
       "features": {
         "0": {
@@ -189,25 +189,10 @@
         }
       }
     },
-    "methodology": {
-      "0": {
-        "title": "獲取顧客數據",
-        "description": "從每次預訂、外送和內用中獲取洞察，建立強大的顧客資料庫。"
-      },
-      "1": {
-        "title": "建立您的品牌",
-        "description": "打造一個反映您餐廳特色並保持顧客互動的無縫線上形象。"
-      },
-      "2": {
-        "title": "轉換以實現增長",
-        "description": "透過自動化獎勵、行銷活動和個人化提醒，將首次光顧的客人轉變為常客。"
-      },
-      "title": "增長就像 ABC 一樣簡單",
-      "subtitle": "獲取、建立、轉換，邁向成功之路"
-    },
     "platformFeatures": {
+      "tag": "為餐廳成長量身打造的平台",
       "description": "Our platform integrates seamlessly to provide the tools you need for success, all in one place.",
-      "heading": "Built for Restaurant Growth",
+      "title": "Built for Restaurant Growth",
       "imageAlt": "Oddle Platform Features Overview",
       "features": {
         "0": {
@@ -276,7 +261,8 @@
       }
     },
     "growingEasy": {
-       "sectionTitle": "增長就像 ABC 一樣簡單",
+      "tag": "增長就像 ABC 一樣簡單",
+       "title": "增長就像 ABC 一樣簡單",
        "items": {
          "0": {
            "title": "獲取顧客數據",
@@ -397,7 +383,7 @@
     },
     "features": {
       "description": "Leverage Oddle Eats to boost your restaurant's visibility and reach.",
-      "heading": "Why Feature on Oddle Eats?",
+      "title": "Why Feature on Oddle Eats?",
       "features": {
          "0": {
            "title": "Participate in sponsored marketing campaigns at no extra charge.",
@@ -419,13 +405,13 @@
   },
   "onlineOrdering": {
     "hero": {
-      "title": "Boost Your Orders with a Seamless Online System",
-      "description": "Enable customers to order directly from you, anytime, anywhere, with a beautiful and responsive interface.",
+      "title": "擁有您自己的線上門市、顧客和更高的利潤",
+      "description": "直接將商品外送給您的客戶，透過符合您品牌形象的線上訂餐系統，提升您的營業額、顧客忠誠度和外送範圍",
       "primaryButton": {
-        "text": "Request Demo"
+        "text": "預約諮詢"
       },
       "secondaryButton": {
-        "text": "Talk to Sales"
+        "text": "LINE@聯繫"
       },
       "slides": {
         "0": {
@@ -613,40 +599,40 @@
   },
   "products": {
     "reservation-system": {
-      "title": "Reservation System",
-      "desc": "Accept reservations to capture future demand"
+      "title": "訂位系統",
+      "desc": "接受線上訂位以掌握先機"
     },
     "online-ordering-system": {
-      "title": "Online Ordering System",
-      "desc": "Sell online and reach more customers"
+      "title": "線上外帶外送系統",
+      "desc": "打造品牌的線上門市，接觸更多客戶"
     },
     "loyalty-program": {
-      "title": "Loyalty Program",
-      "desc": "Capture every customer and turn them into repeat"
+      "title": "顧客忠誠計畫",
+      "desc": "掌握每一位顧客，讓他們成為忠實支持者"
     },
     "payment-terminal": {
-      "title": "Payment Terminal",
-      "desc": "Accept in-person payments with no annual fees or lock-ins"
+      "title": "線下刷卡機-僅支援新馬",
+      "desc": "無年費也不綁約的實體刷卡機"
     },
     "virtual-lounge": {
-      "title": "Virtual Lounge",
-      "desc": "Communicate your brand across all digital channels"
+      "title": "亮點看板",
+      "desc": "一頁式展現您品牌的重要資訊"
     },
     "survey-tool": {
-      "title": "Survey Tool",
-      "desc": "Automated surveys that boosts your brand's visibility"
+      "title": "問卷系統",
+      "desc": "自動化問卷調查以提升品牌的線上能見度"
     },
     "email-marketing-system": {
-      "title": "Email Marketing System",
-      "desc": "Boost revenue through customer engagement and retention"
+      "title": "行銷引擎",
+      "desc": "透過顧客再行銷來留存顧客以提升收入"
     },
     "crm-customer-intelligence": {
-      "title": "Crm Customer Intelligence",
-      "desc": "Supercharged CRM that gives you actionable insights"
+      "title": "顧客智能",
+      "desc": "超強的CRM，為您提供可行的數據洞見"
     },
     "oddle-eats-network": {
-      "title": "Oddle Eats Network",
-      "desc": "Tap into a million food lovers"
+      "title": "Oddle Eats",
+      "desc": "挖掘百萬美食愛好者"
     }
   },
   "resources": {
@@ -673,7 +659,7 @@
   },
   "reservationSystem": {
     "hero": {
-      "title": "別再為訂位系統支付過高的費用——擺脫年費和年約的束縛",
+      "title": "別再為訂位系統支付過高的費用 - 擺脫年費和年約的束縛",
       "description": "幫助餐廳在訂位系統上大幅節省成本，同時自動幫您推動營收成長。",
       "primaryButton": {
         "text": "預約諮詢"
@@ -758,8 +744,8 @@
       }
     },
     "system": {
-      "title": "安全可靠的訂位系統",
-      "description": "確保訂位並透過內建的防範措施來最小化缺席率。",
+      "title": "",
+      "description": "",
       "features": {
         "0": {
           "title": "安全可靠的訂位系統",
@@ -811,7 +797,7 @@
     },
     "features": {
        "description": "Leverage Oddle Eats to boost your restaurant's visibility and reach.",
-       "heading": "Why Feature on Oddle Eats?",
+       "title": "Why Feature on Oddle Eats?",
        "features": {
          "0": {
            "title": "Automated and proactive surveys built into every touchpoint",

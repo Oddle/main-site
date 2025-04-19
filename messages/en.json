@@ -19,8 +19,8 @@
   },
   "crm": {
     "customerIntelligence": {
-      "sectionTitle": "A Restaurant Email Marketing Toolkit to Make Marketing Effortless",
-      "sectionDescription": "Launch campaigns with pre-built workflows that require no technical expertise—just results."
+      "title": "A Restaurant Email Marketing Toolkit to Make Marketing Effortless",
+      "description": "Launch campaigns with pre-built workflows that require no technical expertise—just results."
     },
     "hero": {
       "title": "CRM? That's just the beginning. Unlock real actionable insights with Customer Intelligence.",
@@ -39,16 +39,16 @@
     },
     "marketingHeader": {
       "title": "Marketing Intelligence",
-      "subtitle": "The answers you've been missing from your CRM. Say goodbye to guesswork and hello to actionable answers - Uncover valuable insights from your own customer data and make informed decisions with confidence."
+      "description": "The answers you've been missing from your CRM. Say goodbye to guesswork and hello to actionable answers - Uncover valuable insights from your own customer data and make informed decisions with confidence."
     },
     "discover": {
-      "sectionTitle": "Discover, Segment, Target",
-      "sectionDescription": "Unlock the insights you need to power your marketing strategy. Discover your customer breakdown and target the right segment with the right message.",
+      "title": "Discover, Segment, Target",
+      "description": "Unlock the insights you need to power your marketing strategy. Discover your customer breakdown and target the right segment with the right message.",
       "imageAlt": "Graph showing customer segmentation"
     },
     "completeData": {
-      "sectionTitle": "Complete customer data at your fingertips",
-      "sectionDescription": "Dive into comprehensive customer data, spanning from transaction history across deliveries, reservations, survey results and even their interactions with your digital touchpoints.",
+      "title": "Complete customer data at your fingertips",
+      "description": "Dive into comprehensive customer data, spanning from transaction history across deliveries, reservations, survey results and even their interactions with your digital touchpoints.",
       "imageAlt": "UI showing comprehensive customer profile"
     },
     "personalizedMarketing": {
@@ -72,7 +72,7 @@
     },
     "opsHeader": {
       "title": "Operational Intelligence",
-      "subtitle": "Be the smartest host, turn every reservation into a connection. Oddle collects all your data in one convenient location, making it easy to access information on dietary requirements, guest visits, and interactions across different outlets. With just one click, you can view a comprehensive guest history that helps you better understand and serve your customers."
+      "description": "Be the smartest host, turn every reservation into a connection. Oddle collects all your data in one convenient location, making it easy to access information on dietary requirements, guest visits, and interactions across different outlets. With just one click, you can view a comprehensive guest history that helps you better understand and serve your customers."
     },
     "guestFeatures": {
       "items": {
@@ -104,7 +104,7 @@
       }
     },
     "howItWorks": {
-      "sectionTitle": "How Oddle Marketing Engine Turns Data Into Dollars",
+      "title": "How Oddle Marketing Engine Turns Data Into Dollars",
       "items": {
         "0": {
           "title": "All Your Data, All in One Place",
@@ -174,25 +174,29 @@
         }
       }
     },
-    "methodology": {
-      "0": {
-        "title": "Acquire Customer Data",
-        "description": "Capture insights from every reservation, delivery, and dine-in visit to build a powerful customer database"
-      },
+    "growingEasy": {
+      "tag": "Growing is as easy as ABC",
+      "title": "Growing is as easy as ABC",
+      "description": "Acquire, Build, and Convert Your Way to Success",
+      "items": {
+        "0": {
+          "title": "Acquire Customer Data",
+          "description": "Capture insights from every reservation, delivery, and dine-in visit to build a powerful customer database"
+        },
       "1": {
         "title": "Build Your Brand",
         "description": "Create a seamless online presence that reflects your restaurant's identity and keeps customers engaged"
       },
       "2": {
         "title": "Convert for Growth",
-        "description": "Turn first-time diners into regulars with automated rewards, campaigns, and personalized reminders"
-      },
-      "title": "Growing is as easy as ABC",
-      "subtitle": "Acquire, Build, and Convert Your Way to Success"
+          "description": "Turn first-time diners into regulars with automated rewards, campaigns, and personalized reminders"
+        }
+      }
     },
     "platformFeatures": {
+      "tag": "Built for Restaurant Growth",
       "description": "Our platform integrates seamlessly to provide the tools you need for success, all in one place.",
-      "heading": "Built for Restaurant Growth",
+      "title": "Built for Restaurant Growth",
       "imageAlt": "Oddle Platform Features Overview",
       "features": {
         "0": {
@@ -214,9 +218,9 @@
       }
     },
     "productsBento": {
-      "badgeText": "Our Solutions",
-      "sectionTitle": "Everything you need to grow your revenue",
-      "sectionDescription": "A complete suite of tools designed to attract customers, streamline operations, and boost your restaurant's bottom line.",
+      "tag": "Our Solutions",
+      "title": "Everything you need to grow your revenue",
+      "description": "A complete suite of tools designed to attract customers, streamline operations, and boost your restaurant's bottom line.",
       "items": {
         "0": {
           "title": "Reservation",
@@ -294,8 +298,8 @@
         "item1": "Stay top of mind while saving time and driving repeat visits with ease.",
         "imageAlt": "Phone showing loyalty reward notification"
       },
-      "sectionTitle": "How restaurants grow using Oddle",
-      "sectionDescription": "Capture customer data and automate engagement to drive repeat visits.",
+      "title": "How restaurants grow using Oddle",
+      "description": "Capture customer data and automate engagement to drive repeat visits.",
       "features": {
         "0": {
           "title": "Capture Every Customer",
@@ -452,8 +456,8 @@
         "description": "Connect with delivery partners."
       },
       "title": "Key Features",
-      "subtitle": "Streamline your orders and delight your customers.",
-      "sectionTitle": "Key Features",
+      "description": "Streamline your orders and delight your customers.",
+      "title": "Key Features",
       "items": {
         "0": {
           "title": "Easy Menu Management",
@@ -472,8 +476,8 @@
     "details": {
       "title": "Why Choose Our Online Ordering System?",
       "description": "Empower your restaurant with features designed for growth and efficiency.",
-      "sectionTitle": "Why Choose Our Online Ordering System?",
-      "sectionDescription": "Empower your restaurant with features designed for growth and efficiency.",
+      "title": "Why Choose Our Online Ordering System?",
+      "description": "Empower your restaurant with features designed for growth and efficiency.",
       "features": {
         "0": {
           "title": "Activate and Grow Sales",
@@ -517,7 +521,8 @@
       }
     },
     "features": {
-      "sectionTitle": "Next-gen solutions designed to help you grow revenue",
+      "tag": "Next-gen solutions designed to help you grow revenue",
+      "title": "Next-gen solutions designed to help you grow revenue",
       "items": {
         "0": {
           "title": "Capture 100% of customers, no marketing opt-in needed",
@@ -538,7 +543,8 @@
       }
     },
     "operations": {
-      "sectionTitle": "Built for seamless operations",
+      "tag":"",
+      "title": "Built for seamless operations",
       "items": {
         "0": {
           "title": "Dedicated Customer Support",
@@ -640,7 +646,7 @@
     },
     "useCases": {
       "tag": "Built for Restaurants of Every Kind",
-      "sectionTitle": "Built for Restaurants of Every Kind",
+      "title": "Built for Restaurants of Every Kind",
       "features": {
         "0": {
           "title": "Traditional Restaurants Going Digital",
@@ -660,8 +666,9 @@
       }
     },
     "operations": {
-      "sectionTitle": "Simplify your day-to-day Operations with Powerful Views and Real-time Control.",
-      "sectionDescription": "User-friendly and seamless, Oddle Reserve simplifies the reservation process with advanced table management and management tools. It helps you efficiently manage reservations in real time, enhancing the dining experience and streamlining operations.",
+      "tag": "",
+      "title": "",
+      "description": "",
       "items": {
         "0": {
           "title": "List View",

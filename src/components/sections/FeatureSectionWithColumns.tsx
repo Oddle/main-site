@@ -11,7 +11,7 @@ import { useTranslations } from 'next-intl';
 import { getTranslation } from '@/lib/i18nUtils';
 
 // Interface for individual feature items
-interface FeatureCardItem {
+interface StandardItemData {
   imageSrc: string;
   imageAlt: string;
   title: string;
@@ -20,100 +20,100 @@ interface FeatureCardItem {
   action?: string;
 }
 
-// Renamed Props interface
+// Standardized Props interface
 interface FeatureSectionWithColumnsProps {
   i18nBaseKey?: string;
-  sectionTag?: string;
-  sectionTitle: string;
-  sectionSubtitle?: string;
-  features: FeatureCardItem[];
+  tag?: string | null;
+  title: string;
+  description?: string | null;
+  items: StandardItemData[];
 }
 
-// Renamed component function
+// Component function
 const FeatureSectionWithColumns = ({
   i18nBaseKey,
-  sectionTag: defaultSectionTag,
-  sectionTitle: defaultSectionTitle,
-  sectionSubtitle: defaultSectionSubtitle,
-  features = [],
+  tag: defaultTag,
+  title: defaultTitle,
+  description: defaultDescription,
+  items = [],
 }: FeatureSectionWithColumnsProps) => {
   const t = useTranslations();
 
-  const sectionTag = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.tag`, defaultSectionTag ?? '') : defaultSectionTag;
-  const sectionTitle = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.sectionTitle`, defaultSectionTitle) : defaultSectionTitle;
-  const sectionSubtitle = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.sectionDescription`, defaultSectionSubtitle ?? '') : defaultSectionSubtitle;
+  const tag = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.tag`, defaultTag ?? '') : defaultTag;
+  const title = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.title`, defaultTitle) : defaultTitle;
+  const description = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.description`, defaultDescription ?? '') : defaultDescription;
 
   return (
     <section className="py-24 md:py-32">
       <Container>
-        {/* Title and Subtitle Section */}
+        {/* Title and Description Section */}
         <div className="text-center max-w-3xl mx-auto">
-          {sectionTag && (
+          {tag && (
             <h4 className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-primary">
-              {sectionTag}
+              {tag}
             </h4>
           )}
-          {sectionTitle && (
+          {title && (
             <h2 className="mb-6 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-              {sectionTitle}
+              {title}
             </h2>
           )}
-          {sectionSubtitle && (
+          {description && (
             <p className="mb-12 text-lg leading-8 text-gray-600 dark:text-gray-300 lg:mb-16">
-              {sectionSubtitle}
+              {description}
             </p>
           )}
         </div>
 
-        {/* Feature Cards Section - Dynamic Columns */}
+        {/* Items Cards Section - Use items */}
         <div className={cn(
           "grid grid-cols-1 gap-x-8 gap-y-12",
           "sm:grid-cols-2",
-          features.length === 3 ? "lg:grid-cols-3" : "",
+          items.length === 3 ? "lg:grid-cols-3" : "",
         )}>
-          {features.map((feature: FeatureCardItem, index: number) => {
-            const featureBaseKey = `${i18nBaseKey}.features.${index}`;
+          {items.map((item: StandardItemData, index: number) => {
+            const itemBaseKey = `${i18nBaseKey}.items.${index}`;
 
-            const featureTitle = i18nBaseKey ? getTranslation(t, `${featureBaseKey}.title`, feature.title) : feature.title;
-            const featureDescription = i18nBaseKey ? getTranslation(t, `${featureBaseKey}.description`, feature.description) : feature.description;
-            const featureTag = feature.tag && i18nBaseKey ? getTranslation(t, `${featureBaseKey}.tag`, feature.tag) : feature.tag;
-            const featureImageAlt = i18nBaseKey ? getTranslation(t, `${featureBaseKey}.imageAlt`, feature.imageAlt) : feature.imageAlt;
+            const itemTitle = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.title`, item.title) : item.title;
+            const itemDescription = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.description`, item.description) : item.description;
+            const itemTag = item.tag && i18nBaseKey ? getTranslation(t, `${itemBaseKey}.tag`, item.tag) : item.tag;
+            const itemImageAlt = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.imageAlt`, item.imageAlt) : item.imageAlt;
             
-            const isInternalLink = feature.action?.startsWith('/');
+            const isInternalLink = item.action?.startsWith('/');
             const baseClassName = "group block h-full";
-            const hoverClassName = feature.action ? "transition-opacity duration-300 hover:opacity-80" : "";
+            const hoverClassName = item.action ? "transition-opacity duration-300 hover:opacity-80" : "";
 
             const cardContent = (
                <Card className="flex h-full flex-col overflow-hidden pt-0 transition-shadow duration-300 group-hover:shadow-lg">
                   <div className="relative aspect-[1.5] w-full">
                       <Image
-                        src={feature.imageSrc}
-                        alt={featureImageAlt || featureTitle}
+                        src={item.imageSrc}
+                        alt={itemImageAlt || itemTitle}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                   </div>
                   <CardContent className="flex flex-grow flex-col px-4 pb-4 md:px-6 md:pb-6">
-                    {featureTag && (
-                       <Badge variant="outline" className="mb-2 w-fit">{featureTag}</Badge>
+                    {itemTag && (
+                       <Badge variant="outline" className="mb-2 w-fit">{itemTag}</Badge>
                      )}
-                    <h3 className="mb-2 text-xl font-semibold dark:text-white">{featureTitle}</h3>
+                    <h3 className="mb-2 text-xl font-semibold dark:text-white">{itemTitle}</h3>
                     <p className="text-base text-muted-foreground">
-                      {featureDescription}
+                      {itemDescription}
                     </p>
                   </CardContent>
                </Card>
             );
 
-            if (feature.action) {
+            if (item.action) {
               if (isInternalLink) {
                 return (
                   <Link
                     key={index}
-                    href={feature.action}
+                    href={item.action}
                     className={cn(baseClassName, hoverClassName)}
-                    aria-label={featureTitle}
+                    aria-label={itemTitle}
                   >
                     {cardContent}
                   </Link>
@@ -122,11 +122,11 @@ const FeatureSectionWithColumns = ({
                 return (
                   <a
                     key={index}
-                    href={feature.action}
+                    href={item.action}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={cn(baseClassName, hoverClassName)}
-                    aria-label={featureTitle}
+                    aria-label={itemTitle}
                   >
                     {cardContent}
                   </a>
@@ -146,5 +146,4 @@ const FeatureSectionWithColumns = ({
   );
 };
 
-// Update the export name
 export default FeatureSectionWithColumns;

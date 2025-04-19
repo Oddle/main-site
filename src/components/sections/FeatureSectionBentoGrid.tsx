@@ -24,27 +24,25 @@ interface BentoGridItem {
 
 interface FeatureSectionBentoGridProps {
   i18nBaseKey: string;
-  badgeText?: string;
-  badgeIcon?: string;
-  sectionTitle: string;
-  sectionDescription?: string;
+  tag?: string;
+  title: string;
+  description?: string;
   items: BentoGridItem[];
 }
 
 export default function FeatureSectionBentoGrid({
   i18nBaseKey,
-  badgeText: defaultBadgeText,
-  badgeIcon,
-  sectionTitle: defaultSectionTitle,
-  sectionDescription: defaultSectionDescription,
+  tag: defaultTag,
+  title: defaultTitle,
+  description: defaultDescription,
   items = [],
 }: FeatureSectionBentoGridProps) {
   const t = useTranslations();
   const [hoveredCardId, setHoveredCardId] = useState<string | number | null>(null);
 
-  const badgeText = defaultBadgeText ? getTranslation(t, `${i18nBaseKey}.badgeText`, defaultBadgeText) : undefined;
-  const sectionTitle = getTranslation(t, `${i18nBaseKey}.sectionTitle`, defaultSectionTitle);
-  const sectionDescription = defaultSectionDescription ? getTranslation(t, `${i18nBaseKey}.sectionDescription`, defaultSectionDescription) : undefined;
+  const tag = defaultTag ? getTranslation(t, `${i18nBaseKey}.tag`, defaultTag) : undefined;
+  const title = getTranslation(t, `${i18nBaseKey}.title`, defaultTitle);
+  const description = defaultDescription ? getTranslation(t, `${i18nBaseKey}.description`, defaultDescription) : undefined;
 
   const renderIcon = (iconName: string | undefined, defaultIcon?: LucideIcon): React.ReactNode => {
     if (!iconName && !defaultIcon) return null;
@@ -53,28 +51,27 @@ export default function FeatureSectionBentoGrid({
       console.warn(`Icon "${iconName}" not found in lucide-react`);
       return null; // Or return a default icon
     }
-    return <IconComponent className="mr-1 h-auto w-4" />;
+    return <IconComponent className="h-auto w-4" />;
   };
 
   return (
     <section className="py-16 md:py-24 lg:py-32">
       <Container>
         <div className="mx-auto flex max-w-screen-md flex-col items-center gap-4 text-center">
-          {badgeText && (
+          {tag && (
             <Badge
               variant="outline"
               className="flex items-center gap-1 px-2.5 py-1.5 text-sm"
             >
-              {renderIcon(badgeIcon)}
-              {badgeText}
+              {tag}
             </Badge>
           )}
           <h2 className="text-3xl font-semibold lg:text-4xl">
-            {sectionTitle}
+            {title}
           </h2>
-          {sectionDescription && (
+          {description && (
             <p className="text-muted-foreground lg:text-lg">
-              {sectionDescription}
+              {description}
             </p>
           )}
         </div>

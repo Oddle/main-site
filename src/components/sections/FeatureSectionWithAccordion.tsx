@@ -15,7 +15,7 @@ import { useTranslations } from 'next-intl';
 import { getTranslation } from '@/lib/i18nUtils';
 
 // Interface for individual accordion items
-interface AccordionItemData {
+interface StandardItemData {
   id: number;
   title: string;
   imageSrc: string;
@@ -26,25 +26,27 @@ interface AccordionItemData {
 // Interface for the component props
 interface FeatureSectionWithAccordionProps {
   i18nBaseKey?: string;
-  sectionTitle: string;
-  sectionDescription?: string | null;
-  itemsData: AccordionItemData[];
+  tag?: string | null;
+  title: string;
+  description?: string | null;
+  items: StandardItemData[];
 }
 
 const FeatureSectionWithAccordion = ({ 
   i18nBaseKey,
-  sectionTitle: defaultSectionTitle,
-  sectionDescription: defaultSectionDescription,
-  itemsData = []
+  tag: defaultTag,
+  title: defaultTitle,
+  description: defaultDescription,
+  items = []
 }: FeatureSectionWithAccordionProps) => {
   const t = useTranslations();
   
-  const defaultItemId = itemsData.length > 0 ? itemsData[0].id : 0;
-  const defaultItemData = itemsData.find(item => item.id === defaultItemId);
+  const defaultItemId = items.length > 0 ? items[0].id : 0;
+  const defaultItemData = items.find(item => item.id === defaultItemId);
   const defaultImageSrc = defaultItemData?.imageSrc ?? '';
   const defaultImageAltText = defaultItemData 
     ? (i18nBaseKey 
-        ? getTranslation(t, `${i18nBaseKey}.items.${itemsData.findIndex(i => i.id === defaultItemId)}.imageAlt`, defaultItemData.imageAlt)
+        ? getTranslation(t, `${i18nBaseKey}.items.${items.findIndex(i => i.id === defaultItemId)}.imageAlt`, defaultItemData.imageAlt)
         : defaultItemData.imageAlt)
     : 'Feature illustration';
 
@@ -60,10 +62,11 @@ const FeatureSectionWithAccordion = ({
   const AUTO_SWITCH_INTERVAL = 5000;
   const PROGRESS_UPDATE_INTERVAL = 50;
 
-  const sectionTitle = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.sectionTitle`, defaultSectionTitle) : defaultSectionTitle;
-  const sectionDescription = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.sectionDescription`, defaultSectionDescription ?? '') : defaultSectionDescription;
+  const tag = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.tag`, defaultTag ?? '') : defaultTag;
+  const title = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.title`, defaultTitle) : defaultTitle;
+  const description = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.description`, defaultDescription ?? '') : defaultDescription;
 
-  if (!itemsData || itemsData.length === 0) {
+  if (!items || items.length === 0) {
     return null; 
   }
 
@@ -75,11 +78,11 @@ const FeatureSectionWithAccordion = ({
 
     intervalRef.current = setInterval(() => {
       setActiveItemId((prevId) => {
-        const currentIndex = itemsData.findIndex((item) => item.id === prevId);
-        if (currentIndex === -1 && itemsData.length > 0) return itemsData[0].id;
+        const currentIndex = items.findIndex((item) => item.id === prevId);
+        if (currentIndex === -1 && items.length > 0) return items[0].id;
         if (currentIndex === -1) return 0;
-        const nextIndex = (currentIndex + 1) % itemsData.length;
-        const nextItem = itemsData[nextIndex];
+        const nextIndex = (currentIndex + 1) % items.length;
+        const nextItem = items[nextIndex];
         if (nextItem) {
            setActiveImage(nextItem.imageSrc);
            const nextItemBaseKey = `${i18nBaseKey}.items.${nextIndex}`;
@@ -104,7 +107,7 @@ const FeatureSectionWithAccordion = ({
   };
 
   useEffect(() => {
-    if (itemsData.length > 1) {
+    if (items.length > 1) {
       startAutoSwitch();
     }
     return () => {
@@ -112,7 +115,7 @@ const FeatureSectionWithAccordion = ({
       if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [itemsData]);
+  }, [items]);
 
   const handleValueChange = (value: string) => {
     if (intervalRef.current) clearInterval(intervalRef.current);
@@ -124,8 +127,8 @@ const FeatureSectionWithAccordion = ({
     } 
 
     const id = parseInt(value.split("-")[1]);
-    const activeItemIndex = itemsData.findIndex((item) => item.id === id);
-    const activeItem = itemsData[activeItemIndex];
+    const activeItemIndex = items.findIndex((item) => item.id === id);
+    const activeItem = items[activeItemIndex];
     
     if (activeItem) {
       setActiveItemId(id);
@@ -136,7 +139,7 @@ const FeatureSectionWithAccordion = ({
         : activeItem.imageAlt;
       setActiveImageAlt(newImageAlt);
 
-      if (itemsData.length > 1) {
+      if (items.length > 1) {
         startAutoSwitch();
       }
     }
@@ -146,12 +149,17 @@ const FeatureSectionWithAccordion = ({
     <section className="py-16 md:py-24 lg:py-32">
       <Container>
         <div className="mb-12 text-center md:mb-16 lg:mb-20 max-w-3xl mx-auto">
+           {tag && (
+              <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary md:mb-3 lg:text-base">
+                 {tag}
+              </p>
+           )}
            <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:mb-6 md:text-4xl">
-              {sectionTitle}
+              {title}
            </h2>
-           {sectionDescription && (
+           {description && (
               <p className="text-lg text-muted-foreground">
-                 {sectionDescription}
+                 {description}
               </p>
            )}
         </div>
@@ -165,7 +173,7 @@ const FeatureSectionWithAccordion = ({
               className="w-full"
               onValueChange={handleValueChange}
             >
-              {itemsData.map((item, index) => {
+              {items.map((item, index) => {
                  const itemBaseKey = `${i18nBaseKey}.items.${index}`;
                  const itemTitle = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.title`, item.title) : item.title;
                  const itemDescription = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.description`, item.description) : item.description;

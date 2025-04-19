@@ -381,8 +381,8 @@
       "component": "FeatureSectionWithImages",
       "props": {
         "i18nBaseKey": "reservationSystem.system",
-        "sectionTitle": "Simplify your day-to-day Operations with Powerful Views and Real-time Control.",
-        "sectionDescription": "User-friendly and seamless, Oddle Reserve simplifies the reservation process with advanced table management and management tools. It helps you efficiently manage reservations in real time, enhancing the dining experience and streamlining operations.",
+        "sectionTitle": "",
+        "sectionDescription": "",
         "features": [
           {
             "title": "Secure and Reliable Reservation Booking System",
@@ -476,6 +476,7 @@
         ]
       }
     },
+    
     {
       "component": "FaqSection"
     }

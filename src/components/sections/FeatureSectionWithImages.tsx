@@ -1,29 +1,33 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
 import { useTranslations } from 'next-intl';
 import { getTranslation } from '@/lib/i18nUtils'; // Import shared helper
 import Container from "@/components/common/Container"; // Import Container
+import { cn } from "@/lib/utils"; // Import cn for conditional classes
 
-// --- Define interfaces for the data structure ---
-interface FeatureItem {
+// Interface for individual items (Renamed)
+interface StandardItemData {
   title: string;
   description: string;
-  items?: string[]; // Added: Optional array for list items
+  items?: string[]; // Bullet points
   imageSrc: string;
   imageAlt: string;
-  imageWidth?: number; // Optional, for better Image optimization if known
-  imageHeight?: number; // Optional
-  buttonText?: string; // Optional button
-  buttonAction?: string; // Action for the button (URL or identifier)
-  translationSubKey: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  buttonText?: string;
+  buttonAction?: string;
 }
 
+// Standardized props interface
 interface FeatureSectionWithImagesProps {
-  i18nBaseKey: string;
-  sectionTitle: string;
-  sectionDescription: string;
-  features: FeatureItem[];
+  i18nBaseKey?: string;
+  tag?: string | null;
+  title: string;
+  description?: string | null;
+  items: StandardItemData[]; // Renamed from features
 }
 
 // --- Helper function for button clicks (similar to HeroWithCarousel) ---
@@ -39,91 +43,101 @@ const handleButtonClick = (action: string | undefined) => {
 // --- The Component ---
 export default function FeatureSectionWithImages({
   i18nBaseKey,
-  sectionTitle: defaultSectionTitle,
-  sectionDescription: defaultSectionDescription,
-  features = [], // Default to empty array
+  tag: defaultTag,
+  title: defaultTitle,
+  description: defaultDescription,
+  items = [], 
 }: FeatureSectionWithImagesProps) {
   const t = useTranslations();
 
-  // Translate section header using imported helper
-  const sectionTitle = getTranslation(t, `${i18nBaseKey}.title`, defaultSectionTitle);
-  const sectionDescription = getTranslation(t, `${i18nBaseKey}.description`, defaultSectionDescription);
+  // Translate section header
+  const tag = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.tag`, defaultTag ?? '') : defaultTag;
+  const title = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.title`, defaultTitle) : defaultTitle;
+  const description = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.description`, defaultDescription ?? '') : defaultDescription;
 
   return (
     <section className="py-24 space-y-24">
       <Container>
         {/* Section Header */}
-        {(sectionTitle || sectionDescription) && (
-            <div className="text-center space-y-4 mb-16">
-              {sectionTitle && (
+        {(title || description || tag) && (
+            <div className="text-center space-y-4 mb-16 max-w-3xl mx-auto">
+              {/* Render tag */} 
+              {tag && (
+                <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary md:mb-3 lg:text-base">
+                  {tag}
+                </p>
+              )}
+              {title && (
                   <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                    {sectionTitle}
+                    {title}
                   </h2>
               )}
-              {sectionDescription && (
-                  <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    {sectionDescription}
+              {description && (
+                  <p className="text-muted-foreground md:text-lg/relaxed">
+                    {description}
                   </p>
               )}
             </div>
         )}
 
-        {/* Features List */}
+        {/* Items List */}
         <div className="space-y-24">
-          {features.map((feature: FeatureItem, index: number) => {
-            // Use index directly to construct the base key for this feature
-            const featureBaseKey = `${i18nBaseKey}.features.${index}`; 
+          {items.map((item: StandardItemData, index: number) => {
+            const itemBaseKey = `${i18nBaseKey}.items.${index}`; 
 
-            // Translate feature properties using the index-based key
-            const featureTitle = getTranslation(t, `${featureBaseKey}.title`, feature.title);
-            const featureDescription = getTranslation(t, `${featureBaseKey}.description`, feature.description);
-            const featureImageAlt = getTranslation(t, `${featureBaseKey}.imageAlt`, feature.imageAlt);
-            const featureButtonText = feature.buttonText 
-              ? getTranslation(t, `${featureBaseKey}.buttonText`, feature.buttonText) 
-              : undefined;
+            // Translate item properties
+            const itemTitle = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.title`, item.title) : item.title;
+            const itemDescription = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.description`, item.description) : item.description;
+            const itemImageAlt = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.imageAlt`, item.imageAlt) : item.imageAlt;
+            const itemButtonText = item.buttonText && i18nBaseKey
+              ? getTranslation(t, `${itemBaseKey}.buttonText`, item.buttonText)
+              : item.buttonText;
               
-            // Translate items array - KEEPING EXISTING LOGIC (item1, item2...)
-            // This assumes the JSON structure for items remains like "item1", "item2"
-            const translatedItems = feature.items?.map((item: string, itemIndex: number) => 
-              getTranslation(t, `${featureBaseKey}.item${itemIndex + 1}`, item)
+            // Translate sub-items (bullet points)
+            const translatedSubItems = item.items?.map((subItem: string, subItemIndex: number) => 
+              i18nBaseKey ? getTranslation(t, `${itemBaseKey}.items.${subItemIndex}`, subItem) : subItem
             ) || [];
 
             return (
               <div
-                key={index} // Use index as the React key
-                className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+                key={index} 
+                className={cn(
+                  "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center",
+                  index % 2 !== 0 ? "lg:[&>*:last-child]:order-first" : "" // Move image first for odd indices
+                )}
               >
-                {/* Text Content (Always on the left on large screens) */}
+                {/* Text Content */}
                 <div>
                   <div className="space-y-4">
-                    <h3 className="text-2xl font-bold">{featureTitle}</h3>
-                    <p className="text-muted-foreground">{featureDescription}</p>
-                    {/* Added: Render list items if they exist */}
-                    {translatedItems.length > 0 && (
+                    <h3 className="text-2xl font-bold">{itemTitle}</h3>
+                    <p className="text-muted-foreground">{itemDescription}</p>
+                    {/* Render translated list items */}
+                    {translatedSubItems.length > 0 && (
                       <ul className="list-disc list-inside mt-4 space-y-2 text-muted-foreground">
-                        {translatedItems.map((item: string, idx: number) => (
-                          <li key={idx}>{item}</li>
+                        {translatedSubItems.map((subItem: string, idx: number) => (
+                          <li key={idx}>{subItem}</li>
                         ))}
                       </ul>
                     )}
-                    {featureButtonText && (
-                      <Button onClick={() => handleButtonClick(feature.buttonAction)}>
-                        {featureButtonText}
+                    {itemButtonText && (
+                      <Button onClick={() => handleButtonClick(item.buttonAction)}>
+                        {itemButtonText}
                       </Button>
                     )}
                   </div>
                 </div>
 
                 {/* Image */}
-                <div className="relative aspect-video overflow-hidden"> {/* Re-added aspect-video */}
+                <div className="relative aspect-video overflow-hidden rounded-lg"> {/* Added rounding */}
                   <Image
-                    src={feature.imageSrc}
-                    alt={featureImageAlt}
+                    src={item.imageSrc}
+                    alt={itemImageAlt}
                     fill
-                    className="object-contain object-center" // Changed object-cover to object-contain
-                    width={feature.imageWidth}
-                    height={feature.imageHeight}
+                    className="object-contain object-center"
+                    width={item.imageWidth}
+                    height={item.imageHeight}
                     priority={index === 0}
+                    sizes="(max-width: 1024px) 100vw, 50vw" // Adjusted sizes
                   />
                 </div>
               </div>
