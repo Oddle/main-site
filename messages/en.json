@@ -360,7 +360,6 @@
       "title": "Explore Oddle",
       "description": "Learn how Oddle helps restaurants grow."
     },
-  
     "learn": "Learn",
     "general": "General"
   },
@@ -471,28 +470,6 @@
       }
     },
     "details": {
-      "0": {
-        "title": "Activate and Grow Sales",
-        "description": "Grow your customer database and build stronger relationships with tools that drive loyalty and repeat orders.",
-        "item1": "Collect and analyze detailed insights into customer behavior, preferences, and order frequency.",
-        "item2": "Reward repeat customers, run targeted promotions, and re-engage lapsed diners with personalized campaigns.",
-        "item3": "Convert delivery customers into dine-in guests and keep them coming back with exclusive offers and tailored experiences.",
-        "imageAlt": "Customer relationship management interface showing profile and communication."
-      },
-      "1": {
-        "title": "Seamless Logistics Management",
-        "description": "Streamline your restaurant operations with tools designed to simplify day-to-day tasks, so you can focus on delivering exceptional dining experiences.",
-        "item1": "Streamline delivery zones, manage logistics efficiently, and achieve best-in-class fulfillment rates.",
-        "item2": "Flexible delivery options to serve customers far and wide.",
-        "imageAlt": "Delivery tracking interface showing map and vehicle."
-      },
-      "2": {
-        "title": "Tap into a network of over a million food lovers with Oddle Eats",
-        "description": "Get your restaurant seen by millions of consumers seeking new dining experiences for every occasion with our premier food directory network, Oddle Eats.",
-        "item1": "Participate in sponsored marketing campaigns at no extra charge.",
-        "item2": "Extend your reach to our affluent user base with high purchasing power.",
-        "imageAlt": "Oddle Eats mobile app interface showing restaurant listings."
-      },
       "title": "Why Choose Our Online Ordering System?",
       "description": "Empower your restaurant with features designed for growth and efficiency.",
       "sectionTitle": "Why Choose Our Online Ordering System?",
@@ -501,16 +478,23 @@
         "0": {
           "title": "Activate and Grow Sales",
           "description": "Grow your customer database and build stronger relationships with tools that drive loyalty and repeat orders.",
+          "item1": "Collect and analyze detailed insights into customer behavior, preferences, and order frequency.",
+          "item2": "Reward repeat customers, run targeted promotions, and re-engage lapsed diners with personalized campaigns.",
+          "item3": "Convert delivery customers into dine-in guests and keep them coming back with exclusive offers and tailored experiences.",
           "imageAlt": "Customer relationship management interface showing profile and communication."
         },
         "1": {
           "title": "Seamless Logistics Management",
           "description": "Streamline your restaurant operations with tools designed to simplify day-to-day tasks, so you can focus on delivering exceptional dining experiences.",
+          "item1": "Streamline delivery zones, manage logistics efficiently, and achieve best-in-class fulfillment rates.",
+          "item2": "Flexible delivery options to serve customers far and wide.",
           "imageAlt": "Delivery tracking interface showing map and vehicle."
         },
         "2": {
           "title": "Tap into a network of over a million food lovers with Oddle Eats",
           "description": "Get your restaurant seen by millions of consumers seeking new dining experiences for every occasion with our premier food directory network, Oddle Eats.",
+          "item1": "Participate in sponsored marketing campaigns at no extra charge.",
+          "item2": "Extend your reach to our affluent user base with high purchasing power.",
           "imageAlt": "Oddle Eats mobile app interface showing restaurant listings."
         }
       }
@@ -618,7 +602,7 @@
   },
   "reservationSystem": {
     "hero": {
-      "title": "Stop Overpaying for Reservations—Break Free from Monthly Fees and High Commissions Costs",
+      "title": "Stop Overpaying for Reservations - Break Free from Monthly Fees and High Commissions Costs",
       "description": "Helping Restaurants Save More on Reservations While Driving More Sales, Every Day with Pricing that Makes Sense.",
       "primaryButton": {
         "text": "Request Demo"
@@ -635,28 +619,23 @@
         "text": "Talk to Sales"
       }
     },
-    "features": {
-      "description": "Powerful features designed to optimize your table management and enhance the guest experience.",
-      "heading": "Streamline Your Reservations",
-      "imageAlt": "Reservation System Features Showcase",
-      "features": {
-        "0": {
-          "title": "Instant Booking",
-          "description": "Allow guests to book tables instantly, anytime, anywhere."
+    "affordableSection": {
+      "title": "An Affordable Reservation System Without the Catch",
+      "description": "Most reservation systems cost you more than they give back. Oddle Reserve is different—no subscriptions, no hidden fees, just simple, usage-based pricing.",
+      "features": [
+        {
+          "title": "Low-Cost, Usage-Based Pricing",
+          "description": "Only pay for the reservations you take."
         },
-        "1": {
-          "title": "Smart Table Management",
-          "description": "Optimize seating arrangements and minimize wait times automatically."
+        {
+          "title": "Grow Revenue With Every Booking",
+          "description": "Turn reservations into repeat visits with built-in customer engagement tools."
         },
-        "2": {
-          "title": "Reduce No-Shows",
-          "description": "Automated reminders and secure booking deposits to minimize cancellations."
-        },
-        "3": {
-          "title": "Guest Insights",
-          "description": "Collect valuable guest preferences and visit history for personalized service."
+        {
+          "title": "Designed for Restaurants Like Yours:",
+          "description": "Tailored solutions for every stage of your business."
         }
-      }
+      ]
     },
     "useCases": {
       "sectionTitle": "Built for Restaurants of Every Kind",
@@ -719,6 +698,41 @@
         "3": {
           "title": "Mobile View",
           "description": "Access and manage reservations on the go from any device."
+        }
+      }
+    },
+    "system": {
+      "title": "Secure and Reliable Reservation Booking System",
+      "description": "Ensure serious bookings and minimize no-shows with built-in safeguards.",
+      "features": {
+        "0": {
+          "title": "Secure and Reliable Reservation Booking System",
+          "description": "Ensure serious bookings and minimize no-shows with built-in safeguards.",
+          "imageAlt": "Credit card guarantee",
+          "item1": "Card Guarantee: Secure reservations with credit card guarantees to reduce cancellations.",
+          "item2": "Payment Request: Collect deposits or full payments upfront for high-value or busy periods.",
+          "item3": "Automated Customer Confirmation: Confirm reservations automatically to save time and reduce manual work."
+        },
+        "1": {
+          "title": "Customer-Friendly Features",
+          "description": "Enhance the guest experience with convenient and flexible options.",
+          "imageAlt": "Payment request",
+          "item1": "Guest Self-Edit Reservations: Allow guests to change or cancel bookings without the need to call, creating a smoother experience.",
+          "item2": "Automated Status Management: Easily update and track reservation statuses with minimal effort, keeping your team aligned and operations seamless."
+        }
+      }
+    },
+    "growthEngine": {
+      "title": "...Plus a Powerful Revenue Growth Engine",
+      "description": "Turn insights into action with tools that reward loyalty, re-engage lapsed diners, and convert delivery customers into repeat dine-in guests.",
+      "features": {
+        "0": {
+          "title": "Activate and Grow Sales",
+          "description": "Grow your customer database and build stronger relationships with tools that drive loyalty and repeat orders.",
+          "imageAlt": "Grow sales through engagement",
+          "item1": "Collect and analyze detailed insights into customer behavior, preferences, and order frequency.",
+          "item2": "Reward repeat customers, run targeted promotions, and re-engage lapsed diners with personalized campaigns.",
+          "item3": "Convert delivery customers into dine-in guests and keep them coming back with exclusive offers and tailored experiences."
         }
       }
     }
