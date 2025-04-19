@@ -24,6 +24,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 // Import and type commonData
 import commonJson from "@/data/common.json";
 
@@ -119,8 +120,9 @@ export default function NavBar() {
 
     // Group resource links by category
     for (const [key, link] of Object.entries(commonData.links || {})) {
-        // Ensure the link belongs in the resources section and has a category
-        if (link.href.startsWith('/resources/') && link.category && (link.category === 'learn' || link.category === 'general')) {
+        // Include links if category is 'learn' or 'general'
+        // No longer filtering by href.startsWith('/resources/')
+        if (link.category && (link.category === 'learn' || link.category === 'general')) {
             if (!resourcesByCategory[link.category]) {
                 resourcesByCategory[link.category] = [];
             }
@@ -152,38 +154,37 @@ export default function NavBar() {
 
     // Find specific links for promo and top-level items
     const pricingLink = Object.values(commonData.links || {}).find(link => link.href === '/pricing');
-    // Find the influencer list promo link
     const influencerPromoLink = commonData.links ? commonData.links['singapore-influencer-list'] : undefined;
 
-    const constructedNavLinks: NavLink[] = [
-      // Product Menu
-      {
-        label: 'products',
-        isMegaMenu: true,
-        categories: productCategories,
-      },
-      // Resources Menu - Now uses categories and specific promo
-      {
-        label: 'resources',
-        isMegaMenu: true,
-        // Use the specific promo link if found
-        promo: influencerPromoLink ? {
-            // Translate promo title and description, letting next-intl handle defaults
-            title: tResources('singapore-influencer-list.title') ?? influencerPromoLink.name,
-            description: tResources('singapore-influencer-list.desc') ?? influencerPromoLink.description ?? '',
-            href: influencerPromoLink.href,
-        } : undefined,
-        categories: resourceCategories,
-      },
-    ];
+    // Initialize the array
+    const constructedNavLinks: NavLink[] = [];
 
-    // Pricing Link
+    // Add Pricing first if found
     if (pricingLink) {
       constructedNavLinks.push({
         label: 'pricing',
         href: pricingLink.href
       });
     }
+
+    // Add Product Menu
+    constructedNavLinks.push({
+      label: 'products',
+      isMegaMenu: true,
+      categories: productCategories,
+    });
+
+    // Add Resources Menu
+    constructedNavLinks.push({
+      label: 'resources',
+      isMegaMenu: true,
+      promo: influencerPromoLink ? {
+          title: tResources('singapore-influencer-list.title') ?? influencerPromoLink.name,
+          description: tResources('singapore-influencer-list.desc') ?? influencerPromoLink.description ?? '',
+          href: influencerPromoLink.href,
+      } : undefined,
+      categories: resourceCategories,
+    });
 
     return constructedNavLinks;
   };
@@ -195,68 +196,71 @@ export default function NavBar() {
 
   // --- Mobile Drawer Content (Use direct data for items) ---
   const DrawerLinks = () => (
-    <ScrollArea className="flex-1 p-4">
-      <nav className="grid gap-2">
-        {navLinks.map((link) => {
-          if (link.isMegaMenu && link.categories) { // Product Menu
+    <ScrollArea className="p-4 h-full">
+      <Accordion type="multiple" className="w-full">
+        {navLinks.map((link: NavLink) => {
+          if (link.isMegaMenu && link.categories) { // Product & Resources Menus
             return (
-              <div key={link.label} className="grid gap-1">
-                <p className="font-medium text-muted-foreground px-2 py-1">{tNav(`links.${link.label}`)}</p>
-                {link.categories.map(category => (
-                  <div key={category.label} className="ml-2 grid gap-1">
-                    <p className="text-sm font-medium text-muted-foreground/80 px-2 py-1">{tNav(category.label)}</p>
-                    {category.items.map(item => {
-                      // Use item.name directly, key is for React
-                      return (
-                        <Link
-                          key={item.key}
-                          href={item.href}
-                          className="group flex items-center rounded-md px-3 py-2 text-sm hover:bg-accent"
-                          onClick={() => setIsDrawerOpen(false)}
-                        >
-                          {item.name} {/* Display already translated name */}
-                        </Link>
-                      )
-                    })}
-                  </div>
-                ))}
-              </div>
+              <AccordionItem key={link.label} value={link.label} className="border-b-0 border-t-0">
+                <AccordionTrigger className="px-3 py-2 text-base font-medium hover:no-underline">
+                  {tNav(`links.${link.label}`)}
+                </AccordionTrigger>
+                <AccordionContent>
+                  {link.categories && link.categories.map((category: NavCategory) => (
+                    <div key={category.label} className="ml-0 grid gap-1 py-1">
+                      <p className="text-sm font-medium text-muted-foreground/80 pl-6 pr-3 py-1">
+                        {tNav(category.label)}
+                      </p>
+                      {category.items.map((item: NavItem) => {
+                        const isExternal = item.href.startsWith('http');
+                        const commonClasses = "flex items-center rounded-md pl-6 pr-3 py-2 text-sm hover:bg-accent";
+                        if (isExternal) {
+                          return (
+                            <a
+                              key={item.key}
+                              href={item.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={commonClasses}
+                              onClick={() => setIsDrawerOpen(false)}
+                            >
+                              {item.name}
+                            </a>
+                          )
+                        } else if (item.href) {
+                          return (
+                            <Link
+                              key={item.key}
+                              href={item.href}
+                              className={commonClasses}
+                              onClick={() => setIsDrawerOpen(false)}
+                            >
+                              {item.name}
+                            </Link>
+                          )
+                        }
+                        return null;
+                      })}
+                    </div>
+                  ))}
+                </AccordionContent>
+              </AccordionItem>
             );
-          } else if (link.isMegaMenu && link.items) { // Resources Menu
-            return (
-              <div key={link.label} className="grid gap-1">
-                 <p className="font-medium text-muted-foreground px-2 py-1">{tNav(`links.${link.label}`)}</p>
-                 {link.items.map(item => {
-                    // Use item.name directly
-                    return (
-                       <Link
-                          key={item.key}
-                          href={item.href}
-                          className="group flex items-center rounded-md px-3 py-2 text-sm hover:bg-accent"
-                          onClick={() => setIsDrawerOpen(false)}
-                       >
-                          {item.name} {/* Display already translated name */}
-                       </Link>
-                    )
-                 })}
-              </div>
-            )
           } else if (link.href) { // Simple Link (Pricing)
             return (
               <Link
-                key={link.href}
+                key={link.label}
                 href={link.href}
-                className="group flex items-center rounded-md px-3 py-2 font-medium hover:bg-accent"
+                className="flex w-full items-center rounded-md px-3 py-2 text-base font-medium hover:bg-accent"
                 onClick={() => setIsDrawerOpen(false)}
               >
                 {tNav(`links.${link.label}`)}
               </Link>
             );
-          } else {
-            return null;
           }
+          return null;
         })}
-      </nav>
+      </Accordion>
     </ScrollArea>
   );
 
@@ -388,12 +392,13 @@ export default function NavBar() {
               <DrawerHeader>
                 <DrawerTitle></DrawerTitle>
               </DrawerHeader>
-              <DrawerLinks />
-              {/* Mobile Action Buttons inside Drawer Footer */}
-              <div className="mt-auto p-4 border-t grid grid-cols-3 gap-2">
-                  <Link href="#" passHref legacyBehavior>
-                     <Button variant="outline" className="w-full" asChild onClick={() => setIsDrawerOpen(false)}><a>{tNav('links.oddle-eats')}</a></Button>
-                  </Link>
+              {/* Wrapper Div for Scrollable Content */}
+              <div className="flex-1 overflow-hidden"> 
+                <DrawerLinks />
+              </div>
+              {/* Mobile Action Buttons inside Drawer Footer - Modified */}
+              <div className="mt-auto p-4 border-t grid grid-cols-2 gap-2"> {/* Changed to grid-cols-2 */}
+                  {/* Removed Oddle Eats button */}
                   <Link href="#" passHref legacyBehavior>
                      <Button variant="outline" className="w-full" asChild onClick={() => setIsDrawerOpen(false)}><a>{tNav('links.login')}</a></Button>
                   </Link>
@@ -409,39 +414,62 @@ export default function NavBar() {
   );
 }
 
-// --- ListItem Component Modified Again ---
-// Omit conflicting props from base anchor attributes before adding our own
-interface ListItemProps extends Omit<React.ComponentPropsWithoutRef<"a">, 'title' | 'children'> {
-  title: React.ReactNode; // Our custom title prop accepting ReactNode
-  children?: React.ReactNode; // Our custom children prop accepting ReactNode
-}
+// --- ListItem Component (Used in Desktop MegaMenu) ---
+const ListItem = React.forwardRef<React.ElementRef<"a">, ListItemProps>(
+  ({ className, title, children, href, ...props }, ref) => {
+    const isExternal = href?.startsWith('http');
+    const commonClasses = cn(
+        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+        className
+    );
 
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  ListItemProps // Use the updated interface
->(({ className, title, children, href, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        {/* Pass standard anchor props (excluding title/children), use custom props for display */}
-        <a
-          ref={ref}
-          href={href || '#'} // Ensure href is always defined or provide a fallback
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props} // Spread remaining compatible props
-          // Optionally add standard title attribute only if our title is a string
-          title={typeof title === 'string' ? title : undefined}
-        >
-          <div className="text-sm font-medium leading-none">{title /* Render our ReactNode title */}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children /* Render our ReactNode children */}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
-ListItem.displayName = "ListItem"; 
+    const content = (
+        <>
+            <div className="text-sm font-medium leading-none">{title}</div>
+            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                {children}
+            </p>
+        </>
+    );
+
+    if (isExternal && href) {
+      return (
+        <li>
+          <NavigationMenuLink asChild>
+            <a href={href} target="_blank" rel="noopener noreferrer" className={commonClasses} ref={ref} {...props}>
+                {content}
+            </a>
+          </NavigationMenuLink>
+        </li>
+      );
+    } else if (href) {
+      return (
+        <li>
+          <NavigationMenuLink asChild>
+            <Link href={href} className={commonClasses} ref={ref} {...props}>
+                {content}
+            </Link>
+          </NavigationMenuLink>
+        </li>
+      );
+    } else {
+        // Handle case where href might be missing (though unlikely for ListItem)
+        // Render a div, but DO NOT spread anchor props onto it.
+        return (
+            <li>
+                <div className={commonClasses}>
+                    {content}
+                </div>
+            </li>
+        )
+    }
+  }
+);
+ListItem.displayName = "ListItem";
+
+// Define ListItemProps interface (ensure href is optional if it can be)
+interface ListItemProps extends Omit<React.ComponentPropsWithoutRef<"a">, 'title' | 'children'> {
+  title: React.ReactNode; 
+  children?: React.ReactNode; 
+  href?: string; // Make href optional if needed, otherwise keep required
+} 

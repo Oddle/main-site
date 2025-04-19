@@ -737,20 +737,24 @@
   },
   "resources": {
     "blog": {
-      "title": "Blog Title",
-      "desc": "Blog Description"
+      "title": "Blog",
+      "desc": ""
     },
     "customer-stories": {
-      "title": "Customer Stories Title",
-      "desc": "Customer Stories Description"
+      "title": "Customer Stories",
+      "desc": ""
     },
     "comparison": {
-      "title": "Comparison Title",
-      "desc": "Comparison Description"
+      "title": "Comparison",
+      "desc": ""
     },
     "about-us": {
-      "title": "About Us Title",
-      "desc": "About Us Description"
+      "title": "About Us ",
+      "desc": ""
+    },
+    "help-center": {
+      "title": "Help Center",
+      "desc": ""
     },
     "singapore-influencer-list": {
       "title": "Build your business with Singapore Influencer List",

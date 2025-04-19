@@ -91,13 +91,13 @@
     "blog": {
       "name": "Blog",
       "description": "Insights and articles for restaurant growth",
-      "href": "/resources/blog",
+      "href": "https://oddle.me/blog",
       "category": "learn"
     },
     "customer-stories": {
       "name": "Customer Stories",
       "description": "See how restaurants succeed with Oddle",
-      "href": "/resources/customer-stories",
+      "href": "https://oddle.me/customer-stories",
       "category": "learn"
     },
     "guides": {
@@ -139,7 +139,7 @@
     "about-us": {
       "name": "About Us",
       "description": "Link Description",
-      "href": "/resources/aboutUs",
+      "href": "https://oddle.me/about",
       "category": "general"
     },
     "help-center": {
