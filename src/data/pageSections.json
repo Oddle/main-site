@@ -236,9 +236,9 @@
       "component": "FeatureSectionWithImages",
       "props": {
         "i18nBaseKey": "onlineOrdering.details",
-        "sectionTitle": "Why Choose Our Online Ordering System?",
-        "sectionDescription": "Empower your restaurant with features designed for growth and efficiency.",
-        "features": [
+        "title": "Why Choose Our Online Ordering System?",
+        "description": "Empower your restaurant with features designed for growth and efficiency.",
+        "items": [
           {
             "title": "Activate and Grow Sales",
             "description": "Grow your customer database and build stronger relationships with tools that drive loyalty and repeat orders.",
@@ -319,9 +319,9 @@
       "component": "FeatureSectionWithColumns",
       "props": {
         "i18nBaseKey": "reservationSystem.useCases",
-        "sectionTitle": "Built for Restaurants of Every Kind",
-        "sectionSubtitle": "Whether you're transitioning from pen and paper or escaping costly subscriptions, Oddle Reserve is made to fit your needs.",
-        "features": [
+        "title": "Built for Restaurants of Every Kind",
+        "description": "Whether you're transitioning from pen and paper or escaping costly subscriptions, Oddle Reserve is made to fit your needs.",
+        "items": [
           {
             "imageSrc": "https://ucarecdn.com/d9049a25-8061-455f-bedf-1b62cd15d6ef/-/preview/512x317/",
             "imageAlt": "Dim sum dishes on a table representing traditional restaurants",
@@ -347,9 +347,9 @@
       "component": "FeatureSectionWithAccordion",
       "props": {
         "i18nBaseKey": "reservationSystem.operations",
-        "sectionTitle": "Simplify your day-to-day Operations with Powerful Views and Real-time Control.",
-        "sectionDescription": "User-friendly and seamless, Oddle Reserve simplifies the reservation process with advanced table management and management tools. It helps you efficiently manage reservations in real time, enhancing the dining experience and streamlining operations.",
-        "itemsData": [
+        "title": "Simplify your day-to-day Operations with Powerful Views and Real-time Control.",
+        "description": "User-friendly and seamless, Oddle Reserve simplifies the reservation process with advanced table management and management tools. It helps you efficiently manage reservations in real time, enhancing the dining experience and streamlining operations.",
+        "items": [
           {
             "id": 1,
             "title": "List View",
@@ -381,9 +381,9 @@
       "component": "FeatureSectionWithImages",
       "props": {
         "i18nBaseKey": "reservationSystem.system",
-        "sectionTitle": "",
-        "sectionDescription": "",
-        "features": [
+        "title": "",
+        "description": "User-friendly and seamless, Oddle Reserve simplifies the reservation process with advanced table management and management tools. It helps you efficiently manage reservations in real time, enhancing the dining experience and streamlining operations.",
+        "items": [
           {
             "title": "Secure and Reliable Reservation Booking System",
             "description": "Ensure serious bookings and minimize no-shows with built-in safeguards.",
@@ -412,9 +412,9 @@
       "component": "FeatureSectionWithImages",
       "props": {
         "i18nBaseKey": "reservationSystem.growthEngine",
-        "sectionTitle": "...Plus a Powerful Revenue Growth Engine",
-        "sectionDescription": "Turn insights into action with tools that reward loyalty, re-engage lapsed diners, and convert delivery customers into repeat dine-in guests.",
-        "features": [
+        "title": "...Plus a Powerful Revenue Growth Engine",
+        "description": "Turn insights into action with tools that reward loyalty, re-engage lapsed diners, and convert delivery customers into repeat dine-in guests.",
+        "items": [
           {
             "title": "Activate and Grow Sales",
             "description": "Grow your customer database and build stronger relationships with tools that drive loyalty and repeat orders.",
@@ -453,10 +453,10 @@
       "component": "FeatureSectionWithSplitImages",
       "props": {
         "i18nBaseKey": "loyaltyCrm.details",
-        "sectionTag": "Key Features",
-        "sectionTitle": "How restaurants grow using Oddle",
-        "sectionDescription": "Capture customer data and automate engagement to drive repeat visits.",
-        "features": [
+        "tag": "Key Features",
+        "title": "How restaurants grow using Oddle",
+        "description": "Capture customer data and automate engagement to drive repeat visits.",
+        "items": [
           {
             "tag": "Grow your customer database",
             "imageSrc": "https://ucarecdn.com/04e08a32-d9cc-4f6e-96fe-a040fffcc894/-/preview/999x666/",
@@ -502,9 +502,10 @@
       "component": "FeatureSectionWithImages",
       "props": {
         "i18nBaseKey": "virtualLounge.details",
-        "sectionTitle": "",
-        "sectionDescription": "",
-        "features": [
+        "tag": "",
+        "title": "",
+        "description": "",
+        "items": [
           {
             "translationSubKey": "personality",
             "title": "Showcase Your Restaurant's Personality",
@@ -554,8 +555,9 @@
       "component": "FeatureSectionAlternating",
       "props": {
         "i18nBaseKey": "paymentTerminal.features",
-        "sectionTitle": "Next-gen solutions designed to help you grow revenue",
-        "sectionDescription": null,
+        "tag":"",
+        "title": "Next-gen solutions designed to help you grow revenue",
+        "description": null,
         "items": [
           {
             "title": "Capture 100% of customers, no marketing opt-in needed",
@@ -643,7 +645,7 @@
       "component": "IconSectionHorizontal",
       "props": {
         "i18nBaseKey": "emailMarketing.howItWorks",
-        "sectionTag": null,
+        "tag": null,
         "sectionTitle": "How Oddle Marketing Engine Turns Data Into Dollars",
         "items": [
           {
@@ -715,91 +717,84 @@
     {
       "component": "HeroWithCarousel",
       "props": {
-        "i18nBaseKey": "crm.hero",
-        "title": "CRM? That's just the beginning. Unlock real actionable insights with Customer Intelligence.",
-        "description": "Oddle's customer intelligence layer empowers your restaurant with comprehensive marketing and operational insights, enabling effortless personalised marketing and operational excellence.",
+        "i18nBaseKey": "crmCustomerIntelligence.hero",
+        "reverseMobileLayout": false,
+        "title": "Restaurant CRM & Customer Intelligence",
+        "description": "Unlock actionable insights from your customer data.",
         "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
-          { "imageSrc": "https://placehold.co/700x540/F0F0E2/AAAAAA?text=CRM+Hero+Img", "imageAlt": "Customer Intelligence Dashboard Snippet" }
+          { "imageSrc": "https://ucarecdn.com/70611b2c-bb75-4ae2-ad64-7e9312e1f60b/-/preview/400x400/", "imageAlt": "Restaurant CRM & Customer Intelligence Carousel Image" }
         ]
       }
     },
     {
-      "component": "SectionHeader",
+      "component": "FeatureSectionWithImages",
       "props": {
-        "i18nBaseKey": "crm.marketingHeader",
-        "title": "Marketing Intelligence",
-        "subtitle": "The answers you've been missing from your CRM. Say goodbye to guesswork and hello to actionable answers - Uncover valuable insights from your own customer data and make informed decisions with confidence."
-      }
-    },
-    {
-      "component": "FeatureSectionWithImage",
-      "props": {
-        "i18nBaseKey": "crm.discover",
-        "sectionTitle": "Discover, Segment, Target",
-        "sectionDescription": "Unlock the insights you need to power your marketing strategy. Discover your customer breakdown and target the right segment with the right message.",
-        "imageSrc": "https://placehold.co/600x400/E2E8F0/AAAAAA?text=Discover+Segment+Target",
-        "imageAlt": "Graph showing customer segmentation",
-        "imagePosition": "right",
-        "primaryButton": null,
-        "secondaryButton": null
-      }
-    },
-    {
-      "component": "FeatureSectionWithImage",
-      "props": {
-        "i18nBaseKey": "crm.completeData",
-        "sectionTitle": "Complete customer data at your fingertips",
-        "sectionDescription": "Dive into comprehensive customer data, spanning from transaction history across deliveries, reservations, survey results and even their interactions with your digital touchpoints.",
-        "imageSrc": "https://placehold.co/600x400/E8F0E2/AAAAAA?text=Complete+Data+View",
-        "imageAlt": "UI showing comprehensive customer profile",
-        "imagePosition": "left",
-        "primaryButton": null,
-        "secondaryButton": null
-      }
-    },
-    {
-      "component": "FeatureSectionWithSubpoints",
-      "props": {
-        "i18nBaseKey": "crm.personalizedMarketing",
-        "heading": "Personalised Marketing at Scale",
-        "description": "Transition from analysis to action right away. Launch personalised marketing with ease. Launch personalised marketing campaigns effortlessly to your target audiences directly from the platform. No need for cumbersome data exports—simply leverage your customer data to select the right audience and launch your campaigns seamlessly.",
-        "imageSrc": "https://placehold.co/1200x600/F0E8E2/AAAAAA?text=Marketing+Automation",
-        "imageAlt": "Marketing automation workflow diagram",
-        "features": [
+        "i18nBaseKey": "crmCustomerIntelligence.missingAnswers",
+        "tag": "Marketing Intelligence",
+        "title": "The answers you've been missing from your CRM.",
+        "description": "Say goodbye to guesswork and hello to actionable answers - Uncover valuable insights from your own customer data and make informed decisions with confidence.",
+        "items": [
           {
-            "icon": "Mail",
-            "title": "Targeted email broadcasts",
-            "description": "Launch email campaigns to data-driven customer segments with our integrated email marketing tool."
+            "title": "Discover, Segment, Target",
+            "description": "Unlock the insights you need to power your marketing strategy. Discover your customer breakdown and target the right segment with the right message.",
+            "imageSrc": "/images/placeholder-600x400.png",
+            "imageAlt": "Store owners analyzing data on laptop"
           },
           {
-            "icon": "Repeat",
-            "title": "Real-time Automation",
-            "description": "Engage customers effortlessly whenever they take an action."
-          },
-          {
-            "icon": "Star",
-            "title": "Post dine-in surveys",
-            "description": "Build a foundation of 5-star Google reviews to attract new customers and strengthen your online reputation."
+            "title": "Complete customer data at your fingertips",
+            "description": "Dive into comprehensive customer data, spanning from transaction history across deliveries, reservations, survey results and even their interactions with your digital touchpoints.",
+            "imageSrc": "/images/placeholder-600x400.png",
+            "imageAlt": "Visualizing customer data on a digital interface"
           }
         ]
       }
     },
     {
-      "component": "SectionHeader",
+      "component": "FeatureSectionBentoGrid",
       "props": {
-        "i18nBaseKey": "crm.opsHeader",
-        "title": "Operational Intelligence",
-        "subtitle": "Be the smartest host, turn every reservation into a connection. Oddle collects all your data in one convenient location, making it easy to access information on dietary requirements, guest visits, and interactions across different outlets. With just one click, you can view a comprehensive guest history that helps you better understand and serve your customers."
+        "i18nBaseKey": "crmCustomerIntelligence.personalizedMarketing",
+        "tag": "Personalised Marketing at Scale",
+        "title": "Transition from analysis to action right away. Launch personalised marketing with ease.",
+        "description": "Launch personalised marketing campaigns effortlessly to your target audiences directly from the platform. No need for cumbersome data exports—simply leverage your customer data to select the right audience and launch your campaigns seamlessly.",
+        "items": [
+          {
+            "id": 1,
+            "title": "Targeted email broadcasts",
+            "description": "Launch email campaigns to data-driven customer segments with our integrated email marketing tool.",
+            "imageSrc": "/images/placeholder-email-broadcast.png",
+            "imageAlt": "Email marketing campaign examples",
+            "linkAction": "",
+            "span": 1
+          },
+          {
+            "id": 2,
+            "title": "Real-time Automation",
+            "description": "Engage customers effortlessly whenever they take an action.",
+            "imageSrc": "/images/placeholder-automation.png",
+            "imageAlt": "Real-time automation examples",
+            "linkAction": "",
+            "span": 2
+          },
+          {
+            "id": 3,
+            "title": "Post dine-in surveys",
+            "description": "Build a foundation of 5-star Google reviews to attract new customers and strengthen your online reputation.",
+            "imageSrc": "/images/placeholder-survey.png",
+            "imageAlt": "Customer leaving a review on phone",
+            "linkAction": "",
+            "span": 3
+          }
+        ]
       }
     },
     {
-      "component": "FeatureSectionAlternating",
+      "component": "FeatureSectionWithSplitImages",
       "props": {
-        "i18nBaseKey": "crm.guestFeatures",
-        "sectionTitle": "", 
-        "sectionDescription": null,
+        "i18nBaseKey": "crmCustomerIntelligence.guestFeatures",
+        "title": "", 
+        "description": null,
         "items": [
           {
             "title": "Know your guests",
@@ -909,11 +904,11 @@
       "component": "FeatureSectionHeroGrid",
       "props": {
         "i18nBaseKey": "oddleEats.features",
-        "heading": "Why Feature on Oddle Eats?",
+        "title": "Why Feature on Oddle Eats?",
         "description": "Leverage Oddle Eats to boost your restaurant's visibility and reach.",
         "linkUrl": null,
         "linkText": null,
-        "features": [
+        "items": [
           {
             "id": "feature-campaigns",
             "title": "Participate in sponsored marketing campaigns at no extra charge.",

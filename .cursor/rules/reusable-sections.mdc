@@ -16,6 +16,14 @@ When tasked with creating new UI components, especially those representing disti
 
 2.  **Data-Driven via Props:**
     *   **Crucially, design components to accept props for *all* dynamic content.** This includes text (titles, descriptions, labels), lists of items, image sources and alt text, button text, button links or actions, configuration options (like layout variations), etc.
+    *   **Standard Props:** Aim to use the following standard props where applicable:
+        *   `i18nBaseKey: string` (Required for i18n)
+        *   `tag?: string | null` (Optional tag/badge text)
+        *   `title: string` (Required section title)
+        *   `description?: string | null` (Optional section description)
+        *   `items: Array<any>` (Required list of items, specific structure varies)
+        *   `image?: { lightSrc: string; darkSrc?: string; alt: string; position?: 'left' | 'right' }` (Optional image object)
+        *   Other props specific to the component's functionality (e.g., button actions, layout variations).
     *   Define clear TypeScript interfaces for the component's props (e.g., `interface MySectionProps { ... }`).
     *   **Avoid hardcoding content directly in the JSX.** The component should render data passed to it, not contain the data itself. See the i18n section below for how text props serve as defaults/fallbacks.
 
@@ -43,19 +51,20 @@ Reusable section components must follow a standard pattern for internationalizat
 
 1.  **`i18nBaseKey` Prop:** Each reusable section component **must** accept an `i18nBaseKey` prop (string). This key points to the root object for that section's translations in `messages/[locale].json`.
 2.  **`getTranslation` Helper:** Use the `getTranslation` helper function (from `@/lib/i18nUtils`) along with the `useTranslations` hook from `next-intl`.
-3.  **Default Values:** The component should accept props for display text (e.g., `title`, `description`, item titles/descriptions) directly from `pageSections.json`. These values serve as the **default/fallback** text if a translation is missing.
+3.  **Default Values:** The component should accept props for display text (e.g., `tag`, `title`, `description`, `image.alt`, item titles/descriptions) directly from `pageSections.json`. These values serve as the **default/fallback** text if a translation is missing.
 4.  **Key Generation:**
-    *   For top-level section properties (like the main title or subtitle), generate the translation key by appending the property name to the base key (e.g., `${i18nBaseKey}.title`).
-    *   For properties within iterated items (like features in a list, icons, etc.), generate the translation key using the **item's index** within the loop (e.g., `${i18nBaseKey}.${index}.title`).
+    *   For top-level section properties (like `tag`, `title`, `description`, `image.alt`), generate the translation key by appending the property name to the base key (e.g., `${i18nBaseKey}.title`, `${i18nBaseKey}.image.alt`).
+    *   For properties within iterated items (like features in a list, icons, etc.), generate the translation key using the **item's index** within the loop (e.g., `${i18nBaseKey}.items.${index}.title`).
 
 ## Conceptual Example (Integrating i18n)
 
-This example modifies the previous `CallToActionSection` to include the standard i18n pattern.
+This example uses a `CallToActionSection` to illustrate the standard i18n pattern with the standardized props.
 
 ### Component (`src/components/sections/CallToActionSection.tsx`)
 
 ```typescript
 import { Button } from "@/components/ui/button";
+import Image from 'next/image'; // For the image
 import { useTranslations } from 'next-intl'; // Import i18n hook
 import { getTranslation } from '@/lib/i18nUtils'; // Import i18n helper
 
@@ -64,12 +73,20 @@ interface ButtonData {
   text: string;   // Default text
   action: string;
 }
+
+interface ImageProps {
+  lightSrc: string;
+  darkSrc?: string;
+  alt: string;
+  position?: 'left' | 'right';
+}
+
 interface CallToActionProps {
-  i18nBaseKey: string; // Added: Base key for translations
-  title: string;       // Added: Default title from pageSections.json
-  description: string; // Added: Default description
-  imageUrl?: string;
-  imageAlt?: string;   // Added: Default alt text
+  i18nBaseKey: string;          // Required: Base key for translations
+  tag?: string | null;         // Optional: Tag/badge text
+  title: string;              // Required: Default title
+  description?: string | null; // Optional: Default description
+  image?: ImageProps;         // Optional: Image object
   primaryButton: ButtonData;
   secondaryButton?: ButtonData;
 }
@@ -77,30 +94,42 @@ interface CallToActionProps {
 // The component receives data via props and uses i18n
 export default function CallToActionSection({
   i18nBaseKey,
-  title: defaultTitle,        // Renamed to indicate default/fallback
+  tag: defaultTag,
+  title: defaultTitle,
   description: defaultDescription,
-  imageUrl,
-  imageAlt: defaultImageAlt,
+  image,
   primaryButton,
   secondaryButton
 }: CallToActionProps) {
   const t = useTranslations(); // Initialize i18n hook
 
   // Translate text props using the base key and defaults
-  const title = getTranslation(t, `${i18nBaseKey}.title`, defaultTitle);
-  const description = getTranslation(t, `${i18nBaseKey}.description`, defaultDescription);
-  const imageAlt = getTranslation(t, `${i18nBaseKey}.imageAlt`, defaultImageAlt || ''); // Provide empty default if needed
-  const primaryButtonText = getTranslation(t, `${i18nBaseKey}.primaryButton.text`, primaryButton.text);
+  const tag = i18nBaseKey && defaultTag ? getTranslation(t, `${i18nBaseKey}.tag`, defaultTag) : defaultTag;
+  const title = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.title`, defaultTitle) : defaultTitle;
+  const description = i18nBaseKey && defaultDescription ? getTranslation(t, `${i18nBaseKey}.description`, defaultDescription) : defaultDescription;
+  const imageAlt = image && i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.image.alt`, image.alt) : image?.alt ?? ''; // Translate alt from image object
+  const primaryButtonText = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.primaryButton.text`, primaryButton.text) : primaryButton.text;
   const secondaryButtonText = secondaryButton
-    ? getTranslation(t, `${i18nBaseKey}.secondaryButton.text`, secondaryButton.text)
+    ? (i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.secondaryButton.text`, secondaryButton.text) : secondaryButton.text)
     : undefined;
+
+  // Determine image sources from the image object
+  const lightImage = image?.lightSrc;
+  const darkImage = image?.darkSrc || lightImage; // Fallback dark to light
 
   // ... component implementation using translated props ...
   return (
     <section className="bg-muted p-8 rounded-lg">
+      {tag && <span className="badge">{tag}</span>} {/* Example usage of tag */}
       <h2>{title}</h2>
-      <p>{description}</p>
-      {imageUrl && <img src={imageUrl} alt={imageAlt} />}
+      {description && <p>{description}</p>}
+      {/* Example image rendering */}
+      {image && (
+        <div className="relative h-64 w-full">
+          {darkImage && <Image src={darkImage} alt={imageAlt} fill className="hidden object-cover dark:block" />}
+          {lightImage && <Image src={lightImage} alt={imageAlt} fill className="block object-cover dark:hidden" />}
+        </div>
+      )}
       <div className="flex gap-4 mt-4">
         <Button onClick={() => handleAction(primaryButton.action)}>
           {primaryButtonText}
@@ -130,9 +159,12 @@ export default function CallToActionSection({
 {
   "somePage": {
     "ctaSection": {
+      "tag": "Optional Tag (Translated)",
       "title": "Call to Action (Translated)",
       "description": "This is the translated description.",
-      "imageAlt": "Translated alt text for the image.",
+      "image": {
+         "alt": "Translated alt text for the image."
+      },
       "primaryButton": {
         "text": "Get Started Now"
       },
@@ -151,10 +183,14 @@ export default function CallToActionSection({
   "component": "CallToActionSection",
   "props": {
     "i18nBaseKey": "somePage.ctaSection",
+    "tag": "Default Tag",
     "title": "Default CTA Title",
     "description": "Default description for the CTA.",
-    "imageUrl": "/images/cta-image.jpg",
-    "imageAlt": "Default alt text",
+    "image": {
+      "lightSrc": "/images/cta-light.jpg",
+      "darkSrc": "/images/cta-dark.jpg",
+      "alt": "Default alt text for CTA image"
+    },
     "primaryButton": {
       "text": "Default Get Started",
       "action": "/signup"
@@ -172,6 +208,6 @@ export default function CallToActionSection({
 By following this pattern:
 
 *   Components fetch translations using a base key and item index (where applicable).
-*   `pageSections.json` provides default text content, making it readable and serving as a fallback.
+*   `pageSections.json` provides default text content (including `tag`, `title`, `description`, `image.alt`, item text), making it readable and serving as a fallback.
 *   `messages/[locale].json` contains the actual translations, keyed appropriately.
 *   Avoid using properties like `titleKey`, `descriptionKey`, or `translationSubKey` in `pageSections.json` for text that should be translated using this pattern. Pass the default text directly instead.

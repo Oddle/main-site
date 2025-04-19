@@ -2,101 +2,107 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Container from '@/components/common/Container'; // Use the standard container
-import Link from 'next/link'; // Import Link for potential actions
+import Container from '@/components/common/Container';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { Badge } from "@/components/ui/badge"; // Import Badge
+import { Badge } from "@/components/ui/badge";
+import { useTranslations } from 'next-intl';
+import { getTranslation } from '@/lib/i18nUtils';
 
-interface FeatureItem {
+interface SplitImageItemData {
   imageSrc: string;
   imageAlt: string;
   title: string;
   description: string;
-  tag?: string; // Added optional tag
-  // action prop is no longer used for clickability
-  action?: string; // Optional URL or action identifier for the feature
-  // Add i18n sub-keys if needed
+  tag?: string;
+  action?: string;
 }
 
 interface FeatureSectionWithSplitImagesProps {
-  i18nBaseKey?: string; // For potential i18n integration
-  sectionTag?: string; // Optional tag above the title
-  sectionTitle: string;
-  sectionDescription?: string; // Optional description/subtitle below title
-  features: FeatureItem[];
+  i18nBaseKey: string;
+  tag?: string;
+  title: string;
+  description?: string;
+  items: SplitImageItemData[];
 }
 
 const FeatureSectionWithSplitImages = ({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   i18nBaseKey,
-  sectionTag,
-  sectionTitle,
-  sectionDescription,
-  features = [], // Default to empty array
+  tag: defaultTag,
+  title: defaultTitle,
+  description: defaultDescription,
+  items,
 }: FeatureSectionWithSplitImagesProps) => {
-  // TODO: Add useTranslations hook if i18nBaseKey is provided
+  const t = useTranslations();
+
+  const tag = defaultTag ? getTranslation(t, `${i18nBaseKey}.tag`, defaultTag) : undefined;
+  const title = getTranslation(t, `${i18nBaseKey}.title`, defaultTitle);
+  const description = defaultDescription ? getTranslation(t, `${i18nBaseKey}.description`, defaultDescription) : undefined;
 
   return (
-    <section className="py-24 md:py-32"> {/* Adjusted padding */}
+    <section className="py-24 md:py-32">
       <Container>
-        {sectionTag && (
-            <h4 className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-primary"> {/* Adjusted tag style */}
-                {sectionTag}
+        {tag && (
+            <h4 className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-primary">
+                {tag}
             </h4>
         )}
-        {sectionTitle && (
-            <h2 className="mx-auto mb-12 max-w-3xl text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"> {/* Standardized h2 */}
-                {sectionTitle}
+        {title && (
+            <h2 className="mx-auto mb-12 max-w-3xl text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+                {title}
             </h2>
         )}
-         {sectionDescription && ( // Added optional description rendering
+         {description && (
           <p className="mx-auto mb-16 max-w-3xl text-center text-lg leading-8 text-gray-600 dark:text-gray-300">
-            {sectionDescription}
+            {description}
           </p>
         )}
         <div className={cn(
           "grid grid-cols-1 gap-x-8 gap-y-12",
-          features.length === 2 ? "md:grid-cols-2" : "", // Handle 2 columns
-          features.length === 3 ? "md:grid-cols-3" : "", // Handle 3 columns
-          features.length >= 4 ? "md:grid-cols-4" : ""  // Handle 4 columns (or default)
+          items.length === 2 ? "md:grid-cols-2" : "",
+          items.length === 3 ? "md:grid-cols-3" : "",
+          items.length >= 4 ? "md:grid-cols-4" : ""
         )}>
-          {features.map((item, index) => {
+          {items.map((item, index) => {
+            const itemTag = item.tag ? getTranslation(t, `${i18nBaseKey}.items.${index}.tag`, item.tag) : undefined;
+            const itemTitle = getTranslation(t, `${i18nBaseKey}.items.${index}.title`, item.title);
+            const itemDescription = getTranslation(t, `${i18nBaseKey}.items.${index}.description`, item.description);
+            const itemImageAlt = getTranslation(t, `${i18nBaseKey}.items.${index}.imageAlt`, item.imageAlt || item.title);
+
             const isInternalLink = item.action?.startsWith('/');
             const baseClassName = "group block";
             const hoverClassName = item.action ? "transition-opacity duration-300 hover:opacity-80" : "";
 
             if (item.action) {
               if (isInternalLink) {
-                // Use Next/Link for internal links
                 return (
                   <Link
                     key={index}
-                    href={item.action} // Pass href directly
+                    href={item.action}
                     className={cn(baseClassName, hoverClassName)}
-                    aria-label={item.title}
+                    aria-label={itemTitle}
                   >
                     <div className="relative mb-6 aspect-[1.5] w-full overflow-hidden rounded-2xl">
                       <Image
                         src={item.imageSrc}
-                        alt={item.imageAlt || item.title}
+                        alt={itemImageAlt}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     </div>
-                    {item.tag && (
-                      <Badge variant="outline" className="mb-2">{item.tag}</Badge>
+                    {itemTag && (
+                      <Badge variant="outline" className="mb-2">{itemTag}</Badge>
                     )}
                     <h3 className="mb-2 text-xl font-semibold dark:text-white">
-                      {item.title}
+                      {itemTitle}
                     </h3>
                     <p className="text-base text-muted-foreground">
-                       {item.description}
+                       {itemDescription}
                      </p>
                   </Link>
                 );
               } else {
-                // Use <a> for external links
                 return (
                   <a
                     key={index}
@@ -104,50 +110,49 @@ const FeatureSectionWithSplitImages = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     className={cn(baseClassName, hoverClassName)}
-                    aria-label={item.title}
+                    aria-label={itemTitle}
                   >
                     <div className="relative mb-6 aspect-[1.5] w-full overflow-hidden rounded-2xl">
                       <Image
                         src={item.imageSrc}
-                        alt={item.imageAlt || item.title}
+                        alt={itemImageAlt}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     </div>
-                    {item.tag && (
-                      <Badge variant="outline" className="mb-2">{item.tag}</Badge>
+                    {itemTag && (
+                      <Badge variant="outline" className="mb-2">{itemTag}</Badge>
                     )}
                     <h3 className="mb-2 text-xl font-semibold dark:text-white">
-                      {item.title}
+                      {itemTitle}
                     </h3>
                     <p className="text-base text-muted-foreground">
-                       {item.description}
+                       {itemDescription}
                      </p>
                   </a>
                 );
               }
             } else {
-              // Use <div> for non-clickable items
               return (
                 <div key={index} className={baseClassName}>
                   <div className="relative mb-6 aspect-[1.5] w-full overflow-hidden rounded-2xl">
                     <Image
                       src={item.imageSrc}
-                      alt={item.imageAlt || item.title}
+                      alt={itemImageAlt}
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
-                  {item.tag && (
-                    <Badge variant="outline" className="mb-2">{item.tag}</Badge>
+                  {itemTag && (
+                    <Badge variant="outline" className="mb-2">{itemTag}</Badge>
                   )}
                   <h3 className="mb-2 text-xl font-semibold dark:text-white">
-                    {item.title}
+                    {itemTitle}
                   </h3>
                   <p className="text-base text-muted-foreground">
-                     {item.description}
+                     {itemDescription}
                    </p>
                 </div>
               );

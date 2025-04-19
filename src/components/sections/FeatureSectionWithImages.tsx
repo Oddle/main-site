@@ -95,7 +95,7 @@ export default function FeatureSectionWithImages({
               
             // Translate sub-items (bullet points)
             const translatedSubItems = item.items?.map((subItem: string, subItemIndex: number) => 
-              i18nBaseKey ? getTranslation(t, `${itemBaseKey}.items.${subItemIndex}`, subItem) : subItem
+              i18nBaseKey ? getTranslation(t, `${itemBaseKey}.item${subItemIndex +1}`, subItem) : subItem
             ) || [];
 
             return (
