@@ -16,7 +16,9 @@ import {
   BarChart,
   Shuffle,
   Users,
-  ShieldCheck
+  ShieldCheck,
+  DollarSign,
+  Eye
 } from "lucide-react"; // Import necessary icons
 import { FC } from 'react';
 import Container from "@/components/common/Container";
@@ -39,6 +41,8 @@ const iconMap: { [key: string]: FC<React.SVGProps<SVGSVGElement>> } = {
   Shuffle,
   Users,
   ShieldCheck,
+  DollarSign,
+  Eye,
   // Add other icons from lucide-react as needed
 };
 

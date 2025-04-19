@@ -118,7 +118,7 @@
       }
     },
     {
-      "component": "FeatureSectionWithSubpoints",
+      "component": "FeatureSectionWithImages",
       "props": {
         "i18nBaseKey": "home.platformFeatures",
         "heading": "Built for Restaurant Growth",
@@ -282,44 +282,35 @@
       "component": "HeroWithCarousel",
       "props": {
         "i18nBaseKey": "reservationSystem.hero",
-        "title": "Stop Overpaying for Reservations—Break Free from Monthly Fees and High Commissions Costs",
+        "title": "Stop Overpaying for Reservations -Break Free from Monthly Fees and High Commissions Costs",
         "description": "Helping Restaurants Save More on Reservations While Driving More Sales, Every Day with Pricing that Makes Sense.",
-        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "primaryButton": { "text": "Request Demo", "action": "/request-demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
-          { "imageSrc": "https://placehold.co/700x540/F0E2E8/AAAAAA?text=Reservation1", "imageAlt": "Reservation System UI" },
-          { "imageSrc": "https://placehold.co/700x540/AADDAA/AAAAAA?text=Reservation2", "imageAlt": "Table Management View" }
+          { "imageSrc": "https://ucarecdn.com/599e5cd5-879a-4dd1-9f8d-2588336cc904/product_reserve_hero", "imageAlt": "Reservation System UI" }
         ]
       }
     },
     {
-      "component": "FeatureSectionWithSubpoints",
+      "component": "IconSectionHorizontal",
       "props": {
-        "i18nBaseKey": "reservationSystem.features",
-        "heading": "Streamline Your Reservations",
-        "description": "Powerful features designed to optimize your table management and enhance the guest experience.",
-        "imageSrc": "https://placehold.co/1200x600/F0E2E8/AAAAAA?text=Reservation+Features",
-        "imageAlt": "Reservation System Features Showcase",
-        "features": [
+        "i18nBaseKey": "reservationSystem.affordableSection",
+        "sectionTitle": "An Affordable Reservation System Without the Catch",
+        "items": [
           {
-            "icon": "Zap",
-            "title": "Instant Booking",
-            "description": "Allow guests to book tables instantly, anytime, anywhere."
+            "icon": "DollarSign",
+            "title": "Low-Cost, Usage-Based Pricing",
+            "description": "Only pay for the reservations you take."
           },
           {
-            "icon": "Cpu",
-            "title": "Smart Table Management",
-            "description": "Optimize seating arrangements and minimize wait times automatically."
+            "icon": "TrendingUp",
+            "title": "Grow Revenue With Every Booking",
+            "description": "Turn reservations into repeat visits with built-in customer engagement tools."
           },
           {
-            "icon": "Lock",
-            "title": "Reduce No-Shows",
-            "description": "Automated reminders and secure booking deposits to minimize cancellations."
-          },
-          {
-            "icon": "Sparkles",
-            "title": "Guest Insights",
-            "description": "Collect valuable guest preferences and visit history for personalized service."
+            "icon": "Eye",
+            "title": "Designed for Restaurants Like Yours:",
+            "description": "Tailored solutions for every stage of your business."
           }
         ]
       }
@@ -348,44 +339,6 @@
             "imageAlt": "Interior of a PizzaExpress restaurant representing restaurants on marketplaces",
             "title": "Restaurants On High-Commission Marketplaces",
             "description": "Paying expensive per cover to marketplaces that intercept direct bookings with ads can be frustrating. Oddle Reserve removes commissions and charges only per booking—not per cover—giving you back control of your reservations."
-          }
-        ]
-      }
-    },
-    {
-      "component": "FeatureSectionWithTabs",
-      "props": {
-        "i18nBaseKey": "reservationSystem.views",
-        "sectionTitle": "Simplify your day-to-day Operations with Powerful Views and Real-time Control.",
-        "subtitle": "User-friendly and seamless, Oddle Reserve simplifies the reservation process with advanced table management and management tools. It helps you efficiently manage reservations in real time, enhancing the dining experience and streamlining operations.",
-        "tabsData": [
-          {
-            "id": 1,
-            "tabName": "List View",
-            "tabDescription": "Get a clear overview of all your reservations at a glance.",
-            "link": "#",
-            "image": "https://ucarecdn.com/160c698f-1051-43d6-a9cb-133d915b19bb/-/preview/912x500/"
-          },
-          {
-            "id": 2,
-            "tabName": "Timeline View",
-            "tabDescription": "Visualize your bookings chronologically for better planning.",
-            "link": "#",
-            "image": "https://ucarecdn.com/a2ba9c8b-acf3-462a-bffd-0481cd5cdb27/-/preview/1000x548/"
-          },
-          {
-            "id": 3,
-            "tabName": "Table View",
-            "tabDescription": "Manage table assignments and statuses efficiently.",
-            "link": "#",
-            "image": "https://ucarecdn.com/160c698f-1051-43d6-a9cb-133d915b19bb/-/preview/912x500/"
-          },
-          {
-            "id": 4,
-            "tabName": "Mobile View",
-            "tabDescription": "Access and manage reservations on the go from any device.",
-            "link": "#",
-            "image": "https://ucarecdn.com/551fa74b-f384-42d9-a95a-ccd3ab7f62ae/reserve_mobile_view"
           }
         ]
       }
@@ -425,6 +378,58 @@
       }
     },
     {
+      "component": "FeatureSectionWithImages",
+      "props": {
+        "i18nBaseKey": "reservationSystem.system",
+        "sectionTitle": "Simplify your day-to-day Operations with Powerful Views and Real-time Control.",
+        "sectionDescription": "User-friendly and seamless, Oddle Reserve simplifies the reservation process with advanced table management and management tools. It helps you efficiently manage reservations in real time, enhancing the dining experience and streamlining operations.",
+        "features": [
+          {
+            "title": "Secure and Reliable Reservation Booking System",
+            "description": "Ensure serious bookings and minimize no-shows with built-in safeguards.",
+            "items": [
+              "Card Guarantee: Secure reservations with credit card guarantees to reduce cancellations.",
+              "Payment Request: Collect deposits or full payments upfront for high-value or busy periods.",
+              "Automated Customer Confirmation: Confirm reservations automatically to save time and reduce manual work."
+            ],
+            "imageSrc": "https://ucarecdn.com/e070cbb2-a7c6-47a9-adec-84755e769b56/-/preview/1000x965/",
+            "imageAlt": "Secure Reservation System Features"
+          },
+          {
+            "title": "Customer-Friendly Features",
+            "description": "Enhance the guest experience with convenient and flexible options.",
+            "items": [
+              "Guest Self-Edit Reservations: Allow guests to change or cancel bookings without the need to call, creating a smoother experience.",
+              "Automated Status Management: Easily update and track reservation statuses with minimal effort, keeping your team aligned and operations seamless."
+            ],
+            "imageSrc": "https://ucarecdn.com/a95efbdb-1a8b-407f-a251-c2197d0017b4/-/preview/1000x945/",
+            "imageAlt": "Customer Friendly Features"
+          }
+        ]
+      }
+    },
+    {
+      "component": "FeatureSectionWithImages",
+      "props": {
+        "i18nBaseKey": "reservationSystem.growthEngine",
+        "sectionTitle": "...Plus a Powerful Revenue Growth Engine",
+        "sectionDescription": "Turn insights into action with tools that reward loyalty, re-engage lapsed diners, and convert delivery customers into repeat dine-in guests.",
+        "features": [
+          {
+            "title": "Activate and Grow Sales",
+            "description": "Grow your customer database and build stronger relationships with tools that drive loyalty and repeat orders.",
+            "items": [
+              "Collect and analyze detailed insights into customer behavior, preferences, and order frequency.",
+              "Reward repeat customers, run targeted promotions, and re-engage lapsed diners with personalized campaigns.",
+              "Convert delivery customers into dine-in guests and keep them coming back with exclusive offers and tailored experiences."
+            ],
+            "imageSrc": "https://ucarecdn.com/e070cbb2-a7c6-47a9-adec-84755e769b56/-/preview/1000x965/",
+            "imageAlt": "Revenue Growth Engine Details"
+          }
+        ]
+      }
+    },
+    {
       "component": "FaqSection"
     }
   ],
@@ -444,8 +449,7 @@
           }
         ]
       }
-    },
-    {
+    },{
       "component": "FeatureSectionWithSplitImages",
       "props": {
         "i18nBaseKey": "loyaltyCrm.details",

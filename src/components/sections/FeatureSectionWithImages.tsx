@@ -54,7 +54,7 @@ export default function FeatureSectionWithImages({
       <Container>
         {/* Section Header */}
         {(sectionTitle || sectionDescription) && (
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-4 mb-16">
               {sectionTitle && (
                   <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
                     {sectionTitle}
@@ -72,7 +72,7 @@ export default function FeatureSectionWithImages({
         <div className="space-y-24">
           {features.map((feature: FeatureItem, index: number) => {
             // Use index directly to construct the base key for this feature
-            const featureBaseKey = `${i18nBaseKey}.${index}`; 
+            const featureBaseKey = `${i18nBaseKey}.features.${index}`; 
 
             // Translate feature properties using the index-based key
             const featureTitle = getTranslation(t, `${featureBaseKey}.title`, feature.title);
