@@ -378,8 +378,6 @@ export default function NavBar() {
              <Button className="hidden md:inline-flex">{tNav('links.get-free-demo')}</Button>
           </Link>
 
-          <LanguageSwitcher />
-
           {/* Mobile Drawer Trigger (Visible only on Mobile) */}
           <Drawer open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
             <DrawerTrigger asChild className="md:hidden">
@@ -397,14 +395,20 @@ export default function NavBar() {
                 <DrawerLinks />
               </div>
               {/* Mobile Action Buttons inside Drawer Footer - Modified */}
-              <div className="mt-auto p-4 border-t grid grid-cols-2 gap-2"> {/* Changed to grid-cols-2 */}
-                  {/* Removed Oddle Eats button */}
-                  <Link href="#" passHref legacyBehavior>
-                     <Button variant="outline" className="w-full" asChild onClick={() => setIsDrawerOpen(false)}><a>{tNav('links.login')}</a></Button>
-                  </Link>
-                  <Link href="#" passHref legacyBehavior>
-                     <Button className="w-full" onClick={() => setIsDrawerOpen(false)}>{tNav('links.get-free-demo')}</Button>
-                  </Link>
+              <div className="mt-auto p-4 border-t">
+                  {/* Button Group + Language Switcher - Always row, responsive width */}
+                  <div className="flex flex-row items-center gap-2"> {/* Changed to always row, added items-center */}
+                      <Link href="#" passHref legacyBehavior>
+                         {/* Removed w-full, added flex-1 */}
+                         <Button variant="outline" className="flex-1" asChild onClick={() => setIsDrawerOpen(false)}><a>{tNav('links.login')}</a></Button>
+                      </Link>
+                      <Link href="#" passHref legacyBehavior>
+                         {/* Removed w-full, added flex-1 */}
+                         <Button className="flex-1" onClick={() => setIsDrawerOpen(false)}>{tNav('links.get-free-demo')}</Button>
+                      </Link>
+                      {/* LanguageSwitcher takes its natural width */}
+                      <LanguageSwitcher />
+                  </div>
               </div>
             </DrawerContent>
           </Drawer>

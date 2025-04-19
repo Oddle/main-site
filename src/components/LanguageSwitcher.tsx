@@ -9,6 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import { Globe } from "lucide-react";
 
 const LanguageSwitcher = () => {
   const router = useRouter();
@@ -26,16 +27,20 @@ const LanguageSwitcher = () => {
     // router.refresh(); 
   };
 
-  const languageLabels: { [key: string]: string } = {
-    en: "English",
-    zh: "中文",
+  const localeDisplayMap: { [key: string]: string } = {
+    en: "EN",
+    zh: "CN",
+    // Add other locales here -> ja: "JP" etc.
   };
+
+  const currentDisplayCode = localeDisplayMap[currentLocale] || currentLocale.toUpperCase();
 
   return (
     <DropdownMenu dir={currentLocale === "ar" ? "rtl" : "ltr"}>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm">
-          {languageLabels[currentLocale]}
+        <Button variant="outline" size="sm" className="flex items-center gap-1.5">
+          <Globe className="h-4 w-4" />
+          <span>{currentDisplayCode}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

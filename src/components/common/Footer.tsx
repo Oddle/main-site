@@ -1,4 +1,5 @@
 import Link from "next/link";
+import LanguageSwitcher from "../LanguageSwitcher"; // Ensure import exists
 // Add back needed icons
 import {
   FacebookIcon,
@@ -268,56 +269,53 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Added Bottom Row: Separator + Social/Copyright/Policy */}        
-      <div className="border-t pt-8 pb-8">          
-          <div className="flex flex-col items-center justify-between gap-6 md:flex-row">            
-            {/* Social Links (using final processed data) */}            
-            <div className="flex gap-4 order-1 md:order-1">              
-              {finalSocialLinks.map((link: SocialLink) => {
-                // Use link.key directly for icon lookup
-                const IconComponent = socialIconMap[link.key]; 
-                // Use link.key directly for translation (already lowercase)
-                const translatedAriaLabel = tFooter(link.key);
-                return IconComponent ? (
-                  <a
-                    key={link.key} // Use key for React key prop
-                    href={link.href} // Use looked-up href
-                    className="text-muted-foreground transition-colors hover:text-foreground"
-                    aria-label={translatedAriaLabel}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <IconComponent className=  "h-5 w-5" />
-                  </a>
-                ) : null;
-              })}
+        {/* Bottom Row: Copyright, Links, Social, Language */}
+        <div className="border-t pt-8 pb-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+
+            {/* Left Side: Copyright & Policy Links - Order adjusted */} 
+            <div className="text-xs text-muted-foreground order-2 md:order-1">
+              <div className="flex flex-col sm:flex-row items-center gap-x-4 gap-y-2">
+                <span>{copyrightText}</span>
+                <div className="flex gap-x-4">
+                  <Link href={bottomPrivacyPolicyLink.href} className="hover:text-foreground">
+                    {tCommon('Privacy Policy')}
+                  </Link>
+                  <Link href={bottomTermsOfServiceLink.href} className="hover:text-foreground">
+                    {tCommon('Terms of Service')}
+                  </Link>
+                </div>
+              </div>
             </div>
 
-            {/* Copyright (using processed text) */}            
-            <div className="text-xs text-muted-foreground order-3 md:order-2">              
-              {copyrightText}
+            {/* Right Side: Social Icons & Language Switcher - Order adjusted */} 
+            <div className="flex items-center gap-x-4 order-1 md:order-2">
+              {/* Social Links */}
+              <div className="flex gap-x-4">
+                {finalSocialLinks.map((link: SocialLink) => {
+                  const IconComponent = socialIconMap[link.key];
+                  const translatedAriaLabel = tFooter(link.key);
+                  return IconComponent ? (
+                    <a
+                      key={link.key}
+                      href={link.href}
+                      className="text-muted-foreground transition-colors hover:text-foreground"
+                      aria-label={translatedAriaLabel}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <IconComponent className="h-5 w-5" />
+                    </a>
+                  ) : null;
+                })}
+              </div>
+              
+              {/* Language Switcher Added Here */}
+              <LanguageSwitcher />
             </div>
 
-            {/* Policy Links (Bottom Row) */}            
-            <div className="flex gap-4 order-2 md:order-3">              
-              {/* Render Privacy Policy */}
-              <Link
-                href={bottomPrivacyPolicyLink.href} // Use looked-up href
-                className="text-xs text-muted-foreground transition-colors hover:text-foreground"
-              >
-                {tCommon('Privacy Policy')} {/* Explicitly use tCommon */}
-              </Link>
-              {/* Render Terms of Service */}
-              <Link
-                href={bottomTermsOfServiceLink.href} // Use looked-up href
-                className="text-xs text-muted-foreground transition-colors hover:text-foreground"
-              >
-                {tCommon('Terms of Service')} {/* Explicitly use tCommon */}
-              </Link>
-            </div>
           </div>
         </div>
-
       </div>
     </footer>
   );
