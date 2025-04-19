@@ -62,14 +62,6 @@ const FeatureSectionWithAccordion = ({
   const AUTO_SWITCH_INTERVAL = 5000;
   const PROGRESS_UPDATE_INTERVAL = 50;
 
-  const tag = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.tag`, defaultTag ?? '') : defaultTag;
-  const title = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.title`, defaultTitle) : defaultTitle;
-  const description = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.description`, defaultDescription ?? '') : defaultDescription;
-
-  if (!items || items.length === 0) {
-    return null; 
-  }
-
   const startAutoSwitch = useCallback(() => {
     if (intervalRef.current) clearInterval(intervalRef.current);
     if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
@@ -104,7 +96,7 @@ const FeatureSectionWithAccordion = ({
       const progress = Math.min(100, (elapsed / AUTO_SWITCH_INTERVAL) * 100);
       setProgressBarHeight(progress);
     }, PROGRESS_UPDATE_INTERVAL);
-  }, [items, i18nBaseKey, getTranslation, t]);
+  }, [items, i18nBaseKey, t]);
 
   useEffect(() => {
     if (items.length > 1) {
@@ -114,8 +106,15 @@ const FeatureSectionWithAccordion = ({
       if (intervalRef.current) clearInterval(intervalRef.current);
       if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [items]);
+  }, [items.length, startAutoSwitch]);
+
+  if (!items || items.length === 0) {
+    return null; 
+  }
+
+  const tag = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.tag`, defaultTag ?? '') : defaultTag;
+  const title = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.title`, defaultTitle) : defaultTitle;
+  const description = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.description`, defaultDescription ?? '') : defaultDescription;
 
   const handleValueChange = (value: string) => {
     if (intervalRef.current) clearInterval(intervalRef.current);
