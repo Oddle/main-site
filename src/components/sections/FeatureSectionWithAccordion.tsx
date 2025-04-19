@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Image from 'next/image';
 
 import {
@@ -70,7 +70,7 @@ const FeatureSectionWithAccordion = ({
     return null; 
   }
 
-  const startAutoSwitch = () => {
+  const startAutoSwitch = useCallback(() => {
     if (intervalRef.current) clearInterval(intervalRef.current);
     if (progressIntervalRef.current) clearInterval(progressIntervalRef.current);
     setProgressBarHeight(0);
@@ -104,7 +104,7 @@ const FeatureSectionWithAccordion = ({
       const progress = Math.min(100, (elapsed / AUTO_SWITCH_INTERVAL) * 100);
       setProgressBarHeight(progress);
     }, PROGRESS_UPDATE_INTERVAL);
-  };
+  }, [items, i18nBaseKey, getTranslation, t]);
 
   useEffect(() => {
     if (items.length > 1) {

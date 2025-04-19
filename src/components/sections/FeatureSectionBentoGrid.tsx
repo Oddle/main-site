@@ -44,16 +44,6 @@ export default function FeatureSectionBentoGrid({
   const title = getTranslation(t, `${i18nBaseKey}.title`, defaultTitle);
   const description = defaultDescription ? getTranslation(t, `${i18nBaseKey}.description`, defaultDescription) : undefined;
 
-  const renderIcon = (iconName: string | undefined, defaultIcon?: LucideIcon): React.ReactNode => {
-    if (!iconName && !defaultIcon) return null;
-    const IconComponent = iconName ? icons[iconName as keyof typeof icons] : defaultIcon;
-    if (!IconComponent) {
-      console.warn(`Icon "${iconName}" not found in lucide-react`);
-      return null; // Or return a default icon
-    }
-    return <IconComponent className="h-auto w-4" />;
-  };
-
   return (
     <section className="py-16 md:py-24 lg:py-32">
       <Container>
