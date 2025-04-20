@@ -25,6 +25,16 @@
     "trustedBy": {
       "title": "Trusted by"
     },
+    "cta": {
+      "standard": {
+        "tag": "Ready to get started?",
+        "title": "Ready to Take Control of Your Restaurant's Growth?",
+        "description": "Join the 5000+ restaurants using Oddle to streamline operations, boost sales, and build lasting customer relationships.",
+        "primaryButtonText": "Request Demo",
+        "secondaryButtonText": "View Pricing",
+        "imageAlt": "Abstract visual representing growth"
+      }
+    },
     "forms": {
       "demoRequest": {
         "title": "Book Your Free 30 Minute Demo",
@@ -214,7 +224,13 @@
     "privacy-policy": "Privacy Policy",
     "terms-of-service": "Terms of Service",
     "facebook": "Facebook",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "newsletter": {
+      "title": "Stay connected",
+      "description": "Subscribe to our newsletter for the latest updates, resources, and exclusive offers.",
+      "placeholder": "Your email address",
+      "buttonText": "Subscribe"
+    }
   },
   "home": {
     "hero": {

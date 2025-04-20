@@ -94,14 +94,14 @@ export default function HeroWithCarousel({
                   const slideImageAlt = getTranslation(t, `${i18nBaseKey}.slides.0.imageAlt`, slide.imageAlt);
                   return (
                     <div className="relative aspect-square overflow-hidden rounded-xl bg-card shadow-sm">
-                      <Image
+                    <Image
                         className="object-cover"
-                        src={slide.imageSrc}
-                        alt={slideImageAlt}
+                      src={slide.imageSrc}
+                      alt={slideImageAlt}
                         fill
-                        priority={true}
+                      priority={true}
                         sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 40vw"
-                      />
+                    />
                     </div>
                   );
                 })()

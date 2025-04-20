@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import LanguageSwitcher from "../LanguageSwitcher"; // Ensure import exists
 // Add back needed icons
@@ -10,6 +12,10 @@ import { useTranslations } from "next-intl";
 // Import and type commonData
 import commonJson from "@/data/common.json";
 import globalContent from "@/data/globalContent.json";
+import { Button } from "@/components/ui/button"; // Ensure Button is imported
+import Container from "@/components/common/Container"; // Ensure Container is imported
+import { ArrowRight } from "lucide-react"; // Import ArrowRight if needed for buttons
+import Image from "next/image"; // Import Image component
 
 // --- Interfaces for FINAL Data Structures Used in Component ---
 interface FooterLink {
@@ -73,10 +79,14 @@ interface CommonData {
     products?: { [key: string]: ProductData };
     addresses?: { [key: string]: AddressData };
     links?: { [key: string]: CommonLinkData };
+    socials?: { [key: string]: string }; // Keep this for simpler direct access if needed
 }
 
 // Type the imported common data
 const commonData: CommonData = commonJson;
+
+// Get logo URL from environment variable
+const logoUrl = process.env.NEXT_PUBLIC_LOGO_URL || "/oddle-logo-white.svg"; // Default to white logo for dark bg
 
 // Update socialIconMap to use lowercase keys
 const socialIconMap: { [key: string]: React.ElementType } = {
@@ -84,14 +94,12 @@ const socialIconMap: { [key: string]: React.ElementType } = {
   linkedin: LinkedinIcon, // Changed key to lowercase
 };
 
-// Remove hardcoded socialLinks
-// const socialLinks: SocialLink[] = [ ... ];
-
 // --- Component Implementation ---
 export default function Footer() {
   const tFooter = useTranslations("footer");
   const tProducts = useTranslations("products");
   const tCommon = useTranslations("common");
+  const tCta = useTranslations('common.cta.standard'); // Add CTA translations
 
   // --- Extract Addresses from commonData ---
   const addresses: { [key: string]: AddressData } = commonData.addresses || {};
@@ -100,7 +108,7 @@ export default function Footer() {
   const globalFooterData: FooterData = globalContent.footer || {};
   const rawLinkSections = globalFooterData.linkSections || [];
   const rawSocialLinks = globalFooterData.socialLinks || [];
-  const copyrightKey = "copyright";
+  const copyrightKey = globalFooterData.copyright || "copyright"; // Use key from globalContent or fallback
 
   // --- Create Lookups from common.json ---
 
@@ -179,16 +187,47 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-background pt-12 md:pt-16 lg:pt-20 text-sm">
+    <footer 
+      className="w-full pt-12 md:pt-16 lg:pt-20 text-sm"
+      style={{ backgroundColor: '#210052', color: '#ffffff' }}
+    >
       <div className="container mx-auto px-4 md:px-6 2xl:max-w-[1400px]">
+        
+        {/* --- Integrated CTA Section --- */}
+        <div className="mb-16 rounded-2xl border border-white/10 bg-white/5 p-8 md:p-10 lg:p-12">
+            <div className="flex flex-col items-center text-center">
+                <h2 className="mb-6 max-w-[800px] text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl">
+                    {tCta('title')}
+                </h2>
+                <p className="mt-4 max-w-[600px] text-lg text-white/70">
+                    {tCta('description')}
+                </p>
+                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                    <Button size="lg" className="bg-[#4a1598] hover:bg-[#4a1598]/90 text-white" asChild>
+                        <Link href="/demo">{tCta('primaryButtonText')}</Link>
+                    </Button>
+                    <Button size="lg" className="bg-white hover:bg-white/90 text-[#210052]" asChild>
+                        <Link href="/pricing">{tCta('secondaryButtonText')}</Link>
+                    </Button>
+                </div>
+            </div>
+        </div>
+        {/* --- End Integrated CTA Section --- */}
+
         {/* Top Section: Logo/Slogan ONLY */}
         <div className="pb-8 md:pb-12">
           {/* Logo & Slogan */}
           <div className="mb-6 md:mb-8">
-            <Link href="/" className="inline-block mb-3">
-              <span className="font-bold text-2xl">{companyName}</span>
+            <Link href="/" className="inline-block mb-3" aria-label="Go to homepage">
+              <Image
+                src={logoUrl}
+                alt={companyName}
+                width={80}
+                height={20}
+                className="h-5 w-auto"
+              />
             </Link>
-            <p className="text-muted-foreground ">
+            <p className="text-white/80">
               {companySlogan}
             </p>
           </div>
@@ -198,14 +237,12 @@ export default function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 pb-12 md:pb-16 lg:pb-20">
           {allLinkSections.map((section) => (
             <div key={section.title} className="col-span-1">
-              <h3 className="font-medium mb-4">{tFooter(section.title)}</h3>
+              <h3 className="mb-4 text-xs font-medium uppercase tracking-wider text-white/70">{tFooter(section.title)}</h3>
               <ul className="space-y-2">
                 {section.links.map((link: FooterLink) => {
-                  // Determine the correct translation key and function based on the link label
                   let translationKey = link.label;
-                  let translateFunc = tFooter; // Default to footer translations
+                  let translateFunc = tFooter;
 
-                  // Explicit mapping for common links based on their label from globalContent.json
                   const commonKeyMap: { [key: string]: string } = {
                       'privacy-policy': 'Privacy Policy',
                       'terms-of-service': 'Terms of Service',
@@ -214,36 +251,32 @@ export default function Footer() {
                   };
 
                   if (productHrefMap.hasOwnProperty(link.label)) {
-                    // It's a product link, use tProducts with the title subkey
                     translationKey = `${link.label}.title`;
                     translateFunc = tProducts;
                   } else if (commonKeyMap[link.label]) {
-                    // It's a known common link, use tCommon with the mapped key
                     translationKey = commonKeyMap[link.label];
                     translateFunc = tCommon;
                   }
-                  // Otherwise, use the default (tFooter with link.label)
 
-                  // Perform the translation
                   const translatedLabel = translateFunc(translationKey);
 
                   return (
-                    <li key={link.label}> {/* Use label as key */}
+                    <li key={link.label}>
                       {link.external ? (
                         <a
-                          href={link.href} // Use processed href
-                          className="text-muted-foreground transition-colors hover:text-foreground"
+                          href={link.href}
+                          className="text-white/80 transition-colors hover:text-white"
                           target="_blank"
                           rel="noreferrer"
                         >
-                          {translatedLabel} {/* Use the determined translation */}
+                          {translatedLabel}
                         </a>
                       ) : (
                         <Link
-                          href={link.href} // Use processed href
-                          className="text-muted-foreground transition-colors hover:text-foreground"
+                          href={link.href}
+                          className="text-white/80 transition-colors hover:text-white"
                         >
-                          {translatedLabel} {/* Use the determined translation */}
+                          {translatedLabel}
                         </Link>
                       )}
                     </li>
@@ -255,12 +288,12 @@ export default function Footer() {
         </div>
 
         {/* Middle Section: Separator + Addresses */}
-        <div className="border-t pt-8 pb-12 md:pb-16 lg:pb-20">
+        <div className="border-t border-white/10 pt-8 pb-12 md:pb-16 lg:pb-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {Object.entries(addresses).map(([key, addr]) => (
               <div key={key}>
-                <h4 className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">{addr.country}</h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">
+                <h4 className="text-xs font-medium uppercase tracking-wider text-white/70 mb-2">{addr.country}</h4>
+                <p className="text-xs text-white/80 leading-relaxed">
                   {addr.entityName && <span className="block">{addr.entityName}</span>}
                   {addr.address}
                 </p>
@@ -270,27 +303,24 @@ export default function Footer() {
         </div>
 
         {/* Bottom Row: Copyright, Links, Social, Language */}
-        <div className="border-t pt-8 pb-8">
+        <div className="border-t border-white/10 pt-8 pb-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
 
-            {/* Left Side: Copyright & Policy Links - Order adjusted */} 
-            <div className="text-xs text-muted-foreground order-2 md:order-1">
+            <div className="text-xs text-white/80 order-2 md:order-1">
               <div className="flex flex-col sm:flex-row items-center gap-x-4 gap-y-2">
                 <span>{copyrightText}</span>
                 <div className="flex gap-x-4">
-                  <Link href={bottomPrivacyPolicyLink.href} className="hover:text-foreground">
+                  <Link href={bottomPrivacyPolicyLink.href} className="hover:text-white">
                     {tCommon('Privacy Policy')}
                   </Link>
-                  <Link href={bottomTermsOfServiceLink.href} className="hover:text-foreground">
+                  <Link href={bottomTermsOfServiceLink.href} className="hover:text-white">
                     {tCommon('Terms of Service')}
                   </Link>
                 </div>
               </div>
             </div>
 
-            {/* Right Side: Social Icons & Language Switcher - Order adjusted */} 
             <div className="flex items-center gap-x-4 order-1 md:order-2">
-              {/* Social Links */}
               <div className="flex gap-x-4">
                 {finalSocialLinks.map((link: SocialLink) => {
                   const IconComponent = socialIconMap[link.key];
@@ -299,7 +329,7 @@ export default function Footer() {
                     <a
                       key={link.key}
                       href={link.href}
-                      className="text-muted-foreground transition-colors hover:text-foreground"
+                      className="text-white/70 transition-colors hover:text-white"
                       aria-label={translatedAriaLabel}
                       target="_blank"
                       rel="noreferrer"
@@ -310,7 +340,6 @@ export default function Footer() {
                 })}
               </div>
               
-              {/* Language Switcher Added Here */}
               <LanguageSwitcher />
             </div>
 
