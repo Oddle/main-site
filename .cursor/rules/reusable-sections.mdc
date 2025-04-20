@@ -211,3 +211,33 @@ By following this pattern:
 *   `pageSections.json` provides default text content (including `tag`, `title`, `description`, `image.alt`, item text), making it readable and serving as a fallback.
 *   `messages/[locale].json` contains the actual translations, keyed appropriately.
 *   Avoid using properties like `titleKey`, `descriptionKey`, or `translationSubKey` in `pageSections.json` for text that should be translated using this pattern. Pass the default text directly instead.
+
+# Displaying Optional Tags
+
+If a component accepts an optional `tag` string prop, it should be displayed using the `Badge` component from `@/components/ui/badge` when the `tag` is present.
+
+Use the following structure:
+
+```tsx
+import { Badge } from "@/components/ui/badge";
+
+// ... other component code
+
+{tag && (
+  <Badge
+    variant="outline"
+    className="inline-flex items-center gap-1 px-2.5 py-1.5 text-sm"
+  >
+    {tag}
+  </Badge>
+)}
+
+// ... rest of the component
+```
+
+**Key points:**
+
+*   Always check if `tag` exists (`{tag && ...}`) before rendering the `Badge`.
+*   Use `variant="outline"`.
+*   Use the specific `className="inline-flex items-center gap-1 px-2.5 py-1.5 text-sm"` for consistent styling and centering within text-aligned containers.
+*   Ensure `Badge` is imported from `@/components/ui/badge`.
