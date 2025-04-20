@@ -492,7 +492,7 @@
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           { 
-            "imageSrc": "https://placehold.co/700x540/E2E8F0/AAAAAA?text=Virtual+Lounge+UI", 
+            "imageSrc": "https://ucarecdn.com/b765ec4a-9d0f-4a0f-9e48-0d734c1e6ea1/-/preview/999x552/", 
             "imageAlt": "Phone showing Oddle Virtual Lounge UI"
           }
         ]
@@ -511,7 +511,7 @@
             "title": "Showcase Your Restaurant's Personality",
             "description": "Create a branded digital space that tells your story, showcases your menu, and highlights promotions",
             "items": [],
-            "imageSrc": "https://placehold.co/600x400/E8E2F0/AAAAAA?text=Personality",
+            "imageSrc": "https://ucarecdn.com/6975447a-f639-43b6-890c-8963ae65e8b8/-/preview/1000x1000/",
             "imageAlt": "Phone showing social media interactions"
           },
           {
@@ -519,7 +519,7 @@
             "title": "Connect with Customers Anywhere",
             "description": "Engage diners whether they are looking to book a table, order delivery, or browse your offerings online.",
             "items": [],
-            "imageSrc": "https://placehold.co/600x400/F0E8E2/AAAAAA?text=Connect",
+            "imageSrc": "https://ucarecdn.com/692bc755-df2a-48cb-8266-ad471c3c92ee/-/preview/1000x1000/",
             "imageAlt": "Phone showing email signup form in virtual lounge"
           },
           {
@@ -527,7 +527,7 @@
             "title": "Create a Seamless Customer Experience",
             "description": "Integrate your delivery, reservations, and loyalty systems for a unified experience that delights your customers",
             "items": [],
-            "imageSrc": "https://placehold.co/600x400/E2F0E8/AAAAAA?text=Seamless+Experience",
+            "imageSrc": "https://ucarecdn.com/c8180ad3-9b62-4172-ab14-afc96d15b94d/-/preview/999x873/",
             "imageAlt": "Phone showing integrated loyalty and ordering UI"
           }
         ]
@@ -719,12 +719,12 @@
       "props": {
         "i18nBaseKey": "crmCustomerIntelligence.hero",
         "reverseMobileLayout": false,
-        "title": "Restaurant CRM & Customer Intelligence",
-        "description": "Unlock actionable insights from your customer data.",
+        "title": "CRM? That's just the beginning. Unlock real actionable insights with Customer Intelligence.",
+        "description": "Oddle's customer intelligence layer empowers your restaurant with comprehensive marketing and operational insights, enabling effortless personalised marketing and operational excellence.",
         "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
-          { "imageSrc": "https://ucarecdn.com/70611b2c-bb75-4ae2-ad64-7e9312e1f60b/-/preview/400x400/", "imageAlt": "Restaurant CRM & Customer Intelligence Carousel Image" }
+          { "imageSrc": "https://ucarecdn.com/ee56a537-0c1d-4db5-92bd-24abbf0a1bc6/-/preview/970x970/", "imageAlt": "Restaurant CRM & Customer Intelligence Carousel Image" }
         ]
       }
     },
@@ -739,13 +739,13 @@
           {
             "title": "Discover, Segment, Target",
             "description": "Unlock the insights you need to power your marketing strategy. Discover your customer breakdown and target the right segment with the right message.",
-            "imageSrc": "/images/placeholder-600x400.png",
+            "imageSrc": "https://ucarecdn.com/3c0ca3b7-4b79-4f5d-8249-3021699ae6bb/-/preview/1000x515/",
             "imageAlt": "Store owners analyzing data on laptop"
           },
           {
             "title": "Complete customer data at your fingertips",
             "description": "Dive into comprehensive customer data, spanning from transaction history across deliveries, reservations, survey results and even their interactions with your digital touchpoints.",
-            "imageSrc": "/images/placeholder-600x400.png",
+            "imageSrc": "https://ucarecdn.com/466484d8-ddfa-4baa-a25f-914575a0b18e/-/preview/1000x1000/",
             "imageAlt": "Visualizing customer data on a digital interface"
           }
         ]
@@ -763,7 +763,7 @@
             "id": 1,
             "title": "Targeted email broadcasts",
             "description": "Launch email campaigns to data-driven customer segments with our integrated email marketing tool.",
-            "imageSrc": "/images/placeholder-email-broadcast.png",
+            "imageSrc": "https://ucarecdn.com/10483a24-988e-4f04-8c15-822473592b65/-/preview/1000x927/",
             "imageAlt": "Email marketing campaign examples",
             "linkAction": "",
             "span": 1
@@ -772,7 +772,7 @@
             "id": 2,
             "title": "Real-time Automation",
             "description": "Engage customers effortlessly whenever they take an action.",
-            "imageSrc": "/images/placeholder-automation.png",
+            "imageSrc": "https://ucarecdn.com/75a574a9-6552-4e06-ab81-4c1b60ed967c/-/preview/496x280/",
             "imageAlt": "Real-time automation examples",
             "linkAction": "",
             "span": 2
@@ -781,7 +781,7 @@
             "id": 3,
             "title": "Post dine-in surveys",
             "description": "Build a foundation of 5-star Google reviews to attract new customers and strengthen your online reputation.",
-            "imageSrc": "/images/placeholder-survey.png",
+            "imageSrc": "https://ucarecdn.com/40fbb324-eb80-4f92-92b7-1aec4c9ac5cf/-/preview/1000x865/",
             "imageAlt": "Customer leaving a review on phone",
             "linkAction": "",
             "span": 3
@@ -799,7 +799,7 @@
           {
             "title": "Know your guests",
             "description": "Visits, takeaway orders, allergens, and dining preferences—Oddle helps you know each guest personally.",
-            "imageSrc": "https://placehold.co/600x400/E2F0F0/AAAAAA?text=Know+Your+Guests",
+            "imageSrc": "https://ucarecdn.com/75c8c0a6-d53e-4ae0-82aa-78f24307189d/-/preview/1000x666/",
             "imageAlt": "Close up of guest profile showing preferences",
             "imagePosition": "left",
             "linkText": null,
@@ -808,7 +808,7 @@
           {
             "title": "Spot loyal customers",
             "description": "Have all your guest insights at the tip of your fingers to turn your ground team into a super host.",
-            "imageSrc": "https://placehold.co/600x400/F0E2F0/AAAAAA?text=Spot+Loyal+Customers",
+            "imageSrc": "https://ucarecdn.com/942d96fc-ed50-49b5-91a9-768856075d9e/customer_intelligence_spot_customer",
             "imageAlt": "UI highlighting a loyal customer tag",
             "imagePosition": "right",
             "linkText": null,

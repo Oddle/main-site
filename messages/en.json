@@ -455,25 +455,29 @@
         }
       }
     },
-    "items": {
+    "features": {
       "tag": "Next-gen solutions designed to help you grow revenue",
       "title": "Next-gen solutions designed to help you grow revenue",
       "items": {
         "0": {
           "title": "Capture 100% of customers, no marketing opt-in needed",
-          "description": "Advanced analytics drives data-driven decisions, offering predictive insights, personalized recommendations, real-time analysis, cost savings, and risk mitigation. Choose advanced analytics for strategic decision-making and business growth."
+          "description": "Advanced analytics drives data-driven decisions, offering predictive insights, personalized recommendations, real-time analysis, cost savings, and risk mitigation. Choose advanced analytics for strategic decision-making and business growth.",
+          "imageAlt": "Oddle Payment Terminal"
         },
         "1": {
           "title": "Get a true health score on customer retention",
-          "description": "Move beyond revenue tracking to understand your restaurant's customer health. By capturing a unique profile for each visitor, you'll see an accurate score of your customer retention rates, providing a clear snapshot of how often guests return and the strength of their loyalty."
+          "description": "Move beyond revenue tracking to understand your restaurant's customer health. By capturing a unique profile for each visitor, you'll see an accurate score of your customer retention rates, providing a clear snapshot of how often guests return and the strength of their loyalty.",
+          "imageAlt": "Oddle Payment Terminal"
         },
         "2": {
           "title": "Collect contacts, boost database marketing",
-          "description": "Effortlessly grow your contact list when customers claim redeemables by scanning a QR code on their receipt. Once added, you can send targeted updates, exclusive offers, or online store promotions to keep your restaurant top of mind."
+          "description": "Effortlessly grow your contact list when customers claim redeemables by scanning a QR code on their receipt. Once added, you can send targeted updates, exclusive offers, or online store promotions to keep your restaurant top of mind.",
+          "imageAlt": "Oddle Payment Terminal"
         },
         "3": {
           "title": "Drive return visits with targeted redeemables",
-          "description": "Encourage repeat business with tailored redeemables. Set thresholds, like spending minimums, to trigger exclusive return offers that bring customers back, keeping them engaged and driving loyalty."
+          "description": "Encourage repeat business with tailored redeemables. Set thresholds, like spending minimums, to trigger exclusive return offers that bring customers back, keeping them engaged and driving loyalty.",
+          "imageAlt": "Oddle Payment Terminal"
         }
       }
     },
