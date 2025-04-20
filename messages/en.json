@@ -16,8 +16,63 @@
       "seeLivePreview": "See Live Preview",
       "learnMore": "Learn more"
     },
+    "buttons": {
+      "requestDemo": "Request Demo",
+      "talkToSales": "Talk to Sales",
+      "login": "Login",
+      "signup": "Sign Up"
+    },
     "trustedBy": {
       "title": "Trusted by"
+    },
+    "forms": {
+      "demoRequest": {
+        "title": "Book Your Free 30 Minute Demo",
+        "rolePlaceholder": "Select Role...",
+        "roleOptions": {
+          "owner": "Restaurant Owner",
+          "manager": "Restaurant Manager",
+          "marketing": "Marketing Manager",
+          "ops": "Ops Manager",
+          "partner": "Restaurant Vendor/Partner",
+          "other": "Other"
+        },
+        "firstNamePlaceholder": "First Name",
+        "lastNamePlaceholder": "Last Name",
+        "phonePlaceholder": "Phone Number",
+        "emailPlaceholder": "Email",
+        "restaurantNamePlaceholder": "Restaurant Name",
+        "websitePlaceholder": "Restaurant Website or Social Media Profile (Optional)",
+        "sourcePlaceholder": "How did you hear about us?",
+        "sourceOptions": {
+          "peers": "Referred by F&B Peers",
+          "consultant": "Restaurant Consultant",
+          "google": "Google Search",
+          "facebook": "Facebook / Instagram",
+          "linkedin": "LinkedIn",
+          "conference": "Conference / Event",
+          "other": "Other"
+        },
+        "submitButtonText": "Book Free Demo",
+        "submitting": "Booking...",
+        "submitSuccess": "Demo requested successfully! We'll be in touch soon.",
+        "submitError": "Failed to submit request. Please try again later.",
+        "submitSuccessShort": "Submitted!",
+        "consent": "By providing us with your information you are consenting to the collection and use of your information in accordance with our <terms>Terms of Service</terms> and <privacy>Privacy Policy</privacy>."
+      }
+    }
+  },
+  "demoPage": {
+    "section": {
+      "title": "See the Platform in Action",
+      "description": "No contracts. No long-term commitment. Nothing to lose. Find out why Oddle is trusted by thousands of restaurants across the globe. Now serving 🇦🇺 🇸🇬 🇲🇾 🇭🇰 🇹🇼 🇺🇸  and more!",
+      "expectTitle": "What you can expect:",
+      "expectItems": [
+        "Detailed product presentation tailored to you",
+        "Consulting on your specific challenges",
+        "Answers to all the questions you have"
+      ],
+      "form": {}
     }
   },
   "crm": {
@@ -71,6 +126,8 @@
           "imageAlt": "Spot loyal customers example"
         }
       }
+    },
+    "metadata": {
     }
   },
   "emailMarketing": {
@@ -853,5 +910,7 @@
     }
   },
   "error": {
+  },
+  "notFound": {
   }
 }

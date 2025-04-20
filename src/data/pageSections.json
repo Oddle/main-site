@@ -7,7 +7,7 @@
         "reverseMobileLayout": true,
         "title": "Making revenue growth easy for restaurants",
         "description": "Oddle empowers restaurants across the world to capture customer data, build their brand, and grow their business",
-        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "primaryButton": { "text": "Get Free Demo", "action": "/demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           { "imageSrc": "https://placehold.co/700x540/E2E8F0/AAAAAA?text=Slide1", "imageAlt": "Placeholder Alt 1" },
@@ -161,7 +161,7 @@
         "reverseMobileLayout": true,
         "title": "Restaurant Online Ordering System",
         "description": "Streamline your orders and delight your customers.",
-        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "primaryButton": { "text": "Get Free Demo", "action": "/demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           { "imageSrc": "https://ucarecdn.com/7f9cb7a3-a7d6-42d5-b225-5a4e2647d384/-/preview/400x400/", "imageAlt": "Restaurant Online Ordering System Carousel Image" }
@@ -440,7 +440,7 @@
         "i18nBaseKey": "loyaltyCrm.hero",
         "title": "Turn every visit into a loyal customer",
         "description": "Capture, engage, and retain your customers with a loyalty program designed for Restaurants",
-        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "primaryButton": { "text": "Get Free Demo", "action": "/demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           {
@@ -488,7 +488,7 @@
         "i18nBaseKey": "virtualLounge.hero",
         "title": "Showcase Your Brand Online with Oddle's Virtual Lounge",
         "description": "Create a branded digital space to engage customers, showcase your menu, and drive both online and in-person visits.",
-        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "primaryButton": { "text": "Get Free Demo", "action": "/demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           { 
@@ -544,7 +544,7 @@
         "i18nBaseKey": "paymentTerminal.hero",
         "title": "Transform every Payment Into a Growth Opportunity",
         "description": "More than just card processing at competitive rates, we empower you with insightful customer data and ways to grow revenue, all in one mobile device.",
-        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "primaryButton": { "text": "Get Free Demo", "action": "/demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           { "imageSrc": "https://ucarecdn.com/2bbc4977-dfa2-424b-bae3-bee90a6cea1a/terminal_hero", "imageAlt": "Oddle Payment Terminal" }
@@ -634,7 +634,7 @@
         "i18nBaseKey": "emailMarketing.hero",
         "title": "Data to Dollars: The Oddle Marketing Engine Advantage",
         "description": "Turn Insights Into Action and Customers Into Cash",
-        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "primaryButton": { "text": "Get Free Demo", "action": "/demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           { "imageSrc": "https://ucarecdn.com/38ac2cb3-98f8-45d2-a41b-6e76e99f64c4/-/preview/570x1000/", "imageAlt": "Oddle Marketing Engine Dashboard" }
@@ -719,7 +719,7 @@
         "reverseMobileLayout": false,
         "title": "CRM? That's just the beginning. Unlock real actionable insights with Customer Intelligence.",
         "description": "Oddle's customer intelligence layer empowers your restaurant with comprehensive marketing and operational insights, enabling effortless personalised marketing and operational excellence.",
-        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "primaryButton": { "text": "Get Free Demo", "action": "/demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           { "imageSrc": "https://ucarecdn.com/ee56a537-0c1d-4db5-92bd-24abbf0a1bc6/-/preview/970x970/", "imageAlt": "Restaurant CRM & Customer Intelligence Carousel Image" }
@@ -823,7 +823,7 @@
         "i18nBaseKey": "survey.hero",
         "title": "Turn Feedback Into Fuel for Your Brand's Growth",
         "description": "Automated surveys that power customer insights, enhance service, and boost your brand's visibility.",
-        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "primaryButton": { "text": "Get Free Demo", "action": "/demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           { "imageSrc": "https://placehold.co/700x540/E2F0F0/AAAAAA?text=Survey+Hero+Img", "imageAlt": "Oddle Survey Tool Interface" }
@@ -891,7 +891,7 @@
         "i18nBaseKey": "oddleEats.hero",
         "title": "Your restaurant in the pockets of a million food lovers",
         "description": "Get your restaurant seen by millions of consumers seeking new dining experiences for every occasion with our premier food directory network, Oddle Eats.",
-        "primaryButton": { "text": "Get Free Demo", "action": "/get-free-demo" },
+        "primaryButton": { "text": "Get Free Demo", "action": "/demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
           { "imageSrc": "https://placehold.co/700x540/E8E2F0/AAAAAA?text=Oddle+Eats+Hero", "imageAlt": "Oddle Eats App Interface" }
@@ -933,6 +933,14 @@
     },
     {
       "component": "FaqSection"
+    }
+  ],
+  "demo": [
+    {
+      "component": "DemoRequestSection",
+      "props": {
+        "i18nBaseKey": "demoPage.section"
+      }
     }
   ]
 }

@@ -7,22 +7,17 @@ import {
 import Autoplay from "embla-carousel-autoplay"
 import React from "react";
 import clsx from "clsx";
-import { icons } from "lucide-react";
+import { MessageSquare } from "lucide-react";
 import { useTranslations } from 'next-intl';
 import { getTranslation } from '@/lib/i18nUtils';
 import Container from "@/components/common/Container";
 import Image from "next/image";
 import InlineCustomerLogos from "../common/InlineCustomerLogos";
+import Link from 'next/link';
 
 interface SlideData {
   imageSrc: string;
   imageAlt: string;
-}
-
-interface ButtonData {
-  text: string;
-  action: string;
-  icon?: string;
 }
 
 interface HeroWithCarouselProps {
@@ -30,8 +25,6 @@ interface HeroWithCarouselProps {
   reverseMobileLayout?: boolean;
   title: string;
   description: string;
-  primaryButton: ButtonData;
-  secondaryButton?: ButtonData;
   slides: SlideData[];
   locale: string;
 }
@@ -41,8 +34,6 @@ export default function HeroWithCarousel({
   reverseMobileLayout = false,
   title: defaultTitle,
   description: defaultDescription,
-  primaryButton,
-  secondaryButton,
   slides = [],
   locale,
 }: HeroWithCarouselProps) {
@@ -50,36 +41,15 @@ export default function HeroWithCarousel({
     Autoplay({ delay: 2000, stopOnInteraction: true })
   )
   const t = useTranslations();
+  const tCommon = useTranslations('common.buttons');
 
   const title = getTranslation(t, `${i18nBaseKey}.title`, defaultTitle);
   const description = getTranslation(t, `${i18nBaseKey}.description`, defaultDescription);
-  const primaryButtonText = getTranslation(t, `${i18nBaseKey}.primaryButton.text`, primaryButton.text);
-  const secondaryButtonText = secondaryButton
-    ? getTranslation(t, `${i18nBaseKey}.secondaryButton.text`, secondaryButton.text)
-    : undefined;
-
-  const handleButtonClick = (action: string) => {
-    if (action.startsWith('/')) {
-      window.location.href = action;
-    } else {
-      console.log('Button action:', action);
-    }
-  };
-
-  const renderIcon = (iconName: string | undefined) => {
-    if (!iconName) return null;
-    const LucideIcon = icons[iconName as keyof typeof icons];
-    if (!LucideIcon) {
-      console.warn(`Icon "${iconName}" not found in lucide-react`);
-      return null;
-    }
-    return <LucideIcon className="mr-2 h-4 w-4" />;
-  };
 
   return (
     <>
       {/* Hero */}
-      <div className="pt-8 pb-24 lg:pt-32 lg:pb-32">
+      <div className="pt-8 pb-16 lg:pt-32 lg:pb-16">
         <Container>
           {/* Grid */}
           <div className="grid lg:grid-cols-7 lg:gap-x-8 xl:gap-x-12 lg:items-center">
@@ -97,21 +67,18 @@ export default function HeroWithCarousel({
                   {description}
                 </p>
               )}
-              <div className="mt-5 lg:mt-8 flex flex-col sm:items-center gap-2 sm:flex-row sm:gap-3">
                 <div className="mt-7 grid gap-3 w-full sm:inline-flex">
-                  {primaryButton?.text && (
-                    <Button size={"lg"} className="cursor-pointer" onClick={() => handleButtonClick(primaryButton.action)}>
-                      {renderIcon(primaryButton.icon)}
-                      {primaryButtonText}
+                <Button size="lg" asChild>
+                  <Link href="/demo">
+                    {tCommon('requestDemo')}
+                  </Link>
                     </Button>
-                  )}
-                  {secondaryButton?.text && secondaryButtonText && (
-                    <Button variant={"outline"} size={"lg"} className="cursor-pointer" onClick={() => handleButtonClick(secondaryButton.action)}>
-                      {renderIcon(secondaryButton.icon)}
-                      {secondaryButtonText}
+                <Button variant="outline" size="lg" asChild>
+                  <Link href="/contact-sales">
+                    <MessageSquare className="mr-2 h-4 w-4" />
+                    {tCommon('talkToSales')}
+                  </Link>
                     </Button>
-                  )}
-                </div>
               </div>
               {/* Render Inline Customer Logos */}
               <InlineCustomerLogos locale={locale} i18nBaseKey="common.trustedBy" />
@@ -156,7 +123,7 @@ export default function HeroWithCarousel({
                               alt={slideImageAlt}
                               fill
                               priority={index === 0}
-                              sizes="(max-width: 1024px) 100vw, 50vw"
+                              sizes="(max-width: 1024px) 100vw, (max-width: 768px) 90vw, 40vw"
                             />
                           </div>
                         </CarouselItem>
