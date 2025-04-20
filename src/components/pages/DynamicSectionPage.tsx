@@ -18,6 +18,7 @@ import FeatureSectionAlternating from "../sections/FeatureSectionAlternating";
 import FeatureSectionComplexGrid from "../sections/FeatureSectionComplexGrid";
 import FeatureSectionHeroGrid from "../sections/FeatureSectionHeroGrid";
 import FeatureSectionBentoGrid from "../sections/FeatureSectionBentoGrid";
+import CustomerLogosSection from "../sections/CustomerLogosSection";
 // --- Define type for section data --- (Good practice)
 interface SectionDefinition {
   component: string; // Ideally keyof typeof componentMap, but string is simpler for now
@@ -49,6 +50,7 @@ const componentMap = {
   FeatureSectionComplexGrid,
   FeatureSectionHeroGrid,
   FeatureSectionBentoGrid,
+  CustomerLogosSection,
 };
 
 // Removed the processProps function
@@ -68,17 +70,14 @@ const DynamicSectionPage = ({ sectionsData, pageUrl, locale }: DynamicSectionPag
               return null;
             }
 
-            // Prepare props, starting with those from JSON (if any)
-            let combinedProps = { ...section.props };
-
-            // If it's the FaqSection, add the dynamic pageUrl and locale props
-            if (section.component === 'FaqSection') {
-              combinedProps = {
-                ...combinedProps, // Keep any static props defined in JSON (though unlikely for FaqSection)
-                pageUrl: pageUrl,
-                locale: locale,
-              };
-            }
+            // Prepare props: Start with props from JSON, add dynamic ones needed by specific components
+            const combinedProps = {
+                ...section.props, // Props defined in pageSections.json
+                locale: locale,   // Always pass locale
+                // Add pageUrl specifically if the component needs it (like FaqSection)
+                ...(section.component === 'FaqSection' && { pageUrl: pageUrl }),
+                // Add other dynamic props needed by specific components here
+            };
 
             // Pass props directly
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
