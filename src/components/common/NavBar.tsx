@@ -265,19 +265,20 @@ export default function NavBar() {
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-background">
       <div className="container mx-auto flex h-16 max-w-[1440px] items-center px-4 md:px-6">
         {/* Logo */}
-        <Link className="mr-6 flex items-center" href="/">
-          <Image
-            src={logoUrl}
-            alt="Oddle Logo"
+        <Link href="/" className="mr-6 flex items-center space-x-2">
+          <Image 
+            src={logoUrl} 
+            alt="Logo" 
             width={80}
-            height={32}
+            height={80}
+            className="h-auto w-auto"
             priority
-            className="h-8 w-auto"
-          />
-          <span className="sr-only">Oddle</span>
+          /> 
+          {/* Optional: Brand name text */}
+          {/* <span className="hidden font-bold sm:inline-block">YourBrand</span> */}
         </Link>
 
         {/* Main Desktop Navigation (Hidden on Mobile) */}

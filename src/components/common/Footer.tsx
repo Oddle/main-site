@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import React from "react";
 import { useTranslations } from "next-intl";
+import { usePathname } from 'next/navigation'; // <-- Import usePathname
 // Import and type commonData
 import commonJson from "@/data/common.json";
 import globalContent from "@/data/globalContent.json";
@@ -99,7 +100,8 @@ export default function Footer() {
   const tFooter = useTranslations("footer");
   const tProducts = useTranslations("products");
   const tCommon = useTranslations("common");
-  const tCta = useTranslations('common.cta.standard'); // Add CTA translations
+  const tCta = useTranslations('common.cta.standard');
+  const pathname = usePathname(); // <-- Get current pathname
 
   // --- Extract Addresses from commonData ---
   const addresses: { [key: string]: AddressData } = commonData.addresses || {};
@@ -186,6 +188,9 @@ export default function Footer() {
     href: allLinkHrefMap["terms-of-service"] || "/terms"
   };
 
+  // Determine if we are on the demo page
+  const isDemoPage = pathname.endsWith('/demo');
+
   return (
     <footer 
       className="w-full pt-12 md:pt-16 lg:pt-20 text-sm"
@@ -193,25 +198,27 @@ export default function Footer() {
     >
       <div className="container mx-auto px-4 md:px-6 2xl:max-w-[1400px]">
         
-        {/* --- Integrated CTA Section --- */}
-        <div className="mb-16 rounded-2xl border border-white/10 bg-white/5 p-8 md:p-10 lg:p-12">
-            <div className="flex flex-col items-center text-center">
-                <h2 className="mb-6 max-w-[800px] text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl">
-                    {tCta('title')}
-                </h2>
-                <p className="mt-4 max-w-[600px] text-lg text-white/70">
-                    {tCta('description')}
-                </p>
-                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                    <Button size="lg" className="bg-[#4a1598] hover:bg-[#4a1598]/90 text-white" asChild>
-                        <Link href="/demo">{tCta('primaryButtonText')}</Link>
-                    </Button>
-                    <Button size="lg" className="bg-white hover:bg-white/90 text-[#210052]" asChild>
-                        <Link href="/pricing">{tCta('secondaryButtonText')}</Link>
-                    </Button>
-                </div>
-            </div>
-        </div>
+        {/* --- Conditionally Render Integrated CTA Section --- */}
+        {!isDemoPage && (
+          <div className="mb-16 rounded-2xl border border-white/10 bg-white/5 p-8 md:p-10 lg:p-12">
+              <div className="flex flex-col items-center text-center">
+                  <h2 className="mb-6 max-w-[800px] text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl">
+                      {tCta('title')}
+                  </h2>
+                  <p className="mt-4 max-w-[600px] text-lg text-white/70">
+                      {tCta('description')}
+                  </p>
+                  <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                      <Button size="lg" className="bg-[#4a1598] hover:bg-[#4a1598]/90 text-white" asChild>
+                          <Link href="/demo">{tCta('primaryButtonText')}</Link>
+                      </Button>
+                      <Button size="lg" className="bg-white hover:bg-white/90 text-[#210052]" asChild>
+                          <Link href="/pricing">{tCta('secondaryButtonText')}</Link>
+                      </Button>
+                  </div>
+              </div>
+          </div>
+        )}
         {/* --- End Integrated CTA Section --- */}
 
         {/* Top Section: Logo/Slogan ONLY */}
