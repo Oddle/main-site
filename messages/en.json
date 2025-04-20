@@ -18,11 +18,6 @@
     }
   },
   "crm": {
-    "customerIntelligence": {
-      "tag": "",
-      "title": "A Restaurant Email Marketing Toolkit to Make Marketing Effortless",
-      "description": "Launch campaigns with pre-built workflows that require no technical expertise—just results."
-    },
     "hero": {
       "title": "CRM? That's just the beginning. Unlock real actionable insights with Customer Intelligence.",
       "description": "Oddle's customer intelligence layer empowers your restaurant with comprehensive marketing and operational insights, enabling effortless personalised marketing and operational excellence.",
@@ -107,6 +102,28 @@
         "2": {
           "title": "Maximize Cross-Channel Growth",
           "description": "Turn dine-in customers into delivery users (and vice versa) with tailored promotions that expand revenue streams."
+        }
+      }
+    },
+    "toolkit": {
+      "tag": "",
+      "title": "A Restaurant Email Marketing Toolkit to Make Marketing Effortless",
+      "description": "Launch campaigns with pre-built workflows that require no technical expertise—just results.",
+      "items": {
+        "0": {
+          "title": "Pre-Built Templates, Ready To Go",
+          "description": "Choose from pre-built templates tailored to your goals.",
+          "imageAlt": "Examples of email marketing templates"
+        },
+        "1": {
+          "title": "Let Oddle Do The Data Work",
+          "description": "Unified Customer View: Combine reservations, orders, and loyalty data. Smart Segmentation: Leverage pre-built customer segments. Automated Engagement: Effortlessly personalize campaigns.",
+          "imageAlt": "Data segmentation illustration"
+        },
+        "2": {
+          "title": "Automatically Track Conversions",
+          "description": "Measure and optimize conversion rates effortlessly",
+          "imageAlt": "Conversion tracking illustration"
         }
       }
     }

@@ -132,14 +132,12 @@ export default function FeatureSectionWithImages({
                 </div>
 
                 {/* Image */}
-                <div className="relative aspect-video overflow-hidden rounded-lg"> {/* Added rounding */}
+                <div className="relative aspect-square overflow-hidden rounded-lg"> {/* Changed aspect-video to aspect-square */}
                   <Image
                     src={item.imageSrc}
                     alt={itemImageAlt}
                     fill
-                    className="object-contain object-center"
-                    width={item.imageWidth}
-                    height={item.imageHeight}
+                    className="object-contain object-center" // Changed back to object-contain and added object-center
                     priority={index === 0}
                     sizes="(max-width: 1024px) 100vw, 50vw" // Adjusted sizes
                   />

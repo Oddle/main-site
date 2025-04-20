@@ -667,43 +667,41 @@
       }
     },
     {
-      "component": "FeatureSectionComplexGrid",
+      "component": "FeatureSectionBentoGrid",
       "props": {
-        "i18nBaseKey": "crm.customerIntelligence",
-        "sectionTitle": "A Restaurant Email Marketing Toolkit to Make Marketing Effortless",
-        "sectionDescription": "Launch campaigns with pre-built workflows that require no technical expertise—just results.",
-        "block1": {
-          "icon": "LayoutTemplate",
-          "title": "Pre-Built Templates, Ready To Go",
-          "description": "Choose from pre-built templates tailored to your goals.",
-          "imageSrc": "https://ucarecdn.com/10483a24-988e-4f04-8c15-822473592b65/email_templates",
-          "imageAlt": "Examples of email marketing templates"
-        },
-        "block2": {
-          "icon": "Target",
-          "title": "Let Oddle Do The Data Work",
-          "listItems": [
-            { "text": "Unified Customer View: Combine reservations, orders, and loyalty data onto one platform." },
-            { "text": "Smart Segmentation: Leverage pre-built customer segments for targeted campaigns." },
-            { "text": "Automated Engagement: Effortlessly personalize campaigns, from re-engagement to birthday rewards." }
-          ]
-        },
-        "block3": {
-          "title": "Automatically Track Conversions",
-          "stats": [
-            {
-              "value": "+XX%",
-              "label": "Increase in campaign conversion rates"
-            },
-            {
-              "value": "YY",
-              "label": "Reduction in marketing effort (hours/week)"
-            }
-          ]
-        },
-        "ctaText": null,
-        "ctaLink": null,
-        "ctaLinkText": null
+        "i18nBaseKey": "emailMarketing.toolkit",
+        "tag": "",
+        "title": "A Restaurant Email Marketing Toolkit to Make Marketing Effortless",
+        "description": "Launch campaigns with pre-built workflows that require no technical expertise—just results.",
+        "items": [
+          {
+            "id": "bento-item-1",
+            "title": "Pre-Built Templates, Ready To Go",
+            "description": "Choose from pre-built templates tailored to your goals.",
+            "imageSrc": "https://ucarecdn.com/10483a24-988e-4f04-8c15-822473592b65/email_templates",
+            "imageAlt": "Examples of email marketing templates",
+            "linkAction": "#",
+            "span": 1
+          },
+          {
+            "id": "bento-item-2",
+            "title": "Let Oddle Do The Data Work",
+            "description": "Unified Customer View: Combine reservations, orders, and loyalty data. Smart Segmentation: Leverage pre-built customer segments. Automated Engagement: Effortlessly personalize campaigns.",
+            "imageSrc": "https://ucarecdn.com/3c0ca3b7-4b79-4f5d-8249-3021699ae6bb/-/preview/1000x515/",
+            "imageAlt": "Data segmentation illustration",
+            "linkAction": "#",
+            "span": 1
+          },
+          {
+            "id": "bento-item-3",
+            "title": "Automatically Track Conversions",
+            "description": "Increase campaign conversion rates by +XX%. Reduce marketing effort by YY hours/week.",
+            "imageSrc": "https://placehold.co/800x600/EEE/31343C?text=Conversions",
+            "imageAlt": "Conversion tracking illustration",
+            "linkAction": "#",
+            "span": 1
+          }
+        ]
       }
     },
     {
