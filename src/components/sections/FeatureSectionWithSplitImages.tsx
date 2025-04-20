@@ -43,9 +43,12 @@ const FeatureSectionWithSplitImages = ({
     <section className="py-24 md:py-32">
       <Container>
         {tag && (
-            <h4 className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-primary">
+           <Badge
+           variant="outline"
+           className="inline-flex items-center gap-1 px-2.5 py-1.5 text-sm"
+         >
                 {tag}
-            </h4>
+            </Badge>
         )}
         {title && (
             <h2 className="mx-auto mb-12 max-w-3xl text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">

@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import React from "react";
 import { useTranslations } from 'next-intl';
@@ -61,11 +62,14 @@ export default function FeatureSectionWithImages({
         {/* Section Header */}
         {(title || description || tag) && (
             <div className="text-center space-y-4 mb-16 max-w-3xl mx-auto">
-              {/* Render tag */} 
+              {/* Render tag */}
               {tag && (
-                <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary md:mb-3 lg:text-base">
+                <Badge
+                  variant="outline"
+                  className="inline-flex items-center gap-1 px-2.5 py-1.5 text-sm"
+                >
                   {tag}
-                </p>
+                </Badge>
               )}
               {title && (
                   <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">

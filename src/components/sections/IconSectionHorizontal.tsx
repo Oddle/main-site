@@ -24,7 +24,7 @@ import { FC } from 'react';
 import Container from "@/components/common/Container";
 import { useTranslations } from 'next-intl'; // Import useTranslations
 import { getTranslation } from '@/lib/i18nUtils'; // Import shared helper
-
+import { Badge } from "@/components/ui/badge";
 // Map icon names to actual components
 const iconMap: { [key: string]: FC<React.SVGProps<SVGSVGElement>> } = {
   Timer,
@@ -87,9 +87,12 @@ export default function IconSectionHorizontal({
         <div className="mb-12 text-center md:mb-16 lg:mb-20">
           {/* Render tag */}
           {tag && (
-            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary md:mb-3 lg:text-base">
-              {tag} 
-            </p>
+            <Badge
+              variant="outline"
+              className="inline-flex items-center gap-1 px-2.5 py-1.5 text-sm"
+            >
+              {tag}
+            </Badge>
           )}
           {/* Use title */}
           <h2 className="text-3xl font-semibold tracking-tight lg:text-4xl">

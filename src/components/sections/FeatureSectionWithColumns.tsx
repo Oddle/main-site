@@ -49,9 +49,11 @@ const FeatureSectionWithColumns = ({
         {/* Title and Description Section */}
         <div className="text-center max-w-3xl mx-auto">
           {tag && (
-            <h4 className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-primary">
-              {tag}
-            </h4>
+            <Badge
+                  variant="outline"
+                  className="inline-flex items-center gap-1 px-2.5 py-1.5 text-sm"
+                >              {tag}
+            </Badge>
           )}
           {title && (
             <h2 className="mb-6 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">

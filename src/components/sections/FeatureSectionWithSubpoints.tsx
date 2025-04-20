@@ -4,7 +4,7 @@ import { FC } from 'react';
 import Container from "@/components/common/Container";
 import { useTranslations } from 'use-intl';
 import { getTranslation } from '@/lib/i18nUtils'; // Import shared helper
-
+import { Badge } from "@/components/ui/badge";
 // Map icon names to actual components
 const iconMap: { [key: string]: FC<React.SVGProps<SVGSVGElement>> } = {
   Cpu,
@@ -93,9 +93,11 @@ const FeatureSectionWithSubpoints: FC<FeatureSectionWithSubpointsProps> = ({
             {/* Left side (or top on mobile) - Title and Tag */} 
             <div> 
               {tag && (
-                <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary md:mb-3 lg:text-base">
-                  {tag}
-                </p>
+                <Badge
+                  variant="outline"
+                  className="inline-flex items-center gap-1 px-2.5 py-1.5 text-sm"
+                >                  {tag}
+                </Badge>
               )}
               {title && (
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">

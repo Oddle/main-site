@@ -561,7 +561,7 @@
       }
     },
     "affordableSection": {
-      "tag": "An Affordable Reservation System Without the Catch",
+      "tag": "",
       "title": "An Affordable Reservation System Without the Catch",
       "description": "Most reservation systems cost you more than they give back. Oddle Reserve is different—no subscriptions, no hidden fees, just simple, usage-based pricing.",
       "items": {
@@ -580,7 +580,7 @@
       }
     },
     "useCases": {
-      "tag": "Built for Restaurants of Every Kind",
+      "tag": "",
       "title": "Built for Restaurants of Every Kind",
       "description": "",
       "items": {

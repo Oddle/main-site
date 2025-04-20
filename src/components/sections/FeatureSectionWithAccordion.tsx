@@ -13,6 +13,7 @@ import Container from '@/components/common/Container';
 import { cn } from "@/lib/utils";
 import { useTranslations } from 'next-intl';
 import { getTranslation } from '@/lib/i18nUtils';
+import { Badge } from "../ui/badge";
 
 // Interface for individual accordion items
 interface StandardItemData {
@@ -149,9 +150,11 @@ const FeatureSectionWithAccordion = ({
       <Container>
         <div className="mb-12 text-center md:mb-16 lg:mb-20 max-w-3xl mx-auto">
            {tag && (
-              <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary md:mb-3 lg:text-base">
-                 {tag}
-              </p>
+            <Badge
+                  variant="outline"
+                  className="inline-flex items-center gap-1 px-2.5 py-1.5 text-sm"
+                >                 {tag}
+              </Badge>
            )}
            <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:mb-6 md:text-4xl">
               {title}
