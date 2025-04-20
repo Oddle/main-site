@@ -284,10 +284,25 @@ export default function NavBar() {
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
             {navLinks.map((link) => {
-              if (link.isMegaMenu && link.categories) { // Product Menu
+              // Determine order classes based on link.label
+              let orderClasses = "";
+              if (link.label === 'pricing') {
+                orderClasses = "order-1 lg:order-3"; // Mobile: 1st, Desktop: 3rd
+              } else if (link.label === 'products') {
+                orderClasses = "order-2 lg:order-1"; // Mobile: 2nd, Desktop: 1st
+              } else if (link.label === 'resources') {
+                orderClasses = "order-3 lg:order-2"; // Mobile: 3rd, Desktop: 2nd
+              }
+
+              if (link.isMegaMenu) {
+                // Explicit check to satisfy linter, though isMegaMenu should imply categories exist
+                if (!link.categories) return null; 
+                
                 return (
-                  <NavigationMenuItem key={link.label}>
-                    <NavigationMenuTrigger>{tNav(`links.${link.label}`)}</NavigationMenuTrigger>
+                  <NavigationMenuItem key={link.label} className={cn(orderClasses)}>
+                    <NavigationMenuTrigger>
+                      {tNav(`links.${link.label}`)}
+                    </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <div className="grid w-[600px] p-4 md:w-[700px] md:grid-cols-3 lg:w-[800px]">
                         {link.categories.map(category => (
@@ -315,8 +330,10 @@ export default function NavBar() {
                 );
               } else if (link.isMegaMenu && link.promo && link.categories) { // Resources Menu
                 return (
-                  <NavigationMenuItem key={link.label}>
-                    <NavigationMenuTrigger>{tNav(`links.${link.label}`)}</NavigationMenuTrigger>
+                  <NavigationMenuItem key={link.label} className={cn(orderClasses)}>
+                    <NavigationMenuTrigger>
+                      {tNav(`links.${link.label}`)}
+                    </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                         {link.categories.map((category) => (
@@ -350,7 +367,7 @@ export default function NavBar() {
                 );
               } else if (link.href) { // Simple Link (Pricing)
                 return (
-                  <NavigationMenuItem key={link.label}>
+                  <NavigationMenuItem key={link.label} className={cn(orderClasses)}>
                     <Link href={link.href} legacyBehavior passHref>
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         {tNav(`links.${link.label}`)}
@@ -358,9 +375,8 @@ export default function NavBar() {
                     </Link>
                   </NavigationMenuItem>
                 );
-              } else {
-                return null;
               }
+              return null;
             })}
           </NavigationMenuList>
         </NavigationMenu>
@@ -423,7 +439,7 @@ const ListItem = React.forwardRef<React.ElementRef<"a">, ListItemProps>(
   ({ className, title, children, href, ...props }, ref) => {
     const isExternal = href?.startsWith('http');
     const commonClasses = cn(
-        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground",
         className
     );
 
