@@ -93,15 +93,16 @@ export default function HeroWithCarousel({
                   const slide = slides[0];
                   const slideImageAlt = getTranslation(t, `${i18nBaseKey}.slides.0.imageAlt`, slide.imageAlt);
                   return (
-                    <Image
-                      className="object-cover rounded-xl mx-auto block"
-                      src={slide.imageSrc}
-                      alt={slideImageAlt}
-                      width={636}
-                      height={636}
-                      priority={true}
-                      sizes="(max-width: 768px) 90vw, 636px"
-                    />
+                    <div className="relative aspect-square overflow-hidden rounded-xl bg-card shadow-sm">
+                      <Image
+                        className="object-cover"
+                        src={slide.imageSrc}
+                        alt={slideImageAlt}
+                        fill
+                        priority={true}
+                        sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 40vw"
+                      />
+                    </div>
                   );
                 })()
               ) : (
@@ -116,7 +117,7 @@ export default function HeroWithCarousel({
                       const slideImageAlt = getTranslation(t, `${i18nBaseKey}.slides.${index}.imageAlt`, slide.imageAlt);
                       return (
                         <CarouselItem key={index}>
-                          <div className="relative aspect-video w-full overflow-hidden rounded-xl">
+                          <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-card shadow-sm">
                             <Image
                               className="object-cover"
                               src={slide.imageSrc}
