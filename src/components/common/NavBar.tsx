@@ -287,11 +287,11 @@ export default function NavBar() {
               // Determine order classes based on link.label
               let orderClasses = "";
               if (link.label === 'pricing') {
-                orderClasses = "order-1 lg:order-3"; // Mobile: 1st, Desktop: 3rd
+                orderClasses = "order-3"; // Mobile: 1st, Desktop: 3rd
               } else if (link.label === 'products') {
-                orderClasses = "order-2 lg:order-1"; // Mobile: 2nd, Desktop: 1st
+                orderClasses = "order-1"; // Mobile: 2nd, Desktop: 1st
               } else if (link.label === 'resources') {
-                orderClasses = "order-3 lg:order-2"; // Mobile: 3rd, Desktop: 2nd
+                orderClasses = "order-2"; // Mobile: 3rd, Desktop: 2nd
               }
 
               if (link.isMegaMenu) {
