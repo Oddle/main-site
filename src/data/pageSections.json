@@ -826,12 +826,12 @@
         "primaryButton": { "text": "Get Free Demo", "action": "/demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
-          { "imageSrc": "https://placehold.co/700x540/E2F0F0/AAAAAA?text=Survey+Hero+Img", "imageAlt": "Oddle Survey Tool Interface" }
+          { "imageSrc": "https://ucarecdn.com/40fbb324-eb80-4f92-92b7-1aec4c9ac5cf/-/preview/1000x865/", "imageAlt": "Oddle Survey Tool Interface" }
         ]
       }
     },
     {
-      "component": "FeatureSectionGridCards",
+      "component": "FeatureSectionWithColumns",
       "props": {
         "i18nBaseKey": "survey.features",
         "sectionTag": null,
@@ -840,42 +840,21 @@
         "items": [
           {
             "title": "Automated and proactive surveys built into every touchpoint",
-            "description": [
-              "Whether customers reserve a table, place an order, or check in for loyalty rewards, they're automatically sent a survey after their visit."
-            ],
-            "image": {
-              "src": "https://placehold.co/600x400/E2F0F0/AAAAAA?text=Automated+Surveys",
-              "alt": "Diagram showing survey triggers",
-              "className": "aspect-video"
-            },
-            "imagePosition": "top",
-            "className": "md:col-span-2"
+            "description": "Whether customers reserve a table, place an order, or check in for loyalty rewards, they're automatically sent a survey after their visit.",
+            "imageSrc": "https://ucarecdn.com/1dea6f5c-9622-42b1-b425-524d485938fe/-/preview/571x729/",
+            "imageAlt": "Diagram showing survey triggers"
           },
           {
             "title": "Your Fans Hold the Key to a Stronger Brand",
-            "description": [
-              "Turn happy diners into brand advocates by prompting them to leave reviews on Google. Improve your online reputation, rank higher in search results and attract new customers organically."
-            ],
-            "image": {
-              "src": "https://placehold.co/600x400/F0E2F0/AAAAAA?text=Google+Reviews",
-              "alt": "Illustration of positive Google reviews",
-              "className": "aspect-video"
-            },
-            "imagePosition": "top",
-            "className": "md:col-span-2"
+            "description": "Turn happy diners into brand advocates by prompting them to leave reviews on Google. Improve your online reputation, rank higher in search results and attract new customers organically.",
+            "imageSrc": "https://ucarecdn.com/2786f097-be70-48d6-b2b0-084009a95fcf/-/preview/1000x1000/",
+            "imageAlt": "Illustration of positive Google reviews"
           },
           {
             "title": "Data you can act on",
-            "description": [
-              "Access all survey data in one place to uncover trends, resolve issues and optimise customer retention strategies."
-            ],
-            "image": {
-              "src": "https://placehold.co/600x400/F0F0E2/AAAAAA?text=Survey+Data+Dashboard",
-              "alt": "Dashboard showing survey results and trends",
-              "className": "aspect-video"
-            },
-            "imagePosition": "top",
-            "className": "md:col-span-1"
+            "description": "Access all survey data in one place to uncover trends, resolve issues and optimise customer retention strategies.",
+            "imageSrc": "https://ucarecdn.com/d1f4d8a6-5705-42ac-9650-241be15e9e21/-/preview/999x664/",
+            "imageAlt": "Dashboard showing survey results and trends"
           }
         ]
       }
@@ -894,12 +873,12 @@
         "primaryButton": { "text": "Get Free Demo", "action": "/demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
-          { "imageSrc": "https://placehold.co/700x540/E8E2F0/AAAAAA?text=Oddle+Eats+Hero", "imageAlt": "Oddle Eats App Interface" }
+          { "imageSrc": "https://ucarecdn.com/05079abf-0014-43fc-bdff-6cf719e8b68b/-/preview/621x1000/", "imageAlt": "Oddle Eats App Interface" }
         ]
       }
     },
     {
-      "component": "FeatureSectionHeroGrid",
+      "component": "FeatureSectionWithSplitImages",
       "props": {
         "i18nBaseKey": "oddleEats.features",
         "title": "Why Feature on Oddle Eats?",
@@ -911,22 +890,15 @@
             "id": "feature-campaigns",
             "title": "Participate in sponsored marketing campaigns at no extra charge.",
             "description": "Benefit from exclusive partnerships and festive campaigns held throughout the year. Be featured on Oddle Eats' various media channels and increase your discoverability.",
-            "imageSrc": "https://placehold.co/600x400/E8E2F0/AAAAAA?text=Marketing+Campaigns",
+            "imageSrc": "https://ucarecdn.com/bf585b69-4068-4e9f-a021-8660c89698d2/-/preview/923x1000/",
             "imageAlt": "Oddle Eats Marketing Campaign Example"
           },
           {
             "id": "feature-reach",
             "title": "Extend your reach to our affluent user base with high purchasing power",
-            "description": "",
-            "imageSrc": "https://placehold.co/600x400/F0E8E2/AAAAAA?text=Affluent+Users",
+            "description": "Recognize repeat customers without compromising privacy",
+            "imageSrc": "https://ucarecdn.com/922512e5-6604-4899-8060-e7c62c035084/-/preview/923x1000/",
             "imageAlt": "Graph showing user demographics"
-          },
-          {
-            "id": "feature-privacy",
-            "title": "Recognize repeat customers without compromising privacy",
-            "description": "",
-            "imageSrc": "https://placehold.co/600x400/E2F0E8/AAAAAA?text=Privacy+Focus",
-            "imageAlt": "Illustration showing data privacy"
           }
         ]
       }

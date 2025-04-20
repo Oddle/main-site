@@ -763,16 +763,25 @@
         }
       }
     },
-    "items": {
+    "features": {
+      "tag": "",
+      "title": "Automated and proactive surveys built into every touchpoint",
+      "description": "Whether customers reserve a table, place an order, or check in for loyalty rewards, they're automatically sent a survey after their visit.",
       "items": {
         "0": {
-          "title": "Automated and proactive surveys built into every touchpoint"
+          "title": "Automated and proactive surveys built into every touchpoint",
+          "description": "Whether customers reserve a table, place an order, or check in for loyalty rewards, they're automatically sent a survey after their visit.",
+          "imageAlt": "Diagram showing survey triggers"
         },
         "1": {
-          "title": "Your Fans Hold the Key to a Stronger Brand"
+          "title": "Your Fans Hold the Key to a Stronger Brand",
+          "description": "Turn happy diners into brand advocates by prompting them to leave reviews on Google. Improve your online reputation, rank higher in search results and attract new customers organically.",
+          "imageAlt": "Illustration of positive Google reviews"
         },
         "2": {
-          "title": "Data you can act on"
+          "title": "Data you can act on",
+          "description": "Access all survey data in one place to uncover trends, resolve issues and optimise customer retention strategies.",
+          "imageAlt": "Dashboard showing survey results and trends"
         }
       }
     }
