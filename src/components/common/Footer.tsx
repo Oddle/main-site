@@ -1,22 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import LanguageSwitcher from "../LanguageSwitcher"; // Ensure import exists
-// Add back needed icons
-import {
-  FacebookIcon,
-  LinkedinIcon,
-} from "lucide-react";
+import Image from "next/image";
+import { FacebookIcon, LinkedinIcon } from "lucide-react"; // Keep needed icons
+import { Button } from "@/components/ui/button"; 
+// Remove Container import
+// import Container from "@/components/common/Container"; 
+import LanguageSwitcher from "../LanguageSwitcher"; 
+import { usePathname } from 'next/navigation'; 
 import React from "react";
 import { useTranslations } from "next-intl";
-import { usePathname } from 'next/navigation'; // <-- Import usePathname
 // Import and type commonData
 import commonJson from "@/data/common.json";
 import globalContent from "@/data/globalContent.json";
-import { Button } from "@/components/ui/button"; // Ensure Button is imported
-import Container from "@/components/common/Container"; // Ensure Container is imported
-import { ArrowRight } from "lucide-react"; // Import ArrowRight if needed for buttons
-import Image from "next/image"; // Import Image component
 
 // --- Interfaces for FINAL Data Structures Used in Component ---
 interface FooterLink {

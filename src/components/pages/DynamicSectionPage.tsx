@@ -19,9 +19,10 @@ import FeatureSectionComplexGrid from "../sections/FeatureSectionComplexGrid";
 import FeatureSectionHeroGrid from "../sections/FeatureSectionHeroGrid";
 import FeatureSectionBentoGrid from "../sections/FeatureSectionBentoGrid";
 import CustomerLogosSection from "../sections/CustomerLogosSection";
-import DemoPageContent from "../sections/DemoPageContent";
 import DemoRequestSection from "../sections/DemoRequestSection";
 import CallToActionSection from "../sections/CallToActionSection";
+import { cn } from "@/lib/utils";
+import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern";
 // --- Define type for section data --- (Good practice)
 interface SectionDefinition {
   component: string; // Ideally keyof typeof componentMap, but string is simpler for now
@@ -54,7 +55,6 @@ const componentMap = {
   FeatureSectionHeroGrid,
   FeatureSectionBentoGrid,
   CustomerLogosSection,
-  DemoPageContent,
   DemoRequestSection,
   CallToActionSection,
 };
@@ -89,7 +89,33 @@ const DynamicSectionPage = ({ sectionsData, pageUrl, locale }: DynamicSectionPag
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const DynamicComponent = Component as React.ComponentType<any>;
 
-            return <DynamicComponent key={index} {...combinedProps} />;
+            // Render the actual section component
+            const renderedSection = <DynamicComponent {...combinedProps} />;
+
+            // If it's the first section, wrap it with the animated grid
+            if (index === 0) {
+              return (
+                <div key={index} className="relative overflow-hidden"> {/* Wrapper for first section */} 
+                  <AnimatedGridPattern
+                    numSquares={30}
+                    maxOpacity={0.1} // Adjusted maxOpacity for subtlety
+                    duration={3}
+                    className={cn(
+                      "[mask-image:radial-gradient(ellipse_at_center,white_20%,transparent_100%)]", // Simplified mask
+                      "absolute inset-0 h-full w-full skew-y-12", // Position behind content
+                    )}
+                  />
+                  {/* Render section content on top */} 
+                  <div className="relative z-10">
+                    {renderedSection}
+                  </div>
+                </div>
+              );
+            } else {
+              // For subsequent sections, render without the wrapper
+              return <div key={index}>{renderedSection}</div>; 
+              // Note: Adding a key here is good practice if not already handled within DynamicComponent
+            }
           })}
       </main>
       <Footer />

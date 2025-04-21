@@ -25,7 +25,6 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { toast } from "sonner";
@@ -91,8 +90,7 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
       // --- Your API call logic here --- 
       toast.success(t('submitSuccess') || "Demo requested successfully!");
       setIsSubmitSuccessful(true);
-      // Reset might not be needed if you show a permanent success message
-      // reset(); 
+      reset(); 
     } catch (error) {
       console.error("Submission Error:", error);
       toast.error(t('submitError') || "Failed to submit request. Please try again.");

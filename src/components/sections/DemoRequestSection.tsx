@@ -16,7 +16,6 @@ interface DemoRequestSectionProps {
 
 export default function DemoRequestSection({ i18nBaseKey, locale }: DemoRequestSectionProps) {
   const t = useTranslations(i18nBaseKey);
-  const tCommon = useTranslations('common'); // For Trusted By title
 
   const title = getTranslation(t, 'title', 'See the Platform in Action');
   const description = getTranslation(t, 'description', 'Get a personalized demo tailored to your restaurant needs.');
