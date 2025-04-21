@@ -687,7 +687,7 @@
             "id": "bento-item-2",
             "title": "Let Oddle Do The Data Work",
             "description": "Unified Customer View: Combine reservations, orders, and loyalty data. Smart Segmentation: Leverage pre-built customer segments. Automated Engagement: Effortlessly personalize campaigns.",
-            "imageSrc": "https://ucarecdn.com/3c0ca3b7-4b79-4f5d-8249-3021699ae6bb/-/preview/1000x515/",
+            "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Data+Work",
             "imageAlt": "Data segmentation illustration",
             "linkAction": "#",
             "span": 1
@@ -695,8 +695,8 @@
           {
             "id": "bento-item-3",
             "title": "Automatically Track Conversions",
-            "description": "Increase campaign conversion rates by +XX%. Reduce marketing effort by YY hours/week.",
-            "imageSrc": "https://placehold.co/800x600/EEE/31343C?text=Conversions",
+            "description": "Measure and optimize conversion rates effortlessly",
+            "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Conversions",
             "imageAlt": "Conversion tracking illustration",
             "linkAction": "#",
             "span": 1

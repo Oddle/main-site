@@ -82,8 +82,8 @@ interface CommonData {
 // Type the imported common data
 const commonData: CommonData = commonJson;
 
-// Get logo URL from environment variable
-const logoUrl = process.env.NEXT_PUBLIC_LOGO_URL || "/oddle-logo-white.svg"; // Default to white logo for dark bg
+// Use the specified hardcoded logo URL
+const logoUrl = "https://ucarecdn.com/ce3b72f0-6b2c-4bd3-887c-c105ecce4a05/-/preview/640x264/";
 
 // Update socialIconMap to use lowercase keys
 const socialIconMap: { [key: string]: React.ElementType } = {
@@ -225,9 +225,8 @@ export default function Footer() {
               <Image
                 src={logoUrl}
                 alt={companyName}
-                width={80}
-                height={20}
-                className="h-5 w-auto"
+                width={150}
+                height={50}
               />
             </Link>
             <p className="text-white/80">

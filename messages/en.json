@@ -446,8 +446,8 @@
   },
   "onlineOrdering": {
     "hero": {
-      "title": "Boost Your Orders with a Seamless Online System",
-      "description": "Enable customers to order directly from you, anytime, anywhere, with a beautiful and responsive interface.",
+      "title": "Own Your Online Channel, Customers, and Profits",
+      "description": "Deliver directly to your best customers with a branded online ordering platform that grows your sales, loyalty, and reach",
       "primaryButton": {
         "text": "Request Demo"
       },
@@ -595,40 +595,40 @@
   },
   "products": {
     "reservation-system": {
-      "title": "Reservation System",
-      "desc": "Drive direct reservations and optimise capacity."
+      "title": "Reservation",
+      "desc": "Accept reservations to capture future demand"
     },
     "online-ordering-system": {
-      "title": "Online Ordering System",
-      "desc": "Take commission-free orders on your own website."
+      "title": "Online Ordering",
+      "desc": "Sell online and reach more customers"
     },
     "loyalty-program": {
-      "title": "Loyalty Program",
-      "desc": "Retain customers and grow repeat sales."
+      "title": "Loyalty",
+      "desc": "Capture every customer and turn them into repeat"
     },
     "payment-terminal": {
       "title": "Payment Terminal",
-      "desc": "Integrated payments for dine-in and online orders."
+      "desc": "Accept in-person payments with no annual fees or lock-ins"
     },
     "virtual-lounge": {
       "title": "Virtual Lounge",
-      "desc": "Engage guests and upsell while they wait."
+      "desc": "Communicate your brand across all digital channels"
     },
     "survey-tool": {
-      "title": "Survey Tool",
-      "desc": "Gather feedback and improve guest satisfaction."
+      "title": "Survey",
+      "desc": "Automated surveys that boosts your brand's visibility"
     },
     "email-marketing-system": {
-      "title": "Email Marketing System",
-      "desc": "Automate campaigns to drive repeat visits."
+      "title": "Marketing Engine",
+      "desc": "Boost revenue through customer engagement and retention"
     },
     "crm-customer-intelligence": {
-      "title": "CRM & Customer Intelligence",
-      "desc": "Understand your guests and personalize experiences."
+      "title": "Customer Intelligence",
+      "desc": "Supercharged CRM that gives you actionable insights"
     },
     "oddle-eats-network": {
       "title": "Oddle Eats Network",
-      "desc": "Reach more diners on our food discovery platform."
+      "desc": "Tap into a million food lovers"
     },
     "About Us": "About Us",
     "actions": {

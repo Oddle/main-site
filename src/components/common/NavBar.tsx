@@ -385,14 +385,14 @@ export default function NavBar() {
         {/* Right Side Actions (Language Switcher & Mobile Drawer Trigger) */}
         <div className="ml-auto flex items-center space-x-2 md:space-x-4">
           {/* Desktop Action Buttons */}
-          <Link href="#" passHref legacyBehavior>
+          <Link href="https://eats.oddle.me" passHref legacyBehavior>
              <Button variant="ghost" asChild className="hidden md:inline-flex"><a>{tNav('links.oddle-eats')}</a></Button>
           </Link>
-           <Link href="#" passHref legacyBehavior>
+           <Link href="https://panel.oddle.me" passHref legacyBehavior>
              <Button variant="ghost" asChild className="hidden md:inline-flex"><a>{tNav('links.login')}</a></Button>
           </Link>
-           <Link href="#" passHref legacyBehavior>
-             <Button className="hidden md:inline-flex">{tNav('links.get-free-demo')}</Button>
+           <Link href="/demo" passHref legacyBehavior>
+             <Button className="hidden md:inline-flex cursor-pointer">{tNav('links.get-free-demo')}</Button>
           </Link>
 
           {/* Mobile Drawer Trigger (Visible only on Mobile) */}
