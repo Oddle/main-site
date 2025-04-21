@@ -10,8 +10,10 @@
         "primaryButton": { "text": "Get Free Demo", "action": "/demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
-          { "imageSrc": "https://placehold.co/700x540/E2E8F0/AAAAAA?text=Slide1", "imageAlt": "Placeholder Alt 1" },
-          { "imageSrc": "https://placehold.co/700x540/CCDDAA/AAAAAA?text=Slide2", "imageAlt": "Placeholder Alt 2" }
+          { "imageSrc": "https://ucarecdn.com/d58723e4-81fb-467f-a3cd-67690d449e84/-/preview/1000x1000/", "imageAlt": "Loyalty - Cenzo" },
+          { "imageSrc": "https://ucarecdn.com/a8660b02-3f92-4bc0-a30a-3ec9563aa72d/-/preview/1000x1000/", "imageAlt": "Delivery - HJH" },
+          { "imageSrc": "https://ucarecdn.com/0c9cfc5a-c1d4-4135-b361-0307daa96cb8/-/preview/1000x1000/", "imageAlt": "Reserve - Abundance" },
+          { "imageSrc": "https://ucarecdn.com/3009d580-737a-4571-a491-15772c792f1c/-/preview/1000x1000/", "imageAlt": "Marketing - KEK" }
         ]
       }
     },

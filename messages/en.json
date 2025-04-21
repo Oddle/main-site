@@ -236,12 +236,6 @@
     "hero": {
       "title": "Making revenue growth easy for restaurants",
       "description": "Oddle empowers restaurants across the world to capture customer data, build their brand, and grow their business",
-      "slide1": {
-        "imageAlt": "Placeholder Alt 1"
-      },
-      "slide2": {
-        "imageAlt": "Placeholder Alt 2"
-      },
       "primaryButton": {
         "text": "Get Free Demo"
       },
@@ -250,10 +244,16 @@
       },
       "slides": {
         "0": {
-          "imageAlt": "Placeholder Alt 1"
+          "imageAlt": "Loyalty - Cenzo"
         },
         "1": {
-          "imageAlt": "Placeholder Alt 2"
+          "imageAlt": "Delivery - HJH"
+        },
+        "2": {
+          "imageAlt": "Reserve - Abundance"
+        },
+        "3": {
+          "imageAlt": "Marketing - KEK"
         }
       }
     },
