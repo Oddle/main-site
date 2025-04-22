@@ -68,33 +68,23 @@ export default async function BlogPostPage({ params: paramsProp }: PageProps) {
   console.log(`Fetching data for slug: ${params.slug}`);
   const postData: PostDataType = await getPostBySlug(params.slug); 
 
-  // Check for blocks
   if (!postData || !postData.blocks || !postData.page) {
     console.warn(`Post data, blocks, or page missing for slug: ${params.slug}.`);
     notFound(); 
   }
 
   // Destructure page and blocks
-  const { page, blocks } = postData;
+  const { page, blocks } = postData; // Use the original blocks array
 
-  // Use a more specific type assertion for properties
+  // Extract properties using Record type for better safety
   const properties = page.properties as Record<string, PageObjectResponse['properties'][string]>;
   const title = (properties.Title?.type === 'title' ? properties.Title.title[0]?.plain_text : "Untitled") ?? "Untitled";
   const publishDate = (properties["Publish Date"]?.type === 'date' ? properties["Publish Date"].date?.start : null) ?? null;
   const summary = (properties.Summary?.type === 'rich_text' ? properties.Summary.rich_text[0]?.plain_text : null) ?? null;
-
-  // Find the first image block to use as featured image
-  const featuredImageBlock = blocks.find(block => block.type === 'image') as ImageBlockObjectResponse | undefined;
-  const featuredImageUrl = featuredImageBlock?.image?.type === 'external' 
-    ? featuredImageBlock.image.external.url 
-    : featuredImageBlock?.image?.file?.url;
-  // Filter out the featured image block from the main content blocks
-  const contentBlocks = featuredImageBlock 
-    ? blocks.filter(block => block.id !== featuredImageBlock.id)
-    : blocks;
-
-  // --- Remove Placeholder Author Data ---
-  // const author = { ... };
+  
+  // Extract Hero Image URL directly from properties
+  const heroImageUrl = (properties["Hero Image URL"]?.type === 'url' ? properties["Hero Image URL"].url : 
+                      (properties["Hero Image URL"]?.type === 'rich_text' ? properties["Hero Image URL"].rich_text[0]?.plain_text : null)) ?? null;
 
   // Prepare breadcrumb data (adjust paths as needed)
   const breadcrumbItems = [
@@ -149,31 +139,28 @@ export default async function BlogPostPage({ params: paramsProp }: PageProps) {
               </div>
             )}
 
-            {/* Featured Image */}
-            {featuredImageUrl && (
+            {/* Featured Image - Use heroImageUrl from properties */}
+            {heroImageUrl && (
               <div className="my-8 md:my-10 relative aspect-video overflow-hidden rounded-lg shadow-md">
-                {/* Using next/image requires width/height, fill might work well here */}
                 <Image 
-                  src={featuredImageUrl} 
-                  alt={title} // Use post title as alt text
+                  src={heroImageUrl} // Use the property value
+                  alt={title} 
                   fill 
-                  className="object-cover" // Make image cover the container
-                  priority // Prioritize loading the main image
-                  sizes="(max-width: 1024px) 100vw, 75vw" // Help next/image optimize
+                  className="object-cover" 
+                  priority 
+                  sizes="(max-width: 1024px) 100vw, 75vw" 
                 />
               </div>
             )}
 
-            {/* Main Blog Content (passes filtered blocks) */}
-            <BlogContent blocks={contentBlocks} />
+            {/* Main Blog Content - Pass the original blocks array */}
+            <BlogContent blocks={blocks} />
           </div>
 
-          {/* Right Column (TOC Only) */}
+          {/* Right Column (TOC) - Pass the original blocks array */}
           <aside className="lg:col-span-1 mt-12 lg:mt-0">
-            {/* Ensure correct sticky offset is applied */}
             <div className="sticky top-32 space-y-8">
-              {/* Table of Contents */}
-              <BlogTOC blocks={contentBlocks} />
+              <BlogTOC blocks={blocks} />
             </div>
           </aside>
         </div>

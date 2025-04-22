@@ -12,8 +12,12 @@ import type {
     ImageBlockObjectResponse,
     CodeBlockObjectResponse,
     BulletedListItemBlockObjectResponse,
-    NumberedListItemBlockObjectResponse 
+    NumberedListItemBlockObjectResponse,
+    ColumnListBlockObjectResponse,
+    ColumnBlockObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
+// Import the extended block type from notion lib
+import type { BlockWithChildren } from "@/lib/notion"; 
 // Import next/image
 import Image from 'next/image'; 
 
@@ -60,9 +64,132 @@ function renderRichText(richTextArr: RichTextItemResponse[]) {
   });
 }
 
-// --- Main Renderer Component ---
+// --- Block Rendering Logic (Extracted for Recursion) ---
+
+// Define a type for the props of the single block renderer
+interface RenderBlockProps {
+  block: BlockWithChildren; // Use extended type
+}
+
+// Use React.ReactNode as return type
+function RenderBlock({ block }: RenderBlockProps): React.ReactNode {
+  if (!('type' in block)) {
+    return null; 
+  }
+
+  const type = block.type;
+  const children = block.children; // Access potential children
+
+  switch (type) {
+    case 'paragraph': {
+      const content = (block as ParagraphBlockObjectResponse).paragraph;
+      if (!content?.rich_text || !Array.isArray(content.rich_text)) return null;
+      return <p key={block.id} className="mb-4 text-gray-600 dark:text-gray-400">{renderRichText(content.rich_text)}</p>;
+    }
+    case 'heading_1': {
+      const content = (block as Heading1BlockObjectResponse).heading_1;
+      if (!content?.rich_text || !Array.isArray(content.rich_text)) return null;
+      const headingText = content.rich_text.map(rt => rt.plain_text).join('');
+      return <h1 key={block.id} id={slugify(headingText)} className="text-3xl md:text-4xl font-bold mt-10 mb-5 border-b pb-3 scroll-mt-20">{renderRichText(content.rich_text)}</h1>; 
+    }
+    case 'heading_2': {
+      const content = (block as Heading2BlockObjectResponse).heading_2;
+      if (!content?.rich_text || !Array.isArray(content.rich_text)) return null;
+      const headingText = content.rich_text.map(rt => rt.plain_text).join('');
+      return <h2 key={block.id} id={slugify(headingText)} className="text-2xl md:text-3xl font-semibold mt-8 mb-4 scroll-mt-20">{renderRichText(content.rich_text)}</h2>; 
+    }
+    case 'heading_3': {
+      const content = (block as Heading3BlockObjectResponse).heading_3;
+      if (!content?.rich_text || !Array.isArray(content.rich_text)) return null;
+      const headingText = content.rich_text.map(rt => rt.plain_text).join('');
+      return <h3 key={block.id} id={slugify(headingText)} className="text-xl md:text-2xl font-semibold mt-6 mb-3 scroll-mt-20">{renderRichText(content.rich_text)}</h3>; 
+    }
+    case 'image': {
+      const content = (block as ImageBlockObjectResponse).image;
+      const src = content.type === 'external' ? content.external.url : content.file.url;
+      const caption = content.caption?.length > 0 ? renderRichText(content.caption) : null;
+      
+      // Get image dimensions if available (Notion doesn't provide this easily for external URLs)
+      // For simplicity, we'll rely on layout='responsive' or width/height attributes
+      // Note: next/image with fill={true} requires a positioned parent.
+      
+      return (
+        // Remove aspect-video, let the image define its aspect ratio.
+        // Add relative positioning for fill={true} and caption positioning.
+        <figure key={block.id} className="my-6 relative block"> 
+          <Image 
+            src={src} 
+            // Use post title or a generic alt if caption is used for display
+            alt={caption ? content.caption[0]?.plain_text ?? "Blog post image" : "Blog post image"} 
+            // We need width/height or fill. Using fill requires parent to have dimensions.
+            // Let's switch to width/height with layout responsive for now
+            // We might need to fetch image dimensions separately for optimal performance/CLS
+            // For now, set arbitrary width/height and allow responsive scaling.
+            width={800} // Example width, adjust as needed or fetch dynamically
+            height={450} // Example height based on 16:9, adjust or fetch
+            layout="responsive" // Let image scale within container width
+            className="object-cover rounded-md shadow-md block" // Ensure it's a block element
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw"
+          />
+          {caption && (
+              <figcaption className="mt-2 text-center text-sm text-muted-foreground italic">
+                  {caption}
+              </figcaption>
+          )}
+        </figure>
+      );
+    }
+    case 'code': {
+      const content = (block as CodeBlockObjectResponse).code;
+      const codeText = content.rich_text?.map(rt => rt.plain_text).join('') ?? '';
+      const language = content.language;
+      return (
+        <pre key={block.id} className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto my-4">
+          <code className={`language-${language}`}>{codeText}</code>
+        </pre>
+      );
+    }
+    case 'bulleted_list_item': {
+      const content = (block as BulletedListItemBlockObjectResponse).bulleted_list_item;
+      if (!content?.rich_text || !Array.isArray(content.rich_text)) return null;
+      return <li key={block.id} className="ml-4 mb-2 text-gray-600 dark:text-gray-400">{renderRichText(content.rich_text)}</li>;
+    }
+    case 'numbered_list_item': {
+      const content = (block as NumberedListItemBlockObjectResponse).numbered_list_item;
+      if (!content?.rich_text || !Array.isArray(content.rich_text)) return null;
+       return <li key={block.id} className="ml-4 mb-2 text-gray-600 dark:text-gray-400">{renderRichText(content.rich_text)}</li>;
+    }
+    case 'column_list': {
+      if (!children || children.length === 0) return null; 
+      
+      const numColumns = children.length;
+      const gridClass = `grid grid-cols-1 md:grid-cols-${numColumns} gap-6 md:gap-8 my-6`;
+      
+      return (
+        <div key={block.id} className={gridClass}>
+          {children.map(col => <RenderBlock key={col.id} block={col} />)}
+        </div>
+      );
+    }
+    case 'column': {
+      if (!children || children.length === 0) return null;
+      
+      return (
+        <div key={block.id}>
+          {children.map(childBlock => <RenderBlock key={childBlock.id} block={childBlock} />)}
+        </div>
+      );
+    }
+    default: {
+      console.log(`Unsupported block type: ${type}`, block);
+      return <div key={block.id} className="text-xs italic text-muted-foreground my-2">[Unsupported block type: {type}]</div>;
+    }
+  }
+}
+
+// --- Main PostRenderer Component (Simplified) ---
 interface PostRendererProps {
-  blocks: BlockObjectResponse[];
+  blocks: BlockWithChildren[]; // Use extended type
 }
 
 export function PostRenderer({ blocks }: PostRendererProps) {
@@ -70,86 +197,7 @@ export function PostRenderer({ blocks }: PostRendererProps) {
 
   return (
     <div>
-      {blocks.map((block) => {
-        if (!('type' in block)) {
-          return null; 
-        }
-        
-        const type = block.type;
-        // Remove unused `any` cast for content
-        // const content = (block as any)[type]; 
-
-        switch (type) {
-          case 'paragraph': {
-            const content = (block as ParagraphBlockObjectResponse).paragraph;
-            if (!content?.rich_text || !Array.isArray(content.rich_text)) return null;
-            return <p key={block.id} className="mb-6 text-gray-600 dark:text-gray-400">{renderRichText(content.rich_text)}</p>;
-          }
-          case 'heading_1': {
-            const content = (block as Heading1BlockObjectResponse).heading_1;
-            if (!content?.rich_text || !Array.isArray(content.rich_text)) return null;
-            const headingText = content.rich_text.map(rt => rt.plain_text).join('');
-            return <h1 key={block.id} id={slugify(headingText)} className="text-3xl md:text-4xl font-bold mt-10 mb-5 border-b pb-3 scroll-mt-20">{renderRichText(content.rich_text)}</h1>; 
-          }
-          case 'heading_2': {
-            const content = (block as Heading2BlockObjectResponse).heading_2;
-            if (!content?.rich_text || !Array.isArray(content.rich_text)) return null;
-            const headingText = content.rich_text.map(rt => rt.plain_text).join('');
-            return <h2 key={block.id} id={slugify(headingText)} className="text-2xl md:text-3xl font-semibold mt-8 mb-4 scroll-mt-20">{renderRichText(content.rich_text)}</h2>; 
-          }
-          case 'heading_3': {
-            const content = (block as Heading3BlockObjectResponse).heading_3;
-            if (!content?.rich_text || !Array.isArray(content.rich_text)) return null;
-            const headingText = content.rich_text.map(rt => rt.plain_text).join('');
-            return <h3 key={block.id} id={slugify(headingText)} className="text-xl md:text-2xl font-semibold mt-6 mb-3 scroll-mt-20">{renderRichText(content.rich_text)}</h3>; 
-          }
-          case 'image': {
-            const content = (block as ImageBlockObjectResponse).image;
-            const src = content.type === 'external' ? content.external.url : content.file.url;
-            const caption = content.caption?.length > 0 ? renderRichText(content.caption) : null;
-            return (
-              <figure key={block.id} className="my-4 relative aspect-video">
-                <Image 
-                  src={src} 
-                  alt={caption ? "Image caption" : "Blog post image"} 
-                  fill 
-                  className="object-cover rounded-md shadow-md"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw"
-                />
-                {caption && (
-                    <figcaption className="absolute bottom-0 left-0 right-0 bg-black/40 p-2 text-center text-sm text-white">
-                        {caption}
-                    </figcaption>
-                )}
-              </figure>
-            );
-          }
-          case 'code': {
-            const content = (block as CodeBlockObjectResponse).code;
-            const codeText = content.rich_text?.map(rt => rt.plain_text).join('') ?? '';
-            const language = content.language;
-            return (
-              <pre key={block.id} className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto my-4">
-                <code className={`language-${language}`}>{codeText}</code>
-              </pre>
-            );
-          }
-          case 'bulleted_list_item': {
-            const content = (block as BulletedListItemBlockObjectResponse).bulleted_list_item;
-            if (!content?.rich_text || !Array.isArray(content.rich_text)) return null;
-            return <li key={block.id} className="ml-4 text-gray-600 dark:text-gray-400">{renderRichText(content.rich_text)}</li>;
-          }
-          case 'numbered_list_item': {
-            const content = (block as NumberedListItemBlockObjectResponse).numbered_list_item;
-            if (!content?.rich_text || !Array.isArray(content.rich_text)) return null;
-             return <li key={block.id} className="ml-4 text-gray-600 dark:text-gray-400">{renderRichText(content.rich_text)}</li>;
-          }
-          default:
-            console.log(`Unsupported block type: ${type}`, block);
-            // Render unsupported blocks minimally or omit them
-            return <div key={block.id} className="text-xs italic text-muted-foreground my-2">[Unsupported block type: {type}]</div>;
-        }
-      })}
+      {blocks.map((block) => <RenderBlock key={block.id} block={block} />)}
     </div>
   );
 } 

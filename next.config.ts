@@ -19,7 +19,15 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'images.pexels.com',
-      }
+      },
+      {
+        protocol: 'https',
+        hostname: 'oddle.co',
+      },
+      {
+        protocol: 'https',
+        hostname: 'framerusercontent.com',
+      },
     ],
   },
 };

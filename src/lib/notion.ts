@@ -6,6 +6,7 @@ import type {
     PageObjectResponse, 
     // QueryDatabaseResponse, // Removed unused import
     BlockObjectResponse,
+    ListBlockChildrenResponse, // Import ListBlockChildrenResponse
     // Remove unused imports
     // RichTextItemResponse, 
     // MultiSelectPropertyItemObjectResponse 
@@ -47,6 +48,52 @@ interface PostSummary {
 // Type guard with parameter type
 function isValidPostSummary(post: PostSummary | null): post is PostSummary & { slug: string } {
   return post !== null && typeof post.slug === 'string' && post.slug.length > 0;
+}
+
+// Define an extended block type that includes potential children
+export type BlockWithChildren = BlockObjectResponse & {
+  children?: BlockWithChildren[];
+};
+
+// Recursive function to fetch children for blocks that support it
+async function fetchBlockChildrenRecursive(block: BlockWithChildren): Promise<void> {
+  // Check if the block type can have children and if it has children according to Notion
+  if (!block.has_children || !['column_list', 'column', 'bulleted_list_item', 'numbered_list_item', 'toggle'].includes(block.type)) {
+    return; // No children to fetch for this type or this specific block doesn't have children
+  }
+
+  console.log(`Fetching children for block ID: ${block.id}, Type: ${block.type}`);
+  try {
+    let allChildren: BlockWithChildren[] = [];
+    let start_cursor: string | undefined = undefined;
+
+    // Paginate through children using blocks.children.list
+    do {
+      const response: ListBlockChildrenResponse = await notionClient.blocks.children.list({
+        block_id: block.id,
+        page_size: 100, // Adjust as needed
+        start_cursor: start_cursor,
+      });
+
+      const childrenResults = response.results as BlockWithChildren[];
+      allChildren = allChildren.concat(childrenResults);
+      start_cursor = response.next_cursor ?? undefined;
+      
+    } while (start_cursor);
+
+    console.log(`Fetched ${allChildren.length} children for block ID: ${block.id}`);
+    
+    // Recursively fetch grandchildren for each child
+    await Promise.all(allChildren.map(child => fetchBlockChildrenRecursive(child)));
+
+    // Attach the fetched children to the parent block
+    block.children = allChildren;
+
+  } catch (error) {
+    console.error(`Failed to fetch children for block ${block.id}:`, error);
+    // Decide how to handle errors, e.g., attach empty array or leave undefined
+    block.children = []; 
+  }
 }
 
 // TODO: Add function to get all published posts
@@ -130,8 +177,8 @@ export async function getPublishedPosts(): Promise<Array<PostSummary & { slug: s
 }
 
 // Function to get a single post by slug
-// Return type adjusted to include raw blocks
-export async function getPostBySlug(slug: string): Promise<{ page: PageObjectResponse, blocks: BlockObjectResponse[] } | null> {
+// Update return type to use BlockWithChildren
+export async function getPostBySlug(slug: string): Promise<{ page: PageObjectResponse, blocks: BlockWithChildren[] } | null> {
   if (!databaseId) {
     throw new Error("NOTION_DATABASE_ID is not set in environment variables.");
   }
@@ -165,18 +212,28 @@ export async function getPostBySlug(slug: string): Promise<{ page: PageObjectRes
     const pageId = page.id;
     console.log(`Found page ID: ${pageId} for slug: ${slug}`);
 
-    // 2. Fetch block children using the OFFICIAL client
-    // Remove the inner try/catch around getPage call
-    console.log(`Attempting to fetch blocks using notionClient.blocks.children.list for ID: ${pageId}`);
-    const blocksResponse = await notionClient.blocks.children.list({
-        block_id: pageId,
-        page_size: 100, // Adjust page size as needed
-    });
-    const blocks = blocksResponse.results as BlockObjectResponse[];
-    console.log(`Fetched ${blocks.length} blocks using official client.`);
+    // 2. Fetch top-level blocks
+    console.log(`Fetching initial blocks for page ID: ${pageId}`);
+    let initialBlocks: BlockWithChildren[] = [];
+    let start_cursor: string | undefined = undefined;
+    do {
+        const blocksResponse: ListBlockChildrenResponse = await notionClient.blocks.children.list({
+            block_id: pageId,
+            page_size: 100, 
+            start_cursor: start_cursor,
+        });
+        initialBlocks = initialBlocks.concat(blocksResponse.results as BlockWithChildren[]);
+        start_cursor = blocksResponse.next_cursor ?? undefined;
+    } while (start_cursor);
+    console.log(`Fetched ${initialBlocks.length} initial blocks.`);
 
-    // Return page metadata and raw blocks
-    return { page, blocks }; 
+    // 3. Recursively fetch children for each top-level block
+    console.log(`Recursively fetching children for initial blocks...`);
+    await Promise.all(initialBlocks.map(block => fetchBlockChildrenRecursive(block)));
+    console.log(`Finished recursive fetching.`);
+
+    // 4. Return page metadata and the blocks tree
+    return { page, blocks: initialBlocks };
 
   } catch (error) {
     // Outer catch block handles errors 
