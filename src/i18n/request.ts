@@ -54,32 +54,28 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
   return {
     locale,
-    messages,
+    messages: enMessages, // Use the loaded messages, potentially merged if needed
     // --- Add fallback configuration --- 
     getMessageFallback: ({ key, namespace }) => {
       // Construct the full key including the namespace if it exists
       const fullKey = namespace ? `${namespace}.${key}` : key;
 
-      // Try to get the translation from English messages using the helper
-      const fallbackTranslation = getNestedValue(enMessages, fullKey);
+      // Check if the key exists in English messages
+      const fallbackValue = getNestedValue(enMessages, fullKey);
 
-      if (fallbackTranslation !== undefined) {
+      if (fallbackValue !== undefined) {
         // If found in English messages...
-        // Log warning only if the current locale is NOT English during development
-        if (locale !== 'en' && process.env.NODE_ENV === 'development') {
-           console.warn(`Using 'en' fallback for key: ${fullKey} (locale: ${locale})`);
+        // Log warning only if the current locale is NOT the default locale ('sg') during development
+        if (locale !== 'sg' && process.env.NODE_ENV === 'development') {
+          console.warn(`Using 'en' fallback for key: ${fullKey} (locale: ${locale})`);
         }
         // Return the English translation
-        return fallbackTranslation;
-      } else {
-        // If not found in English either...
-        // Log a warning during development
-        if (process.env.NODE_ENV === 'development') {
-          console.warn(`Missing translation key in 'en' as well: ${fullKey}`);
-        }
-        // Return the key itself as the final fallback
-        return fullKey;
+        return fallbackValue;
       }
+      
+      // If not found in English either, return the key itself
+      console.error(`Missing translation for key: ${fullKey} (locale: ${locale})`);
+      return fullKey;
     }
     // -------------------------------------
   };
