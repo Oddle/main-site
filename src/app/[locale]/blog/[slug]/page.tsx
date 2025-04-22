@@ -16,6 +16,8 @@ import {
 import Link from "next/link"; // Needed for BreadcrumbLink
 import React from 'react'; // Add React import
 import Image from 'next/image'; // Import next/image
+import { Badge } from "@/components/ui/badge"; // Ensure Badge is imported
+import { Clock } from 'lucide-react'; // Import Clock icon for read time
 // import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"; // Import Avatar for author
 
 // Revalidate the page periodically (optional)
@@ -86,6 +88,10 @@ export default async function BlogPostPage({ params: paramsProp }: PageProps) {
   const heroImageUrl = (properties["Hero Image URL"]?.type === 'url' ? properties["Hero Image URL"].url : 
                       (properties["Hero Image URL"]?.type === 'rich_text' ? properties["Hero Image URL"].rich_text[0]?.plain_text : null)) ?? null;
 
+  // Extract Category and Read Time
+  const category = (properties.Category?.type === 'select' ? properties.Category.select?.name : null) ?? null;
+  const readTime = (properties["Read Time"]?.type === 'number' ? properties["Read Time"].number : null) ?? null;
+
   // Prepare breadcrumb data (adjust paths as needed)
   const breadcrumbItems = [
     { href: "/", label: "Home" }, // Example Home link
@@ -122,6 +128,13 @@ export default async function BlogPostPage({ params: paramsProp }: PageProps) {
           
           {/* Left Column (Title, Meta, Image, Content) - Adjust to span 2 columns */}
           <div className="lg:col-span-2">
+            {/* Category Badge */} 
+            {category && (
+              <div className="mb-4">
+                <Badge variant="outline">{category}</Badge>
+              </div>
+            )}
+            
             {/* Title */}
             <h1 className="text-3xl font-bold text-balance md:text-4xl lg:text-5xl">
               {title}
@@ -132,10 +145,21 @@ export default async function BlogPostPage({ params: paramsProp }: PageProps) {
                 {summary}
               </p>
             )}
-            {/* Meta line (Date only for now) */}
-            {publishDate && (
-              <div className="mt-6 mb-8 text-sm text-muted-foreground">
-                <span>{format(new Date(publishDate), "PPP")}</span>
+            {/* Meta line (Date and Read Time) */}
+            {(publishDate || readTime) && (
+              <div className="mt-6 mb-8 flex items-center gap-4 text-sm text-muted-foreground">
+                {publishDate && (
+                  <span>{format(new Date(publishDate), "MMM d, yyyy")}</span>
+                )}
+                {(publishDate && readTime) && (
+                  <span className="mx-1">—</span> // Separator
+                )}
+                {readTime && (
+                  <div className="flex items-center gap-1.5">
+                    <Clock className="w-4 h-4" />
+                    <span>{readTime} min read</span>
+                  </div>
+                )}
               </div>
             )}
 

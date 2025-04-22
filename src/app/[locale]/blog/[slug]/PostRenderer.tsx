@@ -40,27 +40,47 @@ function slugify(text: string): string {
 }
 
 // --- Helper function to render rich text array ---
-// Use imported RichTextItemResponse type
 function renderRichText(richTextArr: RichTextItemResponse[]) {
-  if (!richTextArr) return null; // Add null check
+  if (!richTextArr) return null;
   return richTextArr.map((richText, index) => {
-    // Add type assertion for safety, although structure is usually consistent
     const rt = richText as Partial<RichTextItemResponse>; 
     const annotations = rt.annotations ?? { bold: false, italic: false, strikethrough: false, underline: false, code: false, color: 'default' };
     const plain_text = rt.plain_text ?? '';
     const href = rt.href ?? null;
 
-    let element = <React.Fragment key={index}>{plain_text}</React.Fragment>;
+    // Start with plain text or fragment
+    let elementContent: React.ReactNode = plain_text;
+    let wrapperProps: React.HTMLAttributes<HTMLElement> = {};
 
-    if (annotations.bold) element = <strong>{element}</strong>;
-    if (annotations.italic) element = <em>{element}</em>;
-    if (annotations.strikethrough) element = <s>{element}</s>;
-    if (annotations.underline) element = <u>{element}</u>;
-    if (annotations.code) element = <code className="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono">{element}</code>; 
-
-    if (href) element = <a href={href} target="_blank" rel="noopener noreferrer" className="text-blue-700 dark:text-blue-400 hover:text-blue-900 dark:hover:text-blue-300 underline decoration-blue-700/50 dark:decoration-blue-400/50 hover:decoration-blue-900/50 dark:hover:decoration-blue-300/50 transition-colors duration-150">{element}</a>;
-
-    return element;
+    // Apply styling wrappers (innermost first)
+    if (annotations.code) {
+      elementContent = <code className="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono">{elementContent}</code>;
+    }
+    if (annotations.underline) {
+      elementContent = <u>{elementContent}</u>;
+    }
+    if (annotations.strikethrough) {
+      elementContent = <s>{elementContent}</s>;
+    }
+    if (annotations.italic) {
+      elementContent = <em>{elementContent}</em>;
+    }
+    if (annotations.bold) {
+      elementContent = <strong>{elementContent}</strong>;
+    }
+    
+    // Apply link wrapper if href exists (outermost non-key wrapper)
+    if (href) {
+       return (
+         <a key={index} href={href} target="_blank" rel="noopener noreferrer" className="text-blue-700 dark:text-blue-400 hover:text-blue-900 dark:hover:text-blue-300 underline decoration-blue-700/50 dark:decoration-blue-400/50 hover:decoration-blue-900/50 dark:hover:decoration-blue-300/50 transition-colors duration-150">
+           {elementContent}
+         </a>
+       );
+    }
+    
+    // If no link, return the styled content within a Fragment or directly if it's a single element
+    // Since elementContent could be nested, use a Fragment for safety
+    return <React.Fragment key={index}>{elementContent}</React.Fragment>;
   });
 }
 

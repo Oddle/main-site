@@ -6,7 +6,6 @@ import React from 'react';
 import Image from 'next/image'; // Import next/image
 import { Button } from "@/components/ui/button"; // Import Button
 import { Badge } from "@/components/ui/badge"; // Import Badge for category
-import { Input } from "@/components/ui/input"; // Import Input for newsletter
 
 // Define the Post type based on PostSummary from notion.ts
 // (Could be imported or redefined here)
@@ -113,10 +112,10 @@ export default async function BlogIndexPage() {
                   {heroPost ? (
                     // Vertical layout for sidebar when hero exists
                     <div className="flex items-start gap-4">
-                      {post.thumbnailUrl && (
+                      {(post.heroImageUrl || post.thumbnailUrl) && (
                         <div className="flex-shrink-0 w-20 h-20 relative overflow-hidden rounded-md">
                           <Image 
-                            src={post.thumbnailUrl} 
+                            src={post.heroImageUrl ?? post.thumbnailUrl!} // Prioritize hero, fallback to thumbnail
                             alt={post.title}
                             fill
                             className="object-cover"
@@ -140,11 +139,13 @@ export default async function BlogIndexPage() {
                     </div>
                   ) : (
                     // Card layout when no hero exists (use structure from Recent Posts) 
-                    <Card className="h-full flex flex-col overflow-hidden rounded-lg border shadow-sm transition-transform duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg cursor-pointer">
-                      {post.thumbnailUrl && (
+                    <Card className={`h-full flex flex-col ${ 
+                      post.heroImageUrl || post.thumbnailUrl ? 'pt-0' : '' // Only add pt-0 if image exists
+                    } overflow-hidden rounded-lg border shadow-sm transition-transform duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg cursor-pointer`}>
+                      {(post.heroImageUrl || post.thumbnailUrl) && (
                         <div className="relative w-full aspect-video overflow-hidden">
                            <Image 
-                            src={post.thumbnailUrl} 
+                            src={post.heroImageUrl ?? post.thumbnailUrl!} // Prioritize hero, fallback to thumbnail
                             alt={post.title}
                             fill
                             className="object-cover"
@@ -165,7 +166,7 @@ export default async function BlogIndexPage() {
                         {(post.publishDate || post.readTime) && (
                           <p className="text-xs text-muted-foreground">
                             {post.publishDate && <span>{format(new Date(post.publishDate), "MMM d, yyyy")}</span>}
-                            {(post.publishDate && post.readTime) && <span className="mx-1">—</span>}
+                            {(post.publishDate && post.readTime) && <span className="mx-1"> - </span>}
                             {post.readTime && <span>{post.readTime} MIN READ</span>}
                           </p>
                         )}
@@ -186,18 +187,19 @@ export default async function BlogIndexPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {recentPosts.map((post) => (
               <Link href={`/blog/${post.slug}`} key={post.id} className="group block">
-                <Card className="h-full flex flex-col overflow-hidden rounded-lg border shadow-sm transition-transform duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg cursor-pointer">
-                  {/* Optional Thumbnail for Recent Posts Cards */}
-                  {post.thumbnailUrl && (
-                     <div className="relative w-full aspect-video overflow-hidden">
-                       <Image 
-                         src={post.thumbnailUrl}
-                         alt={post.title}
-                         fill
-                         className="object-cover"
-                         sizes="(max-width: 768px) 100vw, 33vw"
-                       />
-                     </div>
+                <Card className={`h-full flex flex-col ${ 
+                  post.heroImageUrl || post.thumbnailUrl ? 'pt-0' : '' // Only add pt-0 if image exists
+                } overflow-hidden rounded-lg border shadow-sm transition-transform duration-200 ease-in-out hover:-translate-y-1 hover:shadow-lg cursor-pointer`}>
+                  {(post.heroImageUrl || post.thumbnailUrl) && (
+                    <div className="relative w-full aspect-video overflow-hidden">
+                      <Image 
+                        src={post.heroImageUrl ?? post.thumbnailUrl!} // Prioritize hero, fallback to thumbnail
+                        alt={post.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    </div>
                   )}
                   <CardHeader>
                     {post.category && (
