@@ -6,8 +6,9 @@ import type {
     PageObjectResponse, 
     // QueryDatabaseResponse, // Removed unused import
     BlockObjectResponse,
-    RichTextItemResponse, // Import for typing rich text arrays
-    MultiSelectPropertyItemObjectResponse // Import for typing multi-select items
+    // Remove unused imports
+    // RichTextItemResponse, 
+    // MultiSelectPropertyItemObjectResponse 
 } from "@notionhq/client/build/src/api-endpoints";
 // Remove ExtendedRecordMap import
 // import type { ExtendedRecordMap } from 'notion-types'; 
@@ -70,13 +71,14 @@ export async function getPublishedPosts(): Promise<Array<PostSummary & { slug: s
     });
 
     const posts = response.results
-      // Type the page parameter correctly
-      .map((page: PageObjectResponse | any): PostSummary | null => { // Keep any fallback temporarily if needed
-        if (!("properties" in page)) {
+      // Use PageObjectResponse directly or add type guard
+      .map((page): PostSummary | null => {
+        // Type guard to ensure it's a page object response
+        if (!page || !('properties' in page)) { 
           return null; 
         }
-        // Type the properties variable
-        const properties = page.properties as Record<string, PageObjectResponse['properties'][string]>; 
+        const typedPage = page as PageObjectResponse; // Assert type after check
+        const properties = typedPage.properties as Record<string, PageObjectResponse['properties'][string]>;
 
         // Use optional chaining and nullish coalescing robustly
         const slug = (properties.Slug?.type === 'rich_text' ? properties.Slug.rich_text[0]?.plain_text : null) ?? null;
@@ -85,7 +87,7 @@ export async function getPublishedPosts(): Promise<Array<PostSummary & { slug: s
         const publishDate = (properties["Publish Date"]?.type === 'date' ? properties["Publish Date"].date?.start : null) ?? null;
 
         return {
-          id: page.id,
+          id: typedPage.id, // Use typedPage here
           slug,
           title,
           summary,

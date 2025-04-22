@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import type { BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import type { BlockObjectResponse, RichTextItemResponse } from "@notionhq/client/build/src/api-endpoints";
 import { cn } from "@/lib/utils";
 
 // --- Helper function to generate a slug from text (must match PostRenderer) ---
@@ -17,9 +17,9 @@ function slugify(text: string): string {
 }
 
 // --- Helper to extract plain text from rich text array ---
-function getPlainText(richTextArr: any[]): string {
+function getPlainText(richTextArr: RichTextItemResponse[]): string {
     if (!richTextArr || !Array.isArray(richTextArr)) return '';
-    return richTextArr.map((rt) => rt.plain_text).join('');
+    return richTextArr.map((rt: RichTextItemResponse) => rt.plain_text).join('');
 }
 
 // --- Define structure for extracted headings ---
@@ -47,7 +47,7 @@ export function BlogTOC({ blocks }: BlogTOCProps) {
 
         blocks.forEach((block) => {
             if (block.type === 'heading_1' || block.type === 'heading_2' || block.type === 'heading_3') {
-                const content = (block as any)[block.type];
+                const content = (block as Extract<BlockObjectResponse, { type: 'heading_1' | 'heading_2' | 'heading_3' }>)[block.type];
                 const text = getPlainText(content?.rich_text);
                 if (text) {
                     extractedHeadings.push({
@@ -91,9 +91,12 @@ export function BlogTOC({ blocks }: BlogTOCProps) {
             threshold: 0.5, 
         });
         
+        // Copy ref to variable for cleanup
+        const observedElements = observedElementsRef.current;
+
         // Clear previous observers before observing new elements
-        observedElementsRef.current.forEach(element => observer.unobserve(element));
-        observedElementsRef.current.clear();
+        observedElements.forEach(element => observer.unobserve(element));
+        observedElements.clear();
 
         headings.forEach(({ id }) => {
             // Use requestAnimationFrame to ensure DOM element is available
@@ -101,15 +104,16 @@ export function BlogTOC({ blocks }: BlogTOCProps) {
                  const element = document.getElementById(id);
                  if (element) {
                     observer.observe(element);
-                    observedElementsRef.current.add(element); // Keep track for cleanup
+                    observedElements.add(element); // Keep track for cleanup
                  }
             });
         });
 
         return () => {
-            observedElementsRef.current.forEach(element => observer.unobserve(element));
+            // Use the variable in the cleanup function
+            observedElements.forEach(element => observer.unobserve(element));
             observer.disconnect();
-            observedElementsRef.current.clear();
+            observedElements.clear(); // Clear the set using the variable
         };
     }, [headings]); // Depend only on headings array
 

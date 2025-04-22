@@ -14,8 +14,8 @@ import type {
     BulletedListItemBlockObjectResponse,
     NumberedListItemBlockObjectResponse 
 } from "@notionhq/client/build/src/api-endpoints";
-// Remove unused next/image import
-// import Image from 'next/image'; 
+// Import next/image
+import Image from 'next/image'; 
 
 // Remove NotionRenderer dynamic import and styles
 // const NotionRenderer = dynamic(...);
@@ -76,7 +76,7 @@ export function PostRenderer({ blocks }: PostRendererProps) {
         }
         
         const type = block.type;
-        // Use specific block types for better type safety accessing content
+        // Remove unused `any` cast for content
         // const content = (block as any)[type]; 
 
         switch (type) {
@@ -108,9 +108,19 @@ export function PostRenderer({ blocks }: PostRendererProps) {
             const src = content.type === 'external' ? content.external.url : content.file.url;
             const caption = content.caption?.length > 0 ? renderRichText(content.caption) : null;
             return (
-              <figure key={block.id} className="my-4">
-                <img src={src} alt={caption ? "Image caption" : "Blog post image"} className="max-w-full h-auto rounded-md shadow-md" />
-                {caption && <figcaption className="text-center text-sm text-muted-foreground mt-2">{caption}</figcaption>}
+              <figure key={block.id} className="my-4 relative aspect-video">
+                <Image 
+                  src={src} 
+                  alt={caption ? "Image caption" : "Blog post image"} 
+                  fill 
+                  className="object-cover rounded-md shadow-md"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 60vw"
+                />
+                {caption && (
+                    <figcaption className="absolute bottom-0 left-0 right-0 bg-black/40 p-2 text-center text-sm text-white">
+                        {caption}
+                    </figcaption>
+                )}
               </figure>
             );
           }

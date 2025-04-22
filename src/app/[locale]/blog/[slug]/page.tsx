@@ -65,12 +65,11 @@ export default async function BlogPostPage({ params: paramsProp }: { params: { s
   // Destructure page and blocks
   const { page, blocks } = postData;
 
-  // Extract title and date from the page properties (similar to getPublishedPosts)
-  // Note: You might want to centralize this logic or type the 'page' object better
-  const properties = page.properties as any;
-  const title = properties.Title?.title[0]?.plain_text ?? "Untitled";
-  const publishDate = properties["Publish Date"]?.date?.start ?? null;
-  const summary = properties.Summary?.rich_text[0]?.plain_text ?? null;
+  // Use a more specific type assertion for properties
+  const properties = page.properties as Record<string, PageObjectResponse['properties'][string]>;
+  const title = (properties.Title?.type === 'title' ? properties.Title.title[0]?.plain_text : "Untitled") ?? "Untitled";
+  const publishDate = (properties["Publish Date"]?.type === 'date' ? properties["Publish Date"].date?.start : null) ?? null;
+  const summary = (properties.Summary?.type === 'rich_text' ? properties.Summary.rich_text[0]?.plain_text : null) ?? null;
 
   // Find the first image block to use as featured image
   const featuredImageBlock = blocks.find(block => block.type === 'image') as ImageBlockObjectResponse | undefined;
