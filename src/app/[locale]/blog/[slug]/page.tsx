@@ -1,4 +1,4 @@
-import { getPublishedPosts, getPostBySlug, PostSummary } from "@/lib/notion";
+import { getPublishedPosts, getPostBySlug /* , PostSummary */ } from "@/lib/notion";
 import { notFound } from "next/navigation";
 // import { PostRenderer } from "./PostRenderer"; // Moved to BlogContent
 import { format } from 'date-fns';
