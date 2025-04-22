@@ -1,4 +1,4 @@
-import { getPublishedPosts } from "@/lib/notion";
+import { getPublishedPosts, PostSummary } from "@/lib/notion";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { format } from "date-fns";
@@ -64,31 +64,50 @@ function getCategoryDisplayName(slug: string): string {
 
 // Use the correct PageProps type and await params
 export default async function CategoryTagPage({ params: paramsProp }: PageProps) {
-  // Await the params object
+  // Await and extract locale and category
   const params = await paramsProp as { category: string; locale: string; }; 
-
+  const locale = params.locale; // Extract locale
+  const categorySlug = params.category;
+  
   // Runtime check for params structure
   if (typeof params !== 'object' || params === null || typeof params.category !== 'string' || typeof params.locale !== 'string') {
     console.error("Invalid params structure received in CategoryTagPage:", params);
     return <p>Error: Invalid page parameters.</p>; 
   }
 
-  const categorySlug = params.category;
   const categoryDisplayName = getCategoryDisplayName(categorySlug);
-  const allPosts: Post[] = await getPublishedPosts();
+  
+  // 1. Fetch initial posts for the current locale (includes global)
+  console.log(`Fetching initial posts for category '${categorySlug}' in locale '${locale}'`);
+  const initialLocalePosts: PostSummary[] = await getPublishedPosts(locale);
 
-  // Filter posts by the *decoded* category slug, comparing case-insensitively
-  const filteredPosts = allPosts.filter(post => 
+  // 2. Filter by category
+  let postsToDisplay = initialLocalePosts.filter(post => 
     post.category?.toLowerCase() === decodeURIComponent(categorySlug).toLowerCase()
   );
+  console.log(`Found ${postsToDisplay.length} posts after initial category filter.`);
+
+  // 3. Check if empty and not already the default locale
+  if (postsToDisplay.length === 0 && locale !== 'sg') {
+    console.log(`No posts found for ${locale}/${categorySlug}. Falling back to locale 'sg'.`);
+    // 4. Fetch fallback posts from default locale ('sg')
+    const fallbackSgPosts: PostSummary[] = await getPublishedPosts('sg');
+    
+    // 5. Filter fallback posts by the same category
+    postsToDisplay = fallbackSgPosts.filter(post => 
+      post.category?.toLowerCase() === decodeURIComponent(categorySlug).toLowerCase()
+    );
+    console.log(`Found ${postsToDisplay.length} posts after fallback category filter.`);
+  }
 
   // Prepare breadcrumb data
   const breadcrumbItems = [
     { href: "/", label: "Home" },
     { href: `/blog`, label: "Blog" }, 
-    { label: categoryDisplayName } // Current page (no href)
+    { label: categoryDisplayName }
   ];
 
+  // 6. Render using the final postsToDisplay list
   return (
     <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16">
       {/* Breadcrumbs - Use shadcn component */}
@@ -122,9 +141,9 @@ export default async function CategoryTagPage({ params: paramsProp }: PageProps)
       </div>
 
       {/* Posts List Section */}
-      {filteredPosts.length > 0 ? (
+      {postsToDisplay.length > 0 ? (
         <div className="space-y-8 md:space-y-12">
-          {filteredPosts.map((post, index) => (
+          {postsToDisplay.map((post, index) => (
             <React.Fragment key={post.id}>
               <article className="flex flex-col sm:flex-row items-start gap-6 md:gap-8">
                 {/* Thumbnail (Prioritize Hero Image) */}
@@ -172,13 +191,15 @@ export default async function CategoryTagPage({ params: paramsProp }: PageProps)
                 </div>
               </article>
               {/* Separator (don't add after the last item) */} 
-              {index < filteredPosts.length - 1 && <Separator className="my-8 md:my-12" />}
+              {index < postsToDisplay.length - 1 && <Separator className="my-8 md:my-12" />}
             </React.Fragment>
           ))}
         </div>
       ) : (
         <div className="text-center py-16">
-          <p className="text-lg text-muted-foreground">No posts found for the category &quot;{categoryDisplayName}&quot;.</p>
+          <p className="text-lg text-muted-foreground">
+            No posts found for the category &quot;{categoryDisplayName}&quot; in this region or globally.
+          </p>
         </div>
       )}
     </div>

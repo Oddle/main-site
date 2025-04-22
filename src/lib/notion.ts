@@ -31,8 +31,8 @@ export const notionClient = new Client({
 
 const databaseId = process.env.NOTION_DATABASE_ID!;
 
-// Define the shape of the post summary object
-interface PostSummary {
+// Add export keyword to the interface
+export interface PostSummary {
   id: string;
   slug: string | null;
   title: string;
@@ -97,26 +97,55 @@ async function fetchBlockChildrenRecursive(block: BlockWithChildren): Promise<vo
 }
 
 // TODO: Add function to get all published posts
-export async function getPublishedPosts(): Promise<Array<PostSummary & { slug: string }>> {
+// Modify function to accept locale
+export async function getPublishedPosts(locale: string): Promise<Array<PostSummary & { slug: string }>> {
   if (!databaseId) {
     throw new Error("NOTION_DATABASE_ID is not set in environment variables.");
   }
+  if (!locale) {
+    console.warn("getPublishedPosts called without a locale, filtering might be incomplete.");
+    // Decide fallback behavior: error out, or fetch all? Fetching all for now.
+    // return []; // Or throw new Error("Locale is required");
+  }
 
-  // Add log to verify the database ID being used
-  console.log(`Attempting to query database with ID: ${databaseId}`); 
+  console.log(`Attempting to query database ID: ${databaseId} for locale: ${locale}`); 
 
   try {
     const response = await notionClient.databases.query({
       database_id: databaseId,
+      // Update filter to include locale matching and published status
       filter: {
-        property: "Published", // Change if your property name is different
-        checkbox: {
-          equals: true,
-        },
+        and: [
+          {
+            property: "Published",
+            checkbox: {
+              equals: true,
+            },
+          },
+          {
+            // OR condition for Country property
+            or: [
+              {
+                // Condition 1: Country property is empty (global posts)
+                property: "Country", // IMPORTANT: Ensure this matches your Notion property name
+                select: {
+                  is_empty: true,
+                },
+              },
+              {
+                // Condition 2: Country property equals the current locale
+                property: "Country", // IMPORTANT: Ensure this matches your Notion property name
+                select: {
+                  equals: locale, // Match the passed locale
+                },
+              },
+            ],
+          },
+        ],
       },
       sorts: [
         {
-          property: "Publish Date", // Change if your property name is different
+          property: "Publish Date", 
           direction: "descending",
         },
       ],
@@ -165,14 +194,12 @@ export async function getPublishedPosts(): Promise<Array<PostSummary & { slug: s
       })
       .filter(isValidPostSummary);
 
+    console.log(`Fetched ${posts.length} posts for locale ${locale} (or global)`);
     return posts;
+
   } catch (error) {
-    console.error("Failed to fetch posts from Notion:", error);
-    // Depending on your error handling strategy, you might want to:
-    // - return an empty array: return [];
-    // - throw the error: throw error;
-    // - return a specific error object
-    return []; // Return empty array for now
+    console.error(`Failed to fetch posts from Notion for locale ${locale}:`, error);
+    return []; // Return empty array on error
   }
 }
 

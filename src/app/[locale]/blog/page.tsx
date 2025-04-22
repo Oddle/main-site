@@ -1,4 +1,4 @@
-import { getPublishedPosts } from "@/lib/notion";
+import { getPublishedPosts, PostSummary } from "@/lib/notion";
 import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { format } from "date-fns"; // For formatting dates
@@ -7,32 +7,27 @@ import Image from 'next/image'; // Import next/image
 import { Button } from "@/components/ui/button"; // Import Button
 import { Badge } from "@/components/ui/badge"; // Import Badge for category
 
-// Define the Post type based on PostSummary from notion.ts
-// (Could be imported or redefined here)
-interface Post {
-  id: string;
-  slug: string;
-  title: string;
-  summary?: string | null;
-  publishDate?: string | null;
-  isFeatured?: boolean; 
-  category?: string | null; 
-  thumbnailUrl?: string | null; 
-  heroImageUrl?: string | null; 
-  readTime?: number | null; 
+// Define Props type
+type PageProps = {
+  params: Promise<{ locale: string; }> | { locale: string; };
 }
 
 // Optional: Add revalidation if needed
 // export const revalidate = 60; // Revalidate every 60 seconds
 
-export default async function BlogIndexPage() {
-  const allPosts: Post[] = await getPublishedPosts();
+export default async function BlogIndexPage({ params: paramsProp }: PageProps) {
+  // Await and extract locale
+  const params = await paramsProp as { locale: string; };
+  const locale = params.locale;
+
+  // Pass locale to getPublishedPosts and use PostSummary type
+  const allPosts: PostSummary[] = await getPublishedPosts(locale);
 
   // Find the first featured post to use as the hero
   const heroPost = allPosts.find(post => post.isFeatured);
   
   // Change sidebarPosts to filter for *only* featured posts
-  const sidebarPosts = allPosts.filter(post => post.isFeatured);
+  const sidebarPosts = allPosts.filter(post => post.isFeatured === true);
 
   // Get the latest 3 posts for the recent section
   const recentPosts = allPosts.slice(0, 3);
