@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge"; // Import Badge for category
 
 // Define Props type
 type PageProps = {
-  params: Promise<{ locale: string; }> | { locale: string; };
+  params: Promise<{ locale: string; }> | undefined;
 }
 
 // Optional: Add revalidation if needed
