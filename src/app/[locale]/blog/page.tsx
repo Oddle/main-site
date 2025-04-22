@@ -1,7 +1,6 @@
 import { getPublishedPosts } from "@/lib/notion";
 import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge"; // Optional: if you have tags
 import { format } from "date-fns"; // For formatting dates
 
 // Optional: Add revalidation if needed

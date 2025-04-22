@@ -71,8 +71,6 @@ export default async function BlogPostPage({ params: paramsProp }: { params: { s
   const title = properties.Title?.title[0]?.plain_text ?? "Untitled";
   const publishDate = properties["Publish Date"]?.date?.start ?? null;
   const summary = properties.Summary?.rich_text[0]?.plain_text ?? null;
-  // Correctly access the name from multi_select items
-  const tags = properties.Tags?.multi_select?.map((tag: { name: string }) => tag.name) ?? [];
 
   // Find the first image block to use as featured image
   const featuredImageBlock = blocks.find(block => block.type === 'image') as ImageBlockObjectResponse | undefined;
@@ -161,7 +159,7 @@ export default async function BlogPostPage({ params: paramsProp }: { params: { s
 
           {/* Right Column (TOC Only) */}
           <aside className="lg:col-span-1 mt-12 lg:mt-0">
-            {/* Apply increased top offset to this sticky div */}
+            {/* Ensure correct sticky offset is applied */}
             <div className="sticky top-32 space-y-8">
               {/* Table of Contents */}
               <BlogTOC blocks={contentBlocks} />

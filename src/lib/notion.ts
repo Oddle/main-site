@@ -2,7 +2,13 @@ import { Client } from "@notionhq/client";
 // Remove import from unofficial client
 // import { NotionAPI } from "notion-client"; 
 // Import specific types from Notion SDK for better type safety
-import type { PageObjectResponse, QueryDatabaseResponse, BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import type { 
+    PageObjectResponse, 
+    // QueryDatabaseResponse, // Removed unused import
+    BlockObjectResponse,
+    RichTextItemResponse, // Import for typing rich text arrays
+    MultiSelectPropertyItemObjectResponse // Import for typing multi-select items
+} from "@notionhq/client/build/src/api-endpoints";
 // Remove ExtendedRecordMap import
 // import type { ExtendedRecordMap } from 'notion-types'; 
 
@@ -32,9 +38,9 @@ interface PostSummary {
   publishDate: string | null;
 }
 
-// Type guard to check if an object is a valid PostSummary with a slug
-function isValidPostSummary(post: any): post is PostSummary & { slug: string } {
-  return post !== null && typeof post === 'object' && typeof post.slug === 'string' && post.slug.length > 0;
+// Type guard with parameter type
+function isValidPostSummary(post: PostSummary | null): post is PostSummary & { slug: string } {
+  return post !== null && typeof post.slug === 'string' && post.slug.length > 0;
 }
 
 // TODO: Add function to get all published posts
@@ -63,20 +69,20 @@ export async function getPublishedPosts(): Promise<Array<PostSummary & { slug: s
       ],
     });
 
-    // Process the results to extract the data we need
     const posts = response.results
-      .map((page: PageObjectResponse | any): PostSummary | null => {
-        // Type assertion needed because Notion SDK types are complex
+      // Type the page parameter correctly
+      .map((page: PageObjectResponse | any): PostSummary | null => { // Keep any fallback temporarily if needed
         if (!("properties" in page)) {
-          return null; // Skip pages that aren't database entries (shouldn't happen here)
+          return null; 
         }
+        // Type the properties variable
+        const properties = page.properties as Record<string, PageObjectResponse['properties'][string]>; 
 
-        const properties = page.properties as any; // Use 'any' for simplicity, or define precise types
-
-        const slug = properties.Slug?.rich_text[0]?.plain_text ?? null;
-        const title = properties.Title?.title[0]?.plain_text ?? "Untitled";
-        const summary = properties.Summary?.rich_text[0]?.plain_text ?? "";
-        const publishDate = properties["Publish Date"]?.date?.start ?? null;
+        // Use optional chaining and nullish coalescing robustly
+        const slug = (properties.Slug?.type === 'rich_text' ? properties.Slug.rich_text[0]?.plain_text : null) ?? null;
+        const title = (properties.Title?.type === 'title' ? properties.Title.title[0]?.plain_text : "Untitled") ?? "Untitled";
+        const summary = (properties.Summary?.type === 'rich_text' ? properties.Summary.rich_text[0]?.plain_text : "") ?? "";
+        const publishDate = (properties["Publish Date"]?.type === 'date' ? properties["Publish Date"].date?.start : null) ?? null;
 
         return {
           id: page.id,
@@ -86,7 +92,6 @@ export async function getPublishedPosts(): Promise<Array<PostSummary & { slug: s
           publishDate,
         };
       })
-      // Use the explicit type guard for filtering
       .filter(isValidPostSummary);
 
     return posts;
