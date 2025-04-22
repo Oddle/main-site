@@ -1,6 +1,7 @@
 import { routing } from "@/i18n/routing";
 import pageSectionsData from '@/data/pageSections.json';
 import { NextResponse } from 'next/server'; // Import NextResponse
+import { getPublishedPosts, PostSummary } from '@/lib/notion'; // Import function and type
 
 // Read the base URL from environment variables
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'; // Fallback if not set
@@ -76,6 +77,33 @@ export async function GET(
       priority: 0.7,
     });
   });
+
+  // Generate entries for static pages for this locale
+  const staticPagePaths = Object.keys(pageSectionsData).filter(path => path !== 'home');
+  staticPagePaths.forEach((pagePath) => {
+    sitemapEntries.push({
+      url: `${baseUrl}/${locale}/${pagePath}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly", // Value conforms to ChangeFrequency type
+      priority: 0.7,
+    });
+  });
+
+  // --- Add Blog Post Entries --- 
+  console.log(`Fetching posts for sitemap, locale: ${locale}`);
+  const posts: PostSummary[] = await getPublishedPosts(locale);
+  console.log(`Found ${posts.length} posts for sitemap.`);
+
+  posts.forEach(post => {
+    sitemapEntries.push({
+      url: `${baseUrl}/${locale}/blog/${post.slug}`, 
+      // Use publishDate if available, otherwise fallback to current date
+      lastModified: post.publishDate ? new Date(post.publishDate) : new Date(), 
+      changeFrequency: "weekly", // Or 'monthly' depending on update frequency
+      priority: 0.9, // Higher priority for content
+    });
+  });
+  // --- End Blog Post Entries --- 
 
   // Generate the XML string
   const sitemapXml = generateSitemapXml(sitemapEntries);
