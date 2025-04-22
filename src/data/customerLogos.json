@@ -1,5 +1,5 @@
 {
-  "en": [
+  "sg": [
     {
       "name": "Chicco",
       "src": "https://ucarecdn.com/aec60f3c-3312-4c6c-a2cb-f22ff870ef9e/-/preview/332x200/",
@@ -29,18 +29,6 @@
       "name": "Unlisted Collection",
       "src": "https://ucarecdn.com/e95f1491-4e02-4eef-8437-8e198c1e8fd9/-/preview/332x200/",
       "alt": "Unlisted Collection"
-    }
-  ],
-  "sg": [
-    {
-      "name": "Placeholder Brand SG A",
-      "src": "https://via.placeholder.com/150x50/aabbcc/ffffff?text=Brand+SG+A",
-      "alt": "Logo of Placeholder Brand SG A"
-    },
-    {
-      "name": "Placeholder Brand SG B",
-      "src": "https://via.placeholder.com/150x50/aabbcc/ffffff?text=Brand+SG+B",
-      "alt": "Logo of Placeholder Brand SG B"
     }
   ]
 } 

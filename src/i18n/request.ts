@@ -46,9 +46,9 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
   try {
     // Always load English messages for fallback
-    enMessages = (await import(`../../messages/en.json`)).default;
+    enMessages = (await import(`../../messages/sg.json`)).default;
   } catch (error) {
-    console.error(`Could not load fallback English messages (en.json)`, error);
+    console.error(`Could not load fallback English messages (sg.json)`, error);
     enMessages = {}; // Fallback to empty object if English messages fail
   }
 

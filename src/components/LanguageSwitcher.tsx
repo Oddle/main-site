@@ -28,8 +28,11 @@ const LanguageSwitcher = () => {
   };
 
   const localeDisplayMap: { [key: string]: string } = {
-    en: "EN",
-    zh: "CN",
+    sg: "SG",
+    tw: "台湾",
+    my: "Malaysia",
+    hk: "Hong Kong",
+    au: "Australia"
     // Add other locales here -> ja: "JP" etc.
   };
 
@@ -44,11 +47,20 @@ const LanguageSwitcher = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => changeLanguage("en")}>
-          English
+        <DropdownMenuItem onClick={() => changeLanguage("sg")}>
+          Singapore
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => changeLanguage("zh")}>
-          中文
+        <DropdownMenuItem onClick={() => changeLanguage("tw")}>
+          台湾
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => changeLanguage("my")}>
+          Malaysia
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => changeLanguage("hk")}>
+          Hong Kong
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => changeLanguage("au")}>
+          Australia
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
