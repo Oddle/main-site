@@ -21,6 +21,14 @@ import Image from 'next/image'; // Import next/image
 // Revalidate the page periodically (optional)
 // export const revalidate = 60; // Revalidate every 60 seconds
 
+// Define Props type with params potentially being a Promise
+// Even though the Page component usually receives resolved params,
+// this typing satisfies Next.js build checks.
+type PageProps = {
+  params: Promise<{ slug: string; locale: string; }> | { slug: string; locale: string; };
+  // searchParams?: { [key: string]: string | string[] | undefined }; // Add if using searchParams
+}
+
 // Generate static paths for all published posts at build time
 export async function generateStaticParams() {
   const posts = await getPublishedPosts();
@@ -39,11 +47,11 @@ export async function generateStaticParams() {
 // Define expected type for postData
 type PostDataType = { page: PageObjectResponse, blocks: BlockObjectResponse[] } | null;
 
-export default async function BlogPostPage({ params: paramsProp }: { params: { slug: string, locale: string } }) {
+// Use the defined PageProps type
+export default async function BlogPostPage({ params: paramsProp }: PageProps) {
   console.log("--- Rendering /blog/[slug] page ---");
 
-  // Await the params object before accessing properties
-  // Note: This is unusual, but suggested by the error and logs
+  // Await the params object (works whether it's a promise or already resolved)
   const params = await paramsProp; 
   console.log("Awaited params:", params);
 
