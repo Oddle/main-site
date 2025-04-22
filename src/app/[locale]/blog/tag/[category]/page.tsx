@@ -127,11 +127,11 @@ export default async function CategoryTagPage({ params: paramsProp }: PageProps)
           {filteredPosts.map((post, index) => (
             <React.Fragment key={post.id}>
               <article className="flex flex-col sm:flex-row items-start gap-6 md:gap-8">
-                {/* Thumbnail */}
-                {post.thumbnailUrl && (
+                {/* Thumbnail (Prioritize Hero Image) */}
+                {(post.heroImageUrl || post.thumbnailUrl) && (
                   <Link href={`/blog/${post.slug}`} className="block flex-shrink-0 w-full sm:w-48 md:w-64 aspect-video relative overflow-hidden rounded-md group">
                     <Image 
-                      src={post.thumbnailUrl}
+                      src={post.heroImageUrl ?? post.thumbnailUrl!} // Use hero if available, else thumbnail
                       alt={post.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
