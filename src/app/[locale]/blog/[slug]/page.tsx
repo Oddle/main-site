@@ -21,12 +21,10 @@ import Image from 'next/image'; // Import next/image
 // Revalidate the page periodically (optional)
 // export const revalidate = 60; // Revalidate every 60 seconds
 
-// Define Props type with params potentially being a Promise
-// Even though the Page component usually receives resolved params,
-// this typing satisfies Next.js build checks.
+// Define Props type matching the internal Next.js expected type
 type PageProps = {
-  params: Promise<{ slug: string; locale: string; }> | { slug: string; locale: string; };
-  // searchParams?: { [key: string]: string | string[] | undefined }; // Add if using searchParams
+  params: Promise<{ slug: string; locale: string; }> | undefined; // Match Promise<any> | undefined
+  // searchParams?: Promise<{ [key: string]: string | string[] | undefined }> | undefined; 
 }
 
 // Generate static paths for all published posts at build time
@@ -47,13 +45,19 @@ export async function generateStaticParams() {
 // Define expected type for postData
 type PostDataType = { page: PageObjectResponse, blocks: BlockObjectResponse[] } | null;
 
-// Use the defined PageProps type
+// Use the defined PageProps type again
 export default async function BlogPostPage({ params: paramsProp }: PageProps) {
   console.log("--- Rendering /blog/[slug] page ---");
 
-  // Await the params object (works whether it's a promise or already resolved)
-  const params = await paramsProp; 
+  // Await the params object
+  const params = await paramsProp as { slug: string; locale: string; }; 
   console.log("Awaited params:", params);
+
+  // Runtime check for params structure (already added)
+  if (typeof params !== 'object' || params === null || typeof params.slug !== 'string' || typeof params.locale !== 'string') {
+    console.error("Invalid params structure after await:", params);
+    notFound();
+  }
 
   // Access params.slug directly in the function call
   if (!params?.slug) { 

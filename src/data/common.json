@@ -91,7 +91,7 @@
     "blog": {
       "name": "Blog",
       "description": "Insights and articles for restaurant growth",
-      "href": "https://oddle.me/blog",
+      "href": "/blog",
       "category": "learn"
     },
     "customer-stories": {
