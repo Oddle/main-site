@@ -46,16 +46,19 @@ export function BlogTOC({ blocks }: BlogTOCProps) {
         if (!blocks) return extractedHeadings;
 
         blocks.forEach((block) => {
-            if (block.type === 'heading_1' || block.type === 'heading_2' || block.type === 'heading_3') {
-                const content = (block as Extract<BlockObjectResponse, { type: 'heading_1' | 'heading_2' | 'heading_3' }>)[block.type];
+            // Use type guards instead of any cast
+            if (block.type === 'heading_1') {
+                const content = block.heading_1;
                 const text = getPlainText(content?.rich_text);
-                if (text) {
-                    extractedHeadings.push({
-                        id: slugify(text),
-                        text: text,
-                        level: parseInt(block.type.split('_')[1]), // Extract 1, 2, or 3
-                    });
-                }
+                if (text) extractedHeadings.push({ id: slugify(text), text: text, level: 1 });
+            } else if (block.type === 'heading_2') {
+                 const content = block.heading_2;
+                 const text = getPlainText(content?.rich_text);
+                 if (text) extractedHeadings.push({ id: slugify(text), text: text, level: 2 });
+            } else if (block.type === 'heading_3') {
+                 const content = block.heading_3;
+                 const text = getPlainText(content?.rich_text);
+                 if (text) extractedHeadings.push({ id: slugify(text), text: text, level: 3 });
             }
         });
         return extractedHeadings;
