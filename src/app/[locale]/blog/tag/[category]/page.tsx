@@ -15,20 +15,6 @@ import {
 import { Separator } from "@/components/ui/separator"; // Import Separator
 import { Clock } from 'lucide-react'; // Import Clock icon
 
-// Re-use the Post interface (or import if defined centrally)
-interface Post {
-  id: string;
-  slug: string;
-  title: string;
-  summary?: string | null;
-  publishDate?: string | null;
-  isFeatured?: boolean;
-  category?: string | null;
-  thumbnailUrl?: string | null;
-  heroImageUrl?: string | null;
-  readTime?: number | null;
-}
-
 // Define Props type matching the internal Next.js expected type
 // Params should be Promise | undefined
 type PageProps = {

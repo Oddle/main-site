@@ -15,7 +15,7 @@ export default function NotFound() {
             Oops! Something went wrong.
           </h1>
           <p className="text-muted-foreground mb-6">
-            We're sorry, but we couldn't find the page you were looking for. 
+            We&apos;re sorry, but we couldn&apos;t find the page you were looking for. 
             Please check the URL or go back to the homepage.
           </p>
           <Button asChild>
