@@ -37,6 +37,11 @@ interface PostSummary {
   title: string;
   summary: string;
   publishDate: string | null;
+  isFeatured?: boolean; // Add optional featured flag
+  category?: string | null; // Added Category (Select type)
+  thumbnailUrl?: string | null; // Added Thumbnail URL (URL or Text type)
+  heroImageUrl?: string | null; // Added Hero Image URL (URL or Text type)
+  readTime?: number | null; // Added Read Time (Number type)
 }
 
 // Type guard with parameter type
@@ -85,6 +90,18 @@ export async function getPublishedPosts(): Promise<Array<PostSummary & { slug: s
         const title = (properties.Title?.type === 'title' ? properties.Title.title[0]?.plain_text : "Untitled") ?? "Untitled";
         const summary = (properties.Summary?.type === 'rich_text' ? properties.Summary.rich_text[0]?.plain_text : "") ?? "";
         const publishDate = (properties["Publish Date"]?.type === 'date' ? properties["Publish Date"].date?.start : null) ?? null;
+        // Extract the value of the "Featured" checkbox property
+        const isFeatured = (properties.Featured?.type === 'checkbox' ? properties.Featured.checkbox : false) ?? false;
+        // Extract Category (Select type)
+        const category = (properties.Category?.type === 'select' ? properties.Category.select?.name : null) ?? null;
+        // Extract Thumbnail URL (assuming URL type, fallback Text)
+        const thumbnailUrl = (properties["Thumbnail URL"]?.type === 'url' ? properties["Thumbnail URL"].url : 
+                           (properties["Thumbnail URL"]?.type === 'rich_text' ? properties["Thumbnail URL"].rich_text[0]?.plain_text : null)) ?? null;
+        // Extract Hero Image URL (assuming URL type, fallback Text)
+        const heroImageUrl = (properties["Hero Image URL"]?.type === 'url' ? properties["Hero Image URL"].url : 
+                           (properties["Hero Image URL"]?.type === 'rich_text' ? properties["Hero Image URL"].rich_text[0]?.plain_text : null)) ?? null;
+        // Extract Read Time (Number type)
+        const readTime = (properties["Read Time"]?.type === 'number' ? properties["Read Time"].number : null) ?? null;
 
         return {
           id: typedPage.id, // Use typedPage here
@@ -92,6 +109,11 @@ export async function getPublishedPosts(): Promise<Array<PostSummary & { slug: s
           title,
           summary,
           publishDate,
+          isFeatured, // Include the featured status
+          category, // Include category
+          thumbnailUrl, // Include thumbnail URL
+          heroImageUrl, // Include hero image URL
+          readTime, // Include read time
         };
       })
       .filter(isValidPostSummary);
