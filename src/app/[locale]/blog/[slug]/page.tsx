@@ -1,4 +1,4 @@
-import { getPublishedPosts, getPostBySlug } from "@/lib/notion";
+import { getPublishedPosts, getPostBySlug, PostSummary } from "@/lib/notion";
 import { notFound } from "next/navigation";
 // import { PostRenderer } from "./PostRenderer"; // Moved to BlogContent
 import { format } from 'date-fns';
@@ -18,6 +18,7 @@ import React from 'react'; // Add React import
 import Image from 'next/image'; // Import next/image
 import { Badge } from "@/components/ui/badge"; // Ensure Badge is imported
 import { Clock } from 'lucide-react'; // Import Clock icon for read time
+import { routing } from "@/i18n/routing"; // Import routing config for locales
 // import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"; // Import Avatar for author
 
 // Revalidate the page periodically (optional)
@@ -29,19 +30,35 @@ type PageProps = {
   // searchParams?: Promise<{ [key: string]: string | string[] | undefined }> | undefined; 
 }
 
-// Generate static paths for all published posts at build time
+// Generate static paths for all published posts across all locales
 export async function generateStaticParams() {
-  const posts = await getPublishedPosts();
+  console.log("Generating static params for blog slugs...");
+  const allParams: { locale: string; slug: string }[] = [];
+  const uniquePostIdentifiers = new Set<string>(); // To avoid duplicates
 
-  // Ensure posts is an array before mapping
-  if (!Array.isArray(posts)) {
-    console.warn("generateStaticParams received non-array posts data, returning empty.");
-    return [];
-  }
+  // Fetch posts for each locale concurrently
+  await Promise.all(
+    routing.locales.map(async (locale) => {
+      
+      // Ensure locale type matches expected type for getPublishedPosts if needed
+      const posts = await getPublishedPosts(locale as typeof routing.locales[number]); 
+      console.log(`Fetched ${posts.length} posts for locale: ${locale}`);
+      console.log(`Fetching posts for locale: ${locale} in generateStaticParams`);
+      posts.forEach((post) => {
+        const identifier = `${locale}/${post.slug}`;
+        if (!uniquePostIdentifiers.has(identifier)) {
+          uniquePostIdentifiers.add(identifier);
+          allParams.push({
+            locale: locale,
+            slug: post.slug,
+          });
+        }
+      });
+    })
+  );
 
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  console.log(`Generated ${allParams.length} unique locale/slug combinations.`);
+  return allParams;
 }
 
 // Define expected type for postData
