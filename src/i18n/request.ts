@@ -54,7 +54,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
   return {
     locale,
-    messages: enMessages, // Use the loaded messages, potentially merged if needed
+    messages: messages,
     // --- Add fallback configuration --- 
     getMessageFallback: ({ key, namespace }) => {
       // Construct the full key including the namespace if it exists
