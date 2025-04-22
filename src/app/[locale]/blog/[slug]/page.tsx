@@ -2,7 +2,7 @@ import { getPublishedPosts, getPostBySlug } from "@/lib/notion";
 import { notFound } from "next/navigation";
 // import { PostRenderer } from "./PostRenderer"; // Moved to BlogContent
 import { format } from 'date-fns';
-import type { PageObjectResponse, BlockObjectResponse, ImageBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import type { PageObjectResponse, BlockObjectResponse /* , ImageBlockObjectResponse */ } from "@notionhq/client/build/src/api-endpoints";
 import { BlogContent } from "./BlogContent"; // New component for main content
 import { BlogTOC } from "./BlogTOC"; // New component for Table of Contents
 import {

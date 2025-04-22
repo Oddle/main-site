@@ -3,7 +3,7 @@
 import * as React from 'react';
 // Import specific types for blocks and rich text
 import type { 
-    BlockObjectResponse, 
+    // BlockObjectResponse, // Removed unused
     RichTextItemResponse, 
     ParagraphBlockObjectResponse,
     Heading1BlockObjectResponse,
@@ -13,8 +13,8 @@ import type {
     CodeBlockObjectResponse,
     BulletedListItemBlockObjectResponse,
     NumberedListItemBlockObjectResponse,
-    ColumnListBlockObjectResponse,
-    ColumnBlockObjectResponse,
+    // ColumnListBlockObjectResponse, // Removed unused 
+    // ColumnBlockObjectResponse,     // Removed unused
 } from "@notionhq/client/build/src/api-endpoints";
 // Import the extended block type from notion lib
 import type { BlockWithChildren } from "@/lib/notion"; 
@@ -48,9 +48,9 @@ function renderRichText(richTextArr: RichTextItemResponse[]) {
     const plain_text = rt.plain_text ?? '';
     const href = rt.href ?? null;
 
-    // Start with plain text or fragment
     let elementContent: React.ReactNode = plain_text;
-    let wrapperProps: React.HTMLAttributes<HTMLElement> = {};
+    // Remove unused variable
+    // let wrapperProps: React.HTMLAttributes<HTMLElement> = {};
 
     // Apply styling wrappers (innermost first)
     if (annotations.code) {

@@ -1,10 +1,8 @@
 import { getPublishedPosts } from "@/lib/notion";
 import Link from "next/link";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { format } from "date-fns";
 import Image from "next/image";
-import { notFound } from 'next/navigation';
 import React from 'react'; // Import React
 import {
   Breadcrumb,
@@ -31,12 +29,11 @@ interface Post {
   readTime?: number | null;
 }
 
-// Define props for the page, including params
-interface CategoryTagPageProps {
-  params: {
-    locale: string; // Although we don't use locale here, it's part of the route
-    category: string; // This is the URL-encoded category slug
-  };
+// Define Props type matching the internal Next.js expected type
+// Params should be Promise | undefined
+type PageProps = {
+  params: Promise<{ category: string; locale: string; }> | undefined; // Correct type: Promise or undefined
+  // searchParams?: Promise<{ [key: string]: string | string[] | undefined }> | undefined; 
 }
 
 // Function to get the display name (capitalized)
@@ -65,7 +62,17 @@ function getCategoryDisplayName(slug: string): string {
 //   return uniqueCategories.map(category => ({ category }));
 // }
 
-export default async function CategoryTagPage({ params }: CategoryTagPageProps) {
+// Use the correct PageProps type and await params
+export default async function CategoryTagPage({ params: paramsProp }: PageProps) {
+  // Await the params object
+  const params = await paramsProp as { category: string; locale: string; }; 
+
+  // Runtime check for params structure
+  if (typeof params !== 'object' || params === null || typeof params.category !== 'string' || typeof params.locale !== 'string') {
+    console.error("Invalid params structure received in CategoryTagPage:", params);
+    return <p>Error: Invalid page parameters.</p>; 
+  }
+
   const categorySlug = params.category;
   const categoryDisplayName = getCategoryDisplayName(categorySlug);
   const allPosts: Post[] = await getPublishedPosts();
@@ -171,7 +178,7 @@ export default async function CategoryTagPage({ params }: CategoryTagPageProps) 
         </div>
       ) : (
         <div className="text-center py-16">
-          <p className="text-lg text-muted-foreground">No posts found for the category "{categoryDisplayName}".</p>
+          <p className="text-lg text-muted-foreground">No posts found for the category &quot;{categoryDisplayName}&quot;.</p>
         </div>
       )}
     </div>
