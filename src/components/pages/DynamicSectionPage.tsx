@@ -70,51 +70,56 @@ const DynamicSectionPage = ({ sectionsData, pageUrl, locale }: DynamicSectionPag
       <NavBar />
       <main className="flex-1">
         {sectionsData.map((section, index) => {
+            // Add logging
+            console.log(`[DynamicSectionPage] Rendering section ${index}: ${section.component}, Locale: ${locale}, PageURL: ${pageUrl}`);
+            
             const Component = componentMap[section.component as keyof typeof componentMap];
             if (!Component) {
-              console.warn(`Component ${section.component} not found in componentMap`);
-              return null;
+              // Log error if component not found
+              console.error(`[DynamicSectionPage] Component NOT FOUND in map: ${section.component}`);
+              return <div key={index}>Error: Component {section.component} not found.</div>; // Render error placeholder
             }
 
-            // Prepare props: Start with props from JSON, add dynamic ones needed by specific components
+            // Prepare props 
             const combinedProps = {
-                ...section.props, // Props defined in pageSections.json
-                locale: locale,   // Always pass locale
-                // Add pageUrl specifically if the component needs it (like FaqSection)
+                ...section.props,
+                locale: locale,
                 ...(section.component === 'FaqSection' && { pageUrl: pageUrl }),
-                // Add other dynamic props needed by specific components here
             };
 
-            // Pass props directly
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const DynamicComponent = Component as React.ComponentType<any>;
 
-            // Render the actual section component
-            const renderedSection = <DynamicComponent {...combinedProps} />;
-
-            // If it's the first section, wrap it with the animated grid
-            if (index === 0) {
-              return (
-                <div key={index} className="relative overflow-hidden"> {/* Wrapper for first section */} 
-                  <AnimatedGridPattern
-                    numSquares={30}
-                    maxOpacity={0.1} // Adjusted maxOpacity for subtlety
-                    duration={3}
-                    className={cn(
-                      "[mask-image:radial-gradient(ellipse_at_center,white_20%,transparent_100%)]", // Simplified mask
-                      "absolute inset-0 h-full w-full skew-y-12", // Position behind content
-                    )}
-                  />
-                  {/* Render section content on top */} 
-                  <div className="relative z-10">
-                    {renderedSection}
+            try {
+              // Render the actual section component within a try...catch
+              const renderedSection = <DynamicComponent {...combinedProps} />;
+              // Log success just before returning the element
+              console.log(`[DynamicSectionPage] Successfully prepared to render: ${section.component}`);
+              
+              // Wrap first section with animated grid
+              if (index === 0) {
+                return (
+                  <div key={index} className="relative overflow-hidden"> 
+                    <AnimatedGridPattern
+                      numSquares={30}
+                      maxOpacity={0.1} // Adjusted maxOpacity for subtlety
+                      duration={3}
+                      className={cn(
+                        "[mask-image:radial-gradient(ellipse_at_center,white_20%,transparent_100%)]", // Simplified mask
+                        "absolute inset-0 h-full w-full skew-y-12", // Position behind content
+                      )}
+                    />
+                    <div className="relative z-10">
+                      {renderedSection}
+                    </div>
                   </div>
-                </div>
-              );
-            } else {
-              // For subsequent sections, render without the wrapper
-              return <div key={index}>{renderedSection}</div>; 
-              // Note: Adding a key here is good practice if not already handled within DynamicComponent
+                );
+              } else {
+                return <div key={index}>{renderedSection}</div>; 
+              }
+            } catch (error) {
+              // Log any errors during component rendering
+              console.error(`[DynamicSectionPage] Error rendering component: ${section.component}`, error);
+              return <div key={index}>Error rendering {section.component}.</div>; // Render error placeholder
             }
           })}
       </main>

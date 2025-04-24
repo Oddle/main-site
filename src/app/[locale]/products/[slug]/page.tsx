@@ -3,9 +3,10 @@ import fs from 'fs';
 import path from 'path';
 import DynamicSectionPage from '@/components/pages/DynamicSectionPage'; // Import the central component
 import { setRequestLocale } from 'next-intl/server'; // Import for setting locale
+import { routing } from '@/i18n/routing'; // Import routing config
 
-// Define locales directly as they are not exported from routing.ts
-const locales = ["en", "zh"];
+// Remove hardcoded locales
+// const locales = ["en", "zh"];
 
 // --- Component Imports ---
 // TODO: Import your actual section components here
@@ -43,8 +44,8 @@ export async function generateStaticParams() {
   const productKeys = Object.keys(data).filter(key => key.startsWith('products/'));
   const productSlugs = productKeys.map(key => key.replace('products/', ''));
 
-  // Generate params for each locale and each slug combination
-  const params = locales.flatMap((locale: string) => // Added type annotation for locale
+  // Use routing.locales here
+  const params = routing.locales.flatMap((locale: string) => 
     productSlugs.map(slug => ({
       locale,
       slug,
@@ -76,26 +77,35 @@ type Props = {
 };
 
 // --- Page Component (Updated for locale and Props type) ---
-export default async function ProductPage({ params: paramsPromise }: Props) { // Renamed prop to avoid shadowing
-  // Await the params promise to get the actual parameters
+export default async function ProductPage({ params: paramsPromise }: Props) { 
+  // Await the params promise
   const params = await paramsPromise;
 
-  // Validate and set the locale for static rendering
-  if (!locales.includes(params.locale)) notFound();
-  setRequestLocale(params.locale);
-
-  // Fetch data using the resolved slug
-  const sections = await getPageData(params.slug);
-
-  if (!sections || sections.length === 0) {
-    notFound(); // Show 404 if no sections found
+  // Validate and set locale using routing.locales
+  if (!routing.locales.includes(params.locale as typeof routing.locales[number])) {
+      console.error(`[ProductPage] Invalid locale: ${params.locale}. Calling notFound().`);
+      notFound();
+  }
+  try {
+      // Use correct type for setRequestLocale if needed
+      setRequestLocale(params.locale as typeof routing.locales[number]); 
+  } catch (error) {
+      // Decide how to handle this - maybe call notFound() or return error page
+      notFound(); 
   }
 
-  // Construct the pageUrl for the FaqSection
+  // Fetch data 
+  const sections = await getPageData(params.slug);
+  // Log the fetched sections
+
+  // Check if sections are valid before rendering
+  if (!sections || sections.length === 0) {
+    notFound(); 
+  }
+
+  // Construct pageUrl
   const pageUrl = `products/${params.slug}`;
 
-  // Use the central DynamicSectionPage component to render the sections
-  // Pass pageUrl and locale down
   return <DynamicSectionPage sectionsData={sections} pageUrl={pageUrl} locale={params.locale} />;
 }
 
