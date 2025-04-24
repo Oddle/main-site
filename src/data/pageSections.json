@@ -120,33 +120,38 @@
       }
     },
     {
-      "component": "FeatureSectionWithImages",
+      "component": "FeatureSectionOverlapImage",
       "props": {
-        "i18nBaseKey": "home.platformFeatures",
-        "heading": "Built for Restaurant Growth",
-        "description": "Our platform integrates seamlessly to provide the tools you need for success, all in one place.",
-        "imageSrc": "https://ucarecdn.com/9e5724b3-c6ff-4422-9226-7dc03d319d9c/home_dashboard",
-        "imageAlt": "Oddle Platform Features Overview",
+        "i18nBaseKey": "home.ecosystemFeature",
+        "tag": "Built for Restaurant Growth",
+        "title": "Bring it all together with a platform that centralizes customer data and insights",
+        "description": "Oddle is evolving to be more than just the tools. It supports an entire ecosystem of solutions designed to help your restaurant thrive. From managing orders and reservations to understanding customer behavior and driving loyalty, get everything you need in one place.",
+        "image": {
+          "src": "https://ucarecdn.com/030b9c8c-ecd6-42cb-8c55-6b2d8035fe14/-/preview/1000x778/",
+          "alt": "Oddle Platform Dashboard showing various features",
+          "width": 500,
+          "height": 389
+        },
         "features": [
           {
             "icon": "Zap",
-            "title": "Fast & Reliable",
-            "description": "Dependable performance to keep your operations running smoothly."
+            "title": "Integrated & Efficient",
+            "description": "Connect all your tools seamlessly for smoother operations."
           },
           {
-            "icon": "Cpu",
-            "title": "Powerful Integrations",
-            "description": "Connect effortlessly with POS, delivery partners, and marketing tools."
+            "icon": "Users",
+            "title": "Customer Focused",
+            "description": "Gain deep insights into your customers to build loyalty."
           },
           {
             "icon": "Lock",
-            "title": "Secure Data",
-            "description": "Your customer and business data is protected with top-tier security."
+            "title": "Secure & Reliable",
+            "description": "Protect your data with robust security measures."
           },
           {
             "icon": "Sparkles",
-            "title": "AI-Driven Insights",
-            "description": "Leverage intelligent analytics to understand trends and optimize strategy."
+            "title": "AI-Powered Insights",
+            "description": "Leverage AI for smarter business decisions."
           }
         ]
       }

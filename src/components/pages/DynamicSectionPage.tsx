@@ -23,6 +23,7 @@ import DemoRequestSection from "../sections/DemoRequestSection";
 import CallToActionSection from "../sections/CallToActionSection";
 import { cn } from "@/lib/utils";
 import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern";
+import FeatureSectionOverlapImage from "../sections/FeatureSectionOverlapImage";
 // --- Define type for section data --- (Good practice)
 interface SectionDefinition {
   component: string; // Ideally keyof typeof componentMap, but string is simpler for now
@@ -57,6 +58,7 @@ const componentMap = {
   CustomerLogosSection,
   DemoRequestSection,
   CallToActionSection,
+  FeatureSectionOverlapImage
 };
 
 // Removed the processProps function
@@ -91,30 +93,30 @@ const DynamicSectionPage = ({ sectionsData, pageUrl, locale }: DynamicSectionPag
 
             try {
               // Render the actual section component within a try...catch
-              const renderedSection = <DynamicComponent {...combinedProps} />;
+            const renderedSection = <DynamicComponent {...combinedProps} />;
               // Log success just before returning the element
               console.log(`[DynamicSectionPage] Successfully prepared to render: ${section.component}`);
-              
+
               // Wrap first section with animated grid
-              if (index === 0) {
-                return (
+            if (index === 0) {
+              return (
                   <div key={index} className="relative overflow-hidden"> 
-                    <AnimatedGridPattern
-                      numSquares={30}
-                      maxOpacity={0.1} // Adjusted maxOpacity for subtlety
-                      duration={3}
-                      className={cn(
-                        "[mask-image:radial-gradient(ellipse_at_center,white_20%,transparent_100%)]", // Simplified mask
-                        "absolute inset-0 h-full w-full skew-y-12", // Position behind content
-                      )}
-                    />
-                    <div className="relative z-10">
-                      {renderedSection}
-                    </div>
+                  <AnimatedGridPattern
+                    numSquares={30}
+                    maxOpacity={0.1} // Adjusted maxOpacity for subtlety
+                    duration={3}
+                    className={cn(
+                      "[mask-image:radial-gradient(ellipse_at_center,white_20%,transparent_100%)]", // Simplified mask
+                      "absolute inset-0 h-full w-full skew-y-12", // Position behind content
+                    )}
+                  />
+                  <div className="relative z-10">
+                    {renderedSection}
                   </div>
-                );
-              } else {
-                return <div key={index}>{renderedSection}</div>; 
+                </div>
+              );
+            } else {
+              return <div key={index}>{renderedSection}</div>; 
               }
             } catch (error) {
               // Log any errors during component rendering

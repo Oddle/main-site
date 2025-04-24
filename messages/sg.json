@@ -346,6 +346,33 @@
           "imageAlt": "Customer Intelligence"
         }
       }
+    },
+    "ecosystemFeature": {
+      "tag": "Built for Restaurant Growth",
+      "title": "Bring it all together with a platform that centralizes customer data and insights",
+      "description": "Oddle is evolving to be more than just the tools. It supports an entire ecosystem of solutions designed to help your restaurant thrive.",
+      "secondaryDescription": "From managing orders and reservations to understanding customer behavior and driving loyalty, get everything you need in one place.",
+      "image": {
+        "alt": "Oddle Platform Dashboard showing various features"
+      },
+      "features": {
+        "0": {
+          "title": "Integrated & Efficient",
+          "description": "Connect all your tools seamlessly for smoother operations."
+      },
+      "1": {
+        "title": "Customer Focused",
+        "description": "Gain deep insights into your customers to build loyalty."
+      },
+      "2": {
+        "title": "Secure & Reliable",
+        "description": "Protect your data with robust security measures."
+      },
+      "3": {
+        "title": "AI-Powered Insights",
+          "description": "Leverage AI for smarter business decisions."
+        }
+      }
     }
   },
   "loyaltyCrm": {
