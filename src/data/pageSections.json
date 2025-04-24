@@ -46,10 +46,9 @@
       "component": "FeatureSectionBentoGrid",
       "props": {
         "i18nBaseKey": "home.productsBento", 
-        "badgeText": "Our Solutions",
-        "badgeIcon": "LayoutGrid", 
-        "sectionTitle": "Everything you need to grow your revenue",
-        "sectionDescription": "A complete suite of tools designed to attract customers, streamline operations, and boost your restaurant's bottom line.",
+        "tag": "Our Solutions",
+        "title": "Everything you need to grow your revenue",
+        "description": "A complete suite of tools designed to attract customers, streamline operations, and boost your restaurant's bottom line.",
         "items": [
           { 
             "id": 1, 
