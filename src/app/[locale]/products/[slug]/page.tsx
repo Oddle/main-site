@@ -89,7 +89,7 @@ export default async function ProductPage({ params: paramsPromise }: Props) {
   try {
       // Use correct type for setRequestLocale if needed
       setRequestLocale(params.locale as typeof routing.locales[number]); 
-  } catch (error) {
+  } catch {
       // Decide how to handle this - maybe call notFound() or return error page
       notFound(); 
   }

@@ -89,6 +89,7 @@ const DynamicSectionPage = ({ sectionsData, pageUrl, locale }: DynamicSectionPag
                 ...(section.component === 'FaqSection' && { pageUrl: pageUrl }),
             };
 
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const DynamicComponent = Component as React.ComponentType<any>;
 
             try {
