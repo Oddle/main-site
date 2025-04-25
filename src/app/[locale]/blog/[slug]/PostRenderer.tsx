@@ -13,7 +13,6 @@ import type {
     CodeBlockObjectResponse,
     BulletedListItemBlockObjectResponse,
     NumberedListItemBlockObjectResponse,
-    DividerBlockObjectResponse,
     QuoteBlockObjectResponse,
     TableBlockObjectResponse,
     TableRowBlockObjectResponse,
@@ -30,6 +29,31 @@ import Image from 'next/image';
 // import 'react-notion-x/src/styles.css';
 // import 'prismjs/themes/prism-tomorrow.css';
 // import 'katex/dist/katex.min.css';
+
+// --- Notion Color to Tailwind Mapping ---
+const notionColorToTailwind: Record<string, string> = {
+  // Text colors
+  default: "", // No specific class for default
+  gray: "text-gray-500 dark:text-gray-400",
+  brown: "text-orange-800 dark:text-orange-300", // Using orange as substitute for brown
+  orange: "text-orange-600 dark:text-orange-400",
+  yellow: "text-yellow-600 dark:text-yellow-400",
+  green: "text-green-600 dark:text-green-400",
+  blue: "text-blue-600 dark:text-blue-400",
+  purple: "text-purple-600 dark:text-purple-400",
+  pink: "text-pink-600 dark:text-pink-400",
+  red: "text-red-600 dark:text-red-400",
+  // Background colors
+  gray_background: "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200",
+  brown_background: "bg-orange-100 dark:bg-orange-900/50 text-orange-900 dark:text-orange-200", // Using orange substitute
+  orange_background: "bg-orange-100 dark:bg-orange-900/50 text-orange-900 dark:text-orange-200",
+  yellow_background: "bg-yellow-100 dark:bg-yellow-900/50 text-yellow-900 dark:text-yellow-200",
+  green_background: "bg-green-100 dark:bg-green-900/50 text-green-900 dark:text-green-200",
+  blue_background: "bg-blue-100 dark:bg-blue-900/50 text-blue-900 dark:text-blue-200",
+  purple_background: "bg-purple-100 dark:bg-purple-900/50 text-purple-900 dark:text-purple-200",
+  pink_background: "bg-pink-100 dark:bg-pink-900/50 text-pink-900 dark:text-pink-200",
+  red_background: "bg-red-100 dark:bg-red-900/50 text-red-900 dark:text-red-200",
+};
 
 // --- Helper function to generate a slug from text ---
 function slugify(text: string): string {
@@ -51,14 +75,13 @@ function renderRichText(richTextArr: RichTextItemResponse[]) {
     const annotations = rt.annotations ?? { bold: false, italic: false, strikethrough: false, underline: false, code: false, color: 'default' };
     const plain_text = rt.plain_text ?? '';
     const href = rt.href ?? null;
+    const color = annotations.color ?? 'default'; // Get color annotation
 
     let elementContent: React.ReactNode = plain_text;
-    // Remove unused variable
-    // let wrapperProps: React.HTMLAttributes<HTMLElement> = {};
 
-    // Apply styling wrappers (innermost first)
+    // Apply styling wrappers (bold, italic, etc.) - Keep these innermost
     if (annotations.code) {
-      elementContent = <code className="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm font-mono">{elementContent}</code>;
+      elementContent = <code className="bg-gray-200 dark:bg-gray-700 px-1 py-0.5 rounded text-sm font-mono">{elementContent}</code>;
     }
     if (annotations.underline) {
       elementContent = <u>{elementContent}</u>;
@@ -73,6 +96,17 @@ function renderRichText(richTextArr: RichTextItemResponse[]) {
       elementContent = <strong>{elementContent}</strong>;
     }
     
+    // Apply color wrapper if not default - This wrapper goes around the style wrappers
+    if (color !== 'default') {
+      const tailwindClass = notionColorToTailwind[color];
+      if (tailwindClass) {
+        // For backgrounds, add some padding/rounding for better appearance
+        const isBackground = color.endsWith('_background');
+        const paddingClass = isBackground ? "px-1.5 py-0.5 rounded-sm" : ""; // Slightly more padding
+        elementContent = <span className={`${tailwindClass} ${paddingClass}`}>{elementContent}</span>;
+      }
+    }
+
     // Apply link wrapper if href exists (outermost non-key wrapper)
     if (href) {
        return (
@@ -82,8 +116,6 @@ function renderRichText(richTextArr: RichTextItemResponse[]) {
        );
     }
     
-    // If no link, return the styled content within a Fragment or directly if it's a single element
-    // Since elementContent could be nested, use a Fragment for safety
     return <React.Fragment key={index}>{elementContent}</React.Fragment>;
   });
 }
