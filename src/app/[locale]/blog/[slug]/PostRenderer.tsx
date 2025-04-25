@@ -13,6 +13,10 @@ import type {
     CodeBlockObjectResponse,
     BulletedListItemBlockObjectResponse,
     NumberedListItemBlockObjectResponse,
+    DividerBlockObjectResponse,
+    QuoteBlockObjectResponse,
+    TableBlockObjectResponse,
+    TableRowBlockObjectResponse,
     // ColumnListBlockObjectResponse, // Removed unused 
     // ColumnBlockObjectResponse,     // Removed unused
 } from "@notionhq/client/build/src/api-endpoints";
@@ -88,11 +92,13 @@ function renderRichText(richTextArr: RichTextItemResponse[]) {
 
 // Define a type for the props of the single block renderer
 interface RenderBlockProps {
-  block: BlockWithChildren; // Use extended type
+  block: BlockWithChildren;
+  isHeaderRow?: boolean; // Added optional prop for table rows
 }
 
 // Use React.ReactNode as return type
-function RenderBlock({ block }: RenderBlockProps): React.ReactNode {
+// Accept isHeaderRow in the function signature
+function RenderBlock({ block, isHeaderRow }: RenderBlockProps): React.ReactNode {
   if (!('type' in block)) {
     return null; 
   }
@@ -198,6 +204,76 @@ function RenderBlock({ block }: RenderBlockProps): React.ReactNode {
         <div key={block.id}>
           {children.map(childBlock => <RenderBlock key={childBlock.id} block={childBlock} />)}
         </div>
+      );
+    }
+    case 'divider': {
+      return <hr key={block.id} className="my-6 border-muted" />;
+    }
+    case 'quote': {
+      const content = (block as QuoteBlockObjectResponse).quote;
+      if (!content?.rich_text || !Array.isArray(content.rich_text)) return null;
+      return (
+        <blockquote key={block.id} className="my-6 border-l-4 border-muted pl-4 italic text-muted-foreground">
+          {renderRichText(content.rich_text)}
+        </blockquote>
+      );
+    }
+    case 'table': {
+      const tableSettings = (block as TableBlockObjectResponse).table;
+      if (!children || children.length === 0) return null; // Table needs rows
+      
+      const hasHeader = tableSettings.has_column_header;
+      const headerRow = hasHeader ? children[0] : null;
+      const bodyRows = hasHeader ? children.slice(1) : children;
+      
+      return (
+        <div key={block.id} className="my-6 overflow-x-auto relative shadow-sm rounded-lg border border-muted">
+          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            {headerRow && (
+              <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                {/* Render the first row as header, passing isHeaderRow=true */} 
+                <RenderBlock block={headerRow} isHeaderRow={true} /> 
+              </thead>
+            )}
+            <tbody>
+              {/* Render remaining rows as body */} 
+              {bodyRows.map((row) => (
+                <RenderBlock key={row.id} block={row} isHeaderRow={false} />
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    }
+    case 'table_row': {
+      const content = (block as TableRowBlockObjectResponse).table_row;
+      if (!content?.cells || !Array.isArray(content.cells)) return null;
+      
+      // Render as tr, cells will be th or td based on isHeaderRow
+      return (
+        // Add background hover effect for body rows
+        <tr 
+          key={block.id} 
+          className={isHeaderRow ? "" : "bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"}
+        >
+          {content.cells.map((cell, cellIndex) => {
+            // Check isHeaderRow to determine cell type
+            if (isHeaderRow) {
+              return (
+                <th key={cellIndex} scope="col" className="px-6 py-3 font-medium whitespace-nowrap">
+                  {renderRichText(cell)}
+                </th>
+              );
+            } else {
+              return (
+                // Apply standard padding and scope for data cells
+                <td key={cellIndex} className="px-6 py-4 align-top">
+                  {renderRichText(cell)}
+                </td>
+              );
+            }
+          })}
+        </tr>
       );
     }
     default: {

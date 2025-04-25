@@ -58,7 +58,7 @@ export type BlockWithChildren = BlockObjectResponse & {
 // Recursive function to fetch children for blocks that support it
 async function fetchBlockChildrenRecursive(block: BlockWithChildren): Promise<void> {
   // Check if the block type can have children and if it has children according to Notion
-  if (!block.has_children || !['column_list', 'column', 'bulleted_list_item', 'numbered_list_item', 'toggle'].includes(block.type)) {
+  if (!block.has_children || !['column_list', 'column', 'bulleted_list_item', 'numbered_list_item', 'toggle', 'table'].includes(block.type)) {
     return; // No children to fetch for this type or this specific block doesn't have children
   }
 
