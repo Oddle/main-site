@@ -91,13 +91,12 @@ export async function generateMetadata({
 }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata" });
-
-  // Use the environment variable for metadataBase
   const baseUrl = new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000');
+  const ogImageUrl = 'https://ucarecdn.com/3a4499ff-d4db-43e9-9db2-5f19976dcf78/-/preview/1000x523/';
 
-  // --- Update the default image URL --- 
-  const ogImageUrl = 'https://ucarecdn.com/3a4499ff-d4db-43e9-9db2-5f19976dcf78/-/preview/1000x523/'; // Use absolute URL
-  // ------------------------------------
+  // --- Define Apple Touch Icon URL --- 
+  const appleIconUrl = 'https://ucarecdn.com/d28a1327-3c7f-42cb-880e-46c9f109cb4a/-/preview/512x512/';
+  // -----------------------------------
 
   const languages: Record<string, string> = {};
   routing.locales.forEach(loc => {
@@ -113,6 +112,9 @@ export async function generateMetadata({
     viewport: {
       width: 'device-width',
       initialScale: 1,
+    },
+    icons: {
+      apple: appleIconUrl,
     },
     keywords: t("keywords"),
     other: {
