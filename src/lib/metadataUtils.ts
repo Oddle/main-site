@@ -7,6 +7,8 @@ import { routing } from '@/i18n/routing';
 interface PageMetadata {
   title?: string;
   description?: string;
+  ogImage?: string;
+  twitterImage?: string;
 }
 
 // --- Data Fetching Logic (centralized) ---
@@ -49,56 +51,64 @@ export async function generatePageMetadata({ locale, pageKey, slug }: GenerateMe
   if (slug) { 
       fallbackTitle = slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
   }
-  // Handle homepage fallback specifically
   if (pageKey === 'home' && !pageTitle) {
-      fallbackTitle = 'Oddle'; // Or your default site name
+      fallbackTitle = 'Oddle'; 
   }
   const finalTitle = pageTitle || fallbackTitle;
 
-  // --- Description (Renamed variable) --- 
-  const description = metadata?.description; // Renamed from finalDescription
+  // --- Description --- 
+  const description = metadata?.description || 'Default description for Oddle site.'; // Add a default description
 
-  // --- Canonical Path (relative) - Handle homepage case --- 
+  // --- Canonical Path --- 
   const canonicalPath = pageKey === 'home' ? '/' : `/${pageKey}`;
-  // ------------------------------------------------------
-
-  // --- Language Alternates (relative) - Handle homepage case --- 
+  
+  // --- Language Alternates --- 
   const languages: Record<string, string> = {};
   routing.locales.forEach(loc => {
-      // Construct path conditionally based on pageKey
       const pathSegment = pageKey === 'home' ? '' : `/${pageKey}`;
-      languages[loc] = `/${loc}${pathSegment}`; // e.g., /en or /en/products/slug
+      languages[loc] = `/${loc}${pathSegment}`;
   });
-  // Handle x-default similarly
   const defaultPathSegment = pageKey === 'home' ? '' : `/${pageKey}`;
   languages['x-default'] = `/${routing.defaultLocale}${defaultPathSegment}`;
-  // -----------------------------------------------------------
 
+  // --- Image URLs (Replace with your actual default image URLs) --- 
+  // Should be relative to metadataBase or absolute URLs
+  const defaultOgImageUrl = metadata?.ogImage || 'https://ucarecdn.com/3a4499ff-d4db-43e9-9db2-5f19976dcf78/-/preview/1000x523/'; 
+  const defaultTwitterImageUrl = metadata?.twitterImage || defaultOgImageUrl; // Often the same as OG image
+  // -----------------------------------------------------------------
+  
   // --- Construct Metadata Object --- 
   const result: Metadata = {
     title: finalTitle,
-    ...(description && { description: description }), // Use renamed variable
+    description: description, // Add standard meta description
     alternates: {
       canonical: canonicalPath,
       languages: languages,
     },
-    // --- Add Page-Specific OG/Twitter --- 
     openGraph: {
-      title: finalTitle,
-      description: description || 'Default site description', // Use renamed variable
-      url: canonicalPath, 
+      title: finalTitle, 
+      description: description, 
+      url: canonicalPath, // Relative path (Next.js combines with metadataBase)
       siteName: 'Oddle', 
-      // images: [ ... ], // Add image logic if needed
+      images: [
+        { // Add OG image
+          url: defaultOgImageUrl, // Use defined image URL
+          width: 1200, // Standard OG width
+          height: 630, // Standard OG height
+        },
+      ],
       locale: locale,
       type: 'website', 
     },
     twitter: {
       card: 'summary_large_image',
       title: finalTitle,
-      description: description || 'Default site description', // Use renamed variable
-      // images: [ ... ], // Add image logic if needed
+      description: description,
+      images: [defaultTwitterImageUrl], // Add Twitter image URL (can be relative)
+      // site: '@YourTwitterHandle', // Optional: Add your site's Twitter handle
     },
+     // Optional: Add default robots tag if needed
+    // robots: { index: true, follow: true },
   };
-
   return result;
 } 

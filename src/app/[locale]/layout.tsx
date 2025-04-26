@@ -47,7 +47,6 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <head>
         <meta name="keywords" content={t("keywords")} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script
           {...jsonLdScriptProps<WebSite>({
             "@context": "https://schema.org",
@@ -96,6 +95,10 @@ export async function generateMetadata({
   // Use the environment variable for metadataBase
   const baseUrl = new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000');
 
+  // --- Update the default image URL --- 
+  const ogImageUrl = 'https://ucarecdn.com/3a4499ff-d4db-43e9-9db2-5f19976dcf78/-/preview/1000x523/'; // Use absolute URL
+  // ------------------------------------
+
   const languages: Record<string, string> = {};
   routing.locales.forEach(loc => {
     // Construct absolute URLs for alternates if metadataBase is set
@@ -103,13 +106,14 @@ export async function generateMetadata({
   });
   languages['x-default'] = `${baseUrl.origin}/${routing.defaultLocale}`;
 
-  // Define relative paths for images/URLs
-  const ogImageUrl = '/og-image.png'; // Relative path
-
   return {
     metadataBase: baseUrl,
     title: t("title"),
     description: t("description"),
+    viewport: {
+      width: 'device-width',
+      initialScale: 1,
+    },
     keywords: t("keywords"),
     other: {
       "google-site-verification": "sVYBYfSJfXdBca3QoqsZtD6lsWVH6sk02RCH4YAbcm8",
@@ -117,14 +121,13 @@ export async function generateMetadata({
     openGraph: {
       title: t("title"),
       description: t("description"),
-      // Keep url relative here, Next.js combines it
-      url: `/${locale}`, 
-      siteName: "Oddle | Restaurant Revenue Growth Platform", 
+      url: `/${locale}`,
+      siteName: "Oddle | Restaurant Revenue Growth Platform",
       images: [
         {
-          url: ogImageUrl, // Relative path resolves against metadataBase
-          width: 1200,
-          height: 630,
+          url: ogImageUrl, // This will now use the absolute URL
+          width: 1000, // Update width based on the image dimensions if known
+          height: 523, // Update height based on the image dimensions if known
         },
       ],
       locale: locale,
@@ -134,8 +137,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      // Use relative path here as well
-      images: [ogImageUrl], 
+      images: [ogImageUrl], // This will now use the absolute URL
     },
     alternates: {
       // Keep canonical relative here
