@@ -24,6 +24,7 @@ import CallToActionSection from "../sections/CallToActionSection";
 import { cn } from "@/lib/utils";
 import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern";
 import FeatureSectionOverlapImage from "../sections/FeatureSectionOverlapImage";
+import { UtmTracker } from '@/components/UTMTracker';
 // --- Define type for section data --- (Good practice)
 interface SectionDefinition {
   component: string; // Ideally keyof typeof componentMap, but string is simpler for now
@@ -69,16 +70,13 @@ const DynamicSectionPage = ({ sectionsData, pageUrl, locale }: DynamicSectionPag
 
   return (
     <div className="flex flex-col min-h-screen w-full">
+      <UtmTracker />
       <NavBar />
       <main className="flex-1">
         {sectionsData.map((section, index) => {
-            // Add logging
-            console.log(`[DynamicSectionPage] Rendering section ${index}: ${section.component}, Locale: ${locale}, PageURL: ${pageUrl}`);
-            
             const Component = componentMap[section.component as keyof typeof componentMap];
             if (!Component) {
               // Log error if component not found
-              console.error(`[DynamicSectionPage] Component NOT FOUND in map: ${section.component}`);
               return <div key={index}>Error: Component {section.component} not found.</div>; // Render error placeholder
             }
 
@@ -96,7 +94,6 @@ const DynamicSectionPage = ({ sectionsData, pageUrl, locale }: DynamicSectionPag
               // Render the actual section component within a try...catch
             const renderedSection = <DynamicComponent {...combinedProps} />;
               // Log success just before returning the element
-              console.log(`[DynamicSectionPage] Successfully prepared to render: ${section.component}`);
 
               // Wrap first section with animated grid
             if (index === 0) {
@@ -121,7 +118,6 @@ const DynamicSectionPage = ({ sectionsData, pageUrl, locale }: DynamicSectionPag
               }
             } catch (error) {
               // Log any errors during component rendering
-              console.error(`[DynamicSectionPage] Error rendering component: ${section.component}`, error);
               return <div key={index}>Error rendering {section.component}.</div>; // Render error placeholder
             }
           })}
