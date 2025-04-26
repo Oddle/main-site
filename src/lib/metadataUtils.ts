@@ -43,22 +43,33 @@ interface GenerateMetadataParams {
 }
 
 export async function generatePageMetadata({ locale, pageKey, slug }: GenerateMetadataParams): Promise<Metadata> {
-  const metadata = await getMetadataByKey(pageKey);
+  // Fetch metadata for both the specific page and the homepage for fallbacks
+  const pageMetadata = await getMetadataByKey(pageKey);
+  const homeMetadata = await getMetadataByKey('home'); // Fetch home metadata
 
   // --- Title --- 
-  const pageTitle = metadata?.title;
-  let fallbackTitle = pageKey; 
-  if (slug) { 
-      fallbackTitle = slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+  let finalTitle = pageMetadata?.title;
+  if (!finalTitle) {
+    // Fallback 1: Try homepage title
+    finalTitle = homeMetadata?.title;
   }
-  if (pageKey === 'home' && !pageTitle) {
-      fallbackTitle = 'Oddle'; 
+  if (!finalTitle) {
+    // Fallback 2: Derive from slug or pageKey
+    let fallbackTitle = pageKey === 'home' ? 'Oddle' : pageKey; // Default fallback
+    if (slug) { 
+        fallbackTitle = slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    }
+    finalTitle = fallbackTitle;
   }
-  const finalTitle = pageTitle || fallbackTitle;
 
   // --- Description --- 
-  const description = metadata?.description || 'Default description for Oddle site.'; // Add a default description
-
+  let description = pageMetadata?.description;
+  if (!description) {
+    description = homeMetadata?.description;
+  }
+  // Add final fallback for description
+  description = description || 'Oddle empowers restaurants globally...'; // Add your default description
+  
   // --- Canonical Path --- 
   const canonicalPath = pageKey === 'home' ? '/' : `/${pageKey}`;
   
@@ -71,16 +82,15 @@ export async function generatePageMetadata({ locale, pageKey, slug }: GenerateMe
   const defaultPathSegment = pageKey === 'home' ? '' : `/${pageKey}`;
   languages['x-default'] = `/${routing.defaultLocale}${defaultPathSegment}`;
 
-  // --- Image URLs (Replace with your actual default image URLs) --- 
-  // Should be relative to metadataBase or absolute URLs
-  const defaultOgImageUrl = metadata?.ogImage || 'https://ucarecdn.com/3a4499ff-d4db-43e9-9db2-5f19976dcf78/-/preview/1000x523/'; 
-  const defaultTwitterImageUrl = metadata?.twitterImage || defaultOgImageUrl; // Often the same as OG image
-  // -----------------------------------------------------------------
+  // --- Image URLs --- 
+  // Add final fallback URLs (replace with your actual defaults)
+  const defaultOgImageUrl = pageMetadata?.ogImage || homeMetadata?.ogImage || '/default-og.png'; 
+  const defaultTwitterImageUrl = pageMetadata?.twitterImage || pageMetadata?.ogImage || homeMetadata?.twitterImage || homeMetadata?.ogImage || '/default-twitter.png'; 
   
   // --- Construct Metadata Object --- 
   const result: Metadata = {
     title: finalTitle,
-    description: description, // Add standard meta description
+    description: description, // Use final description
     alternates: {
       canonical: canonicalPath,
       languages: languages,
@@ -88,13 +98,13 @@ export async function generatePageMetadata({ locale, pageKey, slug }: GenerateMe
     openGraph: {
       title: finalTitle, 
       description: description, 
-      url: canonicalPath, // Relative path (Next.js combines with metadataBase)
+      url: canonicalPath, 
       siteName: 'Oddle', 
       images: [
-        { // Add OG image
-          url: defaultOgImageUrl, // Use defined image URL
-          width: 1200, // Standard OG width
-          height: 630, // Standard OG height
+        { 
+          url: defaultOgImageUrl, // Now guaranteed to be a string
+          width: 1200, 
+          height: 630, 
         },
       ],
       locale: locale,
@@ -104,11 +114,8 @@ export async function generatePageMetadata({ locale, pageKey, slug }: GenerateMe
       card: 'summary_large_image',
       title: finalTitle,
       description: description,
-      images: [defaultTwitterImageUrl], // Add Twitter image URL (can be relative)
-      // site: '@YourTwitterHandle', // Optional: Add your site's Twitter handle
+      images: [defaultTwitterImageUrl], // Now guaranteed to be a string
     },
-     // Optional: Add default robots tag if needed
-    // robots: { index: true, follow: true },
   };
   return result;
 } 
