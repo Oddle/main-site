@@ -44,15 +44,22 @@ export default function ChatRedirectLink({ linkText, className, children }: Chat
     const referenceCode = generateReferenceCode();
 
     // Define dynamic redirect links based on locale
-    // TODO: Confirm these phone numbers/IDs are correct
     const baseMessage = `#${referenceCode}\n\nI would like to find out about ${productName}`;
     const links = {
       sg: `https://wa.me/6583616212?text=${encodeURIComponent(baseMessage)}`,
       my: `https://wa.me/6583616212?text=${encodeURIComponent(baseMessage)}`, // Use correct MY number if different
       tw: `https://line.me/R/ti/p/@rkf5936k?text=${encodeURIComponent(baseMessage)}`, // Use correct Line ID
-    };
-    // Ensure locale is a valid key or default to 'sg'
-    const validLocale = (['sg', 'my', 'tw'] as const).includes(locale as any) ? locale as keyof typeof links : 'sg';
+    } as const; // Use 'as const' for stricter type inference
+    
+    // Define allowed locale keys based on the links object
+    type AllowedLocale = keyof typeof links;
+    const allowedLocales: AllowedLocale[] = ['sg', 'my', 'tw'];
+
+    // Check if the detected locale is valid, otherwise default to 'sg'
+    const validLocale: AllowedLocale = allowedLocales.includes(locale as AllowedLocale)
+      ? locale as AllowedLocale 
+      : 'sg';
+      
     const redirectUrl = links[validLocale];
 
     console.log(`Redirecting to chat for locale '${locale}' (using '${validLocale}'): ${redirectUrl}`);

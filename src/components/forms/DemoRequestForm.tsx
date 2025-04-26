@@ -10,6 +10,7 @@ import Link from 'next/link';
 import PhoneInputWithCountrySelect from 'react-phone-number-input/react-hook-form';
 import { isValidPhoneNumber } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css'; // Import styles for phone input
+import { useState } from 'react'; // For success state
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -29,12 +30,12 @@ import {
 } from "@/components/ui/form";
 import { toast } from "sonner";
 import { Loader2, Check } from "lucide-react"; // For loading/success state
-import { useState } from 'react'; // For success state
 
 // Declare fbq as a global function for TypeScript
 declare global {
   interface Window {
-    fbq?: (...args: any[]) => void;
+    // Use unknown[] instead of any[] for better type safety
+    fbq?: (...args: unknown[]) => void;
   }
 }
 
@@ -83,9 +84,23 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
     reset,
   } = form;
 
-  // Get options from translations
-  const roleOptions = t.raw('roleOptions');
-  const sourceOptions = t.raw('sourceOptions');
+  // Type helper for the options
+  type TranslationOptions = Record<string, string>;
+
+  // Function to safely get options
+  const getOptionsFromRaw = (key: string): TranslationOptions => {
+    // Use unknown for the initial type, forcing checks
+    const rawValue: unknown = t.raw(key); 
+    if (typeof rawValue === 'object' && rawValue !== null && !Array.isArray(rawValue)) {
+      // If type check passes, cast it to the expected type
+      return rawValue as TranslationOptions;
+    }
+    // Return empty object if it's not the expected object type
+    return {};
+  };
+
+  const roleOptions = getOptionsFromRaw('roleOptions');
+  const sourceOptions = getOptionsFromRaw('sourceOptions');
 
   async function onSubmit(values: FormData) {
     setIsSubmitSuccessful(false);
@@ -138,8 +153,8 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  {Object.entries(roleOptions).map(([key, label]) => (
-                    <SelectItem key={key} value={key}>{label as string}</SelectItem>
+                  {Object.entries(roleOptions).map(([key, label]: [string, string]) => (
+                    <SelectItem key={key} value={key}>{label}</SelectItem>
                   ))}
                 </SelectContent>
               </Select>
@@ -260,8 +275,8 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                   {Object.entries(sourceOptions).map(([key, label]) => (
-                    <SelectItem key={key} value={key}>{label as string}</SelectItem>
+                   {Object.entries(sourceOptions).map(([key, label]: [string, string]) => (
+                    <SelectItem key={key} value={key}>{label}</SelectItem>
                   ))}
                 </SelectContent>
               </Select>

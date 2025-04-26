@@ -3,6 +3,18 @@
 import { useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
 
+// Define interface for attribution data
+interface AttributionData {
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_term?: string;
+  utm_content?: string;
+  referrer?: string | null;
+  page_url?: string;
+  // Add other potential fields if known
+}
+
 // --- Helper Functions (adapted for client-side) ---
 
 // Function to set a cookie (browser API)
@@ -19,7 +31,7 @@ function getCookie(name: string): string | null {
   const nameEQ = `${name}=`;
   const ca = document.cookie.split(';');
   for (let i = 0; i < ca.length; i++) {
-    let c = ca[i].trim();
+    const c = ca[i].trim();
     if (c.indexOf(nameEQ) === 0) {
       // Ensure the cookie value is properly decoded
       return decodeURIComponent(c.substring(nameEQ.length, c.length));
@@ -76,11 +88,11 @@ export function UtmTracker() {
     const pageURL = getCurrentPageURL();
 
     // 3. Get existing cookie data
-    let existingData: { [key: string]: any } = {};
+    let existingData: AttributionData = {}; // Use AttributionData type
     const existingDataStr = getCookie('attribution_data');
     if (existingDataStr) {
       try {
-        existingData = JSON.parse(existingDataStr);
+        existingData = JSON.parse(existingDataStr) as AttributionData; // Type assertion
       } catch (e) {
         console.error('Error parsing existing attribution data cookie:', e);
       }
@@ -94,7 +106,7 @@ export function UtmTracker() {
 
     if (needsUpdate) {
       // 5. Construct the data using last-touch logic (merge/overwrite)
-      const newData = {
+      const newData: AttributionData = { // Use AttributionData type
         // Start with existing data 
         ...existingData,
         // Overwrite with new UTMs if present, adds new ones too.
