@@ -1,3 +1,5 @@
+"use client"; // Ensure this is a client component
+
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -14,6 +16,7 @@ import Container from "@/components/common/Container";
 import Image from "next/image";
 import InlineCustomerLogos from "../common/InlineCustomerLogos";
 import Link from 'next/link';
+import ChatRedirectLink from "@/components/common/ChatRedirectLink"; // Import the chat link
 
 interface SlideData {
   imageSrc: string;
@@ -74,11 +77,11 @@ export default function HeroWithCarousel({
                   </Link>
                     </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <Link href="/contact-sales">
-                    <MessageSquare className="mr-2 h-4 w-4" />
-                    {tCommon('talkToSales')}
-                  </Link>
-                    </Button>
+                   <ChatRedirectLink>
+                     <MessageSquare className="mr-2 h-4 w-4" />
+                     {tCommon('talkToSales')}
+                   </ChatRedirectLink>
+                 </Button>
               </div>
               {/* Render Inline Customer Logos */}
               <InlineCustomerLogos locale={locale} i18nBaseKey="common.trustedBy" />
