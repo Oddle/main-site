@@ -31,6 +31,13 @@ import { toast } from "sonner";
 import { Loader2, Check } from "lucide-react"; // For loading/success state
 import { useState } from 'react'; // For success state
 
+// Declare fbq as a global function for TypeScript
+declare global {
+  interface Window {
+    fbq?: (...args: any[]) => void;
+  }
+}
+
 // Revert Zod schema to original fields
 const formSchema = z.object({
   role: z.string().min(1, { message: "Please select your role." }),
@@ -83,6 +90,20 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
   async function onSubmit(values: FormData) {
     setIsSubmitSuccessful(false);
     console.log("Form Submitted:", values);
+
+    // --- Trigger Facebook Pixel Lead Event --- 
+    if (typeof window.fbq === 'function') { // Check window.fbq
+      try {
+        window.fbq('track', 'Lead'); // Call window.fbq
+        console.log("Facebook Pixel: Lead event triggered for DemoRequestForm.");
+      } catch (error) {
+        console.error("Error triggering Facebook Pixel event:", error);
+      }
+    } else {
+      console.log("Facebook Pixel function (fbq) not found on window object.");
+    }
+    // -------------------------------------------
+
     // TODO: Replace with actual API call
     await new Promise((resolve) => setTimeout(resolve, 1500)); // Simulate network delay
 
