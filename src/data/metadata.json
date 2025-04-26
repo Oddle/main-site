@@ -2,9 +2,8 @@
   "home": {
     "title": "Oddle - Restaurant Revenue Growth Platform",
     "description": "Oddle empowers restaurants globally to capture customer data, build their brand, and grow their business with integrated ordering, reservation, and marketing tools.",
-    "defaultOgImageUrl": "https://ucarecdn.com/3a4499ff-d4db-43e9-9db2-5f19976dcf78/-/preview/1000x523/",
-    "defaultTwitterImageUrl": "https://ucarecdn.com/3a4499ff-d4db-43e9-9db2-5f19976dcf78/-/preview/1000x523/",
-    "appleTouchIcon": "https://ucarecdn.com/3a4499ff-d4db-43e9-9db2-5f19976dcf78/-/preview/1000x523/"
+    "ogImage": "https://ucarecdn.com/3a4499ff-d4db-43e9-9db2-5f19976dcf78/-/preview/1000x523/",
+    "twitterImage": "https://ucarecdn.com/3a4499ff-d4db-43e9-9db2-5f19976dcf78/-/preview/1000x523/"
   },
   "products/restaurant-online-ordering-system": {
     "title": "Restaurant Online Ordering System | Oddle",
