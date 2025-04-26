@@ -1,22 +1,18 @@
+import type { Metadata } from 'next'; // Import Metadata type
 import { notFound } from 'next/navigation';
 import fs from 'fs';
 import path from 'path';
 import DynamicSectionPage from '@/components/pages/DynamicSectionPage'; // Import the central component
 import { setRequestLocale } from 'next-intl/server'; // Import for setting locale
 import { routing } from '@/i18n/routing'; // Import routing config
+import { generatePageMetadata } from '@/lib/metadataUtils'; // Import the new helper function
 
-// Remove hardcoded locales
-// const locales = ["en", "zh"];
+// --- Data Types (Remove unused PageMetadata) ---
+// interface PageMetadata { 
+//   title?: string;
+//   description?: string;
+// }
 
-// --- Component Imports ---
-// TODO: Import your actual section components here
-// Example:
-
-// TODO: Create the component map
-
-// --- Data Types ---
-// Simplified - DynamicSectionPage handles the detailed types
-// Re-added definitions needed for function signatures
 interface Section {
   component: string;
   props: Record<string, unknown>;
@@ -26,7 +22,13 @@ interface PageData {
   [key: string]: Section[];
 }
 
-// --- Data Fetching (Keep as is) ---
+// --- Metadata Fetching (Helper function used instead) ---
+// --- Remove unused function ---
+// async function getAllMetadata(): Promise<{ [key: string]: PageMetadata }> {
+//   // ... implementation ...
+// }
+
+// --- Section Data Fetching (Keep) ---
 async function getPageSectionsData(): Promise<PageData> {
   const filePath = path.join(process.cwd(), 'src/data/pageSections.json');
   try {
@@ -38,31 +40,35 @@ async function getPageSectionsData(): Promise<PageData> {
   }
 }
 
-// --- Generate Static Paths (Updated for locales) ---
+// --- Generate Static Paths (Keep) ---
 export async function generateStaticParams() {
   const data = await getPageSectionsData();
   const productKeys = Object.keys(data).filter(key => key.startsWith('products/'));
   const productSlugs = productKeys.map(key => key.replace('products/', ''));
 
-  // Use routing.locales here
   const params = routing.locales.flatMap((locale: string) => 
     productSlugs.map(slug => ({
       locale,
       slug,
     }))
   );
-
   return params;
-  // Example output: 
-  // [
-  //   { locale: 'en', slug: 'restaurant-online-ordering-system' },
-  //   { locale: 'zh', slug: 'restaurant-online-ordering-system' },
-  //   { locale: 'en', slug: 'restaurant-reservation-system' },
-  //   { locale: 'zh', slug: 'restaurant-reservation-system' }
-  // ]
 }
 
-// --- Fetch Data for Specific Page (Keep as is) ---
+// --- Updated generateMetadata (Uses helper - Keep) ---
+export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const pageKey = `products/${resolvedParams.slug}`;
+  
+  // Call the centralized helper function
+  return generatePageMetadata({ 
+    locale: resolvedParams.locale, 
+    pageKey: pageKey,
+    slug: resolvedParams.slug // Pass slug for fallback title generation
+  });
+}
+
+// --- Fetch Data for Specific Page (Keep) ---
 async function getPageData(slug: string): Promise<Section[] | undefined> {
   const data = await getPageSectionsData();
   const key = `products/${slug}`;
@@ -76,9 +82,8 @@ type Props = {
   // searchParams?: Promise<{ [key: string]: string | string[] | undefined }>; // Optional: Include if needed
 };
 
-// --- Page Component (Updated for locale and Props type) ---
+// --- Page Component (Keep) ---
 export default async function ProductPage({ params: paramsPromise }: Props) { 
-  // Await the params promise
   const params = await paramsPromise;
 
   // Validate and set locale using routing.locales
@@ -94,13 +99,13 @@ export default async function ProductPage({ params: paramsPromise }: Props) {
       notFound(); 
   }
 
-  // Fetch data 
-  const sections = await getPageData(params.slug);
-  // Log the fetched sections
+  // Fetch sections data using the existing function
+  const sections = await getPageData(params.slug); 
 
-  // Check if sections are valid before rendering
   if (!sections || sections.length === 0) {
-    notFound(); 
+    const pageKey = `products/${params.slug}`;
+    console.error(`[ProductPage] No sections found for key: ${pageKey} in pageSections.json. Calling notFound().`);
+    notFound();
   }
 
   // Construct pageUrl
@@ -108,16 +113,3 @@ export default async function ProductPage({ params: paramsPromise }: Props) {
 
   return <DynamicSectionPage sectionsData={sections} pageUrl={pageUrl} locale={params.locale} />;
 }
-
-// Optional: Add metadata generation based on page data (Consider locale)
-// export async function generateMetadata({ params }: { params: { slug: string; locale: string } }) {
-//   // Fetch locale-specific messages if needed for title
-//   // const messages = (await import(`@/messages/${params.locale}.json`)).default;
-
-//   const sections = await getPageData(params.slug);
-//   const pageTitle = sections?.[0]?.props?.title || params.slug.replace(/-/g, ' ');
-//
-//   return {
-//     title: pageTitle, // Potentially use translated title
-//   };
-// } 

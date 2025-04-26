@@ -93,16 +93,21 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
+  // Use the environment variable for metadataBase
+  const baseUrl = new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000');
+
   const languages: Record<string, string> = {};
   routing.locales.forEach(loc => {
-    languages[loc] = `/${loc}`;
+    // Construct absolute URLs for alternates if metadataBase is set
+    languages[loc] = `${baseUrl.origin}/${loc}`;
   });
-  languages['x-default'] = '/';
+  languages['x-default'] = `${baseUrl.origin}/${routing.defaultLocale}`;
 
   // Define relative paths for images/URLs
-  const ogImageUrl = '/og-image.png';
+  const ogImageUrl = '/og-image.png'; // Relative path
 
   return {
+    metadataBase: baseUrl,
     title: t("title"),
     description: t("description"),
     keywords: t("keywords"),
@@ -112,12 +117,12 @@ export async function generateMetadata({
     openGraph: {
       title: t("title"),
       description: t("description"),
-      // Use relative path for URL, Next.js combines with metadataBase
-      url: `/${locale}`, // Default OG url for the layout (can be overridden by page)
-      siteName: "Next.js i18n Boilerplate", // Keep or make dynamic
+      // Keep url relative here, Next.js combines it
+      url: `/${locale}`, 
+      siteName: "Oddle | Restaurant Revenue Growth Platform", 
       images: [
         {
-          url: ogImageUrl, // Relative path
+          url: ogImageUrl, // Relative path resolves against metadataBase
           width: 1200,
           height: 630,
         },
@@ -129,11 +134,25 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: [ogImageUrl], // Relative path
+      // Use relative path here as well
+      images: [ogImageUrl], 
     },
     alternates: {
+      // Keep canonical relative here
       canonical: `/${locale}`,
-      languages: languages,
+      // Keep languages relative if canonical is relative
+      languages: routing.locales.reduce((acc, loc) => {
+          acc[loc] = `/${loc}`;
+          return acc;
+        }, {} as Record<string, string>),
+      // Or provide absolute URLs if preferred (uncomment below)
+      /*
+      languages: routing.locales.reduce((acc, loc) => {
+          acc[loc] = `${baseUrl.origin}/${loc}`;
+          return acc;
+        }, {} as Record<string, string>),
+      'x-default': `${baseUrl.origin}/${routing.defaultLocale}`, 
+      */
     },
     robots: {
       index: true,

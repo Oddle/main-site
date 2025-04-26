@@ -1,0 +1,46 @@
+{
+  "home": {
+    "title": "Oddle - Restaurant Revenue Growth Platform",
+    "description": "Oddle empowers restaurants globally to capture customer data, build their brand, and grow their business with integrated ordering, reservation, and marketing tools."
+  },
+  "products/restaurant-online-ordering-system": {
+    "title": "Restaurant Online Ordering System | Oddle",
+    "description": "Streamline your online food orders and delight your customers with Oddle's commission-free ordering system."
+  },
+  "products/restaurant-reservation-system": {
+    "title": "Restaurant Reservation System | Oddle",
+    "description": "Affordable, commission-free online reservations and table management designed for restaurants like yours."
+  },
+  "products/restaurant-loyalty-crm-system": {
+    "title": "Restaurant Loyalty & CRM System | Oddle",
+    "description": "Build customer loyalty and drive repeat visits with Oddle's integrated restaurant CRM and rewards program."
+  },
+  "products/restaurant-virtual-lounge": {
+    "title": "Restaurant Virtual Lounge | Oddle",
+    "description": "Showcase Your Brand Online with Oddle's Virtual Lounge. Create a branded digital space to engage customers and drive visits."
+  },
+  "products/restaurant-payment-terminal": {
+    "title": "Restaurant Payment Terminal | Oddle",
+    "description": "Turn every payment into a growth opportunity with Oddle's integrated payment terminal and customer data capture."
+  },
+  "products/restaurant-email-marketing-system": {
+    "title": "Restaurant Email Marketing System | Oddle",
+    "description": "Automate email campaigns and leverage customer data with Oddle's marketing engine for restaurants."
+  },
+  "products/restaurant-crm-customer-intelligence": {
+    "title": "Restaurant CRM & Customer Intelligence | Oddle",
+    "description": "Unlock actionable insights from your customer data with Oddle's restaurant CRM and intelligence platform."
+  },
+  "products/restaurant-survey": {
+    "title": "Restaurant Survey & Feedback Tool | Oddle",
+    "description": "Automate customer feedback collection and boost your online reputation with Oddle's survey tool."
+  },
+  "products/oddle-eats": {
+    "title": "Oddle Eats - Food Directory | Oddle",
+    "description": "Feature your restaurant on Oddle Eats, a premier food directory network connecting you with millions of food lovers."
+  },
+  "demo": {
+    "title": "Book a Demo | Oddle",
+    "description": "Schedule a personalized demo to see how Oddle can help your restaurant grow."
+  }
+} 
