@@ -6,6 +6,7 @@ import DynamicSectionPage from '@/components/pages/DynamicSectionPage'; // Impor
 import { setRequestLocale } from 'next-intl/server'; // Import for setting locale
 import { routing } from '@/i18n/routing'; // Import routing config
 import { generatePageMetadata } from '@/lib/metadataUtils'; // Import the new helper function
+import type { Viewport } from 'next'; // Import Viewport type
 
 // --- Data Types (Remove unused PageMetadata) ---
 // interface PageMetadata { 
@@ -60,13 +61,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const resolvedParams = await params;
   const pageKey = `products/${resolvedParams.slug}`;
   
-  // Call the centralized helper function
+  // Call the centralized helper function (this already returns correct Metadata type)
   return generatePageMetadata({ 
     locale: resolvedParams.locale, 
     pageKey: pageKey,
-    slug: resolvedParams.slug // Pass slug for fallback title generation
+    slug: resolvedParams.slug
   });
+  // NO viewport here
 }
+
+// --- ADD SEPARATE VIEWPORT EXPORT --- 
+export const viewport: Viewport = {
+  themeColor: '#FFFFFF', // Example theme color
+  // Add other viewport settings as needed
+  // e.g., width: 'device-width', initialScale: 1,
+};
 
 // --- Fetch Data for Specific Page (Keep) ---
 async function getPageData(slug: string): Promise<Section[] | undefined> {

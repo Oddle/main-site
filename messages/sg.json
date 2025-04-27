@@ -374,6 +374,36 @@
           "description": "Leverage AI for smarter business decisions."
         }
       }
+    },
+    "featureGrid": {
+      "title": "See our free guides on growing your restaurant",
+      "description": "",
+      "items": {
+        "0": {
+          "title": "Everything you need to get started with a Restaurant Reservation System",
+          "description": "",
+          "href": "/blog/topics/restaurant-reservation-guide",
+          "image": {
+            "alt": "Screenshot of reservation calendar"
+          }
+        },
+        "1": {
+          "title": "Driving Revenue with Online Ordering Systems",
+          "description": "",
+          "href": "/blog/topics/restaurant-online-ordering-guide",
+          "image": {
+            "alt": "Mobile phone showing online ordering menu"
+          }
+        },
+        "2": {
+          "title": "How to use Data to grow sales for your restaurant ",
+          "description": "",
+          "href": "/blog/topics/restaurant-marketing-guide",
+          "image": {
+            "alt": "Dashboard showing customer analytics graphs"
+          } 
+        }
+      }
     }
   },
   "loyaltyCrm": {

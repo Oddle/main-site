@@ -8,16 +8,12 @@ import FeatureSectionWithImages from "@/components/sections/FeatureSectionWithIm
 import FaqSection from "@/components/sections/FaqSection";
 import React from 'react';
 import Footer from "../common/Footer";
-import TimelineSection from "@/components/sections/TimelineSection";
 import FeatureSectionWithSubpoints from "@/components/sections/FeatureSectionWithSubpoints";
 import FeatureSectionWithSplitImages from "@/components/sections/FeatureSectionWithSplitImages";
 import FeatureSectionWithColumns from "@/components/sections/FeatureSectionWithColumns";
 import FeatureSectionWithTabs from "../sections/FeatureSectionWithTabs";
 import FeatureSectionWithAccordion from "../sections/FeatureSectionWithAccordion";
-import FeatureSectionGridCards from "../sections/FeatureSectionGridCards";
 import FeatureSectionAlternating from "../sections/FeatureSectionAlternating";
-import FeatureSectionComplexGrid from "../sections/FeatureSectionComplexGrid";
-import FeatureSectionHeroGrid from "../sections/FeatureSectionHeroGrid";
 import FeatureSectionBentoGrid from "../sections/FeatureSectionBentoGrid";
 import CustomerLogosSection from "../sections/CustomerLogosSection";
 import DemoRequestSection from "../sections/DemoRequestSection";
@@ -26,6 +22,7 @@ import { cn } from "@/lib/utils";
 import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern";
 import FeatureSectionOverlapImage from "../sections/FeatureSectionOverlapImage";
 import CustomerTestimonialsSection from '@/components/sections/CustomerTestimonialsSection';
+import FeatureSectionWithGridImages from '@/components/sections/FeatureSectionWithGridImages';
 // --- Dynamically import UtmTracker with SSR disabled --- 
 const UtmTracker = dynamic(() => import('@/components/UTMTracker').then(mod => mod.UtmTracker), {
   ssr: false,
@@ -53,22 +50,19 @@ const componentMap: { [key: string]: React.ComponentType<any> } = {
   HeroSectionWithAppShowcase,
   FeatureSectionWithImages,
   FaqSection,
-  TimelineSection,    
   FeatureSectionWithSubpoints,
   FeatureSectionWithSplitImages,
   FeatureSectionWithColumns,
   FeatureSectionWithTabs,
   FeatureSectionWithAccordion,
-  FeatureSectionGridCards,
   FeatureSectionAlternating,
-  FeatureSectionComplexGrid,
-  FeatureSectionHeroGrid,
   FeatureSectionBentoGrid,
   CustomerLogosSection,
   DemoRequestSection,
   CallToActionSection,
   FeatureSectionOverlapImage,
-  CustomerTestimonialsSection
+  CustomerTestimonialsSection,
+  FeatureSectionWithGridImages
 };
 
 // Removed the processProps function

@@ -154,6 +154,42 @@
           }
         ]
       }
+    }, {
+      "component": "FeatureSectionWithGridImages",
+      "props": {
+        "i18nBaseKey": "home.featureGrid",
+        "title": " See our free guides on growing your restaurant",
+        "description": "",
+        "items": [
+          {
+            "title": "Everything you need to get started with a Restaurant Reservation System",
+            "description": "",
+            "image": {
+              "src": "https://framerusercontent.com/images/LtLYGRERQu7WTElmTBdkEjgvaog.jpg",
+              "alt": "Screenshot of reservation calendar"
+            },
+            "href": "/blog/topics/restaurant-reservation-guide"
+          },
+          {
+            "title": "Driving Revenue with Online Ordering Systems",
+            "description": "",
+            "image": {
+              "src": "https://framerusercontent.com/images/DYYuQEJDW0XHnNr8aaPOiKSHWc.jpg",
+              "alt": "Mobile phone showing online ordering menu"
+            },
+            "href": "/blog/topics/restaurant-online-ordering-guide"
+          },
+          {
+            "title": "How to use Data to grow sales for your restaurant ",
+            "description": "",
+            "image": {
+              "src": "https://framerusercontent.com/images/Mn5LiPhALLDEYRwwoSZkJpA0A.jpg",
+              "alt": "Dashboard showing customer analytics graphs"
+            },
+            "href": "/blog/topics/restaurant-marketing-guide"
+          }
+        ]
+      }
     },
     {
       "component": "CustomerTestimonialsSection",
@@ -163,6 +199,7 @@
         "description": "Hear directly from restaurants growing their business with Oddle."
       }
     },
+   
     {
       "component": "FaqSection"
     }
