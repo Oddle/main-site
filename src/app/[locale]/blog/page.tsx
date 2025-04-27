@@ -229,7 +229,7 @@ export default async function BlogIndexPage({ params: paramsProp }: PageProps) {
           <h2 className="text-3xl md:text-4xl font-semibold mb-8 border-b pb-3">Explore Topics</h2>
           <div className="flex flex-wrap gap-3">
             {uniqueCategories.map((category: string) => (
-              <Link key={category} href={`/blog/tag/${encodeURIComponent(category.toLowerCase())}`} className="no-underline">
+              <Link key={category} href={`/blog/topics/${category.toLowerCase().replace(/\s+/g, '-')}`} className="no-underline">
                 <Badge variant="secondary" className="px-4 py-2 text-sm cursor-pointer hover:bg-muted/80">
                   {category}
                 </Badge>

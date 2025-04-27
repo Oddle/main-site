@@ -25,12 +25,17 @@ type PageProps = {
 // Function to get the display name (capitalized)
 function getCategoryDisplayName(slug: string): string {
     try {
-        const decoded = decodeURIComponent(slug);
-        // Simple capitalization: capitalize first letter, rest lowercase
-        return decoded.charAt(0).toUpperCase() + decoded.slice(1);
+        // Replace hyphens with spaces
+        const spacedName = slug.replace(/-/g, ' ');
+        // Capitalize first letter of each word
+        const capitalizedName = spacedName
+            .split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+        return capitalizedName;
     } catch (e) {
-        console.error("Error decoding category slug:", e);
-        return slug; // Fallback to original slug if decoding fails
+        console.error("Error processing category slug:", e);
+        return slug; // Fallback to original slug if processing fails
     }
 }
 
@@ -67,9 +72,9 @@ export default async function CategoryTagPage({ params: paramsProp }: PageProps)
   console.log(`Fetching initial posts for category '${categorySlug}' in locale '${locale}'`);
   const initialLocalePosts: PostSummary[] = await getPublishedPosts(locale);
 
-  // 2. Filter by category
+  // 2. Filter by category (compare hyphenated slugs)
   let postsToDisplay = initialLocalePosts.filter(post => 
-    post.category?.toLowerCase() === decodeURIComponent(categorySlug).toLowerCase()
+    post.category?.toLowerCase().replace(/\s+/g, '-') === categorySlug
   );
   console.log(`Found ${postsToDisplay.length} posts after initial category filter.`);
 
@@ -79,9 +84,9 @@ export default async function CategoryTagPage({ params: paramsProp }: PageProps)
     // 4. Fetch fallback posts from default locale ('sg')
     const fallbackSgPosts: PostSummary[] = await getPublishedPosts('sg');
     
-    // 5. Filter fallback posts by the same category
+    // 5. Filter fallback posts by the same category (compare hyphenated slugs)
     postsToDisplay = fallbackSgPosts.filter(post => 
-      post.category?.toLowerCase() === decodeURIComponent(categorySlug).toLowerCase()
+      post.category?.toLowerCase().replace(/\s+/g, '-') === categorySlug
     );
     console.log(`Found ${postsToDisplay.length} posts after fallback category filter.`);
   }

@@ -97,7 +97,7 @@
     "customer-stories": {
       "name": "Customer Stories",
       "description": "See how restaurants succeed with Oddle",
-      "href": "https://oddle.me/customer-stories",
+      "href": "/blog/topics/customer-stories",
       "category": "learn"
     },
     "guides": {
