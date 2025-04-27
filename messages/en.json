@@ -1,0 +1,52 @@
+{
+  "home": {
+    "faq": {
+      "title": "Frequently Asked Questions"
+    }
+  },
+  "testimonials": {
+    "title": "What Our Merchants Say",
+    "description": "Hear directly from restaurants growing their business with Oddle.",
+    "onlineSalesLabel": "Online sales",
+    "locationsLabel": "Locations",
+    "storyButtonText": "See {name}'s story",
+    "items": [
+      {
+        "name": "Chef John Doe",
+        "role": "Owner & Head Chef",
+        "restaurant": "The Gourmet Place",
+        "photo": {
+          "alt": "Photo of Chef John Doe"
+        },
+        "quote": "Oddle's online ordering system has been a game-changer for our delivery business. It's easy to use and integrates perfectly.",
+        "onlineSales": "+$1,200,000",
+        "locations": 2,
+        "storyLink": "/customer-stories/gourmet-place"
+      },
+      {
+        "name": "Maria Garcia",
+        "role": "General Manager",
+        "restaurant": "Pasta Paradiso",
+        "photo": {
+          "alt": "Photo of Maria Garcia"
+        },
+        "quote": "The reservation system simplified our bookings immensely. Our front-of-house runs much smoother now, thanks to Oddle.",
+        "onlineSales": "+$850,000",
+        "locations": 1,
+        "storyLink": "/customer-stories/pasta-paradiso"
+      },
+      {
+        "name": "David Chen",
+        "role": "Marketing Director",
+        "restaurant": "Sushi Central",
+        "photo": {
+          "alt": "Photo of David Chen"
+        },
+        "quote": "We love the marketing tools! The automated campaigns helped us bring back customers and significantly boost our repeat business.",
+        "onlineSales": "+$2,500,000",
+        "locations": 5,
+        "storyLink": "/customer-stories/sushi-central"
+      }
+    ]
+  }
+} 

@@ -996,5 +996,9 @@
     "calculatorTitle": "Estimate Your Costs",
     "faqTitle": "Frequently Asked Questions",
     "ctaTitle": "Ready to Grow with Oddle?"
+  },
+  "testimonials": {
+    "title": "What Our Merchants Say",
+    "description": "Hear directly from restaurants growing their business with Oddle."
   }
 }

@@ -156,6 +156,14 @@
       }
     },
     {
+      "component": "CustomerTestimonialsSection",
+      "props": {
+        "i18nBaseKey": "testimonials",
+        "title": "What Our Merchants Say",
+        "description": "Hear directly from restaurants growing their business with Oddle."
+      }
+    },
+    {
       "component": "FaqSection"
     }
   ],

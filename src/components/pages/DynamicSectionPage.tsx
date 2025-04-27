@@ -25,6 +25,7 @@ import CallToActionSection from "../sections/CallToActionSection";
 import { cn } from "@/lib/utils";
 import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern";
 import FeatureSectionOverlapImage from "../sections/FeatureSectionOverlapImage";
+import CustomerTestimonialsSection from '@/components/sections/CustomerTestimonialsSection';
 // --- Dynamically import UtmTracker with SSR disabled --- 
 const UtmTracker = dynamic(() => import('@/components/UTMTracker').then(mod => mod.UtmTracker), {
   ssr: false,
@@ -44,12 +45,14 @@ interface DynamicSectionPageProps {
 }
 
 // --- Component Map --- (Ensure keys match component names in JSON)
-const componentMap = {
+// Revert to any, but disable the lint rule for this specific line
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const componentMap: { [key: string]: React.ComponentType<any> } = {
   HeroWithCarousel,
   IconSectionHorizontal,
   HeroSectionWithAppShowcase,
   FeatureSectionWithImages,
-  FaqSection, // Add FaqSection to the map
+  FaqSection,
   TimelineSection,    
   FeatureSectionWithSubpoints,
   FeatureSectionWithSplitImages,
@@ -64,7 +67,8 @@ const componentMap = {
   CustomerLogosSection,
   DemoRequestSection,
   CallToActionSection,
-  FeatureSectionOverlapImage
+  FeatureSectionOverlapImage,
+  CustomerTestimonialsSection
 };
 
 // Removed the processProps function
