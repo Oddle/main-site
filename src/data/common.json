@@ -108,27 +108,27 @@
     "restaurant-online-ordering-guide": {
       "name": "Restaurant Online Ordering Guide",
       "description": "Master online ordering strategies",
-      "href": "/resources/guides/online-ordering"
+      "href": "/blog/topics/restaurant-online-ordering-guide"
     },
     "restaurant-reservation-guide": {
       "name": "Restaurant Reservation Guide",
       "description": "Optimize your reservation management",
-      "href": "/resources/guides/reservation"
+      "href": "/blog/topics/restaurant-reservation-guide"
     },
     "restaurant-loyalty-guide": {
       "name": "Restaurant Loyalty Guide",
       "description": "Build effective loyalty programs",
-      "href": "/resources/guides/loyalty"
+      "href": "/blog/topics/restaurant-loyalty-guide"
     },
     "restaurant-marketing-guide": {
       "name": "Restaurant Marketing Guide",
       "description": "Boost your restaurant's marketing efforts",
-      "href": "/resources/guides/marketing"
+      "href": "/blog/topics/restaurant-marketing-guide"
     },
     "merchant-support": {
       "name": "Merchant Support",
       "description": "Get help and support for your Oddle account",
-      "href": "/resources/merchant-support"
+      "href": "https://help.oddle.me"
     },
     "comparison": {
       "name": "Comparison",
@@ -145,7 +145,7 @@
     "help-center": {
       "name": "Help Center",
       "description": "Find answers to your questions",
-      "href": "https://support.oddle.me",
+      "href": "https://help.oddle.me",
       "category": "general"
     },
     "pricing": {
@@ -176,7 +176,7 @@
     "facebook": {
       "name": "Facebook",
       "description": "Link Description",
-      "href": "https://facebook.com/oddleapp"
+      "href": "https://facebook.com/oddle"
     },
     "linkedin": {
       "name": "LinkedIn",
