@@ -14,7 +14,8 @@
       "contactSales": "Contact sales team",
       "getStartedNow": "Get Started Now",
       "seeLivePreview": "See Live Preview",
-      "learnMore": "Learn more"
+      "learnMore": "Learn more",
+      "getQuote": "Get Quote"
     },
     "buttons": {
       "requestDemo": "Request Demo",
@@ -964,5 +965,36 @@
   "error": {
   },
   "notFound": {
+  },
+  "PricingPage": {
+    "heroTitle": "Grow Your Restaurant Revenue with One Integrated Platform",
+    "heroSubtitle": "Start taking online orders, accepting table reservations, processing in-store payments, and building customer loyalty — all from day one, with no upfront costs. Only pay when you start serving real customers.",
+    "heroImageAlt": "Stylized image representing restaurant growth or the Oddle platform",
+    "benefitCommissionFree": "Commission-free options available",
+    "benefitUsageBased": "Pay only for what you need",
+    "benefitUnifiedPlatform": "Access ordering, reservations & more",
+    "benefitDataInsights": "Unlock valuable customer insights",
+
+    "explanationTitle": "How Our Pricing Works",
+    "explanationDesc1": "We believe in transparent, usage-based pricing. You only pay for the products you use, allowing you to scale efficiently.",
+    "explanationDesc2": "There are no long-term contracts or hidden fees. Start with what you need and add more as your restaurant grows.",
+    "freeProductsTitle": "Free Tools Included",
+    "freeProductsDesc": "Every Oddle account comes with these powerful tools at no extra cost:",
+    "productVirtualLoungeTitle": "Restaurant Virtual Lounge",
+    "productSurveyTitle": "Restaurant Survey & Feedback Tool",
+
+    "productsTitle": "Our Products",
+    "productShopTitle": "Online Ordering System",
+    "productShopPrice": "10% per order", 
+    "productReservationTitle": "Reservation System",
+    "productReservationPrice": "From $0.20 / booking", 
+    "productPaymentTitle": "Payment Terminal",
+    "productPaymentPrice": "From 1.4% + $0.08", 
+    "productLoyaltyTitle": "Loyalty Program",
+    "productLoyaltyPrice": "Usage-based", 
+
+    "calculatorTitle": "Estimate Your Costs",
+    "faqTitle": "Frequently Asked Questions",
+    "ctaTitle": "Ready to Grow with Oddle?"
   }
 }

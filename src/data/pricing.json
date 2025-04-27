@@ -1,0 +1,82 @@
+{
+  "sg": [
+    {
+      "title": "Online Ordering System",
+      "description": "Accepts delivery and takeaway orders, in advance or on-demand.",
+      "summaryPrice": "10% per order",
+      "priceUnit": "per successful order",
+      "details": [
+      ],
+      "features": [
+        "Robust online menu setup",
+        "Order management dashboard",
+        "Customer data capture",
+        "Integration options"
+      ],
+      "cta": {
+        "textKey": "actions.learnMore",
+        "href": "/products/restaurant-online-ordering-system"
+      }
+    },
+    {
+      "title": "Reservation System",
+      "description": "Manage table bookings across all channels seamlessly.",
+      "summaryPrice": "From $0.20 / booking",
+      "priceUnit": "per confirmed booking",
+      "details": [
+        { "type": "tier", "label": "Tier 1 (1-100/mo)", "rate": "$0.60", "unit": "per booking"},
+        { "type": "tier", "label": "Tier 2 (101+/mo)", "rate": "$0.20", "unit": "per booking"} 
+      ],
+      "features": [
+        "Real-time table management",
+        "Automated confirmations & reminders",
+        "Google Reserve integration",
+        "Customer database included"
+      ],
+      "cta": {
+        "textKey": "actions.learnMore",
+        "href": "/products/restaurant-reservation-system"
+      }
+    },
+    {
+      "title": "Payment Terminal",
+      "description": "The easiest way to accept integrated in-person payments.",
+      "summaryPrice": "From 1.4% + $0.08",
+      "priceUnit": "per transaction",
+      "details": [
+        { "type": "rate", "label": "Standard", "rate": "2.3% + $0.08" },
+        { "type": "rate", "label": "Qualifying", "rate": "1.4% + $0.08", "note": "Contact us", "contactLink": "/contact" }
+      ],
+      "features": [
+        "Secure payment processing.",
+        "Integrated customer data capture.",
+        "Reporting dashboard."
+      ],
+      "cta": {
+        "textKey": "actions.getQuote",
+        "href": "/contact",
+        "variant": "outline"
+      }
+    },
+    {
+      "title": "Loyalty Program",
+      "description": "Increase customer database via membership enrollments and get customers to return with rewards.",
+      "summaryPrice": "Usage-based",
+      "priceUnit": "per action",
+      "details": [
+         { "type": "action", "label": "New Enrolment", "rate": "$0.30"},
+         { "type": "action", "label": "Return Customer Txn", "rate": "$0.70"}
+      ],
+      "features": [
+        "Customizable rewards setup.",
+        "Customer segmentation tools.",
+        "Automated engagement triggers.",
+        "Performance tracking."
+      ],
+      "cta": {
+        "textKey": "actions.learnMore",
+        "href": "/products/restaurant-loyalty-crm-system"
+      }
+    }
+  ]
+} 

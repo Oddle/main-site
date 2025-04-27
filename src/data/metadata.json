@@ -44,5 +44,9 @@
   "demo": {
     "title": "Book a Demo | Oddle",
     "description": "Schedule a personalized demo to see how Oddle can help your restaurant grow."
+  },
+  "pricing": {
+    "title": "Pricing | Oddle Restaurant Solutions",
+    "description": "Explore flexible pricing for Oddle's online ordering, reservations, payments, and loyalty programs. Find the right plan for your restaurant."
   }
 } 

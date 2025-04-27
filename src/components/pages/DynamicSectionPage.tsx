@@ -71,7 +71,6 @@ const componentMap = {
 
 // Update component signature to accept props
 const DynamicSectionPage = ({ sectionsData, pageUrl, locale }: DynamicSectionPageProps) => {
-  // console.log("[DynamicSectionPage] Received props:", { pageUrl, locale, sectionsData });
 
   return (
     <div className="flex flex-col min-h-screen w-full">
