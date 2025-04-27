@@ -305,17 +305,6 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
         </div>
 
         {/* Pricing Calculator Section Placeholder */}
-        <Container className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
-          <h2 className="text-3xl font-bold tracking-tight text-center mb-12">{t('calculatorTitle')}</h2>
-          <div className="text-center text-gray-500">
-             {/* TODO: Implement Pricing Calculator Component */}
-             Pricing Calculator will go here.
-          </div>
-        </Container>
-
-        {/* FAQ Section Placeholder - REMOVED */}
-
-        {/* CTA Section Placeholder - REMOVED */}
 
       </main>
       <Footer />
