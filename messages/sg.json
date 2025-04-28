@@ -543,20 +543,36 @@
     },
     "keyFeatures": {
       "tag": "",
-      "description": "Streamline your orders and delight your customers.",
-      "title": "Key Features",
+      "title": "Your Best Customers Deserve More",
+      "description": "Restaurants thrive when they own their online ordering system. Here's why your best customers—and your business—benefit.",
       "items": {
         "0": {
-          "title": "Easy Menu Management",
-          "description": "Update your menu in real-time."
+          "title": "Bigger Orders, Higher Revenue",
+          "description": "Customers ordering directly often place larger orders, perfect for celebrations, luncheons, or family meals.",
+          "image": {
+            "alt": "Illustration representing bigger orders and higher revenue."
+          }
         },
         "1": {
-          "title": "Seamless Order Processing",
-          "description": "Manage orders efficiently."
+          "title": "Plan Ahead for Special Occasions",
+          "description": "Advance orders provide opportunities to cater to loyal customers who trust you.",
+          "image": {
+            "alt": "Illustration representing planning ahead for special occasions."
+          }
         },
         "2": {
-          "title": "Integrated Delivery Options",
-          "description": "Connect with delivery partners."
+          "title": "Reach Customers Wherever They Are",
+          "description": "Some of your best customers can't visit your restaurant in person—delivery ensures they never miss out.",
+          "image": {
+            "alt": "Illustration representing reach customers wherever they are."
+          }
+        },
+        "3": {
+          "title": "Build Stronger Relationships",
+          "description": "Owning your ordering channel lets you deliver a seamless, branded experience that builds customer loyalty.",
+          "image": {
+            "alt": "Illustration representing build stronger relationships."
+          }
         }
       }
     },
