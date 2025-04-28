@@ -1,19 +1,4 @@
 {
-  "BentoGridSection": {
-    "card1Description": "",
-    "card1Title": "",
-    "card2Description": "",
-    "card2Title": "",
-    "card3Description": "",
-    "card3Title": "",
-    "card4Description": "",
-    "card4Title": "",
-    "defaultBadge": "",
-    "defaultDescription": "",
-    "defaultTitle": "",
-    "getStartedButton": "",
-    "livePreviewButton": ""
-  },
   "Metadata": {
     "title": "Oddle 餐廳增長平台",
     "description": "協助全球餐廳透過線上點餐、預訂、顧客關係管理和行銷工具實現業務增長。",
@@ -29,14 +14,66 @@
       "contactSales": "聯繫銷售團隊",
       "getStartedNow": "立即開始",
       "seeLivePreview": "查看即時預覽",
-      "learnMore": "了解更多"
+      "learnMore": "了解更多",
+      "getQuote": "Get Quote"
+    },
+    "buttons": {
+      "requestDemo": "Request Demo",
+      "talkToSales": "Talk to Sales",
+      "login": "Login",
+      "signup": "Sign Up"
+    },
+    "trustedBy": {
+      "title": "Trusted by"
+    },
+    "cta": {
+      "standard": {
+        "tag": "Ready to get started?",
+        "title": "Ready to Take Control of Your Restaurant's Growth?",
+        "description": "Join the 5000+ restaurants using Oddle to streamline operations, boost sales, and build lasting customer relationships.",
+        "primaryButtonText": "Request Demo",
+        "secondaryButtonText": "View Pricing",
+        "imageAlt": "Abstract visual representing growth"
+      }
+    },
+    "forms": {
+      "demoRequest": {
+        "title": "Book Your Free 30 Minute Demo",
+        "rolePlaceholder": "Select Role...",
+        "roleOptions": {
+          "owner": "Restaurant Owner",
+          "manager": "Restaurant Manager",
+          "marketing": "Marketing Manager",
+          "ops": "Ops Manager",
+          "partner": "Restaurant Vendor/Partner",
+          "other": "Other"
+        },
+        "firstNamePlaceholder": "First Name",
+        "lastNamePlaceholder": "Last Name",
+        "phonePlaceholder": "Phone Number",
+        "emailPlaceholder": "Email",
+        "restaurantNamePlaceholder": "Restaurant Name",
+        "websitePlaceholder": "Restaurant Website or Social Media Profile (Optional)",
+        "sourcePlaceholder": "How did you hear about us?",
+        "sourceOptions": {
+          "peers": "Referred by F&B Peers",
+          "consultant": "Restaurant Consultant",
+          "google": "Google Search",
+          "facebook": "Facebook / Instagram",
+          "linkedin": "LinkedIn",
+          "conference": "Conference / Event",
+          "other": "Other"
+        },
+        "submitButtonText": "Book Free Demo",
+        "submitting": "Booking...",
+        "submitSuccess": "Demo requested successfully! We'll be in touch soon.",
+        "submitError": "Failed to submit request. Please try again later.",
+        "submitSuccessShort": "Submitted!",
+        "consent": "By providing us with your information you are consenting to the collection and use of your information in accordance with our <terms>Terms of Service</terms> and <privacy>Privacy Policy</privacy>."
+      }
     }
   },
   "crm": {
-    "customerIntelligence": {
-      "sectionTitle": "A Restaurant Email Marketing Toolkit to Make Marketing Effortless",
-      "sectionDescription": "Launch campaigns with pre-built workflows that require no technical expertise—just results."
-    },
     "hero": {
       "title": "CRM? That's just the beginning. Unlock real actionable insights with Customer Intelligence.",
       "description": "Oddle's customer intelligence layer empowers your restaurant with comprehensive marketing and operational insights, enabling effortless personalised marketing and operational excellence.",
@@ -54,53 +91,40 @@
     },
     "marketingHeader": {
       "title": "Marketing Intelligence",
-      "subtitle": "The answers you've been missing from your CRM. Say goodbye to guesswork and hello to actionable answers - Uncover valuable insights from your own customer data and make informed decisions with confidence."
+      "description": "The answers you've been missing from your CRM. Say goodbye to guesswork and hello to actionable answers - Uncover valuable insights from your own customer data and make informed decisions with confidence."
     },
     "discover": {
-      "sectionTitle": "Discover, Segment, Target",
-      "sectionDescription": "Unlock the insights you need to power your marketing strategy. Discover your customer breakdown and target the right segment with the right message.",
-      "imageAlt": "Graph showing customer segmentation"
+      "imageAlt": "Graph showing customer segmentation",
+      "title": "Discover, Segment, Target",
+      "description": "Unlock the insights you need to power your marketing strategy. Discover your customer breakdown and target the right segment with the right message."
     },
     "completeData": {
-      "sectionTitle": "Complete customer data at your fingertips",
-      "sectionDescription": "Dive into comprehensive customer data, spanning from transaction history across deliveries, reservations, survey results and even their interactions with your digital touchpoints.",
-      "imageAlt": "UI showing comprehensive customer profile"
-    },
-    "personalizedMarketing": {
-      "description": "Transition from analysis to action right away. Launch personalised marketing with ease. Launch personalised marketing campaigns effortlessly to your target audiences directly from the platform. No need for cumbersome data exports—simply leverage your customer data to select the right audience and launch your campaigns seamlessly.",
-      "title": "Personalised Marketing at Scale",
-      "imageAlt": "Marketing automation workflow diagram",
-      "features": {
-        "0": {
-          "title": "Targeted email broadcasts",
-          "description": "Launch email campaigns to data-driven customer segments with our integrated email marketing tool."
-        },
-        "1": {
-          "title": "Real-time Automation",
-          "description": "Engage customers effortlessly whenever they take an action."
-        },
-        "2": {
-          "title": "Post dine-in surveys",
-          "description": "Build a foundation of 5-star Google reviews to attract new customers and strengthen your online reputation."
-        }
-      }
+      "imageAlt": "UI showing comprehensive customer profile",
+      "title": "Complete customer data at your fingertips",
+      "description": "Dive into comprehensive customer data, spanning from transaction history across deliveries, reservations, survey results and even their interactions with your digital touchpoints."
     },
     "opsHeader": {
       "title": "Operational Intelligence",
-      "subtitle": "Be the smartest host, turn every reservation into a connection. Oddle collects all your data in one convenient location, making it easy to access information on dietary requirements, guest visits, and interactions across different outlets. With just one click, you can view a comprehensive guest history that helps you better understand and serve your customers."
+      "description": "Be the smartest host, turn every reservation into a connection. Oddle collects all your data in one convenient location, making it easy to access information on dietary requirements, guest visits, and interactions across different outlets. With just one click, you can view a comprehensive guest history that helps you better understand and serve your customers."
     },
     "guestFeatures": {
       "items": {
         "0": {
           "title": "Know your guests",
-          "description": "Visits, takeaway orders, allergens, and dining preferences—Oddle helps you know each guest personally."
+          "description": "Visits, takeaway orders, allergens, and dining preferences—Oddle helps you know each guest personally.",
+          "imageAlt": "Know your guests example"
         },
         "1": {
           "title": "Spot loyal customers",
-          "description": "Have all your guest insights at the tip of your fingers to turn your ground team into a super host."
+          "description": "Have all your guest insights at the tip of your fingers to turn your ground team into a super host.",
+          "imageAlt": "Spot loyal customers example"
         }
-      }
-    }
+      },
+      "tag": "",
+      "title": "Know your guests",
+      "description": "Visits, takeaway orders, allergens, and dining preferences—Oddle helps you know each guest personally."
+    },
+    "metadata": {}
   },
   "emailMarketing": {
     "hero": {
@@ -116,10 +140,10 @@
         "0": {
           "imageAlt": "Oddle Marketing Engine Dashboard"
         }
-      }
+      },
+      "tag": ""
     },
     "howItWorks": {
-      "sectionTitle": "How Oddle Marketing Engine Turns Data Into Dollars",
       "items": {
         "0": {
           "title": "All Your Data, All in One Place",
@@ -132,6 +156,30 @@
         "2": {
           "title": "Maximize Cross-Channel Growth",
           "description": "Turn dine-in customers into delivery users (and vice versa) with tailored promotions that expand revenue streams."
+        }
+      },
+      "tag": "",
+      "title": "How Oddle Marketing Engine Turns Data Into Dollars"
+    },
+    "toolkit": {
+      "tag": "",
+      "title": "A Restaurant Email Marketing Toolkit to Make Marketing Effortless",
+      "description": "Launch campaigns with pre-built workflows that require no technical expertise—just results.",
+      "items": {
+        "0": {
+          "title": "Pre-Built Templates, Ready To Go",
+          "description": "Choose from pre-built templates tailored to your goals.",
+          "imageAlt": "Examples of email marketing templates"
+        },
+        "1": {
+          "title": "Let Oddle Do The Data Work",
+          "description": "Unified Customer View: Combine reservations, orders, and loyalty data. Smart Segmentation: Leverage pre-built customer segments. Automated Engagement: Effortlessly personalize campaigns.",
+          "imageAlt": "Data segmentation illustration"
+        },
+        "2": {
+          "title": "Automatically Track Conversions",
+          "description": "Measure and optimize conversion rates effortlessly",
+          "imageAlt": "Conversion tracking illustration"
         }
       }
     }
@@ -162,18 +210,18 @@
     "privacy-policy": "隱私權政策",
     "terms-of-service": "服務條款",
     "facebook": "Facebook",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "newsletter": {
+      "title": "Stay connected",
+      "description": "Subscribe to our newsletter for the latest updates, resources, and exclusive offers.",
+      "placeholder": "Your email address",
+      "buttonText": "Subscribe"
+    }
   },
   "home": {
     "hero": {
       "title": "讓餐廳營收增長變得輕鬆",
       "description": "Oddle 協助全球餐廳獲取顧客數據、建立品牌形象並拓展業務。",
-      "slide1": {
-        "imageAlt": "佔位圖片替代文字 1"
-      },
-      "slide2": {
-        "imageAlt": "佔位圖片替代文字 2"
-      },
       "primaryButton": {
         "text": "Get Free Demo"
       },
@@ -186,6 +234,12 @@
         },
         "1": {
           "imageAlt": "Placeholder Alt 2"
+        },
+        "2": {
+          "imageAlt": "Reserve - Abundance"
+        },
+        "3": {
+          "imageAlt": "Marketing - KEK"
         }
       }
     },
@@ -194,7 +248,7 @@
       "description": "Our platform integrates seamlessly to provide the tools you need for success, all in one place.",
       "title": "Built for Restaurant Growth",
       "imageAlt": "Oddle Platform Features Overview",
-      "features": {
+      "items": {
         "0": {
           "title": "Fast & Reliable",
           "description": "Dependable performance to keep your operations running smoothly."
@@ -214,9 +268,6 @@
       }
     },
     "productsBento": {
-      "badgeText": "我們的解決方案",
-      "sectionTitle": "您拓展營收所需的一切",
-      "sectionDescription": "一套完整的工具，旨在吸引顧客、簡化營運並提升您餐廳的利潤。",
       "items": {
         "0": {
           "title": "預訂",
@@ -249,97 +300,94 @@
           "imageAlt": "Virtual Lounge"
         },
         "6": {
-           "title": "行銷引擎",
-           "description": "自動化行銷活動，輕鬆提升您的線上聲譽。",
-           "imageAlt": "Marketing Engine"
-         },
-         "7": {
-           "title": "顧客智能",
-           "description": "從您的顧客數據中獲取可行的洞察。",
-           "imageAlt": "Customer Intelligence"
-         }
-      }
+          "title": "行銷引擎",
+          "description": "自動化行銷活動，輕鬆提升您的線上聲譽。",
+          "imageAlt": "Marketing Engine"
+        },
+        "7": {
+          "title": "顧客智能",
+          "description": "從您的顧客數據中獲取可行的洞察。",
+          "imageAlt": "Customer Intelligence"
+        }
+      },
+      "tag": "Built for Restaurant Growth",
+      "title": "Everything you need to grow your revenue",
+      "description": "A complete suite of tools designed to attract customers, streamline operations, and boost your restaurant's bottom line."
     },
     "growingEasy": {
       "tag": "增長就像 ABC 一樣簡單",
-       "title": "增長就像 ABC 一樣簡單",
-       "items": {
-         "0": {
-           "title": "獲取顧客數據",
-           "description": "從每次預訂、外送和內用中獲取洞察，建立強大的顧客資料庫。"
-         },
-         "1": {
-           "title": "建立您的品牌",
-           "description": "打造一個反映您餐廳特色並保持顧客互動的無縫線上形象。"
-         },
-         "2": {
-           "title": "轉換以實現增長",
-           "description": "透過自動化獎勵、行銷活動和個人化提醒，將首次光顧的客人轉變為常客。"
-         }
-       }
-     }
-  },
-  "loyalty": {
-    "hero": {
-      "title": "Turn every visit into a loyal customer",
-      "description": "Capture, engage, and retain your customers with a loyalty program designed for Restaurants",
-      "primaryButton": {
-        "text": "Get Free Demo"
-      },
-      "secondaryButton": {
-        "text": "Talk to Sales"
-      },
-      "slides": {
-        "0": {
-          "imageAlt": "Restaurant Loyalty Program UI Showcase"
-        }
-      }
-    },
-    "keyFeatures": {
-      "title": "Key Features",
+      "title": "增長就像 ABC 一樣簡單",
       "items": {
         "0": {
-          "title": "Capture Every Customer",
-          "description": "Sign up diners in a flash, whether at the table or counter. with QR Scans or NFC Taps. The sleek, frictionless process that ensures you capture data from every guest, empowering you to deliver smarter, more personalized loyalty experiences.",
-          "tag": "Grow your customer database",
-          "imageAlt": "Phone showing successful check-in for loyalty program"
+          "title": "獲取顧客數據",
+          "description": "從每次預訂、外送和內用中獲取洞察，建立強大的顧客資料庫。"
         },
         "1": {
-          "title": "Automate Engagement",
-          "description": "Automate personalized rewards, birthday offers, reminders for unused redeemables, and even customer feedback after visits. Stay top of mind while saving time and driving repeat visits with ease.",
-          "tag": "Keep your Restuarant Top of Mind",
-          "imageAlt": "Phone showing loyalty reward notification"
+          "title": "建立您的品牌",
+          "description": "打造一個反映您餐廳特色並保持顧客互動的無縫線上形象。"
+        },
+        "2": {
+          "title": "轉換以實現增長",
+          "description": "透過自動化獎勵、行銷活動和個人化提醒，將首次光顧的客人轉變為常客。"
+        }
+      },
+      "description": "Acquire, Build, and Convert Your Way to Success"
+    },
+    "ecosystemFeature": {
+      "tag": "Unified Platform",
+      "title": "Bring it all together with a platform that centralizes customer data and insights",
+      "description": "Oddle is evolving to be more than just the tools. It supports an entire ecosystem of solutions designed to help your restaurant thrive.",
+      "secondaryDescription": "From managing orders and reservations to understanding customer behavior and driving loyalty, get everything you need in one place.",
+      "image": {
+        "alt": "Oddle Platform Dashboard showing various features"
+      },
+      "features": {
+        "0": {
+          "title": "Integrated & Efficient",
+          "description": "Connect all your tools seamlessly for smoother operations."
+        },
+        "1": {
+          "title": "Customer Focused",
+          "description": "Gain deep insights into your customers to build loyalty."
+        },
+        "2": {
+          "title": "Secure & Reliable",
+          "description": "Protect your data with robust security measures."
+        },
+        "3": {
+          "title": "AI-Powered Insights",
+          "description": "Leverage AI for smarter business decisions."
         }
       }
     },
-    "faq": {
-      "0": {
-        "question": "What is Oddle Loyalty?",
-        "answer": "Oddle's Restaurant Loyalty CRM System is a seamless, easy-to-use digital loyalty software that rewards returning customers and simplifies diner engagement. By combining simple check-in rewards with customer insights, it helps restaurants build stronger relationships and boost repeat visits."
-      },
-      "1": {
-        "question": "How does Oddle's loyalty rewards programme work?",
-        "answer": "Unlike traditional points-based programmes, Oddle uses a simple check-in system where customers earn rewards just by visiting again. All diners at the table can check in—not just the payer—resulting in up to 4x more data captured. This data is invaluable for your remarketing efforts, enabling you to better understand diner behavior and craft personalized campaigns that drive engagement. With return vouchers and flexible incentives, the programme focuses on making loyalty easy for both customers and merchants. Diners can simply tap or scan to check in, making the process fast and frictionless."
-      },
-      "2": {
-        "question": "What are some examples of Oddle merchants using this loyalty programme?",
-        "answer": "In Singapore, well-known establishments like Swee Choon, Barrio, Cenzo, and HJH Maimunah use Oddle's restaurant loyalty system to attract loyal customers and increase engagement through personalized return incentives. In Malaysia, popular spots like Flaaah The Bakery and Naj & Belle leverage Oddle's check-in rewards to encourage repeat visits and reward their diners without the hassle of traditional points systems."
-      },
-      "3": {
-        "question": "Why is Oddle Loyalty the best rewards programme for restaurants?",
-        "answer": "Oddle's innovative loyalty solution eliminates the complexity of traditional points-based rewards. Instead, it focuses on encouraging repeat visits through easy-to-implement check-in rewards. With Oddle's check-in solution, everyone at the table can check in—not just the payer—capturing the dining experience for all guests. This addresses one of the biggest flaws in traditional loyalty programmes that only reward the bill payer. Paired with Oddle Pass, the loyalty experience is even more seamless, offering customers and merchants a highly integrated solution."
-      },
-      "4": {
-        "question": "How does Oddle's Loyalty & CRM system help restaurants better understand their customers?",
-        "answer": "With Oddle's built-in CRM capabilities, you can access valuable customer insights like visit frequency and redemption behavior. Once data is collected, Oddle's marketing engine enables you to reach your customers with targeted campaigns, helping to drive repeat visits and boost engagement."
-      },
-      "5": {
-        "question": "Is Oddle suitable for independent restaurants as well as large chains?",
-        "answer": "Yes! Oddle's loyalty rewards programme for restaurants is fully scalable and works for businesses of all sizes. Whether you run a single café or a multi-location chain, Oddle provides the flexibility to design loyalty campaigns that resonate with your audience."
-      },
-      "6": {
-        "question": "What makes Oddle's Loyalty Rewards Programme different?",
-        "answer": "Oddle Loyalty stands out because it focuses on simplicity and customer experience. The check-in rewards system incentivizes diners to return with minimal setup required. Customers check in through an easy tap or scan process, while return vouchers encourage subsequent visits — making Oddle one of the most effective and best loyalty programmes for restaurants."
+    "featureGrid": {
+      "title": "See our free guides on growing your restaurant",
+      "description": "",
+      "items": {
+        "0": {
+          "title": "Everything you need to get started with a Restaurant Reservation System",
+          "description": "",
+          "href": "/blog/topics/restaurant-reservation-guide",
+          "image": {
+            "alt": "Screenshot of reservation calendar"
+          }
+        },
+        "1": {
+          "title": "Driving Revenue with Online Ordering Systems",
+          "description": "",
+          "href": "/blog/topics/restaurant-online-ordering-guide",
+          "image": {
+            "alt": "Mobile phone showing online ordering menu"
+          }
+        },
+        "2": {
+          "title": "How to use Data to grow sales for your restaurant ",
+          "description": "",
+          "href": "/blog/topics/restaurant-marketing-guide",
+          "image": {
+            "alt": "Dashboard showing customer analytics graphs"
+          }
+        }
       }
     }
   },
@@ -347,7 +395,6 @@
     "acquire": "獲取",
     "build": "建立",
     "convert": "轉換",
-    "app-name": "Oddle",
     "links": {
       "products": "產品",
       "resources": "其它資源",
@@ -384,23 +431,24 @@
     "features": {
       "description": "Leverage Oddle Eats to boost your restaurant's visibility and reach.",
       "title": "Why Feature on Oddle Eats?",
-      "features": {
-         "0": {
-           "title": "Participate in sponsored marketing campaigns at no extra charge.",
-           "description": "Benefit from exclusive partnerships and festive campaigns held throughout the year. Be featured on Oddle Eats' various media channels and increase your discoverability.",
-           "imageAlt": "Oddle Eats Marketing Campaign Example"
-         },
-         "1": {
-           "title": "Extend your reach to our affluent user base with high purchasing power",
-           "description": "Extend your reach to our affluent user base with high purchasing power",
-           "imageAlt": "Graph showing user demographics"
-         },
-         "2": {
-           "title": "Recognize repeat customers without compromising privacy",
-           "description": "Recognize repeat customers without compromising privacy",
-           "imageAlt": "Illustration showing data privacy"
-         }
-       }
+      "tag": "",
+      "items": {
+        "0": {
+          "title": "Participate in sponsored marketing campaigns at no extra charge.",
+          "description": "Benefit from exclusive partnerships and festive campaigns held throughout the year. Be featured on Oddle Eats' various media channels and increase your discoverability.",
+          "imageAlt": "Oddle Eats Marketing Campaign Example"
+        },
+        "1": {
+          "title": "Extend your reach to our affluent user base with high purchasing power",
+          "description": "",
+          "imageAlt": "Graph showing user demographics"
+        },
+        "2": {
+          "title": "Recognize repeat customers without compromising privacy",
+          "description": "",
+          "imageAlt": "Illustration showing data privacy"
+        }
+      }
     }
   },
   "onlineOrdering": {
@@ -458,36 +506,37 @@
           "description": "Connect with delivery partners."
         }
       },
-      "subtitle": "Streamline your orders and delight your customers.",
-      "sectionTitle": "Key Features"
+      "tag": "",
+      "description": "Streamline your orders and delight your customers."
     },
     "details": {
       "title": "Why Choose Our Online Ordering System?",
       "description": "Empower your restaurant with features designed for growth and efficiency.",
-      "0": {
-        "title": "Activate and Grow Sales",
-        "description": "Grow your customer database and build stronger relationships with tools that drive loyalty and repeat orders.",
-        "item1": "Collect and analyze detailed insights into customer behavior, preferences, and order frequency.",
-        "item2": "Reward repeat customers, run targeted promotions, and re-engage lapsed diners with personalized campaigns.",
-        "item3": "Convert delivery customers into dine-in guests and keep them coming back with exclusive offers and tailored experiences.",
-        "imageAlt": "Customer relationship management interface showing profile and communication."
-      },
-      "1": {
-        "title": "Seamless Logistics Management",
-        "description": "Streamline your restaurant operations with tools designed to simplify day-to-day tasks, so you can focus on delivering exceptional dining experiences.",
-        "item1": "Streamline delivery zones, manage logistics efficiently, and achieve best-in-class fulfillment rates.",
-        "item2": "Flexible delivery options to serve customers far and wide.",
-        "imageAlt": "Delivery tracking interface showing map and vehicle."
-      },
-      "2": {
-        "title": "Tap into a network of over a million food lovers with Oddle Eats",
-        "description": "Get your restaurant seen by millions of consumers seeking new dining experiences for every occasion with our premier food directory network, Oddle Eats.",
-        "item1": "Participate in sponsored marketing campaigns at no extra charge.",
-        "item2": "Extend your reach to our affluent user base with high purchasing power.",
-        "imageAlt": "Oddle Eats mobile app interface showing restaurant listings."
-      },
-      "sectionTitle": "Why Choose Our Online Ordering System?",
-      "sectionDescription": "Empower your restaurant with features designed for growth and efficiency."
+      "tag": "",
+      "items": {
+        "0": {
+          "title": "Activate and Grow Sales",
+          "description": "Grow your customer database and build stronger relationships with tools that drive loyalty and repeat orders.",
+          "item1": "Collect and analyze detailed insights into customer behavior, preferences, and order frequency.",
+          "item2": "Reward repeat customers, run targeted promotions, and re-engage lapsed diners with personalized campaigns.",
+          "item3": "Convert delivery customers into dine-in guests and keep them coming back with exclusive offers and tailored experiences.",
+          "imageAlt": "Customer relationship management interface showing profile and communication."
+        },
+        "1": {
+          "title": "Seamless Logistics Management",
+          "description": "Streamline your restaurant operations with tools designed to simplify day-to-day tasks, so you can focus on delivering exceptional dining experiences.",
+          "item1": "Streamline delivery zones, manage logistics efficiently, and achieve best-in-class fulfillment rates.",
+          "item2": "Flexible delivery options to serve customers far and wide.",
+          "imageAlt": "Delivery tracking interface showing map and vehicle."
+        },
+        "2": {
+          "title": "Tap into a network of over a million food lovers with Oddle Eats",
+          "description": "Get your restaurant seen by millions of consumers seeking new dining experiences for every occasion with our premier food directory network, Oddle Eats.",
+          "item1": "Participate in sponsored marketing campaigns at no extra charge.",
+          "item2": "Extend your reach to our affluent user base with high purchasing power.",
+          "imageAlt": "Oddle Eats mobile app interface showing restaurant listings."
+        }
+      }
     }
   },
   "paymentTerminal": {
@@ -530,7 +579,7 @@
           "imageAlt": "Phone showing loyalty redeemable offer"
         }
       },
-      "sectionTitle": "Next-gen solutions designed to help you grow revenue"
+      "tag": "Next-gen solutions designed to help you grow revenue"
     },
     "operations": {
       "title": "Built for seamless operations",
@@ -548,53 +597,7 @@
           "description": "With an sim in every device, enjoy stable internet for transactions, even in remote locations."
         }
       },
-      "sectionTitle": "Built for seamless operations"
-    }
-  },
-  "pricing": {
-    "hero": {
-      "title": "Simple, Transparent Pricing",
-      "description": "Choose the plan that best fits your restaurant's needs. No hidden fees, just straightforward pricing to help you grow.",
-      "imageAlt": "Pricing Page Hero Image"
-    },
-    "planComparison": {
-      "title": "Compare Our Plans",
-      "description": "Find the perfect fit for your business.",
-      "featureGroups": {
-        "Core Features": {
-          "Online Ordering": { "Basic": true, "Pro": true, "Enterprise": true },
-          "Reservation System": { "Basic": true, "Pro": true, "Enterprise": true },
-          "Basic CRM": { "Basic": true, "Pro": true, "Enterprise": true }
-        },
-        "Advanced Features": {
-          "Advanced CRM & Marketing": { "Basic": false, "Pro": true, "Enterprise": true },
-          "Loyalty Program": { "Basic": false, "Pro": true, "Enterprise": true },
-          "Custom Integrations": { "Basic": false, "Pro": false, "Enterprise": true }
-        }
-      },
-      "plans": {
-        "Basic": {
-          "name": "Basic",
-          "price": "$49/mo",
-          "description": "Ideal for small restaurants getting started.",
-          "buttonText": "Get Started",
-          "highlight": false
-        },
-        "Pro": {
-          "name": "Pro",
-          "price": "$99/mo",
-          "description": "Perfect for growing restaurants needing more tools.",
-          "buttonText": "Choose Pro",
-          "highlight": true
-        },
-        "Enterprise": {
-          "name": "Enterprise",
-          "price": "Custom",
-          "description": "Tailored solutions for large operations.",
-          "buttonText": "Contact Sales",
-          "highlight": false
-        }
-      }
+      "tag": ""
     }
   },
   "products": {
@@ -633,6 +636,13 @@
     "oddle-eats-network": {
       "title": "Oddle Eats",
       "desc": "挖掘百萬美食愛好者"
+    },
+    "About Us": "About Us",
+    "actions": {
+      "getStarted": "Get started",
+      "contactSales": "Contact sales team",
+      "getStartedNow": "Get Started Now",
+      "seeLivePreview": "See Live Preview"
     }
   },
   "resources": {
@@ -655,6 +665,10 @@
     "singapore-influencer-list": {
       "title": "Build your business with Singapore Influencer List",
       "desc": "Get Access"
+    },
+    "help-center": {
+      "title": "Help Center",
+      "desc": ""
     }
   },
   "reservationSystem": {
@@ -697,29 +711,27 @@
     },
     "useCases": {
       "tag": "為各類餐廳設計",
-      "sectionTitle": "為各類餐廳設計",
-      "sectionDescription": "無論您是從未使用過訂位系統，還是想擺脫昂貴的年費，Oddle餐廳訂位系統都是為滿足您的需求而設計的。",
-      "features": {
+      "title": "Built for Restaurants of Every Kind",
+      "description": "",
+      "items": {
         "0": {
-          "title": "傳統餐廳走向數位化",
-          "description": "面對數位化挑戰與不斷冒出的新餐廳，你還因為昂貴的年費而躊躇不前嗎？Oddle 餐廳訂位系統 案使用量收費的模式使數位化變得毫無門檻。",
+          "title": "Traditional Restaurants Going Digital",
+          "description": "Facing digitalization challenges with the next generation stepping in, but hesitant about costly subscriptions? Oddle Reserve's pay-as-you-go model makes the transition seamless, eliminating steep monthly fees.",
           "imageAlt": "Dim sum dishes on a table representing traditional restaurants"
         },
         "1": {
-          "title": "大量過路客的餐廳",
-          "description": "當餐廳有很多過路客和不同管道的訂位時，管理各種不同的訂位會變得很具挑戰性。Oddle 訂位系統的使用量計費模式讓您使用得更無負擔，這使它成為各種餐廳管理訂位的理想解決方案。",
+          "title": "Restaurants With High Walk-Ins",
+          "description": "With many walk-ins and limited online reservations, managing big group bookings can be challenging. Oddle Reserve's usage-based pricing lets you pay only when you need it, making it an ideal solution for occasional but essential online reservations.",
           "imageAlt": "Exterior of a soup restaurant representing high walk-in restaurants"
         },
         "2": {
-          "title": "依賴高抽成的訂位平台餐廳",
-          "description": "支付高昂人頭費、抽成給訂位平台的同時，還會被它的廣告攔截本該該訂位的客人，這有時會令人感到沮喪。Oddle 訂位系統系統不收傭金，我們僅按照訂位組數收費，而不是按照人頭數收費，讓您重新掌握您的顧客。",
+          "title": "Restaurants On High-Commission Marketplaces",
+          "description": "Paying expensive per cover to marketplaces that intercept direct bookings with ads can be frustrating. Oddle Reserve removes commissions and charges only per booking—not per cover—giving you back control of your reservations.",
           "imageAlt": "Interior of a PizzaExpress restaurant representing restaurants on marketplaces"
         }
       }
     },
     "operations": {
-      "sectionTitle": "簡化您的日常操作",
-      "sectionDescription": "使用強大的視圖和即時控制，Oddle Reserve 簡化了預訂流程，並透過先進的桌位管理和管理工具，讓您能夠即時有效地管理訂位，提升用餐體驗並簡化營運。",
       "items": {
         "0": {
           "title": "清單顯示",
@@ -741,40 +753,45 @@
           "description": "Access and manage reservations on the go from any device.",
           "imageAlt": "Mobile View"
         }
-      }
+      },
+      "tag": "",
+      "title": "",
+      "description": ""
     },
     "system": {
       "title": "",
       "description": "",
-      "features": {
+      "tag": "",
+      "items": {
         "0": {
-          "title": "安全可靠的訂位系統",
-          "description": "確保訂位並通過內建的防範措施來最小化缺席率。",
+          "title": "Secure and Reliable Reservation Booking System",
+          "description": "Ensure serious bookings and minimize no-shows with built-in safeguards.",
           "imageAlt": "Credit card guarantee",
-          "item1": "預刷信用卡：不是真正刷卡，而是預卡信用卡額度來完成訂位，以減少缺席的情況。",
-          "item2": "付款請求：在高價值的時段或繁忙時期收取押金或全額付款。",
-          "item3": "顧客確認自動化：自動確認訂位以節省時間並減少手動操作。"
+          "item1": "Card Guarantee: Secure reservations with credit card guarantees to reduce cancellations.",
+          "item2": "Payment Request: Collect deposits or full payments upfront for high-value or busy periods.",
+          "item3": "Automated Customer Confirmation: Confirm reservations automatically to save time and reduce manual work."
         },
         "1": {
-          "title": "使用者友善的功能",
-          "description": "透過方便和靈活的選項來提升顧客體驗。",
+          "title": "Customer-Friendly Features",
+          "description": "Enhance the guest experience with convenient and flexible options.",
           "imageAlt": "Payment request",
-          "item1": "顧客編輯訂位：允許顧客更改或取消訂位，而無需電話聯繫，讓使用體驗更順暢。",
-          "item2": "自動化狀態管理：輕鬆更新和追蹤訂位狀態，事半功倍，輕鬆設定好後，能讓團隊保持一致。"
+          "item1": "Guest Self-Edit Reservations: Allow guests to change or cancel bookings without the need to call, creating a smoother experience.",
+          "item2": "Automated Status Management: Easily update and track reservation statuses with minimal effort, keeping your team aligned and operations seamless."
         }
       }
     },
     "growthEngine": {
       "title": "...加上一個強大的成長引擎",
       "description": "將數據洞察轉化為實際策略，使用能自動獎勵顧客再行銷、吸引流失的內用顧客重新回訪的工具，並將外送顧客吸引到現場用餐。",
-      "features": {
+      "tag": "",
+      "items": {
         "0": {
-          "title": "啟動並增加銷售",
-          "description": "使用能推動顧客忠誠度和回購率的工具來擴大您的顧客資料庫並建立更強的顧客關係。",
+          "title": "Activate and Grow Sales",
+          "description": "Grow your customer database and build stronger relationships with tools that drive loyalty and repeat orders.",
           "imageAlt": "Grow sales through engagement",
-          "item1": "收集並分析顧客行為、偏好和來訪頻率，取得詳細的顧客洞見。",
-          "item2": "獎勵重複來訪的顧客、進行分眾行銷，並透過個人化的活動重新吸引流失的顧客。",
-          "item3": "將外送顧客轉換為內用顧客，並透過獨家優惠和客製化的體驗讓他們持續回訪。"
+          "item1": "Collect and analyze detailed insights into customer behavior, preferences, and order frequency.",
+          "item2": "Reward repeat customers, run targeted promotions, and re-engage lapsed diners with personalized campaigns.",
+          "item3": "Convert delivery customers into dine-in guests and keep them coming back with exclusive offers and tailored experiences."
         }
       }
     }
@@ -796,26 +813,27 @@
       }
     },
     "features": {
-       "description": "Leverage Oddle Eats to boost your restaurant's visibility and reach.",
-       "title": "Why Feature on Oddle Eats?",
-       "features": {
-         "0": {
-           "title": "Automated and proactive surveys built into every touchpoint",
-           "description": "Whether customers reserve a table, place an order, or check in for loyalty rewards, they're automatically sent a survey after their visit.",
-           "imageAlt": "Diagram showing survey triggers"
-         },
-         "1": {
-           "title": "Your Fans Hold the Key to a Stronger Brand",
-           "description": "Turn happy diners into brand advocates by prompting them to leave reviews on Google. Improve your online reputation, rank higher in search results and attract new customers organically.",
-           "imageAlt": "Illustration of positive Google reviews"
-         },
-         "2": {
-           "title": "Data you can act on",
-           "description": "Access all survey data in one place to uncover trends, resolve issues and optimise customer retention strategies.",
-           "imageAlt": "Dashboard showing survey results and trends"
-         }
-       }
-     }
+      "description": "Leverage Oddle Eats to boost your restaurant's visibility and reach.",
+      "title": "Why Feature on Oddle Eats?",
+      "tag": "",
+      "items": {
+        "0": {
+          "title": "Automated and proactive surveys built into every touchpoint",
+          "description": "Whether customers reserve a table, place an order, or check in for loyalty rewards, they're automatically sent a survey after their visit.",
+          "imageAlt": "Diagram showing survey triggers"
+        },
+        "1": {
+          "title": "Your Fans Hold the Key to a Stronger Brand",
+          "description": "Turn happy diners into brand advocates by prompting them to leave reviews on Google. Improve your online reputation, rank higher in search results and attract new customers organically.",
+          "imageAlt": "Illustration of positive Google reviews"
+        },
+        "2": {
+          "title": "Data you can act on",
+          "description": "Access all survey data in one place to uncover trends, resolve issues and optimise customer retention strategies.",
+          "imageAlt": "Dashboard showing survey results and trends"
+        }
+      }
+    }
   },
   "virtualLounge": {
     "hero": {
@@ -836,21 +854,180 @@
     "details": {
       "title": "Virtual Lounge Title",
       "description": "Virtual Lounge Description",
-      "personality": {
-        "title": "Showcase Your Restaurant's Personality",
-        "description": "Create a branded digital space that tells your story, showcases your menu, and highlights promotions",
-        "imageAlt": "Phone showing social media interactions"
-      },
-      "connect": {
-        "title": "Connect with Customers Anywhere",
-        "description": "Engage diners whether they are looking to book a table, order delivery, or browse your offerings online.",
-        "imageAlt": "Phone showing email signup form in virtual lounge"
-      },
-      "seamless": {
-        "title": "Create a Seamless Customer Experience",
-        "description": "Integrate your delivery, reservations, and loyalty systems for a unified experience that delights your customers",
-        "imageAlt": "Phone showing integrated loyalty and ordering UI"
+      "tag": "",
+      "items": {
+        "0": {
+          "title": "Showcase Your Restaurant's Personality",
+          "description": "Create a branded digital space that tells your story, showcases your menu, and highlights promotions",
+          "imageAlt": "Phone showing social media interactions"
+        },
+        "1": {
+          "title": "Connect with Customers Anywhere",
+          "description": "Engage diners whether they are looking to book a table, order delivery, or browse your offerings online.",
+          "imageAlt": "Phone showing email signup form in virtual lounge"
+        },
+        "2": {
+          "title": "Create a Seamless Customer Experience",
+          "description": "Integrate your delivery, reservations, and loyalty systems for a unified experience that delights your customers",
+          "imageAlt": "Phone showing integrated loyalty and ordering UI"
+        }
       }
     }
+  },
+  "demoPage": {
+    "section": {
+      "title": "See the Platform in Action",
+      "description": "No contracts. No long-term commitment. Nothing to lose. Find out why Oddle is trusted by thousands of restaurants across the globe. Now serving 🇦🇺 🇸🇬 🇲🇾 🇭🇰 🇹🇼 🇺🇸  and more!",
+      "expectTitle": "What you can expect:",
+      "expectItems": [
+        "Detailed product presentation tailored to you",
+        "Consulting on your specific challenges",
+        "Answers to all the questions you have"
+      ],
+      "form": {}
+    }
+  },
+  "loyaltyCrm": {
+    "hero": {
+      "title": "Turn every visit into a loyal customer",
+      "description": "Capture, engage, and retain your customers with a loyalty program designed for Restaurants",
+      "slides": {
+        "0": {
+          "imageAlt": "Restaurant Loyalty Program UI Showcase"
+        }
+      },
+      "primaryButton": {
+        "text": "Get Free Demo"
+      },
+      "secondaryButton": {
+        "text": "Talk to Sales"
+      }
+    },
+    "details": {
+      "tag": "",
+      "title": "How restaurants grow using Oddle",
+      "description": "",
+      "items": {
+        "0": {
+          "title": "Capture Every Customer",
+          "description": "Sign up diners in a flash, whether at the table or counter. with QR Scans or NFC Taps. The sleek, frictionless process that ensures you capture data from every guest, empowering you to deliver smarter, more personalized loyalty experiences.",
+          "tag": "Grow your customer database",
+          "imageAlt": "Phone showing successful check-in for loyalty program"
+        },
+        "1": {
+          "title": "Automate Engagement",
+          "description": "Automate personalized rewards, birthday offers, reminders for unused redeemables, and even customer feedback after visits. Stay top of mind while saving time and driving repeat visits with ease.",
+          "tag": "Keep your Restuarant Top of Mind",
+          "imageAlt": "Phone showing loyalty reward notification"
+        }
+      }
+    }
+  },
+  "crmCustomerIntelligence": {
+    "hero": {
+      "title": "Restaurant CRM & Customer Intelligence",
+      "description": "Unlock actionable insights from your customer data.",
+      "primaryButton": {
+        "text": "Get Free Demo"
+      },
+      "secondaryButton": {
+        "text": "Talk to Sales"
+      },
+      "slides": {
+        "0": {
+          "imageAlt": "Restaurant CRM & Customer Intelligence Carousel Image"
+        }
+      }
+    },
+    "missingAnswers": {
+      "tag": "Marketing Intelligence",
+      "title": "The answers you've been missing from your CRM.",
+      "description": "Say goodbye to guesswork and hello to actionable answers - Uncover valuable insights from your own customer data and make informed decisions with confidence.",
+      "items": {
+        "0": {
+          "title": "Discover, Segment, Target",
+          "description": "Unlock the insights you need to power your marketing strategy. Discover your customer breakdown and target the right segment with the right message.",
+          "imageAlt": "Store owners analyzing data on laptop"
+        },
+        "1": {
+          "title": "Complete customer data at your fingertips",
+          "description": "Dive into comprehensive customer data, spanning from transaction history across deliveries, reservations, survey results and even their interactions with your digital touchpoints.",
+          "imageAlt": "Visualizing customer data on a digital interface"
+        }
+      }
+    },
+    "guestFeatures": {
+      "tag": "Operational Intelligence",
+      "title": "Be the smartest host, turn every reservation into a connection",
+      "description": "Oddle collects all your data in one convenient location, making it easy to access information on dietary requirements, guest visits, and interactions across different outlets. With just one click, you can view a comprehensive guest history that helps you better understand and serve your customers.",
+      "items": {
+        "0": {
+          "title": "Know your guests",
+          "description": "Visits, takeaway orders, allergens, and dining preferences—Oddle helps you know each guest personally.",
+          "imageAlt": "Know your guests example"
+        },
+        "1": {
+          "title": "Spot loyal customers",
+          "description": "Have all your guest insights at the tip of your fingers to turn your ground team into a super host.",
+          "imageAlt": "Spot loyal customers example"
+        }
+      }
+    },
+    "personalizedMarketing": {
+      "tag": "Personalised Marketing at Scale",
+      "title": "Transition from analysis to action right away. Launch personalised marketing with ease.",
+      "description": "Launch personalised marketing campaigns effortlessly to your target audiences directly from the platform. No need for cumbersome data exports—simply leverage your customer data to select the right audience and launch your campaigns seamlessly.",
+      "items": {
+        "0": {
+          "title": "Targeted email broadcasts",
+          "description": "Launch email campaigns to data-driven customer segments with our integrated email marketing tool.",
+          "imageAlt": "Email marketing campaign examples"
+        },
+        "1": {
+          "title": "Real-time Automation",
+          "description": "Engage customers effortlessly whenever they take an action.",
+          "imageAlt": "Real-time automation examples"
+        },
+        "2": {
+          "title": "Post dine-in surveys",
+          "description": "Build a foundation of 5-star Google reviews to attract new customers and strengthen your online reputation.",
+          "imageAlt": "Customer leaving a review on phone"
+        }
+      }
+    }
+  },
+  "error": {},
+  "notFound": {},
+  "PricingPage": {
+    "heroTitle": "Grow Your Restaurant Revenue with One Integrated Platform",
+    "heroSubtitle": "Start taking online orders, accepting table reservations, processing in-store payments, and building customer loyalty — all from day one, with no upfront costs. Only pay when you start serving real customers.",
+    "heroImageAlt": "Stylized image representing restaurant growth or the Oddle platform",
+    "benefitCommissionFree": "Commission-free options available",
+    "benefitUsageBased": "Pay only for what you need",
+    "benefitUnifiedPlatform": "Access ordering, reservations & more",
+    "benefitDataInsights": "Unlock valuable customer insights",
+    "explanationTitle": "How Our Pricing Works",
+    "explanationDesc1": "We believe in transparent, usage-based pricing. You only pay for the products you use, allowing you to scale efficiently.",
+    "explanationDesc2": "There are no long-term contracts or hidden fees. Start with what you need and add more as your restaurant grows.",
+    "freeProductsTitle": "Free Tools Included",
+    "freeProductsDesc": "Every Oddle account comes with these powerful tools at no extra cost:",
+    "productVirtualLoungeTitle": "Restaurant Virtual Lounge",
+    "productSurveyTitle": "Restaurant Survey & Feedback Tool",
+    "productsTitle": "Our Products",
+    "productShopTitle": "Online Ordering System",
+    "productShopPrice": "10% per order",
+    "productReservationTitle": "Reservation System",
+    "productReservationPrice": "From $0.20 / booking",
+    "productPaymentTitle": "Payment Terminal",
+    "productPaymentPrice": "From 1.4% + $0.08",
+    "productLoyaltyTitle": "Loyalty Program",
+    "productLoyaltyPrice": "Usage-based",
+    "calculatorTitle": "Estimate Your Costs",
+    "faqTitle": "Frequently Asked Questions",
+    "ctaTitle": "Ready to Grow with Oddle?"
+  },
+  "testimonials": {
+    "title": "What Our Merchants Say",
+    "description": "Hear directly from restaurants growing their business with Oddle."
   }
 }
