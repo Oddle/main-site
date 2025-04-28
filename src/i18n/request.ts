@@ -1,6 +1,19 @@
 import { getRequestConfig } from "next-intl/server";
 import { hasLocale } from "next-intl";
 import { routing } from "./routing";
+import deepmerge from 'deepmerge'; // Import deepmerge
+
+const fallbackLocale = 'sg'; // Define fallback locale
+
+// Helper to load messages, returns null on error
+async function loadMessages(locale: string) {
+  try {
+    return (await import(`../../messages/${locale}.json`)).default;
+  } catch (error) {
+    console.warn(`Could not load messages for locale: ${locale}. File might be missing or invalid JSON.`, error);
+    return null; // Return null if file not found or invalid
+  }
+}
 
 // Helper to safely get nested values from an object using a dot-separated key
 function getNestedValue(obj: Record<string, unknown> | null | undefined, key: string): string | undefined {
@@ -25,58 +38,44 @@ function getNestedValue(obj: Record<string, unknown> | null | undefined, key: st
 }
 
 export default getRequestConfig(async ({ requestLocale }) => {
-  // Typically corresponds to the `[locale]` segment
   const requested = await requestLocale;
-  // Determine the effective locale, falling back to default if needed
   const locale = hasLocale(routing.locales, requested)
     ? requested
     : routing.defaultLocale;
 
-  let messages;
-  let enMessages; // Variable to hold English messages
+  // Load messages for the current locale and the fallback locale
+  const localeMessages = await loadMessages(locale);
+  let fallbackMessages = null;
 
-  try {
-    // Load messages for the current locale
-    messages = (await import(`../../messages/${locale}.json`)).default;
-  } catch (error) {
-    console.error(`Could not load messages for locale: ${locale}`, error);
-    // Fallback to an empty object if messages fail to load
-    messages = {};
+  if (locale !== fallbackLocale) {
+    fallbackMessages = await loadMessages(fallbackLocale);
   }
 
-  try {
-    // Always load English messages for fallback
-    enMessages = (await import(`../../messages/sg.json`)).default;
-  } catch (error) {
-    console.error(`Could not load fallback English messages (sg.json)`, error);
-    enMessages = {}; // Fallback to empty object if English messages fail
+  // Start with an empty object
+  let messages = {};
+
+  // Add fallback messages first (if they loaded)
+  if (fallbackMessages) {
+      messages = deepmerge(messages, fallbackMessages);
+      console.log(`Loaded fallback messages from locale: ${fallbackLocale}`);
+  } else if (locale !== fallbackLocale) {
+      console.warn(`Could not load fallback messages for locale: ${fallbackLocale}`);
   }
 
+  // Add current locale messages, overriding fallback where keys overlap
+  if (localeMessages) {
+      messages = deepmerge(messages, localeMessages);
+      console.log(`Loaded messages for locale: ${locale}`);
+  } else {
+      console.error(`FAILED to load messages for locale: ${locale}. Only fallback messages (if any) will be available.`);
+      // If primary fails AND fallback failed/wasn't loaded, messages remains empty 
+      // or just contains fallback. This ensures we don't error out immediately.
+  }
+  
   return {
     locale,
-    messages: messages,
-    // --- Add fallback configuration --- 
-    getMessageFallback: ({ key, namespace }) => {
-      // Construct the full key including the namespace if it exists
-      const fullKey = namespace ? `${namespace}.${key}` : key;
-
-      // Check if the key exists in English messages
-      const fallbackValue = getNestedValue(enMessages, fullKey);
-
-      if (fallbackValue !== undefined) {
-        // If found in English messages...
-        // Log warning only if the current locale is NOT the default locale ('sg') during development
-        if (locale !== 'sg' && process.env.NODE_ENV === 'development') {
-          console.warn(`Using 'en' fallback for key: ${fullKey} (locale: ${locale})`);
-        }
-        // Return the English translation
-        return fallbackValue;
-      }
-      
-      // If not found in English either, return the key itself
-      console.error(`Missing translation for key: ${fullKey} (locale: ${locale})`);
-      return fullKey;
-    }
-    // -------------------------------------
+    messages: messages, // Provide the merged messages
+    // Remove getMessageFallback configuration
+    // getMessageFallback: ... 
   };
 });
