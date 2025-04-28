@@ -267,9 +267,9 @@
       "component": "HeroSectionWithAppShowcase",
       "props": {
         "i18nBaseKey": "onlineOrdering.multiPlatform",
-        "badgeText": "Online Ordering",
-        "title": "Boost Your Orders with a Seamless Online System",
-        "description": "Enable customers to order directly from you, anytime, anywhere, with a beautiful and responsive interface.",
+        "badgeText": "",
+        "title": "Your Brand Front and Center",
+        "description": "Fully-branded platform customized to showcase your logo, menu, and promotions",
         "images": [
           {
             "src": "https://ucarecdn.com/65f2f461-2bf4-45a5-90d1-c643f057bc9b/-/scale_crop/800x1080/bottom/",

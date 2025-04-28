@@ -120,14 +120,14 @@ export default function HeroSectionWithAppShowcase({
   // Removed tab name translations
 
   // Pre-render the image elements for the Marquee using the images prop
-  // Adopt pattern from FeatureSectionWithGridImages
   const marqueeContent = images.map((img, index) => {
     // Calculate aspect ratio for the container div
     const aspectRatio = img.width / img.height;
-    const displayHeight = 380; // Container height
+    // const fixedHeight = 380; // Height is set via className
+    // const displayWidth = Math.round(fixedHeight * aspectRatio); // Not needed when using fill
 
     return (
-      // Wrapper div: needs relative, fixed height, defined aspect ratio, overflow hidden
+      // Wrapper div: Reintroduce this structure
       <div 
         key={index} 
         className={`relative h-[380px] rounded-lg overflow-hidden shadow-lg bg-muted/50 shrink-0`}
@@ -137,7 +137,7 @@ export default function HeroSectionWithAppShowcase({
           src={img.src} 
           alt={img.alt} 
           fill // Use fill prop
-          className="absolute inset-0 size-full object-cover p-1 rounded-lg" // Added rounded-lg
+          className="absolute inset-0 size-full object-cover rounded-lg p-1" // Position absolutely, cover container, add rounding & padding
           sizes="(max-width: 768px) 50vw, 33vw" 
           // Removed explicit width/height
         />
@@ -181,7 +181,7 @@ export default function HeroSectionWithAppShowcase({
 
           {/* Marquee Showcase */} 
           <div className="relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden rounded-lg"> 
-            {/* Apply gap using the Marquee's CSS variable */}
+            {/* Reinstate --gap variable */}
             <Marquee pauseOnHover className="[--duration:15s] [--gap:1.5rem]">
               {marqueeContent} 
             </Marquee>

@@ -16,26 +16,26 @@ async function loadMessages(locale: string) {
 }
 
 // Helper to safely get nested values from an object using a dot-separated key
-function getNestedValue(obj: Record<string, unknown> | null | undefined, key: string): string | undefined {
-  if (!obj) {
-    return undefined;
-  }
-  let current: unknown = obj; // Use unknown instead of any
-  const keys = key.split('.');
-
-  for (const k of keys) {
-    // Type guard to ensure current is an indexable object
-    if (current && typeof current === 'object' && k in current) {
-       // We need to assert the type to access the property
-       current = (current as Record<string, unknown>)[k];
-    } else {
-      return undefined; // Key path doesn't exist or current is not an object
-    }
-  }
-
-  // After the loop, check if the final value is a string
-  return typeof current === 'string' ? current : undefined;
-}
+// function getNestedValue(obj: Record<string, unknown> | null | undefined, key: string): string | undefined {
+//   if (!obj) {
+//     return undefined;
+//   }
+//   let current: unknown = obj; // Use unknown instead of any
+//   const keys = key.split('.');
+// 
+//   for (const k of keys) {
+//     // Type guard to ensure current is an indexable object
+//     if (current && typeof current === 'object' && k in current) {
+//        // We need to assert the type to access the property
+//        current = (current as Record<string, unknown>)[k];
+//     } else {
+//       return undefined; // Key path doesn't exist or current is not an object
+//     }
+//   }
+// 
+//   // After the loop, check if the final value is a string
+//   return typeof current === 'string' ? current : undefined;
+// }
 
 export default getRequestConfig(async ({ requestLocale }) => {
   const requested = await requestLocale;
