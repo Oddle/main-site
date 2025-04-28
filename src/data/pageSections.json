@@ -219,6 +219,50 @@
         ]
       }
     },
+
+    {
+      "component": "FeatureSectionWithGridImages",
+      "props": {
+        "i18nBaseKey": "onlineOrdering.keyFeatures",
+        "tag": "",
+        "title": "Your Best Customers Deserve More",
+        "description": "Restaurants thrive when they own their online ordering system. Here's why your best customers—and your business—benefit.",
+        "items": [
+          {
+            "title": "Bigger Orders, Higher Revenue",
+            "description": "Customers ordering directly often place larger orders, perfect for celebrations, luncheons, or family meals.",
+            "image": {
+              "src": "https://ucarecdn.com/942d96fc-ed50-49b5-91a9-768856075d9e/-/preview/999x666/",
+              "alt": "Illustration representing bigger orders and higher revenue."
+            }
+          },
+          {
+            "title": "Plan Ahead for Special Occasions",
+            "description": "Advance orders provide opportunities to cater to loyal customers who trust you.",
+            "image": {
+              "src": "https://ucarecdn.com/942d96fc-ed50-49b5-91a9-768856075d9e/-/preview/999x666/",
+              "alt": "Illustration representing planning ahead for special occasions."
+            }
+          },
+          {
+            "title": "Reach Customers Wherever They Are",
+            "description": "Some of your best customers can't visit your restaurant in person—delivery ensures they never miss out.",
+            "image": {
+              "src": "https://ucarecdn.com/942d96fc-ed50-49b5-91a9-768856075d9e/-/preview/999x666/",
+              "alt": "Illustration representing reaching customers via delivery."
+            }
+          },
+          {
+            "title": "Build Stronger Relationships",
+            "description": "Owning your ordering channel lets you deliver a seamless, branded experience that builds customer loyalty.",
+            "image": {
+              "src": "https://ucarecdn.com/942d96fc-ed50-49b5-91a9-768856075d9e/-/preview/999x666/",
+              "alt": "Illustration representing building stronger customer relationships."
+            }
+          }
+        ]
+      }
+    },
     {
       "component": "HeroSectionWithAppShowcase",
       "props": {
@@ -226,59 +270,24 @@
         "badgeText": "Online Ordering",
         "title": "Boost Your Orders with a Seamless Online System",
         "description": "Enable customers to order directly from you, anytime, anywhere, with a beautiful and responsive interface.",
-        "desktopImage": {
-          "src": "https://placehold.co/1920x1080/E8F0E2/AAAAAA?text=Ordering+Desktop",
-          "alt": "Online Ordering Desktop View",
-          "width": 1920,
-          "height": 1080
-        },
-        "mobileImage": {
-          "src": "https://placehold.co/1080x1920/E8F0E2/AAAAAA?text=Ordering+Mobile",
-          "alt": "Online Ordering Mobile View",
-          "width": 1080,
-          "height": 1920
-        },
-        "tabletImage": {
-          "src": "https://placehold.co/1024x768/E8F0E2/AAAAAA?text=Ordering+Tablet",
-          "alt": "Online Ordering Tablet View",
-          "width": 1024,
-          "height": 768
-        },
-        "feature1": {
-          "icon": "",
-          "title": "Fully Integrated",
-          "description": "Connects smoothly with your POS and kitchen.",
-          "animationClass": "animate-float-slow"
-        },
-        "feature2": {
-          "icon": "",
-          "title": "Customizable",
-          "description": "Match your brand's look and feel.",
-          "animationClass": "animate-float"
-        }
-      }
-    },
-    {
-      "component": "IconSectionHorizontal",
-      "props": {
-        "i18nBaseKey": "onlineOrdering.keyFeatures",
-        "sectionTag": null,
-        "sectionTitle": "Key Features",
-        "items": [
-          { 
-            "icon": "Settings",
-            "title": "Easy Menu Management", 
-            "description": "Update your menu in real-time." 
+        "images": [
+          {
+            "src": "https://ucarecdn.com/65f2f461-2bf4-45a5-90d1-c643f057bc9b/-/scale_crop/800x1080/bottom/",
+            "alt": "Online Ordering Desktop View",
+            "width": 800,
+            "height": 1080
           },
-          { 
-            "icon": "Package",
-            "title": "Seamless Order Processing", 
-            "description": "Manage orders efficiently." 
+          {
+            "src": "https://ucarecdn.com/cb29b273-0719-4ca4-b9b4-4467406f7964/-/scale_crop/1000x2000/center/",
+            "alt": "Yu Cun Curry Fishead",
+            "width": 1000,
+            "height": 1920
           },
-          { 
-            "icon": "Truck",
-            "title": "Integrated Delivery Options", 
-            "description": "Connect with delivery partners." 
+          {
+            "src": "https://ucarecdn.com/13350df4-625e-4924-b0f0-a660e15a7371/-/scale_crop/800x1080/bottom/",
+            "alt": "White Beehoon",
+            "width": 800,
+            "height": 1080
           }
         ]
       }

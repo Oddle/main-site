@@ -35,8 +35,13 @@ export default function FeatureSectionWithGridImages({
   const title = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.title`, defaultTitle) : defaultTitle;
   const description = i18nBaseKey && defaultDescription ? getTranslation(t, `${i18nBaseKey}.description`, defaultDescription) : defaultDescription;
 
+  // Determine grid classes based on item count
+  const gridClasses = items.length === 4
+    ? "grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8" // 1 col on mobile, 2x2 grid on sm+
+    : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"; // Default responsive grid
+
   return (
-    <Container className="py-16 md:py-24 lg:py-32">
+    <Container className="py-16 md:py-24 lg:py-32 relative z-30 bg-background">
       {/* Section Header */} 
       <div className="mb-12 md:mb-16 text-center max-w-3xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">{title}</h2>
@@ -46,7 +51,7 @@ export default function FeatureSectionWithGridImages({
       </div>
 
       {/* Items Grid - Updated structure and styling */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <div className={gridClasses}> {/* Use dynamically determined classes */}
         {items.map((item, index) => {
           // Get default values from item prop
           const defaultTitle = item.title;
