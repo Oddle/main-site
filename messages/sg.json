@@ -87,61 +87,6 @@
       "form": {}
     }
   },
-  "crm": {
-    "hero": {
-      "title": "CRM? That's just the beginning. Unlock real actionable insights with Customer Intelligence.",
-      "description": "Oddle's customer intelligence layer empowers your restaurant with comprehensive marketing and operational insights, enabling effortless personalised marketing and operational excellence.",
-      "primaryButton": {
-        "text": "Get Free Demo"
-      },
-      "secondaryButton": {
-        "text": "Talk to Sales"
-      },
-      "slides": {
-        "0": {
-          "imageAlt": "Customer Intelligence Dashboard Snippet"
-        }
-      }
-    },
-    "marketingHeader": {
-      "title": "Marketing Intelligence",
-      "description": "The answers you've been missing from your CRM. Say goodbye to guesswork and hello to actionable answers - Uncover valuable insights from your own customer data and make informed decisions with confidence."
-    },
-    "discover": {
-      "title": "Discover, Segment, Target",
-      "description": "Unlock the insights you need to power your marketing strategy. Discover your customer breakdown and target the right segment with the right message.",
-      "imageAlt": "Graph showing customer segmentation"
-    },
-    "completeData": {
-      "title": "Complete customer data at your fingertips",
-      "description": "Dive into comprehensive customer data, spanning from transaction history across deliveries, reservations, survey results and even their interactions with your digital touchpoints.",
-      "imageAlt": "UI showing comprehensive customer profile"
-    },
-    "opsHeader": {
-      "title": "Operational Intelligence",
-      "description": "Be the smartest host, turn every reservation into a connection. Oddle collects all your data in one convenient location, making it easy to access information on dietary requirements, guest visits, and interactions across different outlets. With just one click, you can view a comprehensive guest history that helps you better understand and serve your customers."
-    },
-    
-    "guestFeatures": {
-      "tag": "",
-      "title": "Know your guests",
-      "description": "Visits, takeaway orders, allergens, and dining preferences—Oddle helps you know each guest personally.",
-      "items": {
-        "0": {
-          "title": "Know your guests",
-          "description": "Visits, takeaway orders, allergens, and dining preferences—Oddle helps you know each guest personally.",
-          "imageAlt": "Know your guests example"
-        },
-        "1": {
-          "title": "Spot loyal customers",
-          "description": "Have all your guest insights at the tip of your fingers to turn your ground team into a super host.",
-          "imageAlt": "Spot loyal customers example"
-        }
-      }
-    },
-    "metadata": {
-    }
-  },
   "emailMarketing": {
     "hero": {
       "tag": "",
@@ -495,11 +440,6 @@
           "title": "Extend your reach to our affluent user base with high purchasing power",
           "description": "",
           "imageAlt": "Graph showing user demographics"
-        },
-        "2": {
-          "title": "Recognize repeat customers without compromising privacy",
-          "description": "",
-          "imageAlt": "Illustration showing data privacy"
         }
       }
     }

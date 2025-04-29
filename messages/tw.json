@@ -74,59 +74,6 @@
       }
     }
   },
-  "crm": {
-    "hero": {
-      "title": "CRM? That's just the beginning. Unlock real actionable insights with Customer Intelligence.",
-      "description": "Oddle's customer intelligence layer empowers your restaurant with comprehensive marketing and operational insights, enabling effortless personalised marketing and operational excellence.",
-      "primaryButton": {
-        "text": "Get Free Demo"
-      },
-      "secondaryButton": {
-        "text": "Talk to Sales"
-      },
-      "slides": {
-        "0": {
-          "imageAlt": "Customer Intelligence Dashboard Snippet"
-        }
-      }
-    },
-    "marketingHeader": {
-      "title": "Marketing Intelligence",
-      "description": "The answers you've been missing from your CRM. Say goodbye to guesswork and hello to actionable answers - Uncover valuable insights from your own customer data and make informed decisions with confidence."
-    },
-    "discover": {
-      "imageAlt": "Graph showing customer segmentation",
-      "title": "Discover, Segment, Target",
-      "description": "Unlock the insights you need to power your marketing strategy. Discover your customer breakdown and target the right segment with the right message."
-    },
-    "completeData": {
-      "imageAlt": "UI showing comprehensive customer profile",
-      "title": "Complete customer data at your fingertips",
-      "description": "Dive into comprehensive customer data, spanning from transaction history across deliveries, reservations, survey results and even their interactions with your digital touchpoints."
-    },
-    "opsHeader": {
-      "title": "Operational Intelligence",
-      "description": "Be the smartest host, turn every reservation into a connection. Oddle collects all your data in one convenient location, making it easy to access information on dietary requirements, guest visits, and interactions across different outlets. With just one click, you can view a comprehensive guest history that helps you better understand and serve your customers."
-    },
-    "guestFeatures": {
-      "items": {
-        "0": {
-          "title": "Know your guests",
-          "description": "Visits, takeaway orders, allergens, and dining preferences—Oddle helps you know each guest personally.",
-          "imageAlt": "Know your guests example"
-        },
-        "1": {
-          "title": "Spot loyal customers",
-          "description": "Have all your guest insights at the tip of your fingers to turn your ground team into a super host.",
-          "imageAlt": "Spot loyal customers example"
-        }
-      },
-      "tag": "",
-      "title": "Know your guests",
-      "description": "Visits, takeaway orders, allergens, and dining preferences—Oddle helps you know each guest personally."
-    },
-    "metadata": {}
-  },
   "emailMarketing": {
     "hero": {
       "title": "數據轉換成營收：Oddle 行銷引擎的優勢",
@@ -410,39 +357,23 @@
   },
   "oddleEats": {
     "hero": {
-      "title": "Your restaurant in the pockets of a million food lovers",
-      "description": "Get your restaurant seen by millions of consumers seeking new dining experiences for every occasion with our premier food directory network, Oddle Eats.",
-      "primaryButton": {
-        "text": "Get Free Demo"
-      },
-      "secondaryButton": {
-        "text": "Talk to Sales"
-      },
-      "slides": {
-        "0": {
-          "imageAlt": "Oddle Eats App Interface"
-        }
-      }
+      "title": "讓您的餐廳成為百萬美食愛好者的口袋餐廳。",
+      "description": "透過我們的餐廳平台Oddle Eats，讓您的餐廳被數百萬尋求全新用餐體驗的消費者看到，滿足每一個用餐場合的需求。"
     },
     "features": {
-      "description": "Leverage Oddle Eats to boost your restaurant's visibility and reach.",
-      "title": "Why Feature on Oddle Eats?",
-      "tag": "",
+      "tag": "為餐廳成長量身打造的平台",
+      "description": "透過Oddle Eats，讓您的餐廳被數百萬尋求全新用餐體驗的消費者看到，滿足每一個用餐場合的需求。",
+      "title": "為什麼要在Oddle Eats上展示？",
       "items": {
         "0": {
-          "title": "Participate in sponsored marketing campaigns at no extra charge.",
-          "description": "Benefit from exclusive partnerships and festive campaigns held throughout the year. Be featured on Oddle Eats' various media channels and increase your discoverability.",
+          "title": "參與贊助行銷活動，不需額外付費",
+          "description": "透過Oddle Eats，讓您的餐廳被數百萬尋求全新用餐體驗的消費者看到，滿足每一個用餐場合的需求。",
           "imageAlt": "Oddle Eats Marketing Campaign Example"
         },
         "1": {
-          "title": "Extend your reach to our affluent user base with high purchasing power",
-          "description": "",
+          "title": "擴大您的顧客群",
+          "description": "透過Oddle Eats，讓您的餐廳被數百萬尋求全新用餐體驗的消費者看到，滿足每一個用餐場合的需求。",
           "imageAlt": "Graph showing user demographics"
-        },
-        "2": {
-          "title": "Recognize repeat customers without compromising privacy",
-          "description": "",
-          "imageAlt": "Illustration showing data privacy"
         }
       }
     }
