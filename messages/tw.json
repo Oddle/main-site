@@ -9,6 +9,7 @@
     "Terms of Service": "服務條款",
     "Contact Us": "联系我们",
     "About Us": "關於我們",
+    "faqTitle": "常見問題",
     "actions": {
       "getStarted": "開始使用",
       "contactSales": "聯繫銷售團隊",
@@ -128,57 +129,51 @@
   },
   "emailMarketing": {
     "hero": {
-      "title": "Data to Dollars: The Oddle Marketing Engine Advantage",
-      "description": "Turn Insights Into Action and Customers Into Cash",
-      "primaryButton": {
-        "text": "Get Free Demo"
-      },
-      "secondaryButton": {
-        "text": "Talk to Sales"
-      },
+      "title": "數據轉換成營收：Oddle 行銷引擎的優勢",
+      "description": "將數據洞見轉化為實際行動，將客戶轉化為實際營收",
       "slides": {
         "0": {
           "imageAlt": "Oddle Marketing Engine Dashboard"
         }
-      },
-      "tag": ""
+      }
     },
     "howItWorks": {
+      "tag": "",
+      "title": "Oddle行銷引擎如何把數據變成營收",
+      "description": "用更聰明的工具簡化顧客再行銷、解鎖隱藏的營收機會並持續提升您的餐廳事業。",
       "items": {
         "0": {
-          "title": "All Your Data, All in One Place",
-          "description": "Consolidate reservations, delivery, and loyalty data into a single platform for a 360° view of your customers"
+          "title": "一站式管理所有資料",
+          "description": "將訂位、外帶外送和顧客忠誠計畫的數據整合到單一的系統內，為您提供360°的顧客資料洞見"
         },
         "1": {
-          "title": "See What You've Been Missing",
-          "description": "Automatically visualize customer behavior and sales trends to uncover untapped revenue opportunities."
+          "title": "看看您之前錯過了什麼",
+          "description": "自動地將顧客行為和銷售趨勢視覺化，發掘未開發的潛在營收。"
         },
         "2": {
-          "title": "Maximize Cross-Channel Growth",
-          "description": "Turn dine-in customers into delivery users (and vice versa) with tailored promotions that expand revenue streams."
+          "title": "最大化所有通路的成長",
+          "description": "線下導線上、線上導線下，將內用的顧客轉換為線上外送顧客，反之亦然，透過客製化的行銷策略擴大營收。"
         }
-      },
-      "tag": "",
-      "title": "How Oddle Marketing Engine Turns Data Into Dollars"
+      }
     },
     "toolkit": {
       "tag": "",
-      "title": "A Restaurant Email Marketing Toolkit to Make Marketing Effortless",
-      "description": "Launch campaigns with pre-built workflows that require no technical expertise—just results.",
+      "title": "一個讓顧客再行銷變得更輕鬆的電子郵件工具包",
+      "description": "不需要任何技術背景與專業知識，只需要想好您想要的結果，就能啟動預先建立的自動化作業流程。",
       "items": {
         "0": {
-          "title": "Pre-Built Templates, Ready To Go",
-          "description": "Choose from pre-built templates tailored to your goals.",
+          "title": "預設模板，隨時啟用",
+          "description": "從預設模板中選擇適合您目標的模板。",
           "imageAlt": "Examples of email marketing templates"
         },
         "1": {
-          "title": "Let Oddle Do The Data Work",
-          "description": "Unified Customer View: Combine reservations, orders, and loyalty data. Smart Segmentation: Leverage pre-built customer segments. Automated Engagement: Effortlessly personalize campaigns.",
+          "title": "讓Oddle來處理數據工作",
+          "description": "預先創建的客戶群以針對性活動，由智能CRM驅動。",
           "imageAlt": "Data segmentation illustration"
         },
         "2": {
-          "title": "Automatically Track Conversions",
-          "description": "Measure and optimize conversion rates effortlessly",
+          "title": "自動追蹤轉換",
+          "description": "輕鬆測量和優化轉換率",
           "imageAlt": "Conversion tracking illustration"
         }
       }
@@ -195,6 +190,7 @@
     "blog": "行銷引擎指南",
     "customer-stories": "餐廳案例",
     "guides": "指南",
+    "slogan": "餐廳最好的營收成長夥伴，提供外送、訂位、顧客忠誠計畫和數據行銷等服務",
     "restaurant-online-ordering-guide": "線上外帶外送系統指南",
     "restaurant-reservation-guide": "訂位系統指南",
     "restaurant-loyalty-guide": "顧客忠誠計劃指南",
@@ -543,14 +539,8 @@
   },
   "paymentTerminal": {
     "hero": {
-      "title": "Transform every Payment Into a Growth Opportunity",
-      "description": "More than just card processing at competitive rates, we empower you with insightful customer data and ways to grow revenue, all in one mobile device.",
-      "primaryButton": {
-        "text": "Get Free Demo"
-      },
-      "secondaryButton": {
-        "text": "Talk to Sales"
-      },
+      "title": "將每一筆付款轉化為增長機會",
+      "description": "不只提供競爭力的收款服務，我們還提供有助於提升營收的顧客資料，並且所有功能都整合在一個行動裝置上。",
       "slides": {
         "0": {
           "imageAlt": "Oddle Payment Terminal"
@@ -558,45 +548,46 @@
       }
     },
     "features": {
-      "title": "Next-gen solutions designed to help you grow revenue",
+      "title": "Ne次世代解決方案旨在幫助您增加收入",
       "items": {
         "0": {
-          "title": "Capture 100% of customers, no marketing opt-in needed",
-          "description": "Advanced analytics drives data-driven decisions, offering predictive insights, personalized recommendations, real-time analysis, cost savings, and risk mitigation. Choose advanced analytics for strategic decision-making and business growth.",
+          "title": "捕捉100%的客戶，無需營銷選擇加入",
+          "description": "高級分析推動基於數據的決策，提供預測見解、個性化建議、實時分析、成本節約和風險降低。選擇高級分析以實現戰略決策和業務增長。",
           "imageAlt": "Analytics dashboard showing customer data"
         },
         "1": {
-          "title": "Get a true health score on customer retention",
-          "description": "Move beyond revenue tracking to understand your restaurant's customer health. By capturing a unique profile for each visitor, you'll see an accurate score of your customer retention rates, providing a clear snapshot of how often guests return and the strength of their loyalty.",
+          "title": "獲得真正的客戶留存健康評分",
+          "description": "超越收入追踪，了解您餐廳的顧客健康狀況。透過為每位訪客捕捉獨特的個人資料，您將能清楚地看到顧客留存率的準確評分，提供有關顧客回訪頻率和忠誠度強度的清晰快照。",
           "imageAlt": "Graph showing customer retention score"
         },
         "2": {
-          "title": "Collect contacts, boost database marketing",
-          "description": "Effortlessly grow your contact list when customers claim redeemables by scanning a QR code on their receipt. Once added, you can send targeted updates, exclusive offers, or online store promotions to keep your restaurant top of mind.",
+          "title": "收集聯絡人，增強資料庫行銷",
+          "description": "輕鬆擴展您的聯絡人名單，當顧客通過掃描收據上的 QR 碼來兌換獎勵時即可新增聯絡人。新增後，您可以發送針對性的更新、獨家優惠或網上商店促銷活動，以保持您的餐廳在顧客心中的印象。",
           "imageAlt": "Phone scanning QR code on receipt"
         },
         "3": {
-          "title": "Drive return visits with targeted redeemables",
-          "description": "Encourage repeat business with tailored redeemables. Set thresholds, like spending minimums, to trigger exclusive return offers that bring customers back, keeping them engaged and driving loyalty.",
+          "title": "透過針對性的可兌換優惠來促進回訪",
+          "description": "透過量身定制的可兌換獎勵鼓勵重複購買。設置門檻，例如最低消費額，以觸發獨家的回報優惠，吸引顧客回來，保持他們的參與感並推動忠誠度。",
           "imageAlt": "Phone showing loyalty redeemable offer"
         }
       },
       "tag": "Next-gen solutions designed to help you grow revenue"
     },
     "operations": {
-      "title": "Built for seamless operations",
+      "title": "為無縫操作而建",
+      "description": "我們的次世代刷卡機旨在滿足您的業務需求，並保持操作的順利進行。",
       "items": {
         "0": {
-          "title": "Dedicated Customer Support",
-          "description": "Our team is always ready to help, ensuring your business stays up and running."
+          "title": "專門的客戶支持",
+          "description": "我們的團隊隨時準備提供協助，確保您的業務持續運行。"
         },
         "1": {
-          "title": "48-hour Onboarding",
-          "description": "Get started with Oddle Terminal within 2 business days—quick, easy, and hassle-free."
+          "title": "48小時入職訓練",
+          "description": "在 2 個工作日內啟用 Oddle 線下刷卡機——快速、簡單且無憂無慮。"
         },
         "2": {
-          "title": "Reliable Connectivity Anywhere",
-          "description": "With an sim in every device, enjoy stable internet for transactions, even in remote locations."
+          "title": "可靠的連接隨時隨地",
+          "description": "在每個設備中都有SIM卡，即使在偏遠地區也能享受穩定的網路進行交易。"
         }
       },
       "tag": ""
@@ -801,14 +792,8 @@
   },
   "survey": {
     "hero": {
-      "title": "Turn Feedback Into Fuel for Your Brand's Growth",
-      "description": "Automated surveys that power customer insights, enhance service, and boost your brand's visibility.",
-      "primaryButton": {
-        "text": "Get Free Demo"
-      },
-      "secondaryButton": {
-        "text": "Talk to Sales"
-      },
+      "title": "將顧客回饋轉化為品牌成長的原動力",
+      "description": "自動化問卷可以提升品牌對顧客的了解、增強服務品質並提升品牌的可見度。",
       "slides": {
         "0": {
           "imageAlt": "Oddle Survey Tool Interface"
@@ -816,23 +801,23 @@
       }
     },
     "features": {
-      "description": "Leverage Oddle Eats to boost your restaurant's visibility and reach.",
-      "title": "Why Feature on Oddle Eats?",
+      "description": "",
+      "title": "",
       "tag": "",
       "items": {
         "0": {
-          "title": "Automated and proactive surveys built into every touchpoint",
-          "description": "Whether customers reserve a table, place an order, or check in for loyalty rewards, they're automatically sent a survey after their visit.",
+          "title": "在每個接觸點設定自動化的問卷調查",
+          "description": "無論顧客是在線上訂位、訂外帶外送，還是在店內簽到或註冊，他們都會自動收到一份調查問卷。",
           "imageAlt": "Diagram showing survey triggers"
         },
         "1": {
-          "title": "Your Fans Hold the Key to a Stronger Brand",
-          "description": "Turn happy diners into brand advocates by prompting them to leave reviews on Google. Improve your online reputation, rank higher in search results and attract new customers organically.",
+          "title": "You你的忠實粉絲是建立強大品牌的關鍵",
+          "description": "提醒顧客在 Google 上留下評論，將開心的顧客轉變為品牌的忠實推廣者。提升您的線上評價可以讓您在搜索結果中排名更高，自然地吸引更多新客戶。",
           "imageAlt": "Illustration of positive Google reviews"
         },
         "2": {
-          "title": "Data you can act on",
-          "description": "Access all survey data in one place to uncover trends, resolve issues and optimise customer retention strategies.",
+          "title": "可供您採取行動的數據洞見",
+          "description": "一站式訪問所有的問卷數據，發現顧客趨勢、解決營運問題並優化顧客經營策略。",
           "imageAlt": "Dashboard showing survey results and trends"
         }
       }
@@ -840,14 +825,8 @@
   },
   "virtualLounge": {
     "hero": {
-      "title": "Showcase Your Brand Online with Oddle's Virtual Lounge",
-      "description": "Create a branded digital space to engage customers, showcase your menu, and drive both online and in-person visits.",
-      "primaryButton": {
-        "text": "Get Free Demo"
-      },
-      "secondaryButton": {
-        "text": "Talk to Sales"
-      },
+      "title": "透過 Oddle 亮點看板輕鬆地展示您的品牌",
+      "description": "創造一個品牌化的專屬頁面。更有效地讓顧客了解品牌的重要資訊如主打菜色、季節菜色、促銷活動等，並提升內用和外送的流量。",
       "slides": {
         "0": {
           "imageAlt": "Phone showing Oddle Virtual Lounge UI"
@@ -855,23 +834,23 @@
       }
     },
     "details": {
-      "title": "Virtual Lounge Title",
-      "description": "Virtual Lounge Description",
+      "title": "",
+      "description": "",
       "tag": "",
       "items": {
         "0": {
-          "title": "Showcase Your Restaurant's Personality",
-          "description": "Create a branded digital space that tells your story, showcases your menu, and highlights promotions",
+          "title": "展示您餐廳的所有亮點",
+          "description": "創造品牌的專屬頁面，講述您的故事、展示您的菜單，並突顯近期的促銷活動。",
           "imageAlt": "Phone showing social media interactions"
         },
         "1": {
-          "title": "Connect with Customers Anywhere",
-          "description": "Engage diners whether they are looking to book a table, order delivery, or browse your offerings online.",
+          "title": "隨時隨地與客戶保持聯繫",
+          "description": "無論顧客想訂位、訂購外送，或是瀏覽您的菜單，都可透過亮點看板吸引他們。",
           "imageAlt": "Phone showing email signup form in virtual lounge"
         },
         "2": {
-          "title": "Create a Seamless Customer Experience",
-          "description": "Integrate your delivery, reservations, and loyalty systems for a unified experience that delights your customers",
+          "title": "創造順暢的客戶體驗",
+          "description": "整合您的外送服務、訂位服務與顧客忠誠計畫，用一頁亮點看板展示，讓您的顧客擁有美好的使用體驗",
           "imageAlt": "Phone showing integrated loyalty and ordering UI"
         }
       }
@@ -892,35 +871,29 @@
   },
   "loyaltyCrm": {
     "hero": {
-      "title": "Turn every visit into a loyal customer",
-      "description": "Capture, engage, and retain your customers with a loyalty program designed for Restaurants",
+      "title": "將一般的顧客轉化為忠實顧客",
+      "description": "透過專為餐廳設計的顧客忠誠計劃來吸引、留存並與顧客們保持互動",
       "slides": {
         "0": {
           "imageAlt": "Restaurant Loyalty Program UI Showcase"
         }
-      },
-      "primaryButton": {
-        "text": "Get Free Demo"
-      },
-      "secondaryButton": {
-        "text": "Talk to Sales"
       }
     },
     "details": {
-      "tag": "",
-      "title": "How restaurants grow using Oddle",
-      "description": "",
+      "tag": "關鍵功能",
+      "title": "餐廳如何利用Oddle實現營收增長",
+      "description": "透過專為餐廳設計的顧客忠誠計劃來吸引、留存並與顧客們保持互動",
       "items": {
         "0": {
-          "title": "Capture Every Customer",
-          "description": "Sign up diners in a flash, whether at the table or counter. with QR Scans or NFC Taps. The sleek, frictionless process that ensures you capture data from every guest, empowering you to deliver smarter, more personalized loyalty experiences.",
-          "tag": "Grow your customer database",
+          "title": "掌握每一位顧客",
+          "description": "使用 QR Code 掃描或 NFC 觸碰，隨時隨地讓顧客註冊，無論是在座位上還是在櫃檯邊。這種流暢、滑順的使用流程可確保您讓每位顧客註冊，提供更智能、更個人化的顧客獎勵體驗。",
+          "tag": "擴展您的顧客資料庫",
           "imageAlt": "Phone showing successful check-in for loyalty program"
         },
         "1": {
-          "title": "Automate Engagement",
-          "description": "Automate personalized rewards, birthday offers, reminders for unused redeemables, and even customer feedback after visits. Stay top of mind while saving time and driving repeat visits with ease.",
-          "tag": "Keep your Restuarant Top of Mind",
+          "title": "自動化再行銷",
+          "description": "自動給予個人化獎勵、生日優惠、兌換券提醒，甚至在用餐後，自動寄出問卷收集顧客回饋。在節省時間的同時，也讓顧客對您印象深刻並輕鬆促進顧客回訪。",
+          "tag": "讓餐廳隨時在顧客心中佔有一席之地",
           "imageAlt": "Phone showing loyalty reward notification"
         }
       }
@@ -928,14 +901,8 @@
   },
   "crmCustomerIntelligence": {
     "hero": {
-      "title": "Restaurant CRM & Customer Intelligence",
-      "description": "Unlock actionable insights from your customer data.",
-      "primaryButton": {
-        "text": "Get Free Demo"
-      },
-      "secondaryButton": {
-        "text": "Talk to Sales"
-      },
+      "title": "餐廳CRM與顧客洞察",
+      "description": "Oddle 的顧客智能為您的餐廳提供全面的營運與行銷洞察，使分眾行銷、個人化行銷與優秀的營運變得輕而易舉。",
       "slides": {
         "0": {
           "imageAlt": "Restaurant CRM & Customer Intelligence Carousel Image"
@@ -943,57 +910,57 @@
       }
     },
     "missingAnswers": {
-      "tag": "Marketing Intelligence",
-      "title": "The answers you've been missing from your CRM.",
-      "description": "Say goodbye to guesswork and hello to actionable answers - Uncover valuable insights from your own customer data and make informed decisions with confidence.",
+      "tag": "智能行銷",
+      "title": "您在一般的CRM系統中缺失的答案。",
+      "description": "不再猜測、盲目制定下一步。從您的顧客數據中發掘寶貴的洞見，制定可行的顧客經營策略，自信地做出明智的決策。",
       "items": {
         "0": {
-          "title": "Discover, Segment, Target",
-          "description": "Unlock the insights you need to power your marketing strategy. Discover your customer breakdown and target the right segment with the right message.",
+          "title": "發現、分群、鎖定",
+          "description": "解鎖您所需的數據洞見，以協助您更聰明地制定行銷策略。瞭解您的客戶結構與組成，並針對各個客群制定適合的行銷溝通內容。",
           "imageAlt": "Store owners analyzing data on laptop"
         },
         "1": {
-          "title": "Complete customer data at your fingertips",
-          "description": "Dive into comprehensive customer data, spanning from transaction history across deliveries, reservations, survey results and even their interactions with your digital touchpoints.",
+          "title": "完整的客戶資料唾手可得",
+          "description": "深入探索全面的客戶數據，包含外帶外送紀錄、訂位歷史、造訪次數、問卷回覆等等，甚至包括他們簽到次數與各個接觸點的互動紀錄。",
           "imageAlt": "Visualizing customer data on a digital interface"
         }
       }
     },
     "guestFeatures": {
-      "tag": "Operational Intelligence",
-      "title": "Be the smartest host, turn every reservation into a connection",
-      "description": "Oddle collects all your data in one convenient location, making it easy to access information on dietary requirements, guest visits, and interactions across different outlets. With just one click, you can view a comprehensive guest history that helps you better understand and serve your customers.",
+      "tag": "智能營運",
+      "title": "做個聰明的主理人，將每一個訂位轉化為實際的顧客互動",
+      "description": "Oddle 將您的所有數據集中在一起，讓您輕鬆查看顧客的飲食需求、標籤和不同分店之間的互動紀錄。只需一鍵，您就可以查看全面的顧客紀錄，幫助您更好地了解和服務您的顧客。",
       "items": {
         "0": {
-          "title": "Know your guests",
-          "description": "Visits, takeaway orders, allergens, and dining preferences—Oddle helps you know each guest personally.",
+          "title": "了解你的顧客",
+          "description": "造訪次數、外帶紀錄、過敏原和用餐偏好—Oddle幫助您了解每位客人。",
           "imageAlt": "Know your guests example"
         },
         "1": {
-          "title": "Spot loyal customers",
-          "description": "Have all your guest insights at the tip of your fingers to turn your ground team into a super host.",
+          "title": "發現忠實顧客",
+          "description": "將所有顧客的重要資訊掌握在手中，讓您的團隊成為超貼心的接待者。",
           "imageAlt": "Spot loyal customers example"
         }
       }
     },
     "personalizedMarketing": {
-      "tag": "Personalised Marketing at Scale",
-      "title": "Transition from analysis to action right away. Launch personalised marketing with ease.",
-      "description": "Launch personalised marketing campaigns effortlessly to your target audiences directly from the platform. No need for cumbersome data exports—simply leverage your customer data to select the right audience and launch your campaigns seamlessly.",
+      "tag": "分眾行銷最大化",
+      "title": "能把分析結果立即轉化成行動方針。輕鬆啟動個人化行銷。",
+      "description": "輕鬆啟動個人化的行銷活動，直接從後台針對您的目標受眾給予行銷刺激。無需繁瑣的數據匯出與匯入—只需利用您的顧客數據、選擇合適的客群作為受眾，就能直接開始您的再行銷計畫。",
       "items": {
         "0": {
-          "title": "Targeted email broadcasts",
-          "description": "Launch email campaigns to data-driven customer segments with our integrated email marketing tool.",
+          "title": "分眾化的電子郵件行銷",
+          "description": "透過我們的電子郵件行銷工具，針對不同的目標客群發起電子郵件行銷活動。",
           "imageAlt": "Email marketing campaign examples"
         },
         "1": {
-          "title": "Real-time Automation",
-          "description": "Engage customers effortlessly whenever they take an action.",
+          "title": "即時自動化",
+          "description": "輕鬆地針對不同的客群發起即時的自動化行銷活動。",
           "imageAlt": "Real-time automation examples"
         },
         "2": {
-          "title": "Post dine-in surveys",
-          "description": "Build a foundation of 5-star Google reviews to attract new customers and strengthen your online reputation.",
+          "title": "餐後問卷",
+          "description": "打造高分的 Google 評價，以吸引新客戶並加強您的線上流量與品牌聲譽。",
           "imageAlt": "Customer leaving a review on phone"
         }
       }
@@ -1026,11 +993,12 @@
     "productLoyaltyTitle": "Loyalty Program",
     "productLoyaltyPrice": "Usage-based",
     "calculatorTitle": "Estimate Your Costs",
-    "faqTitle": "Frequently Asked Questions",
+    "faqTitle": "常見問題",
     "ctaTitle": "Ready to Grow with Oddle?"
   },
   "testimonials": {
     "title": "餐廳老闆們怎麼說",
     "description": "直接聽聽餐廳如何使用 Oddle 成長其事業。"
-  }
+  },
+  "faq": {}
 }

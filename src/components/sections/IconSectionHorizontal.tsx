@@ -60,7 +60,7 @@ interface IconSectionHorizontalProps {
   i18nBaseKey?: string; 
   tag?: string | null; // Rename sectionTag
   title: string; // Rename sectionTitle
-  // Removed description as it wasn't used
+  description?: string | null; // Added optional description prop
   items: StandardItemData[]; // Keep items
 }
 
@@ -68,6 +68,7 @@ export default function IconSectionHorizontal({
   i18nBaseKey, 
   tag: defaultTag, // Rename
   title: defaultTitle, // Rename
+  description: defaultDescription, // Destructure new prop
   items = [] 
 }: IconSectionHorizontalProps) {
   const t = useTranslations(); 
@@ -75,6 +76,9 @@ export default function IconSectionHorizontal({
   // Translate section header 
   const tag = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.tag`, defaultTag ?? '') : defaultTag;
   const title = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.title`, defaultTitle) : defaultTitle;
+  const description = i18nBaseKey && defaultDescription // Translate description if baseKey and prop exist
+    ? getTranslation(t, `${i18nBaseKey}.description`, defaultDescription)
+    : defaultDescription;
 
   if (!items || items.length === 0) {
     return null;
@@ -84,7 +88,7 @@ export default function IconSectionHorizontal({
     <section className="w-full py-16 md:py-24 lg:py-32">
       <Container>
         {/* Header Section - Centered */}
-        <div className="mb-12 text-center md:mb-16 lg:mb-20">
+        <div className="mb-12 text-center md:mb-16 lg:mb-20 max-w-3xl mx-auto"> {/* Added max-width and mx-auto */}
           {/* Render tag */}
           {tag && (
             <Badge
@@ -98,6 +102,12 @@ export default function IconSectionHorizontal({
           <h2 className="text-3xl font-semibold tracking-tight lg:text-4xl">
             {title} 
           </h2>
+          {/* Render description if it exists */}
+          {description && (
+            <p className="mt-4 text-lg text-muted-foreground">
+              {description}
+            </p>
+          )}
         </div>
 
         {/* Items Grid Section - Use items */}

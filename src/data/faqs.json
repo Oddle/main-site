@@ -269,28 +269,28 @@
       }
     ]
   },
-  "products/restaurant-payment-terminal":  {
-    "en": [
-    {
-      "question": "What types of payments does Oddle's card payment terminals accept?",
-      "answer": "Oddle's credit card terminal supports a wide range of payment methods, including: Credit and Debit Cards (Visa, Mastercard, AMEX) and Contactless Payments (Apple Pay, Google Pay, Samsung Pay)."
-    },
-    {
-      "question": "What currencies are supported?",
-      "answer": "Oddle's credit card terminal processes payments in the home currency of your region. For example: In Singapore, transactions are processed in Singapore Dollars (SGD). In Malaysia, transactions are processed in Malaysian Ringgit (MYR)."
-    },
-    {
-      "question": "Is a SIM card included with Oddle's credit card terminal device?",
-      "answer": "Yes, every Oddle credit card terminal device comes with a pre-installed SIM card, ensuring seamless mobile connectivity. This allows the terminal to operate reliably without the need for WiFi, making it perfect for both countertop setups and handheld use. Whether your restaurant requires a stationary solution or a wireless terminal for on-the-go payments, Oddle terminals are ready to use right out of the box with no additional setup required."
-    },
-    {
-      "question": "Are there any rental fees or hardware costs?",
-      "answer": "No, Oddle's credit card terminal has no rental fees or long-term contracts. We only require a refundable deposit for the hardware, ensuring flexibility for your business. Unlike banks or other providers, we do not lock merchants into annual agreements or charge SaaS fees. With Oddle, you only pay per use, making it a cost-effective and hassle-free solution for your restaurant's payment needs."
-    },
-    {
-      "question": "How long does onboarding take?",
-      "answer": "Onboarding with Oddle is quick and hassle-free. You can get a quote and set up your credit card terminal in just 2 days, allowing you to start accepting payments almost immediately. Unlike banks, which often require lengthy processes involving weeks or even months to complete paperwork and open accounts, Oddle ensures a streamlined experience, saving you time and effort."
-    }
+  "products/restaurant-payment-terminal": {
+    "tw": [
+      {
+        "question": "Oddle 的卡片支付終端接受哪些類型的付款？",
+        "answer": "Oddle 的信用卡終端機支援多種付款方式，包括：信用卡和借記卡：Visa、Mastercard 和 AMEX。非接觸式付款：Apple Pay、Google Pay 和 Samsung Pay。"
+      },
+      {
+        "question": "支持哪些貨幣？",
+        "answer": "Oddle 的刷卡機會用當地的幣別來處理交易。例如：在新加坡，交易以新幣 (SGD) 處理。在馬來西亞，交易以馬幣 (MYR) 處理。"
+      },
+      {
+        "question": "Oddle 的信用卡終端設備包含 SIM 卡嗎？",
+        "answer": "是的，每台 Oddle 信用卡終端設備都隨附預裝的 SIM 卡，確保無縫的行動連接。這使得終端能夠可靠運作，而無需 WiFi，讓它非常適合桌面設置和手持使用。無論您的餐廳需要靜態解決方案還是便攜式終端以進行即時付款，Oddle 終端都可以隨開即用，無需額外設置。"
+      },
+      {
+        "question": "是否有任何租金或硬體費用？",
+        "answer": "不，Oddle 的信用卡終端機沒有租金或長期合約。我們只要求對硬體支付可退還的押金，確保您業務的靈活性。與銀行或其他供應商不同，我們不會將商家鎖定在年度合約中，也不會收取 SaaS 費用。使用 Oddle，您僅需按使用次數付款，為您的餐廳支付需求提供經濟有效且無煩惱的解決方案。"
+      },
+      {
+        "question": "入職培訓需要多久？",
+        "answer": "與 Oddle 的上線過程快速且無 hassle。您可以在短短 2 天內獲取報價並設置信用卡終端，讓您幾乎立即開始接受付款。與通常需要數周甚至數月來完成文件和開設帳戶的銀行不同，Oddle 確保了一個簡化的過程，為您節省時間和精力。"
+      }
     ],
     "sg": [
       {
@@ -315,4 +315,4 @@
       }
     ]
   }
-} 
+}

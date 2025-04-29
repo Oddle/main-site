@@ -1,14 +1,16 @@
 "use client"; // Add the client directive for interactivity
 
+import React from 'react';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { useLocale } from "next-intl"; // Correct import path for useLocale
+import { useLocale, useTranslations } from "next-intl"; // Correct import path for useLocale and useTranslations
 import faqsData from "@/data/faqs.json"; // Import the JSON data
 import Container from "@/components/common/Container"; // Import Container
+import { getTranslation } from '@/lib/i18nUtils'; // Import shared helper
 
 // Define the structure for a single FAQ item
 interface FaqItem {
@@ -31,7 +33,7 @@ interface FaqSectionProps {
 
 const FaqSection = ({ pageUrl, faqCategory }: FaqSectionProps) => {
   const locale = useLocale();
-  // console.log("[FaqSection] Received props:", { pageUrl, faqCategory, locale });
+  const t = useTranslations(); // Initialize translations
 
   // Cast the imported data to the corrected structure
   const allFaqsData = faqsData as FaqsData;
@@ -61,23 +63,46 @@ const FaqSection = ({ pageUrl, faqCategory }: FaqSectionProps) => {
     return null;
   }
 
+  // Define default title and base key
+  const defaultSectionTitle = "Frequently Asked Questions";
+  // const sectionBaseKey = "faq"; // No longer needed for title
+
+  // Translate section title using common key
+  const sectionTitle = getTranslation(t, 'common.faqTitle', defaultSectionTitle); // Use common.faqTitle
+
   // Render the FAQs using the Accordion component
   return (
-    <>
-      <Container className="max-w-4xl py-12 lg:py-24">
-        <h2 className="text-3xl font-bold tracking-tight text-center sm:text-4xl">
-          Frequently Asked Questions
-        </h2>
-        <Accordion type="single" collapsible className="w-full mt-8">
-          {pageFaqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger>{faq.question}</AccordionTrigger>
-              <AccordionContent>{faq.answer}</AccordionContent>
-            </AccordionItem>
-          ))}
+    <section className="w-full py-16 md:py-24 lg:py-32 bg-muted/40">
+      <Container className="max-w-3xl">
+        {/* Section Header */}
+        <div className="mb-12 text-center md:mb-16">
+          <h2 className="text-3xl font-bold tracking-tight text-center sm:text-4xl">
+            {sectionTitle}
+          </h2>
+        </div>
+
+        {/* FAQ Accordion */}
+        <Accordion type="single" collapsible className="w-full">
+          {pageFaqs.map((faq, index) => {
+            // Remove translation logic for individual items
+            // const faqKey = `${faqCategory || 'general'}.${index}`; 
+            // const faqTitle = getTranslation(t, `faq.${faqKey}.title`, faq.question);
+            // const faqDescription = getTranslation(t, `faq.${faqKey}.description`, faq.answer);
+
+            return (
+              <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionTrigger className="text-lg text-left">
+                  {faq.question} {/* Render question directly */}
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground">
+                  {faq.answer} {/* Render answer directly */}
+                </AccordionContent>
+              </AccordionItem>
+            );
+          })}
         </Accordion>
       </Container>
-    </>
+    </section>
   );
 }
 

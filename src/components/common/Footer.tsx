@@ -165,7 +165,7 @@ export default function Footer() {
 
   // --- Define Company Info ---
   const companyName = "Oddle";
-  const companySlogan = "The best restaurant revenue growth partner with delivery, reservation, loyalty, and marketing";
+  const companySlogan =  tFooter('slogan');
 
   // --- Process Copyright ---
   const currentYear = new Date().getFullYear();
