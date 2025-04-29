@@ -15,24 +15,24 @@
       "getStartedNow": "立即開始",
       "seeLivePreview": "查看即時預覽",
       "learnMore": "了解更多",
-      "getQuote": "Get Quote"
+      "getQuote": "查看定價"
     },
     "buttons": {
       "requestDemo": "預約諮詢",
-      "talkToSales": "聯繫銷售",
+      "talkToSales": "LINE@聯繫",
       "login": "登入",
       "signup": "註冊"
     },
     "trustedBy": {
-      "title": "Trusted by"
+      "title": "信任我們的餐廳"
     },
     "cta": {
       "standard": {
-        "tag": "Ready to get started?",
-        "title": "Ready to Take Control of Your Restaurant's Growth?",
-        "description": "Join the 5000+ restaurants using Oddle to streamline operations, boost sales, and build lasting customer relationships.",
-        "primaryButtonText": "Request Demo",
-        "secondaryButtonText": "View Pricing",
+        "tag": "準備好掌控您的餐廳成長了嗎？",
+        "title": "加入 5000+ 間餐廳使用 Oddle 來簡化操作、提升營收，並建立持久的顧客關係。",
+        "description": "加入 5000+ 間餐廳使用 Oddle 來簡化操作、提升營收，並建立持久的顧客關係。",
+        "primaryButtonText": "預約產品Demo",
+        "secondaryButtonText": "收費詳情",
         "imageAlt": "Abstract visual representing growth"
       }
     },
@@ -310,9 +310,9 @@
           "imageAlt": "Customer Intelligence"
         }
       },
-      "tag": "Built for Restaurant Growth",
-      "title": "Everything you need to grow your revenue",
-      "description": "A complete suite of tools designed to attract customers, streamline operations, and boost your restaurant's bottom line."
+      "tag": "為餐廳成長量身打造的平台",
+      "title": "營收成長所需的一切",
+      "description": "為吸引顧客、簡化操作並提升餐廳營收而設計的完整工具套件。"
     },
     "growingEasy": {
       "tag": "增長就像 ABC 一樣簡單",
@@ -334,38 +334,38 @@
       "description": "Acquire, Build, and Convert Your Way to Success"
     },
     "ecosystemFeature": {
-      "tag": "Unified Platform",
-      "title": "Bring it all together with a platform that centralizes customer data and insights",
-      "description": "Oddle is evolving to be more than just the tools. It supports an entire ecosystem of solutions designed to help your restaurant thrive.",
-      "secondaryDescription": "From managing orders and reservations to understanding customer behavior and driving loyalty, get everything you need in one place.",
+      "tag": "統一平台",
+      "title": "一站式收集顧客資料並提供各種商業洞見的平台",
+      "description": "Oddle 不僅是工具，它支持一整套解決方案，旨在幫助您的餐廳茁壯成長。",
+      "secondaryDescription": "從管理訂單和預訂到瞭解顧客行為並推動忠誠度，您需要的一切都在一個地方。",
       "image": {
         "alt": "Oddle Platform Dashboard showing various features"
       },
       "features": {
         "0": {
-          "title": "Integrated & Efficient",
-          "description": "Connect all your tools seamlessly for smoother operations."
+          "title": "整合且高效",
+          "description": "連接所有工具以更順暢地運作。"
         },
         "1": {
-          "title": "Customer Focused",
-          "description": "Gain deep insights into your customers to build loyalty."
+          "title": "以顧客為中心",
+          "description": "深入瞭解您的顧客以建立忠誠度。"
         },
         "2": {
-          "title": "Secure & Reliable",
-          "description": "Protect your data with robust security measures."
+          "title": "安全且可靠",
+          "description": "使用強大的安全措施保護您的資料。"
         },
         "3": {
-          "title": "AI-Powered Insights",
-          "description": "Leverage AI for smarter business decisions."
+          "title": "AI 驅動的洞察",
+          "description": "使用 AI 做出更明智的商業決策。"
         }
       }
     },
     "featureGrid": {
-      "title": "See our free guides on growing your restaurant",
+      "title": "查看我們的使用指南，幫助您拓展餐廳事業",
       "description": "",
       "items": {
         "0": {
-          "title": "Everything you need to get started with a Restaurant Reservation System",
+          "title": "從頭開始使用餐廳預訂系統所需的一切",
           "description": "",
           "href": "/blog/topics/restaurant-reservation-guide",
           "image": {
@@ -373,7 +373,7 @@
           }
         },
         "1": {
-          "title": "Driving Revenue with Online Ordering Systems",
+          "title": "使用線上訂餐系統提升營收",
           "description": "",
           "href": "/blog/topics/restaurant-online-ordering-guide",
           "image": {
@@ -381,7 +381,7 @@
           }
         },
         "2": {
-          "title": "How to use Data to grow sales for your restaurant ",
+          "title": "如何使用資料提升餐廳營收",
           "description": "",
           "href": "/blog/topics/restaurant-marketing-guide",
           "image": {
@@ -713,7 +713,7 @@
     },
     "useCases": {
       "tag": "為各類餐廳設計",
-      "title": "Built for Restaurants of Every Kind",
+      "title": "為各類餐廳設計",
       "description": "無論您是從沒使用過訂位系統，還是想擺脫昂貴的年費，Oddle餐廳訂位系統都是為滿足您的需求而設計的。",
       "items": {
         "0": {
@@ -1030,7 +1030,7 @@
     "ctaTitle": "Ready to Grow with Oddle?"
   },
   "testimonials": {
-    "title": "What Our Merchants Say",
-    "description": "Hear directly from restaurants growing their business with Oddle."
+    "title": "餐廳老闆們怎麼說",
+    "description": "直接聽聽餐廳如何使用 Oddle 成長其事業。"
   }
 }

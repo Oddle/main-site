@@ -89,7 +89,7 @@ export default function IconSectionHorizontal({
           {tag && (
             <Badge
               variant="outline"
-              className="inline-flex items-center gap-1 px-2.5 py-1.5 text-sm"
+              className="inline-flex items-center gap-1 px-2.5 py-1.5 text-sm mb-4"
             >
               {tag}
             </Badge>

@@ -442,7 +442,7 @@
       "props": {
         "i18nBaseKey": "reservationSystem.system",
         "title": "",
-        "description": "User-friendly and seamless, Oddle Reserve simplifies the reservation process with advanced table management and management tools. It helps you efficiently manage reservations in real time, enhancing the dining experience and streamlining operations.",
+        "description": "",
         "items": [
           {
             "title": "Secure and Reliable Reservation Booking System",
