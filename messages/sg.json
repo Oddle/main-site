@@ -515,31 +515,12 @@
       "slides": {
         "0": {
           "imageAlt": "Online Ordering Desktop View"
-        },
-        "1": {
-          "imageAlt": "Online Ordering Mobile View"
         }
       }
     },
     "multiPlatform": {
-      "badge": "Online Ordering",
-      "title": "The Best Online Ordering System for Restaurants",
-      "description": "Oddle Shop is your trusted partner in building a branded, scalable, and profitable delivery and takeaway system.",
-      "desktopImageAlt": "Online Ordering Desktop View",
-      "mobileImageAlt": "Online Ordering Mobile View",
-      "tabletImageAlt": "Online Ordering Tablet View",
-      "platformDesktop": "Desktop",
-      "platformMobile": "Mobile",
-      "platformWeb": "Web",
-      "featureIntegrated": {
-        "title": "Fully Integrated",
-        "description": "Connects smoothly with your POS and kitchen."
-      },
-      "featureCustomizable": {
-        "title": "Customizable",
-        "description": "Match your brand's look and feel."
-      },
-      "badgeText": "Online Ordering"
+      "title": "Your Brand Front and Center",
+      "description": "Fully branded platform customized to showcase your logo, menu, and promotions"
     },
     "keyFeatures": {
       "tag": "",
