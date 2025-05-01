@@ -11,6 +11,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "../globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import LocaleChecker from '@/components/LocaleChecker';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -67,7 +68,11 @@ export default async function RootLayout({
           defaultTheme="light"
           disableTransitionOnChange
         >
-          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+          <NextIntlClientProvider>{children}
+
+          <LocaleChecker />
+
+          </NextIntlClientProvider>
           <Toaster />
         </ThemeProvider>
         <Analytics />
