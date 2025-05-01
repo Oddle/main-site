@@ -78,5 +78,64 @@
         "href": "/products/restaurant-loyalty-crm-system"
       }
     }
+  ],
+  "tw": [
+    {
+      "title": "線上點餐系統",
+      "description": "支援即時與預約的外送與自取訂單。",
+      "summaryPrice": "每筆訂單收取 10%",
+      "priceUnit": "每成功交易",
+      "details": [],
+      "features": [
+        "完整的線上菜單設置",
+        "訂單管理後台",
+        "顧客資料收集",
+        "多元整合選項"
+      ],
+      "cta": {
+        "textKey": "actions.learnMore",
+        "href": "/tw/products/restaurant-online-ordering-system"
+      }
+    },
+    {
+      "title": "訂位系統",
+      "description": "集中管理各通路的餐廳訂位。",
+      "summaryPrice": "每筆訂位最低 $0.20 起",
+      "priceUnit": "每筆成功訂位",
+      "details": [
+        { "type": "tier", "label": "第 1 級 (每月 1-100 筆)", "rate": "$0.60", "unit": "每筆訂位" },
+        { "type": "tier", "label": "第 2 級 (每月 101 筆以上)", "rate": "$0.20", "unit": "每筆訂位" }
+      ],
+      "features": [
+        "即時桌位管理",
+        "自動確認與提醒功能",
+        "支援 Google 訂位",
+        "內建顧客資料庫"
+      ],
+      "cta": {
+        "textKey": "actions.learnMore",
+        "href": "/tw/products/restaurant-reservation-system"
+      }
+    },
+    {
+      "title": "會員集點系統",
+      "description": "透過會員註冊拓展顧客資料庫，並以獎勵機制促使回購。",
+      "summaryPrice": "依使用量計費",
+      "priceUnit": "每個動作",
+      "details": [
+        { "type": "action", "label": "新會員註冊", "rate": "$0.30" },
+        { "type": "action", "label": "回流顧客交易", "rate": "$0.70" }
+      ],
+      "features": [
+        "自訂化獎勵設定",
+        "顧客分群管理工具",
+        "自動化顧客觸達設定",
+        "成效追蹤報表"
+      ],
+      "cta": {
+        "textKey": "actions.learnMore",
+        "href": "/tw/products/restaurant-loyalty-crm-system"
+      }
+    }
   ]
 } 

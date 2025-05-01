@@ -342,11 +342,11 @@
       "products": "產品",
       "resources": "其它資源",
       "pricing": "價格",
-      "get-started": "/zh/get-started",
+      "get-started": "/tw/get-started",
       "menu-title": "選單",
       "oddle-eats": "Oddle Eats",
       "login": "登入",
-      "get-free-demo": "取得免費演示"
+      "get-free-demo": "預約諮詢"
     },
     "promo": {
       "title": "探索 Oddle",
@@ -561,7 +561,7 @@
       "title": "Oddle Eats",
       "desc": "挖掘百萬美食愛好者"
     },
-    "About Us": "About Us",
+    "About Us": "關於我們",
     "actions": {
       "getStarted": "Get started",
       "contactSales": "Contact sales team",
@@ -571,27 +571,27 @@
   },
   "resources": {
     "blog": {
-      "title": "Blog Title",
-      "desc": "Blog Description"
+      "title": "部落格",
+      "desc": ""
     },
     "customer-stories": {
-      "title": "Customer Stories Title",
-      "desc": "Customer Stories Description"
+      "title": "餐廳案例",
+      "desc": ""
     },
     "comparison": {
-      "title": "Comparison Title",
-      "desc": "Comparison Description"
+      "title": "比較",
+      "desc": ""
     },
     "about-us": {
-      "title": "About Us Title",
-      "desc": "About Us Description"
+      "title": "關於我們",
+      "desc": ""
     },
     "singapore-influencer-list": {
       "title": "Build your business with Singapore Influencer List",
       "desc": "Get Access"
     },
     "help-center": {
-      "title": "Help Center",
+      "title": "客服中心",
       "desc": ""
     }
   },
@@ -900,32 +900,25 @@
   "error": {},
   "notFound": {},
   "PricingPage": {
-    "heroTitle": "Grow Your Restaurant Revenue with One Integrated Platform",
-    "heroSubtitle": "Start taking online orders, accepting table reservations, processing in-store payments, and building customer loyalty — all from day one, with no upfront costs. Only pay when you start serving real customers.",
-    "heroImageAlt": "Stylized image representing restaurant growth or the Oddle platform",
-    "benefitCommissionFree": "Commission-free options available",
-    "benefitUsageBased": "Pay only for what you need",
-    "benefitUnifiedPlatform": "Access ordering, reservations & more",
-    "benefitDataInsights": "Unlock valuable customer insights",
-    "explanationTitle": "How Our Pricing Works",
-    "explanationDesc1": "We believe in transparent, usage-based pricing. You only pay for the products you use, allowing you to scale efficiently.",
-    "explanationDesc2": "There are no long-term contracts or hidden fees. Start with what you need and add more as your restaurant grows.",
-    "freeProductsTitle": "Free Tools Included",
-    "freeProductsDesc": "Every Oddle account comes with these powerful tools at no extra cost:",
-    "productVirtualLoungeTitle": "Restaurant Virtual Lounge",
-    "productSurveyTitle": "Restaurant Survey & Feedback Tool",
-    "productsTitle": "Our Products",
-    "productShopTitle": "Online Ordering System",
-    "productShopPrice": "10% per order",
-    "productReservationTitle": "Reservation System",
-    "productReservationPrice": "From $0.20 / booking",
-    "productPaymentTitle": "Payment Terminal",
-    "productPaymentPrice": "From 1.4% + $0.08",
-    "productLoyaltyTitle": "Loyalty Program",
-    "productLoyaltyPrice": "Usage-based",
-    "calculatorTitle": "Estimate Your Costs",
+    "heroTitle": "用一站式平台，提升您的餐廳營收",
+    "heroSubtitle": "從第一天開始即可接收線上訂單、接受訂位、處理現場付款、並建立顧客忠誠度 — 無需前期費用，只有在真正開始服務顧客後才需付費。",
+    "heroImageAlt": "象徵餐廳成長或 Oddle 平台的風格化圖片",
+    "benefitCommissionFree": "提供免抽成方案",
+    "benefitUsageBased": "按使用量付費",
+    "benefitUnifiedPlatform": "統一平台管理訂單、訂位等",
+    "benefitDataInsights": "掌握寶貴顧客洞察",
+    "explanationTitle": "計費方式說明",
+    "explanationDesc1": "我們堅持透明、依使用量計費。您只需為實際使用的產品付費，讓餐廳成長更有效率。",
+    "explanationDesc2": "無需長期合約，無隱藏費用。可依據需求逐步擴充，靈活成長。",
+    "freeProductsTitle": "免費附贈工具",
+    "freeProductsDesc": "每個 Oddle 帳號都可免費使用以下強大功能：",
+    "productVirtualLoungeTitle": "餐廳虛擬大廳",
+    "productSurveyTitle": "餐廳顧客回饋問卷工具",
+    "productCrmTitle": "顧客智能 CRM",
+    "productsTitle": "產品總覽",
+    "calculatorTitle": "預估您的費用",
     "faqTitle": "常見問題",
-    "ctaTitle": "Ready to Grow with Oddle?"
+    "ctaTitle": "準備好與 Oddle 一起成長了嗎？"
   },
   "testimonials": {
     "title": "餐廳老闆們怎麼說",
