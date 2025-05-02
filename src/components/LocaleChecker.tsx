@@ -3,8 +3,9 @@
 
 import React, { useEffect, useState, useCallback } from 'react';
 import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from 'next/navigation'; // Use hooks from next/navigation for App Router
-import LocationBanner from './LocationBanner';
+import { useRouter, usePathname } from 'next/navigation';
+import LocationDialog from './LocationDialog'; // Import the dialog
+import { routing } from '@/i18n/routing';
 
 // --- Configuration ---
 const USER_CHOICE_STORAGE_KEY = 'userSelectedLocale'; // For persistent user choice
@@ -24,101 +25,83 @@ function getRegionFromNavigator(langTag: string | undefined): string | null {
   return null;
 }
 
-
 function LocaleChecker() {
   const currentLocale = useLocale(); // Locale resolved by next-intl ('sg', 'hk', etc.)
   const router = useRouter();
   const pathname = usePathname(); // Gets the path *without* the locale prefix
 
-  const [showPrompt, setShowPrompt] = useState(false);
   const [geoIpCountry, setGeoIpCountry] = useState<string | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false); // State for dialog
 
   // Memoize handlers to prevent unnecessary re-renders if passed down
   const dismissPrompt = useCallback(() => {
-    setShowPrompt(false);
+    setIsDialogOpen(false); // Close the dialog
     try { sessionStorage.setItem(PROMPT_DISMISSED_SESSION_KEY, 'true'); }
     catch (error) { console.warn("Could not write to sessionStorage:", error); }
   }, []);
 
   const switchToLocale = useCallback((targetLocale: string) => {
     if (!targetLocale) return;
-    const lowerCaseTargetLocale = targetLocale.toLowerCase(); // Ensure lowercase
-
-    // Assuming setShowPrompt is managed where the banner is rendered or via props/context
-    // If LocaleChecker itself manages showPrompt state, uncomment the line below:
-    // setShowPrompt(false);
-
+    const lowerCaseTargetLocale = targetLocale.toLowerCase();
+    setIsDialogOpen(false); // Close the dialog
     try {
-      // Store the user's choice persistently
       localStorage.setItem(USER_CHOICE_STORAGE_KEY, lowerCaseTargetLocale);
     } catch (error) {
       console.warn("Could not write to localStorage:", error);
     }
-
-    // Construct the new path with the locale prefix
-    // pathname from usePathname() does NOT include the current locale prefix
-    const newPath = `/${lowerCaseTargetLocale}${pathname}`;
-
-    // Push the full new path string
+    // Correct path construction
+    const pathWithoutLocale = pathname.replace(/^\/([a-z]{2})(\/|$)/, '/');
+    const newPath = `/${lowerCaseTargetLocale}${pathWithoutLocale}`;
     router.push(newPath);
-
-  }, [pathname, router]); // Include dependencies
+  }, [pathname, router]);
 
   useEffect(() => {
-    // Check if window/navigator are available (runs only client-side)
     if (typeof window === 'undefined' || typeof navigator === 'undefined') return;
-
-    let isMounted = true; // Flag to prevent state updates on unmounted component
-
+    let isMounted = true;
     const checkLocale = async () => {
-      // 1. Check for persistent user choice
+      // Normal checks
       const userSelectedLocale = localStorage.getItem(USER_CHOICE_STORAGE_KEY);
-      if (userSelectedLocale) return; // Respect user's choice
-
-      // 2. Check if prompt was dismissed this session
+      if (userSelectedLocale) return;
       const promptDismissed = sessionStorage.getItem(PROMPT_DISMISSED_SESSION_KEY);
       if (promptDismissed) return;
-
-      // 3. Check for browser language vs current locale mismatch
-      const browserLang = navigator.language; // e.g., 'en-US', 'zh-HK'
-      const browserRegion = getRegionFromNavigator(browserLang); // e.g., 'US', 'HK'
-
+      const browserLang = navigator.language;
+      const browserRegion = getRegionFromNavigator(browserLang);
       const regionMismatch = browserRegion && browserRegion.toLowerCase() !== currentLocale.toLowerCase();
-
       if (regionMismatch) {
-        // 4. Perform IP Lookup (Only if needed)
         try {
-          const response = await fetch('/api/geoip'); // Fetch from the updated API route
-          if (!response.ok) throw new Error(`GeoIP API request failed: ${response.status}`);
+          const response = await fetch('/api/geoip');
+          if (!response.ok) {
+            console.warn(`GeoIP API request failed: ${response.status}`);
+            return;
+          }
           const data = await response.json();
-
           if (isMounted && data.country) {
-            const detectedCountry = data.country.toLowerCase(); // API returns uppercase, ensure lowercase for comparison
-            // 5. Prompt if GeoIP differs from current locale
-            if (detectedCountry !== currentLocale.toLowerCase()) {
-              setGeoIpCountry(data.country); // Store the original case (e.g., 'SG') for display
-              setShowPrompt(true);
+            const detectedCountryLower = data.country.toLowerCase();
+            if (detectedCountryLower !== currentLocale.toLowerCase()) {
+              setGeoIpCountry(data.country);
+              setIsDialogOpen(true); // Open the dialog
             }
           }
         } catch (error) {
-          console.error('Error fetching or processing GeoIP:', error);
+          console.error('Error fetching GeoIP:', error);
         }
       }
     };
-
     checkLocale();
-
-    // Cleanup function
     return () => { isMounted = false; };
-  }, [currentLocale]); // Dependency array
+  }, [currentLocale]);
 
-  if (showPrompt && geoIpCountry) {
+  // Render the Dialog conditionally
+  if (geoIpCountry) { // Only render if we have a detected country
     return (
-      <LocationBanner
-        detectedCountry={geoIpCountry} // Already uppercase from API/helper
-        currentLocale={currentLocale.toUpperCase()}
-        onDismiss={dismissPrompt}
-        onSwitch={() => switchToLocale(geoIpCountry)} // Pass the original case country code
+      <LocationDialog
+        isOpen={isDialogOpen}
+        onOpenChange={setIsDialogOpen} // Pass state setter for closing via overlay/esc
+        detectedCountry={geoIpCountry}
+        currentLocale={currentLocale}
+        supportedLocales={routing.locales} // Pass supported locales
+        onConfirm={switchToLocale}       // Pass confirm handler
+        onDismiss={dismissPrompt}      // Pass dismiss handler
       />
     );
   }
