@@ -126,17 +126,24 @@ export async function getPublishedPosts(locale: string): Promise<Array<PostSumma
             // OR condition for Country property
             or: [
               {
-                // Condition 1: Country property is empty (global posts)
-                property: "Country", // IMPORTANT: Ensure this matches your Notion property name
+                // Condition 1: Country property equals 'global'
+                property: "Country",
                 select: {
-                  is_empty: true,
+                  equals: 'global',
                 },
               },
               {
                 // Condition 2: Country property equals the current locale
-                property: "Country", // IMPORTANT: Ensure this matches your Notion property name
+                property: "Country",
                 select: {
-                  equals: locale, // Match the passed locale
+                  equals: locale,
+                },
+              },
+              { // Add third condition for empty
+                // Condition 3: Country property is empty
+                property: "Country",
+                select: {
+                  is_empty: true,
                 },
               },
             ],

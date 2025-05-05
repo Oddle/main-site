@@ -93,7 +93,11 @@ export default async function BlogPostPage({ params: paramsProp }: PageProps) {
   }
 
   // Destructure page and blocks
-  const { page, blocks } = postData; // Use the original blocks array
+  const { page, blocks } = postData;
+
+  // ----> ADD THIS LOG TO SEE THE RAW BLOCKS <----
+  console.log("--- Raw Notion Blocks Data for slug:", params.slug, "---\n", JSON.stringify(blocks, null, 2)); // Pretty-print JSON
+  // ---------------------------------------------
 
   // Extract properties using Record type for better safety
   const properties = page.properties as Record<string, PageObjectResponse['properties'][string]>;

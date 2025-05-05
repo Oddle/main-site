@@ -315,17 +315,71 @@ function RenderBlock({ block, isHeaderRow }: RenderBlockProps): React.ReactNode 
   }
 }
 
-// --- Main PostRenderer Component (Simplified) ---
+// --- Main PostRenderer Component (Corrected List Logic) ---
 interface PostRendererProps {
-  blocks: BlockWithChildren[]; // Use extended type
+  blocks: BlockWithChildren[];
 }
 
 export function PostRenderer({ blocks }: PostRendererProps) {
   if (!blocks) return null;
 
-  return (
-    <div>
-      {blocks.map((block) => <RenderBlock key={block.id} block={block} />)}
-    </div>
-  );
+  const content: React.ReactNode[] = [];
+  let listItemsBuffer: React.ReactNode[] = [];
+  let currentListType: 'numbered' | 'bulleted' | null = null;
+
+  blocks.forEach((block, index) => {
+    const blockType = block.type;
+    const isNumberedListItem = blockType === 'numbered_list_item';
+    const isBulletedListItem = blockType === 'bulleted_list_item';
+    const isListItem = isNumberedListItem || isBulletedListItem;
+    const listTypeToStart = isNumberedListItem ? 'numbered' : isBulletedListItem ? 'bulleted' : null;
+
+    if (isListItem && listTypeToStart) {
+      // ---- Start or Continue a List ----
+      if (currentListType !== listTypeToStart) {
+        // If changing list type or starting fresh, first close any existing list
+        if (currentListType === 'numbered') {
+          // Use index for key when closing list due to type change
+          content.push(<ol key={`ol-close-${index}`} className="list-decimal pl-8 my-4 space-y-1 text-gray-600 dark:text-gray-400">{listItemsBuffer}</ol>);
+        } else if (currentListType === 'bulleted') {
+          // Use index for key when closing list due to type change
+          content.push(<ul key={`ul-close-${index}`} className="list-disc pl-8 my-4 space-y-1 text-gray-600 dark:text-gray-400">{listItemsBuffer}</ul>);
+        }
+        // Start a new buffer and set the type
+        listItemsBuffer = [<RenderBlock key={block.id} block={block} />]; // Add the first item
+        currentListType = listTypeToStart;
+      } else {
+        // Continue the current list: add item to buffer
+        listItemsBuffer.push(<RenderBlock key={block.id} block={block} />);
+      }
+    } else {
+      // ---- Not a List Item ----
+      // First, close any list that was open
+      if (currentListType === 'numbered') {
+        // Use current block's id (which triggered the close) for key
+        content.push(<ol key={`ol-close-${block.id}`} className="list-decimal pl-8 my-4 space-y-1 text-gray-600 dark:text-gray-400">{listItemsBuffer}</ol>);
+      } else if (currentListType === 'bulleted') {
+        // Use current block's id (which triggered the close) for key
+        content.push(<ul key={`ul-close-${block.id}`} className="list-disc pl-8 my-4 space-y-1 text-gray-600 dark:text-gray-400">{listItemsBuffer}</ul>);
+      }
+      // Reset list state
+      listItemsBuffer = [];
+      currentListType = null;
+
+      // Render the current non-list block
+      content.push(<RenderBlock key={block.id} block={block} />);
+    }
+  });
+
+  // After the loop, check if a list was still open and close it
+  if (currentListType === 'numbered') {
+    // Use length as part of key for final close
+    content.push(<ol key={`ol-final-${blocks.length}`} className="list-decimal pl-8 my-4 space-y-1 text-gray-600 dark:text-gray-400">{listItemsBuffer}</ol>);
+  } else if (currentListType === 'bulleted') {
+    // Use length as part of key for final close
+    content.push(<ul key={`ul-final-${blocks.length}`} className="list-disc pl-8 my-4 space-y-1 text-gray-600 dark:text-gray-400">{listItemsBuffer}</ul>);
+  }
+
+  // Keep the prose wrapper for overall styling, but be aware of potential list conflicts
+  return <div className="prose dark:prose-invert max-w-none">{content}</div>;
 } 
