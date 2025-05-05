@@ -1,269 +1,177 @@
-# Next.js 15 Template with i18n and Shadcn UI
+# Project Overview
 
-A modern, SEO-optimized template for Next.js 15 applications featuring server components, internationalization support, shadcn UI components, and theme switching capabilities. Perfect for building performant, accessible, and multilingual web applications.
+This project is a web application built using the Next.js framework (App Router) with TypeScript. It features a dynamic content structure driven by JSON files and utilizes shadcn/ui for components and next-intl for internationalization.
 
-## ✨ Features
+## Table of Contents
+- [Key Features](#key-features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Key Concepts Explained](#key-concepts-explained)
+  - [Dynamic Page Generation](#dynamic-page-generation)
+  - [Component Organization](#component-organization)
+  - [Internationalization (i18n)](#internationalization-i18n)
+  - [UI Components (shadcn/ui)](#ui-components-shadcnui)
+  - [Blog Section](#blog-section)
+- [Contributing](#contributing)
+- [License](#license)
 
-- **Next.js 15**: Built on the latest [Next.js 15](https://nextjs.org/) React framework with App Router and Server Components for optimal performance
-- **SEO Optimization**: Includes metadata API, structured data, and optimized page loading strategies
-- **Internationalization**: Full i18n support using middleware-based routing with [next-intl](https://next-intl-docs.vercel.app/)
-- **Shadcn UI**: Pre-configured [shadcn UI](https://ui.shadcn.com/) components using the new React Server Components pattern
-- **Theme System**: CSS Variables-based theme system with light/dark mode toggle and system preference detection
-- **Language Switching**: Seamless switching between languages (including RTL support for Arabic and other RTL languages)
-- **OmitRTL Utility**: Helper component to control elements that should maintain LTR (left-to-right) rendering in RTL contexts
-- **TypeScript**: Type-safe codebase with TypeScript configuration optimized for Next.js 15
-- **Metadata API**: Built-in SEO metadata management using Next.js 15's metadata API
+## Key Features
 
-## 🚀 Getting Started
+*   **Next.js App Router:** Leverages the latest Next.js features for routing, layouts, and server components.
+*   **TypeScript:** Provides static typing for improved code quality and maintainability.
+*   **Tailwind CSS & shadcn/ui:** Uses Tailwind CSS for utility-first styling and `shadcn/ui` for pre-built, accessible UI components.
+*   **Dynamic Content:** Page structures and content are largely defined in JSON files within the `src/data` directory, particularly [`pageSections.json`](#dynamic-page-generation). Pages are rendered dynamically based on this data.
+*   **Internationalization (i18n):** Supports multiple locales/languages using `next-intl`, with translations managed in the `messages` directory and locale-based routing (`/[locale]/...`).
+*   **Static Generation:** Configured to generate static pages where possible (`generateStaticParams` used in product pages).
+*   **ESLint:** Integrated for code linting.
+*   **Blog Functionality:** Includes a blog section with index, individual post, and topic pages, potentially sourcing content from Notion.
+*   **Pricing Page:** Dedicated page displaying pricing information loaded from `src/data/pricing.json`.
+*   **Demo Page:** Dynamically generated demo request page using the structure defined in `src/data/pageSections.json`.
 
-Clone the repository:
+## Tech Stack
 
-```bash
-git clone https://github.com/S0vers/i18n-Nextjs-BoilerPlate.git
+*   **Framework:** [Next.js](https://nextjs.org/)
+*   **Language:** [TypeScript](https://www.typescriptlang.org/)
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+*   **UI Components:** [shadcn/ui](https://ui.shadcn.com/)
+*   **Internationalization:** [next-intl](https://next-intl-docs.vercel.app/)
+*   **Package Manager:** npm
+
+## Project Structure
+
+```
+.
+├── messages/             # Raw translation files (e.g., sg.json, hk.json)
+├── public/               # Static assets
+├── src/
+│   ├── app/              # Next.js App Router (pages, layouts, API routes)
+│   │   ├── [locale]/
+│   │   │   ├── page.tsx          # Home page
+│   │   │   ├── layout.tsx        # Root layout
+│   │   │   ├── products/[slug]/  # Dynamic product pages
+│   │   │   ├── blog/             # Blog section
+│   │   │   ├── pricing/          # Pricing page
+│   │   │   ├── demo/             # Demo request page
+│   │   │   └── ...             # Other static or dynamic pages
+│   ├── components/       # Reusable React components
+│   │   ├── common/         # Shared components (NavBar, Footer, Container, etc.)
+│   │   ├── forms/          # Form-related components
+│   │   ├── magicui/        # Custom UI elements/animations
+│   │   ├── pages/          # Page structure components (e.g., DynamicSectionPage)
+│   │   ├── sections/       # Components mapped in pageSections.json
+│   │   └── ui/             # shadcn/ui components reside here
+│   ├── data/             # JSON files driving content and structure (pageSections.json, etc.)
+│   ├── i18n/             # Internationalization configuration (routing, request handling)
+│   ├── lib/              # Utility functions and helpers (e.g., Notion client, metadata utils)
+│   └── middleware.ts     # Next.js middleware (likely for i18n)
+├── .env.example          # Example environment variables (if any)
+├── components.json       # shadcn/ui configuration
+├── next.config.ts        # Next.js configuration
+├── package.json          # Project dependencies and scripts
+├── tailwind.config.ts    # Tailwind CSS configuration (assumed location)
+├── tsconfig.json         # TypeScript configuration
+└── ... other config files
 ```
 
-Install dependencies:
+## Getting Started
 
+### Prerequisites
+
+*   Node.js (Version specified in `.nvmrc` or project requirements)
+*   `npm` (usually comes with Node.js)
+
+### Environment Variables
+
+If the project uses environment variables (check for a `.env.example` or `.env.local` file), ensure you have the necessary variables set up. You might need to copy `.env.example` to `.env.local` and fill in the values.
+
+### Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone <repository-url>
+    cd <repository-directory>
+    ```
+2.  Install dependencies:
 ```bash
 npm install
-# or
-yarn
-# or
-pnpm install
-# or
-bun install
-```
+    ```
 
-Start the development server:
+### Running the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) (or the specified port) in your browser to see the application.
 
-## 📋 Project Structure
-
-The project follows Next.js 15's recommended App Router structure with additions for internationalization:
-
-```
-├── .next                                 # Next.js build output
-├── messages                              # i18n translation files
-│   ├── ar.json                           # Arabic translations
-│   └── en.json                           # English translations
-├── node_modules                          # Dependencies
-├── public                                # Static assets
-├── src                                   # Source code
-│   ├── app                               # Next.js App Router 
-│   │   ├── [locale]                      # Dynamic locale routing
-│   │   │   ├── layout.tsx                # Root layout with direction handling
-│   │   │   ├── page.tsx                  # Home page
-│   │   │   ├── error.tsx                 # Error handling
-│   │   │   ├── favicon.ico               # Favicon
-│   │   │   ├── globals.css               # Global styles
-│   │   │   ├── not-found.tsx             # 404 page
-│   │   │   ├── robots.txt                # SEO robots file
-│   │   │   └── sitemap.ts                # Dynamic sitemap generation
-│   │   └── components                    # Application components
-│   │       ├── ui                        # shadcn UI components
-│   │       ├── LanguageSwitcher.tsx      # Language toggle component
-│   │       ├── ModeToggle.tsx            # Theme toggle component
-│   │       ├── OmitRTL.tsx               # RTL handling utility
-│   │       └── theme-provider.tsx        # Theme context provider
-│   ├── i18n                              # Internationalization utilities
-│   │   ├── navigation.ts                 # Localized navigation helpers
-│   │   ├── requests.ts                   # i18n-aware API request helpers
-│   │   └── routing.ts                    # Locale routing utilities
-│   ├── lib                               # Utility functions and shared code
-│   │   └── middleware.ts                 # i18n middleware for route handling
-│   └── components.json                   # shadcn UI component configuration
-├── .eslintrc.json                        # ESLint configuration
-├── global.d.ts                           # Global TypeScript declarations
-├── LICENSE                               # Project license
-├── next-env.d.ts                         # Next.js TypeScript declarations
-├── next.config.js                        # Next.js configuration
-├── package.json                          # Project dependencies and scripts
-├── package-lock.json                     # Dependency lock file
-├── pnpm-lock.yaml                        # PNPM lock file
-├── postcss.config.js                     # PostCSS configuration
-├── README.md                             # Project documentation
-└── tsconfig.json                         # TypeScript configuration
-```
-
-## 🌐 Internationalization
-
-This template uses middleware-based i18n routing with Next.js 15. Language files are stored in the `messages/` directory.
-
-### Adding a New Language
-
-1. Create a new JSON file in the `messages/` directory (e.g., `fr.json`)
-2. Add the language to the supported locales in `middleware.ts` and `lib/i18n.ts`
-3. Add language option to the `LanguageSwitcher` component
-
-## 🎨 Shadcn UI Components
-
-Shadcn UI components are configured to work with Next.js 15 Server Components. Import them from the `components/ui/` directory:
-
-```jsx
-import { Button } from "@/components/ui/button";
-
-export default function Home() {
-  return <Button>Click me</Button>;
-}
-```
-
-## 🔄 OmitRTL Utility
-
-The `OmitRTL` utility helps you control which elements should maintain LTR direction even when the site is in RTL mode.
-
-### How to use the function:
-
-```jsx
-import { OmitRTL } from "@/components/OmitRTL";
-
-function MyComponent() {
-  return (
-    <div>
-      <p>This text will follow the website's direction.</p>
-      <OmitRTL omitRTL={true}>
-        <img src="/logo.png" alt="Logo" />
-        <div>
-          <h2>This heading and content will always be LTR</h2>
-          <p>Regardless of the website's direction.</p>
-        </div>
-      </OmitRTL>
-    </div>
-  );
-}
-```
-
-### NPM Package
-
-If you just need the OmitRTL function, it's also available as an npm package:
+### Building for Production
 
 ```bash
-npm i react-omit-rtl
+npm run build
 ```
 
-```jsx
-import React from "react";
-import OmitRTL from "react-omit-rtl";
+This command builds the application for production usage. You can then start the production server:
 
-function App() {
-  return (
-    <OmitRTL omitRTL={true}>
-      <p>This text will not have RTL direction.</p>
-    </OmitRTL>
-  );
-}
-export default App;
+```bash
+npm start
 ```
 
+## Key Concepts Explained
 
-## 🔍 SEO Optimization
+### Dynamic Page Generation
 
-The template provides comprehensive SEO features with the Next.js 15 Metadata API:
+This project employs two main patterns for page creation:
 
-```jsx
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: string };
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "Metadata" });
+1.  **Fully Dynamic (JSON-driven):** Pages like individual products (`/products/[slug]`) and the demo page (`/demo`) have their structure and content defined entirely within **`src/data/pageSections.json`**. Specific page components (e.g., `src/app/[locale]/products/[slug]/page.tsx`) load this data and use a central **`DynamicSectionPage`** component (likely located in `src/components/pages/`) to render the sections defined in the JSON.
 
-  return {
-    title: t("title"),
-    description: t("description"),
-    other: {
-      "google-site-verification": "********",
-    },
-    openGraph: {
-      title: t("title"),
-      description: t("description"),
-      url: `https://i18n-nextjs-boilerplate.vercel.app`,
-      siteName: "Next.js i18n Boilerplate",
-      images: [
-        {
-          url: "https://i18n-nextjs-boilerplate.vercel.app/og-image.png",
-          width: 1200,
-          height: 630,
-        },
-      ],
-      locale: locale,
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("title"),
-      description: t("description"),
-      images: ["https://i18n-nextjs-boilerplate.vercel.app/og-image.png"],
-    },
-    alternates: {
-      canonical: `https://i18n-nextjs-boilerplate.vercel.app`,
-      languages: {
-        en: "https://i18n-nextjs-boilerplate.vercel.app",
-        ar: "https://i18n-nextjs-boilerplate.vercel.app",
-      },
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
-    },
-  };
-}
-```
+2.  **Hybrid (JSX Structure + JSON Data):** Pages like the Pricing page (`/pricing`) define their overall layout and structure within their JSX file (`src/app/[locale]/pricing/page.tsx`). However, they still load specific data elements (like pricing plan details) from dedicated JSON files (e.g., `src/data/pricing.json`).
 
-Additionally, structured data is implemented using react-schemaorg for better search engine understanding:
+**How to Modify Content:**
 
-```jsx
-<script
-  {...jsonLdScriptProps<WebSite>({
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "Next.js i18n Boilerplate",
-    description: "A humble Next 15 starter with i18n, shadcn UI, light/dark themes, and language switch.",
-    url: "https://i18n-nextjs-boilerplate.vercel.app",
-  })}
-/>
-```
+*   For **fully dynamic** pages (like `/demo`, `/products/...`): Edit the corresponding entry within **`src/data/pageSections.json`**. To add *new types* of sections, you'd also need to create the corresponding React component and potentially update the `DynamicSectionPage` component.
+*   For **hybrid** pages (like `/pricing`): Modify the structure in the page's `.tsx` file (e.g., `src/app/[locale]/pricing/page.tsx`) and update the associated data in its specific JSON file (e.g., `src/data/pricing.json`).
 
-Other SEO features included in the template:
+### Component Organization
 
-- Canonical URLs to prevent duplicate content issues
-- Language-specific metadata with translations
-- Proper HTML lang attribute based on current locale
-- Dynamic sitemap generation
-- Robots.txt configuration
-- Google site verification
-- Optimized OpenGraph and Twitter card images
+Components are organized within `src/components`:
 
-These features work together to help search engines better understand, index, and display your content to potential visitors across different languages and regions.
+*   **`src/components/common/`**: Contains highly reusable components used across many pages, such as `NavBar`, `Footer`, and layout containers.
+*   **`src/components/ui/`**: Houses the base UI components installed from `shadcn/ui`. See the [UI Components (shadcn/ui)](#ui-components-shadcnui) section for more details.
+*   **`src/components/sections/`**: This is a key directory containing the React components referenced by string name in `src/data/pageSections.json`. When the `DynamicSectionPage` renders a JSON-driven page, it maps the `component` names from the JSON to these actual components.
+*   **`src/components/pages/`**: Holds components responsible for structuring entire page layouts, notably the `DynamicSectionPage` itself which assembles components based on `pageSections.json` data.
+*   **`src/components/forms/`**: Contains components specifically designed for building and handling forms.
+*   **`src/components/magicui/`**: Likely contains more complex, custom UI elements, potentially interactive or animated components.
+*   **Root Level Components**: Some components like `LanguageSwitcher.tsx`, `theme-provider.tsx`, `UTMTracker.tsx`, etc., reside directly in `src/components` as they serve specific cross-cutting concerns.
 
-## 🤝 Contributing
+### Internationalization (i18n)
 
-We welcome contributions to improve this template! Here's how you can help:
+*   **Locales:** Supported locales are defined in `src/i18n/routing.ts`.
+*   **Routing:** Locales are part of the URL structure (e.g., `/en/products`, `/sg/about`). Middleware (`src/middleware.ts`) likely handles locale detection and routing.
+*   **Translations:** Text strings are managed in `messages/*.json`. Keys used in the code are mapped to translated strings based on the current locale. The `i18next-parser.config.js` likely helps in extracting these keys.
+*   **Configuration:** `next-intl` setup is configured in `src/i18n/request.ts`.
 
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/your-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin feature/your-feature`)
-5. Create a new Pull Request
+### UI Components (shadcn/ui)
 
-## 📄 License
+*   Components are sourced from `shadcn/ui`. Installed components reside in `src/components/ui`.
+*   Import components using the `@/components/ui` alias (e.g., `import { Button } from '@/components/ui/button'`).
+*   To add new components, use the CLI: `npx shadcn@latest add <component-name>`.
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+### Blog Section
+
+The application includes a blog located at `/blog`.
+
+*   **Structure:** The blog uses a dedicated layout (`src/app/[locale]/blog/layout.tsx`) and includes:
+    *   An index page (`src/app/[locale]/blog/page.tsx`) displaying featured and recent posts.
+    *   Individual post pages using dynamic routing (`src/app/[locale]/blog/[slug]/page.tsx`).
+    *   Topic pages (`src/app/[locale]/blog/topics/...`).
+*   **Content Source:** Blog posts appear to be fetched from an external source, likely **Notion**, using helper functions like `getPublishedPosts` found in `src/lib/notion.ts`.
+*   **Features:** The blog index page highlights featured posts and lists recent entries.
+
+## Contributing
+
+(Add contribution guidelines here if applicable)
+
+## License
+
+(Specify project license - e.g., MIT License based on the `LICENSE` file found)
