@@ -11,6 +11,10 @@ import { routing } from '@/i18n/routing';
 const USER_CHOICE_STORAGE_KEY = 'userSelectedLocale'; // For persistent user choice
 const PROMPT_DISMISSED_SESSION_KEY = 'locationPromptDismissed'; // For session-based dismissal
 
+// --- Regex to identify common bots ---
+const BOT_REGEX = /bot|google|baidu|bing|slurp|duckduck|spider|crawler|facebookexternalhit|embedly|quora link preview|outbrain|pinterest|slackbot|vkshare|w3c_validator|whatsapp/i;
+// -----------------------------------
+
 // Helper to extract region from language tag (improves robustness)
 function getRegionFromNavigator(langTag: string | undefined): string | null {
   if (!langTag) return null;
@@ -56,7 +60,18 @@ function LocaleChecker() {
   }, [pathname, router]);
 
   useEffect(() => {
-    if (typeof window === 'undefined' || typeof navigator === 'undefined') return;
+    // Ensure running client-side
+    if (typeof window === 'undefined' || typeof navigator === 'undefined') {
+        return;
+    }
+
+    // ===== BOT DETECTION =====
+    if (BOT_REGEX.test(navigator.userAgent)) {
+        console.log("Bot detected, skipping locale check dialog.");
+        return; // Don't run checks or show dialog for bots
+    }
+    // =========================
+
     let isMounted = true;
     const checkLocale = async () => {
       // Normal checks
