@@ -1,17 +1,24 @@
 import { setRequestLocale } from "next-intl/server";
 import DynamicSectionPage from "@/components/pages/DynamicSectionPage";
+import type { SectionDefinition } from "@/components/pages/DynamicSectionPage";
 import pageSectionsData from '@/data/pageSections.json';
 import { notFound } from 'next/navigation';
 
-export default async function DemoSlugPage({ params }: { params: { locale: string; slug: string } }) {
-  // Ensure params are properly awaited first
-  const { locale, slug } = await Promise.resolve(params);
+// Define Props type with params as a Promise
+type Props = {
+  params: Promise<{ locale: string; slug: string }>; // Correct: params is a Promise
+}
 
-  // Set the locale after awaiting params
+export default async function DemoSlugPage({ params: paramsPromise }: Props) { // Rename params to paramsPromise to avoid shadowing
+  // Await the params promise
+  const params = await paramsPromise;
+  const { locale, slug } = params; // Now destructure the resolved params
+
+  // Set the locale
   await setRequestLocale(locale);
 
   // Use the slug to get the correct section data
-  const sectionsData = (pageSectionsData as any)[`demo/${slug}`];
+  const sectionsData: SectionDefinition[] | undefined = (pageSectionsData as Record<string, SectionDefinition[]>)[`demo/${slug}`]; // Add undefined possibility
 
   // If no sections data is found for this slug, return 404
   if (!sectionsData) {
@@ -21,7 +28,7 @@ export default async function DemoSlugPage({ params }: { params: { locale: strin
 
   return (
     <DynamicSectionPage
-      sectionsData={sectionsData}
+      sectionsData={sectionsData} // sectionsData could be undefined, DynamicSectionPage should handle this
       locale={locale}
       pageUrl={`/demo/${slug}`}
     />

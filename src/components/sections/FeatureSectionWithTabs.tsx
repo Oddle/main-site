@@ -30,28 +30,6 @@ interface FeatureSectionWithTabsProps {
   autoRotate?: boolean;
 }
 
-// Animation variants for sliding
-const variants = {
-  enter: (direction: number) => {
-    return {
-      x: direction > 0 ? '100%' : '-100%',
-      opacity: 0
-    };
-  },
-  center: {
-    zIndex: 1,
-    x: 0,
-    opacity: 1
-  },
-  exit: (direction: number) => {
-    return {
-      zIndex: 0,
-      x: direction < 0 ? '100%' : '-100%',
-      opacity: 0
-    };
-  }
-};
-
 const FeatureSectionWithTabs = ({ 
   i18nBaseKey,
   title: defaultTitle,
@@ -66,20 +44,14 @@ const FeatureSectionWithTabs = ({
   const description = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.description`, defaultDescription ?? '') : defaultDescription;
 
   const defaultTabValue = items.length > 0 ? items[0].id.toString() : '1';
-  const [[activeTab, direction], setActiveTabState] = useState([defaultTabValue, 0]);
+  const [activeTab, setActiveTab] = useState(defaultTabValue);
   const intervalDelay = 5000;
 
   const activeIndex = items.findIndex(tab => tab.id.toString() === activeTab);
 
   const changeTab = useCallback((newTabId: string) => {
-    setActiveTabState(prevState => {
-      const prevActiveTabId = prevState[0];
-      const currentActiveIndex = items.findIndex(tab => tab.id.toString() === prevActiveTabId);
-      const newIndex = items.findIndex(tab => tab.id.toString() === newTabId);
-      const currentDirection = newIndex > currentActiveIndex ? 1 : -1;
-      return [newTabId, currentDirection];
-    });
-  }, [items]);
+    setActiveTab(newTabId);
+  }, []);
 
   useEffect(() => {
     if (!autoRotate || items.length <= 1) {

@@ -29,7 +29,7 @@ const UtmTracker = dynamic(() => import('@/components/UTMTracker').then(mod => m
 });
 // -------------------------------------------------------
 // --- Define type for section data --- (Good practice)
-interface SectionDefinition {
+export interface SectionDefinition {
   component: string; // Ideally keyof typeof componentMap, but string is simpler for now
   props?: Record<string, unknown>; // Props are optional, especially for components like FaqSection that get dynamic ones
 }
