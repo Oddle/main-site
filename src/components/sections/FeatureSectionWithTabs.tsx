@@ -2,19 +2,20 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from 'next/image';
-import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
 
-import Container from '@/components/common/Container';
 import { cn } from "@/lib/utils";
+import { useTranslations } from 'next-intl';
+import { getTranslation } from '@/lib/i18nUtils';
 
 // Define interface for tab data for better type safety
 interface TabItem {
   id: number;
-  tabName: string;
-  tabDescription: string;
-  link: string;
-  image: string;
+  tab?: string;
+  title: string;
+  description: string;
+  benefits?: string[];
+  image?: string;
+  link?: string;
 }
 
 // Remove hardcoded data
@@ -22,9 +23,10 @@ interface TabItem {
 
 // Define props interface
 interface FeatureSectionWithTabsProps {
-  sectionTitle: string;
-  subtitle: string;
-  tabsData: TabItem[];
+  i18nBaseKey?: string;
+  title: string;
+  description?: string | null;
+  items: TabItem[];
   autoRotate?: boolean;
 }
 
@@ -51,134 +53,134 @@ const variants = {
 };
 
 const FeatureSectionWithTabs = ({ 
-  sectionTitle,
-  subtitle,
-  tabsData = [],
+  i18nBaseKey,
+  title: defaultTitle,
+  description: defaultDescription,
+  items = [],
   autoRotate = false
 }: FeatureSectionWithTabsProps) => {
-  const defaultTabValue = tabsData.length > 0 ? tabsData[0].id.toString() : '1';
+  const t = useTranslations();
+
+  // Translate section header
+  const title = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.title`, defaultTitle) : defaultTitle;
+  const description = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.description`, defaultDescription ?? '') : defaultDescription;
+
+  const defaultTabValue = items.length > 0 ? items[0].id.toString() : '1';
   const [[activeTab, direction], setActiveTabState] = useState([defaultTabValue, 0]);
   const intervalDelay = 5000;
 
-  const activeIndex = tabsData.findIndex(tab => tab.id.toString() === activeTab);
+  const activeIndex = items.findIndex(tab => tab.id.toString() === activeTab);
 
   const changeTab = useCallback((newTabId: string) => {
     setActiveTabState(prevState => {
       const prevActiveTabId = prevState[0];
-      const currentActiveIndex = tabsData.findIndex(tab => tab.id.toString() === prevActiveTabId);
-      const newIndex = tabsData.findIndex(tab => tab.id.toString() === newTabId);
+      const currentActiveIndex = items.findIndex(tab => tab.id.toString() === prevActiveTabId);
+      const newIndex = items.findIndex(tab => tab.id.toString() === newTabId);
       const currentDirection = newIndex > currentActiveIndex ? 1 : -1;
       return [newTabId, currentDirection];
     });
-  }, [tabsData]);
+  }, [items]);
 
   useEffect(() => {
-    if (!autoRotate || tabsData.length <= 1) {
+    if (!autoRotate || items.length <= 1) {
       return;
     }
     const intervalId = setInterval(() => {
-      const nextIndex = (activeIndex + 1) % tabsData.length;
-      changeTab(tabsData[nextIndex].id.toString());
+      const nextIndex = (activeIndex + 1) % items.length;
+      changeTab(items[nextIndex].id.toString());
     }, intervalDelay);
     return () => clearInterval(intervalId);
-  }, [tabsData, intervalDelay, activeIndex, autoRotate, changeTab]);
+  }, [items, intervalDelay, activeIndex, autoRotate, changeTab]);
 
-  if (!tabsData || tabsData.length === 0) {
+  if (!items || items.length === 0) {
     return null; 
   }
 
-  const activeTabData = tabsData.find(tab => tab.id.toString() === activeTab);
+  const activeTabData = items.find(tab => tab.id.toString() === activeTab);
 
   return (
-    <section className="py-24 md:py-32">
-      <Container>
-        {/* Title and Subtitle Section */} 
-        <div className="mx-auto mb-12 flex max-w-screen-md flex-col items-center gap-4 text-center lg:mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl md:text-5xl">
-            {sectionTitle}
+    <section className="container mx-auto space-y-8 px-4 py-24 md:px-6 2xl:max-w-[1400px]">
+      <div className="space-y-4 text-center">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          {title}
           </h2>
-          <p className="text-lg leading-8 text-gray-600 dark:text-gray-300">
-            {subtitle}
+        {description && (
+          <p className="text-muted-foreground mx-auto max-w-[700px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            {description}
           </p>
+        )}
         </div>
 
-        {/* Tabs Section */} 
-        <div className="mt-12">
-          {/* Added outer flex container for centering */} 
-          <div className="flex justify-center mb-8">
-            {/* Changed to inline-flex, removed justify-center (handled by parent now) */}
-            <div className="relative inline-flex h-auto flex-wrap rounded-full bg-muted p-1 dark:bg-slate-800">
-              {tabsData.map((tab) => {
-                const isActive = activeTab === tab.id.toString();
-                return (
+      {/* Tabs for desktop screens */}
+      <div className="hidden justify-center gap-4 overflow-x-auto py-2 md:flex">
+        {items.map((tab, index) => (
                   <button
                     key={tab.id}
-                    onClick={() => changeTab(tab.id.toString())}
                     className={cn(
-                      "relative rounded-full px-4 py-1.5 text-sm font-medium transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
-                      isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground/80"
+              "gap-2 rounded-full px-4 py-1.5 text-sm font-medium transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+              activeTab === tab.id.toString() ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:text-foreground/80",
+              "cursor-pointer"
                     )}
-                    style={{ WebkitTapHighlightColor: "transparent" }}
+            onClick={() => changeTab(tab.id.toString())}
                   >
-                    {isActive && (
-                      <motion.div
-                        layoutId="active-tab-indicator"
-                        className="absolute inset-0 z-0 rounded-full bg-background shadow-sm"
-                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                      />
-                    )}
-                    <span className="relative z-10">{tab.tabName}</span>
+            {tab.tab || (i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.items.${index}.title`, tab.title) : tab.title)}
                   </button>
-                );
-              })}
+        ))}
             </div>
+
+      {/* Dropdown for mobile screens */}
+      <div className="mb-4 flex w-full justify-center md:hidden">
+        <select
+          className="w-[180px] rounded-md border px-3 py-2 text-sm"
+          value={activeTab}
+          onChange={e => changeTab(e.target.value)}
+        >
+          {items.map((tab, index) => (
+            <option key={tab.id} value={tab.id}>
+              {tab.tab || (i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.items.${index}.title`, tab.title) : tab.title)}
+            </option>
+          ))}
+        </select>
           </div>
 
-          {/* Tab Content Area with Animation */}
-          <div className="relative h-[550px] w-full overflow-hidden md:h-[650px]">
-            <AnimatePresence initial={false} custom={direction}>
+      {/* Card Content for Active Tab */}
               {activeTabData && (
-                <motion.div
-                  key={activeTab}
-                  custom={direction}
-                  variants={variants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={{
-                    x: { type: "spring", stiffness: 300, damping: 30 },
-                    opacity: { duration: 0.2 }
-                  }}
-                  className="absolute top-0 left-0 right-0"
-                >
-                  <div className="w-full overflow-hidden rounded-lg bg-background px-6 py-6 dark:bg-slate-900 md:px-10 md:py-8">
-                    <div className="flex flex-col justify-between">
-                      <div className="mb-8 flex flex-col items-center justify-center gap-2 text-center md:flex-row md:text-left">
-                        <p className="text-base text-muted-foreground">{activeTabData.tabDescription}</p>
-                        <Link
-                          href={activeTabData.link}
-                          className="font-sm whitespace-nowrap border-b border-primary text-sm font-medium text-primary transition-colors hover:border-primary/70 hover:text-primary/70"
-                        >
-                          Learn more
-                        </Link>
+        <div className="overflow-hidden rounded-xl border bg-background shadow">
+          <div className="grid gap-0 lg:grid-cols-2">
+            <div className="flex flex-col justify-center space-y-6 p-6 lg:p-8">
+              <div className="space-y-2">
+                <h3 className="text-2xl font-bold">
+                  {i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.items.${items.findIndex(tab => tab.id.toString() === activeTab)}.title`, activeTabData.title) : activeTabData.title}
+                </h3>
+                <p className="text-muted-foreground">
+                  {i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.items.${items.findIndex(tab => tab.id.toString() === activeTab)}.description`, activeTabData.description) : activeTabData.description}
+                </p>
+              </div>
+              {activeTabData.benefits && (
+                <ul className="grid gap-3">
+                  {activeTabData.benefits.map((benefit, idx) => (
+                    <li key={idx} className="flex items-center gap-3">
+                      <div className="bg-primary size-2 rounded-full" />
+                      {i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.items.${items.findIndex(tab => tab.id.toString() === activeTab)}.benefits.${idx}`, benefit) : benefit}
+                    </li>
+                  ))}
+                </ul>
+              )}
                       </div>
-                      <div className="relative mx-auto h-72 w-full max-w-4xl overflow-hidden rounded-md bg-muted shadow-lg dark:bg-slate-800 md:h-[420px]">
+            <div className="relative aspect-video lg:aspect-auto">
+              {activeTabData.image && (
                         <Image
                           src={activeTabData.image}
-                          alt={activeTabData.tabName}
+                  alt={i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.items.${items.findIndex(tab => tab.id.toString() === activeTab)}.title`, activeTabData.title) : activeTabData.title}
                           fill
                           className="object-cover"
-                          sizes="(max-width: 768px) 90vw, (max-width: 1024px) 70vw, 60vw"
+                  priority
                         />
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
               )}
-            </AnimatePresence>
+            </div>
           </div>
         </div>
-      </Container>
+      )}
     </section>
   );
 };

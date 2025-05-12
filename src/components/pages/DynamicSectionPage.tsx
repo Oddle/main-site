@@ -69,6 +69,11 @@ const componentMap: { [key: string]: React.ComponentType<any> } = {
 
 // Update component signature to accept props
 const DynamicSectionPage = ({ sectionsData, pageUrl, locale }: DynamicSectionPageProps) => {
+  // Add check for undefined sectionsData
+  if (!sectionsData || !Array.isArray(sectionsData)) {
+    console.error('[DynamicSectionPage] sectionsData is undefined or not an array');
+    return null;
+  }
 
   return (
     <div className="flex flex-col min-h-screen w-full">

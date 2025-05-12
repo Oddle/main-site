@@ -334,7 +334,10 @@
       }
     },
     {
-      "component": "FaqSection"
+      "component": "FaqSection",
+      "props": {
+        "faqCategory": "products/restaurant-online-ordering-system"
+      }
     }
   ],
   "products/restaurant-reservation-system": [
@@ -972,6 +975,231 @@
       "component": "DemoRequestSection",
       "props": {
         "i18nBaseKey": "demoPage.section"
+      }
+    }
+  ],
+  "demo/restaurant-online-ordering-system": [
+   
+    {
+      "component": "FeatureSectionWithTabs",
+      "props": {
+        "title": "Your All-in-One Restaurant Online Ordering System",
+        "description": "Your own delivery system to grow sales, manage orders easily, and connect with more customers.",
+        "items": [
+          {
+            "id": 1,
+            "tab": "Showcase Your Brand",
+            "title": "Your Platform, Your Way",
+            "description": "A fully branded platform that puts your logo, menu, and promotions in the spotlight.",
+            "benefits": [
+              "Highlight your brand with a customizable online store.",
+              "Promote your menu and offers directly to customers."
+            ],
+            "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+          },
+          {
+            "id": 2,
+            "tab": "Simplify Deliveries",
+            "title": "Streamline Logistics Management",
+            "description": "Manage delivery zones and logistics with ease to serve more customers efficiently.",
+            "benefits": [
+              "Flexible delivery options to reach a wider audience.",
+              "Best-in-class fulfillment rates for efficient operations."
+            ],
+            "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+          },
+          {
+            "id": 3,
+            "tab": "Grow Customer Loyalty",
+            "title": "Turn Delivery Customers into Regulars",
+            "description": "Drive repeat business and bring online customers into your restaurant with exclusive offers and rewards.",
+            "benefits": [
+              "Encourage dine-in visits with personalized promotions.",
+              "Reward loyal customers and re-engage lapsed diners with targeted campaigns."
+            ],
+            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "DemoRequestSection",
+      "props": {
+        "i18nBaseKey": "demoPage.section"
+      }
+    },
+    {
+      "component": "FaqSection",
+      "props": {
+        "faqCategory": "demo/restaurant-online-ordering-system"
+      }
+    }
+  ],
+  "demo/restaurant-reservation-system": [
+    {
+      "component": "FeatureSectionWithTabs",
+      "props": {
+        "title": "Your All-in-One Restaurant Reservation System",
+        "description": "Streamline operations, reduce no-shows, and boost revenue with a pricing model that works for restaurants of every size.",
+        "items": [
+          {
+            "id": 1,
+            "tab": "Simplify Operations",
+            "title": "Streamline Booking Management",
+            "description": "Simplify your day-to-day operations with automated tools and real-time views.",
+            "benefits": [
+              "Automate customer confirmations and updates to reduce manual work.",
+              "Minimize no-shows with credit card guarantees and upfront payments."
+            ],
+            "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+          },
+          {
+            "id": 2,
+            "tab": "Increase Bookings",
+            "title": "Unlock Revenue Potential",
+            "description": "Drive more bookings and boost revenue by targeting underperforming time slots.",
+            "benefits": [
+              "Visualize sales performance across 14 time slots to identify gaps.",
+              "Tailor promotions to fill tables during quieter periods."
+            ],
+            "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+          },
+          {
+            "id": 3,
+            "tab": "Retain Customers",
+            "title": "Turn Guests into Regulars",
+            "description": "Build long-term relationships with tools that boost loyalty and advocacy.",
+            "benefits": [
+              "Collect feedback to encourage positive Google reviews.",
+              "Re-engage customers with personalized promotions and offers."
+            ],
+            "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "DemoRequestSection",
+      "props": {
+        "i18nBaseKey": "demoPage.section"
+      }
+    },
+    {
+      "component": "FaqSection",
+      "props": {
+        "faqCategory": "demo/restaurant-reservation-system"
+      }
+    }
+  ],
+  "demo/restaurant-loyalty-crm-system": [
+    {
+      "component": "FeatureSectionWithTabs",
+      "props": {
+        "title": "Your All-in-One Restaurant Loyalty & CRM System",
+        "description": "Keep your customers coming back with a loyalty program that rewards them and grows your business effortlessly.",
+        "items": [
+          {
+            "id": 1,
+            "tab": "Capture Every Customer",
+            "title": "Build a Smarter Database",
+            "description": "Sign up diners easily with QR Scans or NFC Taps to capture data from every visit.",
+            "benefits": [
+              "Seamlessly collect customer data at the table or counter.",
+              "Deliver personalized rewards and smarter loyalty experiences."
+            ],
+            "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+          },
+          {
+            "id": 2,
+            "tab": "Automate Engagement",
+            "title": "Stay Top of Mind with Automation",
+            "description": "Save time while driving repeat visits with automated rewards, reminders, and offers.",
+            "benefits": [
+              "Automate rewards, birthday offers, and visit reminders to stay connected with your guests.",
+              "Collect feedback effortlessly after each visit."
+            ],
+            "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+          },
+          {
+            "id": 3,
+            "tab": "Cross-Promote Effortlessly",
+            "title": "Connect Dine-In and Delivery",
+            "description": "Use data to create personalized offers and boost engagement across dine-in and delivery.",
+            "benefits": [
+              "Leverage insights to target customers with tailored campaigns.",
+              "Unlock new revenue streams across multiple touchpoints."
+            ],
+            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "DemoRequestSection",
+      "props": {
+        "i18nBaseKey": "demoPage.section"
+      }
+    },
+    {
+      "component": "FaqSection",
+      "props": {
+        "faqCategory": "demo/restaurant-loyalty-crm-system"
+      }
+    }
+  ],
+  "demo/restaurant-payment-terminal": [
+    {
+      "component": "FeatureSectionWithTabs",
+      "props": {
+        "title": "Your All-in-One Restaurant Payment Terminal",
+        "description": "The payment terminal your restaurant needs to save money, improve efficiency, and build lasting customer loyalty.",
+        "items": [
+          {
+            "id": 1,
+            "tab": "Save Costs",
+            "title": "Competitively Priced for Restaurants",
+            "description":              "Keep more of your revenue with transparent, consistent transaction fees built for restaurants.",
+            "benefits": [
+              "Competitive rates with no hidden fees.",
+              "Save costs while maintaining efficient payment operations."
+            ],
+            "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+          },
+          {
+            "id": 2,
+            "tab": "Smarter Operations",
+            "title": "Smarter Operations",
+            "description": "Streamline operations with reliable, mobile-ready payment terminals that enhance efficiency.",
+            "benefits": [
+              "Mobile checkout for table-side payments.",
+              "Real-time reporting and stable connectivity anywhere."
+            ],
+            "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+          },
+          {
+            "id": 3,
+            "tab": "Built for Retention",
+            "title": "Build Loyalty at Checkout",
+            "description": "Engage and retain customers right at the payment terminal with features that encourage repeat visits.",
+            "benefits": [
+              "Print return vouchers and send automated reminders.",
+              "Collect feedback directly from the terminal to improve experiences."
+            ],
+            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+          }
+        ]
+      }
+    },
+    {
+      "component": "DemoRequestSection",
+      "props": {
+        "i18nBaseKey": "demoPage.section"
+      }
+    },
+    {
+      "component": "FaqSection",
+      "props": {
+        "faqCategory": "demo/restaurant-terminal-payment"
       }
     }
   ]

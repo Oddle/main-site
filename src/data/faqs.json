@@ -1,6 +1,6 @@
 {
   "home": {
-    "en": [
+    "sg": [
       {
         "question": "Can I cancel at anytime?",
         "answer": "Yes, you can cancel anytime no questions are asked while you cancel but we would highly appreciate if you will give us some feedback."
@@ -28,7 +28,7 @@
     ]
   },
   "products/restaurant-online-ordering-system": {
-    "en": [
+    "sg": [
       {
         "question": "What is an online ordering system for restaurants?",
         "answer": "An online ordering system for restaurants allows diners to place orders directly through a restaurant's website or app. It streamlines the ordering process, eliminating the need for third-party platforms and helping restaurants build a stronger connection with their customers."
@@ -122,7 +122,7 @@
     ]
   },
   "products/restaurant-loyalty-crm-system": {
-    "en": [
+    "sg": [
       {
         "question": "What is Oddle Loyalty?",
         "answer": "Oddle's Restaurant Loyalty CRM System is a seamless, easy-to-use digital loyalty software that rewards returning customers and simplifies diner engagement. By combining simple check-in rewards with customer insights, it helps restaurants build stronger relationships and boost repeat visits."
@@ -184,7 +184,7 @@
     ]
   },
   "products/restaurant-reservation-system": {
-    "en": [
+    "sg": [
       {
         "question": "What is Oddle Reserve, and how does it enhance my restaurant's reservation process?",
         "answer": "Oddle Reserve is a restaurant reservation system designed to streamline your reservation process with advanced management tools. It offers features like table management, real-time reservation tracking, and customizable booking options to improve operational efficiency and enhance the dining experience for your guests."
@@ -312,6 +312,86 @@
       {
         "question": "How long does onboarding take?",
         "answer": "Onboarding with Oddle is quick and hassle-free. You can get a quote and set up your credit card terminal in just 2 days, allowing you to start accepting payments almost immediately. Unlike banks, which often require lengthy processes involving weeks or even months to complete paperwork and open accounts, Oddle ensures a streamlined experience, saving you time and effort."
+      }
+    ]
+  },
+  "demo/restaurant-online-ordering-system": {
+    "sg": [
+      {
+        "question": "Who is Oddle E-shop for?",
+        "answer": "It's designed for restaurant owners who want to manage their delivery orders efficiently, grow sales, and build stronger customer relationships through a fully branded platform."
+      },
+      {
+        "question": "How much does Oddle E-shop cost?",
+        "answer": "Oddle offers transparent and competitive pricing with zero startup costs and no hidden fees. For detailed pricing information tailored to your restaurant's needs, please visit our pricing page or contact our team directly."
+      },
+      {
+        "question": "Can I customize my Oddle E-shop?",
+        "answer": "Yes, the platform is fully customizable to showcase your brand, logo, menu, and promotions, giving you a personalized online store that represents your restaurant."
+      },
+      {
+        "question": "How does the system handle logistics?",
+        "answer": "Oddle integrates with third-party logistics partners to streamline deliveries, ensuring a seamless experience for both restaurants and customers."
+      },
+      {
+        "question": "What kind of report data can I access?",
+        "answer": "You'll get insights into customer behavior, order frequency, sales performance, and delivery trends to help you make smarter business decisions."
+      },
+      {
+        "question": "What other exposure can I get?",
+        "answer": "Oddle helps you reach more customers through our food directory, Oddle Eats, and marketing support, increasing your restaurant's visibility and attracting new diners."
+      }
+    ]
+  },
+  "demo/restaurant-loyalty-crm-system": {
+    "sg": [
+      {
+        "question": "Who is Oddle's Loyalty Program for?",
+        "answer": "Oddle's Loyalty Program is designed for restaurants aiming to enhance customer engagement, boost repeat visits, and increase sales through personalized loyalty experiences."
+      },
+      {
+        "question": "How does Oddle's Loyalty Program capture customer data?",
+        "answer": "Customers can sign up easily at the table or counter using QR Scans or NFC Taps. This frictionless process ensures you gather data from every guest seamlessly."
+      },
+      {
+        "question": "Can the system automate customer engagement?",
+        "answer": "Yes! Oddle's Loyalty Program automates personalized rewards, birthday offers, reminders for unused rewards, and post-visit feedback, keeping your restaurant top of mind."
+      },
+      {
+        "question": "How much does Oddle's Loyalty Program cost?",
+        "answer": "Oddle offers transparent and competitive pricing with zero startup costs and no hidden fees. For detailed pricing information tailored to your restaurant's needs, please visit our pricing page or contact our team directly."
+      },
+      {
+        "question": "What kind of report data can I access?",
+        "answer": "You'll get insights into customer behavior, order frequency, sales performance, and delivery trends to help you make smarter business decisions."
+      }
+    ]
+  },
+  "demo/restaurant-payment-terminal": {
+    "sg": [
+      {
+        "question": "Who is Oddle Payment Terminal for?",
+        "answer": "Oddle Payment Terminal are designed for restaurants looking to streamline payment processes, reduce transaction costs, and enhance customer engagement at the point of sale. They're ideal for restaurants aiming to grow loyalty and improve operational efficiency."
+      },
+      {
+        "question": "How much does Oddle Payment Terminal cost?",
+        "answer": "Oddle offers transparent and competitive pricing with zero startup costs and no hidden fees. For detailed pricing information tailored to your restaurant's needs, please visit our pricing page or contact our team directly."
+      },
+      {
+        "question": "How quickly can I start using Oddle Payment Terminal?",
+        "answer": "You can get set up with Oddle Payment Terminal within 48 hours. The onboarding process is quick, easy, and hassle-free."
+      },
+      {
+        "question": "Can customers pay directly at their table?",
+        "answer": "Yes, our mobile payment terminals allow for flexible table-side payments, offering convenience to both your staff and your customers."
+      },
+      {
+        "question": "Can the Oddle Payment Terminal work without stable Wi-Fi?",
+        "answer": "Yes! Each terminal includes a built-in SIM card, ensuring stable internet connectivity for reliable transactions, even in remote locations."
+      },
+      {
+        "question": "What report data can I see?",
+        "answer": "Oddle Payment Terminal shows sales performance by time slots, customer preferences, booking trends, and repeat visit frequency to optimize your operations."
       }
     ]
   }
