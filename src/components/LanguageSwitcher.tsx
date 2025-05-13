@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { Button } from "./ui/button";
 import {
@@ -15,6 +15,7 @@ const LanguageSwitcher = () => {
   const router = useRouter();
   const pathname = usePathname();
   const currentLocale = useLocale();
+  const t = useTranslations('LanguageSwitcher');
 
   const changeLanguage = (newLocale: string) => {
     // Setting the cookie might still be useful for some server-side scenarios
@@ -41,7 +42,12 @@ const LanguageSwitcher = () => {
   return (
     <DropdownMenu dir={currentLocale === "ar" ? "rtl" : "ltr"}>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" className="flex items-center gap-1.5">
+        <Button 
+          variant="outline" 
+          size="sm" 
+          className="flex items-center gap-1.5"
+          aria-label={t('changeLanguageLabel')}
+        >
           <Globe className="h-4 w-4" />
           <span>{currentDisplayCode}</span>
         </Button>

@@ -130,7 +130,7 @@ export default function IconSectionHorizontal({
                 <h3 className="mb-2 text-xl font-medium">
                   {itemTitle} {/* Use translated */}
                 </h3>
-                <p className="text-base leading-relaxed text-muted-foreground">
+                <p className="text-base leading-relaxed text-foreground">
                   {itemDescription} {/* Use translated */}
                 </p>
               </div>

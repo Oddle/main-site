@@ -13,6 +13,17 @@ import "../globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import LocaleChecker from '@/components/LocaleChecker';
 
+// --- Define BCP 47 language mapping (accessible to both RootLayout and generateMetadata) ---
+const bcp47LangMap: { [key: string]: string } = {
+  en: 'en',       // Or 'en-US' if preferred
+  sg: 'en-SG',   // English for Singapore
+  hk: 'en-HK',   // English for Hong Kong (as per user's last change)
+  au: 'en-AU',   // English for Australia
+  my: 'en-MY',   // English for Malaysia
+  tw: 'zh-TW',   // Chinese for Taiwan
+};
+// ----------------------------------------------------------------------------------------
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -44,8 +55,12 @@ export default async function RootLayout({
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: "Metadata" });
+
+  // Use the mapped language code for the lang attribute
+  const htmlLang = bcp47LangMap[locale] || locale; // Fallback to original locale if not mapped
+
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={htmlLang} suppressHydrationWarning>
       <head>
         <meta name="keywords" content={t("keywords")} />
         <script
@@ -103,26 +118,15 @@ export async function generateMetadata({
   const appleIconUrl = 'https://ucarecdn.com/d28a1327-3c7f-42cb-880e-46c9f109cb4a/-/preview/512x512/';
   // -----------------------------------
 
-  // --- Define hreflang mapping ---
-  const hreflangMap: { [key: string]: string } = {
-    en: 'en',       // Or 'en-US' if preferred
-    sg: 'en-SG',   // English for Singapore
-    hk: 'zh-HK',   // Chinese for Hong Kong
-    au: 'en-AU',   // English for Australia
-    my: 'en-MY',   // English for Malaysia
-    tw: 'zh-TW',   // Chinese for Taiwan
-  };
-  // ------------------------------
-
   // --- Debugging Logs ---
   const calculatedCanonical = new URL(`/${locale}`, baseUrl).toString();
   console.log(`[generateMetadata] Locale: ${locale}, Calculated Canonical: ${calculatedCanonical}`);
   console.log(`[generateMetadata] routing.locales: ${JSON.stringify(routing.locales)}`);
-  console.log(`[generateMetadata] hreflangMap: ${JSON.stringify(hreflangMap)}`);
+  console.log(`[generateMetadata] bcp47LangMap: ${JSON.stringify(bcp47LangMap)}`);
   // ---------------------
 
   const languagesOutput = routing.locales.reduce((acc, loc) => {
-    const mappedHreflang = hreflangMap[loc] || loc;
+    const mappedHreflang = bcp47LangMap[loc] || loc;
     const absoluteHref = new URL(`/${loc}`, baseUrl).toString();
     console.log(`[generateMetadata] lang reduce: loc='${loc}', mappedHreflang='${mappedHreflang}', absoluteHref='${absoluteHref}'`);
     acc[mappedHreflang] = absoluteHref;
@@ -159,7 +163,7 @@ export async function generateMetadata({
           height: 523, 
         },
       ],
-      locale: hreflangMap[locale] || locale, // Use mapped locale for og:locale too
+      locale: bcp47LangMap[locale] || locale, // Use shared map for og:locale too
       type: "website",
     },
     twitter: {
