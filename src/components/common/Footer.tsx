@@ -205,7 +205,7 @@ export default function Footer() {
                     <p className="text-balance text-center md:text-left max-w-lg">{tCta('description')}</p>
                     <Button size="lg" className="mt-4 md:mt-0 flex-shrink-0" asChild>
                       <Link href="/demo" prefetch={false}>{tCta('primaryButtonText')}</Link>
-                    </Button>
+                      </Button>
                   </div>
               </div>
           </div>

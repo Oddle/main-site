@@ -8,5 +8,5 @@ export const routing = defineRouting({
   defaultLocale: "sg",
   localeDetection: true,
   //to remove the locale prefix from the url
-  localePrefix: "as-needed",
+  localePrefix: "always",
 });
