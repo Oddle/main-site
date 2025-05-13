@@ -9,8 +9,8 @@ interface GridItem {
   title: string; // Default title
   description: string; // Default description
   image: {
-    src: string;
-    alt: string; // Default alt text
+    src?: string; // Optional
+    alt?: string; // Optional
   };
   href?: string | null; // Optional link field
 }
@@ -54,16 +54,19 @@ export default function FeatureSectionWithGridImages({
       <div className={gridClasses}> {/* Use dynamically determined classes */}
         {items.map((item, index) => {
           // Get default values from item prop
-          const defaultTitle = item.title;
-          const defaultDescription = item.description;
-          const defaultAlt = item.image.alt || defaultTitle; // Use item title as fallback alt
-          const defaultHref = item.href; // Get default href from props
+          const defaultItemTitle = item.title;
+          const defaultItemDescription = item.description;
+          // defaultAlt and defaultHref remain as they are used for non-image fallbacks or direct use
+          const defaultAlt = item.image?.alt || item.title; 
+          const defaultHref = item.href; 
 
           // Translate item fields
-          const itemTitle = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.items.${index}.title`, defaultTitle) : defaultTitle;
-          const itemDescription = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.items.${index}.description`, defaultDescription) : defaultDescription;
-          const itemAlt = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.items.${index}.image.alt`, defaultAlt) : defaultAlt;
-          // Get localized href, falling back to the default href from props
+          const itemTitle = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.items.${index}.title`, defaultItemTitle) : defaultItemTitle;
+          const itemDescription = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.items.${index}.description`, defaultItemDescription) : defaultItemDescription;
+          
+          const itemImageSrc = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.items.${index}.image.src`, item.image?.src || "") || "" : item.image?.src || "";
+          const itemImageAlt = i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.items.${index}.image.alt`, item.image?.alt || defaultAlt) || "" : item.image?.alt || defaultAlt;
+          
           const itemHref = defaultHref && i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.items.${index}.href`, defaultHref) : defaultHref;
 
           // Card content defined once
@@ -71,18 +74,22 @@ export default function FeatureSectionWithGridImages({
             <div 
               className="group relative isolate h-80 overflow-hidden rounded-2xl border border-border transition-transform duration-300 hover:-translate-y-1 block"
             >
-              {/* Background Image */}
-              <Image
-                src={item.image.src}
-                alt={itemAlt}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="absolute inset-0 -z-20 size-full object-cover grayscale transition-all duration-300 group-hover:grayscale-0"
-              />
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/75 via-black/50 to-transparent" />
+              {/* Background Image and Gradient only if itemImageSrc exists */}
+              {itemImageSrc && (
+                <>
+                  <Image
+                    src={itemImageSrc}
+                    alt={itemImageAlt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="absolute inset-0 -z-20 size-full object-cover grayscale transition-all duration-300 group-hover:grayscale-0"
+                  />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/75 via-black/50 to-transparent" />
+                </>
+              )}
               {/* Content Overlay */}
-              <div className="flex h-full flex-col justify-end p-6 text-background">
+              <div className={`flex h-full flex-col justify-end p-6 ${itemImageSrc ? 'text-background' : 'text-foreground'}`}>
                   <div>
                     <h3 className="text-lg md:text-xl font-semibold mb-1">{itemTitle}</h3>
                     <p className="text-sm text-background/80 line-clamp-2">{itemDescription}</p>

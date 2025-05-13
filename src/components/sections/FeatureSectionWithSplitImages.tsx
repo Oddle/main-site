@@ -10,8 +10,8 @@ import { useTranslations } from 'next-intl';
 import { getTranslation } from '@/lib/i18nUtils';
 
 interface SplitImageItemData {
-  imageSrc: string;
-  imageAlt: string;
+  imageSrc?: string; // Optional
+  imageAlt?: string; // Optional
   title: string;
   description: string;
   tag?: string;
@@ -69,14 +69,43 @@ const FeatureSectionWithSplitImages = ({
           items.length >= 4 ? "md:grid-cols-4" : ""
         )}>
           {items.map((item, index) => {
-            const itemTag = item.tag ? getTranslation(t, `${i18nBaseKey}.items.${index}.tag`, item.tag) : undefined;
-            const itemTitle = getTranslation(t, `${i18nBaseKey}.items.${index}.title`, item.title);
-            const itemDescription = getTranslation(t, `${i18nBaseKey}.items.${index}.description`, item.description);
-            const itemImageAlt = getTranslation(t, `${i18nBaseKey}.items.${index}.imageAlt`, item.imageAlt || item.title);
+            const itemBaseKey = `${i18nBaseKey}.items.${index}`;
+            const itemTag = item.tag ? getTranslation(t, `${itemBaseKey}.tag`, item.tag) : undefined;
+            const itemTitle = getTranslation(t, `${itemBaseKey}.title`, item.title);
+            const itemDescription = getTranslation(t, `${itemBaseKey}.description`, item.description);
+            const itemImageSrc = getTranslation(t, `${itemBaseKey}.imageSrc`, item.imageSrc || "") || "";
+            const itemImageAlt = getTranslation(t, `${itemBaseKey}.imageAlt`, item.imageAlt || item.title) || "";
 
             const isInternalLink = item.action?.startsWith('/');
             const baseClassName = "group block";
             const hoverClassName = item.action ? "transition-opacity duration-300 hover:opacity-80" : "";
+
+            const imageElement = itemImageSrc && (
+              <div className="relative mb-6 aspect-[1.5] w-full overflow-hidden rounded-2xl">
+                <Image
+                  src={itemImageSrc}
+                  alt={itemImageAlt}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
+            );
+
+            const content = (
+              <>
+                {imageElement}
+                {itemTag && (
+                  <Badge variant="outline" className="mb-2">{itemTag}</Badge>
+                )}
+                <h3 className="mb-2 text-xl font-semibold dark:text-white">
+                  {itemTitle}
+                </h3>
+                <p className="text-base text-muted-foreground">
+                   {itemDescription}
+                 </p>
+              </>
+            );
 
             if (item.action) {
               if (isInternalLink) {
@@ -87,24 +116,7 @@ const FeatureSectionWithSplitImages = ({
                     className={cn(baseClassName, hoverClassName)}
                     aria-label={itemTitle}
                   >
-                    <div className="relative mb-6 aspect-[1.5] w-full overflow-hidden rounded-2xl">
-                      <Image
-                        src={item.imageSrc}
-                        alt={itemImageAlt}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    </div>
-                    {itemTag && (
-                      <Badge variant="outline" className="mb-2">{itemTag}</Badge>
-                    )}
-                    <h3 className="mb-2 text-xl font-semibold dark:text-white">
-                      {itemTitle}
-                    </h3>
-                    <p className="text-base text-muted-foreground">
-                       {itemDescription}
-                     </p>
+                    {content}
                   </Link>
                 );
               } else {
@@ -117,48 +129,14 @@ const FeatureSectionWithSplitImages = ({
                     className={cn(baseClassName, hoverClassName)}
                     aria-label={itemTitle}
                   >
-                    <div className="relative mb-6 aspect-[1.5] w-full overflow-hidden rounded-2xl">
-                      <Image
-                        src={item.imageSrc}
-                        alt={itemImageAlt}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    </div>
-                    {itemTag && (
-                      <Badge variant="outline" className="mb-2">{itemTag}</Badge>
-                    )}
-                    <h3 className="mb-2 text-xl font-semibold dark:text-white">
-                      {itemTitle}
-                    </h3>
-                    <p className="text-base text-muted-foreground">
-                       {itemDescription}
-                     </p>
+                    {content}
                   </a>
                 );
               }
             } else {
               return (
                 <div key={index} className={baseClassName}>
-                  <div className="relative mb-6 aspect-[1.5] w-full overflow-hidden rounded-2xl">
-                    <Image
-                      src={item.imageSrc}
-                      alt={itemImageAlt}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                  </div>
-                  {itemTag && (
-                    <Badge variant="outline" className="mb-2">{itemTag}</Badge>
-                  )}
-                  <h3 className="mb-2 text-xl font-semibold dark:text-white">
-                    {itemTitle}
-                  </h3>
-                  <p className="text-base text-muted-foreground">
-                     {itemDescription}
-                   </p>
+                  {content}
                 </div>
               );
             }

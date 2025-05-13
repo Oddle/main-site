@@ -69,6 +69,7 @@ export default function FeatureSectionBentoGrid({
           {items.map((item, index) => {
             const itemTitle = getTranslation(t, `${i18nBaseKey}.items.${index}.title`, item.title);
             const itemDescription = getTranslation(t, `${i18nBaseKey}.items.${index}.description`, item.description);
+            const itemImageSrc = getTranslation(t, `${i18nBaseKey}.items.${index}.imageSrc`, item.imageSrc);
             const itemImageAlt = getTranslation(t, `${i18nBaseKey}.items.${index}.imageAlt`, item.imageAlt);
 
             return (
@@ -99,7 +100,7 @@ export default function FeatureSectionBentoGrid({
                   </div>
                   <div className="m-3 p-0 h-72 overflow-hidden">
                     <Image
-                      src={item.imageSrc}
+                      src={itemImageSrc}
                       alt={itemImageAlt}
                       width={800}
                       height={600}

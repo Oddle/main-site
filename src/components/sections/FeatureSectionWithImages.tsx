@@ -14,8 +14,8 @@ interface StandardItemData {
   title: string;
   description: string;
   items?: string[]; // Bullet points
-  imageSrc: string;
-  imageAlt: string;
+  imageSrc?: string; // Optional
+  imageAlt?: string; // Optional
   imageWidth?: number;
   imageHeight?: number;
   buttonText?: string;
@@ -92,7 +92,8 @@ export default function FeatureSectionWithImages({
             // Translate item properties
             const itemTitle = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.title`, item.title) : item.title;
             const itemDescription = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.description`, item.description) : item.description;
-            const itemImageAlt = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.imageAlt`, item.imageAlt) : item.imageAlt;
+            const itemImageSrc = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.imageSrc`, item.imageSrc || "") || "" : item.imageSrc || "";
+            const itemImageAlt = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.imageAlt`, item.imageAlt || "") || "" : item.imageAlt || "";
             const itemButtonText = item.buttonText && i18nBaseKey
               ? getTranslation(t, `${itemBaseKey}.buttonText`, item.buttonText)
               : item.buttonText;
@@ -134,7 +135,7 @@ export default function FeatureSectionWithImages({
                 {/* Image */}
                 <div className="relative aspect-square overflow-hidden rounded-lg"> {/* Changed aspect-video to aspect-square */}
                   <Image
-                    src={item.imageSrc}
+                    src={itemImageSrc}
                     alt={itemImageAlt}
                     fill
                     className="object-contain object-center" // Changed back to object-contain and added object-center

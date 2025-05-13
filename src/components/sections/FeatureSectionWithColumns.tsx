@@ -12,8 +12,8 @@ import { getTranslation } from '@/lib/i18nUtils';
 
 // Interface for individual feature items
 interface StandardItemData {
-  imageSrc: string;
-  imageAlt: string;
+  imageSrc?: string; // Optional
+  imageAlt?: string; // Optional
   title: string;
   description: string;
   tag?: string;
@@ -79,7 +79,8 @@ const FeatureSectionWithColumns = ({
             const itemTitle = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.title`, item.title) : item.title;
             const itemDescription = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.description`, item.description) : item.description;
             const itemTag = item.tag && i18nBaseKey ? getTranslation(t, `${itemBaseKey}.tag`, item.tag) : item.tag;
-            const itemImageAlt = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.imageAlt`, item.imageAlt) : item.imageAlt;
+            const itemImageSrc = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.imageSrc`, item.imageSrc || "") || "" : item.imageSrc || "";
+            const itemImageAlt = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.imageAlt`, item.imageAlt || itemTitle) || itemTitle : item.imageAlt || itemTitle;
             
             const isInternalLink = item.action?.startsWith('/');
             const baseClassName = "group block h-full";
@@ -89,8 +90,8 @@ const FeatureSectionWithColumns = ({
                <Card className="flex h-full flex-col overflow-hidden pt-0 transition-shadow duration-300 group-hover:shadow-lg">
                   <div className="relative aspect-[1.5] w-full">
                       <Image
-                        src={item.imageSrc}
-                        alt={itemImageAlt || itemTitle}
+                        src={itemImageSrc}
+                        alt={itemImageAlt}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

@@ -94,12 +94,13 @@ export default function HeroWithCarousel({
               {slides.length === 1 ? (
                 (() => {
                   const slide = slides[0];
+                  const slideImageSrc = getTranslation(t, `${i18nBaseKey}.slides.0.imageSrc`, slide.imageSrc);
                   const slideImageAlt = getTranslation(t, `${i18nBaseKey}.slides.0.imageAlt`, slide.imageAlt);
                   return (
                     <div className="relative aspect-square overflow-hidden rounded-xl bg-card shadow-sm">
                     <Image
                         className="object-cover"
-                      src={slide.imageSrc}
+                      src={slideImageSrc}
                       alt={slideImageAlt}
                         fill
                       priority={true}
@@ -117,13 +118,14 @@ export default function HeroWithCarousel({
                 >
                   <CarouselContent>
                     {slides.map((slide, index) => {
+                      const slideImageSrc = getTranslation(t, `${i18nBaseKey}.slides.${index}.imageSrc`, slide.imageSrc);
                       const slideImageAlt = getTranslation(t, `${i18nBaseKey}.slides.${index}.imageAlt`, slide.imageAlt);
                       return (
                         <CarouselItem key={index}>
                           <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-card shadow-sm">
                             <Image
                               className="object-cover"
-                              src={slide.imageSrc}
+                              src={slideImageSrc}
                               alt={slideImageAlt}
                               fill
                               priority={index === 0}

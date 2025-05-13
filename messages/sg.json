@@ -195,16 +195,20 @@
       },
       "slides": {
         "0": {
-          "imageAlt": "Loyalty - Cenzo"
+          "imageAlt": "Loyalty - Cenzo",
+          "imageSrc": "https://ucarecdn.com/d58723e4-81fb-467f-a3cd-67690d449e84/-/preview/1000x1000/"
         },
         "1": {
-          "imageAlt": "Delivery - HJH"
+          "imageAlt": "Delivery - HJH",
+          "imageSrc": "https://ucarecdn.com/a8660b02-3f92-4bc0-a30a-3ec9563aa72d/-/preview/1000x1000/"
         },
         "2": {
-          "imageAlt": "Reserve - Abundance"
+          "imageAlt": "Reserve - Abundance",
+          "imageSrc": "https://ucarecdn.com/0c9cfc5a-c1d4-4135-b361-0307daa96cb8/-/preview/1000x1000/"
         },
         "3": {
-          "imageAlt": "Marketing - KEK"
+          "imageAlt": "Marketing - KEK",
+          "imageSrc": "https://ucarecdn.com/3009d580-737a-4571-a491-15772c792f1c/-/preview/1000x1000/"
         }
       }
     },
@@ -259,42 +263,50 @@
         "0": {
           "title": "Reservation",
           "description": "Simplify table bookings and grow dine-in sales across all segments",
-          "imageAlt": "Reservation"
+          "imageAlt": "Reservation system interface showing table booking.",
+          "imageSrc": "https://ucarecdn.com/47d65c01-2223-48b4-ab0e-bc56a9eef03f/-/scale_crop/800x800/"
         },
         "1": {
           "title": "Online Ordering",
           "description": "Boost delivery revenue with a branded online ordering system",
-          "imageAlt": "Online Ordering"
+          "imageAlt": "Online ordering interface showing menu and delivery details.",
+          "imageSrc": "https://ucarecdn.com/eef1cb53-a709-483c-9881-ffa746f44e09/-/scale_crop/800x800/"
         },
         "2": {
           "title": "Next-Gen Payment Terminals",
           "description": "Competitive payment processing that turns every transaction into a growth opportunity",
-          "imageAlt": "Payment Terminal"
+          "imageAlt": "Payment terminal screen showing transaction details.",
+          "imageSrc": "https://ucarecdn.com/f3dc1cdb-e329-4b06-9f10-d55f46d4f629/-/scale_crop/800x800/"
         },
         "3": {
           "title": "Loyalty",
           "description": "Encourage repeat visits with rewards and automated reminders",
-          "imageAlt": "Loyalty"
+          "imageAlt": "Loyalty program interface on a phone.",
+          "imageSrc": "https://ucarecdn.com/14757ea0-661c-4be2-9966-0e54489d394a/-/scale_crop/800x800/"
         },
         "4": {
           "title": "Surveys",
           "description": "Automatically collect feedback and boost your online reputation",
-          "imageAlt": "Surveys"
+          "imageAlt": "Customer filling out a survey on a phone with star ratings visible.",
+          "imageSrc": "https://ucarecdn.com/40fbb324-eb80-4f92-92b7-1aec4c9ac5cf/-/scale_crop/800x800/"
         },
         "5": {
           "title": "Virtual Lounge",
           "description": "Create a digital space that reflects your menu, promotions, and personality",
-          "imageAlt": "Virtual Lounge"
+          "imageAlt": "Virtual lounge interface on a phone showing restaurant details.",
+          "imageSrc": "https://ucarecdn.com/fb27e6e8-5b29-4a1d-8ae9-3def53e5a4da/-/scale_crop/600x600/"
         },
         "6": {
           "title": "Marketing Engine",
           "description": "Automate campaigns and grow your online reputation effortlessly",
-          "imageAlt": "Marketing Engine"
+          "imageAlt": "Marketing email campaign builder interface.",
+          "imageSrc": "https://ucarecdn.com/cd497ab0-3b5d-49c2-b81b-4fdb9994f4b9/-/scale_crop/1000x1000/"
         },
         "7": {
           "title": "Customer Intelligence",
           "description": "Get actionable insights from your customer data",
-          "imageAlt": "Customer Intelligence"
+          "imageAlt": "Customer intelligence dashboard showing analytics.",
+          "imageSrc": "https://ucarecdn.com/ee56a537-0c1d-4db5-92bd-24abbf0a1bc6/-/scale_crop/970x970/"
         }
       }
     },
@@ -304,23 +316,24 @@
       "description": "Oddle is evolving to be more than just the tools. It supports an entire ecosystem of solutions designed to help your restaurant thrive.",
       "secondaryDescription": "From managing orders and reservations to understanding customer behavior and driving loyalty, get everything you need in one place.",
       "image": {
-        "alt": "Oddle Platform Dashboard showing various features"
+        "alt": "Oddle Platform Dashboard showing various features",
+        "src": "https://ucarecdn.com/030b9c8c-ecd6-42cb-8c55-6b2d8035fe14/-/preview/1000x778/"
       },
       "features": {
         "0": {
           "title": "Integrated & Efficient",
           "description": "Connect all your tools seamlessly for smoother operations."
-      },
-      "1": {
-        "title": "Customer Focused",
-        "description": "Gain deep insights into your customers to build loyalty."
-      },
-      "2": {
-        "title": "Secure & Reliable",
-        "description": "Protect your data with robust security measures."
-      },
-      "3": {
-        "title": "AI-Powered Insights",
+        },
+        "1": {
+          "title": "Customer Focused",
+          "description": "Gain deep insights into your customers to build loyalty."
+        },
+        "2": {
+          "title": "Secure & Reliable",
+          "description": "Protect your data with robust security measures."
+        },
+        "3": {
+          "title": "AI-Powered Insights",
           "description": "Leverage AI for smarter business decisions."
         }
       }
@@ -334,7 +347,8 @@
           "description": "",
           "href": "/blog/topics/restaurant-reservation-guide",
           "image": {
-            "alt": "Screenshot of reservation calendar"
+            "alt": "Screenshot of reservation calendar",
+            "src": "https://framerusercontent.com/images/LtLYGRERQu7WTElmTBdkEjgvaog.jpg"
           }
         },
         "1": {
@@ -342,7 +356,8 @@
           "description": "",
           "href": "/blog/topics/restaurant-online-ordering-guide",
           "image": {
-            "alt": "Mobile phone showing online ordering menu"
+            "alt": "Mobile phone showing online ordering menu",
+            "src": "https://framerusercontent.com/images/DYYuQEJDW0XHnNr8aaPOiKSHWc.jpg"
           }
         },
         "2": {
@@ -350,7 +365,8 @@
           "description": "",
           "href": "/blog/topics/restaurant-marketing-guide",
           "image": {
-            "alt": "Dashboard showing customer analytics graphs"
+            "alt": "Dashboard showing customer analytics graphs",
+            "src": "https://framerusercontent.com/images/Mn5LiPhALLDEYRwwoSZkJpA0A.jpg"
           } 
         }
       }
@@ -360,33 +376,32 @@
     "hero": {
       "title": "Turn every visit into a loyal customer",
       "description": "Capture, engage, and retain your customers with a loyalty program designed for Restaurants",
-      "slides": {
-        "0": {
+      "primaryButtonText": "Get Free Demo",
+      "secondaryButtonText": "Talk to Sales",
+      "slides": [
+        {
+          "imageSrc": "https://ucarecdn.com/446f987e-d25b-40e5-a67d-e61337d845ef/-/preview/861x1000/",
           "imageAlt": "Restaurant Loyalty Program UI Showcase"
         }
-      },
-      "primaryButton": {
-        "text": "Get Free Demo"
-      },
-      "secondaryButton": {
-        "text": "Talk to Sales"
-      }
+      ]
     },
     "details": {
-      "tag": "",
+      "tag": "Key Features",
       "title": "How restaurants grow using Oddle",
-      "description": "",
+      "description": "Capture customer data and automate engagement to drive repeat visits.",
       "items": {
         "0": {
+          "tag": "Grow your customer database",
           "title": "Capture Every Customer",
           "description": "Sign up diners in a flash, whether at the table or counter. with QR Scans or NFC Taps. The sleek, frictionless process that ensures you capture data from every guest, empowering you to deliver smarter, more personalized loyalty experiences.",
-          "tag": "Grow your customer database",
+          "imageSrc": "https://ucarecdn.com/04e08a32-d9cc-4f6e-96fe-a040fffcc894/-/preview/999x666/",
           "imageAlt": "Phone showing successful check-in for loyalty program"
         },
         "1": {
+          "tag": "Keep your Restuarant Top of Mind",
           "title": "Automate Engagement",
           "description": "Automate personalized rewards, birthday offers, reminders for unused redeemables, and even customer feedback after visits. Stay top of mind while saving time and driving repeat visits with ease.",
-          "tag": "Keep your Restuarant Top of Mind",
+          "imageSrc": "https://ucarecdn.com/c92243a8-0c70-4d33-ba08-b632f2d3125e/-/preview/1000x666/",
           "imageAlt": "Phone showing loyalty reward notification"
         }
       }
@@ -459,13 +474,28 @@
       },
       "slides": {
         "0": {
-          "imageAlt": "Online Ordering Desktop View"
+          "imageAlt": "Online Ordering Desktop View",
+          "imageSrc": "https://ucarecdn.com/7f9cb7a3-a7d6-42d5-b225-5a4e2647d384/-/preview/400x400/"
         }
       }
     },
     "multiPlatform": {
       "title": "Your Brand Front and Center",
-      "description": "Fully branded platform customized to showcase your logo, menu, and promotions"
+      "description": "Fully branded platform customized to showcase your logo, menu, and promotions",
+      "images": {
+        "0": {
+          "alt": "Online Ordering Desktop View",
+          "src": "https://ucarecdn.com/65f2f461-2bf4-45a5-90d1-c643f057bc9b/-/scale_crop/800x1080/bottom/"
+        },
+        "1": {
+          "alt": "Yu Cun Curry Fishead",
+          "src": "https://ucarecdn.com/cb29b273-0719-4ca4-b9b4-4467406f7964/-/scale_crop/1000x2000/center/"
+        },
+        "2": {
+          "alt": "White Beehoon",
+          "src": "https://ucarecdn.com/13350df4-625e-4924-b0f0-a660e15a7371/-/scale_crop/800x1080/bottom/"
+        }
+      }
     },
     "keyFeatures": {
       "tag": "",
@@ -476,28 +506,32 @@
           "title": "Bigger Orders, Higher Revenue",
           "description": "Customers ordering directly often place larger orders, perfect for celebrations, luncheons, or family meals.",
           "image": {
-            "alt": "Illustration representing bigger orders and higher revenue."
+            "alt": "Illustration representing bigger orders and higher revenue.",
+            "src": "https://ucarecdn.com/942d96fc-ed50-49b5-91a9-768856075d9e/-/preview/999x666/"
           }
         },
         "1": {
           "title": "Plan Ahead for Special Occasions",
           "description": "Advance orders provide opportunities to cater to loyal customers who trust you.",
           "image": {
-            "alt": "Illustration representing planning ahead for special occasions."
+            "alt": "Illustration representing planning ahead for special occasions.",
+            "src": "https://ucarecdn.com/942d96fc-ed50-49b5-91a9-768856075d9e/-/preview/999x666/"
           }
         },
         "2": {
           "title": "Reach Customers Wherever They Are",
           "description": "Some of your best customers can't visit your restaurant in person—delivery ensures they never miss out.",
           "image": {
-            "alt": "Illustration representing reach customers wherever they are."
+            "alt": "Illustration representing reaching customers via delivery.",
+            "src": "https://ucarecdn.com/942d96fc-ed50-49b5-91a9-768856075d9e/-/preview/999x666/"
           }
         },
         "3": {
           "title": "Build Stronger Relationships",
           "description": "Owning your ordering channel lets you deliver a seamless, branded experience that builds customer loyalty.",
           "image": {
-            "alt": "Illustration representing build stronger relationships."
+            "alt": "Illustration representing building stronger customer relationships.",
+            "src": "https://ucarecdn.com/942d96fc-ed50-49b5-91a9-768856075d9e/-/preview/999x666/"
           }
         }
       }
@@ -513,21 +547,24 @@
           "item1": "Collect and analyze detailed insights into customer behavior, preferences, and order frequency.",
           "item2": "Reward repeat customers, run targeted promotions, and re-engage lapsed diners with personalized campaigns.",
           "item3": "Convert delivery customers into dine-in guests and keep them coming back with exclusive offers and tailored experiences.",
-          "imageAlt": "Customer relationship management interface showing profile and communication."
+          "imageAlt": "Customer relationship management interface showing profile and communication.",
+          "imageSrc": "https://ucarecdn.com/260a36bf-d714-440a-abd5-aefa169979cc/-/preview/807x1000/"
         },
         "1": {
           "title": "Seamless Logistics Management",
           "description": "Streamline your restaurant operations with tools designed to simplify day-to-day tasks, so you can focus on delivering exceptional dining experiences.",
           "item1": "Streamline delivery zones, manage logistics efficiently, and achieve best-in-class fulfillment rates.",
           "item2": "Flexible delivery options to serve customers far and wide.",
-          "imageAlt": "Delivery tracking interface showing map and vehicle."
+          "imageAlt": "Delivery tracking interface showing map and vehicle.",
+          "imageSrc": "https://ucarecdn.com/992a1660-1ca3-4d75-91de-5318366408d6/-/preview/924x1000/"
         },
         "2": {
           "title": "Tap into a network of over a million food lovers with Oddle Eats",
           "description": "Get your restaurant seen by millions of consumers seeking new dining experiences for every occasion with our premier food directory network, Oddle Eats.",
           "item1": "Participate in sponsored marketing campaigns at no extra charge.",
           "item2": "Extend your reach to our affluent user base with high purchasing power.",
-          "imageAlt": "Oddle Eats mobile app interface showing restaurant listings."
+          "imageAlt": "Oddle Eats mobile app interface showing restaurant listings.",
+          "imageSrc": "https://ucarecdn.com/45d8a7bd-134e-456d-900a-1d3579b2c249/-/preview/621x1000/"
         }
       }
     }
@@ -647,7 +684,8 @@
       },
       "slides": {
         "0": {
-          "imageAlt": "Reservation System UI"
+          "imageAlt": "Reservation System UI",
+          "imageSrc": "https://ucarecdn.com/599e5cd5-879a-4dd1-9f8d-2588336cc904/product_reserve_hero"
         },
         "1": {
           "imageAlt": "Table Management View"
@@ -684,17 +722,20 @@
         "0": {
           "title": "Traditional Restaurants Going Digital",
           "description": "Facing digitalization challenges with the next generation stepping in, but hesitant about costly subscriptions? Oddle Reserve's pay-as-you-go model makes the transition seamless, eliminating steep monthly fees.",
-          "imageAlt": "Dim sum dishes on a table representing traditional restaurants"
+          "imageAlt": "Dim sum dishes on a table representing traditional restaurants",
+          "imageSrc": "https://ucarecdn.com/d9049a25-8061-455f-bedf-1b62cd15d6ef/-/preview/512x317/"
         },
         "1": {
           "title": "Restaurants With High Walk-Ins",
           "description": "With many walk-ins and limited online reservations, managing big group bookings can be challenging. Oddle Reserve's usage-based pricing lets you pay only when you need it, making it an ideal solution for occasional but essential online reservations.",
-          "imageAlt": "Exterior of a soup restaurant representing high walk-in restaurants"
+          "imageAlt": "Exterior of a soup restaurant representing high walk-in restaurants",
+          "imageSrc": "https://ucarecdn.com/6ceb736a-e674-4680-8540-e9cf8d013bf7/-/preview/259x194/"
         },
         "2": {
           "title": "Restaurants On High-Commission Marketplaces",
           "description": "Paying expensive per cover to marketplaces that intercept direct bookings with ads can be frustrating. Oddle Reserve removes commissions and charges only per booking—not per cover—giving you back control of your reservations.",
-          "imageAlt": "Interior of a PizzaExpress restaurant representing restaurants on marketplaces"
+          "imageAlt": "Interior of a PizzaExpress restaurant representing restaurants on marketplaces",
+          "imageSrc": "https://ucarecdn.com/44f9ff6c-1b17-4056-b376-96bae9fa6d26/-/preview/275x183/"
         }
       }
     },
@@ -706,22 +747,26 @@
         "0": {
           "title": "List View",
           "description": "Get a clear overview of all your reservations at a glance.",
-          "imageAlt": "List View"
+          "imageAlt": "List View",
+          "imageSrc": "https://ucarecdn.com/160c698f-1051-43d6-a9cb-133d915b19bb/-/preview/912x500/"
         },
         "1": {
           "title": "Timeline View",
           "description": "Visualize your bookings chronologically for better planning.",
-          "imageAlt": "Timeline View"
+          "imageAlt": "Timeline View",
+          "imageSrc": "https://ucarecdn.com/a2ba9c8b-acf3-462a-bffd-0481cd5cdb27/-/preview/1000x548/"
         },
         "2": {
           "title": "Table View",
           "description": "Manage table assignments and statuses efficiently.",
-          "imageAlt": "Table View"
+          "imageAlt": "Table View",
+          "imageSrc": "https://ucarecdn.com/160c698f-1051-43d6-a9cb-133d915b19bb/-/preview/912x500/"
         },
         "3": {
           "title": "Mobile View",
           "description": "Access and manage reservations on the go from any device.",
-          "imageAlt": "Mobile View"
+          "imageAlt": "Mobile View",
+          "imageSrc": "https://ucarecdn.com/551fa74b-f384-42d9-a95a-ccd3ab7f62ae/reserve_mobile_view"
         }
       }
     },
@@ -733,7 +778,8 @@
         "0": {
           "title": "Secure and Reliable Reservation Booking System",
           "description": "Ensure serious bookings and minimize no-shows with built-in safeguards.",
-          "imageAlt": "Credit card guarantee",
+          "imageAlt": "Secure Reservation System Features",
+          "imageSrc": "https://ucarecdn.com/e070cbb2-a7c6-47a9-adec-84755e769b56/-/preview/1000x965/",
           "item1": "Card Guarantee: Secure reservations with credit card guarantees to reduce cancellations.",
           "item2": "Payment Request: Collect deposits or full payments upfront for high-value or busy periods.",
           "item3": "Automated Customer Confirmation: Confirm reservations automatically to save time and reduce manual work."
@@ -741,26 +787,31 @@
         "1": {
           "title": "Customer-Friendly Features",
           "description": "Enhance the guest experience with convenient and flexible options.",
-          "imageAlt": "Payment request",
+          "imageAlt": "Customer Friendly Features",
+          "imageSrc": "https://ucarecdn.com/a95efbdb-1a8b-407f-a251-c2197d0017b4/-/preview/1000x945/",
           "item1": "Guest Self-Edit Reservations: Allow guests to change or cancel bookings without the need to call, creating a smoother experience.",
           "item2": "Automated Status Management: Easily update and track reservation statuses with minimal effort, keeping your team aligned and operations seamless."
         }
       }
     },
     "growthEngine": {
-      "tag": "",
-      "title": "...Plus a Powerful Revenue Growth Engine",
-      "description": "Turn insights into action with tools that reward loyalty, re-engage lapsed diners, and convert delivery customers into repeat dine-in guests.",
-      "items": {
-        "0": {
-          "title": "Activate and Grow Sales",
-          "description": "Grow your customer database and build stronger relationships with tools that drive loyalty and repeat orders.",
-          "imageAlt": "Grow sales through engagement",
-          "item1": "Collect and analyze detailed insights into customer behavior, preferences, and order frequency.",
-          "item2": "Reward repeat customers, run targeted promotions, and re-engage lapsed diners with personalized campaigns.",
-          "item3": "Convert delivery customers into dine-in guests and keep them coming back with exclusive offers and tailored experiences."
+      "tag": "Growth Engine",
+      "title": "Supercharge your growth",
+      "description": "Tools to help you expand your reach and increase revenue.",
+      "items": [
+        {
+          "title": "Promotions and Discounts",
+          "description": "Create targeted promotions to attract new customers and reward loyal ones.",
+          "imageSrc": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MDY0NDN8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwcHJvbW90aW9ufGVufDB8fHx8MTcxNTA3NDg1Mnww&ixlib=rb-4.0.3&q=80&w=1080",
+          "imageAlt": "Restaurant promotion display"
+        },
+        {
+          "title": "Analytics and Reporting",
+          "description": "Gain insights into customer behavior and campaign performance.",
+          "imageSrc": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MDY0NDN8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwYW5hbHl0aWNzfGVufDB8fHx8MTcxNTA3NDg1M3ww&ixlib=rb-4.0.3&q=80&w=1080",
+          "imageAlt": "Restaurant analytics dashboard"
         }
-      }
+      ]
     }
   },
   "survey": {

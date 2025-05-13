@@ -10,8 +10,8 @@ import { Marquee } from "@/components/magicui/marquee"; // Import Marquee
 
 // Define interfaces for the data structure
 interface ImageProps {
-  src: string;
-  alt: string; // Will receive default English text
+  src?: string; // Optional
+  alt?: string; // Optional
   width: number;
   height: number;
 }
@@ -123,8 +123,9 @@ export default function HeroSectionWithAppShowcase({
   const marqueeContent = images.map((img, index) => {
     // Calculate aspect ratio for the container div
     const aspectRatio = img.width / img.height;
-    // const fixedHeight = 380; // Height is set via className
-    // const displayWidth = Math.round(fixedHeight * aspectRatio); // Not needed when using fill
+
+    const imageSrc = getTranslation(t, `${i18nBaseKey}.images.${index}.src`, img.src || "") || "";
+    const imageAlt = getTranslation(t, `${i18nBaseKey}.images.${index}.alt`, img.alt || "") || "";
 
     return (
       // Wrapper div: Reintroduce this structure
@@ -134,8 +135,8 @@ export default function HeroSectionWithAppShowcase({
         style={{ aspectRatio: `${aspectRatio}` }} // Set aspect ratio for the container
       >
         <Image
-          src={img.src} 
-          alt={img.alt} 
+          src={imageSrc} // Updated
+          alt={imageAlt} // Updated
           fill // Use fill prop
           className="absolute inset-0 size-full object-cover rounded-lg p-1" // Position absolutely, cover container, add rounding & padding
           sizes="(max-width: 768px) 50vw, 33vw" 

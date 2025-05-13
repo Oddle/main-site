@@ -19,8 +19,8 @@ interface FeatureItem {
 
 // Define the shape of the image data
 interface ImageProps {
-  src: string;
-  alt: string;
+  src?: string;
+  alt?: string;
   width: number;
   height: number;
 }
@@ -54,7 +54,8 @@ export default function FeatureSectionOverlapImage({
   const tag = defaultTag ? getTranslation(t, `${i18nBaseKey}.tag`, defaultTag) : null;
   const title = getTranslation(t, `${i18nBaseKey}.title`, defaultTitle);
   const description = getTranslation(t, `${i18nBaseKey}.description`, defaultDescription);
-  const imageAlt = getTranslation(t, `${i18nBaseKey}.image.alt`, defaultImage.alt);
+  const imageSrc = getTranslation(t, `${i18nBaseKey}.image.src`, defaultImage.src || "") || "";
+  const imageAlt = getTranslation(t, `${i18nBaseKey}.image.alt`, defaultImage.alt || "") || "";
 
   // Translate features array
   const features = defaultFeatures.map((feature, index) => ({
@@ -93,7 +94,7 @@ export default function FeatureSectionOverlapImage({
             <div className={`w-full h-[${defaultImage.height}px] relative rounded-xl`}> 
               <Image 
                 className="rounded-xl w-full h-full object-contain" // Match border radius, fill wrapper, contain image
-                src={defaultImage.src}
+                src={imageSrc}
                 alt={imageAlt} 
                 width={defaultImage.width} 
                 height={defaultImage.height}

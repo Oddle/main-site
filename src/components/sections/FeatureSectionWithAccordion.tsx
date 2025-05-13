@@ -19,8 +19,8 @@ import { Badge } from "../ui/badge";
 interface StandardItemData {
   id: number;
   title: string;
-  imageSrc: string;
-  imageAlt: string;
+  imageSrc?: string; // Optional
+  imageAlt?: string; // Optional
   description: string;
 }
 
@@ -43,13 +43,15 @@ const FeatureSectionWithAccordion = ({
   const t = useTranslations();
   
   const defaultItemId = items.length > 0 ? items[0].id : 0;
-  const defaultItemData = items.find(item => item.id === defaultItemId);
-  const defaultImageSrc = defaultItemData?.imageSrc ?? '';
-  const defaultImageAltText = defaultItemData 
-    ? (i18nBaseKey 
-        ? getTranslation(t, `${i18nBaseKey}.items.${items.findIndex(i => i.id === defaultItemId)}.imageAlt`, defaultItemData.imageAlt)
-        : defaultItemData.imageAlt)
-    : 'Feature illustration';
+  const defaultItemIndex = items.findIndex(item => item.id === defaultItemId);
+  const defaultItemData = items[defaultItemIndex];
+  
+  const defaultImageSrc = i18nBaseKey && defaultItemData
+    ? getTranslation(t, `${i18nBaseKey}.items.${defaultItemIndex}.imageSrc`, defaultItemData.imageSrc || "") || ""
+    : defaultItemData?.imageSrc || "";
+  const defaultImageAltText = i18nBaseKey && defaultItemData
+    ? getTranslation(t, `${i18nBaseKey}.items.${defaultItemIndex}.imageAlt`, defaultItemData.imageAlt || defaultItemData.title) || defaultItemData.title
+    : defaultItemData?.imageAlt || defaultItemData?.title || 'Feature illustration';
 
   const [activeItemId, setActiveItemId] = useState<number>(defaultItemId);
   const [activeImage, setActiveImage] = useState<string>(defaultImageSrc);
@@ -77,11 +79,14 @@ const FeatureSectionWithAccordion = ({
         const nextIndex = (currentIndex + 1) % items.length;
         const nextItem = items[nextIndex];
         if (nextItem) {
-           setActiveImage(nextItem.imageSrc);
            const nextItemBaseKey = `${i18nBaseKey}.items.${nextIndex}`;
+           const nextImageSrc = i18nBaseKey 
+             ? getTranslation(t, `${nextItemBaseKey}.imageSrc`, nextItem.imageSrc || "") || ""
+             : nextItem.imageSrc || "";
            const nextImageAlt = i18nBaseKey 
-             ? getTranslation(t, `${nextItemBaseKey}.imageAlt`, nextItem.imageAlt)
-             : nextItem.imageAlt;
+             ? getTranslation(t, `${nextItemBaseKey}.imageAlt`, nextItem.imageAlt || nextItem.title) || nextItem.title
+             : nextItem.imageAlt || nextItem.title;
+           setActiveImage(nextImageSrc);
            setActiveImageAlt(nextImageAlt);
 
            setProgressBarHeight(0);
@@ -132,11 +137,14 @@ const FeatureSectionWithAccordion = ({
     
     if (activeItem) {
       setActiveItemId(id);
-      setActiveImage(activeItem.imageSrc);
       const activeItemBaseKey = `${i18nBaseKey}.items.${activeItemIndex}`;
+      const newImageSrc = i18nBaseKey 
+        ? getTranslation(t, `${activeItemBaseKey}.imageSrc`, activeItem.imageSrc || "") || ""
+        : activeItem.imageSrc || "";
       const newImageAlt = i18nBaseKey 
-        ? getTranslation(t, `${activeItemBaseKey}.imageAlt`, activeItem.imageAlt)
-        : activeItem.imageAlt;
+        ? getTranslation(t, `${activeItemBaseKey}.imageAlt`, activeItem.imageAlt || activeItem.title) || activeItem.title
+        : activeItem.imageAlt || activeItem.title;
+      setActiveImage(newImageSrc);
       setActiveImageAlt(newImageAlt);
 
       if (items.length > 1) {
@@ -179,7 +187,8 @@ const FeatureSectionWithAccordion = ({
                  const itemBaseKey = `${i18nBaseKey}.items.${index}`;
                  const itemTitle = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.title`, item.title) : item.title;
                  const itemDescription = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.description`, item.description) : item.description;
-                 const itemImageAlt = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.imageAlt`, item.imageAlt) : item.imageAlt;
+                 const itemImageSrc = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.imageSrc`, item.imageSrc || "") || "" : item.imageSrc || "";
+                 const itemImageAlt = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.imageAlt`, item.imageAlt || itemTitle) || itemTitle : item.imageAlt || itemTitle;
 
                  return (
                     <AccordionItem
@@ -216,7 +225,7 @@ const FeatureSectionWithAccordion = ({
                         </p>
                         <div className="relative mt-4 h-64 w-full md:hidden">
                           <Image
-                            src={item.imageSrc}
+                            src={itemImageSrc}
                             alt={itemImageAlt}
                             fill
                             className="rounded-md object-cover transition-transform duration-300"
