@@ -4,6 +4,9 @@
     "description": "Empowering restaurants worldwide to grow their business with online ordering, reservations, CRM, and marketing tools.",
     "keywords": "restaurant software, online ordering, reservation system, restaurant CRM, F&B technology, Oddle"
   },
+  "LanguageSwitcher": {
+    "changeLanguageLabel": "Change language/region"
+  },
   "common": {
     "Privacy Policy": "Privacy Policy",
     "Terms of Service": "Terms of Service",

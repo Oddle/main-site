@@ -99,7 +99,7 @@ const LocationDialog = ({
 
         <div className="py-4">
           <Select value={selectedLocale} onValueChange={setSelectedLocale}>
-            <SelectTrigger className="w-full">
+            <SelectTrigger className="w-full" aria-label="Select your region and language">
               <SelectValue placeholder="Select your region/language" />
             </SelectTrigger>
             <SelectContent>
