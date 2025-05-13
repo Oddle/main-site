@@ -391,7 +391,7 @@ export default function NavBar() {
            <Link href="https://panel.oddle.me" passHref legacyBehavior>
              <Button variant="ghost" asChild className="hidden md:inline-flex"><a>{tNav('links.login')}</a></Button>
           </Link>
-           <Link href="/demo" passHref legacyBehavior>
+           <Link href="/demo" passHref legacyBehavior prefetch={false}>
              <Button className="hidden md:inline-flex cursor-pointer">{tNav('links.get-free-demo')}</Button>
           </Link>
 

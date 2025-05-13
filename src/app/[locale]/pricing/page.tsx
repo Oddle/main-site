@@ -178,7 +178,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
               <div className="mt-10 flex items-center gap-x-4">
                 {/* Request Demo Button */}
                 <Button size="lg" asChild>
-                  <Link href="/demo">
+                  <Link href="/demo" prefetch={false}>
                     {tCommon('buttons.requestDemo')} {/* Keep buttons. prefix */}
                   </Link>
                 </Button>

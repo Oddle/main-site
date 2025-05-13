@@ -201,16 +201,11 @@ export default function Footer() {
                   <h2 className="mb-6 max-w-[800px] text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl">
                       {tCta('title')}
                   </h2>
-                  <p className="mt-4 max-w-[600px] text-lg text-white/70">
-                      {tCta('description')}
-                  </p>
-                  <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                      <Button size="lg" className="bg-[#4a1598] hover:bg-[#4a1598]/90 text-white" asChild>
-                          <Link href="/demo">{tCta('primaryButtonText')}</Link>
-                      </Button>
-                      <Button size="lg" className="bg-white hover:bg-white/90 text-[#210052]" asChild>
-                          <Link href="/pricing">{tCta('secondaryButtonText')}</Link>
-                      </Button>
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <p className="text-balance text-center md:text-left max-w-lg">{tCta('description')}</p>
+                    <Button size="lg" className="mt-4 md:mt-0 flex-shrink-0" asChild>
+                      <Link href="/demo" prefetch={false}>{tCta('primaryButtonText')}</Link>
+                    </Button>
                   </div>
               </div>
           </div>

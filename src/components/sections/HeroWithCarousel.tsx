@@ -72,7 +72,7 @@ export default function HeroWithCarousel({
               )}
                 <div className="mt-7 grid gap-3 w-full sm:inline-flex">
                 <Button size="lg" asChild>
-                  <Link href="/demo">
+                  <Link href="/demo" prefetch={false}>
                     {tCommon('requestDemo')}
                   </Link>
                     </Button>
