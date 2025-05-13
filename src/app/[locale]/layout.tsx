@@ -103,15 +103,37 @@ export async function generateMetadata({
   const appleIconUrl = 'https://ucarecdn.com/d28a1327-3c7f-42cb-880e-46c9f109cb4a/-/preview/512x512/';
   // -----------------------------------
 
-  const languages: Record<string, string> = {};
-  routing.locales.forEach(loc => {
-    // Construct absolute URLs for alternates if metadataBase is set
-    languages[loc] = `${baseUrl.origin}/${loc}`;
-  });
-  languages['x-default'] = `${baseUrl.origin}/${routing.defaultLocale}`;
+  // --- Define hreflang mapping ---
+  const hreflangMap: { [key: string]: string } = {
+    en: 'en',       // Or 'en-US' if preferred
+    sg: 'en-SG',   // English for Singapore
+    hk: 'zh-HK',   // Chinese for Hong Kong
+    au: 'en-AU',   // English for Australia
+    my: 'en-MY',   // English for Malaysia
+    tw: 'zh-TW',   // Chinese for Taiwan
+  };
+  // ------------------------------
+
+  // --- Debugging Logs ---
+  const calculatedCanonical = new URL(`/${locale}`, baseUrl).toString();
+  console.log(`[generateMetadata] Locale: ${locale}, Calculated Canonical: ${calculatedCanonical}`);
+  console.log(`[generateMetadata] routing.locales: ${JSON.stringify(routing.locales)}`);
+  console.log(`[generateMetadata] hreflangMap: ${JSON.stringify(hreflangMap)}`);
+  // ---------------------
+
+  const languagesOutput = routing.locales.reduce((acc, loc) => {
+    const mappedHreflang = hreflangMap[loc] || loc;
+    const absoluteHref = new URL(`/${loc}`, baseUrl).toString();
+    console.log(`[generateMetadata] lang reduce: loc='${loc}', mappedHreflang='${mappedHreflang}', absoluteHref='${absoluteHref}'`);
+    acc[mappedHreflang] = absoluteHref;
+    return acc;
+  }, {} as Record<string, string>);
+
+  const defaultLocaleForXDefault = routing.defaultLocale || 'sg'; // Fallback for safety
+  languagesOutput['x-default'] = new URL(`/${defaultLocaleForXDefault}`, baseUrl).toString();
 
   return {
-    metadataBase: baseUrl,
+    metadataBase: baseUrl, // Restored metadataBase
     title: t("title"),
     description: t("description"),
     viewport: {
@@ -128,40 +150,27 @@ export async function generateMetadata({
     openGraph: {
       title: t("title"),
       description: t("description"),
-      url: `/${locale}`,
+      url: new URL(`/${locale}`, baseUrl).toString(), // Ensure OG URL is absolute
       siteName: "Oddle | Restaurant Revenue Growth Platform",
       images: [
         {
-          url: ogImageUrl, // This will now use the absolute URL
-          width: 1000, // Update width based on the image dimensions if known
-          height: 523, // Update height based on the image dimensions if known
+          url: ogImageUrl, 
+          width: 1000, 
+          height: 523, 
         },
       ],
-      locale: locale,
+      locale: hreflangMap[locale] || locale, // Use mapped locale for og:locale too
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: [ogImageUrl], // This will now use the absolute URL
+      images: [ogImageUrl], 
     },
     alternates: {
-      // Keep canonical relative here
-      canonical: `/${locale}`,
-      // Keep languages relative if canonical is relative
-      languages: routing.locales.reduce((acc, loc) => {
-          acc[loc] = `/${loc}`;
-          return acc;
-        }, {} as Record<string, string>),
-      // Or provide absolute URLs if preferred (uncomment below)
-      /*
-      languages: routing.locales.reduce((acc, loc) => {
-          acc[loc] = `${baseUrl.origin}/${loc}`;
-          return acc;
-        }, {} as Record<string, string>),
-      'x-default': `${baseUrl.origin}/${routing.defaultLocale}`, 
-      */
+      canonical: calculatedCanonical, // Using dynamically calculated value
+      languages: languagesOutput,   // Using dynamically calculated value
     },
     robots: {
       index: true,

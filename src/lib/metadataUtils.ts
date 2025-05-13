@@ -91,10 +91,6 @@ export async function generatePageMetadata({ locale, pageKey, slug }: GenerateMe
   const result: Metadata = {
     title: finalTitle,
     description: description, // Use final description
-    alternates: {
-      canonical: canonicalPath,
-      languages: languages,
-    },
     openGraph: {
       title: finalTitle, 
       description: description, 
