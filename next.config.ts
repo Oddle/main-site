@@ -40,6 +40,7 @@ const nextConfig: NextConfig = {
     ],
   },
   reactStrictMode: true,
+  productionBrowserSourceMaps: true,
 };
 
 const withNextIntl = createNextIntlPlugin();
