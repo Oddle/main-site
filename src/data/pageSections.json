@@ -480,10 +480,7 @@
         "primaryButton": { "text": "Get Free Demo", "action": "/demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
-          { 
-            "imageSrc": "https://ucarecdn.com/b765ec4a-9d0f-4a0f-9e48-0d734c1e6ea1/-/preview/999x552/", 
-            "imageAlt": "Phone showing Oddle Virtual Lounge UI"
-          }
+          {}
         ]
       }
     },
@@ -536,7 +533,7 @@
         "primaryButton": { "text": "Get Free Demo", "action": "/demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
-          { "imageSrc": "https://ucarecdn.com/2bbc4977-dfa2-424b-bae3-bee90a6cea1a/terminal_hero", "imageAlt": "Oddle Payment Terminal" }
+          {}
         ]
       }
     },
@@ -551,8 +548,6 @@
           {
             "title": "Capture 100% of customers, no marketing opt-in needed",
             "description": "Advanced analytics drives data-driven decisions, offering predictive insights, personalized recommendations, real-time analysis, cost savings, and risk mitigation. Choose advanced analytics for strategic decision-making and business growth.", 
-            "imageSrc": "https://ucarecdn.com/608c3b9f-aed6-482a-a2b7-d196a54380c4/terminal_grid_make_payment",
-            "imageAlt": "Analytics dashboard showing customer data",
             "imagePosition": "left", 
             "linkText": null,
             "linkAction": null
@@ -560,8 +555,6 @@
           {
             "title": "Get a true health score on customer retention",
             "description": "Move beyond revenue tracking to understand your restaurant's customer health. By capturing a unique profile for each visitor, you'll see an accurate score of your customer retention rates, providing a clear snapshot of how often guests return and the strength of their loyalty.",
-            "imageSrc": "https://ucarecdn.com/6eaef2eb-53b4-4dd6-ae5e-9e8bb7e7c0b9/terminal_grid_staff_report",
-            "imageAlt": "Graph showing customer retention score",
             "imagePosition": "right", 
             "linkText": null,
             "linkAction": null
@@ -569,8 +562,6 @@
           {
             "title": "Collect contacts, boost database marketing",
             "description": "Effortlessly grow your contact list when customers claim redeemables by scanning a QR code on their receipt. Once added, you can send targeted updates, exclusive offers, or online store promotions to keep your restaurant top of mind.",
-            "imageSrc": "https://ucarecdn.com/84fb65b4-76f2-4c16-b46a-d9907f6c9b79/terminal_grid_marketing",
-            "imageAlt": "Phone scanning QR code on receipt",
             "imagePosition": "left", 
             "linkText": null,
             "linkAction": null
@@ -578,8 +569,6 @@
           {
             "title": "Drive return visits with targeted redeemables",
             "description": "Encourage repeat business with tailored redeemables. Set thresholds, like spending minimums, to trigger exclusive return offers that bring customers back, keeping them engaged and driving loyalty.",
-            "imageSrc": "https://ucarecdn.com/9ff7200b-b940-406e-bdde-6bcb702c62cc/terminal_grid_qr_code_receipt",
-            "imageAlt": "Phone showing loyalty redeemable offer",
             "imagePosition": "right", 
             "linkText": null,
             "linkAction": null
@@ -626,7 +615,7 @@
         "primaryButton": { "text": "Get Free Demo", "action": "/demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
-          { "imageSrc": "https://ucarecdn.com/38ac2cb3-98f8-45d2-a41b-6e76e99f64c4/-/preview/570x1000/", "imageAlt": "Oddle Marketing Engine Dashboard" }
+          {}
         ]
       }
     },
@@ -711,7 +700,7 @@
         "primaryButton": { "text": "Get Free Demo", "action": "/demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
-          { "imageSrc": "https://ucarecdn.com/ee56a537-0c1d-4db5-92bd-24abbf0a1bc6/-/preview/970x970/", "imageAlt": "Restaurant CRM & Customer Intelligence Carousel Image" }
+          {}
         ]
       }
     },
@@ -750,8 +739,6 @@
             "id": 1,
             "title": "Targeted email broadcasts",
             "description": "Launch email campaigns to data-driven customer segments with our integrated email marketing tool.",
-            "imageSrc": "https://ucarecdn.com/10483a24-988e-4f04-8c15-822473592b65/-/preview/1000x927/",
-            "imageAlt": "Email marketing campaign examples",
             "linkAction": "",
             "span": 1
           },
@@ -759,8 +746,6 @@
             "id": 2,
             "title": "Real-time Automation",
             "description": "Engage customers effortlessly whenever they take an action.",
-            "imageSrc": "https://ucarecdn.com/75a574a9-6552-4e06-ab81-4c1b60ed967c/-/preview/496x280/",
-            "imageAlt": "Real-time automation examples",
             "linkAction": "",
             "span": 2
           },
@@ -768,8 +753,6 @@
             "id": 3,
             "title": "Post dine-in surveys",
             "description": "Build a foundation of 5-star Google reviews to attract new customers and strengthen your online reputation.",
-            "imageSrc": "https://ucarecdn.com/40fbb324-eb80-4f92-92b7-1aec4c9ac5cf/-/preview/1000x865/",
-            "imageAlt": "Customer leaving a review on phone",
             "linkAction": "",
             "span": 3
           }
@@ -815,7 +798,7 @@
         "primaryButton": { "text": "Get Free Demo", "action": "/demo" },
         "secondaryButton": { "text": "Talk to Sales", "action": "/contact-sales", "icon": "MessageSquare" },
         "slides": [
-          { "imageSrc": "https://ucarecdn.com/40fbb324-eb80-4f92-92b7-1aec4c9ac5cf/-/preview/1000x865/", "imageAlt": "Oddle Survey Tool Interface" }
+          {}
         ]
       }
     },
@@ -909,41 +892,16 @@
     {
       "component": "FeatureSectionWithTabs",
       "props": {
-        "title": "Your All-in-One Restaurant Online Ordering System",
-        "description": "Your own delivery system to grow sales, manage orders easily, and connect with more customers.",
+        "i18nBaseKey": "demoOnlineOrderingSystemTabs",
         "items": [
           {
-            "id": 1,
-            "tab": "Showcase Your Brand",
-            "title": "Your Platform, Your Way",
-            "description": "A fully branded platform that puts your logo, menu, and promotions in the spotlight.",
-            "benefits": [
-              "Highlight your brand with a customizable online store.",
-              "Promote your menu and offers directly to customers."
-            ],
-            "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+            "id": 1
           },
           {
-            "id": 2,
-            "tab": "Simplify Deliveries",
-            "title": "Streamline Logistics Management",
-            "description": "Manage delivery zones and logistics with ease to serve more customers efficiently.",
-            "benefits": [
-              "Flexible delivery options to reach a wider audience.",
-              "Best-in-class fulfillment rates for efficient operations."
-            ],
-            "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+            "id": 2
           },
           {
-            "id": 3,
-            "tab": "Grow Customer Loyalty",
-            "title": "Turn Delivery Customers into Regulars",
-            "description": "Drive repeat business and bring online customers into your restaurant with exclusive offers and rewards.",
-            "benefits": [
-              "Encourage dine-in visits with personalized promotions.",
-              "Reward loyal customers and re-engage lapsed diners with targeted campaigns."
-            ],
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+            "id": 3
           }
         ]
       }
@@ -965,41 +923,16 @@
     {
       "component": "FeatureSectionWithTabs",
       "props": {
-        "title": "Your All-in-One Restaurant Reservation System",
-        "description": "Streamline operations, reduce no-shows, and boost revenue with a pricing model that works for restaurants of every size.",
+        "i18nBaseKey": "demoReservationSystemTabs",
         "items": [
           {
-            "id": 1,
-            "tab": "Simplify Operations",
-            "title": "Streamline Booking Management",
-            "description": "Simplify your day-to-day operations with automated tools and real-time views.",
-            "benefits": [
-              "Automate customer confirmations and updates to reduce manual work.",
-              "Minimize no-shows with credit card guarantees and upfront payments."
-            ],
-            "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+            "id": 1
           },
           {
-            "id": 2,
-            "tab": "Increase Bookings",
-            "title": "Unlock Revenue Potential",
-            "description": "Drive more bookings and boost revenue by targeting underperforming time slots.",
-            "benefits": [
-              "Visualize sales performance across 14 time slots to identify gaps.",
-              "Tailor promotions to fill tables during quieter periods."
-            ],
-            "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+            "id": 2
           },
           {
-            "id": 3,
-            "tab": "Retain Customers",
-            "title": "Turn Guests into Regulars",
-            "description": "Build long-term relationships with tools that boost loyalty and advocacy.",
-            "benefits": [
-              "Collect feedback to encourage positive Google reviews.",
-              "Re-engage customers with personalized promotions and offers."
-            ],
-            "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+            "id": 3
           }
         ]
       }
@@ -1021,41 +954,16 @@
     {
       "component": "FeatureSectionWithTabs",
       "props": {
-        "title": "Your All-in-One Restaurant Loyalty & CRM System",
-        "description": "Keep your customers coming back with a loyalty program that rewards them and grows your business effortlessly.",
+        "i18nBaseKey": "demoLoyaltyCrmSystemTabs",
         "items": [
           {
-            "id": 1,
-            "tab": "Capture Every Customer",
-            "title": "Build a Smarter Database",
-            "description": "Sign up diners easily with QR Scans or NFC Taps to capture data from every visit.",
-            "benefits": [
-              "Seamlessly collect customer data at the table or counter.",
-              "Deliver personalized rewards and smarter loyalty experiences."
-            ],
-            "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+            "id": 1
           },
           {
-            "id": 2,
-            "tab": "Automate Engagement",
-            "title": "Stay Top of Mind with Automation",
-            "description": "Save time while driving repeat visits with automated rewards, reminders, and offers.",
-            "benefits": [
-              "Automate rewards, birthday offers, and visit reminders to stay connected with your guests.",
-              "Collect feedback effortlessly after each visit."
-            ],
-            "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+            "id": 2
           },
           {
-            "id": 3,
-            "tab": "Cross-Promote Effortlessly",
-            "title": "Connect Dine-In and Delivery",
-            "description": "Use data to create personalized offers and boost engagement across dine-in and delivery.",
-            "benefits": [
-              "Leverage insights to target customers with tailored campaigns.",
-              "Unlock new revenue streams across multiple touchpoints."
-            ],
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+            "id": 3
           }
         ]
       }
@@ -1077,41 +985,16 @@
     {
       "component": "FeatureSectionWithTabs",
       "props": {
-        "title": "Your All-in-One Restaurant Payment Terminal",
-        "description": "The payment terminal your restaurant needs to save money, improve efficiency, and build lasting customer loyalty.",
+        "i18nBaseKey": "demoPaymentTerminalTabs",
         "items": [
           {
-            "id": 1,
-            "tab": "Save Costs",
-            "title": "Competitively Priced for Restaurants",
-            "description":              "Keep more of your revenue with transparent, consistent transaction fees built for restaurants.",
-            "benefits": [
-              "Competitive rates with no hidden fees.",
-              "Save costs while maintaining efficient payment operations."
-            ],
-            "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+            "id": 1
           },
           {
-            "id": 2,
-            "tab": "Smarter Operations",
-            "title": "Smarter Operations",
-            "description": "Streamline operations with reliable, mobile-ready payment terminals that enhance efficiency.",
-            "benefits": [
-              "Mobile checkout for table-side payments.",
-              "Real-time reporting and stable connectivity anywhere."
-            ],
-            "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+            "id": 2
           },
           {
-            "id": 3,
-            "tab": "Built for Retention",
-            "title": "Build Loyalty at Checkout",
-            "description": "Engage and retain customers right at the payment terminal with features that encourage repeat visits.",
-            "benefits": [
-              "Print return vouchers and send automated reminders.",
-              "Collect feedback directly from the terminal to improve experiences."
-            ],
-            "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+            "id": 3
           }
         ]
       }

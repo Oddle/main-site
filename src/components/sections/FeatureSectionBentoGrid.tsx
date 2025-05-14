@@ -16,8 +16,8 @@ interface BentoGridItem {
   id: number | string;
   title: string;
   description: string;
-  imageSrc: string;
-  imageAlt: string;
+  imageSrc?: string;
+  imageAlt?: string;
   linkAction: string;
   span?: 1 | 2 | 3; // Explicitly allow 1, 2, or 3 for span
 }
@@ -69,8 +69,8 @@ export default function FeatureSectionBentoGrid({
           {items.map((item, index) => {
             const itemTitle = getTranslation(t, `${i18nBaseKey}.items.${index}.title`, item.title);
             const itemDescription = getTranslation(t, `${i18nBaseKey}.items.${index}.description`, item.description);
-            const itemImageSrc = getTranslation(t, `${i18nBaseKey}.items.${index}.imageSrc`, item.imageSrc);
-            const itemImageAlt = getTranslation(t, `${i18nBaseKey}.items.${index}.imageAlt`, item.imageAlt);
+            const itemImageSrc = getTranslation(t, `${i18nBaseKey}.items.${index}.imageSrc`, item?.imageSrc || "") || "";
+            const itemImageAlt = getTranslation(t, `${i18nBaseKey}.items.${index}.imageAlt`, item?.imageAlt || itemTitle) || itemTitle;
 
             return (
               <Link
@@ -98,15 +98,17 @@ export default function FeatureSectionBentoGrid({
                       <ArrowRight className="h-auto w-4" />
                     </span>
                   </div>
-                  <div className="m-3 p-0 h-72 overflow-hidden">
-                    <Image
-                      src={itemImageSrc}
-                      alt={itemImageAlt}
-                      width={800}
-                      height={600}
-                      className="w-full h-full rounded-lg object-contain transition-transform duration-300 ease-in-out group-hover:scale-105"
-                    />
-                  </div>
+                  {itemImageSrc && (
+                    <div className="m-3 p-0 h-72 overflow-hidden">
+                      <Image
+                        src={itemImageSrc}
+                        alt={itemImageAlt}
+                        width={800}
+                        height={600}
+                        className="w-full h-full rounded-lg object-contain transition-transform duration-300 ease-in-out group-hover:scale-105"
+                      />
+                    </div>
+                  )}
                   {hoveredCardId === item.id && (
                     <BorderBeam
                       size={250}

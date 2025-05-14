@@ -13,8 +13,8 @@ import { getTranslation } from '@/lib/i18nUtils';
 interface AlternatingGridItemData {
   title: string;
   description: string;
-  imageSrc: string;
-  imageAlt: string;
+  imageSrc?: string; // Made optional
+  imageAlt?: string; // Made optional
   imagePosition: 'left' | 'right'; // Image on left or right of text within the card
   linkText?: string | null;
   linkAction?: string | null;
@@ -69,7 +69,8 @@ const FeatureSectionAlternating = ({
             // Translate item props
             const itemTitle = getTranslation(t, `${i18nBaseKey}.items.${index}.title`, item.title);
             const itemDescription = getTranslation(t, `${i18nBaseKey}.items.${index}.description`, item.description);
-            const itemImageAlt = getTranslation(t, `${i18nBaseKey}.items.${index}.imageAlt`, item.imageAlt);
+            const itemImageSrc = getTranslation(t, `${i18nBaseKey}.items.${index}.imageSrc`, item.imageSrc || "") || "";
+            const itemImageAlt = getTranslation(t, `${i18nBaseKey}.items.${index}.imageAlt`, item.imageAlt || itemTitle) || "";
             const itemLinkText = item.linkText ? getTranslation(t, `${i18nBaseKey}.items.${index}.linkText`, item.linkText) : null;
 
             return (
@@ -87,13 +88,15 @@ const FeatureSectionAlternating = ({
                 {/* Image Column within the card */}
                 {/* Adjusted width and aspect ratio handling */}
                 <div className="relative w-full flex-shrink-0 md:w-1/2 aspect-square md:aspect-auto">
+                  {itemImageSrc && ( // Conditionally render Image if itemImageSrc exists
                   <Image
-                    src={item.imageSrc}
+                    src={itemImageSrc}
                     alt={itemImageAlt}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
+                  )}
                 </div>
 
                 {/* Text Content Column within the card */}

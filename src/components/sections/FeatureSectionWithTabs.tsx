@@ -14,7 +14,8 @@ interface TabItem {
   title: string;
   description: string;
   benefits?: string[];
-  image?: string;
+  imageSrc?: string;
+  imageAlt?: string;
   link?: string;
 }
 
@@ -70,6 +71,28 @@ const FeatureSectionWithTabs = ({
 
   const activeTabData = items.find(tab => tab.id.toString() === activeTab);
 
+  // Prepare translated image data for the active tab *once*
+  let activeItemImageSrc = "";
+  let activeItemImageAlt = "";
+  let translatedActiveItemTitle = "";
+
+  if (activeTabData) {
+    const activeItemIndex = items.findIndex(tab => tab.id.toString() === activeTab);
+    const activeItemBaseKey = `${i18nBaseKey}.items.${activeItemIndex}`;
+
+    translatedActiveItemTitle = i18nBaseKey 
+      ? getTranslation(t, `${activeItemBaseKey}.title`, activeTabData.title) 
+      : activeTabData.title;
+
+    activeItemImageSrc = i18nBaseKey 
+      ? getTranslation(t, `${activeItemBaseKey}.imageSrc`, activeTabData.imageSrc || "")  || ""
+      : activeTabData.imageSrc || "";
+
+    activeItemImageAlt = i18nBaseKey 
+      ? getTranslation(t, `${activeItemBaseKey}.imageAlt`, activeTabData.imageAlt || translatedActiveItemTitle) || ""
+      : activeTabData.imageAlt || translatedActiveItemTitle;
+  }
+
   return (
     <section className="container mx-auto space-y-8 px-4 py-24 md:px-6 2xl:max-w-[1400px]">
       <div className="space-y-4 text-center">
@@ -122,7 +145,7 @@ const FeatureSectionWithTabs = ({
             <div className="flex flex-col justify-center space-y-6 p-6 lg:p-8">
               <div className="space-y-2">
                 <h3 className="text-2xl font-bold">
-                  {i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.items.${items.findIndex(tab => tab.id.toString() === activeTab)}.title`, activeTabData.title) : activeTabData.title}
+                  {translatedActiveItemTitle}
                 </h3>
                 <p className="text-muted-foreground">
                   {i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.items.${items.findIndex(tab => tab.id.toString() === activeTab)}.description`, activeTabData.description) : activeTabData.description}
@@ -140,10 +163,10 @@ const FeatureSectionWithTabs = ({
               )}
                       </div>
             <div className="relative aspect-video lg:aspect-auto">
-              {activeTabData.image && (
+              {activeItemImageSrc && activeTabData && (
                         <Image
-                          src={activeTabData.image}
-                  alt={i18nBaseKey ? getTranslation(t, `${i18nBaseKey}.items.${items.findIndex(tab => tab.id.toString() === activeTab)}.title`, activeTabData.title) : activeTabData.title}
+                          src={activeItemImageSrc}
+                  alt={activeItemImageAlt}
                           fill
                           className="object-cover"
                   priority
