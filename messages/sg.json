@@ -24,6 +24,7 @@
     "buttons": {
       "requestDemo": "Request Demo",
       "talkToSales": "Talk to Sales",
+      "viewPricing": "View Pricing",
       "login": "Login",
       "signup": "Sign Up"
     },
