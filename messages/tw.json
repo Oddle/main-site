@@ -357,115 +357,150 @@
   },
   "oddleEats": {
     "hero": {
-      "title": "讓您的餐廳成為百萬美食愛好者的口袋餐廳。",
-      "description": "透過我們的餐廳平台Oddle Eats，讓您的餐廳被數百萬尋求全新用餐體驗的消費者看到，滿足每一個用餐場合的需求。"
-    },
-    "features": {
-      "tag": "為餐廳成長量身打造的平台",
-      "description": "透過Oddle Eats，讓您的餐廳被數百萬尋求全新用餐體驗的消費者看到，滿足每一個用餐場合的需求。",
-      "title": "為什麼要在Oddle Eats上展示？",
-      "items": {
-        "0": {
-          "title": "參與贊助行銷活動，不需額外付費",
-          "description": "透過Oddle Eats，讓您的餐廳被數百萬尋求全新用餐體驗的消費者看到，滿足每一個用餐場合的需求。",
-          "imageAlt": "Oddle Eats Marketing Campaign Example"
-        },
-        "1": {
-          "title": "擴大您的顧客群",
-          "description": "透過Oddle Eats，讓您的餐廳被數百萬尋求全新用餐體驗的消費者看到，滿足每一個用餐場合的需求。",
-          "imageAlt": "Graph showing user demographics"
-        }
-      }
-    }
-  },
-  "onlineOrdering": {
-    "hero": {
-      "title": "擁有您自己的線上門市、顧客和更高的利潤",
-      "description": "直接將商品外送給您的客戶，透過符合您品牌形象的線上訂餐系統，提升您的營業額、顧客忠誠度和外送範圍",
+      "title": "您的餐廳，就在百萬美食愛好者的口袋裡",
+      "description": "透過我們的頂級美食指南網絡 Oddle Eats，讓數百萬尋找各種場合新餐飲體驗的消費者看見您的餐廳。",
       "primaryButton": {
-        "text": "預約諮詢"
+        "text": "預約產品Demo"
       },
       "secondaryButton": {
         "text": "LINE@聯繫"
       },
       "slides": {
         "0": {
-          "imageAlt": "Restaurant Online Ordering System Carousel Image"
+          "imageAlt": "Oddle Eats App Interface",
+          "imageSrc": "https://ucarecdn.com/05079abf-0014-43fc-bdff-6cf719e8b68b/-/preview/621x1000/"
+        }
+      }
+    },
+    "features": {
+      "tag": "",
+      "description": "利用 Oddle Eats 提升您餐廳的曝光度和觸及率。",
+      "title": "為何選擇 Oddle Eats？",
+      "items": [
+        {
+          "title": "免費參與贊助行銷活動。",
+          "description": "受益於全年舉辦的獨家合作夥伴關係和節慶活動。在 Oddle Eats 的各種媒體渠道上獲得推薦，提高您的曝光率。",
+          "imageAlt": "Oddle Eats Marketing Campaign Example",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Marketing+Campaign"
+        },
+        {
+          "title": "擴大您對高消費力富裕用戶群的觸及",
+          "description": "",
+          "imageAlt": "Graph showing user demographics",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=User+Demographics"
+        }
+      ]
+    }
+  },
+  "onlineOrdering": {
+    "hero": {
+      "title": "掌控您的線上通路、顧客和利潤",
+      "description": "透過一個能增長您的銷售、忠誠度和觸及範圍的品牌化線上點餐平台，直接向您最好的顧客提供服務。",
+      "primaryButton": {
+        "text": "預約產品Demo"
+      },
+      "secondaryButton": {
+        "text": "LINE@聯繫"
+      },
+      "slides": {
+        "0": {
+          "imageAlt": "Online Ordering Desktop View",
+          "imageSrc": "https://ucarecdn.com/7f9cb7a3-a7d6-42d5-b225-5a4e2647d384/-/preview/400x400/"
         }
       }
     },
     "multiPlatform": {
-      "title": "你愛的品牌 你要的樣子",
-      "description": "品牌化的線上訂餐系統，為了您的品牌設計，更好地展示您的Logo、菜單、新菜色和各種促銷活動。",
-      "badge": "品牌化的線上訂餐系統",
-      "platformDesktop": "桌面版",
-      "platformMobile": "行動版",
-      "platformWeb": "網頁版"
+      "title": "您的品牌，無所不在",
+      "description": "一個完全品牌化的平台，可客製化展示您的標誌、菜單和促銷活動。",
+      "badge": "品牌焦點",
+      "platformDesktop": "桌面瀏覽",
+      "platformMobile": "行動應用程式",
+      "platformWeb": "網頁平台",
+      "images": {
+        "0": {
+          "alt": "Online Ordering Desktop View",
+          "src": "https://ucarecdn.com/65f2f461-2bf4-45a5-90d1-c643f057bc9b/-/scale_crop/800x1080/bottom/"
+        },
+        "1": {
+          "alt": "Yu Cun Curry Fishead",
+          "src": "https://ucarecdn.com/cb29b273-0719-4ca4-b9b4-4467406f7964/-/scale_crop/1000x2000/center/"
+        },
+        "2": {
+          "alt": "White Beehoon",
+          "src": "https://ucarecdn.com/13350df4-625e-4924-b0f0-a660e15a7371/-/scale_crop/800x1080/bottom/"
+        }
+      }
     },
     "keyFeatures": {
       "tag": "",
-      "title": "最好顧客 值得最好的服務",
-      "description": "建立品牌外帶外送服務的四大優勢",
+      "title": "您最好的顧客值得更多",
+      "description": "當餐廳擁有自己的線上點餐系統時，便能蓬勃發展。這就是為什麼您最好的顧客——以及您的業務——都能從中受益。",
       "items": {
         "0": {
-          "title": "大訂單自己接，掌握更高的利潤",
-          "description": "當顧客想直接找餐廳訂餐的時候，通常是計畫性聚餐，例如慶生、親朋好友聚會等，這也代表著訂單金額比平常來得高，據統計，通常是外送平台的3~5倍。",
+          "title": "更大的訂單，更高的收入",
+          "description": "直接訂購的顧客通常會下更大的訂單，非常適合慶祝活動、午餐會或家庭聚餐。",
           "image": {
-            "alt": "Illustration representing bigger orders and higher revenue."
+            "alt": "Illustration representing bigger orders and higher revenue.",
+            "src": "https://ucarecdn.com/942d96fc-ed50-49b5-91a9-768856075d9e/-/preview/999x666/"
           }
         },
         "1": {
-          "title": "提前規劃節慶活動",
-          "description": "您可以不受任何拘束地在自己的網站上設定節慶活動，吸引您的忠實顧客，把優惠直接回饋給他們，增加顧客忠誠度。",
+          "title": "為特殊場合提前計劃",
+          "description": "預先訂單提供了為信任您的忠實顧客提供服務的機會。",
           "image": {
-            "alt": "Illustration representing planning ahead for special occasions."
+            "alt": "Illustration representing planning ahead for special occasions.",
+            "src": "https://ucarecdn.com/942d96fc-ed50-49b5-91a9-768856075d9e/-/preview/999x666/"
           }
         },
         "2": {
-          "title": "更大地範圍、服務更多的顧客",
-          "description": "有些忠實顧客不住在餐廳附近，而提供外送服務能確保你有更多的機會服務他們。",
+          "title": "無論顧客身在何處都能觸及",
+          "description": "您有些最好的顧客無法親自光顧您的餐廳——外送確保他們永遠不會錯過。",
           "image": {
-            "alt": "Illustration representing reaching customers via delivery."
+            "alt": "Illustration representing reaching customers via delivery.",
+            "src": "https://ucarecdn.com/942d96fc-ed50-49b5-91a9-768856075d9e/-/preview/999x666/"
           }
         },
         "3": {
-          "title": "建立更緊密的顧客關係",
-          "description": "品牌自有的外帶外送系統可以不受任何拘束地跟顧客互動，提供更好的顧客服務，增加顧客忠誠度。",
+          "title": "建立更穩固的關係",
+          "description": "擁有自己的訂餐渠道能讓您提供無縫的品牌體驗，從而建立顧客忠誠度。",
           "image": {
-            "alt": "Illustration representing building stronger customer relationships."
+            "alt": "Illustration representing building stronger customer relationships.",
+            "src": "https://ucarecdn.com/942d96fc-ed50-49b5-91a9-768856075d9e/-/preview/999x666/"
           }
         }
       }
     },
     "details": {
-      "title": "餐廳最佳的品牌外帶外送系統",
-      "description": "受到上千個品牌信任，Oddle 餐廳外帶外送系統專門幫餐廳建立品牌化的外帶外送服務，掌握顧客資料的同時還享有更好的獲利空間。",
       "tag": "",
-      "items": {
-        "0": {
-          "title": "踏上營收成長之路",
-          "description": "擴大您的顧客資料庫，並利用能增加顧客忠誠度和回購率的工具來和顧客建立更緊密的關係。",
-          "item1": "收集和分析顧客資料，了解顧客的瀏覽行為、餐點偏好和購買頻率等數據洞見。",
-          "item2": "獎勵回購的顧客，進行分眾行銷，並通過客製化的活動重新吸引流失的顧客。",
-          "item3": "將線上的外送顧客轉換為內用的顧客，並通過獨家優惠和客製化的獎勵計畫讓他們不斷地回購。",
-          "imageAlt": "Customer relationship management interface showing profile and communication."
+      "title": "為何選擇我們的線上點餐系統？",
+      "description": "透過專為成長和效率設計的功能，賦予您的餐廳力量。",
+      "items": [
+        {
+          "title": "啟動並增長銷售",
+          "description": "利用能提升忠誠度和重複訂單的工具，擴大您的顧客數據庫並建立更穩固的關係。",
+          "item1": "收集並分析關於顧客行為、偏好和訂單頻率的詳細洞察。",
+          "item2": "獎勵重複顧客，進行有針對性的促銷，並透過個性化活動重新吸引流失的食客。",
+          "item3": "將外送顧客轉化為內用顧客，並透過獨家優惠和量身打造的體驗讓他們持續回訪。",
+          "imageAlt": "餐廳促銷展示",
+          "imageSrc": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MDY0NDN8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwcHJvbW90aW9ufGVufDB8fHx8MTcxNTA3NDg1Mnww&ixlib=rb-4.0.3&q=80&w=1080"
         },
-        "1": {
-          "title": "完整、順暢的物流管理",
-          "description": "Oddle外帶外送系統專為簡化您的餐廳運作而設計，跟Oddle合作，以便您可以專注於提供顧客優質的餐點和用餐體驗。",
-          "item1": "擴大外送範圍、簡化外送規則，讓Oddle有效地幫您管理物流，實現最佳的訂單完成率",
-          "item2": "彈性的外送選項以服務不同需求的客戶",
-          "imageAlt": "Delivery tracking interface showing map and vehicle."
+        {
+          "title": "無縫的物流管理",
+          "description": "透過專為簡化日常任務而設計的工具，優化您的餐廳營運，讓您能專注於提供卓越的用餐體驗。",
+          "item1": "優化配送區域，高效管理物流，並實現一流的配送完成率。",
+          "item2": "靈活的配送選項，服務遠近顧客。",
+          "imageAlt": "Delivery tracking interface showing map and vehicle.",
+          "imageSrc": "https://ucarecdn.com/992a1660-1ca3-4d75-91de-5318366408d6/-/preview/924x1000/"
         },
-        "2": {
-          "title": "加入擁有百萬美食愛好者的Oddle Eats",
-          "description": "讓您的餐廳被上百萬的美食愛好者看見，當他們想要聚餐、辦派對時，可以找到您的品牌，然後直接跟您下單。",
-          "item1": "收集和分析顧客資料，了解顧客的瀏覽行為、餐點偏好和購買頻率等數據洞見。",
-          "item2": "獎勵回購的顧客，進行分眾行銷，並通過客製化的活動重新吸引流失的顧客。",
-          "item3": "將線上的外送顧客轉換為內用的顧客，並通過獨家優惠和客製化的獎勵計畫讓他們不斷地回購。",
-          "imageAlt": "Oddle Eats mobile app interface showing restaurant listings."
+        {
+          "title": "透過 Oddle Eats 接觸超過百萬的美食愛好者網絡",
+          "description": "透過我們的頂級美食指南網絡 Oddle Eats，讓數百萬尋找各種場合新餐飲體驗的消費者看見您的餐廳。",
+          "item1": "免費參與贊助行銷活動。",
+          "item2": "擴大您對高消費力富裕用戶群的觸及。",
+          "imageAlt": "Oddle Eats mobile app interface showing restaurant listings.",
+          "imageSrc": "https://ucarecdn.com/45d8a7bd-134e-456d-900a-1d3579b2c249/-/preview/621x1000/"
         }
-      }
+      ]
     }
   },
   "paymentTerminal": {
@@ -597,194 +632,224 @@
   },
   "reservationSystem": {
     "hero": {
-      "title": "別再為訂位系統支付過高的費用 - 擺脫年費和年約的束縛",
-      "description": "幫助餐廳在訂位系統上大幅節省成本，同時自動幫您推動營收成長。",
+      "title": "別再為訂位系統多付錢 - 擺脫月費和高昂佣金成本",
+      "description": "以合理的定價，協助餐廳每日節省更多訂位成本，同時帶來更多銷售額。",
       "primaryButton": {
-        "text": "預約諮詢"
+        "text": "預約產品Demo"
+      },
+      "slides": {
+        "0": {
+          "imageAlt": "Reservation System UI",
+          "imageSrc": "https://ucarecdn.com/599e5cd5-879a-4dd1-9f8d-2588336cc904/product_reserve_hero"
+        },
+        "1": {
+          "imageAlt": "Table Management View"
+        }
+      },
+      "secondaryButton": {
+        "text": "LINE@聯繫"
+      }
+    },
+    "affordableSection": {
+      "tag": "",
+      "title": "一個沒有陷阱的平價訂位系統",
+      "description": "大多數訂位系統的成本高於回報。Oddle Reserve 不同——沒有訂閱費、沒有隱藏費用，只有簡單的按用量計費。",
+      "items": {
+        "0": {
+          "title": "低成本，按使用量計費",
+          "description": "僅為您接受的訂位付費。"
+        },
+        "1": {
+          "title": "每次預訂都能增加收入",
+          "description": "使用內建的顧客參與工具，將預訂轉化為回頭客。"
+        },
+        "2": {
+          "title": "專為像您這樣的餐廳設計：",
+          "description": "為您業務的每個階段量身打造解決方案。"
+        }
+      }
+    },
+    "useCases": {
+      "tag": "",
+      "title": "專為各類餐廳打造",
+      "description": "",
+      "items": {
+        "0": {
+          "title": "傳統餐廳數位化",
+          "description": "隨著下一代接手，面臨數位化挑戰，但又對昂貴的訂閱服務猶豫不決？Oddle Reserve 的按用量付費模式使轉型過程順暢無礙，消除了高額月費。",
+          "imageAlt": "Dim sum dishes on a table representing traditional restaurants",
+          "imageSrc": "https://ucarecdn.com/d9049a25-8061-455f-bedf-1b62cd15d6ef/-/preview/512x317/"
+        },
+        "1": {
+          "title": "高現場客流餐廳",
+          "description": "現場客流多，線上預訂有限，管理大型團體預訂可能具有挑戰性。Oddle Reserve 的按用量計費讓您只在需要時付費，使其成為偶爾但重要的線上預訂的理想解決方案。",
+          "imageAlt": "Exterior of a soup restaurant representing high walk-in restaurants",
+          "imageSrc": "https://ucarecdn.com/6ceb736a-e674-4680-8540-e9cf8d013bf7/-/preview/259x194/"
+        },
+        "2": {
+          "title": "依賴高佣金平台的餐廳",
+          "description": "向那些透過廣告攔截直接預訂的平台支付昂貴的每人費用可能令人沮喪。Oddle Reserve 取消了佣金，並且只按預訂收費——而不是按人頭收費——讓您重新掌控您的預訂。",
+          "imageAlt": "Interior of a PizzaExpress restaurant representing restaurants on marketplaces",
+          "imageSrc": "https://ucarecdn.com/44f9ff6c-1b17-4056-b376-96bae9fa6d26/-/preview/275x183/"
+        }
+      }
+    },
+    "operations": {
+      "tag": "",
+      "title": "預訂狀況一目了然",
+      "description": "",
+      "items": [
+        {
+          "title": "列表視圖",
+          "description": "一目了然地清晰查看所有預訂。",
+          "imageAlt": "List View",
+          "imageSrc": "https://ucarecdn.com/160c698f-1051-43d6-a9cb-133d915b19bb/-/preview/912x500/"
+        },
+        {
+          "title": "時間軸視圖",
+          "description": "按時間順序可視化您的預訂，以便更好地規劃。",
+          "imageAlt": "Timeline View",
+          "imageSrc": "https://ucarecdn.com/a2ba9c8b-acf3-462a-bffd-0481cd5cdb27/-/preview/1000x548/"
+        },
+        {
+          "title": "餐桌視圖",
+          "description": "有效地管理餐桌分配和狀態。",
+          "imageAlt": "Table View",
+          "imageSrc": "https://ucarecdn.com/160c698f-1051-43d6-a9cb-133d915b19bb/-/preview/912x500/"
+        },
+        {
+          "title": "行動裝置視圖",
+          "description": "隨時隨地透過任何裝置存取和管理預訂。",
+          "imageAlt": "Mobile View",
+          "imageSrc": "https://ucarecdn.com/551fa74b-f384-42d9-a95a-ccd3ab7f62ae/reserve_mobile_view"
+        }
+      ]
+    },
+    "system": {
+      "tag": "",
+      "title": "安全可靠的預訂系統",
+      "description": "透過內建的安全措施，確保預訂的嚴肅性並最大限度地減少未到場情況。",
+      "items": [
+        {
+          "title": "安全可靠的預訂系統",
+          "description": "透過內建的安全措施，確保預訂的嚴肅性並最大限度地減少未到場情況。",
+          "imageAlt": "Secure Reservation System Features",
+          "imageSrc": "https://ucarecdn.com/e070cbb2-a7c6-47a9-adec-84755e769b56/-/preview/1000x965/",
+          "item1": "信用卡擔保：透過信用卡擔保來確保預訂，以減少取消。",
+          "item2": "付款請求：對於高價值或繁忙時段，預先收取押金或全額付款。",
+          "item3": "自動顧客確認：自動確認預訂，以節省時間並減少人工操作。"
+        },
+        {
+          "title": "顧客友善功能",
+          "description": "透過方便靈活的選項增強顧客體驗。",
+          "imageAlt": "Customer Friendly Features",
+          "imageSrc": "https://ucarecdn.com/a95efbdb-1a8b-407f-a251-c2197d0017b4/-/preview/1000x945/",
+          "item1": "顧客自行編輯預訂：允許顧客更改或取消預訂，無需致電，創造更流暢的體驗。",
+          "item2": "自動狀態管理：輕鬆更新和追蹤預訂狀態，最大限度地減少人工操作，使您的團隊保持一致，運營順暢。"
+        }
+      ]
+    },
+    "growthEngine": {
+      "tag": "成長引擎",
+      "title": "加速您的成長",
+      "description": "幫助您擴大觸及範圍並增加收入的工具。",
+      "items": [
+        {
+          "title": "啟動並增長銷售",
+          "description": "利用能提升忠誠度和重複訂單的工具，擴大您的顧客數據庫並建立更穩固的關係。",
+          "item1": "收集並分析關於顧客行為、偏好和訂單頻率的詳細洞察。",
+          "item2": "獎勵重複顧客，進行有針對性的促銷，並透過個性化活動重新吸引流失的食客。",
+          "item3": "將外送顧客轉化為內用顧客，並透過獨家優惠和量身打造的體驗讓他們持續回訪。",
+          "imageSrc": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MDY0NDN8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwcHJvbW90aW9ufGVufDB8fHx8MTcxNTA3NDg1Mnww&ixlib=rb-4.0.3&q=80&w=1080",
+          "imageAlt": "餐廳促銷展示"
+        }
+      ]
+    }
+  },
+  "survey": {
+    "hero": {
+      "title": "將顧客回饋轉化為品牌成長的動力",
+      "description": "自動化問卷調查，驅動顧客洞察、提升服務品質並增強品牌曝光度。",
+      "primaryButton": {
+        "text": "預約產品Demo"
       },
       "secondaryButton": {
         "text": "LINE@聯繫"
       },
       "slides": {
         "0": {
-          "imageAlt": "Reservation System UI"
-        },
-        "1": {
-          "imageAlt": "Table Management View"
-        }
-      }
-    },
-    "affordableSection": {
-      "tag": "一個沒有門檻、還能為您增加營收的訂位系統",
-      "title": "一個沒有門檻、還能為您增加營收的訂位系統",
-      "description": "大多數的訂位系統收取年費卻無法為餐廳提升營收。Oddle 餐廳訂位系統不同，沒有年費、沒有建置費、不綁約，只會基於使用量來收費。",
-      "items": {
-        "0": {
-          "title": "低進入門檻、基於使用量的收費模式",
-          "description": "只需要為線上訂位付款。"
-        },
-        "1": {
-          "title": "每組訂位都是營收成長的基石",
-          "description": "透過Oddle的顧客再行銷工具，將初次造訪的新客人變成穩定回訪的忠實顧客。"
-        },
-        "2": {
-          "title": "為您這樣餐廳設計",
-          "description": "為餐廳發展的各個階段量身打造的解决方案。"
-        }
-      }
-    },
-    "useCases": {
-      "tag": "為各類餐廳設計",
-      "title": "為各類餐廳設計",
-      "description": "無論您是從沒使用過訂位系統，還是想擺脫昂貴的年費，Oddle餐廳訂位系統都是為滿足您的需求而設計的。",
-      "items": {
-        "0": {
-          "title": "傳統餐廳走向數位化",
-          "description": "面對數位化挑戰與不斷冒出的新餐廳，你還因為高昂的年費而躊躇不前嗎？Oddle 餐廳訂位系統 案使用量收費的模式使數位化變得毫無門檻。",
-          "imageAlt": "Dim sum dishes on a table representing traditional restaurants"
-        },
-        "1": {
-          "title": "大量過路客的餐廳",
-          "description": "當餐廳有很多過路客和不同管道的訂位時，管理各種不同的訂位會變得很具挑戰性。Oddle 訂位系統的使用量計費模式讓您使用得更無負擔，這使它成為各種餐廳管理訂位的理想解決方案。",
-          "imageAlt": "Exterior of a soup restaurant representing high walk-in restaurants"
-        },
-        "2": {
-          "title": "依賴高抽成的訂位平台餐廳",
-          "description": "支付高昂人頭費、抽成給訂位平台的同時，還會被它的廣告攔截本該跟您訂位的客人，這有時會令人感到沮喪。Oddle 訂位系統不一樣，我們僅按照訂位組數收費，而不是按照人頭數收費，讓您重新掌握您的顧客。",
-          "imageAlt": "Interior of a PizzaExpress restaurant representing restaurants on marketplaces"
-        }
-      }
-    },
-    "operations": {
-      "items": {
-        "0": {
-          "title": "清單顯示",
-          "description": "以清單模式查看您的訂位，以便更好地管理。",
-          "imageAlt": "List View"
-        },
-        "1": {
-          "title": "時間軸模式",
-          "description": "以時間軸模式查看您的訂位，以便更好地規劃。",
-          "imageAlt": "Timeline View"
-        },
-        "2": {
-          "title": "桌位圖",
-          "description": "管理桌位指派和狀態，以提高效率。",
-          "imageAlt": "Table View"
-        },
-        "3": {
-          "title": "手機模式",
-          "description": "隨時隨地從任何設備存取和管理訂位。",
-          "imageAlt": "Mobile View"
-        }
-      },
-      "tag": "",
-      "title": "簡化您的日常操作",
-      "description": "擁有各種視圖且能即時管理訂位。使用者友善且輕鬆，Oddle Reserve 簡化了訂位的流程，並提供先進的桌位、訂位管理工具。它能幫助您有效地即時管理所有的訂位，提升顧客用餐體驗並增加營運效率。"
-    },
-    "system": {
-      "title": "",
-      "description": "",
-      "tag": "",
-      "items": {
-        "0": {
-          "title": "安全可靠的訂位系統",
-          "description": "確保訂位並通過內建的防範措施來最小化缺席率。",
-          "imageAlt": "Credit card guarantee",
-          "item1": "預刷信用卡：不是真正刷卡、而是預卡信用卡額度來完成訂位，以減少缺席的情況。",
-          "item2": "付款請求：在高價值的時段或繁忙時期收取押金或預付款。",
-          "item3": "顧客確認自動化：自動確認訂位以節省時間並減少手動操作。"
-        },
-        "1": {
-          "title": "使用者友善的功能",
-          "description": "透過方便和靈活的選項來提升顧客體驗。",
-          "imageAlt": "Payment request",
-          "item1": "顧客編輯訂位：允許顧客更改或取消訂位，而無需電話、或是訊息聯繫，讓使用者體驗更順暢。",
-          "item2": "自動化狀態管理：輕鬆更新和追蹤訂位狀態，事半功倍，輕鬆設定好後，能讓團隊抱持一致。",
-          "item3": null
-        }
-      }
-    },
-    "growthEngine": {
-      "title": "...加上一個強大的成長引擎",
-      "description": "將數據洞察轉化為實際策略，使用能自動獎勵顧客再行銷、吸引流失的內用顧客重新回訪的工具，並將外送顧客吸引到現場用餐。",
-      "tag": "",
-      "items": {
-        "0": {
-          "title": "啟動並增加銷售",
-          "description": "使用能推動顧客忠誠度和增加回訪率的工具來擴大您的顧客資料庫並建立更強韌的顧客關係。",
-          "imageAlt": "Grow sales through engagement",
-          "item1": "收集和分析顧客行為、偏好和購買頻率等詳細資料。",
-          "item2": "獎勵回訪的顧客，進行分眾行銷，並通過客製化的活動重新吸引流失的顧客。",
-          "item3": "將線上的外送顧客轉換為內用的顧客，並通過獨家優惠和客製化的獎勵計畫讓他們不斷地回訪。"
-        }
-      }
-    }
-  },
-  "survey": {
-    "hero": {
-      "title": "將顧客回饋轉化為品牌成長的原動力",
-      "description": "自動化問卷可以提升品牌對顧客的了解、增強服務品質並提升品牌的可見度。",
-      "slides": {
-        "0": {
-          "imageAlt": "Oddle Survey Tool Interface"
+          "imageAlt": "Oddle Survey Tool Interface",
+          "imageSrc": "https://ucarecdn.com/40fbb324-eb80-4f92-92b7-1aec4c9ac5cf/-/preview/1000x865/"
         }
       }
     },
     "features": {
-      "description": "",
-      "title": "",
       "tag": "",
-      "items": {
-        "0": {
-          "title": "在每個接觸點設定自動化的問卷調查",
-          "description": "無論顧客是在線上訂位、訂外帶外送，還是在店內簽到或註冊，他們都會自動收到一份調查問卷。",
-          "imageAlt": "Diagram showing survey triggers"
+      "title": "自動化且主動的問卷調查，內建於每個接觸點",
+      "description": "無論顧客預訂餐桌、下訂單或登記忠誠度獎勵，他們都會在訪問後自動收到問卷調查。",
+      "items": [
+        {
+          "title": "自動化且主動的問卷調查，內建於每個接觸點",
+          "description": "無論顧客預訂餐桌、下訂單或登記忠誠度獎勵，他們都會在訪問後自動收到問卷調查。",
+          "imageAlt": "Diagram showing survey triggers",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Survey+Triggers"
         },
-        "1": {
-          "title": "You你的忠實粉絲是建立強大品牌的關鍵",
-          "description": "提醒顧客在 Google 上留下評論，將開心的顧客轉變為品牌的忠實推廣者。提升您的線上評價可以讓您在搜索結果中排名更高，自然地吸引更多新客戶。",
-          "imageAlt": "Illustration of positive Google reviews"
+        {
+          "title": "您的粉絲是強化品牌的關鍵",
+          "description": "透過提示滿意的食客在 Google 上留下評論，將他們轉化為品牌代言人。改善您的線上聲譽，提高搜尋結果排名並有機地吸引新顧客。",
+          "imageAlt": "Illustration of positive Google reviews",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Google+Reviews"
         },
-        "2": {
-          "title": "可供您採取行動的數據洞見",
-          "description": "一站式訪問所有的問卷數據，發現顧客趨勢、解決營運問題並優化顧客經營策略。",
-          "imageAlt": "Dashboard showing survey results and trends"
+        {
+          "title": "您可以據此行動的數據",
+          "description": "在一個地方存取所有問卷調查數據，以發現趨勢、解決問題並優化顧客保留策略。",
+          "imageAlt": "Dashboard showing survey results and trends",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Survey+Results"
         }
-      }
+      ]
     }
   },
   "virtualLounge": {
     "hero": {
-      "title": "透過 Oddle 亮點看板輕鬆地展示您的品牌",
-      "description": "創造一個品牌化的專屬頁面。更有效地讓顧客了解品牌的重要資訊如主打菜色、季節菜色、促銷活動等，並提升內用和外送的流量。",
+      "title": "透過 Oddle 的亮點看板線上展示您的品牌",
+      "description": "創建一個品牌化的數位空間來吸引顧客、展示您的菜單，並推動線上和線下光臨。",
+      "primaryButton": {
+        "text": "預約產品Demo"
+      },
+      "secondaryButton": {
+        "text": "LINE@聯繫"
+      },
       "slides": {
         "0": {
-          "imageAlt": "Phone showing Oddle Virtual Lounge UI"
+          "imageAlt": "Phone showing Oddle Virtual Lounge UI",
+          "imageSrc": "https://ucarecdn.com/b765ec4a-9d0f-4a0f-9e48-0d734c1e6ea1/-/preview/999x552/"
         }
       }
     },
     "details": {
+      "tag": "",
       "title": "",
       "description": "",
-      "tag": "",
-      "items": {
-        "0": {
-          "title": "展示您餐廳的所有亮點",
-          "description": "創造品牌的專屬頁面，講述您的故事、展示您的菜單，並突顯近期的促銷活動。",
-          "imageAlt": "Phone showing social media interactions"
+      "items": [
+        {
+          "title": "展現您餐廳的個性",
+          "description": "創建一個品牌化的數位空間，講述您的故事、展示您的菜單並突顯促銷活動。",
+          "imageAlt": "Phone showing social media interactions",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Brand+Showcase"
         },
-        "1": {
-          "title": "隨時隨地與客戶保持聯繫",
-          "description": "無論顧客想訂位、訂購外送，或是瀏覽您的菜單，都可透過亮點看板吸引他們。",
-          "imageAlt": "Phone showing email signup form in virtual lounge"
+        {
+          "title": "隨時隨地與顧客聯繫",
+          "description": "無論顧客是想預訂餐桌、點外送還是瀏覽您的線上產品，都能與他們互動。",
+          "imageAlt": "Phone showing email signup form in virtual lounge",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Brand+Showcase"
         },
-        "2": {
-          "title": "創造順暢的客戶體驗",
-          "description": "整合您的外送服務、訂位服務與顧客忠誠計畫，用一頁亮點看板展示，讓您的顧客擁有美好的使用體驗",
-          "imageAlt": "Phone showing integrated loyalty and ordering UI"
+        {
+          "title": "打造無縫的顧客體驗",
+          "description": "整合您的外送、預訂和忠誠度系統，提供令顧客滿意的統一體驗。",
+          "imageAlt": "Phone showing integrated loyalty and ordering UI",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Brand+Showcase"
         }
-      }
+      ]
     }
   },
   "demoPage": {
@@ -832,47 +897,54 @@
   },
   "crmCustomerIntelligence": {
     "hero": {
-      "title": "餐廳CRM與顧客洞察",
-      "description": "Oddle 的顧客智能為您的餐廳提供全面的營運與行銷洞察，使分眾行銷、個人化行銷與優秀的營運變得輕而易舉。",
+      "title": "餐廳 CRM 與顧客智慧",
+      "description": "從您的顧客數據中釋放可操作的洞察。",
+      "primaryButton": { "text": "預約產品Demo" },
+      "secondaryButton": { "text": "LINE@聯繫" },
       "slides": {
-        "0": {
-          "imageAlt": "Restaurant CRM & Customer Intelligence Carousel Image"
+        "0": { 
+          "imageAlt": "餐廳 CRM 與顧客智能輪播圖片",
+          "imageSrc": "https://ucarecdn.com/ee56a537-0c1d-4db5-92bd-24abbf0a1bc6/-/preview/970x970/"
         }
       }
     },
     "missingAnswers": {
-      "tag": "智能行銷",
-      "title": "您在一般的CRM系統中缺失的答案。",
-      "description": "不再猜測、盲目制定下一步。從您的顧客數據中發掘寶貴的洞見，制定可行的顧客經營策略，自信地做出明智的決策。",
-      "items": {
-        "0": {
-          "title": "發現、分群、鎖定",
-          "description": "解鎖您所需的數據洞見，以協助您更聰明地制定行銷策略。瞭解您的客戶結構與組成，並針對各個客群制定適合的行銷溝通內容。",
-          "imageAlt": "Store owners analyzing data on laptop"
+      "tag": "行銷智能",
+      "title": "您 CRM 中一直缺少的答案。",
+      "description": "告別猜測，迎接可操作的答案 - 從您自己的顧客數據中發現有價值的洞察，並自信地做出明智的決策。",
+      "items": [
+        {
+          "title": "發現、細分、定位",
+          "description": "釋放您推動行銷策略所需的洞察。發現您的顧客組成，並以正確的訊息鎖定正確的客群。",
+          "imageAlt": "店主在筆記型電腦上分析數據",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Discover+Insights"
         },
-        "1": {
-          "title": "完整的客戶資料唾手可得",
-          "description": "深入探索全面的客戶數據，包含外帶外送紀錄、訂位歷史、造訪次數、問卷回覆等等，甚至包括他們簽到次數與各個接觸點的互動紀錄。",
-          "imageAlt": "Visualizing customer data on a digital interface"
+        {
+          "title": "完整的顧客數據盡在指尖",
+          "description": "深入了解全面的顧客數據，涵蓋從跨配送、預訂的交易歷史、問卷結果，甚至他們與您數位接觸點的互動。",
+          "imageAlt": "在數位介面上視覺化顧客數據",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Customer+Data"
         }
-      }
+      ]
     },
     "guestFeatures": {
-      "tag": "智能營運",
-      "title": "做個聰明的主理人，將每一個訂位轉化為實際的顧客互動",
-      "description": "Oddle 將您的所有數據集中在一起，讓您輕鬆查看顧客的飲食需求、標籤和不同分店之間的互動紀錄。只需一鍵，您就可以查看全面的顧客紀錄，幫助您更好地了解和服務您的顧客。",
-      "items": {
-        "0": {
-          "title": "了解你的顧客",
-          "description": "造訪次數、外帶紀錄、過敏原和用餐偏好—Oddle幫助您了解每位客人。",
-          "imageAlt": "Know your guests example"
+      "tag": "營運智能",
+      "title": "成為最聰明的主人，將每次預訂都轉化為連結",
+      "description": "Oddle 將您的所有數據收集在一個方便的位置，讓您輕鬆存取飲食需求、顧客來訪以及跨不同分店互動的資訊。只需點擊一下，您就可以查看全面的顧客歷史記錄，幫助您更好地了解並服務您的顧客。",
+      "items": [
+        {
+          "title": "了解您的顧客",
+          "description": "來訪次數、外帶訂單、過敏原和用餐偏好——Oddle 幫助您親自了解每位顧客。",
+          "imageAlt": "了解您的顧客範例",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Know+Your+Guests"
         },
-        "1": {
-          "title": "發現忠實顧客",
-          "description": "將所有顧客的重要資訊掌握在手中，讓您的團隊成為超貼心的接待者。",
-          "imageAlt": "Spot loyal customers example"
+        {
+          "title": "識別忠實顧客",
+          "description": "讓您的所有顧客洞察盡在指尖，將您的地勤團隊變成超級主人。",
+          "imageAlt": "識別忠實顧客範例",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Spot+Loyal+Customers"
         }
-      }
+      ]
     },
     "personalizedMarketing": {
       "tag": "分眾行銷最大化",
