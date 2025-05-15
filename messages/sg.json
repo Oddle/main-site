@@ -104,7 +104,7 @@
       "slides": [
         {
           "imageAlt": "Oddle Marketing Engine Dashboard",
-          "imageSrc": "https://ucarecdn.com/38ac2cb3-98f8-45d2-a41b-6e76e99f64c4/-/preview/570x1000/"
+          "imageSrc": "https://ucarecdn.com/75a574a9-6552-4e06-ab81-4c1b60ed967c/-/preview/1000x1000/"
         }
       ]
     },
@@ -141,13 +141,13 @@
           "title": "Let Oddle Do The Data Work",
           "description": "Unified Customer View: Combine reservations, orders, and loyalty data. Smart Segmentation: Leverage pre-built customer segments. Automated Engagement: Effortlessly personalize campaigns.",
           "imageAlt": "Data segmentation illustration",
-          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Data+Work"
+          "imageSrc": "https://ucarecdn.com/3c0ca3b7-4b79-4f5d-8249-3021699ae6bb/-/preview/1000x515/"
         },
         {
           "title": "Automatically Track Conversions",
           "description": "Measure and optimize conversion rates effortlessly",
           "imageAlt": "Conversion tracking illustration",
-          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Conversions"
+          "imageSrc": "https://ucarecdn.com/38ac2cb3-98f8-45d2-a41b-6e76e99f64c4/-/preview/570x1000/"
         }
       ]
     }
@@ -267,42 +267,50 @@
         {
           "title": "Reservations",
           "description": "Simplify table bookings and boost dine-in sales across all customer segments.",
-          "imageAlt": "Reservation"
+          "imageAlt": "Reservation",
+          "imageSrc": "https://ucarecdn.com/47d65c01-2223-48b4-ab0e-bc56a9eef03f/-/preview/1000x820/"
         },
         {
           "title": "Online Ordering",
           "description": "Drive delivery revenue with a branded online ordering system.",
-          "imageAlt": "Online Ordering"
+          "imageAlt": "Online Ordering",
+          "imageSrc": "https://ucarecdn.com/eef1cb53-a709-483c-9881-ffa746f44e09/-/preview/999x817/"
         },
         {
           "title": "Next-Gen Payment Terminal",
           "description": "Competitive payment processing that turns every transaction into a growth opportunity.",
-          "imageAlt": "Payment Terminal"
+          "imageAlt": "Payment Terminal",
+          "imageSrc": "https://ucarecdn.com/f3dc1cdb-e329-4b06-9f10-d55f46d4f629/-/preview/600x682/"
         },
         {
           "title": "Loyalty",
           "description": "Encourage repeat visits with rewards and automated reminders.",
-          "imageAlt": "Loyalty"
+          "imageAlt": "Loyalty",
+          "imageSrc": "https://ucarecdn.com/14757ea0-661c-4be2-9966-0e54489d394a/-/preview/1000x818/"
         },
         {
           "title": "Surveys",
           "description": "Automatically collect customer feedback and enhance your online reputation.",
-          "imageAlt": "Surveys"
+          "imageAlt": "Surveys",
+          "imageSrc": "https://ucarecdn.com/40fbb324-eb80-4f92-92b7-1aec4c9ac5cf/-/preview/1000x865/"
         },
         {
           "title": "Virtual Lounge",
           "description": "Create a digital space that mirrors your menu, promotions, and personality.",
-          "imageAlt": "Virtual Lounge"
+          "imageAlt": "Virtual Lounge",
+          "imageSrc": "https://ucarecdn.com/fb27e6e8-5b29-4a1d-8ae9-3def53e5a4da/-/preview/673x1000/"
         },
         {
           "title": "Marketing Engine",
           "description": "Automate campaigns and boost your online reputation with ease.",
-          "imageAlt": "Marketing Engine"
+          "imageAlt": "Marketing Engine",
+          "imageSrc": "https://ucarecdn.com/cd497ab0-3b5d-49c2-b81b-4fdb9994f4b9/-/preview/623x536/"
         },
         {
           "title": "Customer Intelligence",
           "description": "Unlock actionable insights from your customer data.",
-          "imageAlt": "Customer Intelligence"
+          "imageAlt": "Customer Intelligence",
+          "imageSrc": "https://ucarecdn.com/ee56a537-0c1d-4db5-92bd-24abbf0a1bc6/-/preview/970x970/"
         }
       ]
     },
@@ -313,7 +321,7 @@
       "secondaryDescription": "From managing orders and reservations to understanding customer behavior and driving loyalty, everything you need is in one place.",
       "image": {
         "alt": "Oddle Platform Dashboard showing various features",
-        "src": "https://placehold.co/800x600/EEE/31343C.png?text=Ecosystem+Dashboard"
+        "src": "https://ucarecdn.com/030b9c8c-ecd6-42cb-8c55-6b2d8035fe14/-/preview/1000x778/"
       },
       "features": [
         {
@@ -415,13 +423,13 @@
           "title": "Participate in sponsored marketing campaigns at no extra charge.",
           "description": "Benefit from exclusive partnerships and festive campaigns held throughout the year. Be featured on Oddle Eats' various media channels and increase your discoverability.",
           "imageAlt": "Oddle Eats Marketing Campaign Example",
-          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Marketing+Campaign"
+          "imageSrc": "https://ucarecdn.com/bf585b69-4068-4e9f-a021-8660c89698d2/-/preview/923x1000"
         },
         {
           "title": "Expand your reach to a high-spending affluent user base",
           "description": "",
           "imageAlt": "Graph showing user demographics",
-          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=User+Demographics"
+          "imageSrc": "https://ucarecdn.com/922512e5-6604-4899-8060-e7c62c035084/-/preview/923x1000/"
         }
       ]
     }
@@ -512,9 +520,9 @@
         {
           "title": "Activate and Grow Sales",
           "description": "Grow your customer database and build stronger relationships with tools that drive loyalty and repeat orders.",
-          "item0": "Collect and analyze detailed insights into customer behavior, preferences, and order frequency.",
-          "item1": "Reward repeat customers, run targeted promotions, and re-engage lapsed diners with personalized campaigns.",
-          "item2": "Convert delivery customers into dine-in guests and keep them coming back with exclusive offers and tailored experiences.",
+          "item1": "Collect and analyze detailed insights into customer behavior, preferences, and order frequency.",
+          "item2": "Reward repeat customers, run targeted promotions, and re-engage lapsed diners with personalized campaigns.",
+          "item3": "Convert delivery customers into dine-in guests and keep them coming back with exclusive offers and tailored experiences.",
           "imageAlt": "Restaurant promotion display",
           "imageSrc": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MDY0NDN8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwcHJvbW90aW9ufGVufDB8fHx8MTcxNTA3NDg1Mnww&ixlib=rb-4.0.3&q=80&w=1080"
         },
@@ -544,7 +552,7 @@
       "slides": [
         {
           "imageAlt": "Oddle Payment Terminal",
-          "imageSrc": "https://ucarecdn.com/578e8322-a70e-4608-9b85-6f41d8f539f3/-/preview/1000x865/"
+          "imageSrc": "https://ucarecdn.com/2bbc4977-dfa2-424b-bae3-bee90a6cea1a/-/preview/1000x1000/"
         }
       ]
     },
@@ -556,25 +564,25 @@
           "title": "Capture 100% of customers without marketing opt-ins",
           "description": "Advanced analytics drive data-based decisions, offering predictive insights, personalized recommendations, real-time analysis, cost savings and risk mitigation. Opt for advanced analytics for strategic decision-making and business growth.",
           "imageAlt": "Analytics dashboard showing customer data",
-          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Analytics+Dashboard"
+          "imageSrc": "https://ucarecdn.com/6eaef2eb-53b4-4dd6-ae5e-9e8bb7e7c0b9/-/preview/1000x1000/"
         },
         {
           "title": "Get a true pulse of your customer retention health score",
           "description": "Go beyond revenue tracking to understand your restaurant's customer health. By capturing unique profiles for every visitor, you'll gain an accurate score of your customer retention, providing a clear snapshot of how often customers return and the strength of their loyalty.",
           "imageAlt": "Graph showing customer retention score",
-          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Retention+Score"
+          "imageSrc": "https://ucarecdn.com/608c3b9f-aed6-482a-a2b7-d196a54380c4/-/preview/1000x1000/"
         },
         {
           "title": "Collect contacts to boost your database marketing",
           "description": "Effortlessly grow your contact list as customers are added when they redeem rewards by scanning a QR code on their receipts. Once added, you can send targeted updates, exclusive offers, or e-shop promotions to keep your restaurant top-of-mind.",
           "imageAlt": "Phone scanning QR code on receipt",
-          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=QR+Scan"
+          "imageSrc": "https://ucarecdn.com/84fb65b4-76f2-4c16-b46a-d9907f6c9b79/-/preview/1000x1000/"
         },
         {
           "title": "Drive return visits with targeted redeemable offers",
           "description": "Encourage repeat purchases with tailored redeemable rewards. Set criteria, like a minimum spend, to trigger exclusive return offers that entice customers back, keeping them engaged and driving loyalty.",
           "imageAlt": "Phone showing loyalty redeemable offer",
-          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Loyalty+Offer"
+          "imageSrc": "https://ucarecdn.com/9ff7200b-b940-406e-bdde-6bcb702c62cc/-/preview/1000x1000/"
         }
       ]
     },
@@ -682,11 +690,7 @@
       "slides": [
         {
           "imageAlt": "Reservation System UI",
-          "imageSrc": "https://ucarecdn.com/9bf21b09-12ae-4272-a4e8-240909c208c4/product_reserve_hero"
-        },
-        {
-          "imageAlt": "Table Management View",
-          "imageSrc": "https://ucarecdn.com/b59c52f3-a371-411a-8087-7226c13a1a67/product_reserve_table_management_view"
+          "imageSrc": "https://ucarecdn.com/599e5cd5-879a-4dd1-9f8d-2588336cc904/-/preview/1000x620/"
         }
       ]
     },
@@ -875,19 +879,19 @@
           "title": "Showcase Your Restaurant's Personality",
           "description": "Create a branded digital space that tells your story, showcases your menu, and highlights promotions",
           "imageAlt": "Phone showing social media interactions",
-          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Brand+Showcase"
+          "imageSrc": "https://ucarecdn.com/6975447a-f639-43b6-890c-8963ae65e8b8/-/preview/1000x1000/"
         },
         {
           "title": "Connect with Customers Wherever They Are",
           "description": "Engage with customers whether they're looking to reserve a table, order delivery, or browse your online offerings.",
           "imageAlt": "Phone showing email signup form in virtual lounge",
-          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Connect+Online"
+          "imageSrc": "https://ucarecdn.com/692bc755-df2a-48cb-8266-ad471c3c92ee/-/preview/1000x1000/"
         },
         {
           "title": "Create a Seamless Customer Experience",
           "description": "Integrate your delivery, reservation, and loyalty systems for a unified experience that delights customers.",
           "imageAlt": "Phone showing integrated loyalty and ordering UI",
-          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Seamless+Experience"
+          "imageSrc": "https://ucarecdn.com/c8180ad3-9b62-4172-ab14-afc96d15b94d/-/preview/999x873/"
         }
       ]
     }
@@ -905,7 +909,7 @@
       "slides": [
         {
           "imageAlt": "Restaurant Loyalty Program UI Showcase",
-          "imageSrc": "https://ucarecdn.com/c22614cf-c098-49a9-854c-b7f0e9d566f5/-/preview/570x1000/"
+          "imageSrc": "https://ucarecdn.com/446f987e-d25b-40e5-a67d-e61337d845ef/-/preview/861x1000/"
         }
       ]
     },
@@ -919,14 +923,14 @@
           "description": "Sign up customers anywhere, anytime with a QR code scan or NFC tap, whether at their table or by the counter. This seamless flow ensures you capture every customer, enabling smarter, more personalized rewards.",
           "tag": "Grow Your Customer Database",
           "imageAlt": "Phone showing successful check-in for loyalty program",
-          "imageSrc": "https://ucarecdn.com/e7e46806-9079-420d-a4dc-1f5cd479a55e/-/preview/512x512/"
+          "imageSrc": "https://ucarecdn.com/c92243a8-0c70-4d33-ba08-b632f2d3125e/-/preview/1000x666/"
         },
         {
           "title": "Automate Customer Engagement",
           "description": "Send personalized rewards, birthday treats, voucher reminders, and even post-meal surveys automatically. Save time while keeping your restaurant top-of-mind and driving repeat visits effortlessly.",
           "tag": "Keep Your Restaurant Top-of-Mind",
           "imageAlt": "Phone showing loyalty reward notification",
-          "imageSrc": "https://ucarecdn.com/d2071565-5d9a-4f89-af03-6e11f2bb754c/-/preview/512x512/"
+          "imageSrc": "https://ucarecdn.com/04e08a32-d9cc-4f6e-96fe-a040fffcc894/-/preview/999x666/"
         }
       ]
     }
@@ -953,13 +957,13 @@
           "title": "Discover, Segment, Target",
           "description": "Unlock the insights you need to power your marketing strategy. Discover your customer breakdown and target the right segment with the right message.",
           "imageAlt": "Store owners analyzing data on laptop",
-          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Discover+Insights"
+          "imageSrc": "https://ucarecdn.com/75c8c0a6-d53e-4ae0-82aa-78f24307189d/-/preview/1000x666/"
         },
         {
           "title": "Complete customer data at your fingertips",
           "description": "Dive into comprehensive customer data, spanning from transaction history across deliveries, reservations, survey results and even their interactions with your digital touchpoints.",
           "imageAlt": "Visualizing customer data on a digital interface",
-          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Customer+Data"
+          "imageSrc": "https://ucarecdn.com/942d96fc-ed50-49b5-91a9-768856075d9e/-/preview/999x666/"
         }
       ]
     },
@@ -991,19 +995,19 @@
           "title": "Targeted Email Campaigns",
           "description": "Launch email marketing campaigns for different target segments using our Email Marketing tool.",
           "imageAlt": "Email marketing campaign examples",
-          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Email+Campaigns"
+          "imageSrc": "https://ucarecdn.com/10483a24-988e-4f04-8c15-822473592b65/-/preview/1000x927/"
         },
         {
           "title": "Real-time Automation",
           "description": "Easily launch real-time automation campaigns for different customer segments.",
           "imageAlt": "Real-time automation examples",
-          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Real-time+Automation"
+          "imageSrc": "https://ucarecdn.com/75a574a9-6552-4e06-ab81-4c1b60ed967c/-/preview/496x280/"
         },
         {
           "title": "Post-Meal Surveys",
           "description": "Build your Google Review score to attract new customers and strengthen your online presence.",
           "imageAlt": "Customer leaving a review on phone",
-          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Post-Meal+Surveys"
+          "imageSrc": "https://ucarecdn.com/40fbb324-eb80-4f92-92b7-1aec4c9ac5cf/-/preview/1000x865/"
         }
       ]
     }
