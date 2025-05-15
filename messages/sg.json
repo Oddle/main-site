@@ -457,12 +457,14 @@
         "0": {
           "title": "Participate in sponsored marketing campaigns at no extra charge.",
           "description": "Benefit from exclusive partnerships and festive campaigns held throughout the year. Be featured on Oddle Eats' various media channels and increase your discoverability.",
-          "imageAlt": "Oddle Eats Marketing Campaign Example"
+          "imageAlt": "Oddle Eats Marketing Campaign Example",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Marketing+Campaign"
         },
         "1": {
           "title": "Extend your reach to our affluent user base with high purchasing power",
           "description": "",
-          "imageAlt": "Graph showing user demographics"
+          "imageAlt": "Graph showing user demographics",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=User+Demographics"
         }
       }
     }
@@ -487,6 +489,10 @@
     "multiPlatform": {
       "title": "Your Brand Front and Center",
       "description": "Fully branded platform customized to showcase your logo, menu, and promotions",
+      "badge": "Brand Focused",
+      "platformDesktop": "Desktop View",
+      "platformMobile": "Mobile App",
+      "platformWeb": "Web Platform",
       "images": {
         "0": {
           "alt": "Online Ordering Desktop View",
@@ -545,17 +551,17 @@
       "tag": "",
       "title": "Why Choose Our Online Ordering System?",
       "description": "Empower your restaurant with features designed for growth and efficiency.",
-      "items": {
-        "0": {
+      "items": [
+        {
           "title": "Activate and Grow Sales",
           "description": "Grow your customer database and build stronger relationships with tools that drive loyalty and repeat orders.",
           "item1": "Collect and analyze detailed insights into customer behavior, preferences, and order frequency.",
           "item2": "Reward repeat customers, run targeted promotions, and re-engage lapsed diners with personalized campaigns.",
           "item3": "Convert delivery customers into dine-in guests and keep them coming back with exclusive offers and tailored experiences.",
-          "imageAlt": "Customer relationship management interface showing profile and communication.",
-          "imageSrc": "https://ucarecdn.com/260a36bf-d714-440a-abd5-aefa169979cc/-/preview/807x1000/"
+          "imageAlt": "Restaurant promotion display",
+          "imageSrc": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MDY0NDN8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwcHJvbW90aW9ufGVufDB8fHx8MTcxNTA3NDg1Mnww&ixlib=rb-4.0.3&q=80&w=1080"
         },
-        "1": {
+        {
           "title": "Seamless Logistics Management",
           "description": "Streamline your restaurant operations with tools designed to simplify day-to-day tasks, so you can focus on delivering exceptional dining experiences.",
           "item1": "Streamline delivery zones, manage logistics efficiently, and achieve best-in-class fulfillment rates.",
@@ -563,7 +569,7 @@
           "imageAlt": "Delivery tracking interface showing map and vehicle.",
           "imageSrc": "https://ucarecdn.com/992a1660-1ca3-4d75-91de-5318366408d6/-/preview/924x1000/"
         },
-        "2": {
+        {
           "title": "Tap into a network of over a million food lovers with Oddle Eats",
           "description": "Get your restaurant seen by millions of consumers seeking new dining experiences for every occasion with our premier food directory network, Oddle Eats.",
           "item1": "Participate in sponsored marketing campaigns at no extra charge.",
@@ -571,7 +577,7 @@
           "imageAlt": "Oddle Eats mobile app interface showing restaurant listings.",
           "imageSrc": "https://ucarecdn.com/45d8a7bd-134e-456d-900a-1d3579b2c249/-/preview/621x1000/"
         }
-      }
+      ]
     }
   },
   "paymentTerminal": {
@@ -753,39 +759,39 @@
       "tag": "",
       "title": "",
       "description": "",
-      "items": {
-        "0": {
+      "items": [
+       {
           "title": "List View",
           "description": "Get a clear overview of all your reservations at a glance.",
           "imageAlt": "List View",
           "imageSrc": "https://ucarecdn.com/160c698f-1051-43d6-a9cb-133d915b19bb/-/preview/912x500/"
         },
-        "1": {
+        {
           "title": "Timeline View",
           "description": "Visualize your bookings chronologically for better planning.",
           "imageAlt": "Timeline View",
           "imageSrc": "https://ucarecdn.com/a2ba9c8b-acf3-462a-bffd-0481cd5cdb27/-/preview/1000x548/"
         },
-        "2": {
+        {
           "title": "Table View",
           "description": "Manage table assignments and statuses efficiently.",
           "imageAlt": "Table View",
           "imageSrc": "https://ucarecdn.com/160c698f-1051-43d6-a9cb-133d915b19bb/-/preview/912x500/"
         },
-        "3": {
+        {
           "title": "Mobile View",
           "description": "Access and manage reservations on the go from any device.",
           "imageAlt": "Mobile View",
           "imageSrc": "https://ucarecdn.com/551fa74b-f384-42d9-a95a-ccd3ab7f62ae/reserve_mobile_view"
         }
-      }
+      ]
     },
     "system": {
       "tag": "",
       "title": "Secure and Reliable Reservation Booking System",
       "description": "Ensure serious bookings and minimize no-shows with built-in safeguards.",
-      "items": {
-        "0": {
+      "items": [
+         {
           "title": "Secure and Reliable Reservation Booking System",
           "description": "Ensure serious bookings and minimize no-shows with built-in safeguards.",
           "imageAlt": "Secure Reservation System Features",
@@ -794,7 +800,7 @@
           "item2": "Payment Request: Collect deposits or full payments upfront for high-value or busy periods.",
           "item3": "Automated Customer Confirmation: Confirm reservations automatically to save time and reduce manual work."
         },
-        "1": {
+         {
           "title": "Customer-Friendly Features",
           "description": "Enhance the guest experience with convenient and flexible options.",
           "imageAlt": "Customer Friendly Features",
@@ -802,7 +808,7 @@
           "item1": "Guest Self-Edit Reservations: Allow guests to change or cancel bookings without the need to call, creating a smoother experience.",
           "item2": "Automated Status Management: Easily update and track reservation statuses with minimal effort, keeping your team aligned and operations seamless."
         }
-      }
+      ]
     },
     "growthEngine": {
       "tag": "Growth Engine",
@@ -810,16 +816,13 @@
       "description": "Tools to help you expand your reach and increase revenue.",
       "items": [
         {
-          "title": "Promotions and Discounts",
-          "description": "Create targeted promotions to attract new customers and reward loyal ones.",
+          "title": "Activate and Grow Sales",
+          "description": "Grow your customer database and build stronger relationships with tools that drive loyalty and repeat orders.",
+          "item1": "Collect and analyze detailed insights into customer behavior, preferences, and order frequency.",
+          "item2": "Reward repeat customers, run targeted promotions, and re-engage lapsed diners with personalized campaigns.",
+          "item3": "Convert delivery customers into dine-in guests and keep them coming back with exclusive offers and tailored experiences.",
           "imageSrc": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MDY0NDN8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwcHJvbW90aW9ufGVufDB8fHx8MTcxNTA3NDg1Mnww&ixlib=rb-4.0.3&q=80&w=1080",
           "imageAlt": "Restaurant promotion display"
-        },
-        {
-          "title": "Analytics and Reporting",
-          "description": "Gain insights into customer behavior and campaign performance.",
-          "imageSrc": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MDY0NDN8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwYW5hbHl0aWNzfGVufDB8fHx8MTcxNTA3NDg1M3ww&ixlib=rb-4.0.3&q=80&w=1080",
-          "imageAlt": "Restaurant analytics dashboard"
         }
       ]
     }
@@ -845,23 +848,26 @@
       "tag": "",
       "title": "Automated and proactive surveys built into every touchpoint",
       "description": "Whether customers reserve a table, place an order, or check in for loyalty rewards, they're automatically sent a survey after their visit.",
-      "items": {
-        "0": {
+      "items": [
+         {
           "title": "Automated and proactive surveys built into every touchpoint",
           "description": "Whether customers reserve a table, place an order, or check in for loyalty rewards, they're automatically sent a survey after their visit.",
-          "imageAlt": "Diagram showing survey triggers"
+          "imageAlt": "Diagram showing survey triggers",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Survey+Triggers"
         },
-        "1": {
+         {
           "title": "Your Fans Hold the Key to a Stronger Brand",
           "description": "Turn happy diners into brand advocates by prompting them to leave reviews on Google. Improve your online reputation, rank higher in search results and attract new customers organically.",
-          "imageAlt": "Illustration of positive Google reviews"
+          "imageAlt": "Illustration of positive Google reviews",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Google+Reviews"
         },
-        "2": {
+        {
           "title": "Data you can act on",
           "description": "Access all survey data in one place to uncover trends, resolve issues and optimise customer retention strategies.",
-          "imageAlt": "Dashboard showing survey results and trends"
+          "imageAlt": "Dashboard showing survey results and trends",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Survey+Results"
         }
-      }
+      ]
     }
   },
   "virtualLounge": {
@@ -885,23 +891,26 @@
       "tag": "",
       "title": "",
       "description": "",
-      "items": {
-        "0": {
+      "items": [
+        {
           "title": "Showcase Your Restaurant's Personality",
           "description": "Create a branded digital space that tells your story, showcases your menu, and highlights promotions",
-          "imageAlt": "Phone showing social media interactions"
+          "imageAlt": "Phone showing social media interactions",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Brand+Showcase"
         },
-        "1": {
+        {
           "title": "Connect with Customers Anywhere",
           "description": "Engage diners whether they are looking to book a table, order delivery, or browse your offerings online.",
-          "imageAlt": "Phone showing email signup form in virtual lounge"
+          "imageAlt": "Phone showing email signup form in virtual lounge",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Brand+Showcase"
         },
-        "2": {
+        {
           "title": "Create a Seamless Customer Experience",
           "description": "Integrate your delivery, reservations, and loyalty systems for a unified experience that delights your customers",
-          "imageAlt": "Phone showing integrated loyalty and ordering UI"
+          "imageAlt": "Phone showing integrated loyalty and ordering UI",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Brand+Showcase"
         }
-      }
+      ]
     }
   },
   "resources": {
@@ -951,12 +960,14 @@
         "0": {
           "title": "Discover, Segment, Target",
           "description": "Unlock the insights you need to power your marketing strategy. Discover your customer breakdown and target the right segment with the right message.",
-          "imageAlt": "Store owners analyzing data on laptop"
+          "imageAlt": "Store owners analyzing data on laptop",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Discover+Insights"
         },
         "1": {
           "title": "Complete customer data at your fingertips",
           "description": "Dive into comprehensive customer data, spanning from transaction history across deliveries, reservations, survey results and even their interactions with your digital touchpoints.",
-          "imageAlt": "Visualizing customer data on a digital interface"
+          "imageAlt": "Visualizing customer data on a digital interface",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Customer+Data"
         }
       }
     },
@@ -964,18 +975,20 @@
       "tag": "Operational Intelligence",
       "title": "Be the smartest host, turn every reservation into a connection",
       "description": "Oddle collects all your data in one convenient location, making it easy to access information on dietary requirements, guest visits, and interactions across different outlets. With just one click, you can view a comprehensive guest history that helps you better understand and serve your customers.",
-      "items": {
-        "0": {
+      "items": [
+        {
           "title": "Know your guests",
           "description": "Visits, takeaway orders, allergens, and dining preferences—Oddle helps you know each guest personally.",
-          "imageAlt": "Know your guests example"
+          "imageAlt": "Know your guests example",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Know+Your+Guests"
         },
-        "1": {
+        {
           "title": "Spot loyal customers",
           "description": "Have all your guest insights at the tip of your fingers to turn your ground team into a super host.",
-          "imageAlt": "Spot loyal customers example"
+          "imageAlt": "Spot loyal customers example",
+          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Spot+Loyal+Customers"
         }
-      }
+      ]
     },
     "personalizedMarketing": {
       "tag": "Personalised Marketing at Scale",
