@@ -115,7 +115,9 @@ export default function IconSectionHorizontal({
           {items.map((item, index) => {
             const IconComponent = item.icon ? iconMap[item.icon] : null;
             const itemBaseKey = `${i18nBaseKey}.items.${index}`; // Use items in key
-
+            
+            console.log(itemBaseKey);
+            console.log(t);
             // Translate item properties
             const itemTitle = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.title`, item.title) : item.title;
             const itemDescription = i18nBaseKey ? getTranslation(t, `${itemBaseKey}.description`, item.description) : item.description;
