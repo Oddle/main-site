@@ -95,11 +95,12 @@
       "secondaryButton": {
         "text": "Talk to Sales"
       },
-      "slides": {
-        "0": {
-          "imageAlt": "Customer Intelligence Dashboard Snippet"
+      "slides": [
+        {
+          "imageAlt": "Customer Intelligence Dashboard Snippet",
+          "imageSrc": "https://placehold.co/1200x600?text=CI+Dashboard+Slide+HK"
         }
-      }
+      ]
     },
     "marketingHeader": {
       "title": "Marketing Intelligence",
@@ -108,37 +109,39 @@
     "discover": {
       "title": "Discover, Segment, Target",
       "description": "Unlock the insights you need to power your marketing strategy. Discover your customer breakdown and target the right segment with the right message.",
-      "imageAlt": "Graph showing customer segmentation"
+      "imageAlt": "Graph showing customer segmentation",
+      "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Discover+Insights"
     },
     "completeData": {
       "title": "Complete customer data at your fingertips",
       "description": "Dive into comprehensive customer data, spanning from transaction history across deliveries, reservations, survey results and even their interactions with your digital touchpoints.",
-      "imageAlt": "UI showing comprehensive customer profile"
+      "imageAlt": "UI showing comprehensive customer profile",
+      "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Customer+Data"
     },
     "opsHeader": {
       "title": "Operational Intelligence",
       "description": "Be the smartest host, turn every reservation into a connection. Oddle collects all your data in one convenient location, making it easy to access information on dietary requirements, guest visits, and interactions across different outlets. With just one click, you can view a comprehensive guest history that helps you better understand and serve your customers."
     },
-    
     "guestFeatures": {
       "tag": "",
       "title": "Know your guests",
       "description": "Visits, takeaway orders, allergens, and dining preferences—Oddle helps you know each guest personally.",
-      "items": {
-        "0": {
+      "items": [
+        {
           "title": "Know your guests",
           "description": "Visits, takeaway orders, allergens, and dining preferences—Oddle helps you know each guest personally.",
-          "imageAlt": "Know your guests example"
+          "imageAlt": "Know your guests example",
+          "imageSrc": "https://placehold.co/300x200?text=Know+Guests+Feature+HK"
         },
-        "1": {
+        {
           "title": "Spot loyal customers",
           "description": "Have all your guest insights at the tip of your fingers to turn your ground team into a super host.",
-          "imageAlt": "Spot loyal customers example"
+          "imageAlt": "Spot loyal customers example",
+          "imageSrc": "https://placehold.co/300x200?text=Spot+Loyal+Feature+HK"
         }
-      }
+      ]
     },
-    "metadata": {
-    }
+    "metadata": {}
   },
   "emailMarketing": {
     "hero": {
@@ -151,51 +154,58 @@
       "secondaryButton": {
         "text": "Talk to Sales"
       },
-      "slides": {
-        "0": {
-          "imageAlt": "Oddle Marketing Engine Dashboard"
+      "slides": [
+        {
+          "imageAlt": "Oddle Marketing Engine Dashboard",
+          "imageSrc": "https://placehold.co/1200x600?text=Marketing+Engine+Slide+HK"
         }
-      }
+      ]
     },
     "howItWorks": {
       "tag": "",
       "title": "How Oddle Marketing Engine Turns Data Into Dollars",
-      "items": {
-        "0": {
+      "items": [
+        {
           "title": "All Your Data, All in One Place",
-          "description": "Consolidate reservations, delivery, and loyalty data into a single platform for a 360° view of your customers"
+          "description": "Consolidate reservations, delivery, and loyalty data into a single platform for a 360° view of your customers",
+          "imageSrc": "https://placehold.co/300x200?text=Data+In+One+Place+HK"
         },
-        "1": {
+        {
           "title": "See What You've Been Missing",
-          "description": "Automatically visualize customer behavior and sales trends to uncover untapped revenue opportunities."
+          "description": "Automatically visualize customer behavior and sales trends to uncover untapped revenue opportunities.",
+          "imageSrc": "https://placehold.co/300x200?text=Visualize+Behavior+HK"
         },
-        "2": {
+        {
           "title": "Maximize Cross-Channel Growth",
-          "description": "Turn dine-in customers into delivery users (and vice versa) with tailored promotions that expand revenue streams."
+          "description": "Turn dine-in customers into delivery users (and vice versa) with tailored promotions that expand revenue streams.",
+          "imageSrc": "https://placehold.co/300x200?text=Cross-Channel+Growth+HK"
         }
-      }
+      ]
     },
     "toolkit": {
       "tag": "",
       "title": "A Restaurant Email Marketing Toolkit to Make Marketing Effortless",
       "description": "Launch campaigns with pre-built workflows that require no technical expertise—just results.",
-      "items": {
-        "0": {
+      "items": [
+        {
           "title": "Pre-Built Templates, Ready To Go",
           "description": "Choose from pre-built templates tailored to your goals.",
-          "imageAlt": "Examples of email marketing templates"
+          "imageAlt": "Examples of email marketing templates",
+          "imageSrc": "https://placehold.co/300x200?text=Email+Templates+HK"
         },
-        "1": {
+        {
           "title": "Let Oddle Do The Data Work",
           "description": "Unified Customer View: Combine reservations, orders, and loyalty data. Smart Segmentation: Leverage pre-built customer segments. Automated Engagement: Effortlessly personalize campaigns.",
-          "imageAlt": "Data segmentation illustration"
+          "imageAlt": "Data segmentation illustration",
+          "imageSrc": "https://placehold.co/300x200?text=Data+Work+HK"
         },
-        "2": {
+        {
           "title": "Automatically Track Conversions",
           "description": "Measure and optimize conversion rates effortlessly",
-          "imageAlt": "Conversion tracking illustration"
+          "imageAlt": "Conversion tracking illustration",
+          "imageSrc": "https://placehold.co/300x200?text=Track+Conversions+HK"
         }
-      }
+      ]
     }
   },
   "footer": {
@@ -242,700 +252,1030 @@
       "secondaryButton": {
         "text": "Talk to Sales"
       },
-      "slides": {
-        "0": {
-          "imageAlt": "Loyalty - Cenzo"
+      "slides": [
+        {
+          "imageAlt": "Loyalty - Cenzo",
+          "imageSrc": "https://placehold.co/1200x600?text=Home+Slide+1+HK",
+          "title": "The Food<br />Discovery Platform",
+          "description": "Oddle Eats helps F&B operators grow their sales with no commission fees.",
+          "button": {
+            "text": "Learn More",
+            "link": "/oddle-eats"
+          }
         },
-        "1": {
-          "imageAlt": "Delivery - HJH"
+        {
+          "imageAlt": "Delivery - HJH",
+          "imageSrc": "https://placehold.co/1200x600?text=Home+Slide+2+HK",
+          "title": "The Complete<br />F&B Operating System",
+          "description": "Take orders, manage reservations and engage your customers with Oddle Reserve.",
+          "button": {
+            "text": "Learn More",
+            "link": "/oddle-reserve"
+          }
         },
-        "2": {
-          "imageAlt": "Reserve - Abundance"
+        {
+          "imageAlt": "Reserve - Abundance",
+          "imageSrc": "https://placehold.co/1200x600?text=Home+Slide+3+HK",
+          "title": "Another Slide Title for HK",
+          "description": "Description for another slide in HK.",
+          "button": {
+            "text": "Learn More",
+            "link": "/another-page-hk"
+          }
         },
-        "3": {
-          "imageAlt": "Marketing - KEK"
+        {
+          "imageAlt": "Marketing - KEK",
+          "imageSrc": "https://placehold.co/1200x600?text=Home+Slide+4+HK",
+          "title": "Yet Another Slide for HK",
+          "description": "Details about this slide in HK.",
+          "button": {
+            "text": "Discover",
+            "link": "/discover-more-hk"
+          }
         }
+      ]
+    },
+    "description": {
+      "title": "Driving Profitable Growth for Restaurants, Sustainably",
+      "subtitle": "Founded in 2014, Oddle is a Singapore-based, food tech company that offers a vertically integrated suite of solutions to help restaurants manage and grow their sales. Oddle has a presence in Singapore, Malaysia, Taiwan and Hong Kong, and is trusted by over 10,000 F&B brands globally."
+    },
+    "partnerLogos": [
+      "https://images.ctfassets.net/p3s2fz3v5n9x/5bXjQh7Y4x0kY4K0gY4C4U/b1d0c3c6c1d6a3c1e5e3b2c8b9f7d5e7/logo-les-amis.png",
+      "https://images.ctfassets.net/p3s2fz3v5n9x/6y6xT2Q8Y6W0c4wS2C2g0k/a8d7c3e0c7b5a4e3c0d1c3e1c6b7e9c8/logo-imperial-treasure.png",
+      "https://images.ctfassets.net/p3s2fz3v5n9x/7a3sS8Q2I4s8c4A8g8G8Yk/c1e1c5c7b9c5a3d7e8c0c7c3c5d8e6f4/logo-putien.png",
+      "https://images.ctfassets.net/p3s2fz3v5n9x/1R8xG8E0U8c8s0o8Q4w4S2/e5d4c1b9a3c7e8c0c7b5a4e3c0d1c3e1/logo-swensens.png",
+      "https://images.ctfassets.net/p3s2fz3v5n9x/3y8xG8E0U8c8s0o8Q4w4S2/e5d4c1b9a3c7e8c0c7b5a4e3c0d1c3e1/logo-jollibee.png"
+    ],
+    "solutions": {
+      "title": "Our Solutions",
+      "items": [
+        {
+          "title": "Oddle Reserve",
+          "subtitle": "The complete F&B Operating System",
+          "description": "Take orders, manage reservations and engage your customers with Oddle Reserve.",
+          "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/3y8xG8E0U8c8s0o8Q4w4S2/e5d4c1b9a3c7e8c0c7b5a4e3c0d1c3e1/Oddle_Reserve_Product_Shot.png",
+          "button": {
+            "text": "Learn More",
+            "link": "/oddle-reserve"
+          }
+        },
+        {
+          "title": "Oddle Eats",
+          "subtitle": "The Food Discovery Platform",
+          "description": "Oddle Eats helps F&B operators grow their sales with no commission fees.",
+          "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/1R8xG8E0U8c8s0o8Q4w4S2/e5d4c1b9a3c7e8c0c7b5a4e3c0d1c3e1/Oddle_Eats_Product_Shot.png",
+          "button": {
+            "text": "Learn More",
+            "link": "/oddle-eats"
+          }
+        }
+      ]
+    },
+    "footer": {
+      "title": "Ready to grow your business?",
+      "button": {
+        "text": "Contact Sales",
+        "link": "/contact-sales"
       }
     },
     "growingEasy": {
-      "tag": "Growing is as easy as ABC",
-      "title": "Growing is as easy as ABC",
-      "description": "Acquire, Build, and Convert Your Way to Success",
-      "items": {
-        "0": {
-          "title": "Acquire Customer Data",
-          "description": "Capture insights from every reservation, delivery, and dine-in visit to build a powerful customer database"
+      "title": "Making growth easy for every restaurant",
+      "items": [
+        {
+          "title": "Reservations",
+          "description": "Streamline your reservation process and manage your tables efficiently.",
+          "icon": "Calendar",
+          "imageSrc": "https://placehold.co/300x200?text=Reservations+Easy+HK"
         },
-      "1": {
-        "title": "Build Your Brand",
-        "description": "Create a seamless online presence that reflects your restaurant's identity and keeps customers engaged"
-      },
-      "2": {
-        "title": "Convert for Growth",
-          "description": "Turn first-time diners into regulars with automated rewards, campaigns, and personalized reminders"
+        {
+          "title": "Ordering",
+          "description": "Enable seamless online ordering for pickup and delivery.",
+          "icon": "ShoppingBag",
+          "imageSrc": "https://placehold.co/300x200?text=Ordering+Easy+HK"
+        },
+        {
+          "title": "Marketing",
+          "description": "Engage your customers with targeted marketing campaigns and loyalty programs.",
+          "icon": "Megaphone",
+          "imageSrc": "https://placehold.co/300x200?text=Marketing+Easy+HK"
+        },
+        {
+          "title": "Operations",
+          "description": "Optimize your restaurant operations with powerful management tools.",
+          "icon": "Settings",
+          "imageSrc": "https://placehold.co/300x200?text=Operations+Easy+HK"
         }
-      }
+      ]
     },
-    "platformFeatures": {
-      "tag": "Built for Restaurant Growth",
-      "description": "Our platform integrates seamlessly to provide the tools you need for success, all in one place.",
-      "title": "Built for Restaurant Growth",
-      "imageAlt": "Oddle Platform Features Overview",
-      "items": {
-        "0": {
-          "title": "Fast & Reliable",
-          "description": "Dependable performance to keep your operations running smoothly."
+    "caseStudies": {
+      "tag": "CASE STUDIES",
+      "title": "See How Restaurants Like Yours Grow with Oddle",
+      "items": [
+        {
+          "logoUrl": "https://images.ctfassets.net/p3s2fz3v5n9x/5bXjQh7Y4x0kY4K0gY4C4U/b1d0c3c6c1d6a3c1e5e3b2c8b9f7d5e7/logo-les-amis.png",
+          "quote": "Oddle has transformed our online presence and significantly boosted our direct orders.",
+          "restaurantName": "Les Amis",
+          "imageSrc": "https://placehold.co/400x300?text=Les+Amis+Story+HK"
         },
-        "1": {
-          "title": "Powerful Integrations",
-          "description": "Connect effortlessly with POS, delivery partners, and marketing tools."
-        },
-        "2": {
-          "title": "Secure Data",
-          "description": "Your customer and business data is protected with top-tier security."
-        },
-        "3": {
-          "title": "AI-Driven Insights",
-          "description": "Leverage intelligent analytics to understand trends and optimize strategy."
+        {
+          "logoUrl": "https://images.ctfassets.net/p3s2fz3v5n9x/6y6xT2Q8Y6W0c4wS2C2g0k/a8d7c3e0c7b5a4e3c0d1c3e1c6b7e9c8/logo-imperial-treasure.png",
+          "quote": "The reservation system is incredibly intuitive and has helped us manage peak hours effectively.",
+          "restaurantName": "Imperial Treasure",
+          "imageSrc": "https://placehold.co/400x300?text=Imperial+Treasure+Story+HK"
         }
-      }
+      ],
+      "ctaButtonText": "Read More Success Stories"
     },
-    "productsBento": {
-      "tag": "Our Solutions",
-      "title": "Everything you need to grow your revenue",
-      "description": "A complete suite of tools designed to attract customers, streamline operations, and boost your restaurant's bottom line.",
-      "items": {
-        "0": {
-          "title": "Reservation",
-          "description": "Simplify table bookings and grow dine-in sales across all segments",
-          "imageAlt": "Reservation"
+    "oddleForYou": {
+      "title": "Oddle is for you if...",
+      "items": [
+        {
+          "title": "You want to increase direct sales",
+          "description": "Own your customer relationships and reduce reliance on third-party aggregators.",
+          "icon": "TrendingUp",
+          "imageSrc": "https://placehold.co/300x200?text=Increase+Sales+HK"
         },
-        "1": {
-          "title": "Online Ordering",
-          "description": "Boost delivery revenue with a branded online ordering system",
-          "imageAlt": "Online Ordering"
+        {
+          "title": "You want to streamline operations",
+          "description": "Manage reservations, orders, and customer data all in one place.",
+          "icon": "Cpu",
+          "imageSrc": "https://placehold.co/300x200?text=Streamline+Ops+HK"
         },
-        "2": {
-          "title": "Next-Gen Payment Terminals",
-          "description": "Competitive payment processing that turns every transaction into a growth opportunity",
-          "imageAlt": "Payment Terminal"
-        },
-        "3": {
-          "title": "Loyalty",
-          "description": "Encourage repeat visits with rewards and automated reminders",
-          "imageAlt": "Loyalty"
-        },
-        "4": {
-          "title": "Surveys",
-          "description": "Automatically collect feedback and boost your online reputation",
-          "imageAlt": "Surveys"
-        },
-        "5": {
-          "title": "Virtual Lounge",
-          "description": "Create a digital space that reflects your menu, promotions, and personality",
-          "imageAlt": "Virtual Lounge"
-        },
-        "6": {
-          "title": "Marketing Engine",
-          "description": "Automate campaigns and grow your online reputation effortlessly",
-          "imageAlt": "Marketing Engine"
-        },
-        "7": {
-          "title": "Customer Intelligence",
-          "description": "Get actionable insights from your customer data",
-          "imageAlt": "Customer Intelligence"
+        {
+          "title": "You want to build your brand",
+          "description": "Enhance your online presence and create a loyal customer base.",
+          "icon": "Award",
+          "imageSrc": "https://placehold.co/300x200?text=Build+Brand+HK"
         }
-      }
+      ]
     }
-  },
-  "loyaltyCrm": {
-    "hero": {
-      "title": "Turn every visit into a loyal customer",
-      "description": "Capture, engage, and retain your customers with a loyalty program designed for Restaurants",
-      "slides": {
-        "0": {
-          "imageAlt": "Restaurant Loyalty Program UI Showcase"
-        }
-      },
-      "primaryButton": {
-        "text": "Get Free Demo"
-      },
-      "secondaryButton": {
-        "text": "Talk to Sales"
-      }
-    },
-    "details": {
-      "tag": "",
-      "title": "How restaurants grow using Oddle",
-      "description": "",
-      "items": {
-        "0": {
-          "title": "Capture Every Customer",
-          "description": "Sign up diners in a flash, whether at the table or counter. with QR Scans or NFC Taps. The sleek, frictionless process that ensures you capture data from every guest, empowering you to deliver smarter, more personalized loyalty experiences.",
-          "tag": "Grow your customer database",
-          "imageAlt": "Phone showing successful check-in for loyalty program"
-        },
-        "1": {
-          "title": "Automate Engagement",
-          "description": "Automate personalized rewards, birthday offers, reminders for unused redeemables, and even customer feedback after visits. Stay top of mind while saving time and driving repeat visits with ease.",
-          "tag": "Keep your Restuarant Top of Mind",
-          "imageAlt": "Phone showing loyalty reward notification"
-        }
-      }
-    }
-  },
-  "navbar": {
-    "acquire": "Acquire",
-    "build": "Build",
-    "convert": "Convert",
-    "links": {
-      "products": "Products",
-      "resources": "Resources",
-      "pricing": "Pricing",
-      "get-started": "/get-started",
-      "menu-title": "Menu",
-      "oddle-eats": "Oddle Eats",
-      "login": "Login",
-      "get-free-demo": "Get Free Demo"
-    },
-    "promo": {
-      "title": "Explore Oddle",
-      "description": "Learn how Oddle helps restaurants grow."
-    },
-    "learn": "Learn",
-    "general": "General"
   },
   "oddleEats": {
     "hero": {
-      "title": "Your restaurant in the pockets of a million food lovers",
-      "description": "Get your restaurant seen by millions of consumers seeking new dining experiences for every occasion with our premier food directory network, Oddle Eats.",
-      "primaryButton": {
-        "text": "Get Free Demo"
-      },
-      "secondaryButton": {
-        "text": "Talk to Sales"
-      },
-      "slides": {
-        "0": {
-          "imageAlt": "Oddle Eats App Interface"
-        }
+      "title": "Tap into a Wider Audience of Diners",
+      "subtitle": "Reach more customers and grow your sales with Oddle Eats, the food discovery platform with no commission fees.",
+      "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/1R8xG8E0U8c8s0o8Q4w4S2/e5d4c1b9a3c7e8c0c7b5a4e3c0d1c3e1/Oddle_Eats_Hero_Banner.png",
+      "button": {
+        "text": "Get Started",
+        "link": "/contact-sales"
       }
     },
     "features": {
-      "tag": "",
-      "description": "Leverage Oddle Eats to boost your restaurant's visibility and reach.",
-      "title": "Why Feature on Oddle Eats?",
-      "items": {
-        "0": {
-          "title": "Participate in sponsored marketing campaigns at no extra charge.",
-          "description": "Benefit from exclusive partnerships and festive campaigns held throughout the year. Be featured on Oddle Eats' various media channels and increase your discoverability.",
-          "imageAlt": "Oddle Eats Marketing Campaign Example"
+      "title": "Built for F&B Operators, by F&B Operators",
+      "items": [
+        {
+          "title": "No Commission Fees",
+          "description": "Keep 100% of your earnings.",
+          "imageSrc": "https://placehold.co/300x200?text=No+Commission+Fees+HK"
         },
-        "1": {
-          "title": "Extend your reach to our affluent user base with high purchasing power",
-          "description": "",
-          "imageAlt": "Graph showing user demographics"
+        {
+          "title": "Islandwide Delivery",
+          "description": "Reach more customers with our reliable delivery fleet.",
+          "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/5bXjQh7Y4x0kY4K0gY4C4U/b1d0c3c6c1d6a3c1e5e3b2c8b9f7d5e7/feature-islandwide-delivery.png"
         },
-        "2": {
-          "title": "Recognize repeat customers without compromising privacy",
-          "description": "",
-          "imageAlt": "Illustration showing data privacy"
+        {
+          "title": "Marketing Support",
+          "description": "Boost your brand visibility with our marketing campaigns.",
+          "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/6y6xT2Q8Y6W0c4wS2C2g0k/a8d7c3e0c7b5a4e3c0d1c3e1c6b7e9c8/feature-marketing-support.png"
         }
+      ]
+    },
+    "footer": {
+      "title": "Join the Oddle Eats community today!",
+      "button": {
+        "text": "Contact Sales",
+        "link": "/contact-sales"
+      }
+    }
+  },
+  "header": {
+    "navLinks": [
+      {
+        "label": "Oddle Reserve",
+        "href": "/oddle-reserve",
+        "children": [
+          {
+            "label": "Reservation System",
+            "href": "/oddle-reserve/reservation-system",
+            "description": "Streamline your operations and enhance guest experiences."
+          },
+          {
+            "label": "Online Ordering",
+            "href": "/oddle-reserve/online-ordering",
+            "description": "Enable seamless pickup and delivery orders."
+          },
+          {
+            "label": "QR Code Ordering",
+            "href": "/oddle-reserve/qr-ordering",
+            "description": "Offer contactless ordering for dine-in customers."
+          },
+          {
+            "label": "Payment",
+            "href": "/oddle-reserve/payment",
+            "description": "Accept various payment methods securely."
+          },
+          {
+            "label": "CRM & Customer Intelligence",
+            "href": "/oddle-reserve/crm-customer-intelligence",
+            "description": "Understand your customers better and build loyalty."
+          },
+          {
+            "label": "Virtual Lounge",
+            "href": "/oddle-reserve/virtual-lounge",
+            "description": "Manage waitlists and table turnover efficiently."
+          },
+          {
+            "label": "Survey",
+            "href": "/oddle-reserve/survey",
+            "description": "Gather valuable feedback from your customers."
+          }
+        ]
+      },
+      {
+        "label": "Oddle Eats",
+        "href": "/oddle-eats"
+      },
+      {
+        "label": "Pricing",
+        "href": "/pricing"
+      },
+      {
+        "label": "Resources",
+        "href": "/resources",
+        "children": [
+          {
+            "label": "Blog",
+            "href": "/blog",
+            "description": "Stay updated with the latest F&B trends and insights."
+          },
+          {
+            "label": "Case Studies",
+            "href": "/case-studies",
+            "description": "Learn how Oddle has helped businesses succeed."
+          },
+          {
+            "label": "Help Center",
+            "href": "https://support.oddle.me",
+            "description": "Find answers to your questions and get support."
+          }
+        ]
+      },
+      {
+        "label": "About Us",
+        "href": "/about-us"
+      }
+    ],
+    "cta": {
+      "text": "Contact Sales",
+      "link": "/contact-sales"
+    },
+    "subCta": {
+      "text": "Login",
+      "link": "https://app.oddle.me"
+    }
+  },
+  "reservationSystem": {
+    "hero": {
+      "title": "The All-in-One Reservation System",
+      "subtitle": "Streamline your operations, enhance guest experiences, and grow your revenue with Oddle Reserve.",
+      "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/2Jc0nBqGk3vY6M2q0g8I2Q/b33851ac3e15a900b0907ddf20e70236/Oddle_Reserve_Hero_Banner.png",
+      "button": {
+        "text": "Request a Demo",
+        "link": "/contact-sales"
+      }
+    },
+    "operations": {
+      "title": "Streamline Front-of-House Operations",
+      "subtitle": "Manage reservations, tables, and waitlists with ease.",
+      "items": [
+        {
+          "title": "Centralized Dashboard",
+          "description": "Get a real-time overview of your restaurant's activities.",
+          "imageSrc": "https://placehold.co/300x200?text=Centralized+Dashboard+HK"
+        },
+        {
+          "title": "Table Management",
+          "description": "Optimize table assignments and minimize wait times.",
+          "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/5bXjQh7Y4x0kY4K0gY4C4U/b1d0c3c6c1d6a3c1e5e3b2c8b9f7d5e7/feature-table-management.png"
+        },
+        {
+          "title": "Waitlist Management",
+          "description": "Keep guests informed and reduce walkaways.",
+          "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/6y6xT2Q8Y6W0c4wS2C2g0k/a8d7c3e0c7b5a4e3c0d1c3e1c6b7e9c8/feature-waitlist-management.png"
+        }
+      ]
+    },
+    "system": {
+      "title": "Enhance Guest Experiences",
+      "subtitle": "Delight your diners at every touchpoint.",
+      "items": [
+        {
+          "title": "Online Reservations",
+          "description": "Allow guests to book tables anytime, anywhere.",
+          "imageSrc": "https://placehold.co/300x200?text=Online+Reservations+HK"
+        },
+        {
+          "title": "Automated Reminders",
+          "description": "Reduce no-shows with timely SMS and email notifications.",
+          "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/7a3sS8Q2I4s8c4A8g8G8Yk/c1e1c5c7b9c5a3d7e8c0c7c3c5d8e6f4/feature-automated-reminders.png"
+        },
+        {
+          "title": "Personalized Service",
+          "description": "Access guest preferences and history to create memorable experiences.",
+          "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/1R8xG8E0U8c8s0o8Q4w4S2/e5d4c1b9a3c7e8c0c7b5a4e3c0d1c3e1/feature-personalized-service.png"
+        }
+      ]
+    },
+    "growthEngine": {
+      "title": "Grow Your Revenue",
+      "subtitle": "Maximize your restaurant's potential with powerful tools.",
+      "items": [
+        {
+          "title": "Dynamic Pricing",
+          "description": "Optimize table utilization and revenue with flexible pricing strategies.",
+          "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/3y8xG8E0U8c8s0o8Q4w4S2/e5d4c1b9a3c7e8c0c7b5a4e3c0d1c3e1/feature-dynamic-pricing.png"
+        },
+        {
+          "title": "Promotions Engine",
+          "description": "Attract more diners with customizable promotions and discounts.",
+          "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/5bXjQh7Y4x0kY4K0gY4C4U/b1d0c3c6c1d6a3c1e5e3b2c8b9f7d5e7/feature-promotions-engine.png"
+        },
+        {
+          "title": "Reporting & Analytics",
+          "description": "Gain valuable insights into your restaurant's performance.",
+          "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/6y6xT2Q8Y6W0c4wS2C2g0k/a8d7c3e0c7b5a4e3c0d1c3e1c6b7e9c8/feature-reporting-analytics.png"
+        }
+      ]
+    },
+    "footer": {
+      "title": "Ready to transform your restaurant operations?",
+      "button": {
+        "text": "Contact Sales",
+        "link": "/contact-sales"
       }
     }
   },
   "onlineOrdering": {
     "hero": {
-      "title": "Own Your Online Channel, Customers, and Profits",
-      "description": "Deliver directly to your best customers with a branded online ordering platform that grows your sales, loyalty, and reach",
-      "primaryButton": {
-        "text": "Request Demo"
-      },
-      "secondaryButton": {
-        "text": "Talk to Sales"
-      },
-      "slides": {
-        "0": {
-          "imageAlt": "Online Ordering Desktop View"
-        },
-        "1": {
-          "imageAlt": "Online Ordering Mobile View"
-        }
+      "title": "Seamless Online Ordering for Pickup & Delivery",
+      "subtitle": "Empower your customers to order directly from you, anytime, anywhere.",
+      "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/7a3sS8Q2I4s8c4A8g8G8Yk/c1e1c5c7b9c5a3d7e8c0c7c3c5d8e6f4/Online_Ordering_Hero_Banner.png",
+      "button": {
+        "text": "Learn More",
+        "link": "/contact-sales"
       }
     },
     "multiPlatform": {
-      "badge": "Online Ordering",
-      "title": "The Best Online Ordering System for Restaurants",
-      "description": "Oddle Shop is your trusted partner in building a branded, scalable, and profitable delivery and takeaway system.",
-      "desktopImageAlt": "Online Ordering Desktop View",
-      "mobileImageAlt": "Online Ordering Mobile View",
-      "tabletImageAlt": "Online Ordering Tablet View",
-      "platformDesktop": "Desktop",
-      "platformMobile": "Mobile",
-      "platformWeb": "Web",
-      "featureIntegrated": {
-        "title": "Fully Integrated",
-        "description": "Connects smoothly with your POS and kitchen."
-      },
-      "featureCustomizable": {
-        "title": "Customizable",
-        "description": "Match your brand's look and feel."
-      },
-      "badgeText": "Online Ordering"
-    },
-    "keyFeatures": {
-      "tag": "",
-      "description": "Streamline your orders and delight your customers.",
-      "title": "Key Features",
-      "items": {
-        "0": {
-          "title": "Easy Menu Management",
-          "description": "Update your menu in real-time."
-        },
-        "1": {
-          "title": "Seamless Order Processing",
-          "description": "Manage orders efficiently."
-        },
-        "2": {
-          "title": "Integrated Delivery Options",
-          "description": "Connect with delivery partners."
-        }
-      }
+      "badge": "MULTI-PLATFORM",
+      "title": "Your Brand, Your Platform",
+      "subtitle": "Take control of your online presence with a branded ordering experience.",
+      "platformDesktop": "https://images.ctfassets.net/p3s2fz3v5n9x/1R8xG8E0U8c8s0o8Q4w4S2/e5d4c1b9a3c7e8c0c7b5a4e3c0d1c3e1/platform-desktop.png",
+      "platformMobile": "https://images.ctfassets.net/p3s2fz3v5n9x/3y8xG8E0U8c8s0o8Q4w4S2/e5d4c1b9a3c7e8c0c7b5a4e3c0d1c3e1/platform-mobile.png",
+      "platformWeb": "https://images.ctfassets.net/p3s2fz3v5n9x/5bXjQh7Y4x0kY4K0gY4C4U/b1d0c3c6c1d6a3c1e5e3b2c8b9f7d5e7/platform-web.png"
     },
     "details": {
-      "tag": "",
-      "title": "Why Choose Our Online Ordering System?",
-      "description": "Empower your restaurant with features designed for growth and efficiency.",
-      "items": {
-        "0": {
-          "title": "Activate and Grow Sales",
-          "description": "Grow your customer database and build stronger relationships with tools that drive loyalty and repeat orders.",
-          "item1": "Collect and analyze detailed insights into customer behavior, preferences, and order frequency.",
-          "item2": "Reward repeat customers, run targeted promotions, and re-engage lapsed diners with personalized campaigns.",
-          "item3": "Convert delivery customers into dine-in guests and keep them coming back with exclusive offers and tailored experiences.",
-          "imageAlt": "Customer relationship management interface showing profile and communication."
+      "title": "Key Features",
+      "items": [
+        {
+          "title": "Customizable Menus",
+          "description": "Showcase your offerings with beautiful photos and detailed descriptions.",
+          "imageSrc": "https://placehold.co/300x200?text=Customizable+Menus+HK"
         },
-        "1": {
-          "title": "Seamless Logistics Management",
-          "description": "Streamline your restaurant operations with tools designed to simplify day-to-day tasks, so you can focus on delivering exceptional dining experiences.",
-          "item1": "Streamline delivery zones, manage logistics efficiently, and achieve best-in-class fulfillment rates.",
-          "item2": "Flexible delivery options to serve customers far and wide.",
-          "imageAlt": "Delivery tracking interface showing map and vehicle."
+        {
+          "title": "Flexible Order Types",
+          "description": "Offer pickup, delivery, and even dine-in pre-orders.",
+          "imageSrc": "https://placehold.co/300x200?text=Flexible+Order+Types+HK"
         },
-        "2": {
-          "title": "Tap into a network of over a million food lovers with Oddle Eats",
-          "description": "Get your restaurant seen by millions of consumers seeking new dining experiences for every occasion with our premier food directory network, Oddle Eats.",
-          "item1": "Participate in sponsored marketing campaigns at no extra charge.",
-          "item2": "Extend your reach to our affluent user base with high purchasing power.",
-          "imageAlt": "Oddle Eats mobile app interface showing restaurant listings."
+        {
+          "title": "Integrated Payments",
+          "description": "Accept secure online payments with ease.",
+          "imageSrc": "https://placehold.co/300x200?text=Integrated+Payments+HK"
+        },
+        {
+          "title": "Order Management",
+          "description": "Track and manage incoming orders efficiently.",
+          "imageSrc": "https://placehold.co/300x200?text=Order+Management+HK"
         }
+      ]
+    },
+    "footer": {
+      "title": "Ready to launch your online ordering platform?",
+      "button": {
+        "text": "Contact Sales",
+        "link": "/contact-sales"
       }
     }
   },
-  "paymentTerminal": {
+  "qrOrdering": {
     "hero": {
-      "title": "Transform every Payment Into a Growth Opportunity",
-      "description": "More than just card processing at competitive rates, we empower you with insightful customer data and ways to grow revenue, all in one mobile device.",
-      "primaryButton": {
-        "text": "Get Free Demo"
-      },
-      "secondaryButton": {
-        "text": "Talk to Sales"
-      },
-      "slides": {
-        "0": {
-          "imageAlt": "Oddle Payment Terminal"
-        }
+      "title": "Contactless QR Code Ordering for Dine-In",
+      "subtitle": "Enhance safety and efficiency with a seamless self-ordering experience for your guests.",
+      "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/6y6xT2Q8Y6W0c4wS2C2g0k/a8d7c3e0c7b5a4e3c0d1c3e1c6b7e9c8/QR_Ordering_Hero_Banner.png",
+      "button": {
+        "text": "Explore Features",
+        "link": "#features"
       }
+    },
+    "benefits": {
+      "title": "Why Choose QR Code Ordering?",
+      "items": [
+        {
+          "title": "Increased Order Accuracy",
+          "description": "Reduce errors by allowing guests to place their own orders.",
+          "imageSrc": "https://placehold.co/300x200?text=Increased+Accuracy+HK"
+        },
+        {
+          "title": "Faster Table Turnover",
+          "description": "Speed up the ordering process and serve more guests.",
+          "imageSrc": "https://placehold.co/300x200?text=Faster+Turnover+HK"
+        },
+        {
+          "title": "Enhanced Guest Experience",
+          "description": "Provide a convenient and modern way to order.",
+          "imageSrc": "https://placehold.co/300x200?text=Enhanced+Experience+HK"
+        },
+        {
+          "title": "Reduced Labor Costs",
+          "description": "Free up your staff to focus on other tasks.",
+          "imageSrc": "https://placehold.co/300x200?text=Reduced+Labor+Costs+HK"
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": [
+        {
+          "title": "Scan QR Code",
+          "description": "Guests scan a QR code at their table to access the menu.",
+          "imageSrc": "https://placehold.co/300x200?text=Scan+QR+HK"
+        },
+        {
+          "title": "Browse & Order",
+          "description": "Guests browse the digital menu and place their orders.",
+          "imageSrc": "https://placehold.co/300x200?text=Browse+Order+HK"
+        },
+        {
+          "title": "Pay Online",
+          "description": "Guests can pay securely through their mobile devices.",
+          "imageSrc": "https://placehold.co/300x200?text=Pay+Online+HK"
+        },
+        {
+          "title": "Order Sent to Kitchen",
+          "description": "Orders are sent directly to the kitchen for preparation.",
+          "imageSrc": "https://placehold.co/300x200?text=Order+To+Kitchen+HK"
+        }
+      ]
+    },
+    "footer": {
+      "title": "Implement QR Code Ordering in your restaurant today!",
+      "button": {
+        "text": "Get a Quote",
+        "link": "/contact-sales"
+      }
+    }
+  },
+  "payment": {
+    "hero": {
+      "title": "Secure and Flexible Payment Solutions",
+      "subtitle": "Accept a wide range of payment methods and streamline your transaction process.",
+      "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/7a3sS8Q2I4s8c4A8g8G8Yk/c1e1c5c7b9c5a3d7e8c0c7c3c5d8e6f4/Payment_Hero_Banner.png",
+      "button": {
+        "text": "View Integrations",
+        "link": "#integrations"
+      }
+    },
+    "methods": {
+      "title": "Accepted Payment Methods",
+      "items": [
+        {
+          "title": "Credit & Debit Cards",
+          "description": "Visa, Mastercard, American Express, and more.",
+          "imageSrc": "https://placehold.co/300x200?text=Credit+Cards+HK"
+        },
+        {
+          "title": "Digital Wallets",
+          "description": "Apple Pay, Google Pay, Samsung Pay.",
+          "imageSrc": "https://placehold.co/300x200?text=Digital+Wallets+HK"
+        },
+        {
+          "title": "Local Payment Options",
+          "description": "FPS, Octopus, AlipayHK, WeChat Pay HK, and other regional favorites.",
+          "imageSrc": "https://placehold.co/300x200?text=Local+Payments+HK"
+        }
+      ]
     },
     "features": {
-      "tag": "Next-gen solutions designed to help you grow revenue",
-      "title": "Next-gen solutions designed to help you grow revenue",
-      "items": {
-        "0": {
-          "title": "Capture 100% of customers, no marketing opt-in needed",
-          "description": "Advanced analytics drives data-driven decisions, offering predictive insights, personalized recommendations, real-time analysis, cost savings, and risk mitigation. Choose advanced analytics for strategic decision-making and business growth.",
-          "imageAlt": "Oddle Payment Terminal"
+      "title": "Key Payment Features",
+      "items": [
+        {
+          "title": "PCI DSS Compliant",
+          "description": "Ensure the highest level of security for your transactions.",
+          "imageSrc": "https://placehold.co/300x200?text=PCI+Compliant+HK"
         },
-        "1": {
-          "title": "Get a true health score on customer retention",
-          "description": "Move beyond revenue tracking to understand your restaurant's customer health. By capturing a unique profile for each visitor, you'll see an accurate score of your customer retention rates, providing a clear snapshot of how often guests return and the strength of their loyalty.",
-          "imageAlt": "Oddle Payment Terminal"
+        {
+          "title": "Seamless Integration",
+          "description": "Connect with your existing POS and accounting systems.",
+          "imageSrc": "https://placehold.co/300x200?text=Seamless+Integration+HK"
         },
-        "2": {
-          "title": "Collect contacts, boost database marketing",
-          "description": "Effortlessly grow your contact list when customers claim redeemables by scanning a QR code on their receipt. Once added, you can send targeted updates, exclusive offers, or online store promotions to keep your restaurant top of mind.",
-          "imageAlt": "Oddle Payment Terminal"
+        {
+          "title": "Real-time Reporting",
+          "description": "Track your sales and transactions in one place.",
+          "imageSrc": "https://placehold.co/300x200?text=Real-time+Reporting+HK"
         },
-        "3": {
-          "title": "Drive return visits with targeted redeemables",
-          "description": "Encourage repeat business with tailored redeemables. Set thresholds, like spending minimums, to trigger exclusive return offers that bring customers back, keeping them engaged and driving loyalty.",
-          "imageAlt": "Oddle Payment Terminal"
+        {
+          "title": "Dispute Management",
+          "description": "Handle chargebacks and disputes efficiently.",
+          "imageSrc": "https://placehold.co/300x200?text=Dispute+Management+HK"
         }
-      }
+      ]
     },
-    "operations": {
-      "tag":"",
-      "title": "Built for seamless operations",
-      "items": {
-        "0": {
-          "title": "Dedicated Customer Support",
-          "description": "Our team is always ready to help, ensuring your business stays up and running."
-        },
-        "1": {
-          "title": "48-hour Onboarding",
-          "description": "Get started with Oddle Terminal within 2 business days—quick, easy, and hassle-free."
-        },
-        "2": {
-          "title": "Reliable Connectivity Anywhere",
-          "description": "With an sim in every device, enjoy stable internet for transactions, even in remote locations."
-        }
-      }
-    }
-  },
-  "products": {
-    "reservation-system": {
-      "title": "Reservation",
-      "desc": "Accept reservations to capture future demand"
-    },
-    "online-ordering-system": {
-      "title": "Online Ordering",
-      "desc": "Sell online and reach more customers"
-    },
-    "loyalty-program": {
-      "title": "Loyalty",
-      "desc": "Capture every customer and turn them into repeat"
-    },
-    "payment-terminal": {
-      "title": "Payment Terminal",
-      "desc": "Accept in-person payments with no annual fees or lock-ins"
-    },
-    "virtual-lounge": {
-      "title": "Virtual Lounge",
-      "desc": "Communicate your brand across all digital channels"
-    },
-    "survey-tool": {
-      "title": "Survey",
-      "desc": "Automated surveys that boosts your brand's visibility"
-    },
-    "email-marketing-system": {
-      "title": "Marketing Engine",
-      "desc": "Boost revenue through customer engagement and retention"
-    },
-    "crm-customer-intelligence": {
-      "title": "Customer Intelligence",
-      "desc": "Supercharged CRM that gives you actionable insights"
-    },
-    "oddle-eats-network": {
-      "title": "Oddle Eats Network",
-      "desc": "Tap into a million food lovers"
-    },
-    "About Us": "About Us",
-    "actions": {
-      "getStarted": "Get started",
-      "contactSales": "Contact sales team",
-      "getStartedNow": "Get Started Now",
-      "seeLivePreview": "See Live Preview"
-    }
-  },
-  "reservationSystem": {
-    "hero": {
-      "title": "Stop Overpaying for Reservations - Break Free from Monthly Fees and High Commissions Costs",
-      "description": "Helping Restaurants Save More on Reservations While Driving More Sales, Every Day with Pricing that Makes Sense.",
-      "primaryButton": {
-        "text": "Request Demo"
-      },
-      "slides": {
-        "0": {
-          "imageAlt": "Reservation System UI"
-        },
-        "1": {
-          "imageAlt": "Table Management View"
-        }
-      },
-      "secondaryButton": {
-        "text": "Talk to Sales"
-      }
-    },
-    "affordableSection": {
-      "tag": "",
-      "title": "An Affordable Reservation System Without the Catch",
-      "description": "Most reservation systems cost you more than they give back. Oddle Reserve is different—no subscriptions, no hidden fees, just simple, usage-based pricing.",
-      "items": {
-        "0": {
-          "title": "Low-Cost, Usage-Based Pricing",
-          "description": "Only pay for the reservations you take."
-        },
-        "1": {
-          "title": "Grow Revenue With Every Booking",
-          "description": "Turn reservations into repeat visits with built-in customer engagement tools."
-        },
-        "2": {
-          "title": "Designed for Restaurants Like Yours:",
-          "description": "Tailored solutions for every stage of your business."
-        }
-      }
-    },
-    "useCases": {
-      "tag": "",
-      "title": "Built for Restaurants of Every Kind",
-      "description": "",
-      "items": {
-        "0": {
-          "title": "Traditional Restaurants Going Digital",
-          "description": "Facing digitalization challenges with the next generation stepping in, but hesitant about costly subscriptions? Oddle Reserve's pay-as-you-go model makes the transition seamless, eliminating steep monthly fees.",
-          "imageAlt": "Dim sum dishes on a table representing traditional restaurants"
-        },
-        "1": {
-          "title": "Restaurants With High Walk-Ins",
-          "description": "With many walk-ins and limited online reservations, managing big group bookings can be challenging. Oddle Reserve's usage-based pricing lets you pay only when you need it, making it an ideal solution for occasional but essential online reservations.",
-          "imageAlt": "Exterior of a soup restaurant representing high walk-in restaurants"
-        },
-        "2": {
-          "title": "Restaurants On High-Commission Marketplaces",
-          "description": "Paying expensive per cover to marketplaces that intercept direct bookings with ads can be frustrating. Oddle Reserve removes commissions and charges only per booking—not per cover—giving you back control of your reservations.",
-          "imageAlt": "Interior of a PizzaExpress restaurant representing restaurants on marketplaces"
-        }
-      }
-    },
-    "operations": {
-      "tag": "",
-      "title": "",
-      "description": "",
-      "items": {
-        "0": {
-          "title": "List View",
-          "description": "Get a clear overview of all your reservations at a glance.",
-          "imageAlt": "List View"
-        },
-        "1": {
-          "title": "Timeline View",
-          "description": "Visualize your bookings chronologically for better planning.",
-          "imageAlt": "Timeline View"
-        },
-        "2": {
-          "title": "Table View",
-          "description": "Manage table assignments and statuses efficiently.",
-          "imageAlt": "Table View"
-        },
-        "3": {
-          "title": "Mobile View",
-          "description": "Access and manage reservations on the go from any device.",
-          "imageAlt": "Mobile View"
-        }
-      }
-    },
-    "system": {
-      "tag": "",
-      "title": "Secure and Reliable Reservation Booking System",
-      "description": "Ensure serious bookings and minimize no-shows with built-in safeguards.",
-      "items": {
-        "0": {
-          "title": "Secure and Reliable Reservation Booking System",
-          "description": "Ensure serious bookings and minimize no-shows with built-in safeguards.",
-          "imageAlt": "Credit card guarantee",
-          "item1": "Card Guarantee: Secure reservations with credit card guarantees to reduce cancellations.",
-          "item2": "Payment Request: Collect deposits or full payments upfront for high-value or busy periods.",
-          "item3": "Automated Customer Confirmation: Confirm reservations automatically to save time and reduce manual work."
-        },
-        "1": {
-          "title": "Customer-Friendly Features",
-          "description": "Enhance the guest experience with convenient and flexible options.",
-          "imageAlt": "Payment request",
-          "item1": "Guest Self-Edit Reservations: Allow guests to change or cancel bookings without the need to call, creating a smoother experience.",
-          "item2": "Automated Status Management: Easily update and track reservation statuses with minimal effort, keeping your team aligned and operations seamless."
-        }
-      }
-    },
-    "growthEngine": {
-      "tag": "",
-      "title": "...Plus a Powerful Revenue Growth Engine",
-      "description": "Turn insights into action with tools that reward loyalty, re-engage lapsed diners, and convert delivery customers into repeat dine-in guests.",
-      "items": {
-        "0": {
-          "title": "Activate and Grow Sales",
-          "description": "Grow your customer database and build stronger relationships with tools that drive loyalty and repeat orders.",
-          "imageAlt": "Grow sales through engagement",
-          "item1": "Collect and analyze detailed insights into customer behavior, preferences, and order frequency.",
-          "item2": "Reward repeat customers, run targeted promotions, and re-engage lapsed diners with personalized campaigns.",
-          "item3": "Convert delivery customers into dine-in guests and keep them coming back with exclusive offers and tailored experiences."
-        }
-      }
-    }
-  },
-  "survey": {
-    "hero": {
-      "title": "Turn Feedback Into Fuel for Your Brand's Growth",
-      "description": "Automated surveys that power customer insights, enhance service, and boost your brand's visibility.",
-      "primaryButton": {
-        "text": "Get Free Demo"
-      },
-      "secondaryButton": {
-        "text": "Talk to Sales"
-      },
-      "slides": {
-        "0": {
-          "imageAlt": "Oddle Survey Tool Interface"
-        }
-      }
-    },
-    "features": {
-      "tag": "",
-      "title": "Automated and proactive surveys built into every touchpoint",
-      "description": "Whether customers reserve a table, place an order, or check in for loyalty rewards, they're automatically sent a survey after their visit.",
-      "items": {
-        "0": {
-          "title": "Automated and proactive surveys built into every touchpoint",
-          "description": "Whether customers reserve a table, place an order, or check in for loyalty rewards, they're automatically sent a survey after their visit.",
-          "imageAlt": "Diagram showing survey triggers"
-        },
-        "1": {
-          "title": "Your Fans Hold the Key to a Stronger Brand",
-          "description": "Turn happy diners into brand advocates by prompting them to leave reviews on Google. Improve your online reputation, rank higher in search results and attract new customers organically.",
-          "imageAlt": "Illustration of positive Google reviews"
-        },
-        "2": {
-          "title": "Data you can act on",
-          "description": "Access all survey data in one place to uncover trends, resolve issues and optimise customer retention strategies.",
-          "imageAlt": "Dashboard showing survey results and trends"
-        }
+    "footer": {
+      "title": "Simplify your payment processing with Oddle.",
+      "button": {
+        "text": "Contact Us",
+        "link": "/contact-sales"
       }
     }
   },
   "virtualLounge": {
     "hero": {
-      "title": "Showcase Your Brand Online with Oddle's Virtual Lounge",
-      "description": "Create a branded digital space to engage customers, showcase your menu, and drive both online and in-person visits.",
-      "primaryButton": {
-        "text": "Get Free Demo"
-      },
-      "secondaryButton": {
-        "text": "Talk to Sales"
-      },
-      "slides": {
-        "0": {
-          "imageAlt": "Phone showing Oddle Virtual Lounge UI"
-        }
+      "title": "Efficient Waitlist & Table Management",
+      "subtitle": "Optimize your seating, reduce wait times, and keep your guests happy with Virtual Lounge.",
+      "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/1R8xG8E0U8c8s0o8Q4w4S2/e5d4c1b9a3c7e8c0c7b5a4e3c0d1c3e1/Virtual_Lounge_Hero_Banner.png",
+      "button": {
+        "text": "See It In Action",
+        "link": "#demo"
       }
     },
     "details": {
-      "tag": "",
-      "title": "",
-      "description": "",
-      "items": {
-        "0": {
-          "title": "Showcase Your Restaurant's Personality",
-          "description": "Create a branded digital space that tells your story, showcases your menu, and highlights promotions",
-          "imageAlt": "Phone showing social media interactions"
+      "title": "Manage Your Floor with Precision",
+      "items": [
+        {
+          "title": "Digital Waitlist",
+          "description": "Allow guests to join the waitlist remotely or in-person.",
+          "imageSrc": "https://placehold.co/300x200?text=Digital+Waitlist+HK"
         },
-        "1": {
-          "title": "Connect with Customers Anywhere",
-          "description": "Engage diners whether they are looking to book a table, order delivery, or browse your offerings online.",
-          "imageAlt": "Phone showing email signup form in virtual lounge"
+        {
+          "title": "Automated Notifications",
+          "description": "Keep guests informed about their table status via SMS.",
+          "imageSrc": "https://placehold.co/300x200?text=Automated+Notifications+HK"
         },
-        "2": {
-          "title": "Create a Seamless Customer Experience",
-          "description": "Integrate your delivery, reservations, and loyalty systems for a unified experience that delights your customers",
-          "imageAlt": "Phone showing integrated loyalty and ordering UI"
+        {
+          "title": "Table Status Overview",
+          "description": "Get a real-time view of your restaurant's seating capacity.",
+          "imageSrc": "https://placehold.co/300x200?text=Table+Status+HK"
+        },
+        {
+          "title": "Quote Time Accuracy",
+          "description": "Provide accurate wait time estimates to manage guest expectations.",
+          "imageSrc": "https://placehold.co/300x200?text=Quote+Time+Accuracy+HK"
         }
+      ]
+    },
+    "benefits": {
+      "title": "Benefits for Your Restaurant",
+      "items": [
+        {
+          "title": "Reduced Walkaways",
+          "description": "Keep guests engaged and minimize lost business.",
+          "imageSrc": "https://placehold.co/300x200?text=Reduced+Walkaways+HK"
+        },
+        {
+          "title": "Improved Staff Efficiency",
+          "description": "Automate waitlist management and free up your hosts.",
+          "imageSrc": "https://placehold.co/300x200?text=Improved+Efficiency+HK"
+        },
+        {
+          "title": "Enhanced Guest Satisfaction",
+          "description": "Provide a smooth and transparent waiting experience.",
+          "imageSrc": "https://placehold.co/300x200?text=Guest+Satisfaction+HK"
+        },
+        {
+          "title": "Data-Driven Insights",
+          "description": "Understand your peak hours and optimize staffing.",
+          "imageSrc": "https://placehold.co/300x200?text=Data+Insights+HK"
+        }
+      ]
+    },
+    "footer": {
+      "title": "Ready to eliminate queues and delight your diners?",
+      "button": {
+        "text": "Request a Demo",
+        "link": "/contact-sales"
       }
     }
   },
-  "resources": {
-    "blog": {
-      "title": "Blog",
-      "desc": ""
+  "survey": {
+    "hero": {
+      "title": "Gather Valuable Customer Feedback",
+      "subtitle": "Understand your guests' experiences and make data-driven decisions with our integrated survey tool.",
+      "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/3y8xG8E0U8c8s0o8Q4w4S2/e5d4c1b9a3c7e8c0c7b5a4e3c0d1c3e1/Survey_Hero_Banner.png",
+      "button": {
+        "text": "Learn How",
+        "link": "#features"
+      }
     },
-    "customer-stories": {
-      "title": "Customer Stories",
-      "desc": ""
+    "features": {
+      "title": "Unlock Actionable Insights",
+      "items": [
+        {
+          "title": "Customizable Surveys",
+          "description": "Create surveys tailored to your specific needs and branding.",
+          "imageSrc": "https://placehold.co/300x200?text=Customizable+Surveys+HK"
+        },
+        {
+          "title": "Automated Distribution",
+          "description": "Send surveys automatically after a guest's visit or order.",
+          "imageSrc": "https://placehold.co/300x200?text=Automated+Distribution+HK"
+        },
+        {
+          "title": "Real-time Feedback",
+          "description": "Monitor responses as they come in and identify trends.",
+          "imageSrc": "https://placehold.co/300x200?text=Real-time+Feedback+HK"
+        },
+        {
+          "title": "Sentiment Analysis",
+          "description": "Quickly understand overall guest satisfaction and pinpoint areas for improvement.",
+          "imageSrc": "https://placehold.co/300x200?text=Sentiment+Analysis+HK"
+        }
+      ]
     },
-    "comparison": {
-      "title": "Comparison",
-      "desc": ""
+    "howToUse": {
+      "title": "How to Leverage Survey Data",
+      "items": [
+        {
+          "title": "Improve Service Quality",
+          "description": "Identify staff training needs and enhance operational processes.",
+          "imageSrc": "https://placehold.co/300x200?text=Improve+Service+HK"
+        },
+        {
+          "title": "Refine Menu Offerings",
+          "description": "Gather feedback on dishes and discover new customer preferences.",
+          "imageSrc": "https://placehold.co/300x200?text=Refine+Menu+HK"
+        },
+        {
+          "title": "Boost Customer Loyalty",
+          "description": "Address concerns promptly and show guests you value their input.",
+          "imageSrc": "https://placehold.co/300x200?text=Boost+Loyalty+HK"
+        },
+        {
+          "title": "Make Informed Business Decisions",
+          "description": "Use data to guide your marketing strategies and investments.",
+          "imageSrc": "https://placehold.co/300x200?text=Informed+Decisions+HK"
+        }
+      ]
     },
-    "about-us": {
-      "title": "About Us ",
-      "desc": ""
-    },
-    "help-center": {
-      "title": "Help Center",
-      "desc": ""
-    },
-    "singapore-influencer-list": {
-      "title": "Build your business with Singapore Influencer List",
-      "desc": "Get Access"
+    "footer": {
+      "title": "Start collecting valuable feedback today.",
+      "button": {
+        "text": "Get Started",
+        "link": "/contact-sales"
+      }
     }
   },
   "crmCustomerIntelligence": {
     "hero": {
-      "title": "Restaurant CRM & Customer Intelligence",
-      "description": "Unlock actionable insights from your customer data.",
-      "primaryButton": { "text": "Get Free Demo" },
-      "secondaryButton": { "text": "Talk to Sales" },
-      "slides": {
-        "0": { "imageAlt": "Restaurant CRM & Customer Intelligence Carousel Image" }
+      "title": "Build Stronger Customer Relationships",
+      "subtitle": "Leverage data to understand your guests, personalize their experiences, and drive loyalty.",
+      "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/5bXjQh7Y4x0kY4K0gY4C4U/b1d0c3c6c1d6a3c1e5e3b2c8b9f7d5e7/CRM_Hero_Banner.png",
+      "button": {
+        "text": "Discover More",
+        "link": "#features"
       }
     },
     "missingAnswers": {
-      "tag": "Marketing Intelligence",
-      "title": "The answers you've been missing from your CRM.",
-      "description": "Say goodbye to guesswork and hello to actionable answers - Uncover valuable insights from your own customer data and make informed decisions with confidence.",
-      "items": {
-        "0": {
-          "title": "Discover, Segment, Target",
-          "description": "Unlock the insights you need to power your marketing strategy. Discover your customer breakdown and target the right segment with the right message.",
-          "imageAlt": "Store owners analyzing data on laptop"
+      "title": "Unlock the Power of Your Customer Data",
+      "items": [
+        {
+          "title": "Unified Customer Profiles",
+          "description": "Get a 360-degree view of each guest, including their order history, preferences, and feedback.",
+          "imageSrc": "https://placehold.co/300x200?text=Unified+Profiles+HK"
         },
-        "1": {
-          "title": "Complete customer data at your fingertips",
-          "description": "Dive into comprehensive customer data, spanning from transaction history across deliveries, reservations, survey results and even their interactions with your digital touchpoints.",
-          "imageAlt": "Visualizing customer data on a digital interface"
+        {
+          "title": "Automated Segmentation",
+          "description": "Group customers based on their behavior and demographics for targeted marketing.",
+          "imageSrc": "https://placehold.co/300x200?text=Automated+Segmentation+HK"
         }
-      }
+      ]
     },
     "guestFeatures": {
-      "tag": "Operational Intelligence",
-      "title": "Be the smartest host, turn every reservation into a connection",
-      "description": "Oddle collects all your data in one convenient location, making it easy to access information on dietary requirements, guest visits, and interactions across different outlets. With just one click, you can view a comprehensive guest history that helps you better understand and serve your customers.",
-      "items": {
-        "0": {
-          "title": "Know your guests",
-          "description": "Visits, takeaway orders, allergens, and dining preferences—Oddle helps you know each guest personally.",
-          "imageAlt": "Know your guests example"
+      "title": "Personalize Every Interaction",
+      "items": [
+        {
+          "title": "Targeted Marketing Campaigns",
+          "description": "Send relevant promotions and offers to specific customer segments.",
+          "imageSrc": "https://placehold.co/300x200?text=Targeted+Marketing+HK"
         },
-        "1": {
-          "title": "Spot loyal customers",
-          "description": "Have all your guest insights at the tip of your fingers to turn your ground team into a super host.",
-          "imageAlt": "Spot loyal customers example"
+        {
+          "title": "Loyalty Programs",
+          "description": "Reward your best customers and encourage repeat business.",
+          "imageSrc": "https://placehold.co/300x200?text=Loyalty+Programs+HK"
+        },
+        {
+          "title": "Personalized Recommendations",
+          "description": "Suggest dishes and upsell items based on past orders and preferences.",
+          "imageSrc": "https://placehold.co/300x200?text=Personalized+Recs+HK"
         }
-      }
+      ]
     },
-    "personalizedMarketing": {
-      "tag": "Personalised Marketing at Scale",
-      "title": "Transition from analysis to action right away. Launch personalised marketing with ease.",
-      "description": "Launch personalised marketing campaigns effortlessly to your target audiences directly from the platform. No need for cumbersome data exports—simply leverage your customer data to select the right audience and launch your campaigns seamlessly.",
-      "items": {
-        "0": {
-          "title": "Targeted email broadcasts",
-          "description": "Launch email campaigns to data-driven customer segments with our integrated email marketing tool.",
-          "imageAlt": "Email marketing campaign examples"
-        },
-        "1": {
-          "title": "Real-time Automation",
-          "description": "Engage customers effortlessly whenever they take an action.",
-          "imageAlt": "Real-time automation examples"
-        },
-        "2": {
-          "title": "Post dine-in surveys",
-          "description": "Build a foundation of 5-star Google reviews to attract new customers and strengthen your online reputation.",
-          "imageAlt": "Customer leaving a review on phone"
-        }
+    "footer": {
+      "title": "Turn data into loyal customers.",
+      "button": {
+        "text": "Request a Consultation",
+        "link": "/contact-sales"
       }
     }
   },
-  "error": {
+  "loyaltyCrm": {
+    "hero": {
+      "slides": [
+        {
+          "title": "Drive Repeat Business with Loyalty Programs",
+          "description": "Reward your customers and keep them coming back for more with customizable loyalty solutions.",
+          "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/6y6xT2Q8Y6W0c4wS2C2g0k/a8d7c3e0c7b5a4e3c0d1c3e1c6b7e9c8/Loyalty_CRM_Hero_1.png",
+          "button": {
+            "text": "Explore Loyalty Features",
+            "link": "#loyalty-features"
+          }
+        },
+        {
+          "title": "Understand Your Customers Deeply",
+          "description": "Gain actionable insights from your customer data to personalize experiences and build lasting relationships.",
+          "imageSrc": "https://images.ctfassets.net/p3s2fz3v5n9x/7a3sS8Q2I4s8c4A8g8G8Yk/c1e1c5c7b9c5a3d7e8c0c7c3c5d8e6f4/Loyalty_CRM_Hero_2.png",
+          "button": {
+            "text": "Learn About CRM",
+            "link": "#crm-features"
+          }
+        }
+      ]
+    },
+    "loyaltyFeatures": {
+      "title": "Flexible Loyalty Program Options",
+      "items": [
+        {
+          "icon": "Star",
+          "title": "Points-Based System",
+          "description": "Customers earn points for every dollar spent, redeemable for rewards."
+        },
+        {
+          "icon": "Gift",
+          "title": "Tiered Memberships",
+          "description": "Offer exclusive benefits and perks for different loyalty tiers."
+        },
+        {
+          "icon": "Users",
+          "title": "Referral Programs",
+          "description": "Incentivize customers to spread the word about your brand."
+        },
+        {
+          "icon": "Calendar",
+          "title": "Birthday Rewards",
+          "description": "Delight customers with special treats on their birthday."
+        }
+      ]
+    },
+    "crmFeatures": {
+      "title": "Powerful CRM Capabilities",
+      "items": [
+        {
+          "icon": "Database",
+          "title": "Comprehensive Customer Database",
+          "description": "Store and manage all your customer information in one place."
+        },
+        {
+          "icon": "Users",
+          "title": "Customer Segmentation",
+          "description": "Group customers based on demographics, purchase history, and engagement."
+        },
+        {
+          "icon": "Mail",
+          "title": "Targeted Email Marketing",
+          "description": "Send personalized email campaigns to specific customer segments."
+        },
+        {
+          "icon": "BarChart",
+          "title": "Analytics & Reporting",
+          "description": "Track key metrics and measure the success of your loyalty and CRM efforts."
+        }
+      ]
+    },
+    "benefits": {
+      "title": "Why Invest in Loyalty & CRM?",
+      "items": [
+        {
+          "title": "Increased Customer Retention",
+          "description": "Keep your existing customers happy and loyal."
+        },
+        {
+          "title": "Higher Customer Lifetime Value",
+          "description": "Encourage repeat purchases and increase spending per customer."
+        },
+        {
+          "title": "Improved Customer Engagement",
+          "description": "Build stronger relationships and foster brand advocacy."
+        },
+        {
+          "title": "Data-Driven Decision Making",
+          "description": "Use customer insights to optimize your marketing and operations."
+        }
+      ]
+    },
+    "footer": {
+      "title": "Ready to build a loyal customer base?",
+      "button": {
+        "text": "Get Started with Loyalty & CRM",
+        "link": "/contact-sales"
+      }
+    }
   },
-  "notFound": {
+  "page": {
+    "notFound": {
+      "title": "Page Not Found",
+      "description": "Sorry, we couldn't find the page you're looking for.",
+      "button": {
+        "text": "Go to Homepage",
+        "link": "/"
+      }
+    }
+  },
+  "contactSales": {
+    "hero": {
+      "title": "Let's Talk About Your Business",
+      "subtitle": "Fill out the form below and one of our specialists will get in touch with you shortly to discuss how Oddle can help your F&B business thrive."
+    },
+    "form": {
+      "firstName": {
+        "label": "First Name",
+        "placeholder": "Enter your first name"
+      },
+      "lastName": {
+        "label": "Last Name",
+        "placeholder": "Enter your last name"
+      },
+      "email": {
+        "label": "Email Address",
+        "placeholder": "Enter your email address"
+      },
+      "phone": {
+        "label": "Phone Number",
+        "placeholder": "Enter your phone number"
+      },
+      "companyName": {
+        "label": "Company Name",
+        "placeholder": "Enter your company name"
+      },
+      "country": {
+        "label": "Country",
+        "placeholder": "Select your country"
+      },
+      "enquiry": {
+        "label": "What can we help you with?",
+        "placeholder": "Tell us about your needs..."
+      },
+      "submitButton": {
+        "text": "Submit Enquiry"
+      },
+      "successMessage": "Thank you for your enquiry! We will get back to you soon.",
+      "errorMessage": "Something went wrong. Please try again.",
+      "contactPath": "/api/contact"
+    },
+    "contactInfo": {
+      "title": "Or, Reach Us Directly",
+      "email": "sales@oddle.me",
+      "phone": "+852 0000 0000"
+    },
+    "benefits": {
+      "title": "Why Choose Oddle?",
+      "items": [
+        {
+          "icon": "DollarSign",
+          "title": "Increase Revenue",
+          "description": "Drive more direct orders and reduce reliance on third-party platforms."
+        },
+        {
+          "icon": "Users",
+          "title": "Own Your Customers",
+          "description": "Build direct relationships and access valuable customer data."
+        },
+        {
+          "icon": "Zap",
+          "title": "Streamline Operations",
+          "description": "Simplify order management, reservations, and payments."
+        },
+        {
+          "icon": "Globe",
+          "title": "Grow Your Brand",
+          "description": "Enhance your online presence and reach a wider audience."
+        }
+      ]
+    }
+  },
+  "pricingPage": {
+    "hero": {
+      "title": "Transparent Pricing, Powerful Solutions",
+      "description": "Choose the plan that best fits your restaurant's needs and budget. No hidden fees, just straightforward pricing for industry-leading tools.",
+      "imageAlt": "Abstract representation of pricing tiers"
+    },
+    "plans": {
+      "title": "Find Your Perfect Fit",
+      "annualBillingDiscount": "Save up to 20% with annual billing",
+      "planDetails": [
+        {
+          "name": "Essential",
+          "priceMonthly": "388",
+          "priceAnnually": "308",
+          "currency": "HKD",
+          "description": "For new restaurants getting started with online ordering and basic management.",
+          "features": [
+            "Online Ordering System",
+            "Basic Reservation Tools",
+            "Customer Database",
+            "Standard Support"
+          ],
+          "buttonText": "Get Started with Essential"
+        },
+        {
+          "name": "Growth",
+          "priceMonthly": "788",
+          "priceAnnually": "628",
+          "currency": "HKD",
+          "description": "For growing restaurants looking to optimize operations and engage customers.",
+          "features": [
+            "All Essential Features",
+            "Advanced Reservation System",
+            "CRM & Marketing Tools",
+            "Table Management",
+            "Priority Support"
+          ],
+          "buttonText": "Choose Growth Plan",
+          "popular": true
+        },
+        {
+          "name": "Pro",
+          "priceMonthly": "1588",
+          "priceAnnually": "1268",
+          "currency": "HKD",
+          "description": "For established restaurants needing comprehensive solutions and premium support.",
+          "features": [
+            "All Growth Features",
+            "Advanced Analytics & Reporting",
+            "Customizable Branding",
+            "API Access",
+            "Dedicated Account Manager"
+          ],
+          "buttonText": "Opt for Pro Plan"
+        }
+      ]
+    },
+    "addOns": {
+      "title": "Enhance Your Plan with Add-ons",
+      "items": [
+        {
+          "name": "Advanced Marketing Suite",
+          "description": "Unlock powerful tools for targeted campaigns, automation, and deeper customer insights.",
+          "price": "228 HKD/month"
+        },
+        {
+          "name": "Loyalty Program Module",
+          "description": "Implement customizable loyalty programs to reward customers and drive repeat business.",
+          "price": "298 HKD/month"
+        },
+        {
+          "name": "Premium Integrations Pack",
+          "description": "Seamlessly connect with a wider range of third-party accounting, POS, and delivery services.",
+          "price": "388 HKD/month"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "Is there a free trial available?",
+          "answer": "Yes, we offer a 14-day free trial for our Growth plan. No credit card required to get started."
+        },
+        {
+          "question": "Can I change my plan later?",
+          "answer": "Absolutely! You can upgrade or downgrade your plan at any time to suit your evolving business needs."
+        },
+        {
+          "question": "What payment methods do you accept?",
+          "answer": "We accept all major credit cards. For annual subscriptions, we can also arrange bank transfers."
+        },
+        {
+          "question": "Are there any setup fees?",
+          "answer": "No, there are no setup fees for any of our standard plans. We believe in transparent pricing."
+        },
+        {
+          "question": "What kind of support is included?",
+          "answer": "All plans come with standard email support. Growth and Pro plans include priority support and dedicated account management respectively."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Still Have Questions or Need a Custom Solution?",
+      "description": "Our team is here to help. Contact us for a personalized consultation to discuss your specific requirements.",
+      "buttonText": "Contact Sales"
+    }
   }
 }
