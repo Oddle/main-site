@@ -51,21 +51,26 @@ export default getRequestConfig(async ({ requestLocale }) => {
     fallbackMessages = await loadMessages(fallbackLocale);
   }
 
-  // Start with an empty object
+  // Define the array merge strategy to overwrite arrays from the source (localeMessages)
+  const overwriteMerge = (destinationArray: any[], sourceArray: any[], options?: deepmerge.Options): any[] => sourceArray;
+
   let messages = {};
 
-  // Add fallback messages first (if they loaded)
+  // Start with fallback messages if they exist and were loaded
   if (fallbackMessages) {
-      messages = deepmerge(messages, fallbackMessages);
+    messages = fallbackMessages; // Initialize with fallback messages
   } else if (locale !== fallbackLocale) {
-      console.warn(`Could not load fallback messages for locale: ${fallbackLocale}`);
+    // This warning is if fallbackMessages is null after attempting to load
+    console.warn(`Could not load fallback messages for locale: ${fallbackLocale}. No fallback will be used.`);
   }
 
-  // Add current locale messages, overriding fallback where keys overlap
+  // Merge current locale messages. If localeMessages exist, they will overwrite fallbackMessages,
+  // including arrays, thanks to overwriteMerge.
+  // If localeMessages are null (failed to load), messages will remain as fallbackMessages (or empty).
   if (localeMessages) {
-      messages = deepmerge(messages, localeMessages);
+    messages = deepmerge(messages, localeMessages, { arrayMerge: overwriteMerge });
   } else {
-      console.error(`FAILED to load messages for locale: ${locale}. Only fallback messages (if any) will be available.`);
+    console.error(`FAILED to load messages for locale: ${locale}. Only fallback messages (if any) will be available.`);
   }
   
   return {

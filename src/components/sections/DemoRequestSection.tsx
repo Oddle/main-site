@@ -20,11 +20,9 @@ export default function DemoRequestSection({ i18nBaseKey, locale }: DemoRequestS
   const title = getTranslation(t, 'title', 'See the Platform in Action');
   const description = getTranslation(t, 'description', 'Get a personalized demo tailored to your restaurant needs.');
   const expectTitle = getTranslation(t, 'expectTitle', 'What you can expect:');
-  const expectItems = t.raw('expectItems') as string[] || [
-    'Detailed product presentation tailored to you',
-    'Consulting on your specific challenges',
-    'Answers to all the questions you have',
-  ];
+  const rawExpectItems = t.raw('expectItems');
+  // console.log('[DemoRequestSection] rawExpectItems for locale ', locale, ':', JSON.stringify(rawExpectItems));
+  const expectItems = Array.isArray(rawExpectItems) ? rawExpectItems : [];
 
   return (
     <section className="relative py-24 lg:py-32">

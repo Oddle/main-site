@@ -2,7 +2,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { jsonLdScriptProps } from "react-schemaorg";
 import { WebSite } from "schema-dts";
@@ -106,6 +106,11 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export async function generateMetadata({
   params,
 }: Props): Promise<Metadata> {
@@ -136,10 +141,6 @@ export async function generateMetadata({
     metadataBase: baseUrl, // Restored metadataBase
     title: t("title"),
     description: t("description"),
-    viewport: {
-      width: 'device-width',
-      initialScale: 1,
-    },
     icons: {
       apple: appleIconUrl,
     },

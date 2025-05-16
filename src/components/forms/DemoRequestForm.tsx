@@ -226,7 +226,7 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
             render={({ field }) => (
             <FormItem>
                 {/* <FormLabel>{t('roleLabel')}</FormLabel> */}
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <Select onValueChange={field.onChange} value={field.value}>
                 <FormControl>
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder={t('rolePlaceholder')} />
@@ -348,7 +348,7 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
             render={({ field }) => (
             <FormItem>
               {/* <FormLabel>{t('sourceLabel')}</FormLabel> */}
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+              <Select onValueChange={field.onChange} value={field.value}>
                 <FormControl>
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder={t('sourcePlaceholder')} />
@@ -374,13 +374,18 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
           </div>
 
         {isSubmitSuccessful ? (
-          <Button 
-            type="button" 
-            className="w-full cursor-pointer"
-            onClick={handleResetFormForNewSubmission}
-          >
-            {t('submitAnotherButtonText') || 'Submit Another Response'} 
-          </Button>
+          <div className="text-center space-y-4"> {/* Container for success message and button */}
+            <p className="text-green-600 font-semibold"> {/* Success message styling */}
+              {t('submitSuccessShort') || 'Submitted!'}
+            </p>
+            <Button 
+              type="button" 
+              className="w-full cursor-pointer"
+              onClick={handleResetFormForNewSubmission}
+            >
+              {t('submitAnotherButtonText') || 'Submit Another Response'} 
+            </Button>
+          </div>
         ) : (
           <Button 
             type="submit" 
