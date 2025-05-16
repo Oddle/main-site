@@ -72,6 +72,7 @@
         "submitButtonText": "Book Free Demo",
         "submitting": "Booking...",
         "submitSuccess": "Demo requested successfully! We'll be in touch soon.",
+        "submitAnotherButtonText": "Book Another Demo",
         "submitError": "Failed to submit request. Please try again later.",
         "submitSuccessShort": "Submitted!",
         "consent": "By providing us with your information you are consenting to the collection and use of your information in accordance with our <terms>Terms of Service</terms> and <privacy>Privacy Policy</privacy>."

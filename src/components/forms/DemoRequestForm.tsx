@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -10,7 +10,8 @@ import Link from 'next/link';
 import PhoneInputWithCountrySelect from 'react-phone-number-input/react-hook-form';
 import { isValidPhoneNumber } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css'; // Import styles for phone input
-import { useState } from 'react'; // For success state
+import { Loader2, MessageSquare } from "lucide-react"; // For loading/success state and MessageSquare
+import ChatRedirectLink from "@/components/common/ChatRedirectLink"; // Import the chat link
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -29,7 +30,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { toast } from "sonner";
-import { Loader2, Check } from "lucide-react"; // For loading/success state
 
 // Declare fbq as a global function for TypeScript
 declare global {
@@ -39,7 +39,7 @@ declare global {
   }
 }
 
-// Revert Zod schema to original fields
+// Updated Zod schema
 const formSchema = z.object({
   role: z.string().min(1, { message: "Please select your role." }),
   firstName: z.string().min(1, { message: "First name is required." }),
@@ -49,8 +49,12 @@ const formSchema = z.object({
            .or(z.literal('')), // Allow empty or valid
   email: z.string().email({ message: "Invalid email address." }),
   restaurantName: z.string().min(1, { message: "Restaurant name is required." }),
-  website: z.string().optional(), // Optional
+  website: z.string().optional(),
   source: z.string().min(1, { message: "Please select how you heard about us." }),
+  // New fields for webhook - updated schema for URL fields
+  currentUrl: z.string().url({message: "Invalid current URL"}).optional().or(z.literal('')),
+  pageUrl: z.string().url({message: "Invalid page URL"}).optional().or(z.literal('')),
+  referrer: z.string().url({message: "Invalid referrer URL"}).optional().or(z.literal('')),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -61,11 +65,22 @@ interface DemoRequestFormProps {
 
 export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
   const t = useTranslations(i18nBaseKey);
+  const tCommonButtons = useTranslations('common.buttons'); // For common button text
   const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
+  const [pageUrl, setPageUrl] = useState('');
+  const [initialReferrer, setInitialReferrer] = useState('');
+
+  useEffect(() => {
+    // Capture document.referrer when the component mounts
+    // This is the URL of the page that linked to the current page (where the form is)
+    setPageUrl(document.referrer); 
+    // For 'referrer' (original source like google.com), document.referrer on mount is a common starting point.
+    // True original referrer tracking across a session is more complex (e.g. using localStorage/cookies on first site visit).
+    setInitialReferrer(document.referrer);
+  }, []);
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
-    // Revert default values
     defaultValues: {
       role: "",
       firstName: "",
@@ -75,6 +90,9 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
       restaurantName: "",
       website: "",
       source: "",
+      currentUrl: "", // Will be populated on submit
+      pageUrl: "",    // Will be populated from state
+      referrer: "",   // Will be populated from state
     },
   });
 
@@ -82,34 +100,45 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
     formState: { isSubmitting },
     handleSubmit,
     reset,
+    setValue, // Added setValue
   } = form;
+
+  // Update defaultValues for pageUrl and initialReferrer once captured
+  useEffect(() => {
+    if (pageUrl) setValue('pageUrl', pageUrl);
+    if (initialReferrer) setValue('referrer', initialReferrer);
+  }, [pageUrl, initialReferrer, setValue]);
 
   // Type helper for the options
   type TranslationOptions = Record<string, string>;
 
   // Function to safely get options
   const getOptionsFromRaw = (key: string): TranslationOptions => {
-    // Use unknown for the initial type, forcing checks
     const rawValue: unknown = t.raw(key); 
     if (typeof rawValue === 'object' && rawValue !== null && !Array.isArray(rawValue)) {
-      // If type check passes, cast it to the expected type
       return rawValue as TranslationOptions;
     }
-    // Return empty object if it's not the expected object type
     return {};
   };
 
   const roleOptions = getOptionsFromRaw('roleOptions');
   const sourceOptions = getOptionsFromRaw('sourceOptions');
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async function onSubmit(values: FormData) {
     setIsSubmitSuccessful(false);
 
+    // Prepare data to send to the API
+    const dataToSend = {
+      ...values,
+      currentUrl: window.location.href, // Capture current URL at submission time
+      pageUrl: pageUrl,                 // Use captured pageUrl
+      referrer: initialReferrer,        // Use captured initialReferrer
+    };
+
     // --- Trigger Facebook Pixel Lead Event --- 
-    if (typeof window.fbq === 'function') { // Check window.fbq
+    if (typeof window.fbq === 'function') {
       try {
-        window.fbq('track', 'Lead'); // Call window.fbq
+        window.fbq('track', 'Lead');
         console.log("Facebook Pixel: Lead event triggered for DemoRequestForm.");
       } catch (error) {
         console.error("Error triggering Facebook Pixel event:", error);
@@ -119,20 +148,71 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
     }
     // -------------------------------------------
 
-    // TODO: Replace with actual API call
-    await new Promise((resolve) => setTimeout(resolve, 1500)); // Simulate network delay
-
     try {
-      // --- Your API call logic here --- 
+      const response = await fetch('/api/submit-demo-request', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataToSend), // Send enriched data
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({ message: "An unknown error occurred during submission." }));
+        console.error("Submission Error:", errorData);
+        toast.error(errorData.message || t('submitError') || "Failed to submit request. Please try again.");
+        setIsSubmitSuccessful(false);
+        return; // Stop further execution on error
+      }
+
+      // const responseData = await response.json(); // If you need to use response data
       toast.success(t('submitSuccess') || "Demo requested successfully!");
       setIsSubmitSuccessful(true);
-      reset(); 
+      // reset({ // Reset with initial values including dynamically set ones if needed
+      //       role: "",
+      //       firstName: "",
+      //       lastName: "",
+      //       phone: "",
+      //       email: "",
+      //       restaurantName: "",
+      //       website: "",
+      //       source: "",
+      //       currentUrl: "", 
+      //       pageUrl: "", // Reset these as well
+      //       referrer: "",
+      // }); 
+      // Consider also resetting pageUrl and initialReferrer states if form can be re-submitted without page reload
+      // setPageUrl(''); 
+      // setInitialReferrer('');
+
     } catch (error) {
       console.error("Submission Error:", error);
       toast.error(t('submitError') || "Failed to submit request. Please try again.");
       setIsSubmitSuccessful(false);
     }
   }
+
+  const handleResetFormForNewSubmission = () => {
+    setIsSubmitSuccessful(false); // Allow new submissions
+    reset({ // Reset form to default values
+      role: "",
+      firstName: "",
+      lastName: "",
+      phone: "",
+      email: "",
+      restaurantName: "",
+      website: "",
+      source: "",
+      currentUrl: "", 
+      pageUrl: "",
+      referrer: "",
+    });
+    // Re-capture referrer for the new submission
+    const currentReferrer = document.referrer;
+    setPageUrl(currentReferrer);
+    setInitialReferrer(currentReferrer);
+    // The useEffect listening to pageUrl/initialReferrer will update form values
+  };
 
   return (
     <div className="relative w-full rounded-xl border border-border bg-background p-6 py-10 shadow-sm">
@@ -293,28 +373,50 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
            })}
           </div>
 
-        <Button 
-          type="submit" 
-          className="w-full" 
-            disabled={isSubmitting || isSubmitSuccessful}
-        >
-          {isSubmitSuccessful ? ( // Check success state first
-            <>
-              <Check className="mr-2 h-4 w-4" /> 
-                 {t('submitSuccessShort') || 'Submitted!'} 
-            </>
-             ) : isSubmitting ? (
-            <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                 {t('submitting') || 'Booking...'}
-            </>
-          ) : (
-               t('submitButtonText') || 'Book demo'
-          )}
-        </Button>
+        {isSubmitSuccessful ? (
+          <Button 
+            type="button" 
+            className="w-full cursor-pointer"
+            onClick={handleResetFormForNewSubmission}
+          >
+            {t('submitAnotherButtonText') || 'Submit Another Response'} 
+          </Button>
+        ) : (
+          <Button 
+            type="submit" 
+            className="w-full cursor-pointer"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                   {t('submitting') || 'Booking...'}
+              </>
+            ) : (
+                 t('submitButtonText') || 'Book demo'
+            )}
+          </Button>
+        )}
 
       </form>
     </Form>
+
+    {/* Talk to Sales Section */}
+    <div className="mt-12 pt-8 border-t border-border text-center">
+      <h4 className="text-lg font-semibold mb-2">
+        {t('talkToSalesSectionTitle') || "Got Questions? Let\'s Chat!"}
+      </h4>
+      <p className="text-muted-foreground mb-6 text-sm">
+        {t('talkToSalesSectionDescription') || "Have a few questions before booking a demo? Drop us a message and we\'ll help you out."}
+      </p>
+      <Button variant="outline" size="lg" asChild>
+        <ChatRedirectLink>
+          <MessageSquare className="mr-2 h-4 w-4" />
+          {tCommonButtons('talkToSales') || 'Talk to Sales'}
+        </ChatRedirectLink>
+      </Button>
+    </div>
+
     </div>
   );
 } 

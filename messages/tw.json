@@ -73,7 +73,10 @@
         "submitSuccess": "Demo已成功預約！我們將盡快與您聯繫。",
         "submitError": "提交請求失敗。請稍後再試。",
         "submitSuccessShort": "已提交！",
-        "consent": "提供您的資訊即表示您同意我們根據我們的<terms>服務條款</terms>和<privacy>隱私權政策</privacy>收集和使用您的資訊。"
+        "consent": "提供您的資訊即表示您同意我們根據我們的<terms>服務條款</terms>和<privacy>隱私權政策</privacy>收集和使用您的資訊。",
+        "submitAnotherButtonText": "提交另一份回覆",
+        "talkToSalesSectionTitle": "有任何疑問嗎？讓我們聊聊！",
+        "talkToSalesSectionDescription": "在預約產品Demo前有任何疑問嗎？請留言給我們，我們將協助您。"
       }
     }
   },
