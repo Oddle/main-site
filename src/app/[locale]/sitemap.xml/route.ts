@@ -90,9 +90,7 @@ export async function GET(
   });
 
   // --- Add Blog Post Entries --- 
-  console.log(`Fetching posts for sitemap, locale: ${locale}`);
   const posts: PostSummary[] = await getPublishedPosts(locale);
-  console.log(`Found ${posts.length} posts for sitemap.`);
 
   posts.forEach(post => {
     sitemapEntries.push({

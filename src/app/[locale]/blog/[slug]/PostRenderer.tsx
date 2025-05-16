@@ -309,7 +309,6 @@ function RenderBlock({ block, isHeaderRow }: RenderBlockProps): React.ReactNode 
       );
     }
     default: {
-      console.log(`Unsupported block type: ${type}`, block);
       return <div key={block.id} className="text-xs italic text-muted-foreground my-2">[Unsupported block type: {type}]</div>;
     }
   }

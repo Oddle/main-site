@@ -57,7 +57,6 @@ export default getRequestConfig(async ({ requestLocale }) => {
   // Add fallback messages first (if they loaded)
   if (fallbackMessages) {
       messages = deepmerge(messages, fallbackMessages);
-      console.log(`Loaded fallback messages from locale: ${fallbackLocale}`);
   } else if (locale !== fallbackLocale) {
       console.warn(`Could not load fallback messages for locale: ${fallbackLocale}`);
   }
@@ -65,11 +64,8 @@ export default getRequestConfig(async ({ requestLocale }) => {
   // Add current locale messages, overriding fallback where keys overlap
   if (localeMessages) {
       messages = deepmerge(messages, localeMessages);
-      console.log(`Loaded messages for locale: ${locale}`);
   } else {
       console.error(`FAILED to load messages for locale: ${locale}. Only fallback messages (if any) will be available.`);
-      // If primary fails AND fallback failed/wasn't loaded, messages remains empty 
-      // or just contains fallback. This ensures we don't error out immediately.
   }
   
   return {

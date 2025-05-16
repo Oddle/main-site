@@ -340,7 +340,7 @@
       }
     },
     "featureGrid": {
-      "title": "查看我們的使用指南，幫助您拓展餐廳事業",
+      "title": "",
       "description": "",
       "items": {
         "0": {
@@ -349,7 +349,7 @@
           "href": "/blog/topics/restaurant-reservation-guide",
           "image": {
             "alt": "Screenshot of reservation calendar",
-            "src": "https://ucarecdn.com/9bf21b09-12ae-4272-a4e8-240909c208c4/product_reserve_hero"
+            "src": ""
           }
         },
         "1": {
@@ -358,7 +358,7 @@
           "href": "/blog/topics/restaurant-online-ordering-guide",
           "image": {
             "alt": "Mobile phone showing online ordering menu",
-            "src": "https://ucarecdn.com/7f9cb7a3-a7d6-42d5-b225-5a4e2647d384/-/preview/400x400/"
+            "src": ""
           }
         },
         "2": {
@@ -367,7 +367,7 @@
           "href": "/blog/topics/restaurant-marketing-guide",
           "image": {
             "alt": "Dashboard showing customer analytics graphs",
-            "src": "https://ucarecdn.com/10483a24-988e-4f04-8c15-822473592b65/email_templates"
+            "src": ""
           }
         }
       }
@@ -716,8 +716,8 @@
     },
     "useCases": {
       "tag": "",
-      "title": "專為各類餐廳打造",
-      "description": "",
+      "title": "為各類餐廳設計",
+      "description": "無論您是從沒使用過訂位系統，還是想擺脫昂貴的年費，Oddle餐廳訂位系統都是為滿足您的需求而設計的。",
       "items": {
         "0": {
           "title": "傳統餐廳數位化",
@@ -741,8 +741,8 @@
     },
     "operations": {
       "tag": "",
-      "title": "預訂狀況一目了然",
-      "description": "",
+      "title": "簡化您的日常操作擁有各種視圖且能即時管理訂位。",
+      "description": "無論您是從沒使用過訂位系統，還是想擺脫昂貴的年費，Oddle餐廳訂位系統都是為滿足您的需求而設計的。",
       "items": {
         "0": {
           "title": "列表視圖",
@@ -837,19 +837,19 @@
           "title": "自動化且主動的問卷調查，內建於每個接觸點",
           "description": "無論顧客預訂餐桌、下訂單或登記忠誠度獎勵，他們都會在訪問後自動收到問卷調查。",
           "imageAlt": "Diagram showing survey triggers",
-          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Survey+Triggers+TW"
+          "imageSrc": ""
         },
         "1": {
           "title": "您的粉絲是強化品牌的關鍵",
           "description": "透過提示滿意的食客在 Google 上留下評論，將他們轉化為品牌代言人。改善您的線上聲譽，提高搜尋結果排名並有機地吸引新顧客。",
           "imageAlt": "Illustration of positive Google reviews",
-          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Google+Reviews+TW"
+          "imageSrc": ""
         },
         "2": {
           "title": "您可以據此行動的數據",
           "description": "在一個地方存取所有問卷調查數據，以發現趨勢、解決問題並優化顧客保留策略。",
           "imageAlt": "Dashboard showing survey results and trends",
-          "imageSrc": "https://placehold.co/800x600/EEE/31343C.png?text=Survey+Results+TW"
+          "imageSrc": ""
         }
       }
     }

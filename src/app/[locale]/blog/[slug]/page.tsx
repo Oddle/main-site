@@ -32,7 +32,6 @@ type PageProps = {
 
 // Generate static paths for all published posts across all locales
 export async function generateStaticParams() {
-  console.log("Generating static params for blog slugs...");
   const allParams: { locale: string; slug: string }[] = [];
   const uniquePostIdentifiers = new Set<string>(); // To avoid duplicates
 
@@ -42,8 +41,6 @@ export async function generateStaticParams() {
       
       // Ensure locale type matches expected type for getPublishedPosts if needed
       const posts = await getPublishedPosts(locale as typeof routing.locales[number]); 
-      console.log(`Fetched ${posts.length} posts for locale: ${locale}`);
-      console.log(`Fetching posts for locale: ${locale} in generateStaticParams`);
       posts.forEach((post) => {
         const identifier = `${locale}/${post.slug}`;
         if (!uniquePostIdentifiers.has(identifier)) {
@@ -57,7 +54,6 @@ export async function generateStaticParams() {
     })
   );
 
-  console.log(`Generated ${allParams.length} unique locale/slug combinations.`);
   return allParams;
 }
 
@@ -66,12 +62,9 @@ type PostDataType = { page: PageObjectResponse, blocks: BlockObjectResponse[] } 
 
 // Use the defined PageProps type again
 export default async function BlogPostPage({ params: paramsProp }: PageProps) {
-  console.log("--- Rendering /blog/[slug] page ---");
 
   // Await the params object
   const params = await paramsProp as { slug: string; locale: string; }; 
-  console.log("Awaited params:", params);
-
   // Runtime check for params structure (already added)
   if (typeof params !== 'object' || params === null || typeof params.slug !== 'string' || typeof params.locale !== 'string') {
     console.error("Invalid params structure after await:", params);
@@ -84,7 +77,6 @@ export default async function BlogPostPage({ params: paramsProp }: PageProps) {
     notFound();
   }
   
-  console.log(`Fetching data for slug: ${params.slug}`);
   const postData: PostDataType = await getPostBySlug(params.slug); 
 
   if (!postData || !postData.blocks || !postData.page) {
@@ -94,10 +86,6 @@ export default async function BlogPostPage({ params: paramsProp }: PageProps) {
 
   // Destructure page and blocks
   const { page, blocks } = postData;
-
-  // ----> ADD THIS LOG TO SEE THE RAW BLOCKS <----
-  console.log("--- Raw Notion Blocks Data for slug:", params.slug, "---\n", JSON.stringify(blocks, null, 2)); // Pretty-print JSON
-  // ---------------------------------------------
 
   // Extract properties using Record type for better safety
   const properties = page.properties as Record<string, PageObjectResponse['properties'][string]>;

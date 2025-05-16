@@ -69,18 +69,15 @@ export default async function CategoryTagPage({ params: paramsProp }: PageProps)
   const categoryDisplayName = getCategoryDisplayName(categorySlug);
   
   // 1. Fetch initial posts for the current locale (includes global)
-  console.log(`Fetching initial posts for category '${categorySlug}' in locale '${locale}'`);
   const initialLocalePosts: PostSummary[] = await getPublishedPosts(locale);
 
   // 2. Filter by category (compare hyphenated slugs)
   let postsToDisplay = initialLocalePosts.filter(post => 
     post.category?.toLowerCase().replace(/\s+/g, '-') === categorySlug
   );
-  console.log(`Found ${postsToDisplay.length} posts after initial category filter.`);
 
   // 3. Check if empty and not already the default locale
   if (postsToDisplay.length === 0 && locale !== 'sg') {
-    console.log(`No posts found for ${locale}/${categorySlug}. Falling back to locale 'sg'.`);
     // 4. Fetch fallback posts from default locale ('sg')
     const fallbackSgPosts: PostSummary[] = await getPublishedPosts('sg');
     
@@ -88,7 +85,6 @@ export default async function CategoryTagPage({ params: paramsProp }: PageProps)
     postsToDisplay = fallbackSgPosts.filter(post => 
       post.category?.toLowerCase().replace(/\s+/g, '-') === categorySlug
     );
-    console.log(`Found ${postsToDisplay.length} posts after fallback category filter.`);
   }
 
   // Prepare breadcrumb data

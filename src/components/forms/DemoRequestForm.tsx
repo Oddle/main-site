@@ -104,7 +104,6 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
 
   async function onSubmit(values: FormData) {
     setIsSubmitSuccessful(false);
-    console.log("Form Submitted:", values);
 
     // --- Trigger Facebook Pixel Lead Event --- 
     if (typeof window.fbq === 'function') { // Check window.fbq

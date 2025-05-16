@@ -72,7 +72,7 @@ export default function FeatureSectionWithGridImages({
           // Card content defined once
           const cardContent = (
             <div 
-              className="group relative isolate h-80 overflow-hidden rounded-2xl border border-border transition-transform duration-300 hover:-translate-y-1 block"
+              className="group relative isolate h-80 overflow-hidden rounded-2xl border border-border transition-transform duration-300 block"
             >
               {/* Background Image and Gradient only if itemImageSrc exists */}
               {itemImageSrc && (
@@ -82,7 +82,7 @@ export default function FeatureSectionWithGridImages({
                     alt={itemImageAlt}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="absolute inset-0 -z-20 size-full object-cover grayscale transition-all duration-300 group-hover:grayscale-0"
+                    className="absolute inset-0 -z-20 size-full object-cover transition-all duration-300 group-hover:scale-105"
                   />
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/75 via-black/50 to-transparent" />

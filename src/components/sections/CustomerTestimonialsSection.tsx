@@ -113,12 +113,6 @@ export default function CustomerTestimonialsSection({
                         </div>
                         <footer className="mt-6">
                           <div className="flex items-center">
-                            <div className="shrink-0 md:hidden">
-                              <Avatar className="size-12">
-                                <AvatarImage src={item.photo.src} alt={photoAlt} />
-                                <AvatarFallback>{fallbackName}</AvatarFallback>
-                              </Avatar>
-                            </div>
                             <div className="ms-4 md:ms-0">
                               <div className="text-base font-semibold">{name}</div>
                               <div className="text-xs text-muted-foreground">

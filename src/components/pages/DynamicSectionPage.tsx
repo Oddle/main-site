@@ -101,7 +101,6 @@ const DynamicSectionPage = ({ sectionsData, pageUrl, locale }: DynamicSectionPag
               // Render the actual section component within a try...catch
             const renderedSection = <DynamicComponent {...combinedProps} />;
               // Log success just before returning the element
-              console.log(`[DynamicSectionPage] Successfully prepared to render: ${section.component}`);
 
               // Wrap first section with animated grid
             if (index === 0) {

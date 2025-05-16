@@ -120,15 +120,11 @@ export async function generateMetadata({
 
   // --- Debugging Logs ---
   const calculatedCanonical = new URL(`/${locale}`, baseUrl).toString();
-  console.log(`[generateMetadata] Locale: ${locale}, Calculated Canonical: ${calculatedCanonical}`);
-  console.log(`[generateMetadata] routing.locales: ${JSON.stringify(routing.locales)}`);
-  console.log(`[generateMetadata] bcp47LangMap: ${JSON.stringify(bcp47LangMap)}`);
   // ---------------------
 
   const languagesOutput = routing.locales.reduce((acc, loc) => {
     const mappedHreflang = bcp47LangMap[loc] || loc;
     const absoluteHref = new URL(`/${loc}`, baseUrl).toString();
-    console.log(`[generateMetadata] lang reduce: loc='${loc}', mappedHreflang='${mappedHreflang}', absoluteHref='${absoluteHref}'`);
     acc[mappedHreflang] = absoluteHref;
     return acc;
   }, {} as Record<string, string>);

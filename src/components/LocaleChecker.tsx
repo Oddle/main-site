@@ -67,7 +67,6 @@ function LocaleChecker() {
 
     // ===== BOT DETECTION =====
     if (BOT_REGEX.test(navigator.userAgent)) {
-        console.log("Bot detected, skipping locale check dialog.");
         return; // Don't run checks or show dialog for bots
     }
     // =========================
