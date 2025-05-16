@@ -4,7 +4,7 @@ import { getTranslation } from '@/lib/i18nUtils';
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
@@ -86,10 +86,9 @@ export default function CustomerTestimonialsSection({
               const storyLink = item.storyLink;
               // Use specific button text or generate default
               const storyButtonText = item.storyLinkText || `See ${name}'s story`; 
-              const fallbackName = name.split(' ').map(n => n[0]).join('');
 
               return (
-                <CarouselItem key={index} className="pl-4 basis-full">
+                <Card key={index} className="h-full overflow-hidden border-none bg-transparent shadow-none">
                   <div className="md:grid md:grid-cols-5 md:items-center md:gap-10 lg:gap-16 bg-card p-6 md:p-8 lg:p-10 rounded-2xl border shadow-lg">
                     <div className="relative mb-10 md:mb-0 md:col-span-2">
                       <Image
@@ -150,7 +149,7 @@ export default function CustomerTestimonialsSection({
                       </blockquote>
                     </div>
                   </div>
-                </CarouselItem>
+                </Card>
               );
             })}
           </CarouselContent>
