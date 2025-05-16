@@ -102,6 +102,7 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
   const roleOptions = getOptionsFromRaw('roleOptions');
   const sourceOptions = getOptionsFromRaw('sourceOptions');
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async function onSubmit(values: FormData) {
     setIsSubmitSuccessful(false);
 
