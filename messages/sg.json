@@ -75,7 +75,10 @@
         "submitAnotherButtonText": "Book Another Demo",
         "submitError": "Failed to submit request. Please try again later.",
         "submitSuccessShort": "Submitted!",
-        "consent": "By providing us with your information you are consenting to the collection and use of your information in accordance with our <terms>Terms of Service</terms> and <privacy>Privacy Policy</privacy>."
+        "consent": "By providing us with your information you are consenting to the collection and use of your information in accordance with our <terms>Terms of Service</terms> and <privacy>Privacy Policy</privacy>.",
+        "talkToSalesSectionTitle": "Have questions? Let's chat!",
+        "talkToSalesSectionDescription": "Have a few questions before booking a demo? Send us a message and we'll help you out."
+      }
       }
     }
   },

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 // Assuming you might want the phone input again
 import PhoneInputWithCountrySelect from 'react-phone-number-input/react-hook-form';
@@ -66,6 +66,8 @@ interface DemoRequestFormProps {
 export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
   const t = useTranslations(i18nBaseKey);
   const tCommonButtons = useTranslations('common.buttons'); // For common button text
+  const tSalesSection = useTranslations('common.forms.demoRequest'); // For the talk to sales section
+  const locale = useLocale(); // Get current locale
   const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
   const [pageUrl, setPageUrl] = useState('');
   const [initialReferrer, setInitialReferrer] = useState('');
@@ -79,13 +81,33 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
     setInitialReferrer(document.referrer);
   }, []);
 
+  // Define phone prefix map
+  const localeToPhonePrefix: Record<string, string> = {
+    sg: '+65',
+    tw: '+886',
+    hk: '+852',
+    en: '+1',
+    my: '+60',
+  };
+  const defaultPhonePrefix = localeToPhonePrefix[locale] || '';
+
+  // Define locale to country code mapping for the flag
+  const localeToCountryCode: Record<string, string> = {
+    sg: 'SG',
+    tw: 'TW',
+    hk: 'HK',
+    en: 'US', // Default for 'en'
+    my: 'MY',
+  };
+  const currentCountryCode = localeToCountryCode[locale] || 'SG'; // Fallback to 'SG' or your primary default
+
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       role: "",
       firstName: "",
       lastName: "",
-      phone: "",
+      phone: defaultPhonePrefix, // Set locale-based default phone prefix
       email: "",
       restaurantName: "",
       website: "",
@@ -101,7 +123,9 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
     handleSubmit,
     reset,
     setValue, // Added setValue
+    watch, // Added watch
   } = form;
+
 
   // Update defaultValues for pageUrl and initialReferrer once captured
   useEffect(() => {
@@ -198,7 +222,7 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
       role: "",
       firstName: "",
       lastName: "",
-      phone: "",
+      phone: defaultPhonePrefix, // Reset with locale-based prefix
       email: "",
       restaurantName: "",
       website: "",
@@ -284,10 +308,10 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
                 <PhoneInputWithCountrySelect
                   international
                   countryCallingCodeEditable={false}
-                      defaultCountry="SG" // Or determine dynamically
+                  country={currentCountryCode} // Explicitly set country for flag
                   placeholder={t('phonePlaceholder')}
-                      {...field} // Spread field props
-                      // Apply Tailwind classes for styling consistency
+                  {...field} // Spread field props
+                  // Apply Tailwind classes for styling consistency
                   className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 />
               </FormControl>
@@ -409,10 +433,10 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
     {/* Talk to Sales Section */}
     <div className="mt-12 pt-8 border-t border-border text-center">
       <h4 className="text-lg font-semibold mb-2">
-        {t('talkToSalesSectionTitle') || "Got Questions? Let\'s Chat!"}
+        {tSalesSection('talkToSalesSectionTitle') || "Got Questions? Let's Chat!"}
       </h4>
       <p className="text-muted-foreground mb-6 text-sm">
-        {t('talkToSalesSectionDescription') || "Have a few questions before booking a demo? Drop us a message and we\'ll help you out."}
+        {tSalesSection('talkToSalesSectionDescription') || "Have a few questions before booking a demo? Drop us a message and we'll help you out."}
       </p>
       <Button variant="outline" size="lg" asChild>
         <ChatRedirectLink>
