@@ -52,7 +52,8 @@ export default getRequestConfig(async ({ requestLocale }) => {
   }
 
   // Define the array merge strategy to overwrite arrays from the source (localeMessages)
-  const overwriteMerge = (destinationArray: any[], sourceArray: any[], options?: deepmerge.Options): any[] => sourceArray;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const overwriteMerge = (destinationArray: unknown[], sourceArray: unknown[], options?: deepmerge.Options): unknown[] => sourceArray;
 
   let messages = {};
 
