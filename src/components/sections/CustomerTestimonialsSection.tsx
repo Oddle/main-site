@@ -8,6 +8,7 @@ import { Card } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
+  CarouselItem,
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
@@ -84,71 +85,73 @@ export default function CustomerTestimonialsSection({
               const locations = item.locations ? String(item.locations) : null;
               const storyLink = item.storyLink;
               // Use specific button text or generate default
-              const storyButtonText = item.storyLinkText || `See ${name}'s story`; 
+              const storyButtonText = item.storyLinkText || `See ${item.name}'s story`; 
 
               return (
-                <Card key={index} className="h-full overflow-hidden border-none bg-transparent shadow-none">
-                  <div className="md:grid md:grid-cols-5 md:items-center md:gap-10 lg:gap-16 bg-card p-6 md:p-8 lg:p-10 rounded-2xl border shadow-lg">
-                    <div className="relative mb-10 md:mb-0 md:col-span-2">
-                      <Image
-                        className="rounded-xl w-full h-auto md:max-h-[420px] object-cover"
-                        src={item.photo.src}
-                        alt={photoAlt}
-                        width={500}
-                        height={600}
-                        priority={index === 0}
-                      />
-                    </div>
-                    <div className="md:col-span-3">
-                      <blockquote className="relative">
-                        <svg className="text-muted-foreground/10 absolute start-0 top-0 size-16 md:size-24 -translate-x-4 -translate-y-4 md:-translate-x-8 md:-translate-y-6 transform" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                          <path d="M7.39762 10.3C7.39762 11.0733 7.14888 11.7 6.6514 12.18C6.15392 12.6333 5.52552 12.86 4.76621 12.86C3.84979 12.86 3.09047 12.5533 2.48825 11.94C1.91222 11.3266 1.62421 10.4467 1.62421 9.29999C1.62421 8.07332 1.96459 6.87332 2.64535 5.69999C3.35231 4.49999 4.33418 3.55332 5.59098 2.85999L6.4943 4.25999C5.81354 4.73999 5.26369 5.27332 4.84476 5.85999C4.45201 6.44666 4.19017 7.12666 4.05926 7.89999C4.29491 7.79332 4.56983 7.73999 4.88403 7.73999C5.61716 7.73999 6.21938 7.97999 6.69067 8.45999C7.16197 8.93999 7.39762 9.55333 7.39762 10.3Z" fill="currentColor"/>
-                        </svg>
-                        <div className="relative z-10">
-                          <p className="text-xl font-medium italic md:text-2xl md:leading-normal">
-                            &ldquo;{quote}&rdquo;
-                          </p>
-                        </div>
-                        <footer className="mt-6">
-                          <div className="flex items-center">
-                            <div className="ms-4 md:ms-0">
-                              <div className="text-base font-semibold">{name}</div>
-                              <div className="text-xs text-muted-foreground">
-                                {role}, {restaurant}
+                <CarouselItem key={index} className="pl-4 basis-full">
+                  <Card className="h-full overflow-hidden border-none bg-transparent shadow-none">
+                    <div className="md:grid md:grid-cols-5 md:items-center md:gap-10 lg:gap-16 bg-card p-6 md:p-8 lg:p-10 rounded-2xl border shadow-lg">
+                      <div className="relative mb-10 md:mb-0 md:col-span-2">
+                        <Image
+                          className="rounded-xl w-full h-auto md:max-h-[420px] object-cover"
+                          src={item.photo.src}
+                          alt={photoAlt}
+                          width={500}
+                          height={600}
+                          priority={index === 0}
+                        />
+                      </div>
+                      <div className="md:col-span-3">
+                        <blockquote className="relative">
+                          <svg className="text-muted-foreground/10 absolute start-0 top-0 size-16 md:size-24 -translate-x-4 -translate-y-4 md:-translate-x-8 md:-translate-y-6 transform" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M7.39762 10.3C7.39762 11.0733 7.14888 11.7 6.6514 12.18C6.15392 12.6333 5.52552 12.86 4.76621 12.86C3.84979 12.86 3.09047 12.5533 2.48825 11.94C1.91222 11.3266 1.62421 10.4467 1.62421 9.29999C1.62421 8.07332 1.96459 6.87332 2.64535 5.69999C3.35231 4.49999 4.33418 3.55332 5.59098 2.85999L6.4943 4.25999C5.81354 4.73999 5.26369 5.27332 4.84476 5.85999C4.45201 6.44666 4.19017 7.12666 4.05926 7.89999C4.29491 7.79332 4.56983 7.73999 4.88403 7.73999C5.61716 7.73999 6.21938 7.97999 6.69067 8.45999C7.16197 8.93999 7.39762 9.55333 7.39762 10.3Z" fill="currentColor"/>
+                          </svg>
+                          <div className="relative z-10">
+                            <p className="text-xl font-medium italic md:text-2xl md:leading-normal">
+                              &ldquo;{quote}&rdquo;
+                            </p>
+                          </div>
+                          <footer className="mt-6">
+                            <div className="flex items-center">
+                              <div className="ms-4 md:ms-0">
+                                <div className="text-base font-semibold">{name}</div>
+                                <div className="text-xs text-muted-foreground">
+                                  {role}, {restaurant}
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </footer>
-                        {(onlineSales || locations) && (
-                          <div className="flex items-center gap-6 md:gap-8 mt-6 border-t pt-6">
-                            {onlineSales && (
-                              <div>
-                                <p className="text-xl lg:text-2xl font-bold">{onlineSales}</p>
-                                <p className="text-xs text-muted-foreground uppercase tracking-wider">{onlineSalesLabel}</p>
-                              </div>
-                            )}
-                            {locations && (
-                              <div>
-                                <p className="text-xl lg:text-2xl font-bold">+{locations}</p>
-                                <p className="text-xs text-muted-foreground uppercase tracking-wider">{locationsLabel}</p>
-                              </div>
-                            )}
-                          </div>
-                        )}
-                        {storyLink && (
-                          <div className="mt-6">
-                            <Button asChild variant="outline" size="sm">
-                              <Link href={storyLink}>
-                                {storyButtonText}
-                                <ArrowRight className="ml-1.5 size-4" />
-                              </Link>
-                            </Button>
-                          </div>
-                        )}
-                      </blockquote>
+                          </footer>
+                          {(onlineSales || locations) && (
+                            <div className="flex items-center gap-6 md:gap-8 mt-6 border-t pt-6">
+                              {onlineSales && (
+                                <div>
+                                  <p className="text-xl lg:text-2xl font-bold">{onlineSales}</p>
+                                  <p className="text-xs text-muted-foreground uppercase tracking-wider">{onlineSalesLabel}</p>
+                                </div>
+                              )}
+                              {locations && (
+                                <div>
+                                  <p className="text-xl lg:text-2xl font-bold">+{locations}</p>
+                                  <p className="text-xs text-muted-foreground uppercase tracking-wider">{locationsLabel}</p>
+                                </div>
+                              )}
+                            </div>
+                          )}
+                          {storyLink && (
+                            <div className="mt-6">
+                              <Button asChild variant="outline" size="sm">
+                                <Link href={storyLink}>
+                                  {storyButtonText}
+                                  <ArrowRight className="ml-1.5 size-4" />
+                                </Link>
+                              </Button>
+                            </div>
+                          )}
+                        </blockquote>
+                      </div>
                     </div>
-                  </div>
-                </Card>
+                  </Card>
+                </CarouselItem>
               );
             })}
           </CarouselContent>
