@@ -35,6 +35,7 @@
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.6.5",
+    "googleapis": "^148.0.0",
     "libphonenumber-js": "^1.12.8",
     "lucide-react": "^0.479.0",
     "motion": "^12.7.4",

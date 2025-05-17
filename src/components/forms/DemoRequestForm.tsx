@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -39,6 +39,61 @@ declare global {
   }
 }
 
+// Helper function to get cookie by name
+const getCookieValue = (name: string): string | undefined => {
+  if (typeof document === 'undefined') return undefined;
+  const cookies = document.cookie.split(';');
+  for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i].trim();
+    if (cookie.startsWith(name + '=')) {
+      return cookie.substring(name.length + 1);
+    }
+  }
+  return undefined;
+};
+
+interface AttributionData {
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_id?: string;
+  utm_content?: string;
+  utm_term?: string;
+  referrer?: string;
+  page_url?: string; 
+}
+
+const getAttributionDataFromCookie = (): AttributionData => {
+  const cookieValue = getCookieValue("attribution_data");
+  if (cookieValue) {
+    try {
+      const decodedValue = decodeURIComponent(cookieValue);
+      const parsedData = JSON.parse(decodedValue) as Partial<AttributionData>; // Use Partial for safety
+
+      // Ensure page_url and referrer from cookie are either valid-like URLs or undefined
+      // so they don't interfere with Zod .url() validation if they are junk strings.
+      const output: AttributionData = { ...parsedData };
+
+      if (parsedData.page_url && typeof parsedData.page_url === 'string' && 
+          !parsedData.page_url.startsWith('http://') && 
+          !parsedData.page_url.startsWith('https://')) {
+        output.page_url = undefined; // Or "", to let Zod handle it, but undefined allows fallback better
+      }
+      if (parsedData.referrer && typeof parsedData.referrer === 'string' && 
+          !parsedData.referrer.startsWith('http://') && 
+          !parsedData.referrer.startsWith('https://')) {
+        output.referrer = undefined;
+      }
+
+      return output;
+    } catch (error) {
+      console.error("Error parsing attribution_data cookie:", error);
+      return {};
+    }
+  }
+  return {};
+};
+
 // Updated Zod schema
 const formSchema = z.object({
   role: z.string().min(1, { message: "Please select your role." }),
@@ -55,6 +110,13 @@ const formSchema = z.object({
   currentUrl: z.string().url({message: "Invalid current URL"}).optional().or(z.literal('')),
   pageUrl: z.string().url({message: "Invalid page URL"}).optional().or(z.literal('')),
   referrer: z.string().url({message: "Invalid referrer URL"}).optional().or(z.literal('')),
+  // UTM parameters from cookies
+  utm_source: z.string().optional(),
+  utm_campaign: z.string().optional(),
+  utm_medium: z.string().optional(),
+  utm_id: z.string().optional(),
+  utm_content: z.string().optional(),
+  utm_term: z.string().optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -69,19 +131,7 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
   const tSalesSection = useTranslations('common.forms.demoRequest'); // For the talk to sales section
   const locale = useLocale(); // Get current locale
   const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
-  const [pageUrl, setPageUrl] = useState('');
-  const [initialReferrer, setInitialReferrer] = useState('');
 
-  useEffect(() => {
-    // Capture document.referrer when the component mounts
-    // This is the URL of the page that linked to the current page (where the form is)
-    setPageUrl(document.referrer); 
-    // For 'referrer' (original source like google.com), document.referrer on mount is a common starting point.
-    // True original referrer tracking across a session is more complex (e.g. using localStorage/cookies on first site visit).
-    setInitialReferrer(document.referrer);
-  }, []);
-
-  // Define phone prefix map
   const localeToPhonePrefix: Record<string, string> = {
     sg: '+65',
     tw: '+886',
@@ -91,7 +141,6 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
   };
   const defaultPhonePrefix = localeToPhonePrefix[locale] || '';
 
-  // Define locale to country code mapping for the flag
   const localeToCountryCode: Record<string, string> = {
     sg: 'SG',
     tw: 'TW',
@@ -100,6 +149,8 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
     my: 'MY',
   };
   const currentCountryCode = localeToCountryCode[locale] || 'SG'; // Fallback to 'SG' or your primary default
+
+  const initialAttributionData = getAttributionDataFromCookie();
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -112,9 +163,16 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
       restaurantName: "",
       website: "",
       source: "",
-      currentUrl: "", // Will be populated on submit
-      pageUrl: "",    // Will be populated from state
-      referrer: "",   // Will be populated from state
+      currentUrl: "", // Will be populated by onSubmit using window.location.href
+      pageUrl: initialAttributionData.page_url || (typeof document !== 'undefined' ? document.referrer : "") || "",
+      referrer: initialAttributionData.referrer || (typeof document !== 'undefined' ? document.referrer : "") || "",
+      // UTM Parameters from cookies
+      utm_source: initialAttributionData.utm_source || "",
+      utm_campaign: initialAttributionData.utm_campaign || "",
+      utm_medium: initialAttributionData.utm_medium || "",
+      utm_id: initialAttributionData.utm_id || "",
+      utm_content: initialAttributionData.utm_content || "",
+      utm_term: initialAttributionData.utm_term || "",
     },
   });
 
@@ -122,15 +180,7 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
     formState: { isSubmitting },
     handleSubmit,
     reset,
-    setValue, // Added setValue
   } = form;
-
-
-  // Update defaultValues for pageUrl and initialReferrer once captured
-  useEffect(() => {
-    if (pageUrl) setValue('pageUrl', pageUrl);
-    if (initialReferrer) setValue('referrer', initialReferrer);
-  }, [pageUrl, initialReferrer, setValue]);
 
   // Type helper for the options
   type TranslationOptions = Record<string, string>;
@@ -150,12 +200,21 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
   async function onSubmit(values: FormData) {
     setIsSubmitSuccessful(false);
 
+    // Auto-prefix website URL if needed
+    let processedWebsite = values.website;
+    if (processedWebsite && 
+        !processedWebsite.startsWith('http://') && 
+        !processedWebsite.startsWith('https://')) {
+      processedWebsite = 'https://' + processedWebsite;
+    }
+
     // Prepare data to send to the API
     const dataToSend = {
       ...values,
-      currentUrl: window.location.href, // Capture current URL at submission time
-      pageUrl: pageUrl,                 // Use captured pageUrl
-      referrer: initialReferrer,        // Use captured initialReferrer
+      website: processedWebsite, // Use the processed website URL
+      currentUrl: typeof window !== 'undefined' ? window.location.href : "", // Capture current URL at submission time
+      pageUrl: values.pageUrl,                 // Use captured pageUrl
+      referrer: values.referrer,        // Use captured initialReferrer
     };
 
     // --- Trigger Facebook Pixel Lead Event --- 
@@ -191,22 +250,6 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
       // const responseData = await response.json(); // If you need to use response data
       toast.success(t('submitSuccess') || "Demo requested successfully!");
       setIsSubmitSuccessful(true);
-      // reset({ // Reset with initial values including dynamically set ones if needed
-      //       role: "",
-      //       firstName: "",
-      //       lastName: "",
-      //       phone: "",
-      //       email: "",
-      //       restaurantName: "",
-      //       website: "",
-      //       source: "",
-      //       currentUrl: "", 
-      //       pageUrl: "", // Reset these as well
-      //       referrer: "",
-      // }); 
-      // Consider also resetting pageUrl and initialReferrer states if form can be re-submitted without page reload
-      // setPageUrl(''); 
-      // setInitialReferrer('');
 
     } catch (error) {
       console.error("Submission Error:", error);
@@ -217,6 +260,7 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
 
   const handleResetFormForNewSubmission = () => {
     setIsSubmitSuccessful(false); // Allow new submissions
+    const newAttributionData = getAttributionDataFromCookie();
     reset({ // Reset form to default values
       role: "",
       firstName: "",
@@ -227,14 +271,16 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
       website: "",
       source: "",
       currentUrl: "", 
-      pageUrl: "",
-      referrer: "",
+      pageUrl: newAttributionData.page_url || (typeof document !== 'undefined' ? document.referrer : "") || "",
+      referrer: newAttributionData.referrer || (typeof document !== 'undefined' ? document.referrer : "") || "",
+      // Reset UTM parameters by re-reading from cookies
+      utm_source: newAttributionData.utm_source || "",
+      utm_campaign: newAttributionData.utm_campaign || "",
+      utm_medium: newAttributionData.utm_medium || "",
+      utm_id: newAttributionData.utm_id || "",
+      utm_content: newAttributionData.utm_content || "",
+      utm_term: newAttributionData.utm_term || "",
     });
-    // Re-capture referrer for the new submission
-    const currentReferrer = document.referrer;
-    setPageUrl(currentReferrer);
-    setInitialReferrer(currentReferrer);
-    // The useEffect listening to pageUrl/initialReferrer will update form values
   };
 
   return (
