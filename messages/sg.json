@@ -624,7 +624,7 @@
       "desc": "Own every customer and turn them into raving fans"
     },
     "payment-terminal": {
-      "title": "Offline Payment Terminal (SG/MY Only)",
+      "title": "Payment Terminal",
       "desc": "Physical payment terminal with no annual fees or lock-ins"
     },
     "virtual-lounge": {
