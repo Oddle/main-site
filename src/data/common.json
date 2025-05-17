@@ -139,7 +139,7 @@
     "about-us": {
       "name": "About Us",
       "description": "Link Description",
-      "href": "https://oddle.me/about",
+      "href": "/about-us",
       "category": "general"
     },
     "help-center": {
