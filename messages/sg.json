@@ -1047,5 +1047,31 @@
     "title": "What Restaurant Owners Are Saying",
     "description": "Hear directly from restaurants that have grown their business with Oddle."
   },
-  "faq": {}
+  "faq": {},
+  "aboutUsPage": {
+    "title": "Building a sustainable future for the F&B industry",
+    "subtitle": "Empowering restaurants with innovative solutions to thrive in a rapidly changing world. At Oddle, we're committed to helping F&B businesses build resilience, grow sustainably, and foster meaningful connections with their customers.",
+    "story": {
+      "title": "Our Story",
+      "paragraph1": "At the heart of Oddle is a passionate team across Asia, committed to supporting the F&B industry with results-oriented solutions.",
+      "paragraph2": "Every year, 60% of restaurants fall off the market. New names get lost in the sea of competition. Customized solutions are too expensive. Cheap solutions are inadequate. Concerns on lowering operating costs make it harder for restaurants to reach the next tier of success.",
+      "paragraph3": "Being restaurateurs, we understand the obstacles faced by those in the industry. That's why we started Oddle. We want to make it easy for restaurants to engage, manage and grow their F&B business by connecting with their best customers."
+    },
+    "ceo": {
+      "name": "Jonathan Lim",
+      "title": "CEO and Founder",
+      "imageAlt": "Jonathan Lim, CEO and Founder of Oddle"
+    },
+    "values": {
+      "title": "Our Values",
+      "value1": {
+        "title": "Always Restaurant First",
+        "description": "To come out on top, restaurants must explore innovative ways to grow. Oddle's mission is to enable every restaurant to take charge of their future through connecting with their best customers, via our omnichannel platform that gives maximum results."
+      },
+      "value2": {
+        "title": "We Win When You Win",
+        "description": "Staying competitive is not going to get easier, but it will get smarter with Oddle, as we take your restaurant to the next level together."
+      }
+    }
+  }
 }
