@@ -123,7 +123,6 @@ export default function DemoRequestForm({ i18nBaseKey }: DemoRequestFormProps) {
     handleSubmit,
     reset,
     setValue, // Added setValue
-    watch, // Added watch
   } = form;
 
 
