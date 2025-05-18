@@ -89,33 +89,23 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: 'Server configuration error' }, { status: 500 });
     }
 
-    const webhookPayload = {
-      meta: {
-        submission_timestamp: new Date().toISOString(),
-        correlation_id: '',
-      },
-      data: {
-        first_name: firstName,
-        last_name: lastName,
-        email: email,
-        phone: phone,
-        '$country': countryName,
-        company: restaurantName,
-        title: roleMapping[role] || role,
-        source: sourceMapping[source] || source,
-        website: website || '',
-        current_url: currentUrl || '',
-        page_url: pageUrl || '',
-        referrer_url: referrer || '',
-        utm_source: utm_source || '',
-        utm_campaign: utm_campaign || '',
-        utm_medium: utm_medium || '',
-        utm_id: utm_id || '',
-        utm_content: utm_content || '',
-        utm_term: utm_term || '',
-      },
+    // Construct the payload in the desired format
+    const desiredWebhookPayload = {
+      '$country': countryName,
+      Email: email,
+      'Restaurant Name': restaurantName,
+      Website: website || '',
+      current_url: currentUrl || '',
+      first_name: firstName,
+      last_name: lastName,
+      page_url: pageUrl || '',
+      phone: phone,
+      referrer: referrer || '',
+      role: roleMapping[role] || role,
+      source: sourceMapping[source] || source,
     };
-    console.log('webhookPayload', webhookPayload);
+
+    console.log('desiredWebhookPayload for webhook:', desiredWebhookPayload);
 
     try {
       const webhookResponse = await fetch(webhookUrl, {
@@ -123,7 +113,7 @@ export async function POST(req: NextRequest) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(webhookPayload),
+        body: JSON.stringify(desiredWebhookPayload),
       });
       if (!webhookResponse.ok) {
         const errorBody = await webhookResponse.text();
