@@ -3,6 +3,14 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import NavBar from '@/components/common/NavBar';
 import Footer from '@/components/common/Footer';
+import type { Metadata } from 'next';
+import { generatePageMetadata } from '@/lib/metadataUtils';
+
+// Generate metadata for the About Us page
+export async function generateMetadata({ params: paramsPromise }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const params = await paramsPromise;
+  return generatePageMetadata({ locale: params.locale, pageKey: 'about-us' });
+}
 
 export default function AboutUsPage() {
   const t = useTranslations('aboutUsPage');

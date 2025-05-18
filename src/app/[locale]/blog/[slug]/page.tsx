@@ -21,6 +21,10 @@ import { Clock } from 'lucide-react'; // Import Clock icon for read time
 import { routing } from "@/i18n/routing"; // Import routing config for locales
 // import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"; // Import Avatar for author
 
+// Import the metadata helper and Metadata type
+import { generatePageMetadata } from '@/lib/metadataUtils';
+import type { Metadata } from 'next';
+
 // Revalidate the page periodically (optional)
 // export const revalidate = 60; // Revalidate every 60 seconds
 
@@ -55,6 +59,22 @@ export async function generateStaticParams() {
   );
 
   return allParams;
+}
+
+// Generate metadata for the Blog Post page
+export async function generateMetadata(
+  { params: paramsPromise }: { params: Promise<{ slug: string; locale: string }> }
+): Promise<Metadata> {
+  const params = await paramsPromise;
+  // It's important to await params if they are a promise, but here they are passed directly
+  // from generateStaticParams or Next.js direct invocation for a dynamic page.
+  // For blog posts, we might want to fetch title/description from the post itself
+  // but for canonical/alternates, the utility is good.
+  return generatePageMetadata({ 
+    locale: params.locale, 
+    pageKey: `blog/${params.slug}`, 
+    slug: params.slug 
+  });
 }
 
 // Define expected type for postData

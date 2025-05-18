@@ -4,6 +4,10 @@ import type { SectionDefinition } from "@/components/pages/DynamicSectionPage";
 import pageSectionsData from '@/data/pageSections.json';
 import { notFound } from 'next/navigation';
 
+// Import the metadata helper and Metadata type
+import { generatePageMetadata } from '@/lib/metadataUtils';
+import type { Metadata } from 'next';
+
 // Define Props type with params as a Promise
 type Props = {
   params: Promise<{ locale: string; slug: string }>; // Correct: params is a Promise
@@ -33,4 +37,19 @@ export default async function DemoSlugPage({ params: paramsPromise }: Props) { /
       pageUrl={`/demo/${slug}`}
     />
   );
+}
+
+// Generate metadata for the Demo Slug page
+export async function generateMetadata(
+  { params: paramsPromise }: { params: Promise<{ slug: string; locale: string }> }
+): Promise<Metadata> {
+  const params = await paramsPromise;
+  console.log(`!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!`);
+  console.log(`!!! DEMO SLUG PAGE generateMetadata CALLED for locale: ${params.locale}, slug: ${params.slug} !!!`);
+  console.log(`!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!`);
+  return generatePageMetadata({ 
+    locale: params.locale, 
+    pageKey: `demo/${params.slug}`, 
+    slug: params.slug 
+  });
 } 

@@ -70,17 +70,15 @@ export async function generatePageMetadata({ locale, pageKey, slug }: GenerateMe
   // Add final fallback for description
   description = description || 'Oddle empowers restaurants globally...'; // Add your default description
   
-  // --- Canonical Path --- 
-  const canonicalPath = pageKey === 'home' ? '/' : `/${pageKey}`;
+  // --- Paths for current locale and alternates --- 
+  const pathSegmentForPaths = pageKey === 'home' ? '' : `/${pageKey}`;
+  const fullyQualifiedPathForCurrentPage = `/${locale}${pathSegmentForPaths}`; // e.g., /en/about-us or /en/ for home page
   
-  // --- Language Alternates --- 
   const languages: Record<string, string> = {};
   routing.locales.forEach(loc => {
-      const pathSegment = pageKey === 'home' ? '' : `/${pageKey}`;
-      languages[loc] = `/${loc}${pathSegment}`;
+      languages[loc] = `/${loc}${pathSegmentForPaths}`;
   });
-  const defaultPathSegment = pageKey === 'home' ? '' : `/${pageKey}`;
-  languages['x-default'] = `/${routing.defaultLocale}${defaultPathSegment}`;
+  languages['x-default'] = `/${routing.defaultLocale}${pathSegmentForPaths}`;
 
   // --- Image URLs --- 
   // Add final fallback URLs (replace with your actual defaults)
@@ -94,7 +92,7 @@ export async function generatePageMetadata({ locale, pageKey, slug }: GenerateMe
     openGraph: {
       title: finalTitle, 
       description: description, 
-      url: canonicalPath, 
+      url: fullyQualifiedPathForCurrentPage, // Use locale-specific path
       siteName: 'Oddle', 
       images: [
         { 
@@ -111,6 +109,10 @@ export async function generatePageMetadata({ locale, pageKey, slug }: GenerateMe
       title: finalTitle,
       description: description,
       images: [defaultTwitterImageUrl], // Now guaranteed to be a string
+    },
+    alternates: {
+      canonical: fullyQualifiedPathForCurrentPage, // Use locale-specific path
+      languages: languages,
     },
   };
   return result;
