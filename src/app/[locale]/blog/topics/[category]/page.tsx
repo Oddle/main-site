@@ -15,6 +15,9 @@ import {
 import { Separator } from "@/components/ui/separator"; // Import Separator
 import { Clock } from 'lucide-react'; // Import Clock icon
 
+import type { Metadata } from 'next'; // Import Metadata type
+import { generatePageMetadata } from '@/lib/metadataUtils'; // Import the metadata helper
+
 // Define Props type matching the internal Next.js expected type
 // Params should be Promise | undefined
 type PageProps = {
@@ -52,6 +55,18 @@ function getCategoryDisplayName(slug: string): string {
 //   );
 //   return uniqueCategories.map(category => ({ category }));
 // }
+
+// Generate metadata for the Blog Category page
+export async function generateMetadata(
+  { params: paramsPromise }: { params: Promise<{ locale: string; category: string }> }
+): Promise<Metadata> {
+  const params = await paramsPromise;
+  return generatePageMetadata({
+    locale: params.locale,
+    pageKey: `blog/topics/${params.category}`,
+    slug: params.category // Pass category as slug for potential use in title/desc fallbacks
+  });
+}
 
 // Use the correct PageProps type and await params
 export default async function CategoryTagPage({ params: paramsProp }: PageProps) {

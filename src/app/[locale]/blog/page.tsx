@@ -7,6 +7,9 @@ import Image from 'next/image'; // Import next/image
 import { Button } from "@/components/ui/button"; // Import Button
 import { Badge } from "@/components/ui/badge"; // Import Badge for category
 
+import type { Metadata } from 'next'; // Import Metadata type
+import { generatePageMetadata } from '@/lib/metadataUtils'; // Import the metadata helper
+
 // Define Props type
 type PageProps = {
   params: Promise<{ locale: string; }> | undefined;
@@ -14,6 +17,12 @@ type PageProps = {
 
 // Optional: Add revalidation if needed
 // export const revalidate = 60; // Revalidate every 60 seconds
+
+// Generate metadata for the Blog Index page
+export async function generateMetadata({ params: paramsPromise }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const params = await paramsPromise;
+  return generatePageMetadata({ locale: params.locale, pageKey: 'blog' });
+}
 
 export default async function BlogIndexPage({ params: paramsProp }: PageProps) {
   // Await and extract locale
