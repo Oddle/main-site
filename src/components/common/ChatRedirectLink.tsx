@@ -1,7 +1,7 @@
 "use client";
 
 import React, { ReactNode } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react"; // Or pass icon as prop
 
 // --- Helper Functions (defined here or imported) ---

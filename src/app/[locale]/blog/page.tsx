@@ -1,5 +1,5 @@
 import { getPublishedPosts, PostSummary } from "@/lib/notion";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { format } from "date-fns"; // For formatting dates
 import React from 'react';

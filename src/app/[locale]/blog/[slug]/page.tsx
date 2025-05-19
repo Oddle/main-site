@@ -13,7 +13,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"; // Import Breadcrumb components
-import Link from "next/link"; // Needed for BreadcrumbLink
+import { Link } from "@/i18n/navigation"; // Changed from "next/link"
 import React from 'react'; // Add React import
 import Image from 'next/image'; // Import next/image
 import { Badge } from "@/components/ui/badge"; // Ensure Badge is imported

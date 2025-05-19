@@ -3,7 +3,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 // import Image from "next/image"; // Unused
 import { Check, ShoppingCart, CalendarClock, CreditCard, Heart, Presentation, ClipboardList, Megaphone, BrainCircuit, Network, MessageSquare } from "lucide-react";
 // import { Separator } from "@/components/ui/separator"; // Unused
-import Link from "next/link";
+import { Link } from "@/i18n/navigation"; // Changed from "next/link"
 // Remove unused Accordion imports
 // import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
