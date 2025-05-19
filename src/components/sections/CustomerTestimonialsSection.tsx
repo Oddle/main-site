@@ -87,18 +87,43 @@ export default function CustomerTestimonialsSection({
               // Use specific button text or generate default
               const storyButtonText = item.storyLinkText || `See ${item.name}'s story`; 
 
+              let mobilePhotoSrc = item.photo.src;
+              let desktopPhotoSrc = item.photo.src;
+
+              if (item.photo.src && item.photo.src.includes('ucarecdn.com/')) {
+                const parts = item.photo.src.split('ucarecdn.com/');
+                if (parts.length > 1) {
+                  const pathAfterHost = parts[1];
+                  if (pathAfterHost && !pathAfterHost.includes('/-/')) {
+                    const baseWithSlash = pathAfterHost.endsWith('/') ? item.photo.src : item.photo.src + '/';
+                    mobilePhotoSrc = `${baseWithSlash}-/scale_crop/256x256/smart/`;
+                    desktopPhotoSrc = `${baseWithSlash}-/preview/1000x1000/-/format/auto/-/quality/smart/`;
+                  }
+                }
+              }
+
               return (
                 <CarouselItem key={index} className="pl-4 basis-full">
                   <Card className="h-full overflow-hidden border-none bg-transparent shadow-none">
                     <div className="md:grid md:grid-cols-5 md:items-center md:gap-10 lg:gap-16 bg-card p-6 md:p-8 lg:p-10 rounded-2xl border shadow-lg">
-                      <div className="relative mb-10 md:mb-0 md:col-span-2">
+                      <div className="relative flex justify-center items-center mb-8 md:mb-0 md:col-span-2 md:block">
+                        {/* Mobile Image */}
                         <Image
-                          className="rounded-xl w-full h-auto md:max-h-[420px] object-cover"
-                          src={item.photo.src}
+                          className="rounded-full w-32 h-32 object-cover block md:hidden"
+                          src={mobilePhotoSrc} 
                           alt={photoAlt}
-                          width={500}
-                          height={600}
+                          width={256} 
+                          height={256}
                           priority={index === 0}
+                        />
+                        {/* Desktop Image */}
+                        <Image
+                          className="rounded-xl w-full h-auto md:max-h-[420px] object-cover hidden md:block"
+                          src={desktopPhotoSrc}
+                          alt={photoAlt}
+                          width={1000} 
+                          height={1000} 
+                          priority={index === 0} // Apply priority to first item for desktop as well
                         />
                       </div>
                       <div className="md:col-span-3">

@@ -5,7 +5,7 @@
       "role": "Owner",
       "restaurant": "Keng Eng Kee",
       "photo": {
-        "src": "https://framerusercontent.com/images/Q4jaPIyoywjNfUVVrvBIBEYwml8.jpg?scale-down-to=1024",
+        "src": "https://ucarecdn.com/371df294-3ccf-4b70-897e-02976a679759/",
         "alt": "Photo of Paul Liew, Keng Eng Kee"
       },
       "quote": "I grew my delivery sales by 40%. I also discovered room for growth in my weekday lunch sales, and since switching on the engine, my reservation covers for lunch have gone up by 30%.",
@@ -17,41 +17,11 @@
       "role": "Owner",
       "restaurant": "Abundance",
       "photo": {
-        "src": "https://framerusercontent.com/images/8rvGakjamojkXFb9CjHeSCO4o.jpg?scale-down-to=1024",
+        "src": "https://ucarecdn.com/4eb15815-56c1-4f1a-80b7-16f95400508a/",
         "alt": "Photo of Yuan Xin, Abundance"
       },
       "quote": "I've tripled my delivery sales. The extra revenue I've made more than pays for Oddle. I hope Oddle keeps making more money from me because it means I'll be making even more too!",
       "storyLink": "/customer-stories/abundance",
-      "storyLinkText": "See Yuan Xin's story"
-    }
-  ],
-  "sg": [
-    {
-      "name": "Paul Liew",
-      "role": "Owner",
-      "restaurant": "Keng Eng Kee",
-      "photo": {
-        "src": "https://framerusercontent.com/images/Q4jaPIyoywjNfUVVrvBIBEYwml8.jpg?scale-down-to=1024",
-        "alt": "Photo of Paul Liew, Keng Eng Kee"
-      },
-      "quote": "I grew my delivery sales by 40%. I also discovered room for growth in my weekday lunch sales, and since switching on the engine, my reservation covers for lunch have gone up by 30%.",
-      "onlineSales": "",
-      "locations": "",
-      "storyLink": "/blog/how-keng-eng-kee-grew-delivery-sales-by-40-and-reservation-covers-by-30-with-oddle",
-      "storyLinkText": "See Paul Liew's story"
-    },
-    {
-      "name": "Yuan Xin",
-      "role": "Owner",
-      "restaurant": "Abundance",
-      "photo": {
-        "src": "https://framerusercontent.com/images/8rvGakjamojkXFb9CjHeSCO4o.jpg?scale-down-to=1024",
-        "alt": "Photo of Yuan Xin, Abundance"
-      },
-      "quote": "I've tripled my delivery sales. The extra revenue I've made more than pays for Oddle. I hope Oddle keeps making more money from me because it means I'll be making even more too!",
-      "onlineSales": "",
-      "locations": "",
-      "storyLink": "/blog/how-abundance-boosted-customer-retention-by-22-and-doubled-delivery-sales-with-oddle-loyalty",
       "storyLinkText": "See Yuan Xin's story"
     }
   ]
