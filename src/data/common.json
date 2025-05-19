@@ -22,7 +22,8 @@
       "name": "Payment Terminal",
       "description": "Accept in-person payments with no annual fees or lock-ins",
       "href": "/products/restaurant-payment-terminal",
-      "category": "acquire"
+      "category": "acquire",
+      "excludedLocales": ["hk", "tw"]
     },
     "virtual-lounge": {
       "name": "Virtual Lounge",
@@ -52,7 +53,8 @@
       "name": "Oddle Eats Network",
       "description": "Tap into a million food lovers",
       "href": "/products/oddle-eats",
-      "category": "convert"
+      "category": "convert",
+      "excludedLocales": ["hk", "tw","au","my"]
     }
   },
   "addresses": {
@@ -186,7 +188,8 @@
     "singapore-influencer-list": {
         "name": "Build your business with Singapore Influencer List",
         "description": "Get Access",
-        "href": "/resources/singapore-influencer-list"
+        "href": "/resources/singapore-influencer-list",
+        "excludedLocales": ["hk", "my", "tw", "au"]
     }
   }
 } 

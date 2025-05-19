@@ -2,9 +2,35 @@ import { routing } from "@/i18n/routing";
 import pageSectionsData from '@/data/pageSections.json';
 import { NextResponse } from 'next/server'; // Import NextResponse
 import { getPublishedPosts, PostSummary } from '@/lib/notion'; // Import function and type
+import commonJson from '@/data/common.json';
 
 // Read the base URL from environment variables
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'; // Fallback if not set
+
+// --- Define Types from common.json ---
+interface ProductData {
+  name: string;
+  description?: string;
+  href: string;
+  category?: string;
+  excludedLocales?: string[];
+}
+
+interface CommonLinkData {
+  name: string;
+  description?: string;
+  href: string;
+  category?: string;
+  excludedLocales?: string[];
+}
+
+interface CommonData {
+  products?: { [key: string]: ProductData };
+  links?: { [key: string]: CommonLinkData };
+}
+
+// Type the imported common data
+const commonData: CommonData = commonJson;
 
 // Define the type for changeFrequency explicitly
 type ChangeFrequency = 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
@@ -67,9 +93,42 @@ export async function GET(
   });
 
   // Generate entries for dynamic pages for this locale
-  const dynamicPagePaths = Object.keys(pageSectionsData).filter(path => path !== 'home'); // Exclude 'home'
+  const pagePaths = Object.keys(pageSectionsData).filter(path => path !== 'home'); // Exclude 'home'
 
-  dynamicPagePaths.forEach((pagePath) => {
+  pagePaths.forEach((pagePath) => {
+    // --- Check for excludedLocales (Corrected Logic & Linter Fix) ---
+    let isExcluded = false;
+
+    // Check against products
+    for (const [, productEntry] of Object.entries(commonData.products || {})) {
+      if (productEntry && productEntry.href) {
+        const productHrefPath = productEntry.href.startsWith('/') ? productEntry.href.substring(1) : productEntry.href;
+        if (productHrefPath === pagePath && productEntry.excludedLocales?.includes(locale)) {
+          isExcluded = true;
+          break;
+        }
+      }
+    }
+
+    // If not excluded by products, check against links
+    if (!isExcluded) {
+      for (const [, linkEntry] of Object.entries(commonData.links || {})) {
+        if (linkEntry && linkEntry.href) {
+          const linkHrefPath = linkEntry.href.startsWith('/') ? linkEntry.href.substring(1) : linkEntry.href;
+          // Ensure it's not an external link before comparing as a pagePath
+          if (!linkEntry.href.startsWith('http') && linkHrefPath === pagePath && linkEntry.excludedLocales?.includes(locale)) {
+            isExcluded = true;
+            break;
+          }
+        }
+      }
+    }
+
+    if (isExcluded) {
+      return; // Skip adding this page to the sitemap for this locale
+    }
+    // --- End Check ---
+
     sitemapEntries.push({
       url: `${baseUrl}/${locale}/${pagePath}`,
       lastModified: new Date(),
