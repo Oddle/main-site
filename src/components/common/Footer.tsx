@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import LanguageSwitcher from "../LanguageSwitcher"; 
 import { usePathname } from 'next/navigation'; 
 import React from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 // Import and type commonData
 import commonJson from "@/data/common.json";
 import globalContent from "@/data/globalContent.json";
@@ -62,6 +62,7 @@ interface ProductData {
   description?: string;
   href: string;
   category?: string;
+  excludedLocales?: string[];
 }
 
 // Interface for the general links in common.json
@@ -98,6 +99,7 @@ export default function Footer() {
   const tCommon = useTranslations("common");
   const tCta = useTranslations('common.cta.standard');
   const pathname = usePathname(); // <-- Get current pathname
+  const locale = useLocale(); // Get current locale
 
   // --- Extract Addresses from commonData ---
   const addresses: { [key: string]: AddressData } = commonData.addresses || {};
@@ -113,8 +115,12 @@ export default function Footer() {
   // 1. Product Lookup (label -> href)
   const productHrefMap = Object.entries(commonData.products || {}).reduce(
     (map: { [key: string]: string }, [key, product]) => {
-        map[key] = product.href;
-        return map;
+      // Check if the product should be excluded for the current locale
+      if (product.excludedLocales && product.excludedLocales.includes(locale)) {
+        return map; // Skip this product by not adding it to the map
+      }
+      map[key] = product.href;
+      return map;
     },
     {}
   );
@@ -154,12 +160,20 @@ export default function Footer() {
       label: link.label,
       href: allLinkHrefMap[link.label] || '#',
       external: allLinkHrefMap[link.label]?.startsWith('http') ?? false,
-    })),
+    })).filter(link => {
+      // If the link label corresponds to a product key in commonData.products
+      const isProductLink = commonData.products && commonData.products.hasOwnProperty(link.label);
+      // And that product was excluded (meaning it's not in the filtered productHrefMap)
+      if (isProductLink && !productHrefMap[link.label]) {
+        return false; // Then filter out this link
+      }
+      return true; // Otherwise, keep the link
+    }),
   }));
 
   // --- Process RAW Social Links into FINAL Social Links ---
   const finalSocialLinks: SocialLink[] = rawSocialLinks
-    .map((link) => socialLinkDetailsMap[link.label]) // Lookup by label (e.g., "facebook")
+    .map((link: RawSocialLink) => socialLinkDetailsMap[link.label]) // Lookup by label (e.g., "facebook")
     .filter((details): details is { key: string; href: string } => !!details); // Filter based on the new structure
 
 

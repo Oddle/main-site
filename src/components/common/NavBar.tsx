@@ -2,7 +2,7 @@
 import * as React from "react";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import LanguageSwitcher from "../LanguageSwitcher";
 import { cn } from "@/lib/utils";
 import {
@@ -68,6 +68,7 @@ interface ProductData {
   description?: string;
   href: string;
   category?: string;
+  excludedLocales?: string[];
 }
 
 interface CommonLinkData {
@@ -97,6 +98,7 @@ export default function NavBar() {
   const tNav = useTranslations("navbar"); // Use navbar namespace for structure
   const tProducts = useTranslations("products"); // Get product translations
   const tResources = useTranslations("resources"); // Use resources namespace for structure
+  const locale = useLocale(); // Get current locale
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
   // --- Transform data from common.json ---
@@ -106,6 +108,11 @@ export default function NavBar() {
 
     // Group products by category
     for (const [key, product] of Object.entries(commonData.products || {})) {
+      // Check if the product should be excluded for the current locale
+      if (product.excludedLocales && product.excludedLocales.includes(locale)) {
+        continue; // Skip this product
+      }
+
       const category = product.category || 'uncategorized'; // Default category
       if (!productsByCategory[category]) {
         productsByCategory[category] = [];
