@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { getTranslation } from '@/lib/i18nUtils';
 import Container from '@/components/common/Container';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 
 // Interface for a single grid item
 interface GridItem {

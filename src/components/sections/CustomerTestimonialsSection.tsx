@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { getTranslation } from '@/lib/i18nUtils';
 import { Button } from "@/components/ui/button";
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { ArrowRight } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import {

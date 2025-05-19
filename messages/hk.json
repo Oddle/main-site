@@ -351,8 +351,7 @@
           "description": "",
           "href": "/blog/topics/restaurant-reservation-guide",
           "image": {
-            "alt": "Screenshot of reservation calendar",
-            "src": "https://ucarecdn.com/9bf21b09-12ae-4272-a4e8-240909c208c4/product_reserve_hero"
+            "alt": "Screenshot of reservation calendar"
           }
         },
         "1": {
@@ -360,8 +359,7 @@
           "description": "",
           "href": "/blog/topics/restaurant-online-ordering-guide",
           "image": {
-            "alt": "Mobile phone showing online ordering menu",
-            "src": "https://ucarecdn.com/7f9cb7a3-a7d6-42d5-b225-5a4e2647d384/-/preview/400x400/"
+            "alt": "Mobile phone showing online ordering menu"
           }
         },
         "2": {
@@ -369,8 +367,8 @@
           "description": "",
           "href": "/blog/topics/restaurant-marketing-guide",
           "image": {
-            "alt": "Dashboard showing customer analytics graphs",
-            "src": "https://ucarecdn.com/10483a24-988e-4f04-8c15-822473592b65/email_templates"
+            "alt": "Dashboard showing customer analytics graphs"
+          }
           }
         }
       }
