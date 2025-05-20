@@ -31,6 +31,44 @@
       "alt": "Unlisted Collection"
     }
   ],
+  "hk": [
+    {
+      "name": "Asokthai",
+      "src": "https://ucarecdn.com/fc6f7516-be62-4c09-a840-63b96651ae3f/-/preview/332x200/",
+      "alt": "Asokthai" 
+    },
+    {
+      "name": "JacoMax",
+      "src": "https://ucarecdn.com/b97cfee7-dd84-4a13-aaa7-1188cfd39138/-/preview/332x200/",
+      "alt": "JacoMax"
+    },
+    {
+      "name": "La Vina",
+      "src": "https://ucarecdn.com/32b516d6-db59-4012-832f-d6bdc83549f0/-/preview/332x200/",
+      "alt": "La Vina"
+    },
+    {
+      "name": "Dough Bros",
+      "src": "https://ucarecdn.com/9ae7bf5e-f89e-4885-a30a-26dc161bd493/-/preview/332x200/",
+      "alt": "Dough Bros"
+    },
+    {
+      "name": "Twist & Buckle",
+      "src": "https://ucarecdn.com/b4db82a8-2cf5-4f34-8fb0-fbc172264672/-/preview/332x200/",
+      "alt": "Twist & Buckle"
+    },
+    {
+      "name": "Pizza Express",
+      "src": "https://ucarecdn.com/96d0ba12-fda2-40ce-a861-5140c8b7b594/-/preview/320x320/",
+      "alt": "Pizza Express"
+    },
+    {
+      "name": "Fifty Fifty",
+      "src": "https://ucarecdn.com/9f680b3b-a293-4e4e-b4ea-d959989036c6/-/preview/320x320/",
+      "alt": "Fifty Fifty"
+    }
+    
+  ],
   "tw": [
     {
       "name": "Chicco",
