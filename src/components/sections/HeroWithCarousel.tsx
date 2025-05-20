@@ -15,7 +15,7 @@ import { getTranslation } from '@/lib/i18nUtils';
 import Container from "@/components/common/Container";
 import Image from "next/image";
 import InlineCustomerLogos from "../common/InlineCustomerLogos";
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import ChatRedirectLink from "@/components/common/ChatRedirectLink"; // Import the chat link
 
 interface SlideData {
@@ -72,7 +72,7 @@ export default function HeroWithCarousel({
               )}
                 <div className="mt-7 grid gap-3 w-full sm:inline-flex">
                 <Button size="lg" asChild>
-                  <Link href="/demo" prefetch={false}>
+                  <Link href="/demo" prefetch={false} locale={locale}>
                     {tCommon('requestDemo')}
                   </Link>
                     </Button>
