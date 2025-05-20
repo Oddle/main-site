@@ -2,13 +2,31 @@ import type { Metadata } from 'next'; // Import Metadata type
 import { setRequestLocale } from "next-intl/server";
 import DynamicSectionPage from "@/components/pages/DynamicSectionPage";
 import pageSectionsData from '@/data/pageSections.json'; // Import data from central JSON
-// Import the metadata helper
-import { generatePageMetadata } from '@/lib/metadataUtils';
+import { generatePageMetadata } from '@/lib/metadataUtils'; // Import the metadata helper
+
+// Import commonData and its types (assuming similar structure to pricing page)
+import commonDataJson from "@/data/common.json";
+
+interface CommonProductDataEntry {
+  name: string;
+  description: string;
+  href: string;
+  category: string;
+  excludedLocales?: string[];
+}
+
+interface CommonData {
+  products: {
+    [key: string]: CommonProductDataEntry;
+  };
+  // Add other top-level keys from common.json if needed for typing
+}
+const commonData: CommonData = commonDataJson as CommonData;
 
 // Define Section type for clarity
 interface Section {
   component: string;
-  props: Record<string, unknown>;
+  props: Record<string, any>; // Use any for props items for easier manipulation here
 }
 
 // --- Generate Metadata using the helper --- 
@@ -33,7 +51,7 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
 // --- Existing Page Component (Marked as async) --- 
 
 // Access the 'home' sections and provide type hint
-const homeSections: Section[] = (pageSectionsData as { home?: Section[] })?.home || []; 
+const rawHomeSections: Section[] = (pageSectionsData as { home?: Section[] })?.home || []; 
 
 // Re-add await for params
 export default async function HomePage({ params }: MetadataProps) { 
@@ -42,6 +60,35 @@ export default async function HomePage({ params }: MetadataProps) {
 
   setRequestLocale(locale);
 
-  // Pass the extracted home sections
+  // Filter sections before passing to DynamicSectionPage
+  const homeSections = rawHomeSections.map(section => {
+    if (section.component === 'FeatureSectionBentoGrid' && section.props && section.props.items && Array.isArray(section.props.items)) {
+      const originalItems = section.props.items;
+      const filteredItems = originalItems.filter(item => {
+        if (item.linkAction && typeof item.linkAction === 'string') {
+          const pathParts = item.linkAction.split('/');
+          const productKey = pathParts.pop(); // Get the last part of the path
+          
+          if (productKey && commonData.products[productKey]) {
+            const commonProduct = commonData.products[productKey];
+            if (commonProduct.excludedLocales && commonProduct.excludedLocales.includes(locale)) {
+              return false; // Exclude this item
+            }
+          }
+        }
+        return true; // Include by default
+      });
+      return {
+        ...section,
+        props: {
+          ...section.props,
+          items: filteredItems
+        }
+      };
+    }
+    return section;
+  });
+
+  // Pass the modified home sections
   return <DynamicSectionPage sectionsData={homeSections} locale={locale} pageUrl="/" />;
 }

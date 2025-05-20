@@ -369,9 +369,9 @@
           "image": {
             "alt": "Dashboard showing customer analytics graphs"
           }
+          }
         }
       }
-    }
   },
   "navbar": {
     "acquire": "Acquire",

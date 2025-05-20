@@ -6,6 +6,7 @@ import { Check, ShoppingCart, CalendarClock, CreditCard, Heart, Presentation, Cl
 import { Link } from "@/i18n/navigation"; // Changed from "next/link"
 // Remove unused Accordion imports
 // import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import clsx from 'clsx'; // Import clsx
 
 import { generatePageMetadata } from '@/lib/metadataUtils';
 import NavBar from '@/components/common/NavBar';
@@ -33,7 +34,25 @@ import pricingDataJson from "@/data/pricing.json";
 const pricingData: PricingData = pricingDataJson; // Cast to defined type
 
 // Re-import common data
-import commonData from "@/data/common.json";
+import commonDataJson from "@/data/common.json"; // Import as json
+
+// Define a type for products in common.json to help with type checking
+interface CommonProductDataEntry {
+  name: string;
+  description: string;
+  href: string;
+  category: string;
+  excludedLocales?: string[]; // excludedLocales is optional
+}
+
+interface CommonData {
+  products: {
+    [key: string]: CommonProductDataEntry;
+  };
+  // Add other top-level keys from common.json if needed for typing
+}
+
+const commonData: CommonData = commonDataJson as CommonData; // Cast to the defined type
 
 // Metadata generation (Updated for async params)
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -103,9 +122,9 @@ function renderPricingDetails(details: PricingDetail[], t: TFunction) {
 }
 
 // --- New ProductHighlight Component ---
-const ProductHighlight = ({ icon, name, description }: { icon: React.ReactNode; name: string; description: string }) => {
+const ProductHighlight = ({ icon, name, description, className }: { icon: React.ReactNode; name: string; description: string; className?: string }) => {
   return (
-    <div className="hover:bg-muted dark:hover:bg-muted/50 space-y-2 rounded-lg border p-4 transition-colors h-full">
+    <div className={clsx("hover:bg-muted dark:hover:bg-muted/50 space-y-2 rounded-lg border p-4 transition-colors h-full", className)}>
       <div className="flex size-fit items-center justify-center text-primary">{icon}</div>
       <div className="space-y-1">
         <h3 className="text-sm font-medium">{name}</h3>
@@ -131,7 +150,25 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
   const tProducts = await getTranslations('products');
 
   // Get pricing data for the current locale (for MAIN pricing section)
-  const localePricing = pricingData[locale] || pricingData['sg'] || [];
+  const rawLocalePricing = pricingData[locale] || pricingData['sg'] || [];
+
+  // Filter products based on commonData restrictions
+  const localePricing = rawLocalePricing.filter(product => {
+    // Find the corresponding product in commonData by matching title with name
+    const commonProductKey = Object.keys(commonData.products).find(key => {
+      const commonProduct = commonData.products[key]; // Access directly with string key
+      return commonProduct.name === product.title;
+    });
+
+    if (commonProductKey) {
+      const commonProduct = commonData.products[commonProductKey]; // Access directly
+      // The check for commonProduct.excludedLocales handles its optional nature
+      if (commonProduct.excludedLocales && commonProduct.excludedLocales.includes(locale)) {
+        return false; // Exclude if locale is in excludedLocales
+      }
+    }
+    return true; // Include by default or if not found in commonData (or no restrictions)
+  });
 
   // Map product keys to icons (add new ones)
   const productIcons: { [key: string]: React.ReactNode } = {
@@ -148,7 +185,15 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
   };
 
   // Get products from common.json for the HERO grid
-  const commonProductsArray = Object.entries(commonData.products || {});
+  // Filter commonProductsArray based on excludedLocales
+  const commonProductsArray = Object.entries(commonData.products || {})
+    .filter(([, productDetails]) => {
+      // productDetails is of type CommonProductDataEntry due to commonData typing
+      if (productDetails.excludedLocales && productDetails.excludedLocales.includes(locale)) {
+        return false; // Exclude if locale is in excludedLocales
+      }
+      return true; // Include by default or if no restrictions
+    });
 
   return (
     <>
@@ -199,7 +244,7 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
               <div className="bg-background dark:bg-muted/50 rounded-2xl border p-3 shadow-lg md:pb-6 max-w-xl mx-auto md:mx-0"> {/* Keep max-width here, remove mx-auto on md */}
                 <div className="grid grid-cols-3 gap-2">
                   {/* Map over ALL commonProductsArray */}
-                  {commonProductsArray.map(([key]) => {
+                  {commonProductsArray.map(([key], index) => {
                     // Updated icon key inference logic
                     let finalIconKey = 'default';
                     const lowerKey = key.toLowerCase();
@@ -213,14 +258,18 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
                     else if (lowerKey.includes('crm')) finalIconKey = 'crm'; // Checks for crm/intelligence key
                     else if (lowerKey.includes('eats')) finalIconKey = 'eats'; // Checks for oddle eats key
 
+                    const totalProducts = commonProductsArray.length;
+                    const isLastItemInSingleRow = index === totalProducts - 1 && totalProducts % 3 === 1;
+
                     return (
                       <ProductHighlight
                         key={key}
                         icon={productIcons[finalIconKey]}
                         name={tProducts(`${key}.title`)}
                         description={tProducts(`${key}.desc`, { defaultValue: '' })}
+                        className={isLastItemInSingleRow ? 'col-span-3' : ''}
                       />
-                    )
+                    );
                   })}
                 </div>
               </div>
@@ -310,4 +359,4 @@ export default async function PricingPage({ params }: { params: Promise<{ locale
       <Footer />
     </>
   );
-} 
+}
