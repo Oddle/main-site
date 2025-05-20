@@ -23,7 +23,7 @@
       "description": "Accept in-person payments with no annual fees or lock-ins",
       "href": "/products/restaurant-payment-terminal",
       "category": "acquire",
-      "excludedLocales": ["hk", "tw"]
+      "excludedLocales": ["hk", "tw", "my", "au"]
     },
     "virtual-lounge": {
       "name": "Virtual Lounge",
