@@ -22,7 +22,7 @@
       "title": "Reservation System",
       "description": "Manage table bookings across all channels seamlessly.",
       "summaryPrice": "From $0.20 / booking",
-      "priceUnit": "per confirmed booking",
+      "priceUnit": "per booking",
       "details": [
         { "type": "tier", "label": "Tier 1 (1-100/mo)", "rate": "$0.60", "unit": "per booking"},
         { "type": "tier", "label": "Tier 2 (101+/mo)", "rate": "$0.20", "unit": "per booking"} 
@@ -79,6 +79,185 @@
       }
     }
   ],
+  "my": [
+    {
+      "title": "Online Ordering System",
+      "description": "Accepts delivery and takeaway orders, in advance or on-demand.",
+      "summaryPrice": "10% per order",
+      "priceUnit": "per successful order",
+      "details": [
+      ],
+      "features": [
+        "Robust online menu setup",
+        "Order management dashboard",
+        "Customer data capture",
+        "Integration options"
+      ],
+      "cta": {
+        "textKey": "actions.learnMore",
+        "href": "/products/restaurant-online-ordering-system"
+      }
+    },
+    {
+      "title": "Reservation System",
+      "description": "Manage table bookings across all channels seamlessly.",
+      "summaryPrice": "From RM 0.50 / booking",
+      "priceUnit": "per booking",
+      "details": [
+        { "type": "tier", "label": "Tier 1 (1-200/mo)", "rate": "RM 0.80", "unit": "per booking"},
+        { "type": "tier", "label": "Tier 2 (201+/mo)", "rate": "RM 0.50", "unit": "per booking"} 
+      ],
+      "features": [
+        "Real-time table management",
+        "Automated confirmations & reminders",
+        "Google Reserve integration",
+        "Customer database included"
+      ],
+      "cta": {
+        "textKey": "actions.learnMore",
+        "href": "/products/restaurant-reservation-system"
+      }
+    },
+    {
+      "title": "Loyalty Program",
+      "description": "Increase customer database via membership enrollments and get customers to return with rewards.",
+      "summaryPrice": "Usage-based",
+      "priceUnit": "per action",
+      "details": [
+         { "type": "action", "label": "New Enrolment", "rate": "RM 0.60"},
+         { "type": "action", "label": "Return Customer Txn", "rate": "RM 1.50"}
+      ],
+      "features": [
+        "Customizable rewards setup.",
+        "Customer segmentation tools.",
+        "Automated engagement triggers.",
+        "Performance tracking."
+      ],
+      "cta": {
+        "textKey": "actions.learnMore",
+        "href": "/products/restaurant-loyalty-crm-system"
+      }
+    }
+  ],
+  "hk": [
+    {
+      "title": "Online Ordering System",
+      "description": "Accepts delivery and takeaway orders, in advance or on-demand.",
+      "summaryPrice": "10% per order",
+      "priceUnit": "per successful order",
+      "details": [
+      ],
+      "features": [
+        "Robust online menu setup",
+        "Order management dashboard",
+        "Customer data capture",
+        "Integration options"
+      ],
+      "cta": {
+        "textKey": "actions.learnMore",
+        "href": "/products/restaurant-online-ordering-system"
+      }
+    },
+    {
+      "title": "Reservation System",
+      "description": "Manage table bookings across all channels seamlessly.",
+      "summaryPrice": "From HKD 2.00 / booking",
+      "priceUnit": "per booking",
+      "details": [
+        { "type": "tier", "label": "Tier 1 (1-100/mo)", "rate": "HKD 3.00", "unit": "per booking"},
+        { "type": "tier", "label": "Tier 2 (101+/mo)", "rate": "HKD 2.00", "unit": "per booking"} 
+      ],
+      "features": [
+        "Real-time table management",
+        "Automated confirmations & reminders",
+        "Google Reserve integration",
+        "Customer database included"
+      ],
+      "cta": {
+        "textKey": "actions.learnMore",
+        "href": "/products/restaurant-reservation-system"
+      }
+    },
+    {
+      "title": "Loyalty Program",
+      "description": "Increase customer database via membership enrollments and get customers to return with rewards.",
+      "summaryPrice": "Usage-based",
+      "priceUnit": "per action",
+      "details": [
+         { "type": "action", "label": "New Enrolment", "rate": "HKD 2.00"},
+         { "type": "action", "label": "Return Customer Txn", "rate": "HKD 3.50"}
+      ],
+      "features": [
+        "Customizable rewards setup.",
+        "Customer segmentation tools.",
+        "Automated engagement triggers.",
+        "Performance tracking."
+      ],
+      "cta": {
+        "textKey": "actions.learnMore",
+        "href": "/products/restaurant-loyalty-crm-system"
+      }
+    }
+  ],
+  "au": [
+    {
+      "title": "Online Ordering System",
+      "description": "Accepts delivery and takeaway orders, in advance or on-demand.",
+      "summaryPrice": "5% per order",
+      "priceUnit": "per successful order",
+      "details": [
+      ],
+      "features": [
+        "Robust online menu setup",
+        "Order management dashboard",
+        "Customer data capture",
+        "Integration options"
+      ],
+      "cta": {
+        "textKey": "actions.learnMore",
+        "href": "/products/restaurant-online-ordering-system"
+      }
+    },
+    {
+      "title": "Reservation System",
+      "description": "Manage table bookings across all channels seamlessly.",
+      "summaryPrice": "AUD 0.20 / booking",
+      "priceUnit": "per booking",
+      "details": [
+      
+      ],
+      "features": [
+        "Real-time table management",
+        "Automated confirmations & reminders",
+        "Google Reserve integration",
+        "Customer database included"
+      ],
+      "cta": {
+        "textKey": "actions.learnMore",
+        "href": "/products/restaurant-reservation-system"
+      }
+    },
+    {
+      "title": "Loyalty Program",
+      "description": "Increase customer database via membership enrollments and get customers to return with rewards.",
+      "summaryPrice": "Usage-based",
+      "priceUnit": "per action",
+      "details": [
+         { "type": "action", "label": "New Enrolment", "rate": "AUD 0.50"},
+         { "type": "action", "label": "Return Customer Txn", "rate": "AUD 1.00"}
+      ],
+      "features": [
+        "Customizable rewards setup.",
+        "Customer segmentation tools.",
+        "Automated engagement triggers.",
+        "Performance tracking."
+      ],
+      "cta": {
+        "textKey": "actions.learnMore",
+        "href": "/products/restaurant-loyalty-crm-system"
+      }
+    }
+  ],
   "tw": [
     {
       "title": "線上點餐系統",
@@ -101,7 +280,7 @@
       "title": "訂位系統",
       "description": "集中管理各通路的餐廳訂位。",
       "summaryPrice": "每筆訂位最低 $0.20 起",
-      "priceUnit": "每筆成功訂位",
+      "priceUnit": "每筆訂位",
       "details": [
         { "type": "tier", "label": "第 1 級 (每月 1-100 筆)", "rate": "$0.60", "unit": "每筆訂位" },
         { "type": "tier", "label": "第 2 級 (每月 101 筆以上)", "rate": "$0.20", "unit": "每筆訂位" }
@@ -121,7 +300,7 @@
       "title": "會員集點系統",
       "description": "透過會員註冊拓展顧客資料庫，並以獎勵機制促使回購。",
       "summaryPrice": "依使用量計費",
-      "priceUnit": "每個動作",
+      "priceUnit": "每筆",
       "details": [
         { "type": "action", "label": "新會員註冊", "rate": "$0.30" },
         { "type": "action", "label": "回流顧客交易", "rate": "$0.70" }
