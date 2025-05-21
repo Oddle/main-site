@@ -98,9 +98,9 @@ export default function HeroWithCarousel({
                   const slideImageAlt = getTranslation(t, `${i18nBaseKey}.slides.0.imageAlt`, slide?.imageAlt || "Hero Image") || "Hero Image";
                   return (
                     slideImageSrc ? (
-                    <div className="relative aspect-square overflow-hidden rounded-xl bg-card shadow-sm">
+                    <div className="relative aspect-square overflow-hidden">
                     <Image
-                        className="object-cover"
+                        className="object-contain"
                       src={slideImageSrc}
                       alt={slideImageAlt}
                         fill
@@ -127,7 +127,7 @@ export default function HeroWithCarousel({
                         <CarouselItem key={index}>
                           <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-card shadow-sm">
                             <Image
-                              className="object-cover"
+                              className="object-contain"
                               src={slideImageSrc}
                               alt={slideImageAlt}
                               fill
