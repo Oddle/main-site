@@ -105,7 +105,7 @@ export default function HeroWithCarousel({
                       alt={slideImageAlt}
                         fill
                       priority={true}
-                        sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 40vw"
+                        sizes="(max-width: 767px) 90vw, (max-width: 1023px) 70vw, 50vw"
                     />
                     </div>
                     ) : null
@@ -132,7 +132,7 @@ export default function HeroWithCarousel({
                               alt={slideImageAlt}
                               fill
                               priority={index === 0}
-                              sizes="(max-width: 1024px) 100vw, (max-width: 768px) 90vw, 40vw"
+                              sizes="(max-width: 767px) 90vw, (max-width: 1023px) 70vw, 50vw"
                             />
                           </div>
                         </CarouselItem>
