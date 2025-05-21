@@ -23,10 +23,32 @@ interface CommonData {
 }
 const commonData: CommonData = commonDataJson as CommonData;
 
+// Define more specific types for section props
+interface BentoGridItemProps {
+  id: number;
+  title: string;
+  description: string;
+  linkAction: string;
+  span?: number; 
+  // Ensure all props used in pageSections.json for these items are listed
+}
+
+interface FeatureSectionBentoGridSpecificProps {
+  i18nBaseKey: string;
+  tag: string;
+  title: string;
+  description: string;
+  items: BentoGridItemProps[];
+  [key: string]: unknown; // Add index signature to allow compatibility with Record<string, unknown>
+  // Add any other specific props for FeatureSectionBentoGrid from pageSections.json
+}
+
 // Define Section type for clarity
 interface Section {
   component: string;
-  props: Record<string, any>; // Use any for props items for easier manipulation here
+  // Use a more specific type for props, potentially a union of all possible prop types
+  // For now, we focus on FeatureSectionBentoGridProps and allow others to be Record<string, unknown>
+  props: FeatureSectionBentoGridSpecificProps | Record<string, unknown>; 
 }
 
 // --- Generate Metadata using the helper --- 
@@ -62,29 +84,33 @@ export default async function HomePage({ params }: MetadataProps) {
 
   // Filter sections before passing to DynamicSectionPage
   const homeSections = rawHomeSections.map(section => {
-    if (section.component === 'FeatureSectionBentoGrid' && section.props && section.props.items && Array.isArray(section.props.items)) {
-      const originalItems = section.props.items;
-      const filteredItems = originalItems.filter(item => {
-        if (item.linkAction && typeof item.linkAction === 'string') {
-          const pathParts = item.linkAction.split('/');
-          const productKey = pathParts.pop(); // Get the last part of the path
-          
-          if (productKey && commonData.products[productKey]) {
-            const commonProduct = commonData.products[productKey];
-            if (commonProduct.excludedLocales && commonProduct.excludedLocales.includes(locale)) {
-              return false; // Exclude this item
+    if (section.component === 'FeatureSectionBentoGrid') {
+      // Type assertion for props when we know it's FeatureSectionBentoGrid
+      const bentoProps = section.props as FeatureSectionBentoGridSpecificProps;
+      if (bentoProps && bentoProps.items && Array.isArray(bentoProps.items)) {
+        const originalItems: BentoGridItemProps[] = bentoProps.items;
+        const filteredItems = originalItems.filter((item: BentoGridItemProps) => {
+          if (item.linkAction && typeof item.linkAction === 'string') {
+            const pathParts = item.linkAction.split('/');
+            const productKey = pathParts.pop(); // Get the last part of the path
+            
+            if (productKey && commonData.products[productKey]) {
+              const commonProduct = commonData.products[productKey];
+              if (commonProduct.excludedLocales && commonProduct.excludedLocales.includes(locale)) {
+                return false; // Exclude this item
+              }
             }
           }
-        }
-        return true; // Include by default
-      });
-      return {
-        ...section,
-        props: {
-          ...section.props,
-          items: filteredItems
-        }
-      };
+          return true; // Include by default
+        });
+        return {
+          ...section,
+          props: {
+            ...bentoProps, // Spread the typed props
+            items: filteredItems
+          }
+        };
+      }
     }
     return section;
   });
