@@ -24,5 +24,43 @@
       "storyLink": "/customer-stories/abundance",
       "storyLinkText": "See Yuan Xin's story"
     }
+  ],
+  "my": [
+    {
+      "name": "Roberto Guiati",
+      "role": "Founder",
+      "restaurant": "Roberto's",
+      "photo": {
+        "src": "https://ucarecdn.com/d107d448-e5ac-44c4-b1ff-9d8af2af0cbc/",
+        "alt": "Photo of Roberto Guiati, Roberto's"
+      },
+      "quote": "Oddle has been a fantastic solution for our business. It has helped us save costs while streamlining our operations, making it easier to manage orders efficiently. I appreciate how it allows us to focus more on growing the brand and serving our customers better.",
+      "storyLink": "",
+      "storyLinkText": ""
+    },
+    {
+      "name": "Nor Arieni Adriena",
+      "role": "CEO & Founder",
+      "restaurant": "Gula Cakery",
+      "photo": {
+        "src": "https://ucarecdn.com/26fd05ef-357f-4034-bf70-49a461423433/",
+        "alt": "Photo of Nor Arieni Adriena, Gula Cakery"
+      },
+      "quote": "Oddle has truly been a one-stop center for all our business needs. It has not only helped us grow our customer database but also boosted our sales for both dine-in and delivery. The data-driven marketing engagement provided by Oddle has been instrumental in connecting with our customers more effectively and driving meaningful results for our brand.",
+      "storyLink": "",
+      "storyLinkText": ""
+    },
+    {
+      "name": "Jaslyn Rangson",
+      "role": "Founder",
+      "restaurant": "Jaslyn Cakes",
+      "photo": {
+        "src": "https://ucarecdn.com/94890202-dfee-4ac1-b567-6d4a7f041c9b/",
+        "alt": "Photo of Jaslyn Rangson, Jaslyn Cakes"
+      },
+      "quote": "Oddle Shop has been a game-changer for our business. It's incredibly helpful in streamlining our orders and improving productivity, allowing us to focus on delivering the best experience to our customers. Most importantly, it has significantly contributed to growing our sales. We couldn't be happier with the results!",
+      "storyLink": "",
+      "storyLinkText": ""
+    }
   ]
 } 
