@@ -3,6 +3,16 @@ import fs from 'fs';
 import path from 'path';
 import { routing } from '@/i18n/routing';
 
+// Define BCP 47 language mapping
+const bcp47LangMap: { [key: string]: string } = {
+  en: 'en',
+  sg: 'en-SG',
+  hk: 'en-HK',
+  au: 'en-AU',
+  my: 'en-MY',
+  tw: 'zh-TW',
+};
+
 // --- Types (can be shared or redefined here) ---
 interface PageMetadata {
   title?: string;
@@ -70,15 +80,21 @@ export async function generatePageMetadata({ locale, pageKey, slug }: GenerateMe
   // Add final fallback for description
   description = description || 'Oddle empowers restaurants globally...'; // Add your default description
   
+  // --- Base URL for absolute path generation ---
+  const baseUrl = new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000');
+
   // --- Paths for current locale and alternates --- 
-  const pathSegmentForPaths = pageKey === 'home' ? '' : `/${pageKey}`;
-  const fullyQualifiedPathForCurrentPage = `/${locale}${pathSegmentForPaths}`; // e.g., /en/about-us or /en/ for home page
+  const pathSegmentForPaths = pageKey === 'home' ? '' : `/${pageKey.startsWith('/') ? pageKey.substring(1) : pageKey}`;
+  const fullyQualifiedPathForCurrentPage = new URL(`/${locale}${pathSegmentForPaths}`, baseUrl).toString();
   
   const languages: Record<string, string> = {};
   routing.locales.forEach(loc => {
-      languages[loc] = `/${loc}${pathSegmentForPaths}`;
+      const mappedHreflang = bcp47LangMap[loc] || loc;
+      languages[mappedHreflang] = new URL(`/${loc}${pathSegmentForPaths}`, baseUrl).toString();
   });
-  languages['x-default'] = `/${routing.defaultLocale}${pathSegmentForPaths}`;
+
+  const defaultLocaleForXDefault = routing.defaultLocale || 'sg'; // Fallback for safety
+  languages['x-default'] = new URL(`/${defaultLocaleForXDefault}${pathSegmentForPaths}`, baseUrl).toString();
 
   // --- Image URLs --- 
   // Add final fallback URLs (replace with your actual defaults)
@@ -101,7 +117,7 @@ export async function generatePageMetadata({ locale, pageKey, slug }: GenerateMe
           height: 630, 
         },
       ],
-      locale: locale,
+      locale: bcp47LangMap[locale] || locale, // Use mapped BCP47 locale
       type: 'website', 
     },
     twitter: {
@@ -111,7 +127,7 @@ export async function generatePageMetadata({ locale, pageKey, slug }: GenerateMe
       images: [defaultTwitterImageUrl], // Now guaranteed to be a string
     },
     alternates: {
-      canonical: fullyQualifiedPathForCurrentPage, // Use locale-specific path
+      canonical: fullyQualifiedPathForCurrentPage, // Use absolute locale-specific path
       languages: languages,
     },
   };

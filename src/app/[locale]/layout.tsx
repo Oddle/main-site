@@ -143,18 +143,28 @@ export async function generateMetadata({
   // -----------------------------------
 
   // --- Debugging Logs ---
+  // console.log("[generateMetadata] bcp47LangMap:", bcp47LangMap);
   const calculatedCanonical = new URL(`/${locale}`, baseUrl).toString();
+  // console.log("[generateMetadata] Calculated Canonical:", calculatedCanonical);
   // ---------------------
 
   const languagesOutput = routing.locales.reduce((acc, loc) => {
-    const mappedHreflang = bcp47LangMap[loc] || loc;
+    // console.log("[generateMetadata] Processing loc:", loc);
+    const mapValue = bcp47LangMap[loc];
+    // console.log("[generateMetadata] bcp47LangMap[loc] for", loc, ":", mapValue);
+    const mappedHreflang = mapValue || loc;
+    // console.log("[generateMetadata] mappedHreflang for", loc, ":", mappedHreflang);
     const absoluteHref = new URL(`/${loc}`, baseUrl).toString();
+    // console.log("[generateMetadata] absoluteHref for", loc, ":", absoluteHref);
     acc[mappedHreflang] = absoluteHref;
     return acc;
   }, {} as Record<string, string>);
 
+  // console.log("[generateMetadata] Final languagesOutput:", languagesOutput);
+
   const defaultLocaleForXDefault = routing.defaultLocale || 'sg'; // Fallback for safety
   languagesOutput['x-default'] = new URL(`/${defaultLocaleForXDefault}`, baseUrl).toString();
+  // console.log("[generateMetadata] languagesOutput after x-default:", languagesOutput);
 
   return {
     metadataBase: baseUrl, // Restored metadataBase
