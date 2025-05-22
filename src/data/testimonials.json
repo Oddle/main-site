@@ -62,5 +62,31 @@
       "storyLink": "",
       "storyLinkText": ""
     }
+  ],
+  "tw": [
+    {
+      "name": "Paul Liew",
+      "role": "老闆",
+      "restaurant": "瓊榮記海鲜餐廳",
+      "photo": {
+        "src": "https://framerusercontent.com/images/Q4jaPIyoywjNfUVVrvBIBEYwml8.jpg",
+        "alt": "Paul Liew, 瓊榮記海鲜餐廳"
+      },
+      "quote": "我的外送營收增長了 40%。我也發現平日午餐的銷售有成長空間，自從啟用了行銷引擎以來，我的午餐訂位量增長了 30%。",
+      "storyLink": "",
+      "storyLinkText": ""
+    },
+    {
+      "name": "Yuan Xin",
+      "role": "老闆",
+      "restaurant": "Abundance",
+      "photo": {
+        "src": "https://framerusercontent.com/images/8rvGakjamojkXFb9CjHeSCO4o.jpg",
+        "alt": "Yuan Xin, Abundance"
+      },
+      "quote": "我已經將我的外送營收增加了200%。我所賺取的額外收入足以支付Oddle的費用，還綽綽有餘。我希望Oddle能從我這裡賺到更多的錢，因為這意味著我也賺得更多！",
+      "storyLink": "",
+      "storyLinkText": ""
+    }
   ]
 } 
