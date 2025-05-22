@@ -30,6 +30,7 @@ interface LocationDialogProps {
 
 // Optional: Simple mapping for display names (enhance as needed)
 const localeDisplayNames: Record<string, string> = {
+  en: "Global",
   sg: "Singapore",
   my: "Malaysia",
   hk: "Hong Kong",
