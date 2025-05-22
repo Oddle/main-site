@@ -343,7 +343,7 @@
       }
     },
     "featureGrid": {
-      "title": "",
+      "title": "查看我們的使用指南，幫助您拓展餐廳事業",
       "description": "",
       "items": {
         "0": {
@@ -351,8 +351,7 @@
           "description": "",
           "href": "/blog/topics/restaurant-reservation-guide",
           "image": {
-            "alt": "Screenshot of reservation calendar",
-            "src": ""
+            "alt": "Screenshot of reservation calendar"
           }
         },
         "1": {
@@ -360,8 +359,7 @@
           "description": "",
           "href": "/blog/topics/restaurant-online-ordering-guide",
           "image": {
-            "alt": "Mobile phone showing online ordering menu",
-            "src": ""
+            "alt": "Mobile phone showing online ordering menu"
           }
         },
         "2": {
@@ -369,8 +367,7 @@
           "description": "",
           "href": "/blog/topics/restaurant-marketing-guide",
           "image": {
-            "alt": "Dashboard showing customer analytics graphs",
-            "src": ""
+            "alt": "Dashboard showing customer analytics graphs"
           }
         }
       }
