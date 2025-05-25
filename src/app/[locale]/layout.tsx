@@ -64,7 +64,7 @@ export default async function RootLayout({
     <html lang={htmlLang} suppressHydrationWarning>
       <head>
         {/* Google Tag Manager */}
-        <Script id="google-tag-manager" strategy="afterInteractive">
+        {/* <Script id="google-tag-manager" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -72,7 +72,7 @@ export default async function RootLayout({
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-TM3W78RV');
           `}
-        </Script>
+        </Script> */}
         {/* End Google Tag Manager */}
         <meta name="keywords" content={t("keywords")} />
         <script
@@ -91,11 +91,11 @@ export default async function RootLayout({
         suppressHydrationWarning
       >
         {/* Google Tag Manager (noscript) */}
-        <noscript
+        {/* <noscript
           dangerouslySetInnerHTML={{
             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TM3W78RV" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
           }}
-        />
+        /> */}
         {/* End Google Tag Manager (noscript) */}
         <ThemeProvider
           attribute="class"
