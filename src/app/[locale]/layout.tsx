@@ -1,4 +1,4 @@
-import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { NextIntlClientProvider, useMessages, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -38,25 +38,24 @@ const geistMono = Geist_Mono({
 // We can read it here because layout components can be async
 const baseUrlString = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
-  params,
+  params: { locale },
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }) {
   // Ensure that the incoming `locale` is valid
-  const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
-  // Enable static rendering
+  // Enable static rendering for server components
   setRequestLocale(locale);
 
-  const t = await getTranslations({ locale, namespace: "Metadata" });
+  // Provide messages to the client
+  const messages = useMessages();
 
-  // Use the mapped language code for the lang attribute
   const htmlLang = bcp47LangMap[locale] || locale; // Fallback to original locale if not mapped
 
   return (
@@ -73,14 +72,11 @@ export default async function RootLayout({
           `}
         </Script> */}
         {/* End Google Tag Manager */}
-        <meta name="keywords" content={t("keywords")} />
         <script
           {...jsonLdScriptProps<WebSite>({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            name: t("title"),
-            description: t("description"),
-            url: baseUrlString, // Use the base URL variable
+            url: baseUrlString,
             inLanguage: locale,
           })}
         />
@@ -101,10 +97,12 @@ export default async function RootLayout({
           defaultTheme="light"
           disableTransitionOnChange
         >
-          <NextIntlClientProvider>{children}
-
-          <LocaleChecker />
-
+          <NextIntlClientProvider
+            locale={locale}
+            messages={messages}
+          >
+            {children}
+            <LocaleChecker />
           </NextIntlClientProvider>
           <Toaster />
         </ThemeProvider>
@@ -121,7 +119,7 @@ export function generateStaticParams() {
 
 // Define Props type for generateMetadata
 type Props = {
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 };
 
 export const viewport: Viewport = {
@@ -130,9 +128,8 @@ export const viewport: Viewport = {
 };
 
 export async function generateMetadata({
-  params,
+  params: { locale },
 }: Props): Promise<Metadata> {
-  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata" });
   const baseUrl = new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000');
   const ogImageUrl = 'https://ucarecdn.com/3a4499ff-d4db-43e9-9db2-5f19976dcf78/-/preview/1000x523/';
