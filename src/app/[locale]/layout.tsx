@@ -12,7 +12,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "../globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import LocaleChecker from '@/components/LocaleChecker';
-import Script from 'next/script';
 
 // --- Define BCP 47 language mapping (accessible to both RootLayout and generateMetadata) ---
 const bcp47LangMap: { [key: string]: string } = {
