@@ -1,73 +1,50 @@
 "use client";
 import dynamic from 'next/dynamic'; // Import dynamic
 import NavBar from "../common/NavBar";
-import HeroWithCarousel from "@/components/sections/HeroWithCarousel";
-import IconSectionHorizontal from "@/components/sections/IconSectionHorizontal";
-import HeroSectionWithAppShowcase from "@/components/sections/HeroSectionWithAppShowcase";
-import FeatureSectionWithImages from "@/components/sections/FeatureSectionWithImages";
-import FaqSection from "@/components/sections/FaqSection";
 import React from 'react';
 import Footer from "../common/Footer";
-import FeatureSectionWithSubpoints from "@/components/sections/FeatureSectionWithSubpoints";
-import FeatureSectionWithSplitImages from "@/components/sections/FeatureSectionWithSplitImages";
-import FeatureSectionWithColumns from "@/components/sections/FeatureSectionWithColumns";
-import FeatureSectionWithTabs from "../sections/FeatureSectionWithTabs";
-import FeatureSectionWithAccordion from "../sections/FeatureSectionWithAccordion";
-import FeatureSectionAlternating from "../sections/FeatureSectionAlternating";
-import FeatureSectionBentoGrid from "../sections/FeatureSectionBentoGrid";
-import CustomerLogosSection from "../sections/CustomerLogosSection";
-import DemoRequestSection from "../sections/DemoRequestSection";
-import CallToActionSection from "../sections/CallToActionSection";
 import { cn } from "@/lib/utils";
 import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern";
-import FeatureSectionOverlapImage from "../sections/FeatureSectionOverlapImage";
-import CustomerTestimonialsSection from '@/components/sections/CustomerTestimonialsSection';
-import FeatureSectionWithGridImages from '@/components/sections/FeatureSectionWithGridImages';
-// --- Dynamically import UtmTracker with SSR disabled --- 
+
 const UtmTracker = dynamic(() => import('@/components/UTMTracker').then(mod => mod.UtmTracker), {
   ssr: false,
 });
-// -------------------------------------------------------
-// --- Define type for section data --- (Good practice)
+
 export interface SectionDefinition {
-  component: string; // Ideally keyof typeof componentMap, but string is simpler for now
-  props?: Record<string, unknown>; // Props are optional, especially for components like FaqSection that get dynamic ones
+  component: string;
+  props?: Record<string, unknown>;
 }
 
-// --- Props for the component ---
 interface DynamicSectionPageProps {
   sectionsData: SectionDefinition[];
-  pageUrl: string; // Add pageUrl prop
-  locale: string; // Add locale prop
+  pageUrl: string;
+  locale: string;
 }
 
-// --- Component Map --- (Ensure keys match component names in JSON)
-// Revert to any, but disable the lint rule for this specific line
+// --- Component Map with Dynamic Imports --- 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const componentMap: { [key: string]: React.ComponentType<any> } = {
-  HeroWithCarousel,
-  IconSectionHorizontal,
-  HeroSectionWithAppShowcase,
-  FeatureSectionWithImages,
-  FaqSection,
-  FeatureSectionWithSubpoints,
-  FeatureSectionWithSplitImages,
-  FeatureSectionWithColumns,
-  FeatureSectionWithTabs,
-  FeatureSectionWithAccordion,
-  FeatureSectionAlternating,
-  FeatureSectionBentoGrid,
-  CustomerLogosSection,
-  DemoRequestSection,
-  CallToActionSection,
-  FeatureSectionOverlapImage,
-  CustomerTestimonialsSection,
-  FeatureSectionWithGridImages
+  HeroWithCarousel: dynamic(() => import("@/components/sections/HeroWithCarousel")),
+  IconSectionHorizontal: dynamic(() => import("@/components/sections/IconSectionHorizontal")),
+  HeroSectionWithAppShowcase: dynamic(() => import("@/components/sections/HeroSectionWithAppShowcase")),
+  FeatureSectionWithImages: dynamic(() => import("@/components/sections/FeatureSectionWithImages")),
+  FaqSection: dynamic(() => import("@/components/sections/FaqSection")),
+  FeatureSectionWithSubpoints: dynamic(() => import("@/components/sections/FeatureSectionWithSubpoints")),
+  FeatureSectionWithSplitImages: dynamic(() => import("@/components/sections/FeatureSectionWithSplitImages")),
+  FeatureSectionWithColumns: dynamic(() => import("@/components/sections/FeatureSectionWithColumns")),
+  FeatureSectionWithTabs: dynamic(() => import("../sections/FeatureSectionWithTabs")),
+  FeatureSectionWithAccordion: dynamic(() => import("../sections/FeatureSectionWithAccordion")),
+  FeatureSectionAlternating: dynamic(() => import("../sections/FeatureSectionAlternating")),
+  FeatureSectionBentoGrid: dynamic(() => import("../sections/FeatureSectionBentoGrid")),
+  CustomerLogosSection: dynamic(() => import("../sections/CustomerLogosSection")),
+  DemoRequestSection: dynamic(() => import("../sections/DemoRequestSection")),
+  CallToActionSection: dynamic(() => import("../sections/CallToActionSection")),
+  FeatureSectionOverlapImage: dynamic(() => import("../sections/FeatureSectionOverlapImage")),
+  CustomerTestimonialsSection: dynamic(() => import('@/components/sections/CustomerTestimonialsSection')),
+  FeatureSectionWithGridImages: dynamic(() => import('@/components/sections/FeatureSectionWithGridImages')),
+  // Add other section components here with dynamic imports
 };
 
-// Removed the processProps function
-
-// Update component signature to accept props
 const DynamicSectionPage = ({ sectionsData, pageUrl, locale }: DynamicSectionPageProps) => {
   // Add check for undefined sectionsData
   if (!sectionsData || !Array.isArray(sectionsData)) {
