@@ -189,10 +189,10 @@
   },
   "home": {
     "hero": {
-      "title": "讓餐廳營收增長變得輕鬆",
-      "description": "Oddle 協助全球餐廳獲取顧客數據、建立品牌形象並拓展業務。",
+      "title": "讓餐廳輕鬆實現營收成長",
+      "description": "Oddle 使全球的餐廳能夠掌握顧客數據、建立品牌並發展生意",
       "primaryButton": {
-        "text": "預約產品Demo"
+        "text": "預約諮詢"
       },
       "secondaryButton": {
         "text": "LINE@聯繫"
@@ -217,8 +217,8 @@
       ]
     },
     "growingEasy": {
-      "tag": "增長就像 ABC 一樣簡單",
-      "title": "增長就像 ABC 一樣簡單",
+      "tag": "簡單營收成長",
+      "title": "營收成長就像ABC一樣簡單",
       "description": "獲取、建立和轉換，助您成功",
       "items": {
         "0": {
