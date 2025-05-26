@@ -140,8 +140,8 @@ const FeatureSectionWithTabs = ({
 
       {/* Card Content for Active Tab */}
               {activeTabData && (
-        <div className="overflow-hidden rounded-xl border bg-background shadow">
-          <div className="grid gap-0 lg:grid-cols-2">
+                <div className="overflow-hidden rounded-xl bg-background shadow px-20 py-10">
+                  <div className="grid gap-0 lg:grid-cols-2">
             <div className="flex flex-col justify-center space-y-6 p-6 lg:p-8">
               <div className="space-y-2">
                 <h3 className="text-2xl font-bold">
@@ -161,18 +161,18 @@ const FeatureSectionWithTabs = ({
                   ))}
                 </ul>
               )}
-                      </div>
-            <div className="relative aspect-video lg:aspect-auto">
-              {activeItemImageSrc && activeTabData && (
-                        <Image
-                          src={activeItemImageSrc}
-                  alt={activeItemImageAlt}
-                          fill
-                          className="object-cover"
-                  priority
-                        />
-              )}
-            </div>
+              </div>
+              <div className="relative h-64 md:aspect-[16/9] md:h-auto">
+                {activeItemImageSrc && activeTabData && (
+                  <Image
+                    src={activeItemImageSrc}
+                    alt={activeItemImageAlt}
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                )}
+              </div>
           </div>
         </div>
       )}

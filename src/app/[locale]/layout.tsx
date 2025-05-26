@@ -1,7 +1,7 @@
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale, getMessages } from "next-intl/server";
 import { Metadata, Viewport } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { jsonLdScriptProps } from "react-schemaorg";
@@ -55,7 +55,11 @@ export default async function RootLayout({
   // Enable static rendering
   setRequestLocale(locale);
 
+  // Fetch translations for RootLayout's own needs (e.g., meta tags)
   const t = await getTranslations({ locale, namespace: "Metadata" });
+
+  // Fetch all messages to provide to NextIntlClientProvider for client components
+  const messages = await getMessages();
 
   // Use the mapped language code for the lang attribute
   const htmlLang = bcp47LangMap[locale] || locale; // Fallback to original locale if not mapped
@@ -102,10 +106,9 @@ export default async function RootLayout({
           defaultTheme="light"
           disableTransitionOnChange
         >
-          <NextIntlClientProvider>{children}
-
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            {children}
           <LocaleChecker />
-
           </NextIntlClientProvider>
           <Toaster />
         </ThemeProvider>

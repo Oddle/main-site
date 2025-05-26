@@ -44,9 +44,7 @@ export async function generateMetadata(
   { params: paramsPromise }: { params: Promise<{ slug: string; locale: string }> }
 ): Promise<Metadata> {
   const params = await paramsPromise;
-  console.log(`!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!`);
-  console.log(`!!! DEMO SLUG PAGE generateMetadata CALLED for locale: ${params.locale}, slug: ${params.slug} !!!`);
-  console.log(`!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!`);
+
   return generatePageMetadata({ 
     locale: params.locale, 
     pageKey: `demo/${params.slug}`, 

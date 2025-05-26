@@ -1073,5 +1073,161 @@
         "description": "Staying competitive is not going to get easier, but it will get smarter with Oddle, as we take your restaurant to the next level together."
       }
     }
+  },
+  "demoOnlineOrderingSystemTabs": {
+    "title": "Your All-in-One Restaurant Online Ordering System",
+    "description": "Your own delivery system to grow sales, manage orders easily, and connect with more customers.",
+    "items": {
+      "0": {
+        "tab": "Showcase Your Brand",
+        "title": "Your Platform, Your Way",
+        "description": "A fully branded platform that puts your logo, menu, and promotions in the spotlight.",
+        "benefits": [
+          "Highlight your brand with a customizable online store.",
+          "Promote your menu and offers directly to customers."
+        ],
+        "imageSrc": "https://ucarecdn.com/c594af29-b190-4f2e-8f9f-02703720b99e/-/preview/923x1000/",
+        "imageAlt": "Showcase Your Brand"
+      },
+      "1": {
+        "tab": "Simplify Deliveries",
+        "title": "Streamline Logistics Management",
+        "description": "Manage delivery zones and logistics with ease to serve more customers efficiently.",
+        "benefits": [
+          "Flexible delivery options to reach a wider audience.",
+          "Best-in-class fulfillment rates for efficient operations."
+        ],
+        "imageSrc": "https://ucarecdn.com/992a1660-1ca3-4d75-91de-5318366408d6/-/preview/924x1000/",
+        "imageAlt": "Simplify Deliveries"
+      },
+      "2": {
+        "tab": "Grow Customer Loyalty",
+        "title": "Turn Delivery Customers into Regulars",
+        "description": "Drive repeat business and bring online customers into your restaurant with exclusive offers and rewards.",
+        "benefits": [
+          "Encourage dine-in visits with personalized promotions.",
+          "Reward loyal customers and re-engage lapsed diners with targeted campaigns."
+        ],
+        "imageSrc": "https://ucarecdn.com/d2b15c5f-b1df-4f9e-b4dc-865b844bb1a0/-/preview/923x1000/",
+        "imageAlt": "Grow Customer Loyalty"
+      } 
+    }
+  },
+  "demoReservationSystemTabs": {
+  "title": "Your All-in-One Restaurant Reservation System",
+  "description": "Streamline operations, reduce no-shows, and boost revenue with a pricing model that works for restaurants of every size.",
+  "items": {
+    "0": {
+      "tab": "Simplify Operations",
+      "title": "Streamline Booking Management",
+      "description": "Simplify your day-to-day operations with automated tools and real-time views.",
+      "benefits": [
+        "Automate customer confirmations and updates to reduce manual work.",
+        "Minimize no-shows with credit card guarantees and upfront payments."
+      ],
+      "imageSrc": "https://ucarecdn.com/599e5cd5-879a-4dd1-9f8d-2588336cc904/-/preview/1000x620/",
+      "imageAlt": "Simplify Operations"
+    },
+    "1": {
+      "tab": "Increase Bookings",
+      "title": "Unlock Revenue Potential",
+      "description": "Drive more bookings and boost revenue by targeting underperforming time slots.",
+      "benefits": [
+        "Visualize sales performance across 14 time slots to identify gaps.",
+        "Tailor promotions to fill tables during quieter periods."
+      ],
+      "imageSrc": "https://ucarecdn.com/66e3c95c-bcd2-42a1-bd3e-523e32bc093c/-/preview/870x1000/",
+      "imageAlt": "Increase Bookings"
+    },
+    "2": {
+      "tab": "Retain Customers",
+      "title": "Turn Guests into Regulars",
+      "description": "Build long-term relationships with tools that boost loyalty and advocacy.",
+      "benefits": [
+        "Collect feedback to encourage positive Google reviews.",
+        "Re-engage customers with personalized promotions and offers."
+      ],
+      "imageSrc": "https://ucarecdn.com/d2b15c5f-b1df-4f9e-b4dc-865b844bb1a0/-/preview/923x1000/",
+      "imageAlt": "Retain Customers"
+    }
   }
+},
+"demoLoyaltyCrmSystemTabs": {
+  "title": "Your All-in-One Restaurant Loyalty & CRM System",
+  "description": "Keep your customers coming back with a loyalty program that rewards them and grows your business effortlessly.",
+  "items": {
+    "0": {
+      "tab": "Capture Every Customer",
+      "title": "Build a Smarter Database",
+      "description": "Sign up diners easily with QR Scans or NFC Taps to capture data from every visit.",
+      "benefits": [
+        "Seamlessly collect customer data at the table or counter.",
+        "Deliver personalized rewards and smarter loyalty experiences."
+      ],
+      "imageSrc": "https://ucarecdn.com/a3402e72-bf53-4fac-b78f-eb84454e33b3/-/preview/1000x819/",
+      "imageAlt": "Capture Every Customer"
+    },
+    "1": {
+      "tab": "Automate Engagement",
+      "title": "Stay Top of Mind with Automation",
+      "description": "Save time while driving repeat visits with automated rewards, reminders, and offers.",
+      "benefits": [
+        "Automate rewards, birthday offers, and visit reminders to stay connected with your guests.",
+        "Collect feedback effortlessly after each visit."
+      ],
+      "imageSrc": "https://ucarecdn.com/886e1a3c-8b95-4140-a454-6b80a540d775/-/preview/1000x1000/",
+      "imageAlt": "Automate Engagement"
+    },
+    "2": {
+      "tab": "Cross-Promote Effortlessly",
+      "title": "Connect Dine-In and Delivery",
+      "description": "Use data to create personalized offers and boost engagement across dine-in and delivery.",
+      "benefits": [
+        "Leverage insights to target customers with tailored campaigns.",
+        "Unlock new revenue streams across multiple touchpoints."
+      ],
+      "imageSrc": "https://ucarecdn.com/d2b15c5f-b1df-4f9e-b4dc-865b844bb1a0/-/preview/923x1000/",
+      "imageAlt": "Cross-Promote Effortlessly"
+    }
+  }
+},
+"demoPaymentTerminalTabs": {
+  "title": "Your All-in-One Restaurant Payment Terminal",
+  "description": "The payment terminal your restaurant needs to save money, improve efficiency, and build lasting customer loyalty.",
+  "items": {
+    "0": {
+      "tab": "Save Costs",
+      "title": "Competitively Priced for Restaurants",
+      "description": "Keep more of your revenue with transparent, consistent transaction fees built for restaurants.",
+      "benefits": [
+        "Competitive rates with no hidden fees.",
+        "Save costs while maintaining efficient payment operations."
+      ],
+      "imageSrc": "https://ucarecdn.com/608c3b9f-aed6-482a-a2b7-d196a54380c4/-/preview/1000x1000/",
+      "imageAlt": "Save Costs"
+    },
+    "1": {
+      "tab": "Smarter Operations",
+      "title": "Smarter Operations",
+      "description": "Streamline operations with reliable, mobile-ready payment terminals that enhance efficiency.",
+      "benefits": [
+        "Mobile checkout for table-side payments.",
+        "Real-time reporting and stable connectivity anywhere."
+      ],
+      "imageSrc": "https://ucarecdn.com/6eaef2eb-53b4-4dd6-ae5e-9e8bb7e7c0b9/-/preview/1000x1000/",
+      "imageAlt": "Smarter Operations"
+    },
+    "2": {
+      "tab": "Built for Retention",
+      "title": "Build Loyalty at Checkout",
+      "description": "Engage and retain customers right at the payment terminal with features that encourage repeat visits.",
+      "benefits": [
+        "Print return vouchers and send automated reminders.",
+        "Collect feedback directly from the terminal to improve experiences."
+      ],
+      "imageSrc": "https://ucarecdn.com/d2b15c5f-b1df-4f9e-b4dc-865b844bb1a0/-/preview/923x1000/",
+      "imageAlt": "Built for Retention"
+    }
+  }
+}
 }

@@ -1062,5 +1062,149 @@
         "description": "保持競爭優勢不是件容易的事情，但Oddle可以讓其變得簡單，用更聰明的方式與您一起把餐廳營收提升到更高的水平。"
       }
     }
+  },
+  "demoOnlineOrderingSystemTabs": {
+    "title": "您的一站式餐廳線上外帶外送系統",
+    "description": "您自己的外帶外送系統，幫助增加營收、輕鬆地管理訂單，並與更多客戶保持聯繫。",
+    "items": {
+      "0": {
+        "tab": "展現您的品牌",
+        "title": "您自己的平台，您自己的方式",
+        "description": "一個完全品牌化的平台，將您的Logo、菜單和促銷活動放在最顯眼的位置。",
+        "benefits": [
+          "透過可自訂的線上門式來突顯您的品牌。",
+          "直接向客戶推廣您的菜單和優惠。"
+        ],
+        "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+      },
+      "1": {
+        "tab": "Simplify Deliveries",
+        "title": "精簡物流管理",
+        "description": "輕鬆管理配送區域和物流，以更有效地服務更多客戶。",
+        "benefits": [
+          "彈性的外送規則以觸及更廣泛的受眾。",
+          "最佳的訂單完成率以實現高效營運。"
+        ],
+        "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+      },
+      "2": {
+        "tab": "Grow Customer Loyalty",
+        "title": "將線上外送的顧客傳化成內用的常客",
+        "description": "通過獨特的優惠和獎勵來驅動回訪率，並將線上顧客帶到線下。",
+        "benefits": [
+          "透過個人化的行銷活動鼓勵內用。",
+          "獎勵忠實顧客，並通過針對性的行銷活動重新吸引流失的顧客。"
+        ],
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+      }
+    }
+  },
+  "demoReservationSystemTabs": {
+  "title": "您的全方位餐廳訂位系統",
+  "description": "簡單地操作流程，減少缺席，並通過適用於大小餐廳的收費模式來提高收入。",
+  "items": {
+    "0": {
+      "tab": "簡化餐廳營運",
+      "title": "簡化訂位管理",
+      "description": "透過自動化的工具和即時的訂位視圖，簡化您的日常營運。",
+      "benefits": [
+        "顧客確認自動化和自動狀態更新，減少手動操作。",
+        "透過收取訂金和預付款用來減少缺席的情況。"
+      ],
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+    },
+    "1": {
+      "tab": "增加訂位數量",
+      "title": "提升營收潛力",
+      "description": "針對表現不佳的時段推廣，帶動更多訂位並提升營收。",
+      "benefits": [
+        "可視化14個時段的銷售表現，找出空檔。",
+        "針對冷門時段設計促銷活動，提升訂位率。"
+      ],
+      "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+    },
+    "2": {
+      "tab": "留住顧客",
+      "title": "將顧客變成常客",
+      "description": "透過提升忠誠度與口碑的工具，建立長期關係。",
+      "benefits": [
+        "收集回饋，鼓勵顧客留下正面Google評論。",
+        "以個人化促銷和優惠重新吸引顧客。"
+      ],
+      "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+    }
   }
+},
+"demoLoyaltyCrmSystemTabs": {
+  "title": "您的一站式 顧客忠誠計畫及 CRM 系統",
+  "description": "透過一個能獎勵顧客並輕鬆促進您營收增長的顧客忠誠計劃，讓您的客人持續回流。",
+  "items": {
+    "0": {
+      "tab": "掌握每一位顧客",
+      "title": "建立更智能的數據庫",
+      "description": "透過 QR Code掃描或NFC 觸碰讓顧客輕鬆註冊，以便收集每次用餐的紀錄。",
+      "benefits": [
+        "順暢地在座位上或櫃檯邊收集客戶資料。",
+        "提供個人化的獎勵和更聰明的顧客忠誠計畫。"
+      ],
+      "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+    },
+    "1": {
+      "tab": "自動再行銷",
+      "title": "自動化再行銷",
+      "description": "節省時間，透過自動化獎勵、生日優惠和回訪提醒，提升回流率。",
+      "benefits": [
+        "自動化獎勵、生日優惠和回訪提醒，與顧客保持聯繫。",
+        "每次用餐後輕鬆收集回饋。"
+      ],
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+    },
+    "2": {
+      "tab": "線上到線下、線下到線上",
+      "title": "連結內用與外送",
+      "description": "運用數據打造個人化優惠，提升內用與外送的顧客參與度。",
+      "benefits": [
+        "善用洞察，針對顧客推送個人化行銷活動。",
+        "在多個接觸點開拓新營收來源。"
+      ],
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+    }
+  }
+},
+"demoPaymentTerminalTabs": {
+  "title": "您的一體化 餐廳支付終端",
+  "description": "您餐廳需要的支付終端，可以節省金錢、提高效率並建立持久的顧客忠誠度。",
+  "items": {
+    "0": {
+      "tab": "節省成本",
+      "title": "對餐廳具有競爭力的價格",
+      "description": "通過為餐廳量身定制的透明、一致的交易費用，保留更多的收益。",
+      "benefits": [
+        "具競爭力的價格，沒有隱藏費用。",
+        "在維持有效支付操作的同時節省成本。"
+      ],
+      "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+    },
+    "1": {
+      "tab": "更智慧的操作",
+      "title": "更智慧的操作",
+      "description": "使用可靠、可移動的支付終端，提升營運效率。",
+      "benefits": [
+        "桌邊移動結帳。",
+        "隨時隨地即時報表與穩定連線。"
+      ],
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+    },
+    "2": {
+      "tab": "為留住用戶而建",
+      "title": "在結帳時建立忠誠度",
+      "description": "在支付終端即時吸引並留住顧客，促進回流。",
+      "benefits": [
+        "列印回流券並自動發送提醒。",
+        "直接從終端收集回饋，提升體驗。"
+      ],
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80"
+    }
+  }
+}
 }
