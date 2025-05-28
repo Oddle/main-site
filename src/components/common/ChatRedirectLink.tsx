@@ -62,8 +62,14 @@ export default function ChatRedirectLink({ linkText, className, children }: Chat
       
     const redirectUrl = links[validLocale];
 
-    console.log(`Redirecting to chat for locale '${locale}' (using '${validLocale}'): ${redirectUrl}`);
+    if (typeof window !== "undefined" && typeof window.fbq === "function") {
+      window.fbq("track", "Contact");
+    }
+
     window.open(redirectUrl, "_blank", "noopener,noreferrer"); // Add rel attributes for security
+
+    
+
   };
 
   return (
