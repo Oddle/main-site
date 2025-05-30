@@ -1,0 +1,19 @@
+# Modern browsers that support ES2020+ features
+# This eliminates the need for most polyfills
+
+Chrome >= 80
+Firefox >= 72
+Safari >= 14
+Edge >= 80
+iOS >= 14
+Android >= 80
+
+# No IE support - saves significant bundle size
+not IE 11
+not IE_Mob 11
+
+# Exclude very old browsers
+not Chrome < 80
+not Firefox < 72
+not Safari < 14
+not Edge < 80
