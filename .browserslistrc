@@ -17,3 +17,19 @@ not Chrome < 80
 not Firefox < 72
 not Safari < 14
 not Edge < 80
+
+# Production browsers
+[production]
+last 2 Chrome versions
+last 2 Firefox versions
+last 2 Safari versions
+last 2 Edge versions
+not dead
+not IE 11
+
+# Development browsers
+[development]
+last 1 Chrome version
+last 1 Firefox version
+last 1 Safari version
+last 1 Edge version
