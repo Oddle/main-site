@@ -114,7 +114,8 @@ export default function CustomerTestimonialsSection({
                           alt={photoAlt}
                           width={256} 
                           height={256}
-                          priority={index === 0}
+                          priority={false}
+                          loading="lazy"
                         />
                         {/* Desktop Image */}
                         <Image
@@ -123,7 +124,8 @@ export default function CustomerTestimonialsSection({
                           alt={photoAlt}
                           width={1000} 
                           height={1000} 
-                          priority={index === 0} // Apply priority to first item for desktop as well
+                          priority={false} // Apply priority to first item for desktop as well
+                          loading="lazy"
                         />
                       </div>
                       <div className="md:col-span-3">
