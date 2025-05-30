@@ -85,16 +85,21 @@ export async function generatePageMetadata({ locale, pageKey, slug }: GenerateMe
 
   // --- Paths for current locale and alternates --- 
   const pathSegmentForPaths = pageKey === 'home' ? '' : `/${pageKey.startsWith('/') ? pageKey.substring(1) : pageKey}`;
-  const fullyQualifiedPathForCurrentPage = new URL(`/${locale}${pathSegmentForPaths}`, baseUrl).toString();
+  
+  // Special handling for English locale - use root path
+  const fullyQualifiedPathForCurrentPage = locale === 'en' 
+    ? new URL(pathSegmentForPaths, baseUrl).toString()
+    : new URL(`/${locale}${pathSegmentForPaths}`, baseUrl).toString();
   
   const languages: Record<string, string> = {};
   routing.locales.forEach(loc => {
-      const mappedHreflang = bcp47LangMap[loc] || loc;
-      languages[mappedHreflang] = new URL(`/${loc}${pathSegmentForPaths}`, baseUrl).toString();
+    const mappedHreflang = bcp47LangMap[loc] || loc;
+    // Special handling for English locale - use root path
+    const path = loc === 'en'
+      ? new URL(pathSegmentForPaths, baseUrl).toString()
+      : new URL(`/${loc}${pathSegmentForPaths}`, baseUrl).toString();
+    languages[mappedHreflang] = path;
   });
-
-  const defaultLocaleForXDefault = routing.defaultLocale || 'sg'; // Fallback for safety
-  languages['x-default'] = new URL(`/${defaultLocaleForXDefault}${pathSegmentForPaths}`, baseUrl).toString();
 
   // --- Image URLs --- 
   // Add final fallback URLs (replace with your actual defaults)
@@ -104,31 +109,31 @@ export async function generatePageMetadata({ locale, pageKey, slug }: GenerateMe
   // --- Construct Metadata Object --- 
   const result: Metadata = {
     title: finalTitle,
-    description: description, // Use final description
+    description: description,
     openGraph: {
       title: finalTitle, 
       description: description, 
-      url: fullyQualifiedPathForCurrentPage, // Use locale-specific path
+      url: fullyQualifiedPathForCurrentPage,
       siteName: 'Oddle', 
       images: [
         { 
-          url: defaultOgImageUrl, // Now guaranteed to be a string
+          url: defaultOgImageUrl,
           width: 1200, 
           height: 630, 
         },
       ],
-      locale: bcp47LangMap[locale] || locale, // Use mapped BCP47 locale
+      locale: bcp47LangMap[locale] || locale,
       type: 'website', 
     },
     twitter: {
       card: 'summary_large_image',
       title: finalTitle,
       description: description,
-      images: [defaultTwitterImageUrl], // Now guaranteed to be a string
+      images: [defaultTwitterImageUrl],
     },
     alternates: {
-      canonical: fullyQualifiedPathForCurrentPage, // Use absolute locale-specific path
-      languages: languages,
+      canonical: fullyQualifiedPathForCurrentPage,
+      languages: languages, // Now without x-default
     },
   };
   return result;
