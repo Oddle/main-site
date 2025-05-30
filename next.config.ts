@@ -48,13 +48,8 @@ const nextConfig: NextConfig = {
 
   // Modern browser optimizations - NEW ADDITIONS
   swcMinify: true,
-  
-  experimental: {
-    // Enable modern JavaScript features
-    legacyBrowsers: false,
-    // Optimize bundle size
-    optimizeCss: true,
-  },
+  legacyBrowsers: false,
+  optimizeCss: true,
 
   // Compiler options for modern browsers
   compiler: {

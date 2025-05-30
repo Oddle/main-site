@@ -1,13 +1,15 @@
 "use client";
 
-import React from 'react';
+import React, { lazy } from 'react';
 import { useTranslations } from 'next-intl';
 import { Check } from "lucide-react";
 
 import Container from '@/components/common/Container';
 import InlineCustomerLogos from '@/components/common/InlineCustomerLogos';
-import DemoRequestForm from '@/components/forms/DemoRequestForm'; // Import the form component
 import { getTranslation } from '@/lib/i18nUtils';
+
+const DemoRequestForm = lazy(() => import('@/components/forms/DemoRequestForm'));
+
 
 interface DemoRequestSectionProps {
   i18nBaseKey: string; // e.g., "demoPage.section"
