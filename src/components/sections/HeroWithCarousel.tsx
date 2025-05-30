@@ -103,9 +103,11 @@ export default function HeroWithCarousel({
                         className="object-contain"
                       src={slideImageSrc}
                       alt={slideImageAlt}
-                        fill
+                      fill
                       priority={true}
-                        sizes="(max-width: 767px) 90vw, (max-width: 1023px) 70vw, 50vw"
+                      fetchPriority="high"
+                      loading="eager" 
+                      sizes="(max-width: 767px) 90vw, (max-width: 1023px) 70vw, 50vw"
                     />
                     </div>
                     ) : null
@@ -132,6 +134,8 @@ export default function HeroWithCarousel({
                               alt={slideImageAlt}
                               fill
                               priority={index === 0}
+                              fetchPriority={index === 0 ? "high" : undefined}
+                              loading={index === 0 ? "eager" : undefined}
                               sizes="(max-width: 767px) 90vw, (max-width: 1023px) 70vw, 50vw"
                             />
                           </div>

@@ -7,12 +7,11 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { jsonLdScriptProps } from "react-schemaorg";
 import { WebSite } from "schema-dts";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import "../globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import LocaleChecker from '@/components/LocaleChecker';
 import Script from 'next/script';
+import AnalyticsWrapper from "@/components/AnalyticsWrapper";
 
 // --- Define BCP 47 language mapping (accessible to both RootLayout and generateMetadata) ---
 const bcp47LangMap: { [key: string]: string } = {
@@ -67,14 +66,38 @@ export default async function RootLayout({
   return (
     <html lang={htmlLang} suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager */}
-        <Script id="google-tag-manager" strategy="afterInteractive">
+        {/* Deferred Google Tag Manager - loads after page interaction or 3 seconds */}
+        <Script 
+          id="google-tag-manager-deferred" 
+          strategy="lazyOnload"
+        >
           {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-TM3W78RV');
+            function loadGTM() {
+              if (window.gtmLoaded) return;
+              window.gtmLoaded = true;
+              
+              (function(w,d,s,l,i){
+                w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});
+                var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+                j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;
+                f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-TM3W78RV');
+            }
+            
+            // Load GTM after user interaction or after 3 seconds
+            const events = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart', 'click'];
+            const loadGTMOnce = () => {
+              loadGTM();
+              events.forEach(event => document.removeEventListener(event, loadGTMOnce));
+            };
+            
+            events.forEach(event => document.addEventListener(event, loadGTMOnce, { passive: true }));
+            
+            // Fallback: load after 3 seconds if no user interaction
+            setTimeout(loadGTM, 3000);
           `}
         </Script>
         {/* End Google Tag Manager */}
@@ -94,7 +117,7 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
-        {/* Google Tag Manager (noscript) */}
+        {/* Google Tag Manager (noscript) - kept for non-JS users */}
         <noscript
           dangerouslySetInnerHTML={{
             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TM3W78RV" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
@@ -112,8 +135,7 @@ export default async function RootLayout({
           </NextIntlClientProvider>
           <Toaster />
         </ThemeProvider>
-        <Analytics />
-        <SpeedInsights />
+        <AnalyticsWrapper />
       </body>
     </html>
   );
